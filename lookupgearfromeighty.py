@@ -1,5 +1,14 @@
 import pandas as pd
 gems_data =  pd.read_csv (r'EquipmentList - Gems.csv')
+all_selectable_gear = pd.read_csv (r'EquipmentList - Gear.csv')
+all_selectable_weps = pd.read_csv (r'EquipmentList - Weapons.csv')
+
+
+
+
+
+
+
 meta_gem_counter = 0
 meta_gem_names = []
 
@@ -173,6 +182,40 @@ def gear_lookup(eighty_gear_selection = ""):
         sigil_name_line = sigil_area.find('''"name":''')+7
         sigil_name_end_of_line = sigil_area.find(''',''')
         sigil = ((sigil_area[sigil_name_line:sigil_name_end_of_line]) .replace('''"''', '')).lstrip()
+    if ((all_selectable_gear[all_selectable_gear['Name'] == helm])).empty:
+        helm = "Spiked Titansteel Helm"
+    if ((all_selectable_gear[all_selectable_gear['Name'] == neck])).empty:
+        neck = "Gold Amulet of Kings"
+    if ((all_selectable_gear[all_selectable_gear['Name'] == shoulders])).empty:
+        shoulders = "Spaulders of the Giant Lords"
+    if ((all_selectable_gear[all_selectable_gear['Name'] == chest])).empty:
+        chest = "Engraved Chestplate of Eck"
+    if ((all_selectable_gear[all_selectable_gear['Name'] == waist])).empty:
+        waist = "Flame-Bathed Steel Girdle"
+    if ((all_selectable_gear[all_selectable_gear['Name'] == legs])).empty:
+        legs = "Staggering Legplates"
+    if ((all_selectable_gear[all_selectable_gear['Name'] == boots])).empty:
+        boots = "Death-Inured Sabatons"
+    if ((all_selectable_gear[all_selectable_gear['Name'] == wrists])).empty:
+        wrists = "Vengeance Bindings"
+    if ((all_selectable_gear[all_selectable_gear['Name'] == gloves])).empty:
+        gloves = "Gauntlets of Dragon Wrath"
+    if ((all_selectable_gear[all_selectable_gear['Name'] == ring1])).empty:
+        ring1 = "Band of Frosted Thorns"
+    if ((all_selectable_gear[all_selectable_gear['Name'] == ring2])).empty:
+        ring2 = "Band of Frosted Thorns"
+    if ((all_selectable_gear[all_selectable_gear['Name'] == trinket1])).empty:
+        trinket1 = "Meteorite Whetstone"
+    if ((all_selectable_gear[all_selectable_gear['Name'] == trinket2])).empty:
+        trinket2 = "Meteorite Whetstone"
+    if ((all_selectable_gear[all_selectable_gear['Name'] == back])).empty:
+        back = "Cloak of Bloodied Waters"
+    if ((all_selectable_gear[all_selectable_gear['Name'] == sigil])).empty:
+        sigil = "Sigil of the Frozen Conscience"
+    if ((all_selectable_weps[all_selectable_weps['Name'] == mh_wep])).empty:
+        mh_wep = "Titansteel Bonecrusher"
+    if ((all_selectable_weps[all_selectable_weps['Name'] == oh_wep])).empty:
+        oh_wep = "Grasscutter"
     return helm, neck, shoulders, chest, waist, legs, boots, wrists, gloves, ring1, ring2, trinket1, trinket2, back, mh_wep, oh_wep, sigil, head_enchant, helm_gem1, helm_gem2, helm_gem3, helm_gem4, helm_gemmeta, neck_gem1, neck_gem2, neck_gem3, neck_gem4, shoulders_enchant, shoulders_gem1, shoulders_gem2, shoulders_gem3, shoulders_gem4, chest_enchant, chest_gem1, chest_gem2, chest_gem3, chest_gem4, waist_gem1, waist_gem2, waist_gem3, waist_gem4, legs_enchant, legs_gem1, legs_gem2, legs_gem3, legs_gem4, boots_enchant, boots_gem1, boots_gem2, boots_gem3, boots_gem4, wrists_enchant, wrists_gem1, wrists_gem2, wrists_gem3, wrists_gem4, gloves_enchant, gloves_gem1, gloves_gem2, gloves_gem3, gloves_gem4, ring1_gem1, ring1_gem2, ring1_gem3, ring1_gem4, ring1_enchant, ring2_gem1, ring2_gem2, ring2_gem3, ring2_gem4, ring2_enchant, trinket1_gem1, trinket1_gem2, trinket1_gem3, trinket1_gem4, trinket2_gem1, trinket2_gem2, trinket2_gem3, trinket2_gem4, back_enchant, back_gem1, back_gem2, back_gem3, back_gem4, mh_wep_enchant, mh_wep_gem1, mh_wep_gem2, mh_wep_gem3, mh_wep_gem4, oh_wep_enchant, oh_wep_gem1, oh_wep_gem2, oh_wep_gem3, oh_wep_gem4
 
 
@@ -239,6 +282,16 @@ def gem_on_gear(area):
         gem_2 = "None"
         gem_3 = "None"
         gem_4 = "None"
+        gem_5 = "None"
+    if ((gems_data[gems_data['Name'] == gem_1])).empty:
+        gem_1 = "None"
+    if ((gems_data[gems_data['Name'] == gem_2])).empty:
+        gem_2 = "None"
+    if ((gems_data[gems_data['Name'] == gem_3])).empty:
+        gem_3 = "None"
+    if ((gems_data[gems_data['Name'] == gem_4])).empty:
+        gem_4 = "None"
+    if ((gems_data[gems_data['Name'] == gem_5])).empty:
         gem_5 = "None"
     for possible_meta in meta_gem_names:
         if possible_meta == gem_1:
