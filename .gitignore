@@ -1,3 +1,7 @@
 *.pyc
 __pycache__
 /db-passwords.properties
+.cache
+.ipython
+.local
+.virtualenvs
