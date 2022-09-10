@@ -647,7 +647,7 @@
 <hr width="90%" size="2px" color="grey" align="right"/>
 <div id="w1_Angry_Dread"class="w1_Angry_Dread">
 <a href="javascript:void(0);" data-wowhead="item=40189&domain=wrath"class="name"></a>
-<div class="num" id="num"></div>
+<div class="num"></div>
 <div class="phase">1</div>
 <div class="heroic">No</div>
 <div class="slot">1Handed</div>
@@ -660,7 +660,7 @@
 <hr width="90%" size="2px" color="grey" align="right"/>
 <div id="w1_Argent_Skeleton_Crusher"class="w1_Argent_Skeleton_Crusher">
 <a href="javascript:void(0);" data-wowhead="item=44244&domain=wrath"class="name"></a>
-<div class="num" id="num"></div>
+<div class="num"></div>
 <div class="phase">0</div>
 <div class="heroic">No</div>
 <div class="slot">2Handed</div>
@@ -2554,6 +2554,7 @@ Gems:
 <hr width="90%" size="2px" color="grey" align="right"/>
 <div id="w2_Angry_Dread"class="w2_Angry_Dread">
 <a href="javascript:void(0);" data-wowhead="item=40189&domain=wrath"class="name"></a>
+<div class="num"></div>
 <div class="phase">1</div>
 <div class="heroic">No</div>
 <div class="slot">1Handed</div>
@@ -2566,6 +2567,7 @@ Gems:
 <hr width="90%" size="2px" color="grey" align="right"/>
 <div id="w2_Avools_Sword_of_Jin"class="w2_Avools_Sword_of_Jin">
 <a href="javascript:void(0);" data-wowhead="item=44311&domain=wrath"class="name"></a>
+<div class="num"></div>
 <div class="phase">1</div>
 <div class="heroic">No</div>
 <div class="slot">1Handed</div>
@@ -2578,6 +2580,7 @@ Gems:
 <hr width="90%" size="2px" color="grey" align="right"/>
 <div id="w2_Broken_Promise"class="w2_Broken_Promise">
 <a href="javascript:void(0);" data-wowhead="item=40345&domain=wrath"class="name"></a>
+<div class="num"></div>
 <div class="phase">1</div>
 <div class="heroic">No</div>
 <div class="slot">1Handed</div>
@@ -32617,8 +32620,10 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
               alert(dpstextvalue);
             //  var mh_wep_section_area = document.getElementsByClassName("selectedwepmh");
               var mh_wep_section_area = document.querySelector("div.selectedwepmh .num");
+              var oh_wep_section_area = document.querySelector("div.selectedwepoh .num");
              // mh_wep_section_area = mh_wep_section_area.querySelector('.num');
               mh_wep_section_area.innerHTML = dpstextvalue;
+              oh_wep_section_area.innerHTML = dpstextvalue;
 
             }
               
