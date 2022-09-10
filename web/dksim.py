@@ -1154,11 +1154,11 @@ def all_dash_stuff(dash_all_data):
 
 
     return html.Div(children=[
-        dcc.Loading(
-            id="loading-1",
-            type="default",
-            children=html.Div(id="new-dash-container")
-        ),
+        # dcc.Loading(
+        #     id="loading-1",
+        #     type="default",
+        #     children=html.Div(id="new-dash-container")
+        # ),
         html.Div([
             html.H1(children='Last Simulation', style={'color': '#ffffff'}),
             dcc.Graph(
@@ -1426,22 +1426,13 @@ def all_dash_stuff(dash_all_data):
         ])
     ])
 
-#fix_div2 = html.Div(id='new-dash-container')
-fix_div = html.Div(children=[
-    dcc.Loading(
-        id="loading-2",
-        type="default",
-        children=html.Div(id="new-dash-container")
-    ),
-    
-    
-    html.Div(
-    [   html.H1(
-        html.I(" Test ", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
-        html.Br(),
-    ]),
-   # fix_div2
-    ])
+# fix_div = html.Div(children=[
+#     dcc.Loading(
+#         id="loading-2",
+#         type="default",
+#         children=html.Div(id="new-dash-container")
+#     ),
+#     ])
 
 server.layout = html.Div(children=[
     html.Div(
@@ -1453,8 +1444,15 @@ server.layout = html.Div(children=[
         children=[
             dcc.Input(id="inputusername", type="text", placeholder="Username", debounce=True),
         ],  style={"display": "flex", "justifyContent": "center"}),
+    html.Div(children=[
+        dcc.Loading(
+            id="loading-2",
+            type="default",
+            children=html.Div(id="new-dash-container")
+        ),
+        ]),
     # html.Div(id='new-dash-container'),
-    fix_div
+    # fix_div
         ])
 # html.Div([
 #             html.H1(children='Last Simulation'),
