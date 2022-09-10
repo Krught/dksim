@@ -59,7 +59,7 @@
 .delay[data-dash-is-loading="true"]::after{
 	content: "";
 	display: block;
-	background-color: rgba(169,43,46,0.75);
+	background-color: rgba(169,43,46,0.00);
 	/* 2s delay + 0.5s transition */
 	animation: fadein 2.5s forwards;
 }

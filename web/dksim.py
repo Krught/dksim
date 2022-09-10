@@ -1438,8 +1438,8 @@ server.layout = html.Div(children=[
             id="loading-1",
             type="cube",
             color="#992d2d",
-            className="delay",
             children=html.Div(id="new-dash-container", className='delay'),
+            className='delay',
         ),
         ]),
         ])
@@ -1476,23 +1476,7 @@ def sql(value):
                         html.Br(),
                     ])
             found_dff = '''Loading Data For "''' + str(value) + '''"'''
-            # return all_dash_stuff(dff) #database 1 (version 2)
-                    # html.Div(
-                    #     [   html.H1(
-                    #         html.I(str(found_dff), style={'color': '#ffffff'}), style={'textAlign': 'center'}),
-                    #         html.Br(),
-                    #         html.I("One Moment Please", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
-                    #         html.Br(),
-                    #     ]),
             return all_dash_stuff(dff)
-        
-        # html.Div(
-        #         [   html.H1(
-        #             html.I(str(f_dff), style={'color': '#ffffff'}), style={'textAlign': 'center'}),
-        #             html.Br(),
-        #         ]), all_dash_stuff(dff)
-        
-        
         else:
             return
     else:
