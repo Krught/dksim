@@ -1437,6 +1437,15 @@ server.layout = html.Div(children=[
 #             html.H1(children='Last Simulation'),
 #             ),
 
+def dash_stuff_mid(f_dff, dff):
+    html.Div(
+        [   html.H1(
+            html.I(str(f_dff), style={'color': '#ffffff'}), style={'textAlign': 'center'},
+            html.Br(),
+            html.I("One Moment Please", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+            html.Br(),
+        ]), 
+    return all_dash_stuff(dff)
 
 
 @server.callback(
@@ -1463,14 +1472,14 @@ def sql(value):
             db.session.close()
             engine.dispose()
             if len(dff.index) == 0:
-                no_found_dff = ''''No Data For "''' + str(value) + '''" Found'''
+                no_found_dff = '''No Data For "''' + str(value) + '''" Found'''
                 return html.Div(
                     [   html.H1(
                         html.I(str(no_found_dff), style={'color': '#ffffff'}), style={'textAlign': 'center'}),
                         html.Br(),
                     ])
-            found_dff = ''''Loading Data For "''' + str(value) + '''"'''
-            return all_dash_stuff(dff) #database 1 (version 2)
+            found_dff = '''Loading Data For "''' + str(value) + '''"'''
+            # return all_dash_stuff(dff) #database 1 (version 2)
                     # html.Div(
                     #     [   html.H1(
                     #         html.I(str(found_dff), style={'color': '#ffffff'}), style={'textAlign': 'center'}),
@@ -1478,6 +1487,7 @@ def sql(value):
                     #         html.I("One Moment Please", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
                     #         html.Br(),
                     #     ]),
+            return dash_stuff_mid(found_dff , dff)
         else:
             return
     else:
