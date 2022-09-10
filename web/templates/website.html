@@ -33271,7 +33271,8 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
             var current_selection_dropdown = "";
             var loopnum = "";
             var current_loopnum = 0;
-              
+            var dropdown_highlight_selection = "";
+            
               
               
             function ifsheetlooping(){
@@ -33279,9 +33280,13 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                     if (loopnum != current_loopnum) {
                     current_loopnum++;
                     current_selection_dropdown.selectedIndex = current_loopnum;
+                        //dropdown_select_wep();
+                    call(dropdown_highlight_selection);
+                        
                     document.getElementById("simdpsbutton").click();
                     }
                     else {
+                        current_selection_dropdown.value = current_selection_items;
                         sheetloop = "False";
                         selection_items = "";
                         current_selection_dropdown = "";
@@ -33300,9 +33305,11 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                             if (selectedsheet_area != "Trinkets") {
                                 selection_items = selectedsheet_area.toLowerCase();
                                 selection_items = "#" + selection_items
+                                dropdown_highlight_selection = selectedsheet_area.toLowerCase();
                                 current_selection_dropdown = document.querySelector(selection_items);
                                 current_selection_items = current_selection_dropdown.value;
                                 loopnum = current_selection_dropdown.options.length;
+                                dropdown_highlight_selection = "dropdown_select_" +  dropdown_highlight_selection;
                                 //var current_loopnum = 0
                                 // Should also record amount of sims, and change to a predetermined number, and change back once this is over
 //                                while (current_loopnum < loopnum) {
