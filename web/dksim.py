@@ -1462,6 +1462,13 @@ def sql(value):
             )
             db.session.close()
             engine.dispose()
+            if len(dff.index) == 0:
+                no_found_dff = "No Data For " + str(value) + " Found" 
+                return html.Div(
+                    [   html.H1(
+                        html.I(str(no_found_dff), style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+                        html.Br(),
+                    ])
             return all_dash_stuff(dff) #database 1 (version 2)
         else:
             return
@@ -1521,18 +1528,9 @@ def sqltwo(value):
                 'show processlist',
                 SQLALCHEMY_DATABASE_URI
             )
-        else:
-            dfff = pd.DataFrame()   
-        print(len(dfff.index))
-        print(dfff)
-        if len(dfff.index) == 0:
-            return html.Div(
-                [   html.H1(
-                    html.I("No Username Found", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
-                    html.Br(),
-                ])
-        else:
             return all_two_dash_stuff(dfff, value, stas) #database 1 (version 2)
+        else:
+            return
     else:
         return
 
