@@ -895,6 +895,7 @@ def all_dash_stuff(dash_all_data):
         unique_ability_df_table.append(i)
     status_table_data = pd.DataFrame(dict(Ability=unique_ability_df_table, Miss=unique_miss_count_df_table, Dodge=unique_dodge_count_df_table, Parry=unique_parry_count_df_table, Glance=unique_glance_count_df_table, Block=unique_block_count_df_table, Crit=unique_crit_count_df_table, Hit=unique_hit_count_df_table, DOT=unique_dot_count_df_table, Active=unique_active_count_df_table, Proc=unique_proc_count_df_table, Avg_Damage=unique_damage_per_cast_df_table, All_Damage=unique_damage_df_table))
 
+
     statuss_sum_list = ["Miss", "Dodge", "Parry", "Glance", "Block", "Crit", "Hit", "DOT", "Active", "Proc"]
     status_table_data['Sum'] = status_table_data[statuss_sum_list].sum(axis=1)
     status_table_data['MissP'] = status_table_data["Miss"]/status_table_data["Sum"]
@@ -928,7 +929,8 @@ def all_dash_stuff(dash_all_data):
     status_table_data['DOTP'] = status_table_data['DOTP'].astype(str) + '%'
     status_table_data['ActiveP'] = status_table_data['ActiveP'].astype(str) + '%'
     status_table_data['ProcP'] = status_table_data['ProcP'].astype(str) + '%'
-
+    status_table_data['DPSPA'] = status_table_data["AllDamage"] / fight_length
+    status_table_data['DPSPA'] = status_table_data.round({'DPSPA': 3})
 
     dps_timeline_breaks = int(fight_length / 3)
     time_each_break = fight_length / dps_timeline_breaks
@@ -1179,6 +1181,8 @@ def all_dash_stuff(dash_all_data):
                       {"name": "DOT", "id":"DOT"},{"name": "Active", "id":"Active"},
                       {"name": "Proc", "id":"Proc"},{"name": "Average Damage", "id":"Avg_Damage"},
                       {"name": "Total Damage", "id":"All_Damage"},
+                      {"name": "Average DPS", "id":"DPSPA"},
+                      
 
 
                     #  {"name": "Sum - DELETE", "id":"Sum"},{"name": "MissPercentage - DELETE", "id":"MissP"},
