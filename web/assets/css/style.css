@@ -195,6 +195,14 @@ h3 {text-align: center;}
     position: absolute;
     left: 200px;
 }
+.title_dps{
+    position: absolute;
+    left: 400px;
+}
+.dps{
+    position: absolute;
+    left: 400px;
+}
 .title_phase{
     position: absolute;
     left: 485px;

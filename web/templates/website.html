@@ -647,6 +647,7 @@
 <hr width="90%" size="2px" color="grey" align="right"/>
 <div id="w1_Angry_Dread"class="w1_Angry_Dread">
 <a href="javascript:void(0);" data-wowhead="item=40189&domain=wrath"class="name"></a>
+<div class="num"></div>
 <div class="phase">1</div>
 <div class="heroic">No</div>
 <div class="slot">1Handed</div>
@@ -29486,8 +29487,8 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                 var simText = document.querySelector("#sim-import-area").innerText;
                 var mySimarray = simText.split("*&*");
                 var dps_text = mySimarray[0];
-                //alert("Test Alert");
                 dps_area.innerHTML = dps_text;
+                dpshtmlarea(dps_text);
             }
 
         
@@ -32611,7 +32612,11 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
             }
 
 
-
+            function dpshtmlarea(dpstextvalue);
+              alert(dpstextvalue);
+              var mh_wep_section_area = document.getElementsByClassName("selectedwepmh");
+              mh_wep_section_area = mh_wep_section_area.querySelector('#num');
+              mh_wep_section_area.innerHTML = dpstextvalue;
 
 
               
