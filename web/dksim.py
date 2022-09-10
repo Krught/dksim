@@ -1439,8 +1439,8 @@ server.layout = html.Div(children=[
     html.Div(dcc.Loading(
         id="loading-2",
         type="default",
-        children=html.Div(id="new-dash-container")
-    ), id='new-dash-container'),
+        children=html.Div(id="new-dash-container"),
+        id='new-dash-container'),
         ])
 # html.Div([
 #             html.H1(children='Last Simulation'),
