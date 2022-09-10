@@ -1440,11 +1440,9 @@ server.layout = html.Div(children=[
 def dash_stuff_mid(f_dff, dff):
     html.Div(
         [   html.H1(
-            html.I(str(f_dff), style={'color': '#ffffff'}), style={'textAlign': 'center'},
+            html.I(str(f_dff), style={'color': '#ffffff'}), style={'textAlign': 'center'}),
             html.Br(),
-            html.I("One Moment Please", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
-            html.Br(),
-        ]), 
+        ])
     return all_dash_stuff(dff)
 
 
@@ -1487,7 +1485,7 @@ def sql(value):
                     #         html.I("One Moment Please", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
                     #         html.Br(),
                     #     ]),
-            return dash_stuff_mid(found_dff , dff)
+            return dash_stuff_mid(found_dff, dff)
         else:
             return
     else:
