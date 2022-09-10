@@ -1436,7 +1436,8 @@ server.layout = html.Div(children=[
     html.Div(children=[
         dcc.Loading(
             id="loading-1",
-            type="default",
+            type="cube",
+            color="#992d2d",
             children=html.Div(id="new-dash-container")
         ),
         ]),
