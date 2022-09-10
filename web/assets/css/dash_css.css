@@ -42,7 +42,7 @@
 .delay::after {
     content: "";
     display: block;
-	position: absolute;
+	/* position: absolute; */
 	top: 1500;
 	left: 0;
 	/* min and max vals in case children (content)
