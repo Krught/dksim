@@ -42,8 +42,8 @@
 .delay::after {
     content: "";
     display: block;
-	/* position: absolute; */
-	top: 1500;
+	position: absolute;
+	top: 0;
 	left: 0;
 	/* min and max vals in case children (content)
 	 * does not exist at all until the callback
