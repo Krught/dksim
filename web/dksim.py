@@ -1438,8 +1438,7 @@ server.layout = html.Div(children=[
         ],  style={"display": "flex", "justifyContent": "center"}),
     html.Div(dcc.Loading(
         id="loading-2",
-        type="default",
-        children=html.Div(id="new-dash-container"),
+        type="default",),
         id='new-dash-container'),
         ])
 # html.Div([
