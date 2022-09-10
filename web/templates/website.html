@@ -33259,6 +33259,12 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                 }
             }
               
+//            var simloopcurrent = "False";
+              
+//            function insimloop(){
+//                
+//                current_loopnum++;
+//            }
               
             function simcurrentsheet(){
                 var selectedsheet_area = document.querySelector(".tablinks.active").innerHTML;
@@ -33272,20 +33278,26 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                                 var current_selection_items = current_selection_dropdown.value;
                                 var loopnum = current_selection_dropdown.options.length;
                                 var current_loopnum = 0
+                                // Should also record amount of sims, and change to a predetermined number, and change back once this is over
                                 while (current_loopnum < loopnum) {
                                     current_selection_dropdown.selectedIndex = current_loopnum;
                                     document.getElementById("simdpsbutton").click();
-                                    var ixl = "True";
-                                    loop1:
-                                    while (ixl = "True") {
-                                        elementToObserve = window.document.getElementById('dps_area').children[0];
-                                        observer = new MutationObserver(function(mutationsList, observer) {
-                                            console.log(mutationsList);
-                                            ixl = "False";
-//                                            break loop1;
-                                        });
-                                        observer.observe(elementToObserve, {characterData: false, childList: true, attributes: false});
+                                    var cdpsnum = document.getElementById('dps_area').value;
+                                    var ndpsnum = cdpsnum;
+                                    while (cdpsnum === ndpsnum) {
+                                        ndpsnum = document.getElementById('dps_area').value;
                                     }
+//                                    var ixl = "True";
+//                                    loop1:
+//                                    while (ixl = "True") {
+//                                        elementToObserve = window.document.getElementById('dps_area').children[0];
+//                                        observer = new MutationObserver(function(mutationsList, observer) {
+//                                            console.log(mutationsList);
+//                                            ixl = "False";
+////                                            break loop1;
+//                                        });
+//                                        observer.observe(elementToObserve, {characterData: false, childList: true, attributes: false});
+//                                    }
                                     //alert(current_selection_dropdown.value);
                                     current_loopnum++;
                                 }
