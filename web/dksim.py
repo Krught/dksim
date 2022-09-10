@@ -1427,7 +1427,15 @@ def all_dash_stuff(dash_all_data):
     ])
 
 fix_div2 = html.Div(id='new-dash-container')
-fix_div = html.Div(children=[html.Div(
+fix_div = html.Div(children=
+                   dcc.Loading(
+                       id="loading-2",
+                       type="default",
+                       children=html.Div(id="new-dash-container")
+                   ),
+                   
+                   
+                   [html.Div(
     [   html.H1(
         html.I(" Test ", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
         html.Br(),
