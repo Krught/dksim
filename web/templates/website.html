@@ -66,9 +66,6 @@
         <form>
 	Sim Username: <input name="usernameassign" id="usernameassign" value="Candy" style="width: 80px;" onchange="usernn_selector()"></inputname></input>
 	</form>
-        <!--
-        <button hx-post="/calculatedps"hx-trigger="click"hx-target="#dps-sum-div"hx-indicator="#spinner"hx-include="#head, #neck, #weapon1, #weapon2, #shoulders, #back, #chest, #wrist, #gloves, #waist, #legs, #boots, #sigil, #ring1, #ring2, #trinket1, #trinket2, #fightlen, #fightlenvar, #simamounts, #targetamounts, #targetlevel, #targetarmor, #fightsub35, #pestilencereset, #hornofwinterprecastamount, #dkpresence, #dkspec, #raceselection, #potion, #potionpop, #flask, #foodselection, #draeneiinparty, #hornofwinterbuff, #impicytalonsbuff, #abommightbuff, #sancretribuff, #impmoonkinbuff, #bloodfrenzybuff, #exposearmordebuff, #curseofweaknessdebuff, #leaderofthepackbuff, #heroismbuff, #heroismtimer, #unholyfrenzybuff, #unholyfrenzytimer, #tricksofthettbuff, #tricksofthetradetimer, #giftofthewildbuff, #greaterblessingofkingsbuff, #greaterblessingofmightbuff, #impblessingofmightbuff, #heartoftherusaderbuff, #impscorchbuff, #impfaeriefiredebuff, #curseoftheelementsdebuff, #moonkinaurabuff, #bloodfurybuff, #bloodfurytimer, #berserkingbuff, #berserkingtimer, #talentlink, #boneshieldconsum, #gargusetime, #gargstancedance, #useghoul, #usearmyofd, #prioobliterate, #priobloodstrike, #nodeathanddecay, #forcedeathanddecay, #cryptfeverdebuff, #metagemselection, #mhweapenchant, #ohweapenchant, #headenchant, #shouldersenchant, #backenchant, #chestenchant, #wristenchant, #glovesenchant, #legsenchant, #bootsenchant, #ring1enchant, #ring2enchant, #socketbonus1, #socketbonus2, #socketbonus3, #socketbonus4, #socketbonus5, #socketbonus6, #socketbonus7, #socketbonus8, #socketbonus9, #socketbonus10, #socketbonus11, #socketbonus12, #socketbonus13, #socketbonus14, #socketbonus15, #socketbonus16, #gemselection1, #gemselection2, #gemselection3, #gemselection4, #gemselection5, #gemselection6, #gemselection7, #gemselection8, #gemselection9, #gemselection10, #gemselection11, #gemselection12, #gemselection13, #gemselection14, #gemselection15, #gemselection16, #gemselection17, #gemselection18, #gemselection19, #gemselection20, #gemselection21, #gemselection22, #gemselection23, #gemselection24, #gemselection25, #gemselection26, #gemselection27, #gemselection28, #gemselection29, #gemselection30, #gemselection31, #gemselection32, #gemselection33, #gemselection34, #gemselection35, #gemselection36, #gemselection37, #gemselection38, #gemselection39, #gemselection40, #gemselection41, #gemselection42, #gemselection43, #gemselection44, #gemselection45, #gemselection46, #gemselection47, #gemselection48, #gemselection49, #gemselection50, #gemselection51, #gemselection52, #gemselection53, #gemselection54, #gemselection55, #gemselection56, #gemselection57, #gemselection58, #gemselection59, #gemselection60, #gemselection61, #gemselection62, #gemselection63, #gemselection64, #bloodgorg">Calculate DPS</button> 
-            -->
 		<img  id="spinner" class="htmx-indicator" src="/svg/mypuff.svg"/> </div>
         </div>
         <div class="tab">
@@ -30091,7 +30088,10 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                 var mySimarray = simText.split("*&*");
                 var dps_text = mySimarray[0];
                 dps_area.innerHTML = dps_text;
-                dpshtmlarea(dps_text);
+                var twohands = mySimarray[21];
+                twohands = twohands.split("*^*");
+                twohands = twohands[16];
+                dpshtmlarea(dps_text, twohands);
             }
 
         
@@ -33215,7 +33215,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
             }
 
 
-            function dpshtmlarea(dpstextvalue){
+            function dpshtmlarea(dpstextvalue, twohand){
                 var mh_wep_section_area = document.querySelector("div.selectedwepmh .num");
                 var oh_wep_section_area = document.querySelector("div.selectedwepoh .num");
                 var head_wep_section_area = document.querySelector("div.selectedhead .num");
@@ -33234,7 +33234,6 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                 var trinket1_wep_section_area = document.querySelector("div.selectedtrinket1 .num");
                 var trinket2_wep_section_area = document.querySelector("div.selectedtrinket2 .num");
                 mh_wep_section_area.innerHTML = dpstextvalue;
-                oh_wep_section_area.innerHTML = dpstextvalue;
                 head_wep_section_area.innerHTML = dpstextvalue;
                 neck_wep_section_area.innerHTML = dpstextvalue;
                 shoulders_wep_section_area.innerHTML = dpstextvalue;
@@ -33250,6 +33249,10 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                 ring2_wep_section_area.innerHTML = dpstextvalue;
                 trinket1_wep_section_area.innerHTML = dpstextvalue;
                 trinket2_wep_section_area.innerHTML = dpstextvalue;
+                if (twohand === True) {
+                oh_wep_section_area.innerHTML = dpstextvalue;
+                }
+                alert(twohand);
             }
               
 
