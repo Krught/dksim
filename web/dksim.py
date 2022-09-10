@@ -1153,16 +1153,12 @@ def all_dash_stuff(dash_all_data):
 
 
 
-    return html.Div(
-        
+    return html.Div(children=[
         dcc.Loading(
             id="loading-1",
             type="default",
-        
-        
-        
-        
-        children=[
+            children=html.Div(id="new-dash-container")
+        ),
         html.Div([
             html.H1(children='Last Simulation', style={'color': '#ffffff'}),
             dcc.Graph(
@@ -1428,9 +1424,7 @@ def all_dash_stuff(dash_all_data):
             html.I("", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
             html.Br(),
         ])
-    ]
-    ),
-    )
+    ])
 
 server.layout = html.Div(children=[
     html.Div(
