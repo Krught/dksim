@@ -1438,12 +1438,11 @@ server.layout = html.Div(children=[
 #             ),
 
 def dash_stuff_mid(f_dff, dff):
-    html.Div(
+    return html.Div(
         [   html.H1(
             html.I(str(f_dff), style={'color': '#ffffff'}), style={'textAlign': 'center'}),
             html.Br(),
-        ])
-    return all_dash_stuff(dff)
+        ]), all_dash_stuff(dff)
 
 
 @server.callback(
