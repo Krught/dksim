@@ -1439,7 +1439,7 @@ server.layout = html.Div(children=[
             type="cube",
             color="#992d2d",
             className="delay",
-            children=html.Div(id="new-dash-container"),
+            children=html.Div(id="new-dash-container", className='delay'),
         ),
         ]),
         ])
