@@ -1521,16 +1521,18 @@ def sqltwo(value):
                 'show processlist',
                 SQLALCHEMY_DATABASE_URI
             )
-            if len(dfff.index) == 0:
-                return html.Div(
-                    [   html.H1(
-                        html.I("No Username Found", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
-                        html.Br(),
-                    ])
-            else:
-                return all_two_dash_stuff(dfff, value, stas) #database 1 (version 2)
         else:
-            return
+            dfff = pd.DataFrame()   
+        print(len(dfff.index))
+        print(dfff)
+        if len(dfff.index) == 0:
+            return html.Div(
+                [   html.H1(
+                    html.I("No Username Found", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+                    html.Br(),
+                ])
+        else:
+            return all_two_dash_stuff(dfff, value, stas) #database 1 (version 2)
     else:
         return
 
