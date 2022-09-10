@@ -1462,18 +1462,23 @@ def sql(value):
             )
             db.session.close()
             engine.dispose()
-        #database 1 (version 2)
+            return all_dash_stuff(dff) #database 1 (version 2)
         else:
-            dff = ""
-            db.session.close()
-            engine.dispose()
+            return
     else:
-        dff = ""
-        db.session.close()
-        engine.dispose()
-    db.session.close()
-    engine.dispose()
-    return all_dash_stuff(dff) #database 1 (version 2)
+        return
+        #database 1 (version 2)
+    #     else:
+    #         dff = ""
+    #         db.session.close()
+    #         engine.dispose()
+    # else:
+    #     dff = ""
+    #     db.session.close()
+    #     engine.dispose()
+    # db.session.close()
+    # engine.dispose()
+    # return all_dash_stuff(dff) #database 1 (version 2)
 
 # dff = pd.read_sql_query(  #database 1 (version 2)
 #         'SELECT * FROM dpsresults WHERE username = "{}"'.format(value), #database 1 (version 2)
