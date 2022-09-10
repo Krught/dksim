@@ -195,73 +195,73 @@ h3 {text-align: center;}
     position: absolute;
     left: 200px;
 }
-.title_dps{
-    position: absolute;
-    left: 400px;
-}
-.dps{
-    position: absolute;
-    left: 400px;
-}
-.title_phase{
+.title_num{
     position: absolute;
     left: 485px;
 }
-.title_heroic {
+.num{
+    position: absolute;
+    left: 485px;
+}
+.title_phase{
     position: absolute;
     left: 575px;
 }
-.title_strength {
+.title_heroic {
     position: absolute;
     left: 655px;
 }
+.title_strength {
+    position: absolute;
+    left: 725px;
+}
 .title_agility {
     position: absolute;
-    left: 750px;
+    left: 815px;
 }
 .title_attackpower {
     position: absolute;
-    left: 830px;
+    left: 890px;
 }
 .title_hit {
     position: absolute;
-    left: 965px;
+    left: 1030px;
 }
 .title_crit {
     position: absolute;
-    left: 1045px;
+    left: 1085px;
 }
 .title_haste {
     position: absolute;
-    left: 1130px;
+    left: 1145px;
 }
 .title_armorpen {
     position: absolute;
-    left: 1200px;
+    left: 1210px;
 }
 .title_expertise {
     position: absolute;
-    left: 1300px;
+    left: 1320px;
 }
 .title_slot {
     position: absolute;
-    left: 695px;
+    left: 760px;
 }
 .title_type {
     position: absolute;
-    left: 790px;
+    left: 860px;
 }
 .title_min {
     position: absolute;
-    left: 900px;
+    left: 955px;
 }
 .title_max {
     position: absolute;
-    left: 1010px;
+    left: 1055px;
 }
 .title_speed {
     position: absolute;
-    left: 1125px;
+    left: 1145px;
 } 
 .name {
     display: inline;
@@ -274,72 +274,72 @@ h3 {text-align: center;}
     display: inline;
     text-align: center;
     position: absolute;
-    left: 500px;
+    left: 590px;
 }
 .heroic {
    display: inline;
     position: absolute;
-    left: 590px; 
+    left: 670px; 
 } 
 .strength {
     display: inline;
     position: absolute;
-    left: 670px;
+    left: 755px;
 }
 .agility {
     display: inline;
     position: absolute;
-    left: 765px;
+    left: 835px;
 } 
 .attackpower {
     display: inline;
     position: absolute;
-    left: 870px;
+    left: 920px;
 }
 .hit {
     display: inline;
     position: absolute;
-    left: 970px;
+    left: 1040px;
 }
 .crit {
     display: inline;
     position: absolute;
-    left: 1060px;
+    left: 1095px;
 }
 .haste {
     display: inline;
     position: absolute;
-    left: 1150px;
+    left: 1160px;
 } 
 .armorpen {
     display: inline;
     position: absolute;
-    left: 1240px;
+    left: 1245px;
 }
 .expertise {
     display: inline;
     position: absolute;
-    left: 1340px;
+    left: 1345px;
 }
 .slot {
     position: absolute;
-    left: 682px;
+    left: 750px;
 }
 .type {
     position: absolute;
-    left: 790px;
+    left: 860px;
 }
 .min {
     position: absolute;
-    left: 905px;
+    left: 960px;
 }
 .max {
     position: absolute;
-    left: 1018px;
+    left: 1060px;
 }
 .speed {
     position: absolute;
-    left: 1140px;
+    left: 1160px;
 }
 .talentcenter{
    text-align-last:center;
