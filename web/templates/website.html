@@ -30097,6 +30097,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                 twohands = twohands.split("*^*");
                 twohands = twohands[16];
                 dpshtmlarea(dps_text, twohands);
+                ifsheetlooping();
             }
 
         
@@ -33265,6 +33266,31 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
 //                
 //                current_loopnum++;
 //            }
+            var sheetloop = "False";
+            var selection_items = "";
+            var current_selection_dropdown = "";
+            var loopnum = "";
+            var current_loopnum = 0;
+              
+              
+              
+            function ifsheetlooping(){
+                if (sheetloop === "True"){
+                    if (loopnum != current_loopnum) {
+                    current_loopnum++;
+                    current_selection_dropdown.selectedIndex = current_loopnum;
+                    document.getElementById("simdpsbutton").click();
+                    }
+                    else {
+                        sheetloop = "False";
+                        selection_items = "";
+                        current_selection_dropdown = "";
+                        loopnum = "";
+                        current_loopnum = 0;
+                    }
+                }
+            }
+              
               
             function simcurrentsheet(){
                 var selectedsheet_area = document.querySelector(".tablinks.active").innerHTML;
@@ -33272,36 +33298,28 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                     if (selectedsheet_area != "Weapon") {
                         if (selectedsheet_area != "Rings") {
                             if (selectedsheet_area != "Trinkets") {
-                                var selection_items = selectedsheet_area.toLowerCase();
+                                selection_items = selectedsheet_area.toLowerCase();
                                 selection_items = "#" + selection_items
-                                var current_selection_dropdown = document.querySelector(selection_items);
-                                var current_selection_items = current_selection_dropdown.value;
-                                var loopnum = current_selection_dropdown.options.length;
-                                var current_loopnum = 0
+                                current_selection_dropdown = document.querySelector(selection_items);
+                                current_selection_items = current_selection_dropdown.value;
+                                loopnum = current_selection_dropdown.options.length;
+                                //var current_loopnum = 0
                                 // Should also record amount of sims, and change to a predetermined number, and change back once this is over
-                                while (current_loopnum < loopnum) {
-                                    current_selection_dropdown.selectedIndex = current_loopnum;
-                                    document.getElementById("simdpsbutton").click();
-                                    var cdpsnum = document.getElementById('dps_area').value;
-                                    var ndpsnum = cdpsnum;
-                                    while (cdpsnum === ndpsnum) {
-                                        ndpsnum = document.getElementById('dps_area').value;
-                                    }
-//                                    var ixl = "True";
-//                                    loop1:
-//                                    while (ixl = "True") {
-//                                        elementToObserve = window.document.getElementById('dps_area').children[0];
-//                                        observer = new MutationObserver(function(mutationsList, observer) {
-//                                            console.log(mutationsList);
-//                                            ixl = "False";
-////                                            break loop1;
-//                                        });
-//                                        observer.observe(elementToObserve, {characterData: false, childList: true, attributes: false});
-//                                    }
-                                    //alert(current_selection_dropdown.value);
-                                    current_loopnum++;
-                                }
-                                current_selection_dropdown.value = current_selection_items
+//                                while (current_loopnum < loopnum) {
+//                                    current_selection_dropdown.selectedIndex = current_loopnum;
+//                                    document.getElementById("simdpsbutton").click();
+//                                    
+////                                    var cdpsnum = document.getElementById('dps_area').value;
+////                                    var ndpsnum = cdpsnum;
+////                                    while (cdpsnum === ndpsnum) {
+////                                        ndpsnum = document.getElementById('dps_area').value;
+////                                    }
+//                                    //alert(current_selection_dropdown.value);
+//                                    current_loopnum++;
+//                                }
+                                sheetloop = "True";
+                                document.getElementById("simdpsbutton").click();
+                                //current_selection_dropdown.value = current_selection_items
                                 //alert(current_selection_dropdown.value);
                                 //alert(loopnum);
                 }
