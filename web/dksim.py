@@ -1430,8 +1430,7 @@ fix_div = html.Div(
     [   html.H1(
         html.I(" Test ", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
         html.Br(),
-        id='new-dash-container'
-    ])
+    ], id='new-dash-container')
 
 server.layout = html.Div(children=[
     html.Div(
