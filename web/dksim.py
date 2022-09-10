@@ -1440,7 +1440,6 @@ server.layout = html.Div(children=[
             color="#992d2d",
             children=html.Div(id="new-dash-container"),
             className="delay",
-            style={"height": "- 500px"},
         ),
         ]),
         ])
