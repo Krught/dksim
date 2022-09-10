@@ -929,7 +929,7 @@ def all_dash_stuff(dash_all_data):
     status_table_data['DOTP'] = status_table_data['DOTP'].astype(str) + '%'
     status_table_data['ActiveP'] = status_table_data['ActiveP'].astype(str) + '%'
     status_table_data['ProcP'] = status_table_data['ProcP'].astype(str) + '%'
-    status_table_data['DPSPA'] = status_table_data["AllDamage"] / fight_length
+    status_table_data['DPSPA'] = status_table_data["All_Damage"].apply(lambda x: x / fight_length)
     status_table_data['DPSPA'] = status_table_data.round({'DPSPA': 3})
 
     dps_timeline_breaks = int(fight_length / 3)
