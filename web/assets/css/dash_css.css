@@ -43,7 +43,7 @@
     content: "";
     display: block;
 	position: absolute;
-	top: 500;
+	top: 1500;
 	left: 0;
 	/* min and max vals in case children (content)
 	 * does not exist at all until the callback
