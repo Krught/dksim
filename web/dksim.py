@@ -1463,13 +1463,20 @@ def sql(value):
             db.session.close()
             engine.dispose()
             if len(dff.index) == 0:
-                no_found_dff = "No Data For " + str(value) + " Found" 
+                no_found_dff = ''''No Data For "''' + str(value) + '''" Found'''
                 return html.Div(
                     [   html.H1(
                         html.I(str(no_found_dff), style={'color': '#ffffff'}), style={'textAlign': 'center'}),
                         html.Br(),
                     ])
-            return all_dash_stuff(dff) #database 1 (version 2)
+            found_dff = ''''Loading Data For "''' + str(value) + '''"'''
+            return html.Div(
+                [   html.H1(
+                    html.I(str(found_dff), style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+                    html.Br(),
+                    html.I("One Moment Please", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+                    html.Br(),
+                ]), all_dash_stuff(dff) #database 1 (version 2)
         else:
             return
     else:
