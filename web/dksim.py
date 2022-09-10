@@ -1432,6 +1432,7 @@ server.layout = html.Div(children=[
     html.Div(
         children=[
             dcc.Input(id="inputusername", type="text", placeholder="Username", debounce=True),
+            html.Br(),
         ],  style={"display": "flex", "justifyContent": "center"}),
     html.Div(children=[
         dcc.Loading(
