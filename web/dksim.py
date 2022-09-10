@@ -1426,11 +1426,14 @@ def all_dash_stuff(dash_all_data):
         ])
     ])
 
-fix_div = html.Div(
+fix_div2 = html.Div(id='new-dash-container')
+fix_div = html.Div(children=[html.Div(
     [   html.H1(
         html.I(" Test ", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
         html.Br(),
-    ], id='new-dash-container')
+    ]),
+    fix_div2
+    ])
 
 server.layout = html.Div(children=[
     html.Div(
