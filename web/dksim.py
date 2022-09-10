@@ -1157,7 +1157,6 @@ def all_dash_stuff(dash_all_data):
         dcc.Loading(
             id="loading-1",
             type="default",
-            fullscreen=True,
             children=html.Div(id="new-dash-container")
         ),
         html.Div([
@@ -1437,7 +1436,11 @@ server.layout = html.Div(children=[
         children=[
             dcc.Input(id="inputusername", type="text", placeholder="Username", debounce=True),
         ],  style={"display": "flex", "justifyContent": "center"}),
-    html.Div(id='new-dash-container'),
+    html.Div(dcc.Loading(
+        id="loading-2",
+        type="default",
+        children=html.Div(id="new-dash-container")
+    ), id='new-dash-container'),
         ])
 # html.Div([
 #             html.H1(children='Last Simulation'),
