@@ -2,7 +2,9 @@
         <html><head>
 		    <meta charset="utf-8" />
     		<title>Remours DK Simulator</title>
-            <link rel="stylesheet" href="/static/css/style.css">
+            <!-- FIX ME PLEASE IDIOT 
+            <link rel="stylesheet" href="/static/css/style.css">  -->
+            <link rel="stylesheet" href="../assets/css/style.css">
             <link rel="icon" href="/static/images/icon.ico">
 			<script src="https://unpkg.com/htmx.org@1.8.0"></script>
 			<script>const whTooltips = {colorLinks: true, iconizeLinks: true, renameLinks: true};</script>
@@ -56,7 +58,10 @@
         <div id="import_runic_power_tracker" hidden class="">0.0</div>
         <h3>&nbsp</h3>
         <!-- have a button POST a click via AJAX -->
-        <button hx-post="/calculatedps"hx-trigger="click"hx-target="#sim-import-area"hx-indicator="#spinner"hx-include="#head, #neck, #weapon1, #weapon2, #shoulders, #back, #chest, #wrist, #gloves, #waist, #legs, #boots, #sigil, #ring1, #ring2, #trinket1, #trinket2, #fightlen, #fightlenvar, #simamounts, #targetamounts, #targetlevel, #targetarmor, #fightsub35, #pestilencereset, #hornofwinterprecastamount, #dkpresence, #dkspec, #raceselection, #potion, #potionpop, #flask, #foodselection, #draeneiinparty, #hornofwinterbuff, #impicytalonsbuff, #abommightbuff, #sancretribuff, #impmoonkinbuff, #bloodfrenzybuff, #exposearmordebuff, #curseofweaknessdebuff, #leaderofthepackbuff, #heroismbuff, #heroismtimer, #unholyfrenzybuff, #unholyfrenzytimer, #tricksofthettbuff, #tricksofthetradetimer, #giftofthewildbuff, #greaterblessingofkingsbuff, #greaterblessingofmightbuff, #impblessingofmightbuff, #heartoftherusaderbuff, #impscorchbuff, #impfaeriefiredebuff, #curseoftheelementsdebuff, #moonkinaurabuff, #bloodfurybuff, #bloodfurytimer, #berserkingbuff, #berserkingtimer, #talentlink, #boneshieldconsum, #gargusetime, #gargstancedance, #useghoul, #usearmyofd, #prioobliterate, #priobloodstrike, #nodeathanddecay, #forcedeathanddecay, #cryptfeverdebuff, #metagemselection, #mhweapenchant, #ohweapenchant, #headenchant, #shouldersenchant, #backenchant, #chestenchant, #wristenchant, #glovesenchant, #legsenchant, #bootsenchant, #ring1enchant, #ring2enchant, #socketbonus1, #socketbonus2, #socketbonus3, #socketbonus4, #socketbonus5, #socketbonus6, #socketbonus7, #socketbonus8, #socketbonus9, #socketbonus10, #socketbonus11, #socketbonus12, #socketbonus13, #socketbonus14, #socketbonus15, #socketbonus16, #gemselection1, #gemselection2, #gemselection3, #gemselection4, #gemselection5, #gemselection6, #gemselection7, #gemselection8, #gemselection9, #gemselection10, #gemselection11, #gemselection12, #gemselection13, #gemselection14, #gemselection15, #gemselection16, #gemselection17, #gemselection18, #gemselection19, #gemselection20, #gemselection21, #gemselection22, #gemselection23, #gemselection24, #gemselection25, #gemselection26, #gemselection27, #gemselection28, #gemselection29, #gemselection30, #gemselection31, #gemselection32, #gemselection33, #gemselection34, #gemselection35, #gemselection36, #gemselection37, #gemselection38, #gemselection39, #gemselection40, #gemselection41, #gemselection42, #gemselection43, #gemselection44, #gemselection45, #gemselection46, #gemselection47, #gemselection48, #gemselection49, #gemselection50, #gemselection51, #gemselection52, #gemselection53, #gemselection54, #gemselection55, #gemselection56, #gemselection57, #gemselection58, #gemselection59, #gemselection60, #gemselection61, #gemselection62, #gemselection63, #gemselection64, #bloodgorg, #usernameassign, #prepoppotion">Calculate DPS</button>
+        <button id="simdpsbutton"hx-post="/calculatedps"hx-trigger="click"hx-target="#sim-import-area"hx-indicator="#spinner"hx-include="#head, #neck, #weapon1, #weapon2, #shoulders, #back, #chest, #wrist, #gloves, #waist, #legs, #boots, #sigil, #ring1, #ring2, #trinket1, #trinket2, #fightlen, #fightlenvar, #simamounts, #targetamounts, #targetlevel, #targetarmor, #fightsub35, #pestilencereset, #hornofwinterprecastamount, #dkpresence, #dkspec, #raceselection, #potion, #potionpop, #flask, #foodselection, #draeneiinparty, #hornofwinterbuff, #impicytalonsbuff, #abommightbuff, #sancretribuff, #impmoonkinbuff, #bloodfrenzybuff, #exposearmordebuff, #curseofweaknessdebuff, #leaderofthepackbuff, #heroismbuff, #heroismtimer, #unholyfrenzybuff, #unholyfrenzytimer, #tricksofthettbuff, #tricksofthetradetimer, #giftofthewildbuff, #greaterblessingofkingsbuff, #greaterblessingofmightbuff, #impblessingofmightbuff, #heartoftherusaderbuff, #impscorchbuff, #impfaeriefiredebuff, #curseoftheelementsdebuff, #moonkinaurabuff, #bloodfurybuff, #bloodfurytimer, #berserkingbuff, #berserkingtimer, #talentlink, #boneshieldconsum, #gargusetime, #gargstancedance, #useghoul, #usearmyofd, #prioobliterate, #priobloodstrike, #nodeathanddecay, #forcedeathanddecay, #cryptfeverdebuff, #metagemselection, #mhweapenchant, #ohweapenchant, #headenchant, #shouldersenchant, #backenchant, #chestenchant, #wristenchant, #glovesenchant, #legsenchant, #bootsenchant, #ring1enchant, #ring2enchant, #socketbonus1, #socketbonus2, #socketbonus3, #socketbonus4, #socketbonus5, #socketbonus6, #socketbonus7, #socketbonus8, #socketbonus9, #socketbonus10, #socketbonus11, #socketbonus12, #socketbonus13, #socketbonus14, #socketbonus15, #socketbonus16, #gemselection1, #gemselection2, #gemselection3, #gemselection4, #gemselection5, #gemselection6, #gemselection7, #gemselection8, #gemselection9, #gemselection10, #gemselection11, #gemselection12, #gemselection13, #gemselection14, #gemselection15, #gemselection16, #gemselection17, #gemselection18, #gemselection19, #gemselection20, #gemselection21, #gemselection22, #gemselection23, #gemselection24, #gemselection25, #gemselection26, #gemselection27, #gemselection28, #gemselection29, #gemselection30, #gemselection31, #gemselection32, #gemselection33, #gemselection34, #gemselection35, #gemselection36, #gemselection37, #gemselection38, #gemselection39, #gemselection40, #gemselection41, #gemselection42, #gemselection43, #gemselection44, #gemselection45, #gemselection46, #gemselection47, #gemselection48, #gemselection49, #gemselection50, #gemselection51, #gemselection52, #gemselection53, #gemselection54, #gemselection55, #gemselection56, #gemselection57, #gemselection58, #gemselection59, #gemselection60, #gemselection61, #gemselection62, #gemselection63, #gemselection64, #bloodgorg, #usernameassign, #prepoppotion">Calculate DPS</button>
+        <br>
+        <br>
+        <input type=button onClick="simcurrentsheet()" value='Sim Current Selection' >
         <br>
         <br>
         <br>
@@ -33253,6 +33258,46 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                 oh_wep_section_area.innerHTML = dpstextvalue;
                 }
             }
+              
+              
+            function simcurrentsheet(){
+                var selectedsheet_area = document.querySelector(".tablinks.active").innerHTML;
+                if (selectedsheet_area != "Settings") {
+                    if (selectedsheet_area != "Weapon") {
+                        if (selectedsheet_area != "Rings") {
+                            if (selectedsheet_area != "Trinkets") {
+                                var selection_items = selectedsheet_area.toLowerCase();
+                                selection_items = "#" + selection_items
+                                var current_selection_dropdown = document.querySelector(selection_items);
+                                var current_selection_items = current_selection_dropdown.value;
+                                var loopnum = current_selection_dropdown.options.length;
+                                var current_loopnum = 0
+                                while (current_loopnum < loopnum) {
+                                    current_selection_dropdown.selectedIndex = current_loopnum;
+                                    document.getElementById("simdpsbutton").click();
+                                    //alert(current_selection_dropdown.value);
+                                    current_loopnum++;
+                                }
+                                current_selection_dropdown.value = current_selection_items
+                                //alert(current_selection_dropdown.value);
+                                //alert(loopnum);
+                }
+                        else {
+                            alert("Trinkets Area"); //WEapons ARea
+                        }
+                }
+                    else {
+                        alert("Rings Area"); //WEapons ARea
+                    }
+                }
+                    else {
+                    alert("Weapons Area"); //WEapons ARea
+                    }
+                }
+                else {
+                    
+                }
+              }
               
 
                 
