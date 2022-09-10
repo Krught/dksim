@@ -1527,15 +1527,22 @@ loggin.layout = html.Div(children=[
 def sqltwo(value):
     if value != None:
         if value != "":
-            dfff = pd.read_sql_query(  #database 2 (version 1)
-                'SELECT * FROM logs', #database 1 (version 2)
-                SQLALCHEMY_DATABASE_URI #database 1 (version 2)
-            ) #database 1 (version 2)
-            stas = pd.read_sql_query(
-                'show processlist',
-                SQLALCHEMY_DATABASE_URI
-            )
-            return all_two_dash_stuff(dfff, value, stas) #database 1 (version 2)
+            if value == conf['Log Secret']['logpas'].strip('"'):
+                dfff = pd.read_sql_query(  #database 2 (version 1)
+                    'SELECT * FROM logs', #database 1 (version 2)
+                    SQLALCHEMY_DATABASE_URI #database 1 (version 2)
+                ) #database 1 (version 2)
+                stas = pd.read_sql_query(
+                    'show processlist',
+                    SQLALCHEMY_DATABASE_URI
+                )
+                return all_two_dash_stuff(dfff, value, stas) #database 1 (version 2)
+            else:
+                return html.Div(
+                [   html.H1(
+                    html.I("Testing Features, Nothing Available.", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+                    html.Br(),
+                ])
         else:
             return
     else:
