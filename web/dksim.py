@@ -1426,6 +1426,13 @@ def all_dash_stuff(dash_all_data):
         ])
     ])
 
+fix_div = html.Div(
+    [   html.H1(
+        html.I(" Test ", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+        html.Br(),
+        id='new-dash-container'
+    ])
+
 server.layout = html.Div(children=[
     html.Div(
         [   html.H1(
@@ -1436,10 +1443,8 @@ server.layout = html.Div(children=[
         children=[
             dcc.Input(id="inputusername", type="text", placeholder="Username", debounce=True),
         ],  style={"display": "flex", "justifyContent": "center"}),
-    html.Div(dcc.Loading(
-        id="loading-2",
-        type="default",),
-        id='new-dash-container'),
+    # html.Div(id='new-dash-container'),
+    fix_div
         ])
 # html.Div([
 #             html.H1(children='Last Simulation'),
