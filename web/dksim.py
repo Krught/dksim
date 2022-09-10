@@ -1437,13 +1437,6 @@ server.layout = html.Div(children=[
 #             html.H1(children='Last Simulation'),
 #             ),
 
-def dash_stuff_mid(f_dff, dff):
-    return html.Div(
-        [   html.H1(
-            html.I(str(f_dff), style={'color': '#ffffff'}), style={'textAlign': 'center'}),
-            html.Br(),
-        ]), all_dash_stuff(dff)
-
 
 @server.callback(
     Output("new-dash-container", "children"),
@@ -1484,7 +1477,21 @@ def sql(value):
                     #         html.I("One Moment Please", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
                     #         html.Br(),
                     #     ]),
-            return dash_stuff_mid(found_dff, dff)
+            return html.Div(
+                    [   dcc.Loading(
+                        id="loading-1",
+                        type="default",
+                        children=html.Div(id="new-dash-container")
+                    ),
+                    ]), all_dash_stuff(dff)
+        
+        # html.Div(
+        #         [   html.H1(
+        #             html.I(str(f_dff), style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+        #             html.Br(),
+        #         ]), all_dash_stuff(dff)
+        
+        
         else:
             return
     else:
