@@ -1153,7 +1153,16 @@ def all_dash_stuff(dash_all_data):
 
 
 
-    return html.Div(children=[
+    return html.Div(
+        
+        dcc.Loading(
+            id="loading-1",
+            type="default",
+        
+        
+        
+        
+        children=[
         html.Div([
             html.H1(children='Last Simulation', style={'color': '#ffffff'}),
             dcc.Graph(
@@ -1419,7 +1428,9 @@ def all_dash_stuff(dash_all_data):
             html.I("", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
             html.Br(),
         ])
-    ])
+    ]
+    ),
+    )
 
 server.layout = html.Div(children=[
     html.Div(
@@ -1477,13 +1488,7 @@ def sql(value):
                     #         html.I("One Moment Please", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
                     #         html.Br(),
                     #     ]),
-            return html.Div(
-                    [   dcc.Loading(
-                        id="loading-1",
-                        type="default",
-                        children=html.Div(id="new-dash-container")
-                    ),
-                    ]), all_dash_stuff(dff)
+            return all_dash_stuff(dff)
         
         # html.Div(
         #         [   html.H1(
