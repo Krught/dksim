@@ -1157,6 +1157,7 @@ def all_dash_stuff(dash_all_data):
         dcc.Loading(
             id="loading-1",
             type="default",
+            fullscreen=True,
             children=html.Div(id="new-dash-container")
         ),
         html.Div([
