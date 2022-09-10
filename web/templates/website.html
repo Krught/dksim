@@ -33275,6 +33275,17 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                                 while (current_loopnum < loopnum) {
                                     current_selection_dropdown.selectedIndex = current_loopnum;
                                     document.getElementById("simdpsbutton").click();
+                                    var ixl = "True";
+                                    loop1:
+                                    while (ixl = "True") {
+                                        elementToObserve = window.document.getElementById('dps_area').children[0];
+                                        observer = new MutationObserver(function(mutationsList, observer) {
+//                                            console.log(mutationsList);
+                                            ixl = "False";
+//                                            break loop1;
+                                        });
+                                        observer.observe(elementToObserve, {characterData: false, childList: true, attributes: false});
+                                    }
                                     //alert(current_selection_dropdown.value);
                                     current_loopnum++;
                                 }
