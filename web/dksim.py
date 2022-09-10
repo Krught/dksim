@@ -1521,7 +1521,11 @@ def sqltwo(value):
                 'show processlist',
                 SQLALCHEMY_DATABASE_URI
             )
-    return all_two_dash_stuff(dfff, value, stas) #database 1 (version 2)
+            return all_two_dash_stuff(dfff, value, stas) #database 1 (version 2)
+        else:
+            return
+    else:
+        return
 
 
 def convert_to_date(the_in_date):
