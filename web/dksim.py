@@ -1470,13 +1470,14 @@ def sql(value):
                         html.Br(),
                     ])
             found_dff = ''''Loading Data For "''' + str(value) + '''"'''
-            return html.Div(
-                [   html.H1(
-                    html.I(str(found_dff), style={'color': '#ffffff'}), style={'textAlign': 'center'}),
-                    html.Br(),
-                    html.I("One Moment Please", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
-                    html.Br(),
-                ]), all_dash_stuff(dff) #database 1 (version 2)
+            return all_dash_stuff(dff) #database 1 (version 2)
+                    # html.Div(
+                    #     [   html.H1(
+                    #         html.I(str(found_dff), style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+                    #         html.Br(),
+                    #         html.I("One Moment Please", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+                    #         html.Br(),
+                    #     ]),
         else:
             return
     else:
