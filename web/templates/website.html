@@ -127,7 +127,7 @@
 	</form>
 	*Use Eighty Upgrades Export Function*
 <br>
-<button class="changeSelected"hx-post="/loadgear"hx-trigger="click"hx-target="#total_gear_from_eighty"hx-indicator="#spinner"hx-include="#eighty">Load Gear</button>
+<button name="changeSelected" id="changeSelected" class="changeSelected"hx-post="/loadgear"hx-trigger="click"hx-target="#total_gear_from_eighty"hx-indicator="#spinner"hx-include="#eighty">Load Gear</button>
 <br>
 <br>
 <form>
@@ -243,6 +243,23 @@
 </div>
 </div>
 <br>
+<style>
+/* Create two equal columns that floats next to each other */
+.column3 {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row3:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+<div class="row3">
+  <div class="column3"style="text-align: center; font-size: 20px">
 <h2 style="text-align: center; font-size: 40px;">Consumes</h2>
 <div style="text-align: center; font-size: 20px">
 <form>
@@ -287,6 +304,24 @@
 	<option value="Snapper Extreme">Snapper Extreme</option>
 </select>
 	</form>
+</div>
+</div>
+<div class="column3"style="text-align: center; font-size: 20px">
+<h2 style="text-align: center; font-size: 40px;">Presets</h2>
+<div style="text-align: center; font-size: 20px">
+<input type=button onClick="uhdwp1preset()" value='Unholy DW P1' >
+<br>
+<input type=button onClick="uh2hp1preset()" value='Unholy 2H P1' >
+<br>
+<input type=button onClick="frdwp1preset()" value='Frost DW P1' >
+<br>
+
+    
+    </div>
+</div>
+
+
+
 </div>
 
 <br>
@@ -30055,6 +30090,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                 gem6_from_eighty.innerHTML = oh_wep_gem2_text;
                 gem7_from_eighty.innerHTML = oh_wep_gem3_text;
                 gem8_from_eighty.innerHTML = oh_wep_gem4_text;
+                changeSelected1();
 			}  
 			  
 
@@ -30079,32 +30115,25 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
               
               
               
-//            function simdataImport(){
-//                var simtext = document.querySelector("#sim-import-area").innerText;
-//				//var mySimEquarray = simtext.split(",");
-//				//var dps_text = mySimEquarray[0];
-//                //dps-sum-div.innerHTML = dps_text;
-//                dps-sum-div.innerHTML = simtext;
-//            }
-			  
-			
-			var equClicked = false;
-			document.querySelector('.changeSelected').addEventListener('click', equipmentLoader);
-			document.querySelector('.changeSelected').addEventListener('mouseout', equipmentLoader2);
-			
-			function equipmentLoader(){
-				equClicked = true;
-			}  
-			function equipmentLoader2(){
-				if(equClicked == true){
-					splitEqu();
-					changeSelected1();
-					equClicked = false;
-				}
-			}
+
+//			document.querySelector('.changeSelected').addEventListener('mouseout', splitEqu);
+//			var equClicked = false;
+//			document.querySelector('.changeSelected').addEventListener('click', equipmentLoader);
+//			document.querySelector('.changeSelected').addEventListener('mouseout', equipmentLoader2);
+//			
+//			function equipmentLoader(){
+//				equClicked = true;
+//			}  
+//			function equipmentLoader2(){
+//				if(equClicked == true){
+//					splitEqu();
+////					changeSelected1();
+//					equClicked = false;
+//				}
+//			}
 
 
-//			document.querySelector('.changeSelected').addEventListener('click', changeSelected1);
+
 			  
 			  
             function openCity(evt, cityName) {
@@ -33587,6 +33616,896 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
               }
             }
 
+            var changetalentsto = "";
+            var changepresetgearto ="";
+              
+            
+            function presetselector(){
+                var talent_text = document.querySelector('#talentlink');
+                talent_text.value = changetalentsto;
+                talenk_selector();
+                var gear_text = document.querySelector('#eighty');
+                gear_text.value = changepresetgearto;
+                document.getElementById("changeSelected").click();
+            }  
+
+              
+            document.body.addEventListener('htmx:afterSwap', function(evt) {
+                var tar = evt.detail.target.id; // add a new parameter into the mix
+                if (tar === "total_gear_from_eighty") {
+                    changeselectedgear();
+                }
+                
+            });
+              
+              
+            function changeselectedgear(){
+                splitEqu();
+            }
+              
+            function uhdwp1preset(){
+                changetalentsto = "https://www.wowhead.com/wotlk/talent-calc/death-knight/-320023500002-2302003350032151000150013133151_001xv511s8721s9y31s8g41sxd51ts8";
+                changepresetgearto = `{
+    "name": "Unholy DW P1",
+    "phase": 1,
+    "character": {
+        "name": "DarthRemour",
+        "level": 80,
+        "gameClass": "DEATHKNIGHT",
+        "race": "HUMAN",
+        "faction": "ALLIANCE"
+    },
+    "items": [
+        {
+            "name": "Valorous Scourgeborne Helmet",
+            "id": 40554,
+            "enchant": {
+                "name": "Arcanum of Torment",
+                "id": 3817,
+                "itemId": 50367
+            },
+            "gems": [
+                {
+                    "name": "Chaotic Skyflare Diamond",
+                    "id": 41285
+                },
+                {
+                    "name": "Nightmare Tear",
+                    "id": 49110
+                }
+            ],
+            "slot": "HEAD"
+        },
+        {
+            "name": "Favor of the Dragon Queen",
+            "id": 44664,
+            "gems": [
+                {
+                    "name": "Bold Dragon's Eye",
+                    "id": 42142
+                }
+            ],
+            "slot": "NECK"
+        },
+        {
+            "name": "Valorous Scourgeborne Shoulderplates",
+            "id": 40557,
+            "enchant": {
+                "name": "Master's Inscription of the Axe",
+                "id": 3835,
+                "spellId": 61117
+            },
+            "gems": [
+                {
+                    "name": "Bold Dragon's Eye",
+                    "id": 42142
+                }
+            ],
+            "slot": "SHOULDERS"
+        },
+        {
+            "name": "Chestguard of the Recluse",
+            "id": 40539,
+            "enchant": {
+                "name": "Enchant Chest - Powerful Stats",
+                "id": 3832,
+                "spellId": 60692
+            },
+            "gems": [
+                {
+                    "name": "Bold Dragon's Eye",
+                    "id": 42142
+                }
+            ],
+            "slot": "CHEST"
+        },
+        {
+            "name": "Girdle of Chivalry",
+            "id": 40278,
+            "gems": [
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                },
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                }
+            ],
+            "slot": "WAIST"
+        },
+        {
+            "name": "Leggings of the Honored",
+            "id": 44011,
+            "enchant": {
+                "name": "Icescale Leg Armor",
+                "id": 3823,
+                "itemId": 38374
+            },
+            "gems": [
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                },
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                }
+            ],
+            "slot": "LEGS"
+        },
+        {
+            "name": "Melancholy Sabatons",
+            "id": 40591,
+            "enchant": {
+                "name": "Enchant Boots - Greater Assault",
+                "id": 1597,
+                "spellId": 60763
+            },
+            "slot": "FEET"
+        },
+        {
+            "name": "Bracers of Unrelenting Attack",
+            "id": 40330,
+            "enchant": {
+                "name": "Fur Lining - Attack Power",
+                "id": 3756,
+                "itemId": 43097
+            },
+            "gems": [
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                },
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                }
+            ],
+            "slot": "WRISTS"
+        },
+        {
+            "name": "Frosted Adroit Handguards",
+            "id": 40541,
+            "enchant": {
+                "name": "Hyperspeed Accelerators",
+                "id": 3604,
+                "spellId": 54999
+            },
+            "gems": [
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                }
+            ],
+            "slot": "HANDS"
+        },
+        {
+            "name": "Greatring of Collision",
+            "id": 43993,
+            "enchant": {
+                "name": "Enchant Ring - Assault",
+                "id": 3839,
+                "spellId": 44645
+            },
+            "gems": [
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                }
+            ],
+            "slot": "FINGER_1"
+        },
+        {
+            "name": "Surge Needle Ring",
+            "id": 40474,
+            "enchant": {
+                "name": "Enchant Ring - Assault",
+                "id": 3839,
+                "spellId": 44645
+            },
+            "slot": "FINGER_2"
+        },
+        {
+            "name": "Bandit's Insignia",
+            "id": 40371,
+            "slot": "TRINKET_1"
+        },
+        {
+            "name": "Darkmoon Card: Greatness",
+            "id": 42987,
+            "slot": "TRINKET_2"
+        },
+        {
+            "name": "Drape of the Deadly Foe",
+            "id": 40403,
+            "enchant": {
+                "name": "Enchant Cloak - Greater Speed",
+                "id": 3831,
+                "spellId": 47898
+            },
+            "slot": "BACK"
+        },
+        {
+            "name": "Angry Dread",
+            "id": 40189,
+            "enchant": {
+                "name": "Enchant Weapon - Superior Potency",
+                "id": 3833,
+                "spellId": 60707
+            },
+            "slot": "MAIN_HAND"
+        },
+        {
+            "name": "Hailstorm",
+            "id": 40491,
+            "enchant": {
+                "name": "Enchant Weapon - Superior Potency",
+                "id": 3833,
+                "spellId": 60707
+            },
+            "slot": "OFF_HAND"
+        },
+        {
+            "name": "Sigil of Awareness",
+            "id": 40207,
+            "slot": "RANGED"
+        }
+    ],
+    "consumables": [],
+    "buffs": [],
+    "talents": [],
+    "glyphs": [],
+    "points": [
+        {
+            "name": "Unholy DPS",
+            "stats": {
+                "dps": 50,
+                "attackPower": 1,
+                "agility": 0.5,
+                "strength": 2.08,
+                "armorPenRating": 1,
+                "critRating": 1,
+                "hasteRating": 1,
+                "hitRating": 1,
+                "expertiseRating": 1,
+                "metaSockets": 80,
+                "redSockets": 33.28,
+                "yellowSockets": 33.28,
+                "blueSockets": 33.28,
+                "prismaticSockets": 33.28
+            }
+        }
+    ],
+    "stats": {
+        "agility": 545,
+        "armor": 10226,
+        "armorPen": 16.78,
+        "armorPenRating": 235,
+        "attackPower": 3909,
+        "crit": 25.63,
+        "critRating": 630,
+        "defense": 400,
+        "dodge": 10.11,
+        "expertise": 13,
+        "expertiseRating": 83,
+        "feralAttackPower": 1425,
+        "haste": 7.26,
+        "hasteRating": 183,
+        "health": 19571,
+        "hit": 11.62,
+        "hitRating": 381,
+        "intellect": 55,
+        "mainHandSpeed": 2.5,
+        "mana": 545,
+        "offHandSpeed": 1.5,
+        "parry": 9.6,
+        "parryRating": 208,
+        "spellCrit": 13.72,
+        "spellHaste": 5.58,
+        "spellHit": 14.52,
+        "spirit": 84,
+        "stamina": 1163,
+        "strength": 832
+    },
+    "exportOptions": {
+        "buffs": true,
+        "talents": true
+    }
+}`;
+                var dkspecnum = 1;
+                var dkspecnum_select = document.querySelector('#dkspec');
+                dkspecnum_select.value = dkspecnum;
+                presetselector();
+            }
+            function uh2hp1preset(){
+                changetalentsto = "https://www.wowhead.com/wotlk/talent-calc/death-knight/-320050500002-2302203350032150000150003133151_001xv511s8721s9y31s8g41sxd51ts8";
+                changepresetgearto = `{
+    "name": "Unholy 2H P1 Copy",
+    "phase": 1,
+    "character": {
+        "name": "DarthRemour",
+        "level": 80,
+        "gameClass": "DEATHKNIGHT",
+        "race": "HUMAN",
+        "faction": "ALLIANCE"
+    },
+    "items": [
+        {
+            "name": "Valorous Scourgeborne Helmet",
+            "id": 40554,
+            "enchant": {
+                "name": "Arcanum of Torment",
+                "id": 3817,
+                "itemId": 50367
+            },
+            "gems": [
+                {
+                    "name": "Chaotic Skyflare Diamond",
+                    "id": 41285
+                },
+                {
+                    "name": "Nightmare Tear",
+                    "id": 49110
+                }
+            ],
+            "slot": "HEAD"
+        },
+        {
+            "name": "Favor of the Dragon Queen",
+            "id": 44664,
+            "gems": [
+                {
+                    "name": "Bold Dragon's Eye",
+                    "id": 42142
+                }
+            ],
+            "slot": "NECK"
+        },
+        {
+            "name": "Valorous Scourgeborne Shoulderplates",
+            "id": 40557,
+            "enchant": {
+                "name": "Master's Inscription of the Axe",
+                "id": 3835,
+                "spellId": 61117
+            },
+            "gems": [
+                {
+                    "name": "Bold Dragon's Eye",
+                    "id": 42142
+                }
+            ],
+            "slot": "SHOULDERS"
+        },
+        {
+            "name": "Chestguard of the Recluse",
+            "id": 40539,
+            "enchant": {
+                "name": "Enchant Chest - Powerful Stats",
+                "id": 3832,
+                "spellId": 60692
+            },
+            "gems": [
+                {
+                    "name": "Bold Dragon's Eye",
+                    "id": 42142
+                }
+            ],
+            "slot": "CHEST"
+        },
+        {
+            "name": "Girdle of Chivalry",
+            "id": 40278,
+            "gems": [
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                },
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                }
+            ],
+            "slot": "WAIST"
+        },
+        {
+            "name": "Riveted Abomination Leggings",
+            "id": 40294,
+            "enchant": {
+                "name": "Icescale Leg Armor",
+                "id": 3823,
+                "itemId": 38374
+            },
+            "slot": "LEGS"
+        },
+        {
+            "name": "Sabatons of Sudden Reprisal",
+            "id": 39706,
+            "enchant": {
+                "name": "Enchant Boots - Greater Assault",
+                "id": 1597,
+                "spellId": 60763
+            },
+            "gems": [
+                null
+            ],
+            "slot": "FEET"
+        },
+        {
+            "name": "Bracers of Unrelenting Attack",
+            "id": 40330,
+            "enchant": {
+                "name": "Fur Lining - Attack Power",
+                "id": 3756,
+                "itemId": 43097
+            },
+            "gems": [
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                },
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                }
+            ],
+            "slot": "WRISTS"
+        },
+        {
+            "name": "Zeliek's Gauntlets",
+            "id": 40347,
+            "enchant": {
+                "name": "Hyperspeed Accelerators",
+                "id": 3604,
+                "spellId": 54999
+            },
+            "gems": [
+                null
+            ],
+            "slot": "HANDS"
+        },
+        {
+            "name": "Greatring of Collision",
+            "id": 43993,
+            "enchant": {
+                "name": "Enchant Ring - Assault",
+                "id": 3839,
+                "spellId": 44645
+            },
+            "gems": [
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                }
+            ],
+            "slot": "FINGER_1"
+        },
+        {
+            "name": "Surge Needle Ring",
+            "id": 40474,
+            "enchant": {
+                "name": "Enchant Ring - Assault",
+                "id": 3839,
+                "spellId": 44645
+            },
+            "slot": "FINGER_2"
+        },
+        {
+            "name": "Bandit's Insignia",
+            "id": 40371,
+            "slot": "TRINKET_1"
+        },
+        {
+            "name": "Darkmoon Card: Greatness",
+            "id": 42987,
+            "slot": "TRINKET_2"
+        },
+        {
+            "name": "Drape of the Deadly Foe",
+            "id": 40403,
+            "enchant": {
+                "name": "Enchant Cloak - Greater Speed",
+                "id": 3831,
+                "spellId": 47898
+            },
+            "slot": "BACK"
+        },
+        {
+            "name": "Betrayer of Humanity",
+            "id": 40384,
+            "enchant": {
+                "name": "Rune of the Fallen Crusader",
+                "id": 3368,
+                "spellId": 53344
+            },
+            "slot": "MAIN_HAND"
+        },
+        {
+            "name": "Sigil of Awareness",
+            "id": 40207,
+            "slot": "RANGED"
+        }
+    ],
+    "consumables": [],
+    "buffs": [],
+    "talents": [],
+    "glyphs": [],
+    "points": [
+        {
+            "name": "Unholy DPS",
+            "stats": {
+                "dps": 50,
+                "attackPower": 1,
+                "agility": 0.5,
+                "strength": 2.08,
+                "armorPenRating": 1,
+                "critRating": 1,
+                "hasteRating": 1,
+                "hitRating": 1,
+                "expertiseRating": 1,
+                "metaSockets": 80,
+                "redSockets": 33.28,
+                "yellowSockets": 33.28,
+                "blueSockets": 33.28,
+                "prismaticSockets": 33.28
+            }
+        }
+    ],
+    "stats": {
+        "agility": 410,
+        "armor": 12483,
+        "armorPen": 9,
+        "armorPenRating": 126,
+        "attackPower": 3709,
+        "crit": 23.32,
+        "critRating": 623,
+        "defense": 400,
+        "dodge": 8.51,
+        "expertise": 15,
+        "expertiseRating": 126,
+        "haste": 15.22,
+        "hasteRating": 384,
+        "health": 20101,
+        "hit": 7.93,
+        "hitRating": 260,
+        "intellect": 55,
+        "mainHandSpeed": 3.4,
+        "mana": 545,
+        "parry": 10.26,
+        "parryRating": 238,
+        "spellCrit": 13.57,
+        "spellHaste": 11.71,
+        "spellHit": 9.91,
+        "spirit": 84,
+        "stamina": 1216,
+        "strength": 955
+    },
+    "exportOptions": {
+        "buffs": true,
+        "talents": true
+    }
+}`;
+                var dkspecnum = 1;
+                var dkspecnum_select = document.querySelector('#dkspec');
+                dkspecnum_select.value = dkspecnum;
+                presetselector();
+            }
+            function frdwp1preset(){
+                changetalentsto = "https://www.wowhead.com/wotlk/talent-calc/death-knight/-32002350352203012300033101351-230200305003_001s8q11s9f21xv631ts841sxd51s8g";
+                changepresetgearto = `{
+    "name": "p1 bis test",
+    "phase": 1,
+    "character": {
+        "name": "DarthRemour",
+        "level": 80,
+        "gameClass": "DEATHKNIGHT",
+        "race": "HUMAN",
+        "faction": "ALLIANCE"
+    },
+    "items": [
+        {
+            "name": "Blue Aspect Helm",
+            "id": 40543,
+            "enchant": {
+                "name": "Arcanum of Torment",
+                "id": 3817,
+                "itemId": 50367
+            },
+            "gems": [
+                {
+                    "name": "Swift Skyflare Diamond",
+                    "id": 41339
+                },
+                {
+                    "name": "Bold Dragon's Eye",
+                    "id": 42142
+                }
+            ],
+            "slot": "HEAD"
+        },
+        {
+            "name": "Favor of the Dragon Queen",
+            "id": 44664,
+            "gems": [
+                {
+                    "name": "Bold Dragon's Eye",
+                    "id": 42142
+                }
+            ],
+            "slot": "NECK"
+        },
+        {
+            "name": "Valorous Scourgeborne Shoulderplates",
+            "id": 40557,
+            "enchant": {
+                "name": "Master's Inscription of the Axe",
+                "id": 3835,
+                "spellId": 61117
+            },
+            "gems": [
+                {
+                    "name": "Bold Dragon's Eye",
+                    "id": 42142
+                }
+            ],
+            "slot": "SHOULDERS"
+        },
+        {
+            "name": "Chestguard of the Recluse",
+            "id": 40539,
+            "enchant": {
+                "name": "Enchant Chest - Powerful Stats",
+                "id": 3832,
+                "spellId": 60692
+            },
+            "gems": [
+                {
+                    "name": "Nightmare Tear",
+                    "id": 49110
+                }
+            ],
+            "slot": "CHEST"
+        },
+        {
+            "name": "Girdle of Chivalry",
+            "id": 40278,
+            "gems": [
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                },
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                }
+            ],
+            "slot": "WAIST"
+        },
+        {
+            "name": "Leggings of the Honored",
+            "id": 44011,
+            "enchant": {
+                "name": "Icescale Leg Armor",
+                "id": 3823,
+                "itemId": 38374
+            },
+            "gems": [
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                },
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                }
+            ],
+            "slot": "LEGS"
+        },
+        {
+            "name": "Melancholy Sabatons",
+            "id": 40591,
+            "enchant": {
+                "name": "Enchant Boots - Greater Assault",
+                "id": 1597,
+                "spellId": 60763
+            },
+            "slot": "FEET"
+        },
+        {
+            "name": "Bracers of Unrelenting Attack",
+            "id": 40330,
+            "enchant": {
+                "name": "Fur Lining - Attack Power",
+                "id": 3756,
+                "itemId": 43097
+            },
+            "gems": [
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                },
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                }
+            ],
+            "slot": "WRISTS"
+        },
+        {
+            "name": "Frosted Adroit Handguards",
+            "id": 40541,
+            "enchant": {
+                "name": "Enchant Gloves - Crusher",
+                "id": 1603,
+                "spellId": 60668
+            },
+            "gems": [
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                }
+            ],
+            "slot": "HANDS"
+        },
+        {
+            "name": "Greatring of Collision",
+            "id": 43993,
+            "enchant": {
+                "name": "Enchant Ring - Assault",
+                "id": 3839,
+                "spellId": 44645
+            },
+            "gems": [
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                }
+            ],
+            "slot": "FINGER_1"
+        },
+        {
+            "name": "Surge Needle Ring",
+            "id": 40474,
+            "enchant": {
+                "name": "Enchant Ring - Assault",
+                "id": 3839,
+                "spellId": 44645
+            },
+            "slot": "FINGER_2"
+        },
+        {
+            "name": "Bandit's Insignia",
+            "id": 40371,
+            "slot": "TRINKET_1"
+        },
+        {
+            "name": "Darkmoon Card: Greatness",
+            "id": 42987,
+            "slot": "TRINKET_2"
+        },
+        {
+            "name": "Drape of the Deadly Foe",
+            "id": 40403,
+            "enchant": {
+                "name": "Enchant Cloak - Greater Speed",
+                "id": 3831,
+                "spellId": 47898
+            },
+            "slot": "BACK"
+        },
+        {
+            "name": "Last Laugh",
+            "id": 40402,
+            "enchant": {
+                "name": "Rune of the Fallen Crusader",
+                "id": 3368,
+                "spellId": 53344
+            },
+            "slot": "MAIN_HAND"
+        },
+        {
+            "name": "Last Laugh",
+            "id": 40402,
+            "enchant": {
+                "name": "Rune of Razorice",
+                "id": 3370,
+                "spellId": 53343
+            },
+            "slot": "OFF_HAND"
+        },
+        {
+            "name": "Sigil of Awareness",
+            "id": 40207,
+            "slot": "RANGED"
+        }
+    ],
+    "consumables": [],
+    "buffs": [],
+    "talents": [],
+    "glyphs": [],
+    "points": [
+        {
+            "name": "Frost DPS",
+            "stats": {
+                "dps": 50,
+                "attackPower": 1,
+                "agility": 0.5,
+                "strength": 2.08,
+                "armorPenRating": 1,
+                "critRating": 1,
+                "hasteRating": 1,
+                "hitRating": 1,
+                "expertiseRating": 1,
+                "metaSockets": 80,
+                "redSockets": 33.28,
+                "yellowSockets": 33.28,
+                "blueSockets": 33.28,
+                "prismaticSockets": 33.28
+            }
+        }
+    ],
+    "stats": {
+        "agility": 541,
+        "armor": 9418,
+        "armorPen": 15,
+        "armorPenRating": 210,
+        "attackPower": 3857,
+        "crit": 24.02,
+        "critRating": 559,
+        "defense": 412,
+        "defenseRating": 62,
+        "dodge": 10.54,
+        "expertise": 10,
+        "expertiseRating": 83,
+        "haste": 9.28,
+        "hasteRating": 234,
+        "health": 19901,
+        "hit": 10.34,
+        "hitRating": 339,
+        "intellect": 121,
+        "mainHandSpeed": 1.6,
+        "mana": 1535,
+        "offHandSpeed": 1.6,
+        "parry": 11.47,
+        "parryRating": 271,
+        "spellCrit": 12.18,
+        "spellHaste": 7.14,
+        "spellHit": 12.92,
+        "spirit": 84,
+        "stamina": 1196,
+        "strength": 813
+    },
+    "exportOptions": {
+        "buffs": true,
+        "talents": true
+    }
+}`;
+                var dkspecnum = 0;
+                var dkspecnum_select = document.querySelector('#dkspec');
+                dkspecnum_select.value = dkspecnum;
+                presetselector();
+            }
               
 
                 
