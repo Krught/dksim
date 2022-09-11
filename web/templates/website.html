@@ -33295,9 +33295,9 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                     document.getElementById("simdpsbutton").click();
                     }
                     else {
-                        current_selection_dropdown.value = current_selection_items.value;
-                        alert(current_selection_items.value);
-                        alert(currentsimamount.value);
+                        current_selection_dropdown.value = current_selection_items;
+                        alert(current_selection_items);
+                        alert(currentsimamount);
                         var wep3 = document.getElementById(no_hash).value;
                         var $select903 = document.querySelector(selection_items);
                         $select903.value = wep3;
@@ -33309,7 +33309,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                         document.getElementById(wep_new).classList.add(selecteditemcat);
                         
                         const $select853 = document.querySelector('#simamounts');
-                        $select853.value = currentsimamount.value;
+                        $select853.value = currentsimamount;
                         
                         //no reselected correct item
                         
