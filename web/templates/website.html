@@ -33294,8 +33294,8 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                     document.getElementById(wep_new).classList.add(selecteditemcat);
                     document.getElementById("simdpsbutton").click();
                     } 
-                    alert("test");
-                    if (loopnum == current_loopnum) {
+                    if (loopnum === current_loopnum) {
+                        alert("T");
                         current_selection_dropdown.value = current_selection_items;
                         alert(current_selection_items);
                         alert(currentsimamount);
