@@ -33383,7 +33383,12 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
 
                 }
                         else {
-                            alert("Trinkets Area"); //WEapons ARea
+                            var mini_selectedsheet_area = document.querySelector(".tablinks_trinket.active").innerHTML;
+                                if (mini_selectedsheet_area === "Slot1") {
+                                    alert("Trinket1"); //WEapons ARea
+                                } else {
+                                    alert("Trinket2");
+                                }
                         }
                 }
                     else {
