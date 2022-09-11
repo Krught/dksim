@@ -33327,9 +33327,29 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                     if (selectedsheet_area != "Weapon") {
                         if (selectedsheet_area != "Rings") {
                             if (selectedsheet_area != "Trinkets") {
-                                frontunderitem = 'Headd_';
-                                //DEFINE THIS ITEM, only works for head atm
-                                
+                                if (selectedsheet_area === "Head") {
+                                    frontunderitem = 'Headd_';
+                                } else if (selectedsheet_area != "Neck") {
+                                    frontunderitem = 'Neckk_';
+                                } else if (selectedsheet_area != "Shoulders") {
+                                    frontunderitem = 'Shouls_';
+                                } else if (selectedsheet_area != "Back") {
+                                    frontunderitem = 'Backk_';
+                                } else if (selectedsheet_area != "Chest") {
+                                    frontunderitem = 'Chestt_';
+                                } else if (selectedsheet_area != "Wrist") {
+                                    frontunderitem = 'Wristt_';
+                                } else if (selectedsheet_area != "Glovesk") {
+                                    frontunderitem = 'Gloves_';
+                                } else if (selectedsheet_area != "Waist") {
+                                    frontunderitem = 'Waistt_';
+                                } else if (selectedsheet_area != "Legs") {
+                                    frontunderitem = 'Legss_';
+                                } else if (selectedsheet_area != "Boots") {
+                                    frontunderitem = 'Bootss_';
+                                }  else {
+                                    frontunderitem = 'Sigill_';
+                                }
                                 currentsimamount = document.getElementById('simamounts').value;
                                 var newsimamount = currentsimamount
                                 if (currentsimamount > 250) {
@@ -33337,8 +33357,6 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                                 }
                                 const $select852 = document.querySelector('#simamounts');
                                 $select852.value = newsimamount
-                                
-                                
                                 selection_items = selectedsheet_area.toLowerCase();
                                 selection_items = "#" + selection_items
                                 dropdown_highlight_selection = selectedsheet_area.toLowerCase();
