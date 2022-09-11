@@ -10,7 +10,7 @@ World of Warcraft Wrath of the Lich King Death Knight Simulator.
 
 [Live Sim Here](http://remourtech.com/)
 
-[Discord](https://discord.gg/QW3Vk35ssn)
+[Discord Server](https://discord.gg/QW3Vk35ssn)
 
 ## Authors
 
