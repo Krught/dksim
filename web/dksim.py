@@ -1442,7 +1442,6 @@ server.layout = html.Div(children=[
             className='delay',
         ),
         ]),
-    # html.Div(id="new-dash-container"),
         ])
 
 
