@@ -1573,6 +1573,7 @@ def all_two_dash_stuff(datas, pas, quer):
     oldest_date = min(old_date_count_data["Date"])
     newest_date = max(old_date_count_data["Date"])
     print(type(oldest_date))
+    print(old_date_count_data.dtypes)
     missing_dates = pd.date_range(start = oldest_date, end = newest_date).difference(old_date_count_data.Date)
     missing_dates_len = len(missing_dates)
     missing_dates_visits = []
