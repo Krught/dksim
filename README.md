@@ -30,5 +30,5 @@ World of Warcraft Wrath of the Lich King Death Knight Simulator.
 <a href="https://plotly.com/dash/" title="dash"><img src="https://dash.gallery/Manager/portals_data/default/logo_67e0eec2-59a7-11ea-9fd8-0242ac110072.png" alt="dash" width="195px" height="65px"></a>
 </div>
 <div>
-<a href="https://flask.palletsprojects.com/en/2.2.x/" title="flask"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--md3yN9ZS--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://raw.githubusercontent.com/app-generator/static/master/common/thumb-flask-4.png" alt="flask" width="130px" height="65px"></a>
+<a href="https://flask.palletsprojects.com/en/2.2.x/" title="flask"><img src="https://flask.palletsprojects.com/en/2.2.x/_images/flask-logo.png" alt="flask" width="130px" height="65px"></a>
 </div>
