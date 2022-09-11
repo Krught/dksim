@@ -33290,13 +33290,19 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                     wep_new = wep_new.replace(/\'/g, "");
                     wep_new = frontunderitem + wep_new;
                     var mh_wep = document.getElementsByClassName(selecteditemcat);
- //                   while (mh_wep.length)
                     mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
                     document.getElementById(wep_new).classList.add(selecteditemcat);
                     document.getElementById("simdpsbutton").click();
                     }
                     else {
                         current_selection_dropdown.value = current_selection_items;
+                        var wep3 = document.getElementById(no_hash).value;
+                        var $select903 = document.querySelector(selection_items);
+                        $select903.value = wep3;
+                        var wep_new = wep3.replace(/\ /g, "_");
+                        wep_new = wep_new.replace(/\'/g, "");
+                        wep_new = frontunderitem + wep_new;
+                        var mh_wep = document.getElementsByClassName(selecteditemcat);
                         sheetloop = "False";
                         selection_items = "";
                         current_selection_dropdown = "";
@@ -33332,6 +33338,14 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                                 no_hash = selection_items.replace("#", "");
                                 selecteditemcat = "selected" + selectedsheet_area.toLowerCase();
                                 selecteditemcatwmod = "/\b" + selecteditemcat + "\b/g"
+                                
+                                var wep3 = document.getElementById(no_hash).value;
+                                var $select903 = document.querySelector(selection_items);
+                                $select903.value = wep3;
+                                var wep_new = wep3.replace(/\ /g, "_");
+                                wep_new = wep_new.replace(/\'/g, "");
+                                wep_new = frontunderitem + wep_new;
+                                var mh_wep = document.getElementsByClassName(selecteditemcat);
                                 
                                 //this will have to deselect and select the correct item
                                 
