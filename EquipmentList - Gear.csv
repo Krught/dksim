@@ -431,5 +431,5 @@ Neck,1,FALSE,Amulet of Autopsy,Amulet of Autopsy,39246,50,0,75,0,0,0,0,0,0,0,0,3
 Back,1,FALSE,Aged Winter Cloak,Aged Winter Cloak,40250,0,38,57,0,0,110,0,43,0,28,0,154,0,0,0,,,,,0,Stamina,FALSE,,,,,,,,,
 Shoulders,1,FALSE,Abomination Shoulderblades,Abomination Shoulderblades,39267,53,0,87,0,0,0,28,0,0,0,0,1681,38,40,0,,,,,4,Defense Rating,FALSE,,,,,,,,,
 Waist,1,FALSE,Ablative Chitin Girdle,Ablative Chitin Girdle,39759,74,0,100,0,0,0,37,0,0,0,0,1293,43,0,47,,,,,4,Defense Rating,FALSE,,,,,,,,,
-Trinket,1,FALSE,Darkmoon Card: Greatness,Darkmoon Card: Greatness,42987,0,90,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,,0,Stamina,TRUE,Proc,Hit,0.35,300,Strength,15,45,,
+Trinket,1,FALSE,Darkmoon Card: Greatness,Darkmoon Card: Greatness,42987,90,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,,0,Stamina,TRUE,Proc,Hit,0.35,300,Strength,15,45,,
 Sigil,0,FALSE,Sigil of the Wild Buck,Sigil of the Wild Buck,40867,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,,0,Stamina,FALSE,,,,,,,,,
