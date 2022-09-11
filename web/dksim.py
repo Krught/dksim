@@ -1572,10 +1572,8 @@ def all_two_dash_stuff(datas, pas, quer):
     old_date_count_data = pd.DataFrame(dict(Date=unique_dates, Count=unique_dates_count))
     oldest_date = min(old_date_count_data["Date"])
     newest_date = max(old_date_count_data["Date"])
-    #tspd = pd.Timestamp(old_date_count_data)
-    tspd = old_date_count_data['Date'].to_pydatetime()
-    # missing_dates = pd.date_range(start = oldest_date, end = newest_date).difference(old_date_count_data.Date)
-    missing_dates = pd.date_range(start = oldest_date, end = newest_date).difference(tspd)
+    print(type(oldest_date))
+    missing_dates = pd.date_range(start = oldest_date, end = newest_date).difference(old_date_count_data.Date)
     missing_dates_len = len(missing_dates)
     missing_dates_visits = []
     for i in list(range(0,missing_dates_len)):
