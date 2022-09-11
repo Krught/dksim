@@ -33272,7 +33272,10 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
             var loopnum = "";
             var current_loopnum = 0;
             var dropdown_highlight_selection = "";
-            
+            var no_hash = "";
+            var selecteditemcat = "";
+            var frontunderitem = "";
+            var selecteditemcatwmod = "";
               
               
             function ifsheetlooping(){
@@ -33280,9 +33283,16 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                     if (loopnum != current_loopnum) {
                     current_loopnum++;
                     current_selection_dropdown.selectedIndex = current_loopnum;
-                        //dropdown_select_wep();
-                    eval(dropdown_highlight_selection);
-                        
+                    var wep3 = document.getElementById(no_hash).value;
+                    var $select903 = document.querySelector(selection_items);
+                    $select403.value = wep3;
+                    var wep_new = wep3.replace(/\ /g, "_");
+                    wep_new = wep_new.replace(/\'/g, "");
+                    wep_new = frontunderitem + wep_new;
+                    var mh_wep = document.getElementsByClassName(selecteditemcat);
+                    while (mh_wep.length)
+                    mh_wep[0].className = mh_wep[0].className.replace(selecteditemcatwmod, "");
+                    document.getElementById(wep_new).classList.add(selecteditemcat);
                     document.getElementById("simdpsbutton").click();
                     }
                     else {
@@ -33298,11 +33308,20 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
               
               
             function simcurrentsheet(){
+                if (sheetloop = "True") {
+                    current_loopnum = 10000;
+                }
+                else {
+                //Possibly ass a function that if sheetloop is true, then end loop prob can just be set curent loopnum to like 1k
                 var selectedsheet_area = document.querySelector(".tablinks.active").innerHTML;
                 if (selectedsheet_area != "Settings") {
                     if (selectedsheet_area != "Weapon") {
                         if (selectedsheet_area != "Rings") {
                             if (selectedsheet_area != "Trinkets") {
+                                frontunderitem = 'Headd_';
+                                //DEFINE THIS ITEM, only works for head atm
+                                
+                                
                                 selection_items = selectedsheet_area.toLowerCase();
                                 selection_items = "#" + selection_items
                                 dropdown_highlight_selection = selectedsheet_area.toLowerCase();
@@ -33310,6 +33329,9 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                                 current_selection_items = current_selection_dropdown.value;
                                 loopnum = current_selection_dropdown.options.length;
                                 dropdown_highlight_selection = "dropdown_select_" +  dropdown_highlight_selection;
+                                no_hash = selection_items.replace("#", "");
+                                selecteditemcat = "selected" + selectedsheet_area.toLowerCase();
+                                selecteditemcatwmod = "/\b" + selecteditemcat + "\b/g"
                                 //var current_loopnum = 0
                                 // Should also record amount of sims, and change to a predetermined number, and change back once this is over
 //                                while (current_loopnum < loopnum) {
@@ -33346,6 +33368,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                     
                 }
               }
+            }
               
 
                 
