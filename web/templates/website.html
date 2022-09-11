@@ -33,6 +33,7 @@
         <br>
         <!-- have a button POST a click via AJAX -->
         <button id="simdpsbutton"hx-post="/calculatedps"hx-trigger="click"hx-target="#sim-import-area"hx-indicator="#spinner"hx-include="#head, #neck, #weapon1, #weapon2, #shoulders, #back, #chest, #wrist, #gloves, #waist, #legs, #boots, #sigil, #ring1, #ring2, #trinket1, #trinket2, #fightlen, #fightlenvar, #simamounts, #targetamounts, #targetlevel, #targetarmor, #fightsub35, #pestilencereset, #hornofwinterprecastamount, #dkpresence, #dkspec, #raceselection, #potion, #potionpop, #flask, #foodselection, #draeneiinparty, #hornofwinterbuff, #impicytalonsbuff, #abommightbuff, #sancretribuff, #impmoonkinbuff, #bloodfrenzybuff, #exposearmordebuff, #curseofweaknessdebuff, #leaderofthepackbuff, #heroismbuff, #heroismtimer, #unholyfrenzybuff, #unholyfrenzytimer, #tricksofthettbuff, #tricksofthetradetimer, #giftofthewildbuff, #greaterblessingofkingsbuff, #greaterblessingofmightbuff, #impblessingofmightbuff, #heartoftherusaderbuff, #impscorchbuff, #impfaeriefiredebuff, #curseoftheelementsdebuff, #moonkinaurabuff, #bloodfurybuff, #bloodfurytimer, #berserkingbuff, #berserkingtimer, #talentlink, #boneshieldconsum, #gargusetime, #gargstancedance, #useghoul, #usearmyofd, #prioobliterate, #priobloodstrike, #nodeathanddecay, #forcedeathanddecay, #cryptfeverdebuff, #metagemselection, #mhweapenchant, #ohweapenchant, #headenchant, #shouldersenchant, #backenchant, #chestenchant, #wristenchant, #glovesenchant, #legsenchant, #bootsenchant, #ring1enchant, #ring2enchant, #socketbonus1, #socketbonus2, #socketbonus3, #socketbonus4, #socketbonus5, #socketbonus6, #socketbonus7, #socketbonus8, #socketbonus9, #socketbonus10, #socketbonus11, #socketbonus12, #socketbonus13, #socketbonus14, #socketbonus15, #socketbonus16, #gemselection1, #gemselection2, #gemselection3, #gemselection4, #gemselection5, #gemselection6, #gemselection7, #gemselection8, #gemselection9, #gemselection10, #gemselection11, #gemselection12, #gemselection13, #gemselection14, #gemselection15, #gemselection16, #gemselection17, #gemselection18, #gemselection19, #gemselection20, #gemselection21, #gemselection22, #gemselection23, #gemselection24, #gemselection25, #gemselection26, #gemselection27, #gemselection28, #gemselection29, #gemselection30, #gemselection31, #gemselection32, #gemselection33, #gemselection34, #gemselection35, #gemselection36, #gemselection37, #gemselection38, #gemselection39, #gemselection40, #gemselection41, #gemselection42, #gemselection43, #gemselection44, #gemselection45, #gemselection46, #gemselection47, #gemselection48, #gemselection49, #gemselection50, #gemselection51, #gemselection52, #gemselection53, #gemselection54, #gemselection55, #gemselection56, #gemselection57, #gemselection58, #gemselection59, #gemselection60, #gemselection61, #gemselection62, #gemselection63, #gemselection64, #bloodgorg, #usernameassign, #prepoppotion">Calculate DPS</button>
+        <button hidden id="simdpsbutton2"hx-post="/calculatedpsbatch"hx-trigger="click"hx-target="#sim-import-area"hx-indicator="#spinner"hx-include="#head, #neck, #weapon1, #weapon2, #shoulders, #back, #chest, #wrist, #gloves, #waist, #legs, #boots, #sigil, #ring1, #ring2, #trinket1, #trinket2, #fightlen, #fightlenvar, #simamounts, #targetamounts, #targetlevel, #targetarmor, #fightsub35, #pestilencereset, #hornofwinterprecastamount, #dkpresence, #dkspec, #raceselection, #potion, #potionpop, #flask, #foodselection, #draeneiinparty, #hornofwinterbuff, #impicytalonsbuff, #abommightbuff, #sancretribuff, #impmoonkinbuff, #bloodfrenzybuff, #exposearmordebuff, #curseofweaknessdebuff, #leaderofthepackbuff, #heroismbuff, #heroismtimer, #unholyfrenzybuff, #unholyfrenzytimer, #tricksofthettbuff, #tricksofthetradetimer, #giftofthewildbuff, #greaterblessingofkingsbuff, #greaterblessingofmightbuff, #impblessingofmightbuff, #heartoftherusaderbuff, #impscorchbuff, #impfaeriefiredebuff, #curseoftheelementsdebuff, #moonkinaurabuff, #bloodfurybuff, #bloodfurytimer, #berserkingbuff, #berserkingtimer, #talentlink, #boneshieldconsum, #gargusetime, #gargstancedance, #useghoul, #usearmyofd, #prioobliterate, #priobloodstrike, #nodeathanddecay, #forcedeathanddecay, #cryptfeverdebuff, #metagemselection, #mhweapenchant, #ohweapenchant, #headenchant, #shouldersenchant, #backenchant, #chestenchant, #wristenchant, #glovesenchant, #legsenchant, #bootsenchant, #ring1enchant, #ring2enchant, #socketbonus1, #socketbonus2, #socketbonus3, #socketbonus4, #socketbonus5, #socketbonus6, #socketbonus7, #socketbonus8, #socketbonus9, #socketbonus10, #socketbonus11, #socketbonus12, #socketbonus13, #socketbonus14, #socketbonus15, #socketbonus16, #gemselection1, #gemselection2, #gemselection3, #gemselection4, #gemselection5, #gemselection6, #gemselection7, #gemselection8, #gemselection9, #gemselection10, #gemselection11, #gemselection12, #gemselection13, #gemselection14, #gemselection15, #gemselection16, #gemselection17, #gemselection18, #gemselection19, #gemselection20, #gemselection21, #gemselection22, #gemselection23, #gemselection24, #gemselection25, #gemselection26, #gemselection27, #gemselection28, #gemselection29, #gemselection30, #gemselection31, #gemselection32, #gemselection33, #gemselection34, #gemselection35, #gemselection36, #gemselection37, #gemselection38, #gemselection39, #gemselection40, #gemselection41, #gemselection42, #gemselection43, #gemselection44, #gemselection45, #gemselection46, #gemselection47, #gemselection48, #gemselection49, #gemselection50, #gemselection51, #gemselection52, #gemselection53, #gemselection54, #gemselection55, #gemselection56, #gemselection57, #gemselection58, #gemselection59, #gemselection60, #gemselection61, #gemselection62, #gemselection63, #gemselection64, #bloodgorg, #usernameassign, #prepoppotion">Calculate DPS</button>
         <br>
         <br>
         <input type=button onClick="simcurrentsheet()" value='Sim Current Selection' >
@@ -33293,7 +33294,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                     var mh_wep = document.getElementsByClassName(selecteditemcat);
                     mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
                     document.getElementById(wep_new).classList.add(selecteditemcat);
-                    document.getElementById("simdpsbutton").click();
+                    document.getElementById("simdpsbutton2").click();
                     } else {
                         current_selection_dropdown.value = current_selection_items;
                         var wep3 = document.getElementById(no_hash).value;
@@ -33386,7 +33387,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                                 mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
                                 document.getElementById(wep_new).classList.add(selecteditemcat);
                                 sheetloop = "True";
-                                document.getElementById("simdpsbutton").click();
+                                document.getElementById("simdpsbutton2").click();
 
                 }
                         else {
@@ -33425,7 +33426,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                                     mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
                                     document.getElementById(wep_new).classList.add(selecteditemcat);
                                     sheetloop = "True";
-                                    document.getElementById("simdpsbutton").click();
+                                    document.getElementById("simdpsbutton2").click();
                                 } else {
                                     frontunderitem = 'Trinkt2_';
                                     var trinketnum = 2
@@ -33460,7 +33461,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                                     mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
                                     document.getElementById(wep_new).classList.add(selecteditemcat);
                                     sheetloop = "True";
-                                    document.getElementById("simdpsbutton").click();
+                                    document.getElementById("simdpsbutton2").click();
                                 }
                         }
                 }
@@ -33500,7 +33501,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                             mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
                             document.getElementById(wep_new).classList.add(selecteditemcat);
                             sheetloop = "True";
-                            document.getElementById("simdpsbutton").click();
+                            document.getElementById("simdpsbutton2").click();
                         } else { 
                             frontunderitem = 'Ringg2_';
                             var trinketnum = 2
@@ -33535,7 +33536,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                             mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
                             document.getElementById(wep_new).classList.add(selecteditemcat);
                             sheetloop = "True";
-                            document.getElementById("simdpsbutton").click(); 
+                            document.getElementById("simdpsbutton2").click(); 
                         }
                     }
                 } else {
@@ -33573,7 +33574,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                         mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
                         document.getElementById(wep_new).classList.add(selecteditemcat);
                         sheetloop = "True";
-                        document.getElementById("simdpsbutton").click();
+                        document.getElementById("simdpsbutton2").click();
                     } else{
                         frontunderitem = 'w2_';
                         currentsimamount = document.getElementById('simamounts').value;
@@ -33607,7 +33608,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                         mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
                         document.getElementById(wep_new).classList.add(selecteditemcat);
                         sheetloop = "True";
-                        document.getElementById("simdpsbutton").click();
+                        document.getElementById("simdpsbutton2").click();
                     }
                         } 
                     }
