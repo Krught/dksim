@@ -318,6 +318,8 @@
 <br>
 
     
+
+    
     </div>
 </div>
 
@@ -33234,9 +33236,34 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                 const [talent_split1, talent_split2] = split(talent_text, split_loc);
                 talent_append = talent_split1 + "/embed" + talent_split2;
                 newBaitTag.setAttribute('href', talent_append);
+                newBaitTag.setAttribute('id', 'sesting');
                 newBaitTag.appendChild(newBaitText);
                 myBodyId.appendChild(newBaitTag); 
-            }          
+                mouseOverBehaviour();
+            }    
+              
+            function simulateMouseover() {
+              var event = new MouseEvent('mouseover', {
+                'view': window,
+                'bubbles': true,
+                'cancelable': true
+              });
+              var myTarget = document.getElementById('sesting'); 
+              var canceled = !myTarget.dispatchEvent(event);
+              if (canceled) {
+              } else {
+              }
+            }
+
+            function mouseOverBehaviour() {
+                myElement = document.getElementById("sesting");
+                myElement.addEventListener("mouseover", function(event) {
+                    event.target.style.color = "red";
+                });  
+                setTimeout(simulateMouseover,30);
+            }
+
+              
             var firstsettings = false;
             document.getElementById("sett").addEventListener('click', firstsetting_select);
             function firstsetting_select(){
