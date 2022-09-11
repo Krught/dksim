@@ -33290,8 +33290,8 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                     wep_new = wep_new.replace(/\'/g, "");
                     wep_new = frontunderitem + wep_new;
                     var mh_wep = document.getElementsByClassName(selecteditemcat);
-//                    while (mh_wep.length)
-                    mh_wep[0].className = mh_wep[0].className.replace('/\bselectedhead\b/g', "");
+                    while (mh_wep.length)
+                    mh_wep[0].className = mh_wep[0].className.replace('selectedhead', "");
                     document.getElementById(wep_new).classList.add(selecteditemcat);
                     document.getElementById("simdpsbutton").click();
                     }
