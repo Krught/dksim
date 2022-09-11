@@ -33623,6 +33623,21 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                 document.getElementById("changeSelected").click();
             }  
 
+//            detail.total_gear_from_eighty
+//              
+//            document.addEventListener('htmx:afterSwap', changeselectedgear);
+              
+              
+            document.body.addEventListener('htmx:afterSwap', function(evt) {
+                var tar = evt.detail.target; // add a new parameter into the mix
+                alert(tar);
+                if (tar === "total_gear_from_eighty") {
+                    changeselectedgear();
+                }
+                
+            });
+              
+              
             function changeselectedgear(){
                 alert("Does change selected get run?");
                 changeSelected1();
