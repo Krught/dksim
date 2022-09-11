@@ -1433,16 +1433,16 @@ server.layout = html.Div(children=[
         children=[
             dcc.Input(id="inputusername", type="text", placeholder="Username", debounce=True),
         ],  style={"display": "flex", "justifyContent": "center"}),
-    # html.Div(children=[
-    #     dcc.Loading(
-    #         id="loading-1",
-    #         type="cube",
-    #         color="#992d2d",
-    #         children=html.Div(id="new-dash-container", className='delay'),
-    #         className='delay',
-    #     ),
-    #     ]),
-    html.Div(id="new-dash-container"),
+    html.Div(children=[
+        dcc.Loading(
+            id="loading-1",
+            type="cube",
+            color="#992d2d",
+            children=html.Div(id="new-dash-container"),
+            className='delay',
+        ),
+        ]),
+    # html.Div(id="new-dash-container"),
         ])
 
 
