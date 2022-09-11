@@ -33277,6 +33277,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
             var selecteditemcat = "";
             var frontunderitem = "";
             var selecteditemcatwmod = "";
+            var currentsimamount = "";
               
               
             function ifsheetlooping(){
@@ -33308,6 +33309,12 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                         mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
                         document.getElementById(wep_new).classList.add(selecteditemcat);
                         
+                        const $select853 = document.querySelector('#simamounts');
+                        $select853.value = currentsimamount
+                        
+                        
+                        
+                        
                         sheetloop = "False";
                         selection_items = "";
                         current_selection_dropdown = "";
@@ -33320,7 +33327,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                         frontunderitem = "";
                         selecteditemcatwmod = "";
                         current_selection_items = "";
-                        
+                        currentsimamount = "";
                         
                     }
                 }
@@ -33341,6 +33348,14 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                                 frontunderitem = 'Headd_';
                                 //DEFINE THIS ITEM, only works for head atm
                                 
+                                currentsimamount = document.getElementById('simamounts').value;
+                                var newsimamount = currentsimamount
+                                if (currentsimamount > 250) {
+                                    newsimamount = 250
+                                }
+                                const $select852 = document.querySelector('#simamounts');
+                                $select852.value = newsimamount
+                                
                                 
                                 selection_items = selectedsheet_area.toLowerCase();
                                 selection_items = "#" + selection_items
@@ -33353,8 +33368,6 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                                 selecteditemcat = "selected" + selectedsheet_area.toLowerCase();
                                 selecteditemcatwmod = "/\b" + selecteditemcat + "\b/g"
                                 current_loopnum = 0
-                                //this will have to deselect and select the correct item
-                                
                                 current_selection_dropdown.selectedIndex = current_loopnum;
                                 var wep3 = document.getElementById(no_hash).value;
                                 var $select903 = document.querySelector(selection_items);
@@ -33365,9 +33378,6 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                                 var mh_wep = document.getElementsByClassName(selecteditemcat);
                                 mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
                                 document.getElementById(wep_new).classList.add(selecteditemcat);
-                                
-                                
-                                
                                 sheetloop = "True";
                                 document.getElementById("simdpsbutton").click();
 
