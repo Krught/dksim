@@ -2,9 +2,7 @@
         <html><head>
 		    <meta charset="utf-8" />
     		<title>Remours DK Simulator</title>
-            <!-- FIX ME PLEASE IDIOT  -->
-            <link rel="stylesheet" href="/static/css/style.css">  -->
-        <!--    <link rel="stylesheet" href="../assets/css/style.css"> -->
+            <link rel="stylesheet" href="/static/css/style.css">
             <link rel="icon" href="/static/images/icon.ico">
 			<script src="https://unpkg.com/htmx.org@1.8.0"></script>
 			<script>const whTooltips = {colorLinks: true, iconizeLinks: true, renameLinks: true};</script>
@@ -33297,7 +33295,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                     document.getElementById("simdpsbutton").click();
                     }
                     else {
-                        current_selection_dropdown.value = current_selection_items;
+                        current_selection_dropdown.value = current_selection_items.value;
                         
                         var wep3 = document.getElementById(no_hash).value;
                         var $select903 = document.querySelector(selection_items);
@@ -33310,9 +33308,9 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                         document.getElementById(wep_new).classList.add(selecteditemcat);
                         
                         const $select853 = document.querySelector('#simamounts');
-                        $select853.value = currentsimamount
+                        $select853.value = currentsimamount.value;
                         
-                        
+                        //no reselected correct item
                         
                         
                         sheetloop = "False";
