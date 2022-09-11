@@ -33266,6 +33266,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
 //                
 //                current_loopnum++;
 //            }
+            var current_selection_items = "";
             var sheetloop = "False";
             var selection_items = "";
             var current_selection_dropdown = "";
@@ -33296,6 +33297,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                     }
                     else {
                         current_selection_dropdown.value = current_selection_items;
+                        
                         var wep3 = document.getElementById(no_hash).value;
                         var $select903 = document.querySelector(selection_items);
                         $select903.value = wep3;
@@ -33303,11 +33305,23 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                         wep_new = wep_new.replace(/\'/g, "");
                         wep_new = frontunderitem + wep_new;
                         var mh_wep = document.getElementsByClassName(selecteditemcat);
+                        mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
+                        document.getElementById(wep_new).classList.add(selecteditemcat);
+                        
                         sheetloop = "False";
                         selection_items = "";
                         current_selection_dropdown = "";
                         loopnum = "";
                         current_loopnum = 0;
+                        
+                        dropdown_highlight_selection = "";
+                        no_hash = "";
+                        selecteditemcat = "";
+                        frontunderitem = "";
+                        selecteditemcatwmod = "";
+                        current_selection_items = "";
+                        
+                        
                     }
                 }
             }
@@ -33338,7 +33352,10 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                                 no_hash = selection_items.replace("#", "");
                                 selecteditemcat = "selected" + selectedsheet_area.toLowerCase();
                                 selecteditemcatwmod = "/\b" + selecteditemcat + "\b/g"
+                                current_loopnum = 0
+                                //this will have to deselect and select the correct item
                                 
+                                current_selection_dropdown.selectedIndex = current_loopnum;
                                 var wep3 = document.getElementById(no_hash).value;
                                 var $select903 = document.querySelector(selection_items);
                                 $select903.value = wep3;
@@ -33346,8 +33363,10 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                                 wep_new = wep_new.replace(/\'/g, "");
                                 wep_new = frontunderitem + wep_new;
                                 var mh_wep = document.getElementsByClassName(selecteditemcat);
+                                mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
+                                document.getElementById(wep_new).classList.add(selecteditemcat);
                                 
-                                //this will have to deselect and select the correct item
+                                
                                 
                                 sheetloop = "True";
                                 document.getElementById("simdpsbutton").click();
