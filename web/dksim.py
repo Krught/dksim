@@ -1199,6 +1199,9 @@ def all_dash_stuff(dash_all_data):
                     'DOT': {'value': '{}'.format(str(row['DOTP']) + " DOT Rate"), 'type': 'markdown'},
                     'Active': {'value': '{}'.format(str(row['ActiveP']) + " Active Rate"), 'type': 'markdown'},
                     'Proc': {'value': '{}'.format(str(row['ProcP']) + " Proc Rate"), 'type': 'markdown'},
+                    'Average Damage': {'value': '{}'.format(str(row['Ability'])), 'type': 'markdown'},
+                    'Total Damage': {'value': '{}'.format(str(row['Ability'])), 'type': 'markdown'},
+                    'Average DPS': {'value': '{}'.format(str(row['Ability'])), 'type': 'markdown'},
                  } for row in status_table_data.to_dict('records')],
                 css=[{
                     'selector': '.dash-table-tooltip',
