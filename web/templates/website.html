@@ -33277,12 +33277,15 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                 if (sheetloop === "True") {
                     if (loopnum > current_loopnum + 1){
                     current_loopnum++;
+                    alert("T0");
                     current_selection_dropdown.selectedIndex = current_loopnum;
                     var wep3 = document.getElementById(no_hash).value;
+                    alert("Test1");
                     var $select903 = document.querySelector(selection_items);
                     $select903.value = wep3;
                     var wep_new = wep3.replace(/\ /g, "_");
                     wep_new = wep_new.replace(/\'/g, "");
+                    alert("test2");
                     wep_new = frontunderitem + wep_new;
                     var mh_wep = document.getElementsByClassName(selecteditemcat);
                     mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
@@ -33406,25 +33409,18 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                                     selecteditemcat = "selected" + selectedsheet_area.toLowerCase();
                                     selecteditemcatwmod = "/\b" + selecteditemcat + "\b/g"
                                     current_loopnum = 0
-                                    //up to here fine
                                     current_selection_dropdown.selectedIndex = current_loopnum;
                                     var wep3 = document.getElementById(no_hash).value;
                                     var $select906 = document.querySelector(selection_items);
                                     $select906.value = wep3;
-                                    // up to here fine it looks like
                                     var wep_new = wep3.replace(/\ /g, "_");
                                     wep_new = wep_new.replace(/\'/g, "");
                                     wep_new = frontunderitem + wep_new;
-                                    //up to here fine also looks like... think selecteditemcat is issue
                                     var mh_wep = document.getElementsByClassName(selecteditemcat);
-                                    //issues here?
                                     mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
-                                    //
                                     document.getElementById(wep_new).classList.add(selecteditemcat);
                                     sheetloop = "True";
-                                    //
                                     document.getElementById("simdpsbutton").click();
-                                    //
                                 } else {
                                     frontunderitem = 'Trinkt2_';
                                     alert("Trinket2");
