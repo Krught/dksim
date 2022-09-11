@@ -33293,6 +33293,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                     mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
                     document.getElementById(wep_new).classList.add(selecteditemcat);
                     document.getElementById("simdpsbutton").click();
+                    alert(current_loopnum);
                     } else {
                     
                    // if (loopnum === current_loopnum){
@@ -33368,6 +33369,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                                 no_hash = selection_items.replace("#", "");
                                 selecteditemcat = "selected" + selectedsheet_area.toLowerCase();
                                 selecteditemcatwmod = "/\b" + selecteditemcat + "\b/g"
+                                alert(loopnum);
                                 current_loopnum = 0
                                 current_selection_dropdown.selectedIndex = current_loopnum;
                                 var wep3 = document.getElementById(no_hash).value;
