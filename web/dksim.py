@@ -1201,7 +1201,7 @@ def all_dash_stuff(dash_all_data):
                     'Proc': {'value': '{}'.format(str(row['ProcP']) + " Proc Rate"), 'type': 'markdown'},
                     'Avg_Damage': {'value': '{}'.format(str(row['Ability'])), 'type': 'markdown'},
                     'All_Damage': {'value': '{}'.format(str(row['Ability'])), 'type': 'markdown'},
-                    'DPSPS': {'value': '{}'.format(str(row['Ability'])), 'type': 'markdown'},
+                    'DPSPA': {'value': '{}'.format(str(row['Ability'])), 'type': 'markdown'},
                  } for row in status_table_data.to_dict('records')],
                 css=[{
                     'selector': '.dash-table-tooltip',
@@ -1572,7 +1572,9 @@ def all_two_dash_stuff(datas, pas, quer):
     old_date_count_data = pd.DataFrame(dict(Date=unique_dates, Count=unique_dates_count))
     oldest_date = min(old_date_count_data["Date"])
     newest_date = max(old_date_count_data["Date"])
-    missing_dates = pd.date_range(start = oldest_date, end = newest_date).difference(old_date_count_data.Date)
+    tspd == pd.Timestamp(old_date_count_data)
+    # missing_dates = pd.date_range(start = oldest_date, end = newest_date).difference(old_date_count_data.Date)
+    missing_dates = pd.date_range(start = oldest_date, end = newest_date).difference(tspd)
     missing_dates_len = len(missing_dates)
     missing_dates_visits = []
     for i in list(range(0,missing_dates_len)):
