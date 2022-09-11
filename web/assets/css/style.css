@@ -1,6 +1,10 @@
 selectedwepmhselectedwepmhselectedwepmhselectedwepmhselectedwepmhselectedwepmhselectedwepmhselectedwepmhselectedwepmhselectedwepmhselectedwepmhselectedwepmh@charset "UTF-8";
 /* CSS Document */
 h3 {text-align: center;} 
+.thankyou{
+     color: white!important;
+    font-style: italic;
+}
 .selectedwepmh {
     color: orange !important;
     background-color: #992d2d;
