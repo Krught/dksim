@@ -518,7 +518,7 @@
 	</form>
 <br>
 
-<div id="total_gear_from_eighty" hidden class="" onchange="changeselectedgear()">Spiked Titansteel Helm,Titanium Impact Choker,Spaulders of the Giant Lords,Engraved Chestplate of Eck,Strategist's Belt,Staggering Legplates,The Obliterator Greaves,Vengeance Bindings,Gloves of Immortal Dusk,Titanium Impact Band,Ring of the Kirin Tor,Vestige of Haldor,Sphere of Red Dragon's Blood,Ice Striker's Cloak,Wyrmclaw Battleaxe,Reaper of Dark Souls,Sigil of the Unfaltering Knight,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None</div>
+<div id="total_gear_from_eighty" hidden class="">Spiked Titansteel Helm,Titanium Impact Choker,Spaulders of the Giant Lords,Engraved Chestplate of Eck,Strategist's Belt,Staggering Legplates,The Obliterator Greaves,Vengeance Bindings,Gloves of Immortal Dusk,Titanium Impact Band,Ring of the Kirin Tor,Vestige of Haldor,Sphere of Red Dragon's Blood,Ice Striker's Cloak,Wyrmclaw Battleaxe,Reaper of Dark Souls,Sigil of the Unfaltering Knight,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None</div>
 <div id="head_from_eighty" hidden class="">Spiked Titansteel Helm</div>
 <div id="neck_from_eighty" hidden class="">Titanium Impact Choker</div>
 <div id="shoulders_from_eighty" hidden class="">Spaulders of the Giant Lords</div>
@@ -33623,14 +33623,9 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                 document.getElementById("changeSelected").click();
             }  
 
-//            detail.total_gear_from_eighty
-//              
-//            document.addEventListener('htmx:afterSwap', changeselectedgear);
-              
               
             document.body.addEventListener('htmx:afterSwap', function(evt) {
                 var tar = evt.detail.target.id; // add a new parameter into the mix
-                alert(tar);
                 if (tar === "total_gear_from_eighty") {
                     changeselectedgear();
                 }
@@ -33640,7 +33635,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
               
             function changeselectedgear(){
                 alert("Does change selected get run?");
-                changeSelected1();
+                splitEqu();
             }
               
             function uhdwp1preset(){
