@@ -87,7 +87,6 @@ class Logging(db.Model): #database 2 (aka logs database)
 
 
 
-
 @app.route("/")
 def mode_page():
     return render_template('website.html')
@@ -547,6 +546,398 @@ def dps_load():
     engine.dispose()
 
     return dps
+
+
+@app.route("/calculatedpsbatch", methods=["GET", "POST"])
+def dps_load_batch():
+    helm_slot = request.form["head"]
+    neck_slot = request.form["neck"]
+    weapon1_slot = request.form["weapon1"]
+    weapon2_slot = request.form["weapon2"]
+    shoulders_slot = request.form["shoulders"]
+    back_slot = request.form["back"]
+    chest_slot = request.form["chest"]
+    wrist_slot = request.form["wrist"]
+    gloves_slot = request.form["gloves"]
+    waist_slot = request.form["waist"]
+    legs_slot = request.form["legs"]
+    boots_slot = request.form["boots"]
+    sigil_slot = request.form["sigil"]
+    ring1_slot = request.form["ring1"]
+    ring2_slot = request.form["ring2"]
+    trinket1_slot = request.form["trinket1"]
+    trinket2_slot = request.form["trinket2"]
+    talents = request.form["talentlink"]
+    fight_length = request.form["fightlen"]
+    fight_length = int(fight_length)
+    fight_length_variance = request.form["fightlenvar"]
+    fight_length_variance = int(fight_length_variance)
+    simulation_amounts = request.form["simamounts"]
+    simulation_amounts = int(simulation_amounts)
+    amount_of_targets = request.form["targetamounts"]
+    amount_of_targets = int(amount_of_targets)
+    target_level = request.form["targetlevel"]
+    target_level = int(target_level)
+    target_armor = request.form["targetarmor"]
+    target_armor = int(target_armor)
+    fight_percent_under_35_percent = request.form["fightsub35"]
+    fight_percent_under_35_percent = int(fight_percent_under_35_percent)
+    pestilence_reset_time = request.form["pestilencereset"]
+    pestilence_reset_time = int(pestilence_reset_time)
+    precast_horn_time = request.form["hornofwinterprecastamount"]
+    precast_horn_time = int(precast_horn_time)
+    dk_presence = request.form["dkpresence"]
+    dk_presence = int(dk_presence)
+    dk_spec = request.form["dkspec"]
+    dk_spec = int(dk_spec)
+    race_selection = request.form["raceselection"]
+    race_selection = int(race_selection)
+    potion = request.form["potion"]
+    potion_timer = request.form["potionpop"]
+    potion_timer = int(potion_timer)
+    flask_used = request.form["flask"]
+    food_selection = request.form["foodselection"]
+    bone_shield_consume_rate = request.form["boneshieldconsum"]
+    bone_shield_consume_rate = int(bone_shield_consume_rate)
+    garg_timer = request.form["gargusetime"]
+    garg_timer = int(garg_timer)
+    meta_gem_sel = request.form["metagemselection"]
+    mh_wep_enchant = request.form["mhweapenchant"]
+    oh_wep_enchant = request.form["ohweapenchant"]
+    head_enchant = request.form["headenchant"]
+    shoulders_enchant = request.form["shouldersenchant"]
+    back_enchant = request.form["backenchant"]
+    chest_enchant = request.form["chestenchant"]
+    wrist_enchant = request.form["wristenchant"]
+    gloves_enchant = request.form["glovesenchant"]
+    legs_enchant = request.form["legsenchant"]
+    boots_enchant = request.form["bootsenchant"]
+    ring1_enchant = request.form["ring1enchant"]
+    ring2_enchant = request.form["ring2enchant"]
+    gem_selection1 = request.form["gemselection1"]
+    gem_selection2 = request.form["gemselection2"]
+    gem_selection3 = request.form["gemselection3"]
+    gem_selection4 = request.form["gemselection4"]
+    gem_selection5 = request.form["gemselection5"]
+    gem_selection6 = request.form["gemselection6"]
+    gem_selection7 = request.form["gemselection7"]
+    gem_selection8 = request.form["gemselection8"]
+    gem_selection9 = request.form["gemselection9"]
+    gem_selection10 = request.form["gemselection10"]
+    gem_selection11 = request.form["gemselection11"]
+    gem_selection12 = request.form["gemselection12"]
+    gem_selection13 = request.form["gemselection13"]
+    gem_selection14 = request.form["gemselection14"]
+    gem_selection15 = request.form["gemselection15"]
+    gem_selection16 = request.form["gemselection16"]
+    gem_selection17 = request.form["gemselection17"]
+    gem_selection18 = request.form["gemselection18"]
+    gem_selection19 = request.form["gemselection19"]
+    gem_selection20 = request.form["gemselection20"]
+    gem_selection21 = request.form["gemselection21"]
+    gem_selection22 = request.form["gemselection22"]
+    gem_selection23 = request.form["gemselection23"]
+    gem_selection24 = request.form["gemselection24"]
+    gem_selection25 = request.form["gemselection25"]
+    gem_selection26 = request.form["gemselection26"]
+    gem_selection27 = request.form["gemselection27"]
+    gem_selection28 = request.form["gemselection28"]
+    gem_selection29 = request.form["gemselection29"]
+    gem_selection30 = request.form["gemselection30"]
+    gem_selection31 = request.form["gemselection31"]
+    gem_selection32 = request.form["gemselection32"]
+    gem_selection33 = request.form["gemselection33"]
+    gem_selection34 = request.form["gemselection34"]
+    gem_selection35 = request.form["gemselection35"]
+    gem_selection36 = request.form["gemselection36"]
+    gem_selection37 = request.form["gemselection37"]
+    gem_selection38 = request.form["gemselection38"]
+    gem_selection39 = request.form["gemselection39"]
+    gem_selection40 = request.form["gemselection40"]
+    gem_selection41 = request.form["gemselection41"]
+    gem_selection42 = request.form["gemselection42"]
+    gem_selection43 = request.form["gemselection43"]
+    gem_selection44 = request.form["gemselection44"]
+    gem_selection45 = request.form["gemselection45"]
+    gem_selection46 = request.form["gemselection46"]
+    gem_selection47 = request.form["gemselection47"]
+    gem_selection48 = request.form["gemselection48"]
+    gem_selection49 = request.form["gemselection49"]
+    gem_selection50 = request.form["gemselection50"]
+    gem_selection51 = request.form["gemselection51"]
+    gem_selection52 = request.form["gemselection52"]
+    gem_selection53 = request.form["gemselection53"]
+    gem_selection54 = request.form["gemselection54"]
+    gem_selection55 = request.form["gemselection55"]
+    gem_selection56 = request.form["gemselection56"]
+    gem_selection57 = request.form["gemselection57"]
+    gem_selection58 = request.form["gemselection58"]
+    gem_selection59 = request.form["gemselection59"]
+    gem_selection60 = request.form["gemselection60"]
+    gem_selection61 = request.form["gemselection61"]
+    gem_selection62 = request.form["gemselection62"]
+    gem_selection63 = request.form["gemselection63"]
+    gem_selection64 = request.form["gemselection64"]
+    blood_gorged_proc_r = request.form["bloodgorg"]
+    blood_gorged_proc_r = int(blood_gorged_proc_r)
+    draenei_buff = request.form.get("draeneiinparty")
+    if draenei_buff == "draeneiinparty":
+        draenei_buff = True
+    elif draenei_buff != "draeneiinparty":
+         draenei_buff = False
+    horn_of_winter_buff = request.form.get("hornofwinterbuff")
+    if horn_of_winter_buff == "hornofwinterbuff":
+        horn_of_winter_buff = True
+    elif horn_of_winter_buff != "hornofwinterbuff":
+         horn_of_winter_buff = False
+    imp_icy_talons_buff = request.form.get("impicytalonsbuff")
+    if imp_icy_talons_buff == "impicytalonsbuff":
+        imp_icy_talons_buff = True
+    elif imp_icy_talons_buff != "impicytalonsbuff":
+         imp_icy_talons_buff = False
+    abominations_might_buff = request.form.get("abommightbuff")
+    if abominations_might_buff == "abommightbuff":
+        abominations_might_buff = True
+    elif abominations_might_buff != "abommightbuff":
+         abominations_might_buff = False
+    sanctified_retribution_buff = request.form.get("sancretribuff")
+    if sanctified_retribution_buff == "sancretribuff":
+        sanctified_retribution_buff = True
+    elif sanctified_retribution_buff != "sancretribuff":
+        sanctified_retribution_buff = False
+    imp_moonkin_form_buff = request.form.get("impmoonkinbuff")
+    if imp_moonkin_form_buff == "impmoonkinbuff":
+        imp_moonkin_form_buff = True
+    elif imp_moonkin_form_buff != "impmoonkinbuff":
+        imp_moonkin_form_buff = False
+    blood_frenzy_buff = request.form.get("bloodfrenzybuff")
+    if blood_frenzy_buff == "bloodfrenzybuff":
+        blood_frenzy_buff = True
+    elif blood_frenzy_buff != "bloodfrenzybuff":
+        blood_frenzy_buff = False
+    expose_armor_debuff = request.form.get("exposearmordebuff")
+    if expose_armor_debuff == "exposearmordebuff":
+        expose_armor_debuff = True
+    elif expose_armor_debuff != "exposearmordebuff":
+        expose_armor_debuff = False
+    curse_of_weakness_debuff = request.form.get("curseofweaknessdebuff")
+    if curse_of_weakness_debuff == "curseofweaknessdebuff":
+        curse_of_weakness_debuff = True
+    elif curse_of_weakness_debuff != "curseofweaknessdebuff":
+        curse_of_weakness_debuff = False
+    leader_of_the_pack_buff = request.form.get("leaderofthepackbuff")
+    if leader_of_the_pack_buff == "leaderofthepackbuff":
+        leader_of_the_pack_buff = True
+    elif leader_of_the_pack_buff != "leaderofthepackbuff":
+        leader_of_the_pack_buff = False
+    heroism_buff = request.form.get("heroismbuff")
+    if heroism_buff == "heroismbuff":
+        heroism_buff = True
+    elif heroism_buff != "heroismbuff":
+        heroism_buff = False
+    herosim_buff_timer = request.form["heroismtimer"]
+    herosim_buff_timer = int(herosim_buff_timer)
+    unholy_frenzy_buff = request.form.get("unholyfrenzybuff")
+    if unholy_frenzy_buff == "unholyfrenzybuff":
+        unholy_frenzy_buff = True
+    elif unholy_frenzy_buff != "unholyfrenzybuff":
+        unholy_frenzy_buff = False
+    unholy_frenzy_buff_timer = request.form["unholyfrenzytimer"]
+    unholy_frenzy_buff_timer = int(unholy_frenzy_buff_timer)
+    tricks_of_the_trade_buff = request.form.get("tricksofthettbuff")
+    if tricks_of_the_trade_buff == "tricksofthettbuff":
+        tricks_of_the_trade_buff = True
+    elif tricks_of_the_trade_buff != "tricksofthettbuff":
+        tricks_of_the_trade_buff = False
+    tricks_of_the_trade_buff_timer = request.form["tricksofthetradetimer"]
+    tricks_of_the_trade_buff_timer = int(tricks_of_the_trade_buff_timer)
+    gift_of_the_wild_buff = request.form.get("giftofthewildbuff")
+    if gift_of_the_wild_buff == "giftofthewildbuff":
+        gift_of_the_wild_buff = True
+    elif gift_of_the_wild_buff != "giftofthewildbuff":
+        gift_of_the_wild_buff = False
+    greater_blessing_of_kings_buff = request.form.get("greaterblessingofkingsbuff")
+    if greater_blessing_of_kings_buff == "greaterblessingofkingsbuff":
+        greater_blessing_of_kings_buff = True
+    elif greater_blessing_of_kings_buff != "greaterblessingofkingsbuff":
+        greater_blessing_of_kings_buff = False
+    greater_blessing_of_might_buff = request.form.get("greaterblessingofmightbuff")
+    if greater_blessing_of_might_buff == "greaterblessingofmightbuff":
+        greater_blessing_of_might_buff = True
+    elif greater_blessing_of_might_buff != "greaterblessingofmightbuff":
+        greater_blessing_of_might_buff = False
+    imp_blessing_of_might_buff = request.form.get("impblessingofmightbuff")
+    if imp_blessing_of_might_buff == "impblessingofmightbuff":
+        imp_blessing_of_might_buff = True
+    elif imp_blessing_of_might_buff != "impblessingofmightbuff":
+        imp_blessing_of_might_buff = False
+    heart_of_the_crusader_buff = request.form.get("heartoftherusaderbuff")
+    if heart_of_the_crusader_buff == "heartoftherusaderbuff":
+        heart_of_the_crusader_buff = True
+    elif heart_of_the_crusader_buff != "heartoftherusaderbuff":
+        heart_of_the_crusader_buff = False
+    imp_scorch_buff = request.form.get("impscorchbuff")
+    if imp_scorch_buff == "impscorchbuff":
+        imp_scorch_buff = True
+    elif imp_scorch_buff != "impscorchbuff":
+        imp_scorch_buff = False
+    imp_faerie_fire_debuff = request.form.get("impfaeriefiredebuff")
+    if imp_faerie_fire_debuff == "impfaeriefiredebuff":
+        imp_faerie_fire_debuff = True
+    elif imp_faerie_fire_debuff != "impfaeriefiredebuff":
+        imp_faerie_fire_debuff = False
+    curse_of_the_elements_debuff = request.form.get("curseoftheelementsdebuff")
+    if curse_of_the_elements_debuff == "curseoftheelementsdebuff":
+        curse_of_the_elements_debuff = True
+    elif curse_of_the_elements_debuff != "curseoftheelementsdebuff":
+        curse_of_the_elements_debuff = False
+    moonkin_aura_buff = request.form.get("moonkinaurabuff")
+    if moonkin_aura_buff == "moonkinaurabuff":
+        moonkin_aura_buff = True
+    elif moonkin_aura_buff != "moonkinaurabuff":
+        moonkin_aura_buff = False
+    blood_fury_buff = request.form.get("bloodfurybuff")
+    if blood_fury_buff == "bloodfurybuff":
+        blood_fury_buff = True
+    elif blood_fury_buff != "bloodfurybuff":
+        blood_fury_buff = False
+    blood_fury_buff_timer = request.form["bloodfurytimer"] #not a checkbox
+    blood_fury_buff_timer = int(blood_fury_buff_timer)
+    berserking_buff = request.form.get("berserkingbuff")
+    if berserking_buff == "berserkingbuff":
+        berserking_buff = True
+    elif berserking_buff != "berserkingbuff":
+        berserking_buff = False
+    berserking_buff_timer = request.form["berserkingtimer"]
+    berserking_buff_timer = int(berserking_buff_timer)
+    crypt_fever_debuff = request.form.get("cryptfeverdebuff")
+    if crypt_fever_debuff == "cryptfeverdebuff":
+        crypt_fever_debuff = True
+    elif crypt_fever_debuff != "cryptfeverdebuff":
+        crypt_fever_debuff = False
+    use_army = request.form.get("usearmyofd")
+    if use_army == "usearmyofd":
+        use_army = True
+    elif use_army != "usearmyofd":
+        use_army = False
+    use_ghoul = request.form.get("useghoul")
+    if use_ghoul == "useghoul":
+        use_ghoul = True
+    elif use_ghoul != "useghoul":
+        use_ghoul = False
+    garg_stance_dance = request.form.get("gargstancedance")
+    if garg_stance_dance == "gargstancedance":
+        garg_stance_dance = True
+    elif garg_stance_dance != "gargstancedance":
+        garg_stance_dance = False
+    prio_obli_over_howling = request.form.get("prioobliterate")
+    if prio_obli_over_howling == "prioobliterate":
+        prio_obli_over_howling = True
+    elif prio_obli_over_howling != "prioobliterate":
+        prio_obli_over_howling = False
+    prio_blood_strike_over_blood_boil = request.form.get("priobloodstrike")
+    if prio_blood_strike_over_blood_boil == "priobloodstrike":
+        prio_blood_strike_over_blood_boil = True
+    elif prio_blood_strike_over_blood_boil != "priobloodstrike":
+        prio_blood_strike_over_blood_boil = False
+    skip_death_and_decay = request.form.get("nodeathanddecay")
+    if skip_death_and_decay == "nodeathanddecay":
+        skip_death_and_decay = True
+    elif skip_death_and_decay != "nodeathanddecay":
+        skip_death_and_decay = False
+    force_death_and_decay = request.form.get("forcedeathanddecay")
+    if force_death_and_decay == "forcedeathanddecay":
+        force_death_and_decay = True
+    elif force_death_and_decay != "forcedeathanddecay":
+        force_death_and_decay = False
+    socket_bonus1 = request.form.get("socketbonus1")
+    if socket_bonus1 == "socketbonus1":
+        socket_bonus1 = True
+    elif socket_bonus1 != "socketbonus1":
+        socket_bonus1 = False
+    socket_bonus2 = request.form.get("socketbonus2")
+    if socket_bonus2 == "socketbonus2":
+        socket_bonus2 = True
+    elif socket_bonus2 != "socketbonus2":
+        socket_bonus2 = False
+    socket_bonus3 = request.form.get("socketbonus3")
+    if socket_bonus3 == "socketbonus3":
+        socket_bonus3 = True
+    elif socket_bonus3 != "socketbonus3":
+        socket_bonus3 = False
+    socket_bonus4 = request.form.get("socketbonus4")
+    if socket_bonus4 == "socketbonus4":
+        socket_bonus4 = True
+    elif socket_bonus4 != "socketbonus4":
+        socket_bonus4 = False
+    socket_bonus5 = request.form.get("socketbonus5")
+    if socket_bonus5 == "socketbonus5":
+        socket_bonus5 = True
+    elif socket_bonus5 != "socketbonus5":
+        socket_bonus5 = False
+    socket_bonus6 = request.form.get("socketbonus6")
+    if socket_bonus6 == "socketbonus6":
+        socket_bonus6 = True
+    elif socket_bonus6 != "socketbonus6":
+        socket_bonus6 = False
+    socket_bonus7 = request.form.get("socketbonus7")
+    if socket_bonus7 == "socketbonus7":
+        socket_bonus7 = True
+    elif socket_bonus7 != "socketbonus7":
+        socket_bonus7 = False
+    socket_bonus8 = request.form.get("socketbonus8")
+    if socket_bonus8 == "socketbonus8":
+        socket_bonus8 = True
+    elif socket_bonus8 != "socketbonus8":
+        socket_bonus8 = False
+    socket_bonus9 = request.form.get("socketbonus9")
+    if socket_bonus9 == "socketbonus9":
+        socket_bonus9 = True
+    elif socket_bonus9 != "socketbonus9":
+        socket_bonus9 = False
+    socket_bonus10 = request.form.get("socketbonus10")
+    if socket_bonus10 == "socketbonus10":
+        socket_bonus10 = True
+    elif socket_bonus10 != "socketbonus10":
+        socket_bonus10 = False
+    socket_bonus11 = request.form.get("socketbonus11")
+    if socket_bonus11 == "socketbonus11":
+        socket_bonus11 = True
+    elif socket_bonus11 != "socketbonus11":
+        socket_bonus11 = False
+    socket_bonus12 = request.form.get("socketbonus12")
+    if socket_bonus12 == "socketbonus12":
+        socket_bonus12 = True
+    elif socket_bonus12 != "socketbonus12":
+        socket_bonus12 = False
+    socket_bonus13 = request.form.get("socketbonus13")
+    if socket_bonus13 == "socketbonus13":
+        socket_bonus13 = True
+    elif socket_bonus13 != "socketbonus13":
+        socket_bonus13 = False
+    socket_bonus14 = request.form.get("socketbonus14")
+    if socket_bonus14 == "socketbonus14":
+        socket_bonus14 = True
+    elif socket_bonus14 != "socketbonus14":
+        socket_bonus14 = False
+    socket_bonus15 = request.form.get("socketbonus15")
+    if socket_bonus15 == "socketbonus15":
+        socket_bonus15 = True
+    elif socket_bonus15 != "socketbonus15":
+        socket_bonus15 = False
+    socket_bonus16 = request.form.get("socketbonus16")
+    if socket_bonus16 == "socketbonus16":
+        socket_bonus16 = True
+    elif socket_bonus16 != "socketbonus16":
+        socket_bonus16 = False
+    pre_pop_pot =  request.form.get("prepoppotion")
+    if pre_pop_pot == "prepoppotion":
+        pre_pop_pot = True
+    elif pre_pop_pot != "prepoppotion":
+        pre_pop_pot = False
+    dps = all_function(item_head = helm_slot, item_neck = neck_slot, item_shoulders = shoulders_slot, item_back = back_slot, item_chest = chest_slot, item_wrist = wrist_slot,item_gloves = gloves_slot, item_waist = waist_slot, item_legs = legs_slot, item_boots = boots_slot, item_ring1 = ring1_slot, item_ring2 = ring2_slot, item_trinket1 = trinket1_slot, item_trinket2 = trinket2_slot, item_sigil = sigil_slot, item_mh = weapon1_slot, item_oh = weapon2_slot, length_of_the_fight = fight_length, length_of_the_fight_variance = fight_length_variance, total_simulation_amounts = simulation_amounts, total_number_of_targets = amount_of_targets, the_target_level = target_level, the_target_armor = target_armor, the_total_fight_under_35 = fight_percent_under_35_percent, the_pestilence_reset_timer = pestilence_reset_time, the_precast_horn_time = precast_horn_time, the_input_dk_presence = dk_presence, the_input_dk_spec = dk_spec, the_input_race_selection = race_selection, the_input_potion = potion, the_input_potion_timer = potion_timer, the_input_flask = flask_used, the_input_food_selection = food_selection, the_input_draenei_buff = draenei_buff, the_input_horn_of_winter_buff = horn_of_winter_buff, the_input_imp_icy_talons_buff = imp_icy_talons_buff, the_input_abominations_might_buff = abominations_might_buff, the_input_sanctified_retribution_buff = sanctified_retribution_buff, the_input_imp_moonkin_form_buff = imp_moonkin_form_buff, the_input_blood_frenzy_buff = blood_frenzy_buff, the_input_expose_armor_debuff = expose_armor_debuff, the_input_curse_of_weakness_debuff = curse_of_weakness_debuff, the_input_leader_of_the_pack_buff = leader_of_the_pack_buff, the_input_heroism_buff = heroism_buff, the_input_herosim_buff_timer = herosim_buff_timer, the_input_unholy_frenzy_buff = unholy_frenzy_buff, the_input_unholy_frenzy_buff_timer = unholy_frenzy_buff_timer, the_input_tricks_of_the_trade_buff = tricks_of_the_trade_buff, the_input_tricks_of_the_trade_buff_timer = tricks_of_the_trade_buff_timer, the_input_gift_of_the_wild_buff = gift_of_the_wild_buff, the_input_greater_blessing_of_kings_buff = greater_blessing_of_kings_buff, the_input_greater_blessing_of_might_buff = greater_blessing_of_might_buff, the_input_imp_blessing_of_might_buff = imp_blessing_of_might_buff , the_input_heart_of_the_crusader_buff = heart_of_the_crusader_buff, the_input_imp_scorch_buff = imp_scorch_buff, the_input_imp_faerie_fire_debuff = imp_faerie_fire_debuff, the_input_curse_of_the_elements_debuff = curse_of_the_elements_debuff, the_input_moonkin_aura_buff = moonkin_aura_buff , the_input_blood_fury_buff = blood_fury_buff, the_input_blood_fury_buff_timer = blood_fury_buff_timer, the_input_berserking_buff = berserking_buff, the_input_berserking_buff_timer = berserking_buff_timer, talent_url = talents, bone_shield_bone_consumption_rate = bone_shield_consume_rate, gargoyle_use_timer = garg_timer, input_meta_gem1 = meta_gem_sel, input_mh_enchant = mh_wep_enchant, input_oh_enchant = oh_wep_enchant, input_head_enchant = head_enchant, input_shoulder_enchant = shoulders_enchant, input_back_enchant = back_enchant, input_chest_enchant = chest_enchant, input_wrist_enchant = wrist_enchant, input_gloves_enchant = gloves_enchant, input_legs_enchant = legs_enchant, input_boots_enchant = boots_enchant, input_ring1_enchant = ring1_enchant, input_ring2_enchant = ring2_enchant, raid_buff_crypt_fever = crypt_fever_debuff, use_army = use_army, use_ghoul = use_ghoul, gargoyle_stance_dance = garg_stance_dance, use_obliterate_over_howling_blast = prio_obli_over_howling, use_blood_strike_over_blood_boil = prio_blood_strike_over_blood_boil, death_and_decay_skip = skip_death_and_decay, death_and_decay_force_cast = force_death_and_decay, input_socketbonus1 = socket_bonus1, input_socketbonus2 = socket_bonus2, input_socketbonus3 = socket_bonus3, input_socketbonus4 = socket_bonus4, input_socketbonus5 = socket_bonus5, input_socketbonus6 = socket_bonus6, input_socketbonus7 = socket_bonus7, input_socketbonus8 = socket_bonus8, input_socketbonus9 = socket_bonus9, input_socketbonus10 = socket_bonus10, input_socketbonus11 = socket_bonus11, input_socketbonus12 = socket_bonus12, input_socketbonus13 = socket_bonus13, input_socketbonus14 = socket_bonus14, input_socketbonus15 = socket_bonus15, input_socketbonus16 = socket_bonus16, input_gem1 = gem_selection1, input_gem2 = gem_selection2, input_gem3 = gem_selection3, input_gem4 = gem_selection4, input_gem5 = gem_selection5, input_gem6 = gem_selection6, input_gem7 = gem_selection7, input_gem8 = gem_selection8, input_gem9 = gem_selection9, input_gem10 = gem_selection10, input_gem11 = gem_selection11, input_gem12 = gem_selection12, input_gem13 = gem_selection13, input_gem14 = gem_selection14, input_gem15 = gem_selection15, input_gem16 = gem_selection16, input_gem17 = gem_selection17, input_gem18 = gem_selection18, input_gem19 = gem_selection19, input_gem20 = gem_selection20, input_gem21 = gem_selection21, input_gem22 = gem_selection22, input_gem23 = gem_selection23, input_gem24 = gem_selection24, input_gem25 = gem_selection25, input_gem26 = gem_selection26, input_gem27 = gem_selection27, input_gem28 = gem_selection28, input_gem29 = gem_selection29, input_gem30 = gem_selection30, input_gem31 = gem_selection31, input_gem32 = gem_selection32, input_gem33 = gem_selection33, input_gem34 = gem_selection34, input_gem35 = gem_selection35, input_gem36 = gem_selection36, input_gem37 = gem_selection37, input_gem38 = gem_selection38, input_gem39 = gem_selection39, input_gem40 = gem_selection40, input_gem41 = gem_selection41, input_gem42 = gem_selection42, input_gem43 = gem_selection43, input_gem44 = gem_selection44, input_gem45 = gem_selection45, input_gem46 = gem_selection46, input_gem47 = gem_selection47, input_gem48 = gem_selection48, input_gem49 = gem_selection49, input_gem50 = gem_selection50, input_gem51 = gem_selection51, input_gem52 = gem_selection52, input_gem53 = gem_selection53, input_gem54 = gem_selection54, input_gem55 = gem_selection55, input_gem56 = gem_selection56, input_gem57 = gem_selection57, input_gem58 = gem_selection58, input_gem59 = gem_selection59, input_gem60 = gem_selection60, input_gem61 = gem_selection61, input_gem62 = gem_selection62, input_gem63 = gem_selection63, input_gem64 = gem_selection64, blood_gorged_proc_rate = blood_gorged_proc_r, input_pre_pot_potion = pre_pop_pot)
+    return dps
+
 
 external_stylesheets = ['/static/css/dash_css.css']
 
