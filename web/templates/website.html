@@ -33280,7 +33280,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
               
             function ifsheetlooping(){
                 if (sheetloop === "True"){
-                    if (loopnum != current_loopnum) {
+                    if (loopnum !== current_loopnum) {
                     current_loopnum++;
                     current_selection_dropdown.selectedIndex = current_loopnum;
                     var wep3 = document.getElementById(no_hash).value;
