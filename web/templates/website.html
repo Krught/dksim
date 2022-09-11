@@ -33258,12 +33258,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                 }
             }
               
-//            var simloopcurrent = "False";
-              
-//            function insimloop(){
-//                
-//                current_loopnum++;
-//            }
+
             var current_selection_items = "";
             var sheetloop = "False";
             var selection_items = "";
@@ -33294,12 +33289,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                     document.getElementById(wep_new).classList.add(selecteditemcat);
                     document.getElementById("simdpsbutton").click();
                     } else {
-                    
-                   // if (loopnum === current_loopnum){
-                        alert("T");
                         current_selection_dropdown.value = current_selection_items;
-                        alert(current_selection_items);
-                        alert(currentsimamount);
                         var wep3 = document.getElementById(no_hash).value;
                         var $select903 = document.querySelector(selection_items);
                         $select903.value = wep3;
@@ -33309,19 +33299,13 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                         var mh_wep = document.getElementsByClassName(selecteditemcat);
                         mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
                         document.getElementById(wep_new).classList.add(selecteditemcat);
-                        
                         const $select853 = document.querySelector('#simamounts');
                         $select853.value = currentsimamount;
-                        
-                        //no reselected correct item
-                        
-                        
                         sheetloop = "False";
                         selection_items = "";
                         current_selection_dropdown = "";
                         loopnum = "";
                         current_loopnum = 0;
-                        
                         dropdown_highlight_selection = "";
                         no_hash = "";
                         selecteditemcat = "";
@@ -33329,18 +33313,15 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                         selecteditemcatwmod = "";
                         current_selection_items = "";
                         currentsimamount = "";
-                        
                     }
                 }
             }
               
               
             function simcurrentsheet(){
-//                if (sheetloop = "True") {
-//                    current_loopnum = 10000;
-//                }
-//                else {
-                //Possibly ass a function that if sheetloop is true, then end loop prob can just be set curent loopnum to like 1k
+                if (sheetloop === "True") {
+                    current_loopnum = 10000;
+                } else {
                 var selectedsheet_area = document.querySelector(".tablinks.active").innerHTML;
                 if (selectedsheet_area != "Settings") {
                     if (selectedsheet_area != "Weapon") {
@@ -33399,7 +33380,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                     
                 }
               }
-//            }
+            }
               
 
                 
