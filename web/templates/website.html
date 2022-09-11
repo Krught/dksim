@@ -26,34 +26,18 @@
   <!-- Tab links -->
   <div>
     <div style="text-align:center;float:left;width:10%;">
+        <br>
+        <br>
+<!--
         <h3>&nbsp</h3>
         <h3>&nbsp</h3>
+-->
         <h3>Average DPS:</h3>
        <!-- <div id="dps-sum-div">
         <h3>0.0</h3>
         </div> -->
         <div id="sim-import-area" hidden class="">0.0</div> 
         <div id="dps_area">0.0</div>
-        <div id="import_damage" hidden class="">0.0</div>
-        <div id="import_fight_len" hidden class="">0.0</div>
-        <div id="import_rotation" hidden class="">0.0</div>
-        <div id="import_rotation_time" hidden class="">0.0</div>
-        <div id="import_rotation_damage" hidden class="">0.0</div>
-        <div id="import_rotation_status" hidden class="">0.0</div>
-        <div id="import_rune_0_tracker" hidden class="">0.0</div>
-        <div id="import_rune_1_tracker" hidden class="">0.0</div>
-        <div id="import_rune_2_tracker" hidden class="">0.0</div>
-        <div id="import_rune_3_tracker" hidden class="">0.0</div>
-        <div id="import_rune_4_tracker" hidden class="">0.0</div>
-        <div id="import_rune_5_tracker" hidden class="">0.0</div>
-        <div id="import_rune_6_tracker" hidden class="">0.0</div>
-        <div id="import_rune_7_tracker" hidden class="">0.0</div>
-        <div id="import_rune_8_tracker" hidden class="">0.0</div>
-        <div id="import_rune_9_tracker" hidden class="">0.0</div>
-        <div id="import_rune_10_tracker" hidden class="">0.0</div>
-        <div id="import_rune_11_tracker" hidden class="">0.0</div>
-        <div id="import_rune_time_tracker" hidden class="">0.0</div>
-        <div id="import_runic_power_tracker" hidden class="">0.0</div>
         <h3>&nbsp</h3>
         <!-- have a button POST a click via AJAX -->
         <button id="simdpsbutton"hx-post="/calculatedps"hx-trigger="click"hx-target="#sim-import-area"hx-indicator="#spinner"hx-include="#head, #neck, #weapon1, #weapon2, #shoulders, #back, #chest, #wrist, #gloves, #waist, #legs, #boots, #sigil, #ring1, #ring2, #trinket1, #trinket2, #fightlen, #fightlenvar, #simamounts, #targetamounts, #targetlevel, #targetarmor, #fightsub35, #pestilencereset, #hornofwinterprecastamount, #dkpresence, #dkspec, #raceselection, #potion, #potionpop, #flask, #foodselection, #draeneiinparty, #hornofwinterbuff, #impicytalonsbuff, #abommightbuff, #sancretribuff, #impmoonkinbuff, #bloodfrenzybuff, #exposearmordebuff, #curseofweaknessdebuff, #leaderofthepackbuff, #heroismbuff, #heroismtimer, #unholyfrenzybuff, #unholyfrenzytimer, #tricksofthettbuff, #tricksofthetradetimer, #giftofthewildbuff, #greaterblessingofkingsbuff, #greaterblessingofmightbuff, #impblessingofmightbuff, #heartoftherusaderbuff, #impscorchbuff, #impfaeriefiredebuff, #curseoftheelementsdebuff, #moonkinaurabuff, #bloodfurybuff, #bloodfurytimer, #berserkingbuff, #berserkingtimer, #talentlink, #boneshieldconsum, #gargusetime, #gargstancedance, #useghoul, #usearmyofd, #prioobliterate, #priobloodstrike, #nodeathanddecay, #forcedeathanddecay, #cryptfeverdebuff, #metagemselection, #mhweapenchant, #ohweapenchant, #headenchant, #shouldersenchant, #backenchant, #chestenchant, #wristenchant, #glovesenchant, #legsenchant, #bootsenchant, #ring1enchant, #ring2enchant, #socketbonus1, #socketbonus2, #socketbonus3, #socketbonus4, #socketbonus5, #socketbonus6, #socketbonus7, #socketbonus8, #socketbonus9, #socketbonus10, #socketbonus11, #socketbonus12, #socketbonus13, #socketbonus14, #socketbonus15, #socketbonus16, #gemselection1, #gemselection2, #gemselection3, #gemselection4, #gemselection5, #gemselection6, #gemselection7, #gemselection8, #gemselection9, #gemselection10, #gemselection11, #gemselection12, #gemselection13, #gemselection14, #gemselection15, #gemselection16, #gemselection17, #gemselection18, #gemselection19, #gemselection20, #gemselection21, #gemselection22, #gemselection23, #gemselection24, #gemselection25, #gemselection26, #gemselection27, #gemselection28, #gemselection29, #gemselection30, #gemselection31, #gemselection32, #gemselection33, #gemselection34, #gemselection35, #gemselection36, #gemselection37, #gemselection38, #gemselection39, #gemselection40, #gemselection41, #gemselection42, #gemselection43, #gemselection44, #gemselection45, #gemselection46, #gemselection47, #gemselection48, #gemselection49, #gemselection50, #gemselection51, #gemselection52, #gemselection53, #gemselection54, #gemselection55, #gemselection56, #gemselection57, #gemselection58, #gemselection59, #gemselection60, #gemselection61, #gemselection62, #gemselection63, #gemselection64, #bloodgorg, #usernameassign, #prepoppotion">Calculate DPS</button>
@@ -33319,7 +33303,6 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                 }
             }
               
-              
             function simcurrentsheet(){
                 if (sheetloop === "True") {
                     current_loopnum = 10000;
@@ -33607,51 +33590,11 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                     }
                         } 
                     }
-                
                 else {
-                    
                 }
               }
             }
-            
-            //Save for later
-//            var mini_selectedsheet_area = document.querySelector(".tablinks_weapon.active").innerHTML;
-//                        if (mini_selectedsheet_area === "Main hand") {
-//                            frontunderitem = 'w1_';
-//                            currentsimamount = document.getElementById('simamounts').value;
-//                            var newsimamount = currentsimamount
-//                            if (currentsimamount > 250) {
-//                                newsimamount = 250
-//                            }
-//                            const $select868 = document.querySelector('#simamounts');
-//                            $select868.value = newsimamount
-//                            selectedsheet_area = "weapon1"
-//                            selection_items = selectedsheet_area.toLowerCase();
-//                            selection_items = "#" + selection_items
-//                            dropdown_highlight_selection = selectedsheet_area.toLowerCase();
-//                            current_selection_dropdown = document.querySelector(selection_items);
-//                            alert(current_selection_dropdown);
-//                            current_selection_items = current_selection_dropdown.value;
-//                            loopnum = current_selection_dropdown.options.length;
-//                            dropdown_highlight_selection = "weapon1";
-//                            no_hash = selection_items.replace("#", "");
-//                            selecteditemcat = "selectedwepmh"
-//                            selecteditemcatwmod = "/\b" + selecteditemcat + "\b/g"
-//                            current_loopnum = 0
-//                            alert("T"); // doesn't even work here
-//                            current_selection_dropdown.selectedIndex = current_loopnum;
-//                            var wep3 = document.getElementById(no_hash).value;
-//                            var $select918 = document.querySelector(selection_items);
-//                            $select918.value = wep3;
-//                            var wep_new = wep3.replace(/\ /g, "_");
-//                            wep_new = wep_new.replace(/\'/g, "");
-//                            wep_new = wep_new.replace(/\:/g, "");
-//                            wep_new = frontunderitem + wep_new;
-//                            var mh_wep = document.getElementsByClassName(selecteditemcat);
-//                            mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
-//                            document.getElementById(wep_new).classList.add(selecteditemcat);
-//                            sheetloop = "True";
-//                            document.getElementById("simdpsbutton").click();
+
               
 
                 
