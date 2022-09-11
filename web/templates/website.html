@@ -33287,9 +33287,6 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                     wep_new = frontunderitem + wep_new;
                     var mh_wep = document.getElementsByClassName(selecteditemcat);
                     mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
-                    //issue below here
-                    alert(wep_new);
-                    alert(selecteditemcat);
                     document.getElementById(wep_new).classList.add(selecteditemcat);
                     document.getElementById("simdpsbutton").click();
                     } else {
@@ -33427,12 +33424,115 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                                     document.getElementById("simdpsbutton").click();
                                 } else {
                                     frontunderitem = 'Trinkt2_';
-                                    alert("Trinket2");
+                                    var trinketnum = 2
+                                    currentsimamount = document.getElementById('simamounts').value;
+                                    var newsimamount = currentsimamount
+                                    if (currentsimamount > 250) {
+                                        newsimamount = 250
+                                    }
+                                    const $select857 = document.querySelector('#simamounts');
+                                    $select857.value = newsimamount
+                                    selectedsheet_area = "trinket" + trinketnum 
+                                    selection_items = selectedsheet_area.toLowerCase();
+                                    selection_items = "#" + selection_items
+                                    dropdown_highlight_selection = selectedsheet_area.toLowerCase();
+                                    current_selection_dropdown = document.querySelector(selection_items);
+                                    current_selection_items = current_selection_dropdown.value;
+                                    loopnum = current_selection_dropdown.options.length;
+                                    dropdown_highlight_selection = "dropdown_select_" +  dropdown_highlight_selection;
+                                    no_hash = selection_items.replace("#", "");
+                                    selecteditemcat = "selected" + selectedsheet_area.toLowerCase();
+                                    selecteditemcatwmod = "/\b" + selecteditemcat + "\b/g"
+                                    current_loopnum = 0
+                                    current_selection_dropdown.selectedIndex = current_loopnum;
+                                    var wep3 = document.getElementById(no_hash).value;
+                                    var $select907 = document.querySelector(selection_items);
+                                    $select907.value = wep3;
+                                    var wep_new = wep3.replace(/\ /g, "_");
+                                    wep_new = wep_new.replace(/\'/g, "");
+                                    wep_new = wep_new.replace(/\:/g, "");
+                                    wep_new = frontunderitem + wep_new;
+                                    var mh_wep = document.getElementsByClassName(selecteditemcat);
+                                    mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
+                                    document.getElementById(wep_new).classList.add(selecteditemcat);
+                                    sheetloop = "True";
+                                    document.getElementById("simdpsbutton").click();
                                 }
                         }
                 }
                     else {
-                        alert("Rings Area"); 
+                        var mini_selectedsheet_area = document.querySelector(".tablinks_ring.active").innerHTML;
+                        if (mini_selectedsheet_area === "Slot1") {
+                            frontunderitem = 'Ringg1_';
+                            var trinketnum = 1
+                            currentsimamount = document.getElementById('simamounts').value;
+                            var newsimamount = currentsimamount
+                            if (currentsimamount > 250) {
+                                newsimamount = 250
+                            }
+                            const $select858 = document.querySelector('#simamounts');
+                            $select858.value = newsimamount
+                            selectedsheet_area = "ring" + trinketnum 
+                            selection_items = selectedsheet_area.toLowerCase();
+                            selection_items = "#" + selection_items
+                            dropdown_highlight_selection = selectedsheet_area.toLowerCase();
+                            current_selection_dropdown = document.querySelector(selection_items);
+                            current_selection_items = current_selection_dropdown.value;
+                            loopnum = current_selection_dropdown.options.length;
+                            dropdown_highlight_selection = "dropdown_select_" +  dropdown_highlight_selection;
+                            no_hash = selection_items.replace("#", "");
+                            selecteditemcat = "selected" + selectedsheet_area.toLowerCase();
+                            selecteditemcatwmod = "/\b" + selecteditemcat + "\b/g"
+                            current_loopnum = 0
+                            current_selection_dropdown.selectedIndex = current_loopnum;
+                            var wep3 = document.getElementById(no_hash).value;
+                            var $select908 = document.querySelector(selection_items);
+                            $select908.value = wep3;
+                            var wep_new = wep3.replace(/\ /g, "_");
+                            wep_new = wep_new.replace(/\'/g, "");
+                            wep_new = wep_new.replace(/\:/g, "");
+                            wep_new = frontunderitem + wep_new;
+                            var mh_wep = document.getElementsByClassName(selecteditemcat);
+                            mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
+                            document.getElementById(wep_new).classList.add(selecteditemcat);
+                            sheetloop = "True";
+                            document.getElementById("simdpsbutton").click();
+                        } else { 
+                            frontunderitem = 'Ringg2_';
+                            var trinketnum = 2
+                            currentsimamount = document.getElementById('simamounts').value;
+                            var newsimamount = currentsimamount
+                            if (currentsimamount > 250) {
+                                newsimamount = 250
+                            }
+                            const $select859 = document.querySelector('#simamounts');
+                            $select859.value = newsimamount
+                            selectedsheet_area = "ring" + trinketnum 
+                            selection_items = selectedsheet_area.toLowerCase();
+                            selection_items = "#" + selection_items
+                            dropdown_highlight_selection = selectedsheet_area.toLowerCase();
+                            current_selection_dropdown = document.querySelector(selection_items);
+                            current_selection_items = current_selection_dropdown.value;
+                            loopnum = current_selection_dropdown.options.length;
+                            dropdown_highlight_selection = "dropdown_select_" +  dropdown_highlight_selection;
+                            no_hash = selection_items.replace("#", "");
+                            selecteditemcat = "selected" + selectedsheet_area.toLowerCase();
+                            selecteditemcatwmod = "/\b" + selecteditemcat + "\b/g"
+                            current_loopnum = 0
+                            current_selection_dropdown.selectedIndex = current_loopnum;
+                            var wep3 = document.getElementById(no_hash).value;
+                            var $select909 = document.querySelector(selection_items);
+                            $select909.value = wep3;
+                            var wep_new = wep3.replace(/\ /g, "_");
+                            wep_new = wep_new.replace(/\'/g, "");
+                            wep_new = wep_new.replace(/\:/g, "");
+                            wep_new = frontunderitem + wep_new;
+                            var mh_wep = document.getElementsByClassName(selecteditemcat);
+                            mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
+                            document.getElementById(wep_new).classList.add(selecteditemcat);
+                            sheetloop = "True";
+                            document.getElementById("simdpsbutton").click(); 
+                        }
                     }
                 }
                     else {
