@@ -1926,10 +1926,14 @@ def sqltwo(value):
                     'SELECT * FROM logs', #database 1 (version 2)
                     SQLALCHEMY_DATABASE_URI #database 1 (version 2)
                 ) #database 1 (version 2)
+                db.session.close()
+                engine.dispose()
                 stas = pd.read_sql_query(
                     'show processlist',
                     SQLALCHEMY_DATABASE_URI
                 )
+                db.session.close()
+                engine.dispose()
                 return all_two_dash_stuff(dfff, value, stas) #database 1 (version 2)
             else:
                 return html.Div(
