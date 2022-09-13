@@ -22,12 +22,14 @@
                 li {
                     cursor: pointer;
                 }
+/*
                 body {
                     background-image: url('/static/images/dk_sim_bg.jpg');
                     background-repeat: no-repeat;
                     background-attachment: fixed;
                     background-size: 100% 100%;
                 }
+*/
             </style> 
               <!-- Facebook Meta Tags -->
               <meta property="og:url" content="https://www.remourtech.com/">
@@ -46,6 +48,9 @@
 
         </head>
   <!-- Tab links -->
+<div id="all">
+    <div>
+        
   <div>
     <div style="text-align:center;float:left;width:10%;">
         <br>
@@ -341,6 +346,7 @@
 <br>
 <input type=button onClick="frdwp1preset()" value='Frost DW P1' >
 <br>
+<input type=button onClick="blooddpsp1preset()" value='Blood DPS P1' >
 
     
 
@@ -656,6 +662,11 @@
 <br>
 <br>
 <div class="button-center">
+<input type="button" id="btnBack" onClick="Changebgcolor()" value="Toggle Background" />
+<br>
+<br>
+<br>
+<!-- <div class="button-center"> -->
 <button class="resetSelections">Reset All Selections</button>
 </div>
 
@@ -29558,7 +29569,8 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
 
 
 
-<!--         DO NOT DELETE BELOW THIS IDIOT       -->      
+<!--         DO NOT DELETE BELOW THIS IDIOT       -->  
+</div>
           <script>
 			const changeSelected1 = (e) => {
 			  var head_x = document.querySelector("#head_from_eighty").innerText;
@@ -32665,6 +32677,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                     Cookies.remove('gargusetimeselection')
                     Cookies.remove('bloodgorgselection')
                     Cookies.remove('usernameassignselection')
+                    Cookies.remove('thebgstatus')
                     location.reload();
                 }
               
@@ -34578,11 +34591,322 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                 dkspec_selector();
                 presetselector();
             }
+              function blooddpsp1preset(){
+                changetalentsto = "https://www.wowhead.com/wotlk/talent-calc/death-knight/0325020530203303231023001351-320250500002_001xv211s8721s9131s8g41s9r51sxd";
+                changepresetgearto = `{
+    "name": "blooddps",
+    "phase": 1,
+    "character": {
+        "name": "DarthRemour",
+        "level": 80,
+        "gameClass": "DEATHKNIGHT",
+        "race": "HUMAN",
+        "faction": "ALLIANCE"
+    },
+    "items": [
+        {
+            "name": "Valorous Scourgeborne Helmet",
+            "id": 40554,
+            "enchant": {
+                "name": "Arcanum of Torment",
+                "id": 3817,
+                "itemId": 50367
+            },
+            "gems": [
+                {
+                    "name": "Chaotic Skyflare Diamond",
+                    "id": 41285
+                },
+                {
+                    "name": "Nightmare Tear",
+                    "id": 49110
+                }
+            ],
+            "slot": "HEAD"
+        },
+        {
+            "name": "Favor of the Dragon Queen",
+            "id": 44664,
+            "gems": [
+                {
+                    "name": "Bold Dragon's Eye",
+                    "id": 42142
+                }
+            ],
+            "slot": "NECK"
+        },
+        {
+            "name": "Valorous Scourgeborne Shoulderplates",
+            "id": 40557,
+            "enchant": {
+                "name": "Master's Inscription of the Axe",
+                "id": 3835,
+                "spellId": 61117
+            },
+            "gems": [
+                {
+                    "name": "Bold Dragon's Eye",
+                    "id": 42142
+                }
+            ],
+            "slot": "SHOULDERS"
+        },
+        {
+            "name": "Chestguard of the Recluse",
+            "id": 40539,
+            "enchant": {
+                "name": "Enchant Chest - Powerful Stats",
+                "id": 3832,
+                "spellId": 60692
+            },
+            "gems": [
+                {
+                    "name": "Bold Dragon's Eye",
+                    "id": 42142
+                }
+            ],
+            "slot": "CHEST"
+        },
+        {
+            "name": "Girdle of Chivalry",
+            "id": 40278,
+            "gems": [
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                },
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                }
+            ],
+            "slot": "WAIST"
+        },
+        {
+            "name": "Leggings of the Honored",
+            "id": 44011,
+            "enchant": {
+                "name": "Icescale Leg Armor",
+                "id": 3823,
+                "itemId": 38374
+            },
+            "gems": [
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                },
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                }
+            ],
+            "slot": "LEGS"
+        },
+        {
+            "name": "Melancholy Sabatons",
+            "id": 40591,
+            "enchant": {
+                "name": "Enchant Boots - Greater Assault",
+                "id": 1597,
+                "spellId": 60763
+            },
+            "slot": "FEET"
+        },
+        {
+            "name": "Bracers of Unrelenting Attack",
+            "id": 40330,
+            "enchant": {
+                "name": "Fur Lining - Attack Power",
+                "id": 3756,
+                "itemId": 43097
+            },
+            "gems": [
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                },
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                }
+            ],
+            "slot": "WRISTS"
+        },
+        {
+            "name": "Frosted Adroit Handguards",
+            "id": 40541,
+            "enchant": {
+                "name": "Enchant Gloves - Crusher",
+                "id": 1603,
+                "spellId": 60668
+            },
+            "gems": [
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                }
+            ],
+            "slot": "HANDS"
+        },
+        {
+            "name": "Greatring of Collision",
+            "id": 43993,
+            "enchant": {
+                "name": "Enchant Ring - Assault",
+                "id": 3839,
+                "spellId": 44645
+            },
+            "gems": [
+                {
+                    "name": "Inscribed Monarch Topaz",
+                    "id": 40037
+                }
+            ],
+            "slot": "FINGER_1"
+        },
+        {
+            "name": "Surge Needle Ring",
+            "id": 40474,
+            "enchant": {
+                "name": "Enchant Ring - Assault",
+                "id": 3839,
+                "spellId": 44645
+            },
+            "slot": "FINGER_2"
+        },
+        {
+            "name": "Bandit's Insignia",
+            "id": 40371,
+            "slot": "TRINKET_1"
+        },
+        {
+            "name": "Darkmoon Card: Greatness",
+            "id": 42987,
+            "slot": "TRINKET_2"
+        },
+        {
+            "name": "Drape of the Deadly Foe",
+            "id": 40403,
+            "enchant": {
+                "name": "Enchant Cloak - Greater Speed",
+                "id": 3831,
+                "spellId": 47898
+            },
+            "slot": "BACK"
+        },
+        {
+            "name": "Betrayer of Humanity",
+            "id": 40384,
+            "enchant": {
+                "name": "Rune of the Fallen Crusader",
+                "id": 3368,
+                "spellId": 53344
+            },
+            "slot": "MAIN_HAND"
+        },
+        {
+            "name": "Sigil of Awareness",
+            "id": 40207,
+            "slot": "RANGED"
+        }
+    ],
+    "consumables": [],
+    "buffs": [],
+    "talents": [],
+    "glyphs": [],
+    "points": [
+        {
+            "name": "Unholy DPS",
+            "stats": {
+                "dps": 50,
+                "attackPower": 1,
+                "agility": 0.5,
+                "strength": 2.08,
+                "armorPenRating": 1,
+                "critRating": 1,
+                "hasteRating": 1,
+                "hitRating": 1,
+                "expertiseRating": 1,
+                "metaSockets": 80,
+                "redSockets": 33.28,
+                "yellowSockets": 33.28,
+                "blueSockets": 33.28,
+                "prismaticSockets": 33.28
+            }
+        }
+    ],
+    "stats": {
+        "agility": 549,
+        "armor": 10234,
+        "armorPen": 15,
+        "armorPenRating": 210,
+        "attackPower": 3877,
+        "crit": 26.96,
+        "critRating": 688,
+        "defense": 400,
+        "dodge": 10.16,
+        "expertise": 10,
+        "expertiseRating": 83,
+        "haste": 9.52,
+        "hasteRating": 240,
+        "health": 19971,
+        "hit": 9.91,
+        "hitRating": 325,
+        "intellect": 55,
+        "mainHandSpeed": 3.4,
+        "mana": 545,
+        "parry": 9.6,
+        "parryRating": 208,
+        "spellCrit": 14.99,
+        "spellHaste": 7.32,
+        "spellHit": 12.39,
+        "spirit": 84,
+        "stamina": 1203,
+        "strength": 832
+    },
+    "exportOptions": {
+        "buffs": true,
+        "talents": true
+    }
+}`;
+                var dkspecnum = 2;
+                var dkspecnum_select = document.querySelector('#dkspec');
+                dkspecnum_select.value = dkspecnum;
+                dkspec_selector();
+                presetselector();
+              }
               
+              
+              function Changebgcolorpageload(){
+                  document.getElementById("all").classList.toggle('BgClasst');
+              }
+              function Changebgcolor(){
+                  var bgstatss = document.getElementById("all").classList.contains('BgClasst');
+                  if (bgstatss === true){
+                      bgstats = "False";
+                  } else {
+                      bgstats = "True";
+                  }
+                  document.getElementById("all").classList.toggle('BgClasst');
+                  Cookies.set('thebgstatus', bgstats, { expires: 7 })
+              }
+              var bgstat_open_select = Cookies.get('thebgstatus')
+              if (bgstat_open_select === undefined || bgstat_open_select === null) {
+                   bgstat_open_select = "True";
+              }
+              
+              function bgload(){
+                  if (bgstat_open_select === "True") {
+                      Changebgcolorpageload();
+                  }
+              }
+              bgload();
+              
+
+        
 
                 
               
- 
           </script>
         <noscript>Your browser does not support JavaScript!</noscript>
 		<body>
