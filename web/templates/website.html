@@ -22,12 +22,14 @@
                 li {
                     cursor: pointer;
                 }
+/*
                 body {
                     background-image: url('/static/images/dk_sim_bg.jpg');
                     background-repeat: no-repeat;
                     background-attachment: fixed;
                     background-size: 100% 100%;
                 }
+*/
             </style> 
               <!-- Facebook Meta Tags -->
               <meta property="og:url" content="https://www.remourtech.com/">
@@ -46,6 +48,9 @@
 
         </head>
   <!-- Tab links -->
+<div id="all">
+    <div>
+        
   <div>
     <div style="text-align:center;float:left;width:10%;">
         <br>
@@ -656,6 +661,11 @@
 <br>
 <br>
 <div class="button-center">
+<input type="button" id="btnBack" onClick="Changebgcolor()" value="Toggle Background" />
+<br>
+<br>
+<br>
+<!-- <div class="button-center"> -->
 <button class="resetSelections">Reset All Selections</button>
 </div>
 
@@ -29558,7 +29568,8 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
 
 
 
-<!--         DO NOT DELETE BELOW THIS IDIOT       -->      
+<!--         DO NOT DELETE BELOW THIS IDIOT       -->  
+</div>
           <script>
 			const changeSelected1 = (e) => {
 			  var head_x = document.querySelector("#head_from_eighty").innerText;
@@ -34579,10 +34590,15 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                 presetselector();
             }
               
+              
+
+              function Changebgcolor(){
+                  document.getElementById("all").classList.toggle('BgClasst');
+              }
+              
 
                 
               
- 
           </script>
         <noscript>Your browser does not support JavaScript!</noscript>
 		<body>

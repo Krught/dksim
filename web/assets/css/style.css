@@ -349,10 +349,25 @@ h3 {text-align: center;}
    text-align-last:center;
     text-align: center;
 } 
+
+
+
+
 body {
   background-color: #000000;
+  background-image: url('/static/images/dk_sim_bg.jpg'); 
+  background-repeat: no-repeat;  
+  background-attachment: fixed;
+  background-size: 100% 100%;
   color: #ffffff;
+  height: 100% ;
 }
+.BgClasst {
+    background-color: #000000;
+    height: 100%; 
+    min-height: 100vh;
+}
+
 input[type='checkbox'] {
     -webkit-appearance:none;
     width:20px;
