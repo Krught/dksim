@@ -61,3 +61,4 @@ Item Slot,Slots,Type,Phase,Heroic,N,Name,Item Number,Min Damage,Max Damage,Speed
 1handed,1handed,sword,1,FALSE,Avool's Sword of Jin,Avool's Sword of Jin,44311,150,280,1.5,0,38,36,0,0,62,31,0,0,0,0,0,0,0,0,,,,,0,Stamina,,,
 2handed,2handed,sword,1,FALSE,Armageddon,Armageddon,40343,554,831,3.4,101,0,108,0,0,0,0,58,100,0,0,0,0,0,0,,,,,0,Stamina,,,
 1handed,1handed,mace,1,FALSE,Angry Dread,Angry Dread,40189,274,509,2.5,0,31,42,0,0,86,25,29,0,0,0,0,0,0,0,,,,,0,Stamina,,,
+2handed,2handed,sword,0,FALSE,Brutal Gladiator's Greatsword,Brutal Gladiator's Greatsword,35015,404,606,3.6,50,0,66,0,0,0,19,50,0,14,0,0,0,0,0,,,,,0,Stamina,,,
