@@ -34876,11 +34876,33 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
               }
               
               
-
-              function Changebgcolor(){
+              function Changebgcolorpageload(){
                   document.getElementById("all").classList.toggle('BgClasst');
               }
+              function Changebgcolor(){
+                  var bgstatss = document.getElementById("all").classList.contains('BgClasst');
+                  if (bgstatss === True){
+                      bgstats = False;
+                  } else {
+                      bgstats = True;
+                  }
+                  document.getElementById("all").classList.toggle('BgClasst');
+                  Cookies.set('thebgstatus', bgstats, { expires: 7 })
+              }
+              var bgstat_open_select = Cookies.get('thebgstatus')
+                if (bgstat_open_select === undefined || bgstat_open_select === null) {
+                   bgstat_open_select = True;
+                }
               
+              function bgload(){
+                  if bgstat_open_select = True{
+                      Changebgcolorpageload();
+                  }
+              }
+              bgload();
+              
+
+//              
 
                 
               
