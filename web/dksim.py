@@ -2094,6 +2094,7 @@ lograw.layout = html.Div(children=[
         html.Div(id='new-test2-dash-container'),
         
         ])
+from dash import ctx
 @lograw.callback(
     Output("new-test2-dash-container", "children"),
     Input("inputlogpass", "value"),
@@ -2102,15 +2103,14 @@ lograw.layout = html.Div(children=[
     Input('submit_val_raw', 'n_clicks'),
 )
 def sqlthree(inputlogpass, inputlognames, submit_val, submit_val_raw):
-    from dash import ctx
     button_id = ctx.triggered_id if not None else 'No clicks yet'
     print(button_id)
     submit_val1 = 0
     submit_val2 = 0
-    if button_id == 'submit_val':
-        submit_val1 += 1
-    elif button_id == 'submit_val_raw':
-        submit_val2 += 1
+    # if button_id == 'submit_val':
+    #     submit_val1 += 1
+    # elif button_id == 'submit_val_raw':
+    #     submit_val2 += 1
     empty_div = html.Div()
     if (submit_val1 % 2) != 0:
         if inputlogpass != None:
