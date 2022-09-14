@@ -2136,7 +2136,7 @@ def all_three_dash_stuff(datatable, pas): #, submit_val, submit_val_raw):
     #             html.I("Raw Simulator Log", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
     #             html.Br(),
     #         ]),
-    #         html.Div(html.Button('Submit', id='submit_val_raw', n_clicks=0)),
+    #         html.Div(html.Button('Load Raw Log Text', id='submit_val_raw')),
     #         html.Div(
     #         [   
     #             html.I(sql_raw_text, style={'color': '#ffffff'}),
@@ -2150,6 +2150,7 @@ def all_three_dash_stuff(datatable, pas): #, submit_val, submit_val_raw):
             html.I("Raw Simulator Log", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
             html.Br(),
         ]),
+        html.Div(html.Button('Load Raw Log Text', id='submit_val_raw', n_clicks=0)),
         html.Div([
             html.I("Raw Logs", style={'color': '#ffffff'}),
             dash_table.DataTable(id='table_log20',
@@ -2175,7 +2176,6 @@ def all_three_dash_stuff(datatable, pas): #, submit_val, submit_val_raw):
             },
                 
         )]),
-        html.Div(html.Button('Load Raw Log Data', id='submit_val_raw', n_clicks=0)),
         ])
     else:
         dts = html.Div(
