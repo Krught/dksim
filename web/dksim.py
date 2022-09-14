@@ -2091,11 +2091,12 @@ lograw.layout = html.Div(children=[
         children=[
             html.Button('View Specific Log', id='submit_val', n_clicks=0)
         ],  style={"display": "flex", "justifyContent": "center"}),
-        html.Div(id='new-test2-dash-container'),
     html.Div(
         children=[
+            html.br(),
             html.Button('Close Specific Log', id='close_val', n_clicks=0)
         ],  style={"display": "flex", "justifyContent": "center"}),
+        html.Div(id='new-test2-dash-container'),
         
         ])
 from dash import ctx
