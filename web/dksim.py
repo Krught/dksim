@@ -1897,6 +1897,9 @@ loggin.layout = html.Div(children=[
             html.H1(
             html.I("Log Name", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
             dcc.Input(id="inputlognames", type="text", placeholder="Username", debounce=True),
+        ],  style={"display": "flex",  "flex-direction": "row", "flex-wrap": "wrap", "justifyContent": "center"},),
+    html.Div(
+        children=[
             html.Button('View Specific Log', id='submit_val'),
             html.Br(),
             html.Button('Load Raw Log Text', id='submit_val_raw'),
