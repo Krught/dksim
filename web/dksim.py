@@ -2098,7 +2098,7 @@ lograw.layout = html.Div(children=[
         ],  style={"display": "flex", "justifyContent": "center"}),
         html.Div(id='new-test2-dash-container'),
         
-        html.Button('Load Raw Log Text', id='submit_val_raw', style = dict(display='none'))
+        html.Button('Load Raw Log Text', id='submit_val_raw', style = dict(display='none'), n_clicks=0)
         
         ])
 from dash import ctx
@@ -2110,7 +2110,7 @@ from dash import ctx
     Input('submit_val_raw', 'n_clicks'),
     Input('close_val', 'n_clicks'),
 )
-def sqlthree(inputlogpass, inputlognames, submit_val, close_val):  #, submit_val_raw):
+def sqlthree(inputlogpass, inputlognames, submit_val, close_val, submit_val_raw):  #, submit_val_raw):
     empty_div = html.Div()
     button_id = ctx.triggered_id if not None else 'No clicks yet'
     if button_id == 'close_val':
