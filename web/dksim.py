@@ -2096,9 +2096,12 @@ lograw.layout = html.Div(children=[
             html.Br(),
             html.Button('Close Specific Log', id='close_val',) # style = dict(display='none'))
         ],  style={"display": "flex", "justifyContent": "center"}),
+    html.Div(
+        children=[
+            html.Br(),
+            html.Button('Load Raw Log Text', id='submit_val_raw',) #style = dict(display='none'))
+        ],  style={"display": "flex", "justifyContent": "center"}),
         html.Div(id='new-test2-dash-container'),
-        
-        html.Button('Load Raw Log Text', id='submit_val_raw',) #style = dict(display='none'))
         
         ])
 @lograw.callback(
@@ -2115,14 +2118,9 @@ def sqlthree(inputlogpass, inputlognames, submit_val, close_val, submit_val_raw)
     empty_div = html.Div(
     [   html.H1(
         html.I("Nothing Available.", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
-        # html.Button('Load Raw Log Table', id='submit_val', style = dict(display='none')),
-        # html.Button('Close Specific Log', id='close_val', style = dict(display='none')),
-        # html.Button('Load Raw Log Text', id='submit_val_raw', style = dict(display='none')),
         html.Br(),
     ])
     if inputlogpass == conf['Log Secret']['logpas'].strip('"'):
-        #button_id = ctx.triggered_id 
-        #print(button_id)
         if button_id == 'close_val':
             button_id = ""
             return empty_div
@@ -2146,49 +2144,6 @@ def sqlthree(inputlogpass, inputlognames, submit_val, close_val, submit_val_raw)
             return all_three_dash_stuff2(dfffst)
     else:
         return empty_div
-    # button_id = ctx.triggered_id
-    # print(button_id)
-    # if button_id == 'close_val':
-    #     button_id = ""
-    #     return empty_div
-    # if button_id == 'submit_val':
-    #     button_id = ""
-    #     if inputlogpass != None:
-    #         if inputlogpass != "":
-    #             if inputlogpass == conf['Log Secret']['logpas'].strip('"'):
-    #                 dfffs = pd.read_sql_query(
-    #                     'SELECT * FROM dpsresults WHERE username = "{}"'.format(inputlognames),
-    #                     SQLALCHEMY_DATABASE_URI
-    #                 )
-    #                 db.session.close()
-    #                 engine.dispose()
-    #                 return all_three_dash_stuff(dfffs)
-    #             else:
-    #                 return empty_div
-    #         else:
-    #             return
-    #     else:
-    #         return
-    # if button_id == 'submit_val_raw':
-    #     button_id = ""
-    #     if inputlogpass != None:
-    #         if inputlogpass != "":
-    #             if inputlogpass == conf['Log Secret']['logpas'].strip('"'):
-    #                 dfffst = pd.read_sql_query(
-    #                     'SELECT * FROM dpsresults WHERE username = "{}"'.format(inputlognames),
-    #                     SQLALCHEMY_DATABASE_URI
-    #                 )
-    #                 db.session.close()
-    #                 engine.dispose()
-    #                 return all_three_dash_stuff2(dfffst)
-    #             else:
-    #                 return empty_div
-    #         else:
-    #             return
-    #     else:
-    #         return
-    # else:
-    #     return empty_div
 def all_three_dash_stuff2(datatable):
     dts = html.Div(children=[
     html.Div(
@@ -2196,17 +2151,10 @@ def all_three_dash_stuff2(datatable):
         html.I("Raw Simulator Text", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
         html.Br(),
     ]),
-    # html.Div(
-    #     children=[
-    #         html.Br(),
-    #         html.Button('Close Specific Log', id='close_val')
-    #     ],  style={"display": "flex", "justifyContent": "center"}),
-    # html.Div(html.Button('Load Raw Log Table', id='submit_val')),
     html.Div(
     [   
         html.I(datatable, style={'color': '#ffffff'}),
     ]),
-        html.Div(id='new-test2-dash-container'),
     ])
     return dts
 def all_three_dash_stuff(datatable):
@@ -2216,14 +2164,6 @@ def all_three_dash_stuff(datatable):
         html.I("Raw Simulator Log", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
         html.Br(),
     ]),
-    # html.Div(
-    #     children=[
-    #         html.Br(),
-    #         html.Button('Close Specific Log', id='close_val')
-    #     ],  style={"display": "flex", "justifyContent": "center"}),
-    # html.Div(html.Button('Load Raw Log Text', id='submit_val_raw')),
-    # html.Button('Load Raw Log Table', id='submit_val', style = dict(display='none')),
-    # html.Button('Close Specific Log', id='close_val', style = dict(display='none')),
     html.Div([
         html.I("Raw Logs", style={'color': '#ffffff'}),
         dash_table.DataTable(id='table_log20',
