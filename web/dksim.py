@@ -2110,6 +2110,8 @@ lograw.layout = html.Div(children=[
     Input('close_val', 'n_clicks'),
 )
 def sqlthree(inputlogpass, inputlognames, submit_val, close_val, submit_val_raw):  #, submit_val_raw):
+    button_id = ctx.triggered_id 
+    print(button_id)
     empty_div = html.Div(
     [   html.H1(
         html.I("Nothing Available.", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
@@ -2119,8 +2121,8 @@ def sqlthree(inputlogpass, inputlognames, submit_val, close_val, submit_val_raw)
         html.Br(),
     ])
     if inputlogpass == conf['Log Secret']['logpas'].strip('"'):
-        button_id = ctx.triggered_id 
-        print(button_id)
+        #button_id = ctx.triggered_id 
+        #print(button_id)
         if button_id == 'close_val':
             button_id = ""
             return empty_div
