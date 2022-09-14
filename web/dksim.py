@@ -2074,25 +2074,25 @@ lograw.layout = html.Div(children=[
     html.Div(
         [   html.H1(
             html.I("Logging Password", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
-            html.Br(),
         ]),
     html.Div(
         children=[
             dcc.Input(id="inputlogpass", type="text", placeholder="Password", debounce=True),
-        ],  style={"display": "flex", "justifyContent": "center"}),
+        ],  style={"display": "flex", "justifyContent": "center"}
+            html.Br(),),
     html.Div(
         [   html.H1(
             html.I("Log Username", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
-            html.Br(),
         ]),
     html.Div(
         children=[
             dcc.Input(id="inputlogname", type="text", placeholder="Username", debounce=True),
-        ],  style={"display": "flex", "justifyContent": "center"}),
+        ],  style={"display": "flex", "justifyContent": "center"}
+            html.Br(),),
         html.Div(id='new-test2-dash-container'),
         
         ])
-@loggin.callback(
+@lograw.callback(
     Output("new-test2-dash-container", "children"),
     Input("inputlogpass", "value"),
     Input("inputlogname", "lookupid"),
