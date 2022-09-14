@@ -2206,8 +2206,8 @@ def all_three_dash_stuff2(datatable):
     [   
         html.I(datatable, style={'color': '#ffffff'}),
     ]),
-        html.Button('Close Specific Log', id='close_val', style = dict(display='none')),
-        html.Button('Load Raw Log Text', id='submit_val_raw', style = dict(display='none')),
+        # html.Button('Close Specific Log', id='close_val', style = dict(display='none')),
+        # html.Button('Load Raw Log Text', id='submit_val_raw', style = dict(display='none')),
         html.Div(id='new-test2-dash-container'),
     ])
     return dts
@@ -2224,8 +2224,8 @@ def all_three_dash_stuff(datatable):
             html.Button('Close Specific Log', id='close_val')
         ],  style={"display": "flex", "justifyContent": "center"}),
     html.Div(html.Button('Load Raw Log Text', id='submit_val_raw')),
-    html.Button('Load Raw Log Table', id='submit_val', style = dict(display='none')),
-    html.Button('Close Specific Log', id='close_val', style = dict(display='none')),
+    # html.Button('Load Raw Log Table', id='submit_val', style = dict(display='none')),
+    # html.Button('Close Specific Log', id='close_val', style = dict(display='none')),
     html.Div([
         html.I("Raw Logs", style={'color': '#ffffff'}),
         dash_table.DataTable(id='table_log20',
