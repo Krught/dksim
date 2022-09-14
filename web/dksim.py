@@ -2098,7 +2098,7 @@ lograw.layout = html.Div(children=[
     Input('submit_val', 'n_clicks'),
     Input('submit_val_raw', 'n_clicks'),
 )
-def sqlthree(inputlogpass, inputlognames, submit_val, submit_val_raw):
+def sqlthree(inputlogpass, inputlognames, submit_val):
     empty_div = html.Div()
     if (submit_val % 2) != 0:
         if inputlogpass != None:
@@ -2110,7 +2110,7 @@ def sqlthree(inputlogpass, inputlognames, submit_val, submit_val_raw):
                     )
                     db.session.close()
                     engine.dispose()
-                    return all_three_dash_stuff(dfffs, inputlogpass, submit_val, submit_val_raw) #database 1 (version 2)
+                    return all_three_dash_stuff(dfffs, inputlogpass, submit_val) #database 1 (version 2)
                 else:
                     return html.Div(
                     [   html.H1(
@@ -2128,22 +2128,22 @@ def sqlthree(inputlogpass, inputlognames, submit_val, submit_val_raw):
 def all_three_dash_stuff(datatable, pas, submit_val = 0, submit_val_raw = 0):
     sql_raw_text = datatable.copy()
     sql_raw_text = sql_raw_text.to_string()
-    if (submit_val_raw % 2) != 0:
-        if pas == conf['Log Secret']['logpas'].strip('"'):
-            dts = html.Div(children=[
-            html.Div(
-            [   html.H1(
-                html.I("Raw Simulator Log", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
-                html.Br(),
-            ]),
-            html.Div(html.Button('Load Raw Log Text', id='submit_val_raw')),
-            html.Div(
-            [   
-                html.I(sql_raw_text, style={'color': '#ffffff'}),
-                html.Br(),
-            ]),
-            ])
-            return dts
+    # if (submit_val_raw % 2) != 0:
+    #     if pas == conf['Log Secret']['logpas'].strip('"'):
+    #         dts = html.Div(children=[
+    #         html.Div(
+    #         [   html.H1(
+    #             html.I("Raw Simulator Log", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+    #             html.Br(),
+    #         ]),
+    #         html.Div(html.Button('Load Raw Log Text', id='submit_val_raw')),
+    #         html.Div(
+    #         [   
+    #             html.I(sql_raw_text, style={'color': '#ffffff'}),
+    #             html.Br(),
+    #         ]),
+    #         ])
+    #         return dts
     else:
         if pas == conf['Log Secret']['logpas'].strip('"'):
             dts = html.Div(children=[
