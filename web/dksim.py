@@ -2086,8 +2086,8 @@ lograw.layout = html.Div(children=[
     html.Div(
         children=[
             dcc.Input(id="inputlognames", type="text", placeholder="Username", debounce=True),
+            html.Button('View Specific Log', id='submit_val', n_clicks=0)
         ],  style={"display": "flex", "justifyContent": "center"}),
-    html.Div(html.Button('View Specific Log', id='submit_val', n_clicks=0)),
         html.Div(id='new-test2-dash-container'),
         
         ])
