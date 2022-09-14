@@ -1935,7 +1935,7 @@ def sqltwo(inputlogpass, inputlognames, submit_val, close_val, submit_val_raw):
             )
             db.session.close()
             engine.dispose()
-            return all_two_dash_stuff(dfff, value, stas) 
+            return all_two_dash_stuff(dfff, inputlogpass, stas) 
         elif button_id == 'submit_val':
             button_id = ""
             dfffs = pd.read_sql_query(
