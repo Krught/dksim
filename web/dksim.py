@@ -2093,7 +2093,7 @@ lograw.layout = html.Div(children=[
         ],  style={"display": "flex", "justifyContent": "center"}),
     html.Div(
         children=[
-            html.br(),
+            html.Br(),
             html.Button('Close Specific Log', id='close_val', n_clicks=0)
         ],  style={"display": "flex", "justifyContent": "center"}),
         html.Div(id='new-test2-dash-container'),
