@@ -2104,6 +2104,8 @@ lograw.layout = html.Div(children=[
 def sqlthree(inputlogpass, inputlognames, submit_val, submit_val_raw):
     from dash import ctx
     button_id = ctx.triggered_id
+    button_id = button_id.triggered
+    print(button_id)
     submit_val1 = 0
     submit_val2 = 0
     if button_id == 'submit_val':
