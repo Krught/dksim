@@ -1902,7 +1902,7 @@ loggin.layout = html.Div(children=[
             html.Button('Load Raw Log Text', id='submit_val_raw'),
             html.Br(),
             html.Button('Close Specific Log', id='close_val',),
-        ],  style={"justifyContent": "center"}),
+        ],  style={"justifyContent": "center"}, className="row"),
         html.Div(id='new-test-dash-container'),
         ])
 @loggin.callback(
