@@ -2125,7 +2125,7 @@ def sqlthree(inputlogpass, inputlognames, submit_val): #submit_val_raw):
         return empty_div
 
 
-def all_three_dash_stuff(datatable, pas, submit_val, submit_val_raw):
+def all_three_dash_stuff(datatable, pas, submit_val, submit_val_raw = 0):
     sql_raw_text = datatable.copy()
     sql_raw_text = sql_raw_text.to_string()
     if (submit_val_raw % 2) != 0:
@@ -2143,6 +2143,7 @@ def all_three_dash_stuff(datatable, pas, submit_val, submit_val_raw):
                 html.Br(),
             ]),
             ])
+            return dts
     if pas == conf['Log Secret']['logpas'].strip('"'):
         dts = html.Div(children=[
         html.Div(
