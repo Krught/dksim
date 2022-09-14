@@ -2094,20 +2094,20 @@ lograw.layout = html.Div(children=[
     html.Div(
         children=[
             html.Br(),
-            html.Button('Close Specific Log', id='close_val', style = dict(display='none'))
+            html.Button('Close Specific Log', id='close_val',) # style = dict(display='none'))
         ],  style={"display": "flex", "justifyContent": "center"}),
         html.Div(id='new-test2-dash-container'),
         
-        html.Button('Load Raw Log Text', id='submit_val_raw', style = dict(display='none'))
+        html.Button('Load Raw Log Text', id='submit_val_raw',) #style = dict(display='none'))
         
         ])
 @lograw.callback(
     Output("new-test2-dash-container", "children"),
-    [Input("inputlogpass", "value"),
+    Input("inputlogpass", "value"),
     Input("inputlognames", "value"),
     Input('submit_val', 'n_clicks'),
     Input('submit_val_raw', 'n_clicks'),
-    Input('close_val', 'n_clicks')],
+    Input('close_val', 'n_clicks'),
 )
 def sqlthree(inputlogpass, inputlognames, submit_val, close_val, submit_val_raw):  #, submit_val_raw):
     button_id = ctx.triggered_id 
@@ -2196,18 +2196,16 @@ def all_three_dash_stuff2(datatable):
         html.I("Raw Simulator Text", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
         html.Br(),
     ]),
-    html.Div(
-        children=[
-            html.Br(),
-            html.Button('Close Specific Log', id='close_val')
-        ],  style={"display": "flex", "justifyContent": "center"}),
-    html.Div(html.Button('Load Raw Log Table', id='submit_val')),
+    # html.Div(
+    #     children=[
+    #         html.Br(),
+    #         html.Button('Close Specific Log', id='close_val')
+    #     ],  style={"display": "flex", "justifyContent": "center"}),
+    # html.Div(html.Button('Load Raw Log Table', id='submit_val')),
     html.Div(
     [   
         html.I(datatable, style={'color': '#ffffff'}),
     ]),
-        # html.Button('Close Specific Log', id='close_val', style = dict(display='none')),
-        # html.Button('Load Raw Log Text', id='submit_val_raw', style = dict(display='none')),
         html.Div(id='new-test2-dash-container'),
     ])
     return dts
@@ -2218,12 +2216,12 @@ def all_three_dash_stuff(datatable):
         html.I("Raw Simulator Log", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
         html.Br(),
     ]),
-    html.Div(
-        children=[
-            html.Br(),
-            html.Button('Close Specific Log', id='close_val')
-        ],  style={"display": "flex", "justifyContent": "center"}),
-    html.Div(html.Button('Load Raw Log Text', id='submit_val_raw')),
+    # html.Div(
+    #     children=[
+    #         html.Br(),
+    #         html.Button('Close Specific Log', id='close_val')
+    #     ],  style={"display": "flex", "justifyContent": "center"}),
+    # html.Div(html.Button('Load Raw Log Text', id='submit_val_raw')),
     # html.Button('Load Raw Log Table', id='submit_val', style = dict(display='none')),
     # html.Button('Close Specific Log', id='close_val', style = dict(display='none')),
     html.Div([
