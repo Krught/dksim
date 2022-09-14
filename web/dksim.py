@@ -2104,8 +2104,12 @@ from dash import ctx
 )
 def sqlthree(inputlogpass, inputlognames, submit_val):  #, submit_val_raw):
     button_id = ctx.triggered_id if not None else 'No clicks yet'
-    submit_val1 = 0
-    submit_val2 = 0
+    if 'submit_val1' in locals():
+        submit_val1 = submit_val1
+        submit_val2 = submit_val2
+    else:
+        submit_val1 = 0
+        submit_val2 = 0
     if button_id == 'submit_val':
         submit_val1 += 1
     # elif button_id == 'submit_val_raw':
