@@ -2098,16 +2098,16 @@ lograw.layout = html.Div(children=[
     Input('submit_val', 'n_clicks'),
     Input('submit_val_raw', 'n_clicks'),
 )
-def sqlthree(inputlogpass, inputlognames, submit_val): #submit_val_raw):
+def sqlthree(inputlogpass, inputlognames, submit_val, submit_val_raw):
     empty_div = html.Div()
     if (submit_val % 2) != 0:
         if inputlogpass != None:
             if inputlogpass != "":
                 if inputlogpass == conf['Log Secret']['logpas'].strip('"'):
-                    dfffs = pd.read_sql_query(  #database 2 (version 1)
+                    dfffs = pd.read_sql_query(
                         'SELECT * FROM dpsresults WHERE username = "{}"'.format(inputlognames),
-                        SQLALCHEMY_DATABASE_URI #database 1 (version 2)
-                    ) #database 1 (version 2)
+                        SQLALCHEMY_DATABASE_URI
+                    )
                     db.session.close()
                     engine.dispose()
                     return all_three_dash_stuff(dfffs, inputlogpass, submit_val, submit_val_raw) #database 1 (version 2)
@@ -2125,7 +2125,7 @@ def sqlthree(inputlogpass, inputlognames, submit_val): #submit_val_raw):
         return empty_div
 
 
-def all_three_dash_stuff(datatable, pas, submit_val, submit_val_raw = 0):
+def all_three_dash_stuff(datatable, pas, submit_val = 0, submit_val_raw = 0):
     sql_raw_text = datatable.copy()
     sql_raw_text = sql_raw_text.to_string()
     if (submit_val_raw % 2) != 0:
@@ -2144,47 +2144,48 @@ def all_three_dash_stuff(datatable, pas, submit_val, submit_val_raw = 0):
             ]),
             ])
             return dts
-    if pas == conf['Log Secret']['logpas'].strip('"'):
-        dts = html.Div(children=[
-        html.Div(
-        [   html.H1(
-            html.I("Raw Simulator Log", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
-            html.Br(),
-        ]),
-        html.Div(html.Button('Load Raw Log Text', id='submit_val_raw', n_clicks=0)),
-        html.Div([
-            html.I("Raw Logs", style={'color': '#ffffff'}),
-            dash_table.DataTable(id='table_log20',
-                columns=[{"name": i, "id": i} for i in datatable.columns],
-                data=datatable.to_dict('records'),
-                style_cell={'textAlign': 'center'},
-                style_data={'color': 'white','backgroundColor': 'black', 'whiteSpace': 'normal', 'height': 'auto', 'verticalAlign': 'top'},
-                style_data_conditional=[
-            {
-                'if': {'row_index': 'odd'},
-                'backgroundColor': '#4D4B4B',
-            },
-            
-            {
-            "if": {"state": "selected"},
-            "backgroundColor": "inherit !important",
-            "border": "inherit !important",
-            },],
-                style_header={
-                'backgroundColor': 'rgb(210, 210, 210)',
-                'color': 'black',
-                'fontWeight': 'bold'
-            },
-                
-        )]),
-        ])
     else:
-        dts = html.Div(
-        [   html.H1(
-            html.I("Testing Features, Nothing Available.", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
-            html.Br(),
-        ]) 
-    return dts
+        if pas == conf['Log Secret']['logpas'].strip('"'):
+            dts = html.Div(children=[
+            html.Div(
+            [   html.H1(
+                html.I("Raw Simulator Log", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+                html.Br(),
+            ]),
+            html.Div(html.Button('Load Raw Log Text', id='submit_val_raw', n_clicks=0)),
+            html.Div([
+                html.I("Raw Logs", style={'color': '#ffffff'}),
+                dash_table.DataTable(id='table_log20',
+                    columns=[{"name": i, "id": i} for i in datatable.columns],
+                    data=datatable.to_dict('records'),
+                    style_cell={'textAlign': 'center'},
+                    style_data={'color': 'white','backgroundColor': 'black', 'whiteSpace': 'normal', 'height': 'auto', 'verticalAlign': 'top'},
+                    style_data_conditional=[
+                {
+                    'if': {'row_index': 'odd'},
+                    'backgroundColor': '#4D4B4B',
+                },
+                
+                {
+                "if": {"state": "selected"},
+                "backgroundColor": "inherit !important",
+                "border": "inherit !important",
+                },],
+                    style_header={
+                    'backgroundColor': 'rgb(210, 210, 210)',
+                    'color': 'black',
+                    'fontWeight': 'bold'
+                },
+                    
+            )]),
+            ])
+        else:
+            dts = html.Div(
+            [   html.H1(
+                html.I("Testing Features, Nothing Available.", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+                html.Br(),
+            ]) 
+        return dts
 
 
 
