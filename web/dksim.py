@@ -1936,7 +1936,7 @@ def sqltwo(inputlogpass, inputlognames, submit_val, close_val, submit_val_raw):
             db.session.close()
             engine.dispose()
             return all_two_dash_stuff(dfff, inputlogpass, stas) 
-        elif button_id == 'submit_val':
+        elif button_id == 'submit_val' or button_id == 'inputlognames':
             button_id = ""
             dfffs = pd.read_sql_query(
                 'SELECT * FROM dpsresults WHERE username = "{}"'.format(inputlognames),
@@ -2051,83 +2051,6 @@ def all_two_dash_stuff(datas, pas, quer):
             html.Br(),
         ])
     return dt
-
-
-lograw = dash.Dash(server=app, routes_pathname_prefix="/lograw/",title="Remour's Raw Log", update_title='Loading Raw Log...', external_stylesheets=external_stylesheets)
-lograw.layout = html.Div(children=[
-    html.Div(
-        [   html.H1(
-            html.I("Logging Password", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
-        ]),
-    html.Div(
-        children=[
-            dcc.Input(id="inputlogpass", type="text", placeholder="Password", debounce=True),
-        ],  style={"display": "flex", "justifyContent": "center"}),
-    html.Div(
-        [   html.H1(
-            html.I("Log Username", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
-        ]),
-    html.Div(
-        children=[
-            dcc.Input(id="inputlognames", type="text", placeholder="Username", debounce=True),
-        ],  style={"display": "flex", "justifyContent": "center"}),
-    html.Div(
-        children=[
-            html.Button('View Specific Log', id='submit_val')
-        ],  style={"display": "flex", "justifyContent": "center"}),
-    html.Div(
-        children=[
-            html.Br(),
-            html.Button('Load Raw Log Text', id='submit_val_raw',)
-        ],  style={"display": "flex", "justifyContent": "center"}),
-    html.Div(
-        children=[
-            html.Br(),
-            html.Button('Close Specific Log', id='close_val',)
-        ],  style={"display": "flex", "justifyContent": "center"}),
-        html.Div(id='new-test2-dash-container'),
-        
-        ])
-@lograw.callback(
-    Output("new-test2-dash-container", "children"),
-    Input("inputlogpass", "value"),
-    Input("inputlognames", "value"),
-    Input('submit_val', 'n_clicks'),
-    Input('submit_val_raw', 'n_clicks'),
-    Input('close_val', 'n_clicks'),
-)
-def sqlthree(inputlogpass, inputlognames, submit_val, close_val, submit_val_raw):  #, submit_val_raw):
-    button_id = ctx.triggered_id 
-    print(button_id)
-    empty_div = html.Div(
-    [   html.H1(
-        html.I("Nothing Available.", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
-        html.Br(),
-    ])
-    if inputlogpass == conf['Log Secret']['logpas'].strip('"'):
-        if button_id == 'close_val':
-            button_id = ""
-            return empty_div
-        if button_id == 'submit_val':
-            button_id = ""
-            dfffs = pd.read_sql_query(
-                'SELECT * FROM dpsresults WHERE username = "{}"'.format(inputlognames),
-                SQLALCHEMY_DATABASE_URI
-            )
-            db.session.close()
-            engine.dispose()
-            return all_three_dash_stuff(dfffs)
-        if button_id == 'submit_val_raw':
-            button_id = ""
-            dfffst = pd.read_sql_query(
-                'SELECT * FROM dpsresults WHERE username = "{}"'.format(inputlognames),
-                SQLALCHEMY_DATABASE_URI
-            )
-            db.session.close()
-            engine.dispose()
-            return all_three_dash_stuff2(dfffst)
-    else:
-        return empty_div
 def all_three_dash_stuff2(datatable):
     datatable = datatable.to_string()
     dts = html.Div(children=[
