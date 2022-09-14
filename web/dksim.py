@@ -2078,7 +2078,7 @@ lograw.layout = html.Div(children=[
     html.Div(
         children=[
             dcc.Input(id="inputlogpass", type="text", placeholder="Password", debounce=True),
-        ],  style={"display": "flex", "justifyContent": "center"}
+        ],  style={"display": "flex", "justifyContent": "center"},
             html.Br(),),
     html.Div(
         [   html.H1(
@@ -2087,7 +2087,7 @@ lograw.layout = html.Div(children=[
     html.Div(
         children=[
             dcc.Input(id="inputlogname", type="text", placeholder="Username", debounce=True),
-        ],  style={"display": "flex", "justifyContent": "center"}
+        ],  style={"display": "flex", "justifyContent": "center"},
             html.Br(),),
         html.Div(id='new-test2-dash-container'),
         
