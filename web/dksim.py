@@ -2162,7 +2162,6 @@ def sqlthree(inputlogpass, inputlognames, submit_val, close_val, submit_val_raw)
             return
     else:
         return empty_div
-
 def all_three_dash_stuff2(datatable):
     sql_raw_text = datatable.copy()
     sql_raw_text = sql_raw_text.to_string()
