@@ -2111,7 +2111,7 @@ lograw.layout = html.Div(children=[
 )
 def sqlthree(inputlogpass, inputlognames, submit_val, close_val, submit_val_raw):  #, submit_val_raw):
     empty_div = html.Div()
-    button_id = ctx.triggered_id if not None else 'No clicks yet'
+    button_id = ctx.triggered_id
     print(button_id)
     if button_id == 'close_val':
         button_id = ""
