@@ -2096,7 +2096,7 @@ lograw.layout = html.Div(children=[
     Input("inputlogpass", "value"),
     Input("inputlognames", "value"),
     Input('submit_val', 'n_clicks'),
-    Input('submit_val_raw', 'n_clicks'),
+    #Input('submit_val_raw', 'n_clicks'),
 )
 def sqlthree(inputlogpass, inputlognames, submit_val):
     empty_div = html.Div()
@@ -2125,7 +2125,7 @@ def sqlthree(inputlogpass, inputlognames, submit_val):
         return empty_div
 
 
-def all_three_dash_stuff(datatable, pas, submit_val = 0, submit_val_raw = 0):
+def all_three_dash_stuff(datatable, pas, submit_val = 0):
     sql_raw_text = datatable.copy()
     sql_raw_text = sql_raw_text.to_string()
     # if (submit_val_raw % 2) != 0:
