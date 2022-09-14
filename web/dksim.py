@@ -2103,11 +2103,11 @@ lograw.layout = html.Div(children=[
         ])
 @lograw.callback(
     Output("new-test2-dash-container", "children"),
-    Input("inputlogpass", "value"),
+    [Input("inputlogpass", "value"),
     Input("inputlognames", "value"),
     Input('submit_val', 'n_clicks'),
     Input('submit_val_raw', 'n_clicks'),
-    Input('close_val', 'n_clicks'),
+    Input('close_val', 'n_clicks')],
 )
 def sqlthree(inputlogpass, inputlognames, submit_val, close_val, submit_val_raw):  #, submit_val_raw):
     button_id = ctx.triggered_id 
