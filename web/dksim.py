@@ -2113,15 +2113,9 @@ from dash import ctx
 def sqlthree(inputlogpass, inputlognames, submit_val, close_val):  #, submit_val_raw):
     empty_div = html.Div()
     button_id = ctx.triggered_id if not None else 'No clicks yet'
-    submit_val1 = 0
-    submit_val2 = 0
-    if button_id == 'submit_val':
-        submit_val1 += 1
-    # elif button_id == 'submit_val_raw':
-    #     submit_val2 += 1
     if button_id == 'close_val':
         return empty_div
-    if (submit_val1 % 2) != 0:
+    if button_id == 'submit_val':
         if inputlogpass != None:
             if inputlogpass != "":
                 if inputlogpass == conf['Log Secret']['logpas'].strip('"'):
@@ -2131,7 +2125,28 @@ def sqlthree(inputlogpass, inputlognames, submit_val, close_val):  #, submit_val
                     )
                     db.session.close()
                     engine.dispose()
-                    return all_three_dash_stuff(dfffs, inputlogpass, submit_val1, submit_val2)
+                    return all_three_dash_stuff(dfffs)
+                else:
+                    return html.Div(
+                    [   html.H1(
+                        html.I("Nothing Available.", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+                        html.Br(),
+                    ])
+            else:
+                return
+        else:
+            return
+    if button_id == 'submit_val_raw':
+        if inputlogpass != None:
+            if inputlogpass != "":
+                if inputlogpass == conf['Log Secret']['logpas'].strip('"'):
+                    dfffs = pd.read_sql_query(
+                        'SELECT * FROM dpsresults WHERE username = "{}"'.format(inputlognames),
+                        SQLALCHEMY_DATABASE_URI
+                    )
+                    db.session.close()
+                    engine.dispose()
+                    return all_three_dash_stuff2(dfffs)
                 else:
                     return html.Div(
                     [   html.H1(
@@ -2145,66 +2160,58 @@ def sqlthree(inputlogpass, inputlognames, submit_val, close_val):  #, submit_val
     else:
         return empty_div
 
-
-def all_three_dash_stuff(datatable, pas, submit_val1, submit_val2):
+def all_three_dash_stuff2(datatable):
     sql_raw_text = datatable.copy()
     sql_raw_text = sql_raw_text.to_string()
-    # if (submit_val2 % 2) != 0:
-    #     if pas == conf['Log Secret']['logpas'].strip('"'):
-    #         dts = html.Div(children=[
-    #         html.Div(
-    #         [   html.H1(
-    #             html.I("Raw Simulator Text", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
-    #             html.Br(),
-    #         ]),
-    #         html.Div(html.Button('Load Raw Log Text', id='submit_val_raw')),
-    #         html.Div(
-    #         [   
-    #             html.I(sql_raw_text, style={'color': '#ffffff'}),
-    #             html.Br(),
-    #         ]),
-    #         ])
-    #         return dts
-    if pas == conf['Log Secret']['logpas'].strip('"'):
-        dts = html.Div(children=[
-        html.Div(
-        [   html.H1(
-            html.I("Raw Simulator Log", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
-            html.Br(),
-        ]),
-        html.Div(html.Button('Load Raw Log Text', id='submit_val_raw', n_clicks=0)),
-        html.Div([
-            html.I("Raw Logs", style={'color': '#ffffff'}),
-            dash_table.DataTable(id='table_log20',
-                columns=[{"name": i, "id": i} for i in datatable.columns],
-                data=datatable.to_dict('records'),
-                style_cell={'textAlign': 'center'},
-                style_data={'color': 'white','backgroundColor': 'black', 'whiteSpace': 'normal', 'height': 'auto', 'verticalAlign': 'top'},
-                style_data_conditional=[
-            {
-                'if': {'row_index': 'odd'},
-                'backgroundColor': '#4D4B4B',
-            },
+    dts = html.Div(children=[
+    html.Div(
+    [   html.H1(
+        html.I("Raw Simulator Text", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+        html.Br(),
+    ]),
+    html.Div(html.Button('Load Raw Log Text', id='submit_val_raw')),
+    html.Div(
+    [   
+        html.I(sql_raw_text, style={'color': '#ffffff'}),
+        html.Br(),
+    ]),
+    ])
+    return dts
+def all_three_dash_stuff(datatable):
+    # if pas == conf['Log Secret']['logpas'].strip('"'):
+    dts = html.Div(children=[
+    html.Div(
+    [   html.H1(
+        html.I("Raw Simulator Log", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+        html.Br(),
+    ]),
+    html.Div(html.Button('Load Raw Log Text', id='submit_val_raw', n_clicks=0)),
+    html.Div([
+        html.I("Raw Logs", style={'color': '#ffffff'}),
+        dash_table.DataTable(id='table_log20',
+            columns=[{"name": i, "id": i} for i in datatable.columns],
+            data=datatable.to_dict('records'),
+            style_cell={'textAlign': 'center'},
+            style_data={'color': 'white','backgroundColor': 'black', 'whiteSpace': 'normal', 'height': 'auto', 'verticalAlign': 'top'},
+            style_data_conditional=[
+        {
+            'if': {'row_index': 'odd'},
+            'backgroundColor': '#4D4B4B',
+        },
+        
+        {
+        "if": {"state": "selected"},
+        "backgroundColor": "inherit !important",
+        "border": "inherit !important",
+        },],
+            style_header={
+            'backgroundColor': 'rgb(210, 210, 210)',
+            'color': 'black',
+            'fontWeight': 'bold'
+        },
             
-            {
-            "if": {"state": "selected"},
-            "backgroundColor": "inherit !important",
-            "border": "inherit !important",
-            },],
-                style_header={
-                'backgroundColor': 'rgb(210, 210, 210)',
-                'color': 'black',
-                'fontWeight': 'bold'
-            },
-                
-        )]),
-        ])
-    else:
-        dts = html.Div(
-        [   html.H1(
-            html.I("Testing Features, Nothing Available.", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
-            html.Br(),
-        ]) 
+    )]),
+    ])
     return dts
 
 
