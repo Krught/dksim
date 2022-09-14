@@ -2069,6 +2069,88 @@ def all_two_dash_stuff(datas, pas, quer):
     return dt
 
 
+lograw = dash.Dash(server=app, routes_pathname_prefix="/lograw/",title="Remour's Raw Log", update_title='Loading Raw Log...', external_stylesheets=external_stylesheets)
+lograw.layout = html.Div(children=[
+    html.Div(
+        [   html.H1(
+            html.I("Logging Password", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+            html.Br(),
+        ]),
+    html.Div(
+        children=[
+            dcc.Input(id="inputlogpass", type="text", placeholder="Password", debounce=True),
+        ],  style={"display": "flex", "justifyContent": "center"}),
+    html.Div(
+        [   html.H1(
+            html.I("Log Username", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+            html.Br(),
+        ]),
+    html.Div(
+        children=[
+            dcc.Input(id="inputlogname", type="text", placeholder="Username", debounce=True),
+        ],  style={"display": "flex", "justifyContent": "center"}),
+        html.Div(id='new-test2-dash-container'),
+        
+        ])
+@loggin.callback(
+    Output("new-test2-dash-container", "children"),
+    Input("inputlogpass", "value"),
+    Input("inputlogname", "lookupid"),
+)
+def sqlthree(value, lookupid):
+    if value != None:
+        if value != "":
+            if value == conf['Log Secret']['logpas'].strip('"'):
+                dfffs = pd.read_sql_query(  #database 2 (version 1)
+                    'SELECT * FROM dpsresults WHERE username = "{}"'.format(lookupid),
+                    SQLALCHEMY_DATABASE_URI #database 1 (version 2)
+                ) #database 1 (version 2)
+                db.session.close()
+                engine.dispose()
+                return all_three_dash_stuff(dfffs, value) #database 1 (version 2)
+            else:
+                return html.Div(
+                [   html.H1(
+                    html.I("Nothing Available.", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+                    html.Br(),
+                ])
+        else:
+            return
+    else:
+        return
+
+
+def all_three_dash_stuff(datatable, pas):
+    sql_raw_text = datatable.to_string()
+    
+
+    if pas == conf['Log Secret']['logpas'].strip('"'):
+        dts = html.Div(children=[
+        html.Div(
+        [   html.H1(
+            html.I("Raw Simulator Log", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+            html.Br(),
+        ]),
+        html.Div(
+        [   
+            html.I(sql_raw_text, style={'color': '#ffffff'}),,
+            html.Br(),
+        ]),
+
+
+
+
+        ])
+    else:
+        dts = html.Div(
+        [   html.H1(
+            html.I("Testing Features, Nothing Available.", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+            html.Br(),
+        ])
+    return dts
+
+
+
 if __name__ == '__main__':
     app.run_server(debug=True)
 
