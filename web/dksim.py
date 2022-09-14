@@ -1921,7 +1921,7 @@ def sqltwo(inputlogpass, inputlognames, submit_val, close_val, submit_val_raw):
         html.Br(),
     ])
     if inputlogpass == conf['Log Secret']['logpas'].strip('"'):
-        if button_id == 'close_val':
+        if button_id == 'close_val' or button_id == 'inputlogpass':
             button_id = ""
             dfff = pd.read_sql_query( 
                 'SELECT * FROM logs', 
