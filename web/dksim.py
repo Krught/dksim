@@ -2118,49 +2118,75 @@ def sqlthree(inputlogpass, inputlognames, submit_val, close_val, submit_val_raw)
         html.Button('Load Raw Log Text', id='submit_val_raw', style = dict(display='none')),
         html.Br(),
     ])
-    button_id = ctx.triggered_id
-    print(button_id)
-    if button_id == 'close_val':
-        button_id = ""
-        return empty_div
-    if button_id == 'submit_val':
-        button_id = ""
-        if inputlogpass != None:
-            if inputlogpass != "":
-                if inputlogpass == conf['Log Secret']['logpas'].strip('"'):
-                    dfffs = pd.read_sql_query(
-                        'SELECT * FROM dpsresults WHERE username = "{}"'.format(inputlognames),
-                        SQLALCHEMY_DATABASE_URI
-                    )
-                    db.session.close()
-                    engine.dispose()
-                    return all_three_dash_stuff(dfffs)
-                else:
-                    return empty_div
-            else:
-                return
-        else:
-            return
-    if button_id == 'submit_val_raw':
-        button_id = ""
-        if inputlogpass != None:
-            if inputlogpass != "":
-                if inputlogpass == conf['Log Secret']['logpas'].strip('"'):
-                    dfffst = pd.read_sql_query(
-                        'SELECT * FROM dpsresults WHERE username = "{}"'.format(inputlognames),
-                        SQLALCHEMY_DATABASE_URI
-                    )
-                    db.session.close()
-                    engine.dispose()
-                    return all_three_dash_stuff2(dfffst)
-                else:
-                    return empty_div
-            else:
-                return
-        else:
-            return
+    if inputlogpass == conf['Log Secret']['logpas'].strip('"'):
+        button_id = ctx.triggered_id 
+        print(button_id)
+        if button_id == 'close_val':
+            button_id = ""
+            return empty_div
+        if button_id == 'submit_val':
+            button_id = ""
+            dfffs = pd.read_sql_query(
+                'SELECT * FROM dpsresults WHERE username = "{}"'.format(inputlognames),
+                SQLALCHEMY_DATABASE_URI
+            )
+            db.session.close()
+            engine.dispose()
+            return all_three_dash_stuff(dfffs)
+        if button_id == 'submit_val_raw':
+            button_id = ""
+            dfffst = pd.read_sql_query(
+                'SELECT * FROM dpsresults WHERE username = "{}"'.format(inputlognames),
+                SQLALCHEMY_DATABASE_URI
+            )
+            db.session.close()
+            engine.dispose()
+            return all_three_dash_stuff2(dfffst)
     else:
         return empty_div
+    # button_id = ctx.triggered_id
+    # print(button_id)
+    # if button_id == 'close_val':
+    #     button_id = ""
+    #     return empty_div
+    # if button_id == 'submit_val':
+    #     button_id = ""
+    #     if inputlogpass != None:
+    #         if inputlogpass != "":
+    #             if inputlogpass == conf['Log Secret']['logpas'].strip('"'):
+    #                 dfffs = pd.read_sql_query(
+    #                     'SELECT * FROM dpsresults WHERE username = "{}"'.format(inputlognames),
+    #                     SQLALCHEMY_DATABASE_URI
+    #                 )
+    #                 db.session.close()
+    #                 engine.dispose()
+    #                 return all_three_dash_stuff(dfffs)
+    #             else:
+    #                 return empty_div
+    #         else:
+    #             return
+    #     else:
+    #         return
+    # if button_id == 'submit_val_raw':
+    #     button_id = ""
+    #     if inputlogpass != None:
+    #         if inputlogpass != "":
+    #             if inputlogpass == conf['Log Secret']['logpas'].strip('"'):
+    #                 dfffst = pd.read_sql_query(
+    #                     'SELECT * FROM dpsresults WHERE username = "{}"'.format(inputlognames),
+    #                     SQLALCHEMY_DATABASE_URI
+    #                 )
+    #                 db.session.close()
+    #                 engine.dispose()
+    #                 return all_three_dash_stuff2(dfffst)
+    #             else:
+    #                 return empty_div
+    #         else:
+    #             return
+    #     else:
+    #         return
+    # else:
+    #     return empty_div
 def all_three_dash_stuff2(datatable):
     dts = html.Div(children=[
     html.Div(
