@@ -7,7 +7,7 @@ import pandas as pd
 from datetime import datetime, timedelta
 import plotly.io as pio
 import plotly.express as px
-from dash import dcc, html, dash_table
+from dash import dcc, html, dash_table, ctx
 import numpy as np
 import plotly.graph_objects as go
 from dash.dependencies import Input, Output
@@ -2101,7 +2101,6 @@ lograw.layout = html.Div(children=[
         html.Button('Load Raw Log Text', id='submit_val_raw', style = dict(display='none'), n_clicks=0)
         
         ])
-from dash import ctx
 @lograw.callback(
     Output("new-test2-dash-container", "children"),
     Input("inputlogpass", "value"),
@@ -2113,6 +2112,7 @@ from dash import ctx
 def sqlthree(inputlogpass, inputlognames, submit_val, close_val, submit_val_raw):  #, submit_val_raw):
     empty_div = html.Div()
     button_id = ctx.triggered_id if not None else 'No clicks yet'
+    print(button_id)
     if button_id == 'close_val':
         button_id = ""
         return empty_div
@@ -2186,7 +2186,6 @@ def all_three_dash_stuff2(datatable):
     ])
     return dts
 def all_three_dash_stuff(datatable):
-    # if pas == conf['Log Secret']['logpas'].strip('"'):
     dts = html.Div(children=[
     html.Div(
     [   html.H1(
