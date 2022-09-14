@@ -303,7 +303,7 @@ Gloves,1,FALSE,Gauntlets of the Disobedient,Gauntlets of the Disobedient,40188,7
 Gloves,1,FALSE,Gauntlets of Combined Strength,Gauntlets of Combined Strength,39262,65,0,99,0,0,0,0,0,52,0,0,1401,0,0,0,,,,,0,Stamina,FALSE,,,,,,,,,
 Ring,1,FALSE,Gatekeeper,Gatekeeper,40370,43,0,84,0,0,0,28,0,0,0,0,448,0,41,0,,,,,0,Stamina,FALSE,,,,,,,,,
 Back,1,FALSE,Gale-Proof Cloak,Gale-Proof Cloak,43988,36,0,63,0,0,0,0,0,0,0,21,150,32,33,0,,,,,6,Stamina,FALSE,,,,,,,,,
-Trinket,1,FALSE,Fury of the Five Flights,Fury of the Five Flights,40431,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,,0,Stamina,TRUE,Proc,Hit,0.15,320,Attack Power,3000,10,,
+Trinket,1,FALSE,Fury of the Five Flights,Fury of the Five Flights,40431,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,,0,Stamina,FALSE,,,,,,,,,
 Gloves,1,FALSE,Frosted Adroit Handguards,Frosted Adroit Handguards,40541,0,63,63,0,0,174,58,53,0,0,0,369,0,0,0,,,,,0,Stamina,FALSE,,,,,,,,,
 Trinket,1,FALSE,Forge Ember,Forge Ember,37660,0,0,0,0,0,0,0,73,0,0,0,0,0,0,0,,,,,0,Stamina,FALSE,,,,,,,,,
 Boots,1,FALSE,Footwraps of Vile Deceit,Footwraps of Vile Deceit,40243,0,67,76,0,0,112,0,0,49,0,30,398,0,0,0,,,,,8,Attack Power,FALSE,,,,,,,,,
