@@ -1894,6 +1894,10 @@ loggin.layout = html.Div(children=[
         ],  style={"display": "flex", "justifyContent": "center"}),
     html.Div(
         children=[
+            html.Br(),
+            ]),
+    html.Div(
+        children=[
             html.H1(
             html.I("Log Name", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
             dcc.Input(id="inputlognames", type="text", placeholder="Username", debounce=True),
