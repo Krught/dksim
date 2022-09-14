@@ -2089,16 +2089,16 @@ lograw.layout = html.Div(children=[
         ],  style={"display": "flex", "justifyContent": "center"}),
     html.Div(
         children=[
-            html.Button('View Specific Log', id='submit_val', n_clicks=0)
+            html.Button('View Specific Log', id='submit_val')
         ],  style={"display": "flex", "justifyContent": "center"}),
     html.Div(
         children=[
             html.Br(),
-            html.Button('Close Specific Log', id='close_val', n_clicks=0, style = dict(display='none'))
+            html.Button('Close Specific Log', id='close_val', style = dict(display='none'))
         ],  style={"display": "flex", "justifyContent": "center"}),
         html.Div(id='new-test2-dash-container'),
         
-        html.Button('Load Raw Log Text', id='submit_val_raw', style = dict(display='none'), n_clicks=0)
+        html.Button('Load Raw Log Text', id='submit_val_raw', style = dict(display='none'))
         
         ])
 @lograw.callback(
