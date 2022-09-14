@@ -2098,6 +2098,8 @@ lograw.layout = html.Div(children=[
         ],  style={"display": "flex", "justifyContent": "center"}),
         html.Div(id='new-test2-dash-container'),
         
+        html.Button('TEST HERE', id='hidden-button', style = dict(display='none'))
+        
         ])
 from dash import ctx
 @lograw.callback(
