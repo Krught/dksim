@@ -2114,8 +2114,10 @@ def sqlthree(inputlogpass, inputlognames, submit_val, close_val, submit_val_raw)
     empty_div = html.Div()
     button_id = ctx.triggered_id if not None else 'No clicks yet'
     if button_id == 'close_val':
+        button_id = ""
         return empty_div
     if button_id == 'submit_val':
+        button_id = ""
         if inputlogpass != None:
             if inputlogpass != "":
                 if inputlogpass == conf['Log Secret']['logpas'].strip('"'):
@@ -2137,6 +2139,7 @@ def sqlthree(inputlogpass, inputlognames, submit_val, close_val, submit_val_raw)
         else:
             return
     if button_id == 'submit_val_raw':
+        button_id = ""
         if inputlogpass != None:
             if inputlogpass != "":
                 if inputlogpass == conf['Log Secret']['logpas'].strip('"'):
