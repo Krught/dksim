@@ -2133,7 +2133,7 @@ def all_three_dash_stuff(datatable, pas):
         ]),
         html.Div(
         [   
-            html.I(sql_raw_text, style={'color': '#ffffff'}),,
+            html.I('sql_raw_text', style={'color': '#ffffff'}),,
             html.Br(),
         ]),
 
