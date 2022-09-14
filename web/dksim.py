@@ -2145,6 +2145,7 @@ def sqlthree(inputlogpass, inputlognames, submit_val, close_val, submit_val_raw)
     else:
         return empty_div
 def all_three_dash_stuff2(datatable):
+    datatable = datatable.to_string()
     dts = html.Div(children=[
     html.Div(
     [   html.H1(
