@@ -2139,22 +2139,22 @@ def sqlthree(inputlogpass, inputlognames, submit_val, submit_val_raw):
 def all_three_dash_stuff(datatable, pas, submit_val1, submit_val2):
     sql_raw_text = datatable.copy()
     sql_raw_text = sql_raw_text.to_string()
-    if (submit_val2 % 2) != 0:
-        if pas == conf['Log Secret']['logpas'].strip('"'):
-            dts = html.Div(children=[
-            html.Div(
-            [   html.H1(
-                html.I("Raw Simulator Text", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
-                html.Br(),
-            ]),
-            html.Div(html.Button('Load Raw Log Text', id='submit_val_raw')),
-            html.Div(
-            [   
-                html.I(sql_raw_text, style={'color': '#ffffff'}),
-                html.Br(),
-            ]),
-            ])
-            return dts
+    # if (submit_val2 % 2) != 0:
+    #     if pas == conf['Log Secret']['logpas'].strip('"'):
+    #         dts = html.Div(children=[
+    #         html.Div(
+    #         [   html.H1(
+    #             html.I("Raw Simulator Text", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+    #             html.Br(),
+    #         ]),
+    #         html.Div(html.Button('Load Raw Log Text', id='submit_val_raw')),
+    #         html.Div(
+    #         [   
+    #             html.I(sql_raw_text, style={'color': '#ffffff'}),
+    #             html.Br(),
+    #         ]),
+    #         ])
+    #         return dts
     if pas == conf['Log Secret']['logpas'].strip('"'):
         dts = html.Div(children=[
         html.Div(
