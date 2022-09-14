@@ -2089,7 +2089,7 @@ lograw.layout = html.Div(children=[
         ],  style={"display": "flex", "justifyContent": "center"}),
     html.Div(
         children=[
-            html.Button('View Specific Log', id='submit_val', n_clicks=0)
+            html.Button('View Specific Log', id='submit_val', n_clicks=0, style = dict(display='none'))
         ],  style={"display": "flex", "justifyContent": "center"}),
     html.Div(
         children=[
@@ -2169,7 +2169,12 @@ def all_three_dash_stuff2(datatable):
         html.I("Raw Simulator Text", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
         html.Br(),
     ]),
-    html.Div(html.Button('Load Raw Log Text', id='submit_val_raw')),
+    html.Div(
+        children=[
+            html.Br(),
+            html.Button('Close Specific Log', id='close_val')
+        ],  style={"display": "flex", "justifyContent": "center"}),
+    html.Div(html.Button('Load Raw Log Table', id='submit_val')),
     html.Div(
     [   
         html.I(sql_raw_text, style={'color': '#ffffff'}),
@@ -2185,6 +2190,11 @@ def all_three_dash_stuff(datatable):
         html.I("Raw Simulator Log", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
         html.Br(),
     ]),
+    html.Div(
+        children=[
+            html.Br(),
+            html.Button('Close Specific Log', id='close_val')
+        ],  style={"display": "flex", "justifyContent": "center"}),
     html.Div(html.Button('Load Raw Log Text', id='submit_val_raw')),
     html.Div([
         html.I("Raw Logs", style={'color': '#ffffff'}),
