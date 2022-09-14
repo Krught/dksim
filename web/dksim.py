@@ -1890,7 +1890,7 @@ loggin.layout = html.Div(children=[
         ]),
     html.Div(
         children=[
-            dcc.Input(id="inputlogname", type="text", placeholder="Password", debounce=True),
+            dcc.Input(id="inputlogpass", type="text", placeholder="Password", debounce=True),
         ],  style={"display": "flex", "justifyContent": "center"}),
     html.Div(
         children=[
@@ -1907,36 +1907,58 @@ loggin.layout = html.Div(children=[
         ])
 @loggin.callback(
     Output("new-test-dash-container", "children"),
-    Input("inputlogname", "value"),
+    Input("inputlogpass", "value"),
+    Input("inputlognames", "value"),
+    Input('submit_val', 'n_clicks'),
+    Input('submit_val_raw', 'n_clicks'),
+    Input('close_val', 'n_clicks'),
 )
-def sqltwo(value):
-    if value != None:
-        if value != "":
-            if value == conf['Log Secret']['logpas'].strip('"'):
-                dfff = pd.read_sql_query( 
-                    'SELECT * FROM logs', 
-                    SQLALCHEMY_DATABASE_URI 
-                )
-                db.session.close()
-                engine.dispose()
-                stas = pd.read_sql_query(
-                    'show processlist',
-                    SQLALCHEMY_DATABASE_URI
-                )
-                db.session.close()
-                engine.dispose()
-                return all_two_dash_stuff(dfff, value, stas) 
-            else:
-                return html.Div(
-                [   html.H1(
-                    html.I("Not Currently Available.", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
-                    html.Br(),
-                ])
+def sqltwo(inputlogpass, inputlognames, submit_val, close_val, submit_val_raw):
+    button_id = ctx.triggered_id 
+    empty_div = html.Div(
+    [   html.H1(
+        html.I("Nothing Available.", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+        html.Br(),
+    ])
+    if inputlogpass == conf['Log Secret']['logpas'].strip('"'):
+        if button_id == 'close_val':
+            button_id = ""
+            dfff = pd.read_sql_query( 
+                'SELECT * FROM logs', 
+                SQLALCHEMY_DATABASE_URI 
+            )
+            db.session.close()
+            engine.dispose()
+            stas = pd.read_sql_query(
+                'show processlist',
+                SQLALCHEMY_DATABASE_URI
+            )
+            db.session.close()
+            engine.dispose()
+            return all_two_dash_stuff(dfff, value, stas) 
+        elif button_id == 'submit_val':
+            button_id = ""
+            dfffs = pd.read_sql_query(
+                'SELECT * FROM dpsresults WHERE username = "{}"'.format(inputlognames),
+                SQLALCHEMY_DATABASE_URI
+            )
+            db.session.close()
+            engine.dispose()
+            return all_three_dash_stuff(dfffs)
+        elif button_id == 'submit_val_raw':
+            button_id = ""
+            dfffst = pd.read_sql_query(
+                'SELECT * FROM dpsresults WHERE username = "{}"'.format(inputlognames),
+                SQLALCHEMY_DATABASE_URI
+            )
+            db.session.close()
+            engine.dispose()
+            return all_three_dash_stuff2(dfffst)
         else:
-            return
+            return empty_div
     else:
-        return
-
+        empty_div
+        
 
 def convert_to_date(the_in_date):
     date_as_datetime = datetime.strptime(the_in_date, '%Y-%m-%d %H:%M:%S.%f').date()
