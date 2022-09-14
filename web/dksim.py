@@ -2119,7 +2119,8 @@ def sqlthree(inputlogpass, inputlognames):
 
 
 def all_three_dash_stuff(datatable, pas):
-    sql_raw_text = datatable.to_string()
+    sql_raw_text = datatable.copy()
+    sql_raw_text = sql_raw_text.to_string()
     
 
     if pas == conf['Log Secret']['logpas'].strip('"'):
@@ -2134,7 +2135,20 @@ def all_three_dash_stuff(datatable, pas):
             html.I(sql_raw_text, style={'color': '#ffffff'}),
             html.Br(),
         ]),
-
+        html.Div([
+            html.I("Raw Logs", style={'color': '#ffffff'}),
+            dash_table.DataTable(id='table_log20',
+                columns=[{"name": i, "id": i} for i in datatable.columns],
+                data=datatable.to_dict('records'),
+                style_cell={'textAlign': 'center'},
+                style_data={'color': 'white','backgroundColor': 'black'},
+                style_data_conditional=[
+            {
+                'if': {'row_index': 'odd'},
+                'backgroundColor': '#4D4B4B',
+            },]
+        )
+        ]),
 
 
 
@@ -2144,7 +2158,7 @@ def all_three_dash_stuff(datatable, pas):
         [   html.H1(
             html.I("Testing Features, Nothing Available.", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
             html.Br(),
-        ])
+        ]) 
     return dts
 
 
