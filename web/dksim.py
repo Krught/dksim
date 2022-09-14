@@ -2086,6 +2086,7 @@ lograw.layout = html.Div(children=[
     html.Div(
         children=[
             dcc.Input(id="inputlognames", type="text", placeholder="Username", debounce=True),
+            html.Br(),
             html.Button('View Specific Log', id='submit_val', n_clicks=0)
         ],  style={"display": "flex", "justifyContent": "center"}),
         html.Div(id='new-test2-dash-container'),
@@ -2096,7 +2097,7 @@ lograw.layout = html.Div(children=[
     Input("inputlogpass", "value"),
     Input("inputlognames", "value"),
     Input('submit_val', 'n_clicks'),
-    #Input('submit_val_raw', 'n_clicks'),
+    Input('submit_val_raw', 'n_clicks'),
 )
 def sqlthree(inputlogpass, inputlognames, submit_val):
     empty_div = html.Div()
