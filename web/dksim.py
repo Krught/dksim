@@ -2087,7 +2087,7 @@ lograw.layout = html.Div(children=[
         children=[
             dcc.Input(id="inputlognames", type="text", placeholder="Username", debounce=True),
         ],  style={"display": "flex", "justifyContent": "center"}),
-    html.Div(html.Button('Submit', id='submit_val', n_clicks=0)),
+    html.Div(html.Button('View Specific Log', id='submit_val', n_clicks=0)),
         html.Div(id='new-test2-dash-container'),
         
         ])
@@ -2096,9 +2096,9 @@ lograw.layout = html.Div(children=[
     Input("inputlogpass", "value"),
     Input("inputlognames", "value"),
     Input('submit_val', 'n_clicks'),
-    Input('submit_val_raw', 'n_clicks'),
+    #Input('submit_val_raw', 'n_clicks'),
 )
-def sqlthree(inputlogpass, inputlognames, submit_val, submit_val_raw):
+def sqlthree(inputlogpass, inputlognames, submit_val): #submit_val_raw):
     empty_div = html.Div()
     if (submit_val % 2) != 0:
         if inputlogpass != None:
@@ -2128,58 +2128,53 @@ def sqlthree(inputlogpass, inputlognames, submit_val, submit_val_raw):
 def all_three_dash_stuff(datatable, pas, submit_val, submit_val_raw):
     sql_raw_text = datatable.copy()
     sql_raw_text = sql_raw_text.to_string()
-    if (submit_val_raw % 2) != 0:
-        if pas == conf['Log Secret']['logpas'].strip('"'):
-            dts = html.Div(children=[
-            html.Div(
-            [   html.H1(
-                html.I("Raw Simulator Log", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
-                html.Br(),
-            ]),
-            html.Div([
-                html.I("Raw Logs", style={'color': '#ffffff'}),
-                dash_table.DataTable(id='table_log20',
-                    columns=[{"name": i, "id": i} for i in datatable.columns],
-                    data=datatable.to_dict('records'),
-                    style_cell={'textAlign': 'center'},
-                    style_data={'color': 'white','backgroundColor': 'black', 'whiteSpace': 'normal', 'height': 'auto', 'verticalAlign': 'top'},
-                    style_data_conditional=[
-                {
-                    'if': {'row_index': 'odd'},
-                    'backgroundColor': '#4D4B4B',
-                },
+    # if (submit_val_raw % 2) != 0:
+    #     if pas == conf['Log Secret']['logpas'].strip('"'):
+    #         dts = html.Div(children=[
+    #         html.Div(
+    #         [   html.H1(
+    #             html.I("Raw Simulator Log", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+    #             html.Br(),
+    #         ]),
+    #         html.Div([
+    #             html.I("Raw Logs", style={'color': '#ffffff'}),
+    #             dash_table.DataTable(id='table_log20',
+    #                 columns=[{"name": i, "id": i} for i in datatable.columns],
+    #                 data=datatable.to_dict('records'),
+    #                 style_cell={'textAlign': 'center'},
+    #                 style_data={'color': 'white','backgroundColor': 'black', 'whiteSpace': 'normal', 'height': 'auto', 'verticalAlign': 'top'},
+    #                 style_data_conditional=[
+    #             {
+    #                 'if': {'row_index': 'odd'},
+    #                 'backgroundColor': '#4D4B4B',
+    #             },
                 
-                {
-                "if": {"state": "selected"},
-                "backgroundColor": "inherit !important",
-                "border": "inherit !important",
-                },],
-                    style_header={
-                    'backgroundColor': 'rgb(210, 210, 210)',
-                    'color': 'black',
-                    'fontWeight': 'bold'
-                },
+    #             {
+    #             "if": {"state": "selected"},
+    #             "backgroundColor": "inherit !important",
+    #             "border": "inherit !important",
+    #             },],
+    #                 style_header={
+    #                 'backgroundColor': 'rgb(210, 210, 210)',
+    #                 'color': 'black',
+    #                 'fontWeight': 'bold'
+    #             },
                     
-            )]),
-            html.Div(html.Button('Submit', id='submit_val_raw', n_clicks=0)),
-            html.Div(
-            [   
-                html.I(sql_raw_text, style={'color': '#ffffff'}),
-                html.Br(),
-            ]),
-            ])
-    elif pas == conf['Log Secret']['logpas'].strip('"'):
+    #         )]),
+    #         html.Div(html.Button('Submit', id='submit_val_raw', n_clicks=0)),
+    #         html.Div(
+    #         [   
+    #             html.I(sql_raw_text, style={'color': '#ffffff'}),
+    #             html.Br(),
+    #         ]),
+    #         ])
+    if pas == conf['Log Secret']['logpas'].strip('"'):
         dts = html.Div(children=[
         html.Div(
         [   html.H1(
             html.I("Raw Simulator Log", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
             html.Br(),
         ]),
-        # html.Div(
-        # [   
-        #     html.I(sql_raw_text, style={'color': '#ffffff'}),
-        #     html.Br(),
-        # ]),
         html.Div([
             html.I("Raw Logs", style={'color': '#ffffff'}),
             dash_table.DataTable(id='table_log20',
