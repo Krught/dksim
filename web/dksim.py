@@ -2141,13 +2141,21 @@ def all_three_dash_stuff(datatable, pas):
                 columns=[{"name": i, "id": i} for i in datatable.columns],
                 data=datatable.to_dict('records'),
                 style_cell={'textAlign': 'center'},
-                style_data={'color': 'white','backgroundColor': 'black'},
+                style_data={'color': 'white','backgroundColor': 'black', 'whiteSpace': 'normal', 'height': 'auto',},
                 style_data_conditional=[
             {
                 'if': {'row_index': 'odd'},
                 'backgroundColor': '#4D4B4B',
             },]
         )
+            
+            
+ 
+       
+
+            
+            
+            
         ]),
 
 
