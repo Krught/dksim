@@ -127,6 +127,8 @@ def dps_load():
     fight_length_variance = int(fight_length_variance)
     simulation_amounts = request.form["simamounts"]
     simulation_amounts = int(simulation_amounts)
+    if simulation_amounts > 3000:
+        simulation_amounts = 3000
     amount_of_targets = request.form["targetamounts"]
     amount_of_targets = int(amount_of_targets)
     target_level = request.form["targetlevel"]
@@ -574,6 +576,8 @@ def dps_load_batch():
     fight_length_variance = int(fight_length_variance)
     simulation_amounts = request.form["simamounts"]
     simulation_amounts = int(simulation_amounts)
+    if simulation_amounts > 3000:
+        simulation_amounts = 3000
     amount_of_targets = request.form["targetamounts"]
     amount_of_targets = int(amount_of_targets)
     target_level = request.form["targetlevel"]
