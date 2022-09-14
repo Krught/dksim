@@ -2113,7 +2113,7 @@ def sqlthree(inputlogpass, inputlognames, submit_val, close_val, submit_val_raw)
     empty_div = html.Div(
     [   html.H1(
         html.I("Nothing Available.", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
-        html.Button('Load Raw Log Table', id='submit_val' style = dict(display='none')),
+        html.Button('Load Raw Log Table', id='submit_val', style = dict(display='none')),
         html.Button('Close Specific Log', id='close_val', style = dict(display='none')),
         html.Button('Load Raw Log Text', id='submit_val_raw', style = dict(display='none')),
         html.Br(),
@@ -2196,7 +2196,7 @@ def all_three_dash_stuff(datatable):
             html.Button('Close Specific Log', id='close_val')
         ],  style={"display": "flex", "justifyContent": "center"}),
     html.Div(html.Button('Load Raw Log Text', id='submit_val_raw')),
-    html.Button('Load Raw Log Table', id='submit_val' style = dict(display='none')),
+    html.Button('Load Raw Log Table', id='submit_val', style = dict(display='none')),
     html.Button('Close Specific Log', id='close_val', style = dict(display='none')),
     html.Div([
         html.I("Raw Logs", style={'color': '#ffffff'}),
