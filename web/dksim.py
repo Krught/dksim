@@ -2146,20 +2146,29 @@ def all_three_dash_stuff(datatable, pas):
             {
                 'if': {'row_index': 'odd'},
                 'backgroundColor': '#4D4B4B',
-            },]
+            },
+            
+            {
+            "if": {"state": "selected"},
+            "backgroundColor": "inherit !important",
+            "border": "inherit !important",
+            },],
+                style_header={
+                'backgroundColor': 'rgb(210, 210, 210)',
+                'color': 'black',
+                'fontWeight': 'bold'
+            },
+                
         )
             
             
  
-       
-
+    
+    
             
-            
+    
             
         ]),
-
-
-
         ])
     else:
         dts = html.Div(
