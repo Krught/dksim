@@ -2092,6 +2092,10 @@ lograw.layout = html.Div(children=[
             html.Button('View Specific Log', id='submit_val', n_clicks=0)
         ],  style={"display": "flex", "justifyContent": "center"}),
         html.Div(id='new-test2-dash-container'),
+    html.Div(
+        children=[
+            html.Button('Close Specific Log', id='close_val', n_clicks=0)
+        ],  style={"display": "flex", "justifyContent": "center"}),
         
         ])
 from dash import ctx
@@ -2101,20 +2105,19 @@ from dash import ctx
     Input("inputlognames", "value"),
     Input('submit_val', 'n_clicks'),
    # Input('submit_val_raw', 'n_clicks'),
+    Input('close_val', 'n_clicks'),
 )
-def sqlthree(inputlogpass, inputlognames, submit_val):  #, submit_val_raw):
+def sqlthree(inputlogpass, inputlognames, submit_val, close_val):  #, submit_val_raw):
+    empty_div = html.Div()
     button_id = ctx.triggered_id if not None else 'No clicks yet'
-    if 'submit_val1' in locals():
-        submit_val1 = submit_val1
-        submit_val2 = submit_val2
-    else:
-        submit_val1 = 0
-        submit_val2 = 0
+    submit_val1 = 0
+    submit_val2 = 0
     if button_id == 'submit_val':
         submit_val1 += 1
     # elif button_id == 'submit_val_raw':
     #     submit_val2 += 1
-    empty_div = html.Div()
+    if button_id == 'close_val':
+        return empty_div
     if (submit_val1 % 2) != 0:
         if inputlogpass != None:
             if inputlogpass != "":
