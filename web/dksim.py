@@ -2104,11 +2104,10 @@ from dash import ctx
 )
 def sqlthree(inputlogpass, inputlognames, submit_val):  #, submit_val_raw):
     button_id = ctx.triggered_id if not None else 'No clicks yet'
-    print(button_id)
     submit_val1 = 0
     submit_val2 = 0
-    # if button_id == 'submit_val':
-    #     submit_val1 += 1
+    if button_id == 'submit_val':
+        submit_val1 += 1
     # elif button_id == 'submit_val_raw':
     #     submit_val2 += 1
     empty_div = html.Div()
