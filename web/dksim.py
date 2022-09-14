@@ -2087,6 +2087,7 @@ lograw.layout = html.Div(children=[
         children=[
             dcc.Input(id="inputlognames", type="text", placeholder="Username", debounce=True),
         ],  style={"display": "flex", "justifyContent": "center"}),
+    html.Div(html.Button('Submit', id='submit-val', n_clicks=0)),
         html.Div(id='new-test2-dash-container'),
         
         ])
@@ -2094,28 +2095,33 @@ lograw.layout = html.Div(children=[
     Output("new-test2-dash-container", "children"),
     Input("inputlogpass", "value"),
     Input("inputlognames", "value"),
+    Input('submit-val', 'n_clicks'),
 )
-def sqlthree(inputlogpass, inputlognames):
-    if inputlogpass != None:
-        if inputlogpass != "":
-            if inputlogpass == conf['Log Secret']['logpas'].strip('"'):
-                dfffs = pd.read_sql_query(  #database 2 (version 1)
-                    'SELECT * FROM dpsresults WHERE username = "{}"'.format(inputlognames),
-                    SQLALCHEMY_DATABASE_URI #database 1 (version 2)
-                ) #database 1 (version 2)
-                db.session.close()
-                engine.dispose()
-                return all_three_dash_stuff(dfffs, inputlogpass) #database 1 (version 2)
+def sqlthree(inputlogpass, inputlognames, submit-val):
+    empty-div = html.Div()
+    if (submit-val % 2) != 0:
+        if inputlogpass != None:
+            if inputlogpass != "":
+                if inputlogpass == conf['Log Secret']['logpas'].strip('"'):
+                    dfffs = pd.read_sql_query(  #database 2 (version 1)
+                        'SELECT * FROM dpsresults WHERE username = "{}"'.format(inputlognames),
+                        SQLALCHEMY_DATABASE_URI #database 1 (version 2)
+                    ) #database 1 (version 2)
+                    db.session.close()
+                    engine.dispose()
+                    return all_three_dash_stuff(dfffs, inputlogpass) #database 1 (version 2)
+                else:
+                    return html.Div(
+                    [   html.H1(
+                        html.I("Nothing Available.", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+                        html.Br(),
+                    ])
             else:
-                return html.Div(
-                [   html.H1(
-                    html.I("Nothing Available.", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
-                    html.Br(),
-                ])
+                return
         else:
             return
     else:
-        return
+        return empty-div
 
 
 def all_three_dash_stuff(datatable, pas):
@@ -2130,11 +2136,11 @@ def all_three_dash_stuff(datatable, pas):
             html.I("Raw Simulator Log", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
             html.Br(),
         ]),
-        html.Div(
-        [   
-            html.I(sql_raw_text, style={'color': '#ffffff'}),
-            html.Br(),
-        ]),
+        # html.Div(
+        # [   
+        #     html.I(sql_raw_text, style={'color': '#ffffff'}),
+        #     html.Br(),
+        # ]),
         html.Div([
             html.I("Raw Logs", style={'color': '#ffffff'}),
             dash_table.DataTable(id='table_log20',
