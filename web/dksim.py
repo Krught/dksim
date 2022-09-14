@@ -2107,7 +2107,7 @@ from dash import ctx
     Input("inputlogpass", "value"),
     Input("inputlognames", "value"),
     Input('submit_val', 'n_clicks'),
-   # Input('submit_val_raw', 'n_clicks'),
+    Input('submit_val_raw', 'n_clicks'),
     Input('close_val', 'n_clicks'),
 )
 def sqlthree(inputlogpass, inputlognames, submit_val, close_val):  #, submit_val_raw):
