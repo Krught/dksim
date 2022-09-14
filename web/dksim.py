@@ -2085,7 +2085,7 @@ lograw.layout = html.Div(children=[
         ]),
     html.Div(
         children=[
-            dcc.Input(id="inputlogname", type="text", placeholder="Username", debounce=True),
+            dcc.Input(id="inputlognames", type="text", placeholder="Username", debounce=True),
         ],  style={"display": "flex", "justifyContent": "center"}),
         html.Div(id='new-test2-dash-container'),
         
@@ -2093,19 +2093,19 @@ lograw.layout = html.Div(children=[
 @lograw.callback(
     Output("new-test2-dash-container", "children"),
     Input("inputlogpass", "value"),
-    Input("inputlogname", "lookupid"),
+    Input("inputlognames", "value"),
 )
-def sqlthree(value, lookupid):
-    if value != None:
-        if value != "":
-            if value == conf['Log Secret']['logpas'].strip('"'):
+def sqlthree(inputlogpass, inputlognames):
+    if inputlogpass != None:
+        if inputlogpass != "":
+            if inputlogpass == conf['Log Secret']['logpas'].strip('"'):
                 dfffs = pd.read_sql_query(  #database 2 (version 1)
-                    'SELECT * FROM dpsresults WHERE username = "{}"'.format(lookupid),
+                    'SELECT * FROM dpsresults WHERE username = "{}"'.format(inputlognames),
                     SQLALCHEMY_DATABASE_URI #database 1 (version 2)
                 ) #database 1 (version 2)
                 db.session.close()
                 engine.dispose()
-                return all_three_dash_stuff(dfffs, value) #database 1 (version 2)
+                return all_three_dash_stuff(dfffs, inputlogpass) #database 1 (version 2)
             else:
                 return html.Div(
                 [   html.H1(
