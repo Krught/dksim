@@ -2099,7 +2099,7 @@ lograw.layout = html.Div(children=[
 )
 def sqlthree(inputlogpass, inputlognames, submit_val):
     empty_div = html.Div()
-    if (submit-val % 2) != 0:
+    if (submit_val % 2) != 0:
         if inputlogpass != None:
             if inputlogpass != "":
                 if inputlogpass == conf['Log Secret']['logpas'].strip('"'):
