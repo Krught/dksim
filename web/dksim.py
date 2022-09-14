@@ -2172,9 +2172,9 @@ def all_three_dash_stuff2(datatable):
     html.Div(
         children=[
             html.Br(),
-            html.Button('Close Specific Log', id='close_val')
+            html.Button('Close Specific Log', id='close_val', n_clicks=0)
         ],  style={"display": "flex", "justifyContent": "center"}),
-    html.Div(html.Button('Load Raw Log Table', id='submit_val')),
+    html.Div(html.Button('Load Raw Log Table', id='submit_val', n_clicks=0)),
     html.Div(
     [   
         html.I(sql_raw_text, style={'color': '#ffffff'}),
@@ -2193,9 +2193,9 @@ def all_three_dash_stuff(datatable):
     html.Div(
         children=[
             html.Br(),
-            html.Button('Close Specific Log', id='close_val')
+            html.Button('Close Specific Log', id='close_val', n_clicks=0)
         ],  style={"display": "flex", "justifyContent": "center"}),
-    html.Div(html.Button('Load Raw Log Text', id='submit_val_raw')),
+    html.Div(html.Button('Load Raw Log Text', id='submit_val_raw', n_clicks=0)),
     html.Div([
         html.I("Raw Logs", style={'color': '#ffffff'}),
         dash_table.DataTable(id='table_log20',
