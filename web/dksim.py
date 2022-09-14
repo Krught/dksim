@@ -2063,7 +2063,7 @@ def all_two_dash_stuff(datas, pas, quer):
     else:
         dt = html.Div(
         [   html.H1(
-            html.I("Testing Features, Nothing Available.", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+            html.I("Nothing Available.", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
             html.Br(),
         ])
     return dt
@@ -2141,7 +2141,7 @@ def all_three_dash_stuff(datatable, pas):
                 columns=[{"name": i, "id": i} for i in datatable.columns],
                 data=datatable.to_dict('records'),
                 style_cell={'textAlign': 'center'},
-                style_data={'color': 'white','backgroundColor': 'black', 'whiteSpace': 'normal', 'height': 'auto',},
+                style_data={'color': 'white','backgroundColor': 'black', 'whiteSpace': 'normal', 'height': 'auto', 'verticalAlign': 'top'},
                 style_data_conditional=[
             {
                 'if': {'row_index': 'odd'},
