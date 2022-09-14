@@ -2098,7 +2098,7 @@ lograw.layout = html.Div(children=[
         ],  style={"display": "flex", "justifyContent": "center"}),
         html.Div(id='new-test2-dash-container'),
         
-        html.Button('TEST HERE', id='hidden-button', style = dict(display='none'))
+        html.Button('Load Raw Log Text', id='submit_val_raw', style = dict(display='none'))
         
         ])
 from dash import ctx
@@ -2185,7 +2185,7 @@ def all_three_dash_stuff(datatable):
         html.I("Raw Simulator Log", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
         html.Br(),
     ]),
-    html.Div(html.Button('Load Raw Log Text', id='submit_val_raw', n_clicks=0)),
+    html.Div(html.Button('Load Raw Log Text', id='submit_val_raw')),
     html.Div([
         html.I("Raw Logs", style={'color': '#ffffff'}),
         dash_table.DataTable(id='table_log20',
