@@ -1879,30 +1879,7 @@ def sql(value):
             return
     else:
         return
-        #database 1 (version 2)
-    #     else:
-    #         dff = ""
-    #         db.session.close()
-    #         engine.dispose()
-    # else:
-    #     dff = ""
-    #     db.session.close()
-    #     engine.dispose()
-    # db.session.close()
-    # engine.dispose()
-    # return all_dash_stuff(dff) #database 1 (version 2)
 
-# dff = pd.read_sql_query(  #database 1 (version 2)
-#         'SELECT * FROM dpsresults WHERE username = "{}"'.format(value), #database 1 (version 2)
-#         SQLALCHEMY_DATABASE_URI #database 1 (version 2)
-#     ) #database 1 (version 2)
-    # username, content, content_dps_results_dps_data, content_dps_results_total_damage, content_dps_results_fight_length, content_dps_results_rotation, content_dps_results_rotation_time, content_dps_results_rotation_damage, content_dps_results_rotation_status, content_dps_results_rune_0_tracker, content_dps_results_rune_1_tracker, content_dps_results_rune_2_tracker, content_dps_results_rune_3_tracker, content_dps_results_rune_4_tracker, content_dps_results_rune_5_tracker, content_dps_results_rune_6_tracker, content_dps_results_rune_7_tracker, content_dps_results_rune_8_tracker, content_dps_results_rune_9_tracker, content_dps_results_rune_10_tracker, content_dps_results_rune_11_tracker, content_dps_results_rune_time_tracker, content_dps_results_runic_power_tracker, content_extra_info_amount_of_targets, content_extra_info_current_gear, content_extra_stats_info, content_extra_future_stats_area
-
-
-
-
-# username = db.Column(db.String(4096), unique=True, nullable=False)
-#     content = db.Column(db.Text)
 
 loggin = dash.Dash(server=app, routes_pathname_prefix="/loggin/",title="Remour's Log Data", update_title='Loading Log Data...', external_stylesheets=external_stylesheets)
 loggin.layout = html.Div(children=[
@@ -1913,23 +1890,33 @@ loggin.layout = html.Div(children=[
         ]),
     html.Div(
         children=[
-            dcc.Input(id="inputlogname", type="text", placeholder="Username", debounce=True),
+            dcc.Input(id="inputlogname", type="text", placeholder="Password", debounce=True),
+        ],  style={"display": "flex", "justifyContent": "center"}),
+    html.Div(
+        children=[
+            html.H1(
+            html.I("Log Name", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+            dcc.Input(id="inputlognames", type="text", placeholder="Username", debounce=True),
+            html.Button('View Specific Log', id='submit_val'),
+            html.Br(),
+            html.Button('Load Raw Log Text', id='submit_val_raw'),
+            html.Br(),
+            html.Button('Close Specific Log', id='close_val',),
         ],  style={"display": "flex", "justifyContent": "center"}),
         html.Div(id='new-test-dash-container'),
         ])
 @loggin.callback(
     Output("new-test-dash-container", "children"),
-    #Output("output", "children"),
     Input("inputlogname", "value"),
 )
 def sqltwo(value):
     if value != None:
         if value != "":
             if value == conf['Log Secret']['logpas'].strip('"'):
-                dfff = pd.read_sql_query(  #database 2 (version 1)
-                    'SELECT * FROM logs', #database 1 (version 2)
-                    SQLALCHEMY_DATABASE_URI #database 1 (version 2)
-                ) #database 1 (version 2)
+                dfff = pd.read_sql_query( 
+                    'SELECT * FROM logs', 
+                    SQLALCHEMY_DATABASE_URI 
+                )
                 db.session.close()
                 engine.dispose()
                 stas = pd.read_sql_query(
@@ -1938,7 +1925,7 @@ def sqltwo(value):
                 )
                 db.session.close()
                 engine.dispose()
-                return all_two_dash_stuff(dfff, value, stas) #database 1 (version 2)
+                return all_two_dash_stuff(dfff, value, stas) 
             else:
                 return html.Div(
                 [   html.H1(
@@ -1956,10 +1943,6 @@ def convert_to_date(the_in_date):
     return date_as_datetime
 
 def all_two_dash_stuff(datas, pas, quer):
-    # oldest_date = min(datas["date_time"])
-    # oldest_date = datetime.strptime(oldest_date, '%Y-%m-%d %H:%M:%S.%f')
-    # newest_date = max(datas["date_time"])
-    # newest_date = datetime.strptime(newest_date, '%Y-%m-%d %H:%M:%S.%f')
     date_count = datas.copy()
     amount_of_logs = len(datas)
     date_count["date_time"] = date_count["date_time"].apply(convert_to_date)
@@ -1973,7 +1956,6 @@ def all_two_dash_stuff(datas, pas, quer):
     newest_date = max(old_date_count_data["Date"])
     old_date_count_data['Date'] =  pd.to_datetime(old_date_count_data['Date'], format='%Y-%m-%d %H:%M:%S.%f')
     missing_dates = pd.date_range(start = oldest_date, end = newest_date).difference(old_date_count_data['Date'])
-    #missing_dates = pd.date_range(start = oldest_date, end = newest_date).difference(old_date_count_data.Date)
     missing_dates_len = len(missing_dates)
     missing_dates_visits = []
     for i in list(range(0,missing_dates_len)):
@@ -2001,12 +1983,6 @@ def all_two_dash_stuff(datas, pas, quer):
             html.I("Total amount of logs: {}".format(amount_of_logs), style={'color': '#ffffff'})),
             html.Br(),
         ]),
-        # html.Div([
-        # dcc.Graph(
-        #     id='graph_log1',
-        #     figure=fig_log1
-        # ),
-        # ]),
          html.Div(children=[
             dcc.Graph(id="graph_log1",figure=fig_log1, style={'display': 'inline-block'}),
             dcc.Graph(id="graph_log10",figure=fig_log10, style={'display': 'inline-block'})
@@ -2031,20 +2007,6 @@ def all_two_dash_stuff(datas, pas, quer):
             },]
         )
         ]),
-        # html.Div([
-        #     html.I("10 Most Recent Logs", style={'color': '#ffffff'}),
-        #     dash_table.DataTable(id='table_log1',
-        #         columns=[{"name": "Id", "id":"id"},{"name": "Username", "id":"username"},{"name": "Date", "id":"date_time"}],
-        #         data=top_10_most_recent_logs.to_dict('records'),
-        #         style_cell={'textAlign': 'center'},
-        #         style_data={'color': 'white','backgroundColor': 'black'},
-        #         style_data_conditional=[
-        #     {
-        #         'if': {'row_index': 'odd'},
-        #         'backgroundColor': '#4D4B4B',
-        #     },]
-        # )
-        # ]),
         html.Div([
             html.I("Full Logs", style={'color': '#ffffff'}),
             dash_table.DataTable(id='table_log2',
@@ -2094,12 +2056,12 @@ lograw.layout = html.Div(children=[
     html.Div(
         children=[
             html.Br(),
-            html.Button('Close Specific Log', id='close_val',) # style = dict(display='none'))
+            html.Button('Load Raw Log Text', id='submit_val_raw',)
         ],  style={"display": "flex", "justifyContent": "center"}),
     html.Div(
         children=[
             html.Br(),
-            html.Button('Load Raw Log Text', id='submit_val_raw',) #style = dict(display='none'))
+            html.Button('Close Specific Log', id='close_val',)
         ],  style={"display": "flex", "justifyContent": "center"}),
         html.Div(id='new-test2-dash-container'),
         
