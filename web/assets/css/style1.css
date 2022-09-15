@@ -197,80 +197,99 @@ h3 {text-align: center;}
 }
 .title_name{
     position: absolute;
-    left: 200px;
+  /*  left: 200px; */
+    left: 14.39vw;
 }
 .title_num{
     position: absolute;
-    left: 485px;
+  /*  left: 485px; */
+    left: 34.9vw;
 }
 .num{
     position: absolute;
-    left: 485px;
+ /*   left: 485px; */
+    left: 34.9vw;
 }
 .title_phase{
     position: absolute;
-    left: 575px;
+ /*   left: 575px; */
+    left: 41.38vw;
 }
 .title_heroic {
     position: absolute;
-    left: 655px;
+ /*   left: 655px; */
+    left: 46.25vw;
 }
 .title_strength {
     position: absolute;
-    left: 725px;
+  /*  left: 725px; */
+    left: 52.17vw;
 }
 .title_agility {
     position: absolute;
-    left: 815px;
+  /*  left: 815px; */
+    left: 58.65vw;
 }
 .title_attackpower {
     position: absolute;
-    left: 890px;
+  /*  left: 890px; */
+    left: 63.55vw;
 }
 .title_hit {
     position: absolute;
-    left: 1030px;
+ /*   left: 1030px;*/
+    left: 72.42vw;
 }
 .title_crit {
     position: absolute;
-    left: 1085px;
+ /*   left: 1085px;*/
+    left: 76.08vw;
 }
 .title_haste {
     position: absolute;
-    left: 1145px;
+ /*   left: 1145px;*/
+    left: 80.40vw;
 }
 .title_armorpen {
     position: absolute;
-    left: 1210px;
+/*    left: 1210px;*/
+    left: 84.58vw;
 }
 .title_expertise {
     position: absolute;
-    left: 1320px;
+  /*  left: 1320px;*/
+    left: 92vw;
 }
 .title_slot {
     position: absolute;
-    left: 760px;
+  /*  left: 760px;*/
+    left: 54.69vw;
 }
 .title_type {
     position: absolute;
-    left: 860px;
+  /*  left: 860px;*/
+    left: 61.89vw;
 }
 .title_min {
     position: absolute;
-    left: 955px;
+  /*  left: 955px;*/
+    left: 68.73vw;
 }
 .title_max {
     position: absolute;
-    left: 1055px;
+  /*  left: 1055px;*/
+    left: 75.92vw;
 }
 .title_speed {
     position: absolute;
-    left: 1145px;
+  /*  left: 1145px;*/
+    left: 82.40vw;
 } 
 .name {
     display: inline;
     position: absolute;
-    left: 200px;
+  /*  left: 200px;*/
+    left: 14.39vw;
     width: 85%; 
     text-decoration: none; 
 } 
@@ -278,72 +297,87 @@ h3 {text-align: center;}
     display: inline;
     text-align: center;
     position: absolute;
-    left: 590px;
+  /*  left: 590px; */
+    left: 42.46vw;
 }
 .heroic {
    display: inline;
     position: absolute;
-    left: 670px; 
+   /* left: 670px;  */
+    left: 47.61vw;
 } 
 .strength {
     display: inline;
     position: absolute;
-    left: 755px;
+  /*  left: 755px; */
+    left: 54.33vw;
 }
 .agility {
     display: inline;
     position: absolute;
-    left: 835px;
+  /*  left: 835px; */
+    left: 60.09vw;
 } 
 .attackpower {
     display: inline;
     position: absolute;
-    left: 920px;
+  /*  left: 920px; */
+    left: 66.51vw;
 }
 .hit {
     display: inline;
     position: absolute;
-    left: 1040px;
+  /*  left: 1040px; */
+    left: 73.04vw;
 }
 .crit {
     display: inline;
     position: absolute;
-    left: 1095px;
+ /*   left: 1095px; */
+    left: 76.80vw;
 }
 .haste {
     display: inline;
     position: absolute;
-    left: 1160px;
+  /*  left: 1160px; */
+    left: 81.48vw;
 } 
 .armorpen {
     display: inline;
     position: absolute;
-    left: 1245px;
+  /*  left: 1245px;*/
+    left: 87.6vw;
 }
 .expertise {
     display: inline;
     position: absolute;
-    left: 1345px;
+ /*   left: 1345px;*/
+    left: 94.79vw;
 }
 .slot {
     position: absolute;
-    left: 750px;
+ /*   left: 750px;*/
+    left: 53.97vw;
 }
 .type {
     position: absolute;
-    left: 860px;
+ /*   left: 860px;*/
+    left: 61.89vw;
 }
 .min {
     position: absolute;
-    left: 960px;
+ /*   left: 960px;*/
+    left: 69.09vw;
 }
 .max {
     position: absolute;
-    left: 1060px;
+ /*   left: 1060px;*/
+    left: 76.28vw;
 }
 .speed {
     position: absolute;
-    left: 1160px;
+   /* left: 1160px; */
+    left: 83.48vw;
 }
 .talentcenter{
    text-align-last:center;
