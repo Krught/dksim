@@ -655,13 +655,17 @@
 
 </div>
   </div>
+<!--
 <div class="button-center">
 <h3>This is just a display, please import talents.</h3>
 </div>
+<div class="button-center">
+<input type="button" id="disabletal" onClick="disabletalents()" value="Disable Talents Display." />
+</div> 
 <br>
 <a id="target" href="https://wowhead.com/wotlk/talent-calc/embed/death-knight"></a>
     <div id="talentsid" class="talentcenter"></div>
-<br>
+<br>  -->
 <br>
 <div class="button-center">
 <input type="button" id="btnBack" onClick="Changebgcolor()" value="Toggle Background" />
@@ -32794,7 +32798,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
             function talenk_selector(){
                 var talenk = document.getElementById('talentlink').value;
                 Cookies.set('talentlinkselection', talenk, { expires: 7 })
-                talentchanger();
+                //talentchanger();
             }
             var talenk_open_select = Cookies.get('talentlinkselection')
             if (talenk_open_select === undefined || talenk_open_select === null) {
@@ -33597,62 +33601,62 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                   }
                 berseff_selector();
             }  
-            function split(str, index) {
-              const result = [str.slice(0, index), str.slice(index)];
-
-              return result;
-            } 
-            function talentchanger(){
-                var elements = document.getElementsByClassName("wowhead-embed-talent-calc");
-                while(elements.length > 0){
-                    elements[0].parentNode.removeChild(elements[0]);
-                }
-                var myBodyId = document.getElementById("talentsid");   
-                var newBaitTag = document.createElement('a');
-                var newBaitText = document.createTextNode("$$$$$$$$\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0SCROLL OVER ME -- TO REFRESH TALENT TREES\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0$$$$$$$$");
-                var talent_text = document.querySelector('#talentlink');
-                talent_text = talent_text.value;
-                var split_loc = talent_text.indexOf("death-knight");
-                split_loc = split_loc - 1;
-                const [talent_split1, talent_split2] = split(talent_text, split_loc);
-                talent_append = talent_split1 + "/embed" + talent_split2;
-                newBaitTag.setAttribute('href', talent_append);
-                newBaitTag.setAttribute('id', 'sesting');
-                newBaitTag.appendChild(newBaitText);
-                myBodyId.appendChild(newBaitTag); 
-                mouseOverBehaviour();
-            }    
-              
-            function simulateMouseover() {
-              var event = new MouseEvent('mouseover', {
-                'view': window,
-                'bubbles': true,
-                'cancelable': true
-              });
-              var myTarget = document.getElementById('sesting'); 
-              var canceled = !myTarget.dispatchEvent(event);
-              if (canceled) {
-              } else {
-              }
-            }
-
-            function mouseOverBehaviour() {
-                myElement = document.getElementById("sesting");
-                myElement.addEventListener("mouseover", function(event) {
-                    event.target.style.color = "red";
-                });  
-                setTimeout(simulateMouseover,30);
-            }
-
-              
-            var firstsettings = false;
-            document.getElementById("sett").addEventListener('click', firstsetting_select);
-            function firstsetting_select(){
-                if(firstsettings == false){
-                talentchanger();
-                firstsettings = true;
-            }
-            }
+//            function split(str, index) {
+//              const result = [str.slice(0, index), str.slice(index)];
+//
+//              return result;
+//            } 
+//            function talentchanger(){
+//                var elements = document.getElementsByClassName("wowhead-embed-talent-calc");
+//                while(elements.length > 0){
+//                    elements[0].parentNode.removeChild(elements[0]);
+//                }
+//                var myBodyId = document.getElementById("talentsid");   
+//                var newBaitTag = document.createElement('a');
+//                var newBaitText = document.createTextNode("$$$$$$$$\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0SCROLL OVER ME -- TO REFRESH TALENT TREES\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0$$$$$$$$");
+//                var talent_text = document.querySelector('#talentlink');
+//                talent_text = talent_text.value;
+//                var split_loc = talent_text.indexOf("death-knight");
+//                split_loc = split_loc - 1;
+//                const [talent_split1, talent_split2] = split(talent_text, split_loc);
+//                talent_append = talent_split1 + "/embed" + talent_split2;
+//                newBaitTag.setAttribute('href', talent_append);
+//                newBaitTag.setAttribute('id', 'sesting');
+//                newBaitTag.appendChild(newBaitText);
+//                myBodyId.appendChild(newBaitTag); 
+//                mouseOverBehaviour();
+//            }    
+//              
+//            function simulateMouseover() {
+//              var event = new MouseEvent('mouseover', {
+//                'view': window,
+//                'bubbles': true,
+//                'cancelable': true
+//              });
+//              var myTarget = document.getElementById('sesting'); 
+//              var canceled = !myTarget.dispatchEvent(event);
+//              if (canceled) {
+//              } else {
+//              }
+//            }
+//
+//            function mouseOverBehaviour() {
+//                myElement = document.getElementById("sesting");
+//                myElement.addEventListener("mouseover", function(event) {
+//                    event.target.style.color = "red";
+//                });  
+//                setTimeout(simulateMouseover,30);
+//            }
+//
+//              
+//            var firstsettings = false;
+//            document.getElementById("sett").addEventListener('click', firstsetting_select);
+//            function firstsetting_select(){
+//                if(firstsettings == false){
+//                talentchanger();
+//                firstsettings = true;
+//            }
+//            }
 
 
             function dpshtmlarea(dpstextvalue, twohand){
@@ -35250,6 +35254,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                   }
               }
               bgload();
+              
               
 
         
