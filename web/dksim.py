@@ -1885,7 +1885,7 @@ loggin = dash.Dash(server=app, routes_pathname_prefix="/loggin/",title="Remour's
 loggin.layout = html.Div(children=[
     html.Div(
         [   html.H1(
-            html.I("Logging Password", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
+            html.I("Internal Logging Data", style={'color': '#ffffff'}), style={'textAlign': 'center'}),
             html.Br(),
         ]),
     html.Div(
@@ -1899,7 +1899,7 @@ loggin.layout = html.Div(children=[
     html.Div(
         children=[
             html.H1(
-            html.I("Log Name", style={'color': '#ffffff'})),
+            html.I("Specific Log Lookup", style={'color': '#ffffff'})),
             dcc.Input(id="inputlognames", type="text", placeholder="Username", debounce=True),
         ],  style={"display": "flex",  "flex-direction": "row", "flex-wrap": "wrap", "justifyContent": "center"},),
     html.Div(
