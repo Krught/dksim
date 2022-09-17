@@ -578,3 +578,13 @@ select option:hover,
   border: 0px solid #000000;
   background-color: inherit;
 }
+.ohhider {
+  left: 96.5px;
+  position: relative;
+}
+#ohhiderselection{
+  width: 85px;   
+}
+#mhhiderselection{
+  width: 96px;   
+}
