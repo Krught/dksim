@@ -12,7 +12,7 @@
             }
             </script> 
     		<title>Remours DK Simulator</title>
-            <link rel="stylesheet" href="/static/css/style1.css">
+            <link rel="stylesheet" href="/static/css/style2.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <link rel="icon" href="/static/images/icon.ico">
 			<script src="https://unpkg.com/htmx.org@1.8.0"></script>
@@ -690,6 +690,16 @@
 <button class="tablinks_weapon" onclick="openWeapon(event, 'weapon2_slot')">Off Hand</button>
 </div>
 <div id="weapon1_slot" class="weapon_tabcontent">
+<div class="mhhider" id = "mhhider">
+    <select name="mhhiderselection" id="mhhiderselection"onchange="mh_hider()">
+    <option value="All"selected="selected">All</option>
+    <option value="Sword">Sword</option>
+    <option value="Axe">Axe</option>
+    <option value="Mace">Mace</option>
+    <option value="Polearm">Polearm</option>
+    <option value="Fist Weapon">Fist Weapon</option>
+    </select>
+    </div>
 <form>
 <div id="wepmh"class="weaponmh_selector">
 <div>
@@ -3014,6 +3024,15 @@ Gems:
 </div>
 </div>
 <div id="weapon2_slot" class="weapon_tabcontent">
+<div class="ohhider" id="ohhider">
+    <select name="ohhiderselection" id="ohhiderselection"onchange="oh_hider()">
+    <option value="All"selected="selected">All</option>
+    <option value="Sword">Sword</option>
+    <option value="Axe">Axe</option>
+    <option value="Mace">Mace</option>
+    <option value="Fist Weapon">Fist Weapon</option>
+    </select>
+    </div>
 <form>
 <div id="wepoh"class="weaponoh_selector">
 <div>
@@ -38268,6 +38287,88 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                   } 
                 }
             }
+        function mh_hider(){
+            var wephide = document.getElementById("mhhiderselection").value;
+            wephide = wephide.toString();
+            if (wephide != "All") {
+            var cont = $(".all_sort_mh");
+            var arr = $.makeArray(cont.children(".all_mh_items"));
+            arr.sort(function(a, b) {
+                var textB = $(a).find('.type');
+                var textA = textB.text();
+                textB.parent('div').parent('div').show();
+                textB = $(b).find('.type');
+                textA = textB.text();
+                textB.parent('div').parent('div').show();
+            });
+            arr.sort(function(a, b) {
+              var textB = $(a).find('.type');
+              var textA = textB.text();
+              textB.parent('div').show();
+              if (textA != wephide) {
+                  textB.parent('div').parent('div').hide();
+              }
+              textB = $(b).find('.type');
+              textA = textB.text();
+              textB.parent('div').show();
+              if (textA != wephide) {
+                  textB.parent('div').parent('div').hide();
+              }
+            });
+            } else{
+                var cont = $(".all_sort_mh");
+                var arr = $.makeArray(cont.children(".all_mh_items"));
+                arr.sort(function(a, b) {
+                    var textB = $(a).find('.type');
+                    var textA = textB.text();
+                    textB.parent('div').parent('div').show();
+                    textB = $(b).find('.type');
+                    textA = textB.text();
+                    textB.parent('div').parent('div').show();
+            });
+            }
+          }
+          function oh_hider(){
+            var wephide = document.getElementById("ohhiderselection").value;
+            wephide = wephide.toString();
+            if (wephide != "All") {
+            var cont = $(".all_sort_oh");
+            var arr = $.makeArray(cont.children(".all_oh_items"));
+            arr.sort(function(a, b) {
+                var textB = $(a).find('.type');
+                var textA = textB.text();
+                textB.parent('div').parent('div').show();
+                textB = $(b).find('.type');
+                textA = textB.text();
+                textB.parent('div').parent('div').show();
+            });
+            arr.sort(function(a, b) {
+              var textB = $(a).find('.type');
+              var textA = textB.text();
+              textB.parent('div').show();
+              if (textA != wephide) {
+                  textB.parent('div').parent('div').hide();
+              }
+              textB = $(b).find('.type');
+              textA = textB.text();
+              textB.parent('div').show();
+              if (textA != wephide) {
+                  textB.parent('div').parent('div').hide();
+              }
+            });
+            } else{
+                var cont = $(".all_sort_oh");
+                var arr = $.makeArray(cont.children(".all_oh_items"));
+                arr.sort(function(a, b) {
+                    var textB = $(a).find('.type');
+                    var textA = textB.text();
+                    textB.parent('div').parent('div').show();
+                    textB = $(b).find('.type');
+                    textA = textB.text();
+                    textB.parent('div').parent('div').show();
+            });
+            }
+          }
                 
               
           </script>
