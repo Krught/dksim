@@ -1996,6 +1996,7 @@ def all_two_dash_stuff(datas, pas, quer):
     top_10_most_recent_logs = datas.iloc[-10:].copy()
     datas_all_flip = datas.iloc[::-1]
     fig_log1 = px.pie(datas, values=datas.value_counts().values, names='username', title='Username Breakdown', color="username", template="plotly_dark")
+    fig_log1.update_traces(textposition='inside', textinfo='percent+label')
     fig_log2 = px.line(date_count_data, x='Date', y='Count')
     fig_log2.update_layout(title="Day to Day Usage", template="plotly_dark")
     # fig_log10 = px.pie(datas, values=datas.value_counts().values, names='username', title='Username Breakdown',color="username", template="plotly_dark")
