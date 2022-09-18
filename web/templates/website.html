@@ -12,7 +12,7 @@
             }
             </script> 
     		<title>Remours DK Simulator</title>
-            <link rel="stylesheet" href="/static/css/style2.css">
+            <link rel="stylesheet" href="/static/css/style3.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <link rel="icon" href="/static/images/icon.ico">
 			<script src="https://unpkg.com/htmx.org@1.8.0"></script>
@@ -690,7 +690,7 @@
 <button class="tablinks_weapon" onclick="openWeapon(event, 'weapon2_slot')">Off Hand</button>
 </div>
 <div id="weapon1_slot" class="weapon_tabcontent">
-<div class="mhhider" id = "mhhider">
+<div class="mhhider" id="mhhider">
     <select name="mhhiderselection" id="mhhiderselection"onchange="mh_hider()">
     <option value="All"selected="selected">All</option>
     <option value="Sword">Sword</option>
@@ -698,6 +698,11 @@
     <option value="Mace">Mace</option>
     <option value="Polearm">Polearm</option>
     <option value="Fist Weapon">Fist Weapon</option>
+    </select>
+    <select name="mh2hselection" id="mh2hselection"onchange="mh_2h()">
+    <option value="All"selected="selected">All</option>
+    <option value="2hand">2-Hand</option>
+    <option value="1hand">1-Hand</option>
     </select>
     </div>
 <form>
@@ -35651,6 +35656,8 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                 } else {
                 var selectedsheet_area = document.querySelector(".tablinks.active").innerHTML;
                 if (selectedsheet_area != "Settings") {
+                    sortbyheroic();
+                    sortbyname();
                     if (selectedsheet_area != "Weapon") {
                         if (selectedsheet_area != "Rings") {
                             if (selectedsheet_area != "Trinkets") {
@@ -38287,10 +38294,14 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                   } 
                 }
             }
+        var mh_type_sel = "All";
+        var mh_slot_sel = "All";
+              
         function mh_hider(){
             var wephide = document.getElementById("mhhiderselection").value;
             wephide = wephide.toString();
             if (wephide != "All") {
+            mh_type_sel = "Other";
             var cont = $(".all_sort_mh");
             var arr = $.makeArray(cont.children(".all_mh_items"));
             arr.sort(function(a, b) {
@@ -38326,6 +38337,48 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                     textA = textB.text();
                     textB.parent('div').parent('div').show();
             });
+                mh_type_sel = "All";
+            }
+            if (mh_slot_sel != "All") {
+                var wephide = document.getElementById("mh2hselection").value;
+                wephide = wephide.toString();
+                    if (wephide == "2hand") {
+                        wephide = "2Handed";
+                        var cont = $(".all_sort_mh");
+                        var arr = $.makeArray(cont.children(".all_mh_items"));
+                        arr.sort(function(a, b) {
+                          var textB = $(a).find('.slot');
+                          var textA = textB.text();
+                          textB.parent('div').show();
+                          if (textA != wephide) {
+                              textB.parent('div').parent('div').hide();
+                          }
+                          textB = $(b).find('.slot');
+                          textA = textB.text();
+                          textB.parent('div').show();
+                          if (textA != wephide) {
+                              textB.parent('div').parent('div').hide();
+                          }
+                        });
+                } else {
+                        wephide = "2Handed";
+                        var cont = $(".all_sort_mh");
+                        var arr = $.makeArray(cont.children(".all_mh_items"));
+                        arr.sort(function(a, b) {
+                          var textB = $(a).find('.slot');
+                          var textA = textB.text();
+                          textB.parent('div').show();
+                          if (textA == wephide) {
+                              textB.parent('div').parent('div').hide();
+                          }
+                          textB = $(b).find('.slot');
+                          textA = textB.text();
+                          textB.parent('div').show();
+                          if (textA == wephide) {
+                              textB.parent('div').parent('div').hide();
+                          }
+                        });
+                }
             }
           }
           function oh_hider(){
@@ -38367,6 +38420,98 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                     textA = textB.text();
                     textB.parent('div').parent('div').show();
             });
+            }
+          }
+        function mh_2h(){
+            var wephide = document.getElementById("mh2hselection").value;
+            wephide = wephide.toString();
+            if (wephide != "All") {
+                mh_slot_sel = "Other";
+                if (wephide == "2hand") {
+                    wephide = "2Handed";
+                    var cont = $(".all_sort_mh");
+                    var arr = $.makeArray(cont.children(".all_mh_items"));
+                    arr.sort(function(a, b) {
+                        var textB = $(a).find('.slot');
+                        var textA = textB.text();
+                        textB.parent('div').parent('div').show();
+                        textB = $(b).find('.slot');
+                        textA = textB.text();
+                        textB.parent('div').parent('div').show();
+                    });
+                    arr.sort(function(a, b) {
+                      var textB = $(a).find('.slot');
+                      var textA = textB.text();
+                      textB.parent('div').show();
+                      if (textA != wephide) {
+                          textB.parent('div').parent('div').hide();
+                      }
+                      textB = $(b).find('.slot');
+                      textA = textB.text();
+                      textB.parent('div').show();
+                      if (textA != wephide) {
+                          textB.parent('div').parent('div').hide();
+                      }
+                    });
+            } else {
+                    wephide = "2Handed";
+                    var cont = $(".all_sort_mh");
+                    var arr = $.makeArray(cont.children(".all_mh_items"));
+                    arr.sort(function(a, b) {
+                        var textB = $(a).find('.slot');
+                        var textA = textB.text();
+                        textB.parent('div').parent('div').show();
+                        textB = $(b).find('.slot');
+                        textA = textB.text();
+                        textB.parent('div').parent('div').show();
+                    });
+                    arr.sort(function(a, b) {
+                      var textB = $(a).find('.slot');
+                      var textA = textB.text();
+                      textB.parent('div').show();
+                      if (textA == wephide) {
+                          textB.parent('div').parent('div').hide();
+                      }
+                      textB = $(b).find('.slot');
+                      textA = textB.text();
+                      textB.parent('div').show();
+                      if (textA == wephide) {
+                          textB.parent('div').parent('div').hide();
+                      }
+                    });
+            } } else{
+                var cont = $(".all_sort_mh");
+                var arr = $.makeArray(cont.children(".all_mh_items"));
+                arr.sort(function(a, b) {
+                    var textB = $(a).find('.slot');
+                    var textA = textB.text();
+                    textB.parent('div').parent('div').show();
+                    textB = $(b).find('.slot');
+                    textA = textB.text();
+                    textB.parent('div').parent('div').show();
+            });
+                mh_slot_sel = "All";
+            }
+            if (mh_type_sel != "All"){
+                var wephide = document.getElementById("mhhiderselection").value;
+                wephide = wephide.toString();
+                mh_type_sel = "Other";
+                var cont = $(".all_sort_mh");
+                var arr = $.makeArray(cont.children(".all_mh_items"));
+                arr.sort(function(a, b) {
+                  var textB = $(a).find('.type');
+                  var textA = textB.text();
+                  textB.parent('div').show();
+                  if (textA != wephide) {
+                      textB.parent('div').parent('div').hide();
+                  }
+                  textB = $(b).find('.type');
+                  textA = textB.text();
+                  textB.parent('div').show();
+                  if (textA != wephide) {
+                      textB.parent('div').parent('div').hide();
+                  }
+                });
             }
           }
                 
