@@ -586,5 +586,13 @@ select option:hover,
   width: 85px;   
 }
 #mhhiderselection{
+    margin-right: -4xpx;
   width: 96px;   
+}
+#mh2hselection{
+    margin-left: -4px;
+width: 65px; 
+}
+.mhhider{
+    position: relative;
 }
