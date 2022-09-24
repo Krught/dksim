@@ -35882,7 +35882,20 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                             var textB = $(a).find('.slot');
                             var textA = textB.text();
                             var singleObj = {};
+                            
+                            
+                            
+                            var pelem = textB.parent('div').parent('div').style.display;
+                            
+                            alert(pelem);
+                            
+                            
                             singleObj['name'] = textA;
+                            
+                            
+                            
+                            
+                            
                             listofsimitems.push(singleObj);
                             textB = $(b).find('.slot');
                             textA = textB.text();
@@ -35894,7 +35907,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                         
                         //what about making a list of all the items to sim, then taking a number through that list?
                         //
-                        
+                        //so its currently grabbing everything, need to only grab non-hidden elements
                         
                         
                         
