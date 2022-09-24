@@ -35719,6 +35719,31 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                         else {
                             var mini_selectedsheet_area = document.querySelector(".tablinks_trinket.active").innerHTML;
                                 if (mini_selectedsheet_area === "Slot1") {
+                                    var allsort = '.all_sort_' + 'trinket1';
+                                    var allitems = ".all_" + 'trinket1' + "_items";
+                                    var cont = $(allsort);
+                                    var arr = $.makeArray(cont.children(allitems));
+                                    listofsimitems = [];
+                                    arr.sort(function(a, b) {
+                                        var textB = $(b).find('.nam');
+                                        var textA = textB.text();
+                                        var pelem = textB.parent('div').parent('div');
+                                        if ($(pelem).css('display') !== 'none') {
+                                            listofsimitems.push(textA);
+                                        }
+                                        textB = $(a).find('.nam');
+                                        textA = textB.text();
+                                        pelem = textB.parent('div').parent('div');
+                                        if ($(pelem).css('display') !== 'none') {
+                                            listofsimitems.push(textA);
+                                        }
+                                    });
+                                    var uninquelistofsimitems = [];
+                                    $.each(listofsimitems, function(i, el){
+                                        if($.inArray(el, uninquelistofsimitems) === -1) uninquelistofsimitems.push(el);
+                                    });
+                                    listofsimitems = uninquelistofsimitems;
+                                    loopnum = listofsimitems.length;
                                     frontunderitem = 'Trinkt1_';
                                     var trinketnum = 1
                                     currentsimamount = document.getElementById('simamounts').value;
@@ -35734,14 +35759,15 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                                     dropdown_highlight_selection = selectedsheet_area.toLowerCase();
                                     current_selection_dropdown = document.querySelector(selection_items);
                                     current_selection_items = current_selection_dropdown.value;
-                                    loopnum = current_selection_dropdown.options.length;
+//                                    loopnum = current_selection_dropdown.options.length;
                                     dropdown_highlight_selection = "dropdown_select_" +  dropdown_highlight_selection;
                                     no_hash = selection_items.replace("#", "");
                                     selecteditemcat = "selected" + selectedsheet_area.toLowerCase();
                                     selecteditemcatwmod = "/\b" + selecteditemcat + "\b/g"
                                     current_loopnum = 0
                                     current_selection_dropdown.selectedIndex = current_loopnum;
-                                    var wep3 = document.getElementById(no_hash).value;
+//                                    var wep3 = document.getElementById(no_hash).value;
+                                    var wep3 = listofsimitems[current_loopnum];
                                     var $select906 = document.querySelector(selection_items);
                                     $select906.value = wep3;
                                     var wep_new = wep3.replace(/\ /g, "_");
@@ -35755,6 +35781,31 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                                     sheetloop = "True";
                                     document.getElementById("simdpsbutton2").click();
                                 } else {
+                                    var allsort = '.all_sort_' + 'trinket2';
+                                    var allitems = ".all_" + 'trinket2' + "_items";
+                                    var cont = $(allsort);
+                                    var arr = $.makeArray(cont.children(allitems));
+                                    listofsimitems = [];
+                                    arr.sort(function(a, b) {
+                                        var textB = $(b).find('.nam');
+                                        var textA = textB.text();
+                                        var pelem = textB.parent('div').parent('div');
+                                        if ($(pelem).css('display') !== 'none') {
+                                            listofsimitems.push(textA);
+                                        }
+                                        textB = $(a).find('.nam');
+                                        textA = textB.text();
+                                        pelem = textB.parent('div').parent('div');
+                                        if ($(pelem).css('display') !== 'none') {
+                                            listofsimitems.push(textA);
+                                        }
+                                    });
+                                    var uninquelistofsimitems = [];
+                                    $.each(listofsimitems, function(i, el){
+                                        if($.inArray(el, uninquelistofsimitems) === -1) uninquelistofsimitems.push(el);
+                                    });
+                                    listofsimitems = uninquelistofsimitems;
+                                    loopnum = listofsimitems.length;
                                     frontunderitem = 'Trinkt2_';
                                     var trinketnum = 2
                                     currentsimamount = document.getElementById('simamounts').value;
@@ -35770,14 +35821,15 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                                     dropdown_highlight_selection = selectedsheet_area.toLowerCase();
                                     current_selection_dropdown = document.querySelector(selection_items);
                                     current_selection_items = current_selection_dropdown.value;
-                                    loopnum = current_selection_dropdown.options.length;
+//                                    loopnum = current_selection_dropdown.options.length;
                                     dropdown_highlight_selection = "dropdown_select_" +  dropdown_highlight_selection;
                                     no_hash = selection_items.replace("#", "");
                                     selecteditemcat = "selected" + selectedsheet_area.toLowerCase();
                                     selecteditemcatwmod = "/\b" + selecteditemcat + "\b/g"
                                     current_loopnum = 0
                                     current_selection_dropdown.selectedIndex = current_loopnum;
-                                    var wep3 = document.getElementById(no_hash).value;
+  //                                  var wep3 = document.getElementById(no_hash).value;
+                                    var wep3 = listofsimitems[current_loopnum];
                                     var $select907 = document.querySelector(selection_items);
                                     $select907.value = wep3;
                                     var wep_new = wep3.replace(/\ /g, "_");
@@ -35796,6 +35848,31 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                     else {
                         var mini_selectedsheet_area = document.querySelector(".tablinks_ring.active").innerHTML;
                         if (mini_selectedsheet_area === "Slot1") {
+                            var allsort = '.all_sort_' + 'ring1';
+                            var allitems = ".all_" + 'ring1' + "_items";
+                            var cont = $(allsort);
+                            var arr = $.makeArray(cont.children(allitems));
+                            listofsimitems = [];
+                            arr.sort(function(a, b) {
+                                var textB = $(b).find('.nam');
+                                var textA = textB.text();
+                                var pelem = textB.parent('div').parent('div');
+                                if ($(pelem).css('display') !== 'none') {
+                                    listofsimitems.push(textA);
+                                }
+                                textB = $(a).find('.nam');
+                                textA = textB.text();
+                                pelem = textB.parent('div').parent('div');
+                                if ($(pelem).css('display') !== 'none') {
+                                    listofsimitems.push(textA);
+                                }
+                            });
+                            var uninquelistofsimitems = [];
+                            $.each(listofsimitems, function(i, el){
+                                if($.inArray(el, uninquelistofsimitems) === -1) uninquelistofsimitems.push(el);
+                            });
+                            listofsimitems = uninquelistofsimitems;
+                            loopnum = listofsimitems.length;
                             frontunderitem = 'Ringg1_';
                             var trinketnum = 1
                             currentsimamount = document.getElementById('simamounts').value;
@@ -35811,14 +35888,15 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                             dropdown_highlight_selection = selectedsheet_area.toLowerCase();
                             current_selection_dropdown = document.querySelector(selection_items);
                             current_selection_items = current_selection_dropdown.value;
-                            loopnum = current_selection_dropdown.options.length;
+//                            loopnum = current_selection_dropdown.options.length;
                             dropdown_highlight_selection = "dropdown_select_" +  dropdown_highlight_selection;
                             no_hash = selection_items.replace("#", "");
                             selecteditemcat = "selected" + selectedsheet_area.toLowerCase();
                             selecteditemcatwmod = "/\b" + selecteditemcat + "\b/g"
                             current_loopnum = 0
                             current_selection_dropdown.selectedIndex = current_loopnum;
-                            var wep3 = document.getElementById(no_hash).value;
+//                            var wep3 = document.getElementById(no_hash).value;
+                            var wep3 = listofsimitems[current_loopnum];
                             var $select908 = document.querySelector(selection_items);
                             $select908.value = wep3;
                             var wep_new = wep3.replace(/\ /g, "_");
@@ -35837,7 +35915,6 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                             var cont = $(allsort);
                             var arr = $.makeArray(cont.children(allitems));
                             listofsimitems = [];
-                            alert("FF");
                             arr.sort(function(a, b) {
                                 var textB = $(b).find('.nam');
                                 var textA = textB.text();
@@ -35873,7 +35950,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                             dropdown_highlight_selection = selectedsheet_area.toLowerCase();
                             current_selection_dropdown = document.querySelector(selection_items);
                             current_selection_items = current_selection_dropdown.value;
-                            loopnum = current_selection_dropdown.options.length;
+//                            loopnum = current_selection_dropdown.options.length;
                             dropdown_highlight_selection = "dropdown_select_" +  dropdown_highlight_selection;
                             no_hash = selection_items.replace("#", "");
                             selecteditemcat = "selected" + selectedsheet_area.toLowerCase();
