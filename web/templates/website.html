@@ -35855,9 +35855,8 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                             });
                             listofsimitems = uninquelistofsimitems;
                             loopnum = listofsimitems.length;
-                            
-                            
                             frontunderitem = 'Ringg2_';
+                            alert("A");
                             var trinketnum = 2
                             currentsimamount = document.getElementById('simamounts').value;
                             var newsimamount = currentsimamount
@@ -35865,8 +35864,8 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                                 newsimamount = 250
                             }
                             const $select859 = document.querySelector('#simamounts');
-                            $select859.value = newsimamount
-                            selectedsheet_area = "ring" + trinketnum 
+                            $select859.value = newsimamount;
+                            selectedsheet_area = "ring" + trinketnum ;
                             selection_items = selectedsheet_area.toLowerCase();
                             selection_items = "#" + selection_items
                             dropdown_highlight_selection = selectedsheet_area.toLowerCase();
@@ -35879,6 +35878,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                             selecteditemcatwmod = "/\b" + selecteditemcat + "\b/g"
                             current_loopnum = 0
                             current_selection_dropdown.selectedIndex = current_loopnum;
+                            alert("T");
 //                            var wep3 = document.getElementById(no_hash).value;
                             var wep3 = listofsimitems[current_loopnum];
                             var $select909 = document.querySelector(selection_items);
