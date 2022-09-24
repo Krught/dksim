@@ -35682,6 +35682,32 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                                 }  else {
                                     frontunderitem = 'Sigill_';
                                 }
+                                var item = selectedsheet_area.toLowerCase();
+                                var allsort = '.all_sort_' + item
+                                var allitems = ".all_" + item + "_items"
+                                var cont = $(allsort);
+                                var arr = $.makeArray(cont.children(allitems));
+                                listofsimitems = [];
+                                arr.sort(function(a, b) {
+                                    var textB = $(b).find('.nam');
+                                    var textA = textB.text();
+                                    var pelem = textB.parent('div').parent('div');
+                                    if ($(pelem).css('display') !== 'none') {
+                                        listofsimitems.push(textA);
+                                    }
+                                    textB = $(a).find('.nam');
+                                    textA = textB.text();
+                                    pelem = textB.parent('div').parent('div');
+                                    if ($(pelem).css('display') !== 'none') {
+                                        listofsimitems.push(textA);
+                                    }
+                                });
+                                var uninquelistofsimitems = [];
+                                $.each(listofsimitems, function(i, el){
+                                    if($.inArray(el, uninquelistofsimitems) === -1) uninquelistofsimitems.push(el);
+                                });
+                                listofsimitems = uninquelistofsimitems;
+                                loopnum = listofsimitems.length;
                                 currentsimamount = document.getElementById('simamounts').value;
                                 var newsimamount = currentsimamount
                                 if (currentsimamount > 250) {
@@ -35694,14 +35720,15 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                                 dropdown_highlight_selection = selectedsheet_area.toLowerCase();
                                 current_selection_dropdown = document.querySelector(selection_items);
                                 current_selection_items = current_selection_dropdown.value;
-                                loopnum = current_selection_dropdown.options.length;
+//                                loopnum = current_selection_dropdown.options.length;
                                 dropdown_highlight_selection = "dropdown_select_" +  dropdown_highlight_selection;
                                 no_hash = selection_items.replace("#", "");
                                 selecteditemcat = "selected" + selectedsheet_area.toLowerCase();
                                 selecteditemcatwmod = "/\b" + selecteditemcat + "\b/g"
                                 current_loopnum = 0
                                 current_selection_dropdown.selectedIndex = current_loopnum;
-                                var wep3 = document.getElementById(no_hash).value;
+//                                var wep3 = document.getElementById(no_hash).value;
+                                var wep3 = listofsimitems[current_loopnum];
                                 var $select903 = document.querySelector(selection_items);
                                 $select903.value = wep3;
                                 var wep_new = wep3.replace(/\ /g, "_");
