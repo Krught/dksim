@@ -38700,6 +38700,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
               
         function phasesel_selector(){
             var phaseselected = document.getElementById("phasesel").value;
+            phaseselected = parseInt(phaseselected);
             var cont = $(".all_sort_mh");
             var arr = $.makeArray(cont.children(".all_mh_items"));
             arr.sort(function(a, b) {
@@ -38713,12 +38714,14 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
             arr.sort(function(a, b) {
               var textB = $(a).find('.phase');
               var textA = textB.text();
+              textA = parseInt(textA);
               textB.parent('div').show();
               if (textA < phaseselected) {
                   textB.parent('div').parent('div').hide();
               }
               textB = $(b).find('.phase');
               textA = textB.text();
+              textA = parseInt(textA);
               textB.parent('div').show();
               if (textA < phaseselected) {
                   textB.parent('div').parent('div').hide();
