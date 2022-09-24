@@ -38711,9 +38711,128 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
         function phasesel_selector(){
             var phaseselected = document.getElementById("phasesel").value;
             phaseselected = parseInt(phaseselected);
-            //can just dupe everything below this to repeate on every item category
             var cont = $(".all_sort_mh");
             var arr = $.makeArray(cont.children(".all_mh_items"));
+            arr.sort(function(a, b) {
+                var textB = $(a).find('.phase');
+                var textA = textB.text();
+                textB.parent('div').parent('div').show();
+                textB = $(b).find('.phase');
+                textA = textB.text();
+                textB.parent('div').parent('div').show();
+            });
+            arr.sort(function(a, b) {
+              var textB = $(a).find('.phase');
+              var textA = textB.text();
+              textA = parseInt(textA);
+              if (textA > phaseselected) {
+                  textB.parent('div').parent('div').hide();
+              }
+              textB = $(b).find('.phase');
+              textA = textB.text();
+              textA = parseInt(textA);
+              if (textA > phaseselected) {
+                  textB.parent('div').parent('div').hide();
+              }
+            });
+            cont = $(".all_sort_oh");
+            arr = $.makeArray(cont.children(".all_oh_items"));
+            arr.sort(function(a, b) {
+                var textB = $(a).find('.phase');
+                var textA = textB.text();
+                textB.parent('div').parent('div').show();
+                textB = $(b).find('.phase');
+                textA = textB.text();
+                textB.parent('div').parent('div').show();
+            });
+            arr.sort(function(a, b) {
+              var textB = $(a).find('.phase');
+              var textA = textB.text();
+              textA = parseInt(textA);
+              if (textA > phaseselected) {
+                  textB.parent('div').parent('div').hide();
+              }
+              textB = $(b).find('.phase');
+              textA = textB.text();
+              textA = parseInt(textA);
+              if (textA > phaseselected) {
+                  textB.parent('div').parent('div').hide();
+              }
+            });
+            cont = $(".all_sort_ring1");
+            arr = $.makeArray(cont.children(".all_ring1_items"));
+            arr.sort(function(a, b) {
+                var textB = $(a).find('.phase');
+                var textA = textB.text();
+                textB.parent('div').parent('div').show();
+                textB = $(b).find('.phase');
+                textA = textB.text();
+                textB.parent('div').parent('div').show();
+            });
+            arr.sort(function(a, b) {
+              var textB = $(a).find('.phase');
+              var textA = textB.text();
+              textA = parseInt(textA);
+              if (textA > phaseselected) {
+                  textB.parent('div').parent('div').hide();
+              }
+              textB = $(b).find('.phase');
+              textA = textB.text();
+              textA = parseInt(textA);
+              if (textA > phaseselected) {
+                  textB.parent('div').parent('div').hide();
+              }
+            });
+            cont = $(".all_sort_ring2");
+            arr = $.makeArray(cont.children(".all_ring2_items"));
+            arr.sort(function(a, b) {
+                var textB = $(a).find('.phase');
+                var textA = textB.text();
+                textB.parent('div').parent('div').show();
+                textB = $(b).find('.phase');
+                textA = textB.text();
+                textB.parent('div').parent('div').show();
+            });
+            arr.sort(function(a, b) {
+              var textB = $(a).find('.phase');
+              var textA = textB.text();
+              textA = parseInt(textA);
+              if (textA > phaseselected) {
+                  textB.parent('div').parent('div').hide();
+              }
+              textB = $(b).find('.phase');
+              textA = textB.text();
+              textA = parseInt(textA);
+              if (textA > phaseselected) {
+                  textB.parent('div').parent('div').hide();
+              }
+            });
+            cont = $(".all_sort_trinket1");
+            arr = $.makeArray(cont.children(".all_trinket1_items"));
+            arr.sort(function(a, b) {
+                var textB = $(a).find('.phase');
+                var textA = textB.text();
+                textB.parent('div').parent('div').show();
+                textB = $(b).find('.phase');
+                textA = textB.text();
+                textB.parent('div').parent('div').show();
+            });
+            arr.sort(function(a, b) {
+              var textB = $(a).find('.phase');
+              var textA = textB.text();
+              textA = parseInt(textA);
+              if (textA > phaseselected) {
+                  textB.parent('div').parent('div').hide();
+              }
+              textB = $(b).find('.phase');
+              textA = textB.text();
+              textA = parseInt(textA);
+              if (textA > phaseselected) {
+                  textB.parent('div').parent('div').hide();
+              }
+            });
+            cont = $(".all_sort_trinket2");
+            arr = $.makeArray(cont.children(".all_trinket2_items"));
             arr.sort(function(a, b) {
                 var textB = $(a).find('.phase');
                 var textA = textB.text();
