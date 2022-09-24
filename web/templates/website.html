@@ -38716,14 +38716,14 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
               var textA = textB.text();
               textA = parseInt(textA);
               textB.parent('div').show();
-              if (textA < phaseselected) {
+              if (textA > phaseselected) {
                   textB.parent('div').parent('div').hide();
               }
               textB = $(b).find('.phase');
               textA = textB.text();
               textA = parseInt(textA);
               textB.parent('div').show();
-              if (textA < phaseselected) {
+              if (textA > phaseselected) {
                   textB.parent('div').parent('div').hide();
               }
             });
