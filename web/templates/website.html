@@ -35878,20 +35878,11 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                         listofsimitems = [];
                         var cont = $(".all_sort_mh");
                         var arr = $.makeArray(cont.children(".all_mh_items"));
-                        arr.sort(function(a, b) {
+                        arr.sort(function(a) {
                             var textB = $(a).find('.name');
                             var textA = textB.text();
                             var singleObj = {};
                             var pelem = textB.parent('div').parent('div');
-                            if ($(pelem).css('display') !== 'none') {
-                                alert(textA);
-                                singleObj['name'] = textA;
-                                listofsimitems.push(singleObj);
-                            }
-                            textB = $(b).find('.name');
-                            textA = textB.text();
-                            singleObj = {};
-                            pelem = textB.parent('div').parent('div');
                             if ($(pelem).css('display') !== 'none') {
                                 alert(textA);
                                 singleObj['name'] = textA;
