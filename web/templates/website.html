@@ -35879,32 +35879,24 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                         var cont = $(".all_sort_mh");
                         var arr = $.makeArray(cont.children(".all_mh_items"));
                         arr.sort(function(a, b) {
-                            var textB = $(a).find('.slot');
+                            var textB = $(a).find('.name');
                             var textA = textB.text();
                             var singleObj = {};
-                            
-                            
-                            
                             var pelem = textB.parent('div').parent('div');
                             if ($(pelem).css('display') !== 'none') {
                                 alert(textA);
+                                singleObj['name'] = textA;
+                                listofsimitems.push(singleObj);
                             }
-                            
-                            
-                            
-                            
-                            singleObj['name'] = textA;
-                            
-                            
-                            
-                            
-                            
-                            listofsimitems.push(singleObj);
-                            textB = $(b).find('.slot');
+                            textB = $(b).find('.name');
                             textA = textB.text();
-                            var singleObj = {};
-                            singleObj['name'] = textA;
-                            listofsimitems.push(singleObj);
+                            singleObj = {};
+                            pelem = textB.parent('div').parent('div');
+                            if ($(pelem).css('display') !== 'none') {
+                                alert(textA);
+                                singleObj['name'] = textA;
+                                listofsimitems.push(singleObj);
+                            }
                         });
                         alert(listofsimitems);
                         
