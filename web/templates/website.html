@@ -35832,34 +35832,8 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                             sheetloop = "True";
                             document.getElementById("simdpsbutton2").click();
                         } else { 
-                            if (selectedsheet_area == "Weapon") {
-                                var mini_selectedsheet_area = document.querySelector(".tablinks_weapon.active").innerHTML;
-                                    if (mini_selectedsheet_area === "Main Hand") {
-                                        var item = 'mh';
-                                    } else {
-                                        var item = 'oh';
-                            }
-                            } else if (selectedsheet_area == "Rings") {
-                                var mini_selectedsheet_area = document.querySelector(".tablinks_ring.active").innerHTML;
-                                    if (mini_selectedsheet_area === "Slot1") {
-                                        var item = 'ring1';
-                                    } else {
-                                        var item = 'ring2';
-                                    }
-
-                                }  else if (selectedsheet_area == "Trinkets") {
-                                    var mini_selectedsheet_area = document.querySelector(".tablinks_trinket.active").innerHTML;
-                                        if (mini_selectedsheet_area === "Slot1") {
-                                            var item = 'trinket1';
-                                        } else {
-                                            var item = 'trinket2';
-                                        }
-
-                                    } else {
-                                        var item = selectedsheet_area.toLowerCase();
-                                    }
-                            var allsort = '.all_sort_' + item
-                            var allitems = ".all_" + item + "_items"
+                            var allsort = '.all_sort_' + 'ring2'
+                            var allitems = ".all_" + 'ring2' + "_items"
                             listofsimitems = [];
                             arr.sort(function(a, b) {
                                 var textB = $(b).find('.nam');
