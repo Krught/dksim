@@ -35878,7 +35878,6 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                         listofsimitems = [];
                         var cont = $(".all_sort_mh");
                         var arr = $.makeArray(cont.children(".all_mh_items"));
-                        //this is adding all the items multiple times, why?
                         arr.sort(function(a, b) {
                             var textB = $(a).find('.name');
                             var textA = textB.text();
@@ -35898,50 +35897,43 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                             if($.inArray(el, uninquelistofsimitems) === -1) uninquelistofsimitems.push(el);
                         });
                         listofsimitems = uninquelistofsimitems;
-                        alert(listofsimitems);
                         loopnum = listofsimitems.length;
-                        alert(loopnum);
+                        frontunderitem = 'w1_';
+                        currentsimamount = document.getElementById('simamounts').value;
+                        var newsimamount = currentsimamount
+                        if (currentsimamount > 250) {
+                            newsimamount = 250
+                        }
+                        const $select868 = document.querySelector('#simamounts');
+                        $select868.value = newsimamount;
                         
-                        //what about making a list of all the items to sim, then taking a number through that list?
-                        //
-                        //so its currently grabbing everything, need to only grab non-hidden elements
                         
-                        
-                        
-//                        frontunderitem = 'w1_';
-//                        currentsimamount = document.getElementById('simamounts').value;
-//                        var newsimamount = currentsimamount
-//                        if (currentsimamount > 250) {
-//                            newsimamount = 250
-//                        }
-//                        const $select868 = document.querySelector('#simamounts');
-//                        $select868.value = newsimamount
-//                        selectedsheet_area = "weapon1"
-//                        selection_items = selectedsheet_area.toLowerCase();
-//                        selection_items = "#" + selection_items
-//                        dropdown_highlight_selection = selectedsheet_area.toLowerCase();
-//                        current_selection_dropdown = document.querySelector(selection_items);
+                        selectedsheet_area = "weapon1";
+                        selection_items = selectedsheet_area.toLowerCase();
+                        selection_items = "#" + selection_items
+                        dropdown_highlight_selection = selectedsheet_area.toLowerCase();
+                        current_selection_dropdown = listofsimitems[0];
 //                        current_selection_items = current_selection_dropdown.value;
 //                        loopnum = current_selection_dropdown.options.length;
-//                        dropdown_highlight_selection = "weapon1";
-//                        no_hash = selection_items.replace("#", "");
-//                        selecteditemcat = "selectedwepmh"
-//                        selecteditemcatwmod = "/\b" + selecteditemcat + "\b/g"
-//                        current_loopnum = 0
-//                        current_selection_dropdown.selectedIndex = current_loopnum;
-//                        var wep3 = document.getElementById(no_hash).value;
-//                        var $select918 = document.querySelector(selection_items);
-//                        $select918.value = wep3;
-//                        var wep_new = wep3.replace(/\ /g, "_");
-//                        wep_new = wep_new.replace(/\'/g, "");
-//                        wep_new = wep_new.replace(/\:/g, "");
-//                        wep_new = wep_new.replace(/\,/g, "");
-//                        wep_new = frontunderitem + wep_new;
-//                        var mh_wep = document.getElementsByClassName(selecteditemcat);
-//                        mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
-//                        document.getElementById(wep_new).classList.add(selecteditemcat);
-//                        sheetloop = "True";
-//                        document.getElementById("simdpsbutton2").click();
+                        dropdown_highlight_selection = "weapon1";
+                        no_hash = selection_items.replace("#", "");
+                        selecteditemcat = "selectedwepmh"
+                        selecteditemcatwmod = "/\b" + selecteditemcat + "\b/g"
+                        current_loopnum = 0
+                        current_selection_dropdown.selectedIndex = current_loopnum;
+                        var wep3 = document.getElementById(no_hash).value;
+                        var $select918 = document.querySelector(selection_items);
+                        $select918.value = wep3;
+                        var wep_new = wep3.replace(/\ /g, "_");
+                        wep_new = wep_new.replace(/\'/g, "");
+                        wep_new = wep_new.replace(/\:/g, "");
+                        wep_new = wep_new.replace(/\,/g, "");
+                        wep_new = frontunderitem + wep_new;
+                        var mh_wep = document.getElementsByClassName(selecteditemcat);
+                        mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
+                        document.getElementById(wep_new).classList.add(selecteditemcat);
+                        sheetloop = "True";
+                        document.getElementById("simdpsbutton2").click();
                     } else{
                         frontunderitem = 'w2_';
                         currentsimamount = document.getElementById('simamounts').value;
