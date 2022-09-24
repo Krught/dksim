@@ -35886,8 +35886,11 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                             
                             
                             var pelem = textB.parent('div').parent('div');
+                            if ($(pelem).css('display') !== 'none') {
+                                alert(textA);
+                            }
                             
-                            alert(pelem);
+                            
                             
                             
                             singleObj['name'] = textA;
