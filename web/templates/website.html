@@ -38509,6 +38509,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                   textB.parent('div').parent('div').hide();
               }
             });
+                mini_phasesel_selector();
             } else{
                 var cont = $(".all_sort_mh");
                 var arr = $.makeArray(cont.children(".all_mh_items"));
@@ -38521,6 +38522,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                     textB.parent('div').parent('div').show();
             });
                 mh_type_sel = "All";
+                mini_phasesel_selector();
             }
             if (mh_slot_sel != "All") {
                 var wephide = document.getElementById("mh2hselection").value;
@@ -38543,6 +38545,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                               textB.parent('div').parent('div').hide();
                           }
                         });
+                        mini_phasesel_selector();
                 } else {
                         wephide = "2Handed";
                         var cont = $(".all_sort_mh");
@@ -38561,6 +38564,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                               textB.parent('div').parent('div').hide();
                           }
                         });
+                    mini_phasesel_selector();
                 }
             }
           }
@@ -38592,6 +38596,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                   textB.parent('div').parent('div').hide();
               }
             });
+                mini_phasesel_selector();
             } else{
                 var cont = $(".all_sort_oh");
                 var arr = $.makeArray(cont.children(".all_oh_items"));
@@ -38603,6 +38608,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                     textA = textB.text();
                     textB.parent('div').parent('div').show();
             });
+                mini_phasesel_selector();
             }
           }
         function mh_2h(){
@@ -38636,6 +38642,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                           textB.parent('div').parent('div').hide();
                       }
                     });
+                    mini_phasesel_selector();
             } else {
                     wephide = "2Handed";
                     var cont = $(".all_sort_mh");
@@ -38662,6 +38669,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                           textB.parent('div').parent('div').hide();
                       }
                     });
+                mini_phasesel_selector();
             } } else{
                 var cont = $(".all_sort_mh");
                 var arr = $.makeArray(cont.children(".all_mh_items"));
@@ -38674,6 +38682,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                     textB.parent('div').parent('div').show();
             });
                 mh_slot_sel = "All";
+                mini_phasesel_selector();
             }
             if (mh_type_sel != "All"){
                 var wephide = document.getElementById("mhhiderselection").value;
@@ -38695,6 +38704,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                       textB.parent('div').parent('div').hide();
                   }
                 });
+                mini_phasesel_selector();
             }
           }
               
@@ -38733,6 +38743,44 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
             wephide = document.getElementById("mh2hselection");
             wephide.value = "All";
         }
+        function mini_phasesel_selector(){
+            var phaseselected = document.getElementById("phasesel").value;
+            phaseselected = parseInt(phaseselected);
+            var cont = $(".all_sort_mh");
+            var arr = $.makeArray(cont.children(".all_mh_items"));
+            arr.sort(function(a, b) {
+              var textB = $(a).find('.phase');
+              var textA = textB.text();
+              textA = parseInt(textA);
+              if (textA > phaseselected) {
+                  textB.parent('div').parent('div').hide();
+              }
+              textB = $(b).find('.phase');
+              textA = textB.text();
+              textA = parseInt(textA);
+              if (textA > phaseselected) {
+                  textB.parent('div').parent('div').hide();
+              }
+            });
+            var cont = $(".all_sort_oh");
+            var arr = $.makeArray(cont.children(".all_oh_items"));
+            arr.sort(function(a, b) {
+              var textB = $(a).find('.phase');
+              var textA = textB.text();
+              textA = parseInt(textA);
+              if (textA > phaseselected) {
+                  textB.parent('div').parent('div').hide();
+              }
+              textB = $(b).find('.phase');
+              textA = textB.text();
+              textA = parseInt(textA);
+              if (textA > phaseselected) {
+                  textB.parent('div').parent('div').hide();
+              }
+            });
+        }
+              
+        
                 
               
           </script>
