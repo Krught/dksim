@@ -35605,7 +35605,6 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                 if (sheetloop === "True") {
                     if (loopnum > current_loopnum + 1){
                         current_loopnum++;
-                        //current_selection_dropdown.selectedIndex = current_loopnum;
                         var wep3 = listofsimitems[current_loopnum];
                         var $select903 = document.querySelector(selection_items);
                         $select903.value = wep3;
@@ -35619,8 +35618,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                         document.getElementById(wep_new).classList.add(selecteditemcat);
                         document.getElementById("simdpsbutton2").click();
                     } else {
-                        current_selection_dropdown.value = current_selection_items;
-                        var wep3 = document.getElementById(no_hash).value;
+                        var wep3 = listofsimitems[current_loopnum];
                         var $select903 = document.querySelector(selection_items);
                         $select903.value = wep3;
                         var wep_new = wep3.replace(/\ /g, "_");
@@ -35657,8 +35655,6 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                 } else {
                 var selectedsheet_area = document.querySelector(".tablinks.active").innerHTML;
                 if (selectedsheet_area != "Settings") {
-//                    sortbyheroic();
-//                    sortbyname();
                     if (selectedsheet_area != "Weapon") {
                         if (selectedsheet_area != "Rings") {
                             if (selectedsheet_area != "Trinkets") {
@@ -35931,6 +35927,29 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                         sheetloop = "True";
                         document.getElementById("simdpsbutton2").click();
                     } else{
+                        listofsimitems = [];
+                        var cont = $(".all_sort_oh");
+                        var arr = $.makeArray(cont.children(".all_oh_items"));
+                        arr.sort(function(a, b) {
+                            var textB = $(a).find('.name');
+                            var textA = textB.text();
+                            var pelem = textB.parent('div').parent('div');
+                            if ($(pelem).css('display') !== 'none') {
+                                listofsimitems.push(textA);
+                            }
+                            textB = $(b).find('.name');
+                            textA = textB.text();
+                            pelem = textB.parent('div').parent('div');
+                            if ($(pelem).css('display') !== 'none') {
+                                listofsimitems.push(textA);
+                            }
+                        });
+                        var uninquelistofsimitems = [];
+                        $.each(listofsimitems, function(i, el){
+                            if($.inArray(el, uninquelistofsimitems) === -1) uninquelistofsimitems.push(el);
+                        });
+                        listofsimitems = uninquelistofsimitems;
+                        loopnum = listofsimitems.length;
                         frontunderitem = 'w2_';
                         currentsimamount = document.getElementById('simamounts').value;
                         var newsimamount = currentsimamount
@@ -35952,7 +35971,7 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                         selecteditemcatwmod = "/\b" + selecteditemcat + "\b/g"
                         current_loopnum = 0
                         current_selection_dropdown.selectedIndex = current_loopnum;
-                        var wep3 = document.getElementById(no_hash).value;
+                        var wep3 = listofsimitems[current_loopnum];
                         var $select918 = document.querySelector(selection_items);
                         $select918.value = wep3;
                         var wep_new = wep3.replace(/\ /g, "_");
