@@ -38855,6 +38855,34 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                   textB.parent('div').parent('div').hide();
               }
             });
+            var phasehidelist = ["head", "neck", "shoulders", "back", "chest", "wrist", "gloves", "waist", "legs", "boots", "sigil"];
+            var phasehidelistLength = phasehidelist.length;
+            for (var i = 0; i < phasehidelistLength; i++) {
+                cont = $(".all_sort_" + phasehidelist[i]);
+                arr = $.makeArray(cont.children(".all_" + phasehidelist[i] + "_items"));
+                arr.sort(function(a, b) {
+                    var textB = $(a).find('.phase');
+                    var textA = textB.text();
+                    textB.parent('div').parent('div').show();
+                    textB = $(b).find('.phase');
+                    textA = textB.text();
+                    textB.parent('div').parent('div').show();
+                });
+                arr.sort(function(a, b) {
+                  var textB = $(a).find('.phase');
+                  var textA = textB.text();
+                  textA = parseInt(textA);
+                  if (textA > phaseselected) {
+                      textB.parent('div').parent('div').hide();
+                  }
+                  textB = $(b).find('.phase');
+                  textA = textB.text();
+                  textA = parseInt(textA);
+                  if (textA > phaseselected) {
+                      textB.parent('div').parent('div').hide();
+                  }
+                });
+            }
             var wephide = document.getElementById("mhhiderselection");
             wephide.value = "All";
             wephide = document.getElementById("ohhiderselection");
