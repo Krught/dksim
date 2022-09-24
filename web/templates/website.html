@@ -35957,20 +35957,18 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                             newsimamount = 250
                         }
                         const $select868 = document.querySelector('#simamounts');
-                        $select868.value = newsimamount
-                        selectedsheet_area = "weapon2"
+                        $select868.value = newsimamount;
+                        selectedsheet_area = "weapon2";
                         selection_items = selectedsheet_area.toLowerCase();
                         selection_items = "#" + selection_items
                         dropdown_highlight_selection = selectedsheet_area.toLowerCase();
                         current_selection_dropdown = document.querySelector(selection_items);
                         current_selection_items = current_selection_dropdown.value;
-                        loopnum = current_selection_dropdown.options.length;
                         dropdown_highlight_selection = "weapon2";
                         no_hash = selection_items.replace("#", "");
                         selecteditemcat = "selectedwepoh"
                         selecteditemcatwmod = "/\b" + selecteditemcat + "\b/g"
                         current_loopnum = 0
-                        current_selection_dropdown.selectedIndex = current_loopnum;
                         var wep3 = listofsimitems[current_loopnum];
                         var $select918 = document.querySelector(selection_items);
                         $select918.value = wep3;
