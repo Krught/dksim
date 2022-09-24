@@ -35884,19 +35884,21 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                             var singleObj = {};
                             var pelem = textB.parent('div').parent('div');
                             if ($(pelem).css('display') !== 'none') {
-                                singleObj['name'] = textA;
-                                listofsimitems.push(singleObj);
+                                //singleObj['name'] = textA;
+                                //listofsimitems.push(singleObj);
+                                listofsimitems.push(textA);
                             }
                             textB = $(b).find('.name');
                             textA = textB.text();
                             singleObj = {};
                             pelem = textB.parent('div').parent('div');
                             if ($(pelem).css('display') !== 'none') {
-                                singleObj['name'] = textA;
-                                listofsimitems.push(singleObj);
+//                                singleObj['name'] = textA;
+//                                listofsimitems.push(singleObj);
+                                listofsimitems.push(textA);
                             }
                         });
-                        alert(listofsimitems.name);
+                        alert(listofsimitems);
                         
                         //what about making a list of all the items to sim, then taking a number through that list?
                         //
