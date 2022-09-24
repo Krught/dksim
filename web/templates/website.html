@@ -35832,6 +35832,57 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                             sheetloop = "True";
                             document.getElementById("simdpsbutton2").click();
                         } else { 
+                            if (selectedsheet_area == "Weapon") {
+                                var mini_selectedsheet_area = document.querySelector(".tablinks_weapon.active").innerHTML;
+                                    if (mini_selectedsheet_area === "Main Hand") {
+                                        var item = 'mh';
+                                    } else {
+                                        var item = 'oh';
+                            }
+                            } else if (selectedsheet_area == "Rings") {
+                                var mini_selectedsheet_area = document.querySelector(".tablinks_ring.active").innerHTML;
+                                    if (mini_selectedsheet_area === "Slot1") {
+                                        var item = 'ring1';
+                                    } else {
+                                        var item = 'ring2';
+                                    }
+
+                                }  else if (selectedsheet_area == "Trinkets") {
+                                    var mini_selectedsheet_area = document.querySelector(".tablinks_trinket.active").innerHTML;
+                                        if (mini_selectedsheet_area === "Slot1") {
+                                            var item = 'trinket1';
+                                        } else {
+                                            var item = 'trinket2';
+                                        }
+
+                                    } else {
+                                        var item = selectedsheet_area.toLowerCase();
+                                    }
+                            var allsort = '.all_sort_' + item
+                            var allitems = ".all_" + item + "_items"
+                            listofsimitems = [];
+                            arr.sort(function(a, b) {
+                                var textB = $(b).find('.nam');
+                                var textA = textB.text();
+                                var pelem = textB.parent('div').parent('div');
+                                if ($(pelem).css('display') !== 'none') {
+                                    listofsimitems.push(textA);
+                                }
+                                textB = $(a).find('.nam');
+                                textA = textB.text();
+                                pelem = textB.parent('div').parent('div');
+                                if ($(pelem).css('display') !== 'none') {
+                                    listofsimitems.push(textA);
+                                }
+                            });
+                            var uninquelistofsimitems = [];
+                            $.each(listofsimitems, function(i, el){
+                                if($.inArray(el, uninquelistofsimitems) === -1) uninquelistofsimitems.push(el);
+                            });
+                            listofsimitems = uninquelistofsimitems;
+                            loopnum = listofsimitems.length;
+                            
+                            
                             frontunderitem = 'Ringg2_';
                             var trinketnum = 2
                             currentsimamount = document.getElementById('simamounts').value;
@@ -35854,7 +35905,8 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                             selecteditemcatwmod = "/\b" + selecteditemcat + "\b/g"
                             current_loopnum = 0
                             current_selection_dropdown.selectedIndex = current_loopnum;
-                            var wep3 = document.getElementById(no_hash).value;
+//                            var wep3 = document.getElementById(no_hash).value;
+                            var wep3 = listofsimitems[current_loopnum];
                             var $select909 = document.querySelector(selection_items);
                             $select909.value = wep3;
                             var wep_new = wep3.replace(/\ /g, "_");
@@ -35932,13 +35984,13 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                         var cont = $(".all_sort_oh");
                         var arr = $.makeArray(cont.children(".all_oh_items"));
                         arr.sort(function(a, b) {
-                            var textB = $(a).find('.nam');
+                            var textB = $(b).find('.nam');
                             var textA = textB.text();
                             var pelem = textB.parent('div').parent('div');
                             if ($(pelem).css('display') !== 'none') {
                                 listofsimitems.push(textA);
                             }
-                            textB = $(b).find('.nam');
+                            textB = $(a).find('.nam');
                             textA = textB.text();
                             pelem = textB.parent('div').parent('div');
                             if ($(pelem).css('display') !== 'none') {
