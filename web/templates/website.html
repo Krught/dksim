@@ -35598,25 +35598,26 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
             var frontunderitem = "";
             var selecteditemcatwmod = "";
             var currentsimamount = "";
+            var listofsimitems = [];
               
               
             function ifsheetlooping(){
                 if (sheetloop === "True") {
                     if (loopnum > current_loopnum + 1){
-                    current_loopnum++;
-                    current_selection_dropdown.selectedIndex = current_loopnum;
-                    var wep3 = document.getElementById(no_hash).value;
-                    var $select903 = document.querySelector(selection_items);
-                    $select903.value = wep3;
-                    var wep_new = wep3.replace(/\ /g, "_");
-                    wep_new = wep_new.replace(/\'/g, "");
-                    wep_new = wep_new.replace(/\:/g, "");
-                    wep_new = wep_new.replace(/\,/g, "");
-                    wep_new = frontunderitem + wep_new;
-                    var mh_wep = document.getElementsByClassName(selecteditemcat);
-                    mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
-                    document.getElementById(wep_new).classList.add(selecteditemcat);
-                    document.getElementById("simdpsbutton2").click();
+                        current_loopnum++;
+                        current_selection_dropdown.selectedIndex = current_loopnum;
+                        var wep3 = document.getElementById(no_hash).value;
+                        var $select903 = document.querySelector(selection_items);
+                        $select903.value = wep3;
+                        var wep_new = wep3.replace(/\ /g, "_");
+                        wep_new = wep_new.replace(/\'/g, "");
+                        wep_new = wep_new.replace(/\:/g, "");
+                        wep_new = wep_new.replace(/\,/g, "");
+                        wep_new = frontunderitem + wep_new;
+                        var mh_wep = document.getElementsByClassName(selecteditemcat);
+                        mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
+                        document.getElementById(wep_new).classList.add(selecteditemcat);
+                        document.getElementById("simdpsbutton2").click();
                     } else {
                         current_selection_dropdown.value = current_selection_items;
                         var wep3 = document.getElementById(no_hash).value;
@@ -35874,40 +35875,63 @@ document.querySelector(".Trinkt2_Vestige_of_Haldor").addEventListener('click', f
                 } else {
                     var mini_selectedsheet_area = document.querySelector(".tablinks_weapon.active").innerHTML;
                     if (mini_selectedsheet_area === "Main Hand") {
-                        frontunderitem = 'w1_';
-                        currentsimamount = document.getElementById('simamounts').value;
-                        var newsimamount = currentsimamount
-                        if (currentsimamount > 250) {
-                            newsimamount = 250
-                        }
-                        const $select868 = document.querySelector('#simamounts');
-                        $select868.value = newsimamount
-                        selectedsheet_area = "weapon1"
-                        selection_items = selectedsheet_area.toLowerCase();
-                        selection_items = "#" + selection_items
-                        dropdown_highlight_selection = selectedsheet_area.toLowerCase();
-                        current_selection_dropdown = document.querySelector(selection_items);
-                        current_selection_items = current_selection_dropdown.value;
-                        loopnum = current_selection_dropdown.options.length;
-                        dropdown_highlight_selection = "weapon1";
-                        no_hash = selection_items.replace("#", "");
-                        selecteditemcat = "selectedwepmh"
-                        selecteditemcatwmod = "/\b" + selecteditemcat + "\b/g"
-                        current_loopnum = 0
-                        current_selection_dropdown.selectedIndex = current_loopnum;
-                        var wep3 = document.getElementById(no_hash).value;
-                        var $select918 = document.querySelector(selection_items);
-                        $select918.value = wep3;
-                        var wep_new = wep3.replace(/\ /g, "_");
-                        wep_new = wep_new.replace(/\'/g, "");
-                        wep_new = wep_new.replace(/\:/g, "");
-                        wep_new = wep_new.replace(/\,/g, "");
-                        wep_new = frontunderitem + wep_new;
-                        var mh_wep = document.getElementsByClassName(selecteditemcat);
-                        mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
-                        document.getElementById(wep_new).classList.add(selecteditemcat);
-                        sheetloop = "True";
-                        document.getElementById("simdpsbutton2").click();
+                        listofsimitems = [];
+                        var cont = $(".all_sort_mh");
+                        var arr = $.makeArray(cont.children(".all_mh_items"));
+                        arr.sort(function(a, b) {
+                            var textB = $(a).find('.slot');
+                            var textA = textB.text();
+                            var singleObj = {};
+                            singleObj['name'] = textA;
+                            listofsimitems.push(singleObj);
+                            textB = $(b).find('.slot');
+                            textA = textB.text();
+                            var singleObj = {};
+                            singleObj['name'] = textA;
+                            listofsimitems.push(singleObj);
+                        });
+                        alert(listofsimitems);
+                        
+                        //what about making a list of all the items to sim, then taking a number through that list?
+                        //
+                        
+                        
+                        
+                        
+//                        frontunderitem = 'w1_';
+//                        currentsimamount = document.getElementById('simamounts').value;
+//                        var newsimamount = currentsimamount
+//                        if (currentsimamount > 250) {
+//                            newsimamount = 250
+//                        }
+//                        const $select868 = document.querySelector('#simamounts');
+//                        $select868.value = newsimamount
+//                        selectedsheet_area = "weapon1"
+//                        selection_items = selectedsheet_area.toLowerCase();
+//                        selection_items = "#" + selection_items
+//                        dropdown_highlight_selection = selectedsheet_area.toLowerCase();
+//                        current_selection_dropdown = document.querySelector(selection_items);
+//                        current_selection_items = current_selection_dropdown.value;
+//                        loopnum = current_selection_dropdown.options.length;
+//                        dropdown_highlight_selection = "weapon1";
+//                        no_hash = selection_items.replace("#", "");
+//                        selecteditemcat = "selectedwepmh"
+//                        selecteditemcatwmod = "/\b" + selecteditemcat + "\b/g"
+//                        current_loopnum = 0
+//                        current_selection_dropdown.selectedIndex = current_loopnum;
+//                        var wep3 = document.getElementById(no_hash).value;
+//                        var $select918 = document.querySelector(selection_items);
+//                        $select918.value = wep3;
+//                        var wep_new = wep3.replace(/\ /g, "_");
+//                        wep_new = wep_new.replace(/\'/g, "");
+//                        wep_new = wep_new.replace(/\:/g, "");
+//                        wep_new = wep_new.replace(/\,/g, "");
+//                        wep_new = frontunderitem + wep_new;
+//                        var mh_wep = document.getElementsByClassName(selecteditemcat);
+//                        mh_wep[0].className = mh_wep[0].className.replace(selecteditemcat, "");
+//                        document.getElementById(wep_new).classList.add(selecteditemcat);
+//                        sheetloop = "True";
+//                        document.getElementById("simdpsbutton2").click();
                     } else{
                         frontunderitem = 'w2_';
                         currentsimamount = document.getElementById('simamounts').value;
