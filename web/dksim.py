@@ -93,9 +93,9 @@ def mode_page():
 
 
 #TEST 
-@app.route("/test")
+@app.route("/warrior")
 def mode_page_test():
-    return render_template('dk_website_tnew.html')
+    return render_template('war_website.html')
 
 @app.route("/loadgear", methods=["GET", "POST"])
 def gear_load():
