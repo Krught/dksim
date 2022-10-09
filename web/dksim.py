@@ -89,7 +89,13 @@ class Logging(db.Model): #database 2 (aka logs database)
 
 @app.route("/")
 def mode_page():
-    return render_template('website.html')
+    return render_template('dk_website.html')
+
+
+#TEST 
+@app.route("/test")
+def mode_page():
+    return render_template('dk_website_tnew.html')
 
 @app.route("/loadgear", methods=["GET", "POST"])
 def gear_load():

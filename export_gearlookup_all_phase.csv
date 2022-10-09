@@ -1,0 +1,1042 @@
+,Name,ID Num,Item Slot,Armor,Strength,Agility,Stamina,Crit,Hit,Attack Power,Haste,Armor Pen,Expertise,Defense,Dodge,Parry,Socket Bonus Type,Socket Bonus Amount,Wep Type,Wep Min Damage,Wep Max Damage,Wep Speed,Phase,Heroic
+0,Deadly Gladiator's Dreadplate Gauntlets,40806,Hands,1436,67,0,111,32,0,50,0,0,0,0,0,0,Critical Strike Rating,4,Non-Wep,0,0,0,1,False
+1,Furious Gladiator's Dreadplate Gauntlets,40809,Hands,1480,82,0,133,39,0,50,0,0,0,0,0,0,Critical Strike Rating,4,Non-Wep,0,0,0,2,False
+2,Relentless Gladiator's Dreadplate Gauntlets,40811,Hands,1579,99,0,160,63,0,50,0,0,0,0,0,0,Critical Strike Rating,4,Non-Wep,0,0,0,3,False
+3,Deadly Gladiator's Dreadplate Legguards,40845,Legs,2011,85,0,150,51,0,50,0,0,0,0,0,0,Strength,6,Non-Wep,0,0,0,1,False
+4,Furious Gladiator's Dreadplate Legguards,40848,Legs,2073,105,0,180,64,0,50,0,0,0,0,0,0,Strength,6,Non-Wep,0,0,0,2,False
+5,Relentless Gladiator's Dreadplate Legguards,40851,Legs,2210,128,0,215,80,0,50,0,0,0,0,0,0,Strength,6,Non-Wep,0,0,0,3,False
+6,Deadly Gladiator's Girdle of Triumph,40879,Waist,1293,67,0,111,42,0,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,1,False
+7,Deadly Gladiator's Greaves of Triumph,40880,Feet,1580,67,0,111,42,0,0,0,0,0,0,0,0,Resilience Rating,4,Non-Wep,0,0,0,1,False
+8,Furious Gladiator's Girdle of Triumph,40881,Waist,1321,77,0,126,49,0,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,2,False
+9,Furious Gladiator's Greaves of Triumph,40882,Feet,1614,77,0,126,49,0,0,0,0,0,0,0,0,Resilience Rating,4,Non-Wep,0,0,0,2,False
+10,Relentless Gladiator's Girdle of Triumph,40883,Waist,1391,93,0,151,59,0,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,False
+11,Relentless Gladiator's Greaves of Triumph,40884,Feet,1700,93,0,151,59,0,0,0,0,0,0,0,0,Resilience Rating,4,Non-Wep,0,0,0,3,False
+12,Deadly Gladiator's Bracers of Triumph,40888,Wrist,1005,56,0,84,38,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,1,False
+13,Furious Gladiator's Bracers of Triumph,40889,Wrist,1027,63,0,94,42,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+14,Relentless Gladiator's Bracers of Triumph,40890,Wrist,1082,76,0,114,50,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+15,Deadly Gladiator's Pendant of Triumph,42027,Neck,0,0,0,84,38,0,112,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,1,False
+16,Deadly Gladiator's Pendant of Victory,42028,Neck,0,0,0,84,0,38,112,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,1,False
+17,Furious Gladiator's Pendant of Triumph,42034,Neck,0,0,0,94,42,0,126,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+18,Furious Gladiator's Pendant of Victory,42035,Neck,0,0,0,94,0,42,126,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+19,Relentless Gladiator's Pendant of Triumph,42041,Neck,0,0,0,114,50,0,151,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+20,Relentless Gladiator's Pendant of Victory,42042,Neck,0,0,0,114,0,50,151,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+21,Deadly Gladiator's Cloak of Triumph,42067,Back,154,0,0,84,38,0,112,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,1,False
+22,Deadly Gladiator's Cloak of Victory,42068,Back,154,0,0,84,0,38,112,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,1,False
+23,Furious Gladiator's Cloak of Triumph,42074,Back,157,0,0,94,42,0,126,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+24,Furious Gladiator's Cloak of Victory,42075,Back,157,0,0,94,0,42,126,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+25,Relentless Gladiator's Cloak of Triumph,42081,Back,166,0,0,114,50,0,151,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+26,Relentless Gladiator's Cloak of Victory,42082,Back,166,0,0,114,0,50,151,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+27,Deadly Gladiator's Band of Victory,42115,Finger,0,0,0,84,0,38,112,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,1,False
+28,Furious Gladiator's Band of Triumph,42117,Finger,0,0,0,94,42,0,126,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+29,Relentless Gladiator's Band of Victory,42119,Finger,0,0,0,114,0,50,151,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+30,Strength of the Automaton,45106,Finger,0,72,0,72,46,0,0,0,36,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+31,Iron Riveted War Helm,45107,Head,1908,105,0,129,0,60,0,68,0,0,0,0,0,Hit Rating,8,Non-Wep,0,0,0,2,False
+32,Mechanist's Bindings,45108,Wrist,259,0,63,63,39,0,84,44,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+33,Gloves of the Fiery Behemoth,45109,Hands,821,0,84,67,0,0,114,56,45,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+34,Titanguard,45110,One-Hand,0,37,0,78,0,29,0,0,0,0,35,0,33,Stamina,0,Sword,200,372,1.60,2,False
+35,Mimiron's Inferno Couplings,45111,Wrist,1027,46,0,94,0,36,0,0,0,0,39,44,0,Stamina,0,Non-Wep,0,0,0,2,False
+36,The Leviathan's Coil,45112,Finger,448,63,0,94,0,0,0,0,0,0,32,34,0,Stamina,0,Non-Wep,0,0,0,2,False
+37,Golden Saronite Dragon,45132,Main Hand,0,0,32,48,0,40,94,32,0,0,0,0,0,Hit Rating,4,Fist Weapon,406,610,2.70,2,False
+38,Plated Leggings of Ruination,45134,Legs,2117,122,0,145,85,0,0,62,0,0,0,0,0,Strength,8,Non-Wep,0,0,0,2,False
+39,Drape of the Drakerider,45138,Back,157,72,0,72,46,0,0,0,36,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+40,Dragonslayer's Brace,45139,Waist,1321,84,0,127,0,0,0,0,0,0,44,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+41,Proto-hide Leggings,45141,Legs,517,0,105,99,86,0,148,0,0,57,0,0,0,Attack Power,8,Non-Wep,0,0,0,2,False
+42,Remorse,45142,One-Hand,0,0,52,51,0,0,74,34,0,29,0,0,0,Stamina,0,Sword,187,349,1.50,2,False
+43,Saronite Mesh Legguards,45143,Legs,1150,0,97,118,58,0,146,0,60,0,0,0,0,Agility,6,Non-Wep,0,0,0,2,False
+44,Sigil of Deflection,45144,Relic,0,0,0,0,0,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+45,Cindershard Ring,45157,Finger,0,0,63,54,0,42,84,0,46,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+46,Heart of Iron,45158,Trinket,0,0,0,162,0,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+47,Girdle of Embers,45161,Waist,1321,98,0,96,60,0,0,0,49,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+48,Flamestalker Boots,45162,Feet,406,0,85,73,62,0,112,56,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+49,Helm of the Furnace Master,45164,Head,1067,0,67,88,60,0,194,51,0,0,0,0,0,Critical Strike Rating,8,Non-Wep,0,0,0,2,False
+50,Worldcarver,45165,Two-Hand,0,137,0,136,0,0,0,70,0,87,0,0,0,Stamina,0,Axe,632,949,3.40,2,False
+51,Charred Saronite Greaves,45166,Feet,1614,62,0,127,0,49,0,0,0,0,55,57,0,Stamina,0,Non-Wep,0,0,0,2,False
+52,Insurmountable Fervor,45193,Neck,0,72,0,72,46,0,0,36,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+53,Drape of the Lithe,45224,Back,157,0,63,63,0,36,84,46,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+54,Steelbreaker's Embrace,45225,Chest,2348,121,0,129,82,0,0,0,0,58,0,0,0,Strength,4,Non-Wep,0,0,0,2,False
+55,Iron-studded Mantle,45227,Shoulder,985,0,60,73,0,44,170,0,46,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+56,Handguards of the Enclave,45228,Hands,1467,84,0,127,0,0,0,0,0,0,45,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+57,Runed Ironhide Boots,45232,Feet,406,0,77,90,0,0,98,0,49,56,0,0,0,Agility,4,Non-Wep,0,0,0,2,False
+58,Stormrune Edge,45233,Two-Hand,0,0,121,120,86,0,160,0,70,0,0,0,0,Stamina,0,Sword,632,949,3.40,2,False
+59,Belt of Colossal Rage,45241,Waist,1361,93,0,108,64,47,0,0,0,0,0,0,0,Strength,6,Non-Wep,0,0,0,2,False
+60,Greaves of Swift Vengeance,45244,Feet,931,0,69,55,42,42,114,0,0,0,0,0,0,Agility,6,Non-Wep,0,0,0,2,False
+61,Shoulderpads of the Intruder,45245,Shoulder,457,0,87,96,0,55,122,0,0,47,0,0,0,Agility,6,Non-Wep,0,0,0,2,False
+62,Signet of the Earthshaker,45247,Finger,0,63,0,94,0,0,0,0,0,0,33,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+63,Clockwork Legplates,45248,Legs,2054,121,0,129,0,62,0,0,78,0,0,0,0,Strength,4,Non-Wep,0,0,0,2,False
+64,Brass-lined Boots,45249,Feet,903,0,85,66,0,0,114,43,57,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+65,Crazed Construct Ring,45250,Finger,0,72,0,72,0,41,0,42,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+66,Shoulderplates of the Deconstructor,45251,Shoulder,1761,84,0,127,0,43,0,0,0,0,47,44,0,Stamina,0,Non-Wep,0,0,0,2,False
+67,Sigil of the Vengeful Heart,45254,Relic,0,0,0,0,0,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+68,Necklace of Unerring Mettle,45262,Neck,0,63,0,94,0,0,0,0,0,0,42,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+69,Wrathstone,45263,Trinket,0,0,0,0,108,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+70,Decimator's Armguards,45264,Wrist,1027,72,0,72,0,36,0,0,46,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+71,Shoulderpads of the Monolith,45265,Shoulder,443,0,77,73,48,0,112,62,0,0,0,0,0,Attack Power,8,Non-Wep,0,0,0,2,False
+72,Malice,45266,One-Hand,0,0,52,51,37,0,76,29,0,0,0,0,0,Stamina,0,Sword,313,582,2.50,2,False
+73,Saronite Plated Legguards,45267,Legs,2880,113,0,147,0,0,0,0,0,0,52,51,0,Defense Rating,6,Non-Wep,0,0,0,2,False
+74,Ironsoul,45282,Two-Hand,0,105,0,126,69,0,0,0,84,0,0,0,0,Stamina,0,Mace,594,892,3.50,2,False
+75,Flamewatch Armguards,45283,Wrist,1016,47,0,88,0,28,0,0,0,0,43,35,0,Stamina,0,Non-Wep,0,0,0,2,False
+76,Kinetic Ripper,45284,Off Hand,0,0,46,38,0,22,70,34,0,0,0,0,0,Stamina,0,Fist Weapon,171,318,1.50,2,False
+77,Might of the Leviathan,45285,Neck,0,68,0,67,0,34,0,0,43,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+78,Pyrite Infuser,45286,Trinket,0,0,0,0,0,95,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+79,Gilded Steel Legplates,45295,Legs,2054,81,0,159,0,0,0,0,0,66,71,0,68,Dodge Rating,4,Non-Wep,0,0,0,2,False
+80,Razorscale Talon,45298,One-Hand,0,0,36,51,33,0,90,20,0,0,0,0,0,Stamina,0,Sword,297,552,2.60,2,False
+81,Dragonsteel Faceplate,45299,Head,1886,97,0,120,71,0,0,0,46,0,0,0,0,Haste Rating,8,Non-Wep,0,0,0,2,False
+82,Mantle of Fiery Vengeance,45300,Shoulder,985,0,57,63,56,0,108,0,41,0,0,0,0,Critical Strike Rating,4,Non-Wep,0,0,0,2,False
+83,Bracers of the Smothering Inferno,45301,Wrist,568,0,43,59,0,40,92,0,29,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+84,Treads of the Invader,45302,Feet,402,0,79,69,60,0,114,40,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+85,Band of Draconic Guile,45303,Finger,0,0,59,63,0,0,70,35,43,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+86,Stormtempered Girdle,45304,Waist,1306,56,0,119,0,45,0,0,0,0,57,46,0,Stamina,0,Non-Wep,0,0,0,2,False
+87,Gauntlets of the Iron Furnace,45310,Hands,1451,59,0,117,0,0,0,0,43,0,48,56,0,Stamina,0,Non-Wep,0,0,0,2,False
+88,Relentless Edge,45311,Two-Hand,0,0,65,111,76,0,212,62,0,0,0,0,0,Stamina,0,Polearm,543,815,3.20,2,False
+89,Gloves of Smoldering Touch,45312,Hands,365,0,83,63,53,0,112,48,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+90,Furnace Stone,45313,Trinket,0,0,0,0,0,0,0,0,0,0,0,105,0,Stamina,0,Non-Wep,0,0,0,2,False
+91,Stonerender,45315,One-Hand,0,0,51,51,30,0,68,38,0,0,0,0,0,Stamina,0,Mace,187,349,1.50,2,False
+92,Drape of Fuming Anger,45318,Back,155,68,0,67,30,0,0,46,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+93,Cloak of the Makers,45319,Back,157,46,0,94,0,36,0,0,0,0,43,41,0,Stamina,0,Non-Wep,0,0,0,2,False
+94,Shoulderplates of the Eternal,45320,Shoulder,1761,90,0,96,60,41,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,2,False
+95,Cloak of the Iron Council,45322,Back,155,49,0,90,0,0,0,0,0,26,32,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+96,Leggings of Swift Reflexes,45324,Legs,511,0,106,92,53,0,162,76,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+97,Gloves of the Stonereaper,45325,Hands,369,0,77,84,0,65,112,0,41,0,0,0,0,Agility,4,Non-Wep,0,0,0,2,False
+98,Platinum Band of the Aesir,45326,Finger,0,42,0,94,0,0,0,0,0,42,46,36,0,Stamina,0,Non-Wep,0,0,0,2,False
+99,Circlet of True Sight,45329,Head,1056,0,70,95,42,60,156,0,0,0,0,0,0,Critical Strike Rating,8,Non-Wep,0,0,0,2,False
+100,Greaves of Iron Intensity,45330,Feet,1596,91,0,90,45,56,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+101,Rune-Etched Nightblade,45331,One-Hand,0,0,46,50,32,0,56,0,26,0,0,0,0,Stamina,0,Sword,160,297,1.40,2,False
+102,Unbreakable Chestguard,45334,Chest,2348,105,0,159,0,0,0,0,0,0,60,0,0,Stamina,9,Non-Wep,0,0,0,2,False
+103,Valorous Darkruned Chestguard,45335,Chest,2322,90,0,135,0,0,0,0,0,0,60,55,49,Parry Rating,6,Non-Wep,0,0,0,1,False
+104,Valorous Darkruned Faceguard,45336,Head,1886,81,0,135,0,37,0,0,0,0,65,53,0,Dodge Rating,8,Non-Wep,0,0,0,1,False
+105,Valorous Darkruned Handguards,45337,Hands,1451,57,0,119,0,0,0,0,0,36,47,0,52,Dodge Rating,4,Non-Wep,0,0,0,1,False
+106,Valorous Darkruned Legguards,45338,Legs,2032,71,0,135,0,0,0,0,0,54,62,0,76,Stamina,9,Non-Wep,0,0,0,1,False
+107,Valorous Darkruned Pauldrons,45339,Shoulder,1741,62,0,119,0,0,0,0,0,0,41,45,36,Dodge Rating,4,Non-Wep,0,0,0,1,False
+108,Valorous Darkruned Battleplate,45340,Chest,2322,105,0,120,71,0,0,0,0,51,0,0,0,Critical Strike Rating,6,Non-Wep,0,0,0,1,False
+109,Valorous Darkruned Gauntlets,45341,Hands,1451,83,0,90,39,52,0,0,0,0,0,0,0,Hit Rating,4,Non-Wep,0,0,0,1,False
+110,Valorous Darkruned Helmet,45342,Head,1886,97,0,120,65,0,0,0,45,0,0,0,0,Critical Strike Rating,8,Non-Wep,0,0,0,1,False
+111,Valorous Darkruned Legplates,45343,Legs,2032,105,0,120,65,0,0,60,0,0,0,0,0,Strength,6,Non-Wep,0,0,0,1,False
+112,Valorous Darkruned Shoulderplates,45344,Shoulder,1741,83,0,90,0,41,0,52,0,0,0,0,0,Hit Rating,4,Non-Wep,0,0,0,1,False
+113,"Sorthalis, Hammer of the Watchers",45442,One-Hand,0,40,0,70,0,0,0,0,0,32,29,0,36,Stamina,6,Mace,210,392,1.60,2,False
+114,Gloves of the Steady Hand,45444,Hands,846,0,79,75,55,50,106,0,0,0,0,0,0,Agility,6,Non-Wep,0,0,0,2,False
+115,The Masticator,45449,Main Hand,0,0,42,45,30,34,80,0,0,0,0,0,0,Agility,4,Fist Weapon,386,580,2.70,2,False
+116,Winter's Icy Embrace,45453,Chest,591,0,97,66,0,0,136,0,81,57,0,0,0,Attack Power,12,Non-Wep,0,0,0,2,False
+117,Frost-bound Chain Bracers,45454,Wrist,575,0,46,49,36,33,126,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+118,Loop of the Agile,45456,Finger,0,0,63,52,45,0,76,32,0,0,0,0,0,Attack Power,8,Non-Wep,0,0,0,2,False
+119,Stormedge,45458,Two-Hand,0,106,0,125,0,96,0,0,74,0,0,0,0,Stamina,0,Axe,594,892,3.50,2,False
+120,Frigid Strength of Hodir,45459,Neck,0,74,0,81,0,40,0,0,48,0,0,0,0,Strength,4,Non-Wep,0,0,0,2,False
+121,Drape of Icy Intent,45461,Back,162,0,64,70,0,40,102,41,0,0,0,0,0,Agility,4,Non-Wep,0,0,0,5,False
+122,"Vulmir, the Northern Tempest",45463,One-Hand,0,0,52,51,0,37,74,0,0,29,0,0,0,Stamina,0,Mace,325,605,2.60,2,False
+123,Belt of the Betrayed,45467,Waist,739,0,57,67,44,0,170,0,56,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+124,Sif's Promise,45469,Finger,0,72,0,72,42,0,0,0,0,42,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+125,Fate's Clutch,45471,Finger,0,51,0,96,0,0,0,0,0,41,48,39,0,Stamina,6,Non-Wep,0,0,0,2,False
+126,Warhelm of the Champion,45472,Head,1966,122,0,145,86,61,0,0,0,0,0,0,0,Strength,8,Non-Wep,0,0,0,2,False
+127,Embrace of the Gladiator,45473,Chest,609,0,112,127,70,0,140,85,0,0,0,0,0,Agility,8,Non-Wep,0,0,0,2,False
+128,Nymph Heart Charm,45480,Neck,0,0,63,63,0,36,92,42,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+129,Gauntlets of Ruthless Reprisal,45481,Hands,1467,98,0,96,60,0,0,49,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+130,Bronze Pendant of the Vanir,45485,Neck,0,71,0,96,0,0,0,0,0,0,37,30,37,Stamina,6,Non-Wep,0,0,0,2,False
+131,Handguards of Revitalization,45487,Hands,1512,84,0,127,0,0,0,0,0,0,44,44,46,Stamina,9,Non-Wep,0,0,0,2,False
+132,Insanity's Grip,45489,Main Hand,0,0,52,51,34,0,80,0,0,25,0,0,0,Stamina,0,Fist Weapon,372,558,2.60,2,False
+133,Waistguard of the Creator,45491,Waist,333,0,77,84,43,0,114,56,0,0,0,0,0,Agility,4,Non-Wep,0,0,0,2,False
+134,Delirium's Touch,45494,Off Hand,0,0,35,54,27,0,94,0,37,0,0,0,0,Critical Strike Rating,4,Fist Weapon,197,367,1.50,2,False
+135,Titanskin Cloak,45496,Back,162,48,0,96,0,24,0,0,0,31,71,0,0,Stamina,6,Non-Wep,0,0,0,2,False
+136,"Lotrafen, Spear of the Damned",45498,Two-Hand,0,0,120,105,87,0,160,0,80,0,0,0,0,Stamina,0,Polearm,632,949,3.40,2,False
+137,Boots of the Underdweller,45501,Feet,1614,98,0,96,60,49,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+138,Helm of the Faceless,45502,Head,1908,113,0,147,0,0,0,0,0,0,44,43,59,Defense Rating,8,Non-Wep,0,0,0,2,False
+139,Metallic Loop of the Sufferer,45503,Finger,0,0,62,63,43,0,92,36,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+140,Darkcore Leggings,45504,Legs,1150,0,106,88,0,52,120,75,0,0,0,0,0,Attack Power,12,Non-Wep,0,0,0,2,False
+141,The General's Heart,45507,Trinket,0,0,0,0,0,0,0,0,0,0,0,107,0,Stamina,0,Non-Wep,0,0,0,2,False
+142,"Voldrethar, Dark Blade of Oblivion",45516,Two-Hand,0,130,0,145,86,0,0,0,69,0,0,0,0,Critical Strike Rating,6,Sword,704,"1,057",3.60,2,False
+143,Pendulum of Infinity,45517,Neck,0,0,64,70,48,0,86,41,0,0,0,0,0,Agility,4,Non-Wep,0,0,0,2,False
+144,Earthshaper,45521,Two-Hand,0,137,0,137,87,70,0,0,0,0,0,0,0,Stamina,0,Mace,670,"1,005",3.60,2,False
+145,Blood of the Old God,45522,Trinket,0,0,0,0,0,108,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+146,Garona's Guise,45523,Head,480,0,98,99,0,0,130,76,0,59,0,0,0,Agility,8,Non-Wep,0,0,0,2,False
+147,Chestguard of Insidious Intent,45524,Chest,1314,0,68,88,0,60,196,0,67,0,0,0,0,Agility,6,Non-Wep,0,0,0,2,False
+148,Godbane Signet,45525,Finger,0,0,46,63,42,0,126,0,0,36,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+149,Dark Edge of Depravity,45533,Two-Hand,0,0,112,129,0,64,164,85,0,0,0,0,0,Agility,6,Polearm,685,"1,028",3.50,2,False
+150,Seal of the Betrayed King,45534,Finger,0,74,0,81,48,40,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,2,False
+151,Legguards of Cunning Deception,45536,Legs,533,0,112,127,78,0,152,0,66,0,0,0,0,Agility,8,Non-Wep,0,0,0,2,False
+152,Titanstone Pendant,45538,Neck,0,46,0,94,0,0,0,0,0,36,41,43,0,Stamina,0,Non-Wep,0,0,0,2,False
+153,Bladebearer's Signet,45540,Finger,0,72,0,72,0,46,0,0,0,36,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+154,Greaves of the Stonewarder,45542,Feet,1614,84,0,115,0,0,0,0,0,0,44,0,36,Stamina,6,Non-Wep,0,0,0,2,False
+155,Shoulders of Misfortune,45543,Shoulder,985,0,57,66,36,0,154,56,0,0,0,0,0,Haste Rating,4,Non-Wep,0,0,0,2,False
+156,Relic Hunter's Cord,45547,Waist,333,0,85,84,0,57,120,0,49,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+157,Belt of the Titans,45550,Waist,1321,69,0,126,57,0,0,0,0,40,0,0,0,Strength,6,Non-Wep,0,0,0,2,False
+158,Indestructible Plate Girdle,45551,Waist,1321,84,0,103,0,0,0,0,0,0,36,45,37,Stamina,9,Non-Wep,0,0,0,2,False
+159,Belt of Dragons,45553,Waist,739,0,48,66,49,0,138,44,0,0,0,0,0,Attack Power,12,Non-Wep,0,0,0,2,False
+160,Death-warmed Belt,45555,Waist,333,0,69,73,56,40,112,0,0,0,0,0,0,Agility,6,Non-Wep,0,0,0,2,False
+161,Battlelord's Plate Boots,45559,Feet,1614,69,0,126,49,0,0,48,0,0,0,0,0,Strength,6,Non-Wep,0,0,0,2,False
+162,Spiked Deathdealers,45560,Feet,1614,85,0,103,0,0,0,0,0,0,37,44,37,Stamina,9,Non-Wep,0,0,0,2,False
+163,Boots of Living Scale,45562,Feet,903,0,48,66,48,0,138,0,45,0,0,0,0,Attack Power,12,Non-Wep,0,0,0,2,False
+164,Footpads of Silence,45564,Feet,406,0,69,64,56,48,114,0,0,0,0,0,0,Agility,6,Non-Wep,0,0,0,2,False
+165,Drape of the Skyborn,45588,Back,162,64,0,106,47,37,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,2,True
+166,Legplates of the Endless Void,45594,Legs,2117,128,0,156,0,0,0,0,0,0,59,51,67,Stamina,12,Non-Wep,0,0,0,2,False
+167,Sabatons of Lifeless Night,45599,Feet,1663,93,0,108,64,0,0,47,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,2,False
+168,Brann's Signet Ring,45608,Finger,0,0,64,61,43,0,96,0,33,0,0,0,0,Agility,4,Non-Wep,0,0,0,2,True
+169,Comet's Trail,45609,Trinket,0,0,0,0,0,0,240,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+170,Boundless Gaze,45610,Head,1100,0,70,100,69,66,224,0,0,0,0,0,0,Agility,8,Non-Wep,0,0,0,2,False
+171,Solar Bindings,45611,Wrist,267,0,64,61,0,0,86,48,0,47,0,0,0,Agility,4,Non-Wep,0,0,0,2,False
+172,Armbands of Bedlam,45663,Wrist,1059,74,0,81,48,0,0,40,0,0,0,0,0,Critical Strike Rating,6,Non-Wep,0,0,0,2,False
+173,Power Enhancing Loop,45675,Finger,0,68,0,67,0,35,0,0,43,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+174,Chestplate of Vicious Potency,45676,Chest,2322,113,0,120,0,0,0,81,45,0,0,0,0,Critical Strike Rating,4,Non-Wep,0,0,0,2,False
+175,Treacherous Shoulderpads,45677,Shoulder,438,0,60,61,0,57,126,0,46,0,0,0,0,Armor Penetration Rating,4,Non-Wep,0,0,0,2,False
+176,Gloves of Taut Grip,45679,Hands,812,0,56,80,0,0,118,42,37,0,0,0,0,Haste Rating,4,Non-Wep,0,0,0,2,False
+177,Mark of the Unyielding,45696,Neck,336,60,0,88,0,0,0,0,0,0,41,37,0,Stamina,0,Non-Wep,0,0,0,2,False
+178,Shoulderguards of the Solemn Watch,45697,Shoulder,1741,79,0,119,0,0,0,0,0,0,41,0,45,Stamina,0,Non-Wep,0,0,0,2,False
+179,Stoneguard,45700,One-Hand,0,35,0,69,0,24,0,0,0,0,0,31,30,Stamina,0,Sword,182,340,1.60,2,False
+180,Shawl of the Shattered Giant,45704,Back,155,0,60,51,44,32,86,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+181,Archaedas' Lost Legplates,45708,Legs,2032,78,0,159,0,0,0,0,0,58,0,65,52,Dodge Rating,4,Non-Wep,0,0,0,2,False
+182,Nimble Climber's Belt,45709,Waist,329,0,79,68,0,56,114,43,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+183,Ironaya's Discarded Mantle,45711,Shoulder,974,0,56,61,39,0,158,45,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+184,Chestplate of Titanic Fury,45712,Chest,2322,113,0,120,0,62,0,0,71,0,0,0,0,Critical Strike Rating,4,Non-Wep,0,0,0,2,False
+185,Spiked Battleguard Choker,45819,Neck,0,65,0,93,36,45,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+186,Broach of the Wailing Night,45820,Neck,0,0,63,69,36,0,84,0,46,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+187,Shard of the Crystal Forest,45821,Neck,0,42,0,94,0,42,0,0,0,0,41,43,0,Stamina,0,Non-Wep,0,0,0,2,False
+188,Belt of the Singing Blade,45824,Waist,1321,87,0,124,60,49,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+189,Shieldwarder Girdle,45825,Waist,1321,57,0,127,0,56,0,0,0,0,49,60,0,Stamina,0,Non-Wep,0,0,0,2,False
+190,Belt of the Ardent Marksman,45827,Waist,739,0,85,67,0,44,120,49,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+191,Belt of the Twilight Assassin,45829,Waist,333,0,84,84,0,49,124,0,0,57,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+192,Gauntlets of the Royal Watch,45834,Hands,1467,60,0,127,0,49,0,0,0,0,55,56,0,Stamina,0,Non-Wep,0,0,0,2,False
+193,Gloves of Unerring Aim,45836,Hands,821,0,57,66,44,0,170,56,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+194,Gloves of the Blind Stalker,45838,Hands,369,0,85,84,49,0,120,57,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+195,Legplates of the Violet Champion,45841,Legs,2054,115,0,130,68,0,0,67,0,0,0,0,0,Critical Strike Rating,6,Non-Wep,0,0,0,2,False
+196,Wyrmguard Legplates,45842,Legs,2054,113,0,147,0,0,0,0,0,0,59,0,0,Stamina,6,Non-Wep,0,0,0,2,False
+197,Leggings of the Tireless Sentry,45844,Legs,1150,0,60,90,75,59,196,0,0,0,0,0,0,Critical Strike Rating,6,Non-Wep,0,0,0,2,False
+198,Leggings of Wavering Shadow,45846,Legs,517,0,98,112,0,68,136,75,0,0,0,0,0,Agility,6,Non-Wep,0,0,0,2,False
+199,Aesir's Edge,45868,Two-Hand,0,113,0,141,81,0,0,0,64,0,0,0,0,Strength,6,Sword,670,"1,005",3.60,2,False
+200,Fluxing Energy Coils,45869,Wrist,259,0,63,54,0,46,72,0,30,0,0,0,0,Agility,4,Non-Wep,0,0,0,2,False
+201,Seal of Ulduar,45871,Finger,448,40,0,72,0,0,0,0,0,22,0,0,35,Parry Rating,4,Non-Wep,0,0,0,2,False
+202,Winter's Frigid Embrace,45873,Back,155,0,60,51,43,0,92,29,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+203,Signet of Winter,45874,Finger,448,60,0,89,0,0,0,0,0,0,0,43,34,Stamina,0,Non-Wep,0,0,0,2,False
+204,Shiver,45876,One-Hand,0,36,0,78,0,23,0,0,0,0,27,0,33,Hit Rating,4,Mace,200,372,1.60,2,False
+205,Bitter Cold Armguards,45888,Wrist,1027,64,0,72,42,0,0,0,34,0,0,0,0,Strength,4,Non-Wep,0,0,0,2,False
+206,Legacy of Thunder,45892,One-Hand,0,35,0,69,0,0,0,0,0,23,26,34,0,Stamina,0,Mace,194,361,1.70,2,False
+207,Guise of the Midgard Serpent,45893,Head,475,0,101,77,60,0,146,0,0,53,0,0,0,Attack Power,32,Non-Wep,0,0,0,2,False
+208,Belt of the Blood Pit,45895,Waist,731,0,53,67,0,0,158,41,36,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+209,Mjolnir Runestone,45931,Trinket,0,0,0,0,102,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+210,Ironbark Faceguard,45935,Head,1886,66,0,135,0,0,0,0,0,62,62,54,0,Stamina,12,Non-Wep,0,0,0,2,False
+211,Tunic of the Limber Stalker,45940,Chest,585,0,106,114,63,61,120,0,0,0,0,0,0,Attack Power,8,Non-Wep,0,0,0,2,False
+212,Chestguard of the Lasher,45941,Chest,1299,0,76,93,0,48,212,60,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+213,Seed of Budding Carnage,45945,Neck,0,0,57,54,0,32,92,0,38,0,0,0,0,Hit Rating,4,Non-Wep,0,0,0,2,False
+214,"Serilas, Blood Blade of Invar One-Arm",45947,One-Hand,0,0,52,34,0,32,72,0,0,26,0,0,0,Critical Strike Rating,4,Sword,325,605,2.60,2,False
+215,Stylish Power Cape,45973,Back,155,68,0,67,35,0,0,0,43,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+216,Fused Alloy Legplates,45982,Legs,2054,113,0,129,60,76,0,0,0,0,0,0,0,Hit Rating,6,Non-Wep,0,0,0,2,False
+217,Greaves of the Iron Army,45988,Feet,1614,55,0,102,0,0,0,0,0,43,50,0,57,Stamina,9,Non-Wep,0,0,0,2,False
+218,Tempered Mercury Greaves,45989,Feet,903,0,57,66,38,48,138,0,0,0,0,0,0,Attack Power,12,Non-Wep,0,0,0,2,False
+219,Mimiron's Flight Goggles,45993,Head,480,0,97,90,60,0,164,66,0,0,0,0,0,Hit Rating,8,Non-Wep,0,0,0,2,False
+220,Hoperender,45996,Two-Hand,0,0,106,86,0,62,138,0,78,0,0,0,0,Stamina,6,Polearm,594,892,3.50,2,False
+221,Gauntlets of the Wretched,45997,Hands,1451,91,0,90,0,39,0,0,60,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+222,Choker of the Abyss,46008,Neck,0,0,60,51,46,0,54,43,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+223,Darkstone Ring,46010,Finger,0,68,0,67,40,40,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+224,Saronite Animus Cloak,46014,Back,155,43,0,88,0,35,0,0,0,0,46,0,29,Stamina,0,Non-Wep,0,0,0,2,False
+225,Abaddon,46016,Two-Hand,0,106,0,159,0,62,0,0,76,0,0,0,0,Stamina,0,Sword,577,866,3.40,2,False
+226,Leggings of the Insatiable,46019,Legs,1137,0,81,90,0,49,212,55,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+227,Royal Seal of King Llane,46021,Trinket,0,0,0,155,0,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+228,Pendant of a Thousand Maws,46022,Neck,0,67,0,68,43,35,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+229,Touch of Madness,46031,One-Hand,0,0,24,52,26,34,92,0,0,0,0,0,0,Stamina,0,Axe,297,552,2.60,2,False
+230,Drape of the Faceless General,46032,Back,157,0,53,55,40,0,92,0,30,0,0,0,0,Agility,6,Non-Wep,0,0,0,2,False
+231,Void Sabre,46036,One-Hand,0,0,52,51,20,36,72,0,0,0,0,0,0,Agility,4,Sword,187,349,1.50,2,False
+232,Shoulderplates of the Celestial Watch,46037,Shoulder,1761,82,0,96,56,0,0,0,34,0,0,0,0,Critical Strike Rating,6,Non-Wep,0,0,0,2,False
+233,Dark Matter,46038,Trinket,0,0,0,0,0,0,222,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+234,Breastplate of the Timeless,46039,Chest,2348,81,0,147,0,0,0,0,0,66,81,0,50,Stamina,9,Non-Wep,0,0,0,2,False
+235,Strength of the Heavens,46040,Neck,0,66,0,72,42,0,0,36,0,0,0,0,0,Hit Rating,4,Non-Wep,0,0,0,2,False
+236,Starfall Girdle,46041,Waist,1321,82,0,96,40,0,0,0,0,56,0,0,0,Strength,6,Non-Wep,0,0,0,2,False
+237,Gloves of the Endless Dark,46043,Hands,369,0,85,50,0,65,84,48,0,0,0,0,0,Agility,6,Non-Wep,0,0,0,2,False
+238,Band of Lights,46048,Finger,0,0,57,39,0,46,98,0,31,0,0,0,0,Agility,4,Non-Wep,0,0,0,2,False
+239,Hammer of Crushing Whispers,46067,Two-Hand,0,120,0,138,82,66,0,0,0,0,0,0,0,Strength,6,Mace,670,"1,005",3.60,2,False
+240,Soul-Devouring Cinch,46095,Waist,333,0,85,65,53,0,114,0,0,56,0,0,0,Attack Power,12,Non-Wep,0,0,0,2,False
+241,Caress of Insanity,46097,One-Hand,0,0,40,42,0,0,104,25,0,34,0,0,0,Attack Power,8,Mace,338,628,2.70,2,False
+242,Conqueror's Darkruned Battleplate,46111,Chest,2348,113,0,129,77,0,0,0,0,55,0,0,0,Critical Strike Rating,6,Non-Wep,0,0,0,2,False
+243,Conqueror's Darkruned Gauntlets,46113,Hands,1467,90,0,102,42,56,0,0,0,0,0,0,0,Hit Rating,4,Non-Wep,0,0,0,2,False
+244,Conqueror's Darkruned Helmet,46115,Head,1908,105,0,129,71,0,0,0,49,0,0,0,0,Critical Strike Rating,8,Non-Wep,0,0,0,2,False
+245,Conqueror's Darkruned Legplates,46116,Legs,2054,113,0,129,70,0,0,66,0,0,0,0,0,Strength,6,Non-Wep,0,0,0,2,False
+246,Conqueror's Darkruned Shoulderplates,46117,Shoulder,1761,90,0,102,0,41,0,56,0,0,0,0,0,Hit Rating,4,Non-Wep,0,0,0,2,False
+247,Conqueror's Darkruned Chestguard,46118,Chest,2348,97,0,147,0,0,0,0,0,0,64,60,52,Parry Rating,6,Non-Wep,0,0,0,2,False
+248,Conqueror's Darkruned Handguards,46119,Hands,1467,62,0,128,0,0,0,0,0,39,50,0,56,Dodge Rating,4,Non-Wep,0,0,0,2,False
+249,Conqueror's Darkruned Faceguard,46120,Head,1908,86,0,147,0,41,0,0,0,0,70,57,0,Dodge Rating,8,Non-Wep,0,0,0,2,False
+250,Conqueror's Darkruned Legguards,46121,Legs,2054,76,0,147,0,0,0,0,0,59,66,0,81,Stamina,9,Non-Wep,0,0,0,2,False
+251,Conqueror's Darkruned Pauldrons,46122,Shoulder,1761,69,0,128,0,0,0,0,0,0,44,48,38,Dodge Rating,4,Non-Wep,0,0,0,2,False
+252,Vanquished Clutches of Yogg-Saron,46312,Trinket,0,0,0,0,136,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+253,Drape of the Skyherald,46320,Back,157,55,0,95,42,32,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,2,False
+254,Brann's Sealing Ring,46322,Finger,0,0,55,57,36,0,96,0,33,0,0,0,0,Agility,4,Non-Wep,0,0,0,2,False
+255,Adamant Handguards,46340,Hands,1451,79,0,119,0,0,0,0,0,0,51,0,41,Stamina,0,Non-Wep,0,0,0,2,False
+256,Fervor of the Protectorate,46343,Neck,336,46,0,89,0,0,0,0,0,30,0,0,59,Stamina,0,Non-Wep,0,0,0,2,False
+257,Boots of Unsettled Prey,46346,Feet,893,0,57,63,46,0,158,0,41,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+258,Bloodcrush Cudgel,46351,One-Hand,0,0,46,39,47,0,74,0,0,25,0,0,0,Stamina,0,Mace,171,318,1.50,2,False
+259,Furious Gladiator's Pendant of Sundering,46373,Neck,0,0,0,94,0,0,126,0,42,0,0,0,0,Stamina,0,Non-Wep,0,0,0,2,False
+260,Relentless Gladiator's Pendant of Sundering,46374,Neck,0,0,0,114,0,0,151,0,50,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+261,Band of the Violent Temperment,46959,Finger,0,86,0,86,50,0,0,50,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+262,Breastplate of Cruel Intent,46960,Chest,1384,0,74,107,82,0,255,71,0,0,0,0,0,Attack Power,12,Non-Wep,0,0,0,3,False
+263,Boneshatter Armplates,46961,Wrist,1082,86,0,86,50,0,0,0,0,50,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+264,Chestplate of the Towering Monstrosity,46962,Chest,2473,103,0,180,0,0,0,0,0,69,90,74,0,Stamina,9,Non-Wep,0,0,0,3,False
+265,Breastplate of Cruel Intent,46965,Chest,1448,0,86,121,86,0,274,80,0,0,0,0,0,Attack Power,16,Non-Wep,0,0,0,3,True
+266,Band of the Violent Temperment,46966,Finger,0,89,0,97,57,0,0,49,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,True
+267,Boneshatter Armplates,46967,Wrist,1132,89,0,97,49,0,0,0,0,57,0,0,0,Strength,4,Non-Wep,0,0,0,3,True
+268,Chestplate of the Towering Monstrosity,46968,Chest,2588,116,0,182,0,0,0,0,0,78,102,86,0,Stamina,12,Non-Wep,0,0,0,3,True
+269,Drape of the Untamed Predator,46970,Back,166,0,76,76,50,0,101,50,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+270,Drape of the Untamed Predator,46971,Back,173,0,77,85,57,0,98,57,0,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,True
+271,Leggings of the Broken Beast,46974,Legs,545,0,128,136,0,74,165,90,0,0,0,0,0,Attack Power,12,Non-Wep,0,0,0,3,False
+272,Leggings of the Broken Beast,46975,Legs,570,0,137,153,0,86,172,102,0,0,0,0,0,Attack Power,16,Non-Wep,0,0,0,3,True
+273,Lionhead Slasher,46996,One-Hand,0,0,58,58,39,0,78,0,39,0,0,0,0,Stamina,0,Axe,206,384,1.50,3,False
+274,Dawnbreaker Greaves,46997,Feet,1700,101,0,139,0,0,0,0,0,0,53,45,53,Stamina,6,Non-Wep,0,0,0,3,False
+275,Bloodbath Belt,46999,Waist,1391,107,0,115,59,0,0,0,0,67,0,0,0,Strength,4,Non-Wep,0,0,0,3,False
+276,Cuirass of Calamitous Fate,47000,Chest,623,0,120,136,90,0,149,90,0,0,0,0,0,Attack Power,12,Non-Wep,0,0,0,3,False
+277,Lionhead Slasher,47001,One-Hand,0,0,66,66,36,0,72,0,44,0,0,0,0,Agility,4,Axe,227,423,1.50,3,True
+278,Bloodbath Belt,47002,Waist,1455,114,0,129,68,0,0,0,0,68,0,0,0,Strength,6,Non-Wep,0,0,0,3,True
+279,Dawnbreaker Greaves,47003,Feet,1779,114,0,146,0,0,0,0,0,0,60,52,52,Stamina,9,Non-Wep,0,0,0,3,True
+280,Cuirass of Calamitous Fate,47004,Chest,652,0,137,153,86,0,172,102,0,0,0,0,0,Attack Power,12,Non-Wep,0,0,0,3,True
+281,Pride of the Eredar,47042,Back,166,58,0,114,0,0,0,0,0,38,50,50,0,Stamina,0,Non-Wep,0,0,0,3,False
+282,Charge of the Demon Lord,47043,Neck,0,0,76,76,54,0,101,44,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+283,Legguards of Feverish Dedication,47052,Legs,2164,103,0,180,0,0,0,0,0,69,90,0,74,Stamina,9,Non-Wep,0,0,0,3,False
+284,Charge of the Demon Lord,47060,Neck,0,0,77,85,61,0,98,50,0,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,True
+285,Legguards of Feverish Dedication,47061,Legs,2264,116,0,194,0,0,0,0,0,78,94,0,86,Stamina,12,Non-Wep,0,0,0,3,True
+286,Pride of the Eredar,47063,Back,173,65,0,116,0,0,0,0,0,43,57,49,0,Stamina,6,Non-Wep,0,0,0,3,True
+287,Justicebringer,47069,Two-Hand,0,147,0,155,90,0,0,0,82,0,0,0,0,Strength,4,Axe,736,"1,105",3.60,3,False
+288,Ring of Callous Aggression,47070,Finger,0,0,76,76,54,0,101,44,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+289,Treads of the Icewalker,47071,Feet,428,0,93,101,0,67,135,0,59,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,False
+290,Girdle of Bloodied Scars,47072,Waist,1391,101,0,139,0,0,0,0,0,0,53,45,53,Stamina,6,Non-Wep,0,0,0,3,False
+291,Bracers of the Untold Massacre,47073,Wrist,605,0,76,40,50,0,101,0,40,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+292,Bracers of the Untold Massacre,47074,Wrist,633,0,77,45,49,0,114,0,45,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,True
+293,Ring of Callous Aggression,47075,Finger,0,0,77,85,61,0,98,50,0,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,True
+294,Girdle of Bloodied Scars,47076,Waist,1455,114,0,146,0,0,0,0,0,0,60,44,60,Stamina,9,Non-Wep,0,0,0,3,True
+295,Treads of the Icewalker,47077,Feet,448,0,98,114,0,76,135,0,68,0,0,0,0,Agility,6,Non-Wep,0,0,0,3,True
+296,Justicebringer,47078,Two-Hand,0,158,0,174,94,0,0,0,94,0,0,0,0,Strength,6,Axe,811,"1,217",3.60,3,True
+297,Satrina's Impeding Scarab,47080,Trinket,0,0,0,192,0,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+298,Chestplate of the Frostborn Hero,47082,Chest,2473,139,0,155,0,74,0,90,0,0,0,0,0,Strength,6,Non-Wep,0,0,0,3,False
+299,Chestplate of the Frostborn Hero,47086,Chest,2588,158,0,174,0,86,0,102,0,0,0,0,0,Strength,8,Non-Wep,0,0,0,3,True
+300,Satrina's Impeding Scarab,47088,Trinket,0,0,0,216,0,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,True
+301,The Executioner's Malice,47105,Neck,0,86,0,86,50,50,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+302,Sabatons of Ruthless Judgment,47106,Feet,951,0,93,80,0,53,119,0,67,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,False
+303,Belt of the Merciless Killer,47107,Waist,350,0,93,101,0,59,135,67,0,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,False
+304,Bracers of the Shieldmaiden,47108,Wrist,1082,58,0,114,0,0,0,0,0,38,50,0,50,Stamina,0,Non-Wep,0,0,0,3,False
+305,Sabatons of Ruthless Judgment,47109,Feet,995,0,98,90,0,60,135,0,68,0,0,0,0,Agility,6,Non-Wep,0,0,0,3,True
+306,The Executioner's Malice,47110,Neck,0,89,0,97,57,49,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,True
+307,Bracers of the Shieldmaiden,47111,Wrist,1132,65,0,116,0,0,0,0,0,43,57,0,49,Stamina,6,Non-Wep,0,0,0,3,True
+308,Belt of the Merciless Killer,47112,Waist,367,0,98,114,0,68,135,76,0,0,0,0,0,Agility,6,Non-Wep,0,0,0,3,True
+309,Death's Verdict,47115,Trinket,0,0,0,0,0,0,256,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+310,The Arbiter's Muse,47116,Neck,546,76,0,114,0,0,0,0,0,0,40,40,0,Stamina,0,Non-Wep,0,0,0,3,False
+311,Legguards of Ascension,47121,Legs,2164,139,0,155,90,0,0,74,0,0,0,0,0,Strength,6,Non-Wep,0,0,0,3,False
+312,Death's Verdict,47131,Trinket,0,0,0,0,0,0,288,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,True
+313,Legguards of Ascension,47132,Legs,2264,150,0,174,94,0,0,86,0,0,0,0,0,Strength,8,Non-Wep,0,0,0,3,True
+314,The Arbiter's Muse,47133,Neck,616,85,0,116,0,0,0,0,0,0,45,37,0,Stamina,6,Non-Wep,0,0,0,3,True
+315,Stormpike Cleaver,47148,One-Hand,0,0,58,58,0,39,78,39,0,0,0,0,0,Stamina,0,Axe,357,665,2.60,3,False
+316,Signet of the Traitor King,47149,Finger,0,76,0,114,0,0,0,0,0,0,40,40,40,Stamina,0,Non-Wep,0,0,0,3,False
+317,Greaves of the 7th Legion,47150,Feet,1700,107,0,115,67,0,0,0,0,59,0,0,0,Strength,4,Non-Wep,0,0,0,3,False
+318,Bracers of Dark Determination,47151,Wrist,272,0,76,76,50,50,101,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+319,Belt of Deathly Dominion,47152,Waist,778,0,93,80,0,53,119,0,67,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,False
+320,Belt of Deathly Dominion,47153,Waist,814,0,98,90,0,60,135,0,68,0,0,0,0,Agility,6,Non-Wep,0,0,0,3,True
+321,Greaves of the 7th Legion,47154,Feet,1779,114,0,130,76,0,0,0,0,60,0,0,0,Strength,6,Non-Wep,0,0,0,3,True
+322,Bracers of Dark Determination,47155,Wrist,285,0,69,85,57,49,98,0,0,0,0,0,0,Agility,6,Non-Wep,0,0,0,3,True
+323,Stormpike Cleaver,47156,One-Hand,0,0,58,66,0,44,72,44,0,0,0,0,0,Agility,4,Axe,394,732,2.60,3,True
+324,Signet of the Traitor King,47157,Finger,0,85,0,116,0,0,0,0,0,0,45,37,45,Stamina,6,Non-Wep,0,0,0,3,True
+325,Strength of the Nerub,47183,Back,166,86,0,86,54,44,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+326,Legguards of the Lurking Threat,47184,Legs,1211,0,120,71,82,0,165,0,71,0,0,0,0,Agility,6,Non-Wep,0,0,0,3,False
+327,Legguards of the Lurking Threat,47191,Legs,1267,0,129,80,94,0,172,0,80,0,0,0,0,Agility,8,Non-Wep,0,0,0,3,True
+328,Strength of the Nerub,47192,Back,173,89,0,97,53,50,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,True
+329,Archon Glaive,47233,Two-Hand,0,0,128,136,90,0,165,0,90,0,0,0,0,Attack Power,8,Polearm,715,"1,074",3.50,3,False
+330,Gloves of Bitter Reprisal,47234,Hands,1545,107,0,115,67,0,0,0,59,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,False
+331,Archon Glaive,47239,Two-Hand,0,0,137,153,102,0,188,0,94,0,0,0,0,Attack Power,12,Polearm,788,"1,183",3.50,3,True
+332,Gloves of Bitter Reprisal,47240,Hands,1617,114,0,130,76,0,0,0,60,0,0,0,0,Strength,6,Non-Wep,0,0,0,3,True
+333,Cuirass of Cruel Intent,47251,Chest,1384,0,74,107,82,0,255,71,0,0,0,0,0,Attack Power,12,Non-Wep,0,0,0,3,False
+334,Ring of the Violent Temperament,47252,Finger,0,86,0,86,50,0,0,50,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+335,Boneshatter Vambraces,47253,Wrist,1082,86,0,86,50,0,0,0,0,50,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+336,Hauberk of the Towering Monstrosity,47254,Chest,2473,103,0,180,0,0,0,0,0,69,90,74,0,Stamina,9,Non-Wep,0,0,0,3,False
+337,Cloak of the Untamed Predator,47257,Back,166,0,76,76,50,0,101,50,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+338,Legwraps of the Broken Beast,47259,Legs,545,0,128,136,0,74,165,90,0,0,0,0,0,Attack Power,12,Non-Wep,0,0,0,3,False
+339,Blood Fury,47266,One-Hand,0,0,58,58,39,0,78,0,39,0,0,0,0,Stamina,0,Axe,206,384,1.50,3,False
+340,Bloodbath Girdle,47268,Waist,1391,107,0,115,59,0,0,0,0,67,0,0,0,Strength,4,Non-Wep,0,0,0,3,False
+341,Dawnbreaker Sabatons,47269,Feet,1700,101,0,139,0,0,0,0,0,0,53,45,53,Stamina,6,Non-Wep,0,0,0,3,False
+342,Vest of Calamitous Fate,47270,Chest,623,0,120,136,90,0,149,90,0,0,0,0,0,Attack Power,12,Non-Wep,0,0,0,3,False
+343,Charge of the Eredar,47272,Neck,0,0,76,76,54,0,101,44,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+344,Legplates of Feverish Dedication,47273,Legs,2164,103,0,180,0,0,0,0,0,69,90,0,74,Stamina,9,Non-Wep,0,0,0,3,False
+345,Pride of the Demon Lord,47275,Back,166,58,0,114,0,0,0,0,0,38,50,50,0,Stamina,0,Non-Wep,0,0,0,3,False
+346,Bracers of the Silent Massacre,47281,Wrist,605,0,76,40,50,0,101,0,40,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+347,Band of Callous Aggression,47282,Finger,0,0,76,76,54,0,101,44,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+348,Belt of Bloodied Scars,47283,Waist,1391,101,0,139,0,0,0,0,0,0,53,45,53,Stamina,6,Non-Wep,0,0,0,3,False
+349,Icewalker Treads,47284,Feet,428,0,93,101,0,67,135,0,59,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,False
+350,Dual-blade Butcher,47285,Two-Hand,0,147,0,155,90,0,0,0,82,0,0,0,0,Strength,4,Axe,736,"1,105",3.60,3,False
+351,Chestplate of the Frostwolf Hero,47288,Chest,2473,139,0,155,0,74,0,90,0,0,0,0,0,Strength,6,Non-Wep,0,0,0,3,False
+352,Juggernaut's Vitality,47290,Trinket,0,0,0,192,0,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+353,Greaves of Ruthless Judgment,47296,Feet,951,0,93,80,0,53,119,0,67,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,False
+354,The Executioner's Vice,47297,Neck,0,86,0,86,50,50,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+355,Armguards of the Shieldmaiden,47298,Wrist,1082,58,0,114,0,0,0,0,0,38,50,0,50,Stamina,0,Non-Wep,0,0,0,3,False
+356,Belt of the Pitiless Killer,47299,Waist,350,0,93,101,0,59,135,67,0,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,False
+357,Death's Choice,47303,Trinket,0,0,0,0,0,0,256,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+358,Legplates of Ascension,47304,Legs,2164,139,0,155,90,0,0,74,0,0,0,0,0,Strength,6,Non-Wep,0,0,0,3,False
+359,Legionnaire's Gorget,47305,Neck,546,76,0,114,0,0,0,0,0,0,40,40,0,Stamina,0,Non-Wep,0,0,0,3,False
+360,Waistguard of Deathly Dominion,47311,Waist,778,0,93,80,0,53,119,0,67,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,False
+361,Greaves of the Saronite Citadel,47312,Feet,1700,107,0,115,67,0,0,0,0,59,0,0,0,Strength,4,Non-Wep,0,0,0,3,False
+362,Armbands of Dark Determination,47313,Wrist,272,0,76,76,50,50,101,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+363,Hellscream Slicer,47314,One-Hand,0,0,58,58,0,39,78,39,0,0,0,0,0,Stamina,0,Axe,357,665,2.60,3,False
+364,Band of the Traitor King,47315,Finger,0,76,0,114,0,0,0,0,0,0,40,40,40,Stamina,0,Non-Wep,0,0,0,3,False
+365,Leggings of the Lurking Threat,47319,Legs,1211,0,120,71,82,0,165,0,71,0,0,0,0,Agility,6,Non-Wep,0,0,0,3,False
+366,Might of the Nerub,47320,Back,166,86,0,86,54,44,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+367,Hellion Glaive,47329,Two-Hand,0,0,128,136,90,0,165,0,90,0,0,0,0,Attack Power,8,Polearm,715,"1,074",3.50,3,False
+368,Gauntlets of Bitter Reprisal,47330,Hands,1545,107,0,115,67,0,0,0,59,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,False
+369,Cuirass of Cruel Intent,47412,Chest,1448,0,86,121,86,0,274,80,0,0,0,0,0,Attack Power,16,Non-Wep,0,0,0,3,True
+370,Ring of the Violent Temperament,47413,Finger,0,89,0,97,57,0,0,49,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,True
+371,Boneshatter Vambraces,47414,Wrist,1132,89,0,97,49,0,0,0,0,57,0,0,0,Strength,4,Non-Wep,0,0,0,3,True
+372,Hauberk of the Towering Monstrosity,47415,Chest,2588,116,0,182,0,0,0,0,0,78,102,86,0,Stamina,12,Non-Wep,0,0,0,3,True
+373,Cloak of the Untamed Predator,47418,Back,173,0,77,85,57,0,98,57,0,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,True
+374,Legwraps of the Broken Beast,47420,Legs,570,0,137,153,0,86,172,102,0,0,0,0,0,Attack Power,16,Non-Wep,0,0,0,3,True
+375,Blood Fury,47427,One-Hand,0,0,66,66,36,0,72,0,44,0,0,0,0,Agility,4,Axe,227,423,1.50,3,True
+376,Bloodbath Girdle,47429,Waist,1455,114,0,129,68,0,0,0,0,68,0,0,0,Strength,6,Non-Wep,0,0,0,3,True
+377,Dawnbreaker Sabatons,47430,Feet,1779,114,0,146,0,0,0,0,0,0,60,52,52,Stamina,9,Non-Wep,0,0,0,3,True
+378,Vest of Calamitous Fate,47431,Chest,652,0,137,153,86,0,172,102,0,0,0,0,0,Attack Power,12,Non-Wep,0,0,0,3,True
+379,Charge of the Eredar,47433,Neck,0,0,77,85,61,0,98,50,0,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,True
+380,Legplates of Feverish Dedication,47434,Legs,2264,116,0,194,0,0,0,0,0,78,94,0,86,Stamina,12,Non-Wep,0,0,0,3,True
+381,Pride of the Demon Lord,47436,Back,173,65,0,116,0,0,0,0,0,43,57,49,0,Stamina,6,Non-Wep,0,0,0,3,True
+382,Bracers of the Silent Massacre,47442,Wrist,633,0,77,45,49,0,114,0,45,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,True
+383,Band of Callous Aggression,47443,Finger,0,0,77,85,61,0,98,50,0,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,True
+384,Belt of Bloodied Scars,47444,Waist,1455,114,0,146,0,0,0,0,0,0,60,44,60,Stamina,9,Non-Wep,0,0,0,3,True
+385,Icewalker Treads,47445,Feet,448,0,98,114,0,76,135,0,68,0,0,0,0,Agility,6,Non-Wep,0,0,0,3,True
+386,Dual-blade Butcher,47446,Two-Hand,0,158,0,174,94,0,0,0,94,0,0,0,0,Strength,6,Axe,811,"1,217",3.60,3,True
+387,Chestplate of the Frostwolf Hero,47449,Chest,2588,158,0,174,0,86,0,102,0,0,0,0,0,Strength,8,Non-Wep,0,0,0,3,True
+388,Juggernaut's Vitality,47451,Trinket,0,0,0,216,0,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,True
+389,Greaves of Ruthless Judgment,47457,Feet,995,0,98,90,0,60,135,0,68,0,0,0,0,Agility,6,Non-Wep,0,0,0,3,True
+390,The Executioner's Vice,47458,Neck,0,89,0,97,57,49,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,True
+391,Armguards of the Shieldmaiden,47459,Wrist,1132,65,0,116,0,0,0,0,0,43,57,0,49,Stamina,6,Non-Wep,0,0,0,3,True
+392,Belt of the Pitiless Killer,47460,Waist,367,0,98,114,0,68,135,76,0,0,0,0,0,Agility,6,Non-Wep,0,0,0,3,True
+393,Death's Choice,47464,Trinket,0,0,0,0,0,0,288,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,True
+394,Legplates of Ascension,47465,Legs,2264,150,0,174,94,0,0,86,0,0,0,0,0,Strength,8,Non-Wep,0,0,0,3,True
+395,Legionnaire's Gorget,47466,Neck,616,85,0,116,0,0,0,0,0,0,45,37,0,Stamina,6,Non-Wep,0,0,0,3,True
+396,Waistguard of Deathly Dominion,47472,Waist,814,0,98,90,0,60,135,0,68,0,0,0,0,Agility,6,Non-Wep,0,0,0,3,True
+397,Greaves of the Saronite Citadel,47473,Feet,1779,114,0,130,76,0,0,0,0,60,0,0,0,Strength,6,Non-Wep,0,0,0,3,True
+398,Armbands of Dark Determination,47474,Wrist,285,0,69,85,57,49,98,0,0,0,0,0,0,Agility,6,Non-Wep,0,0,0,3,True
+399,Hellscream Slicer,47475,One-Hand,0,0,58,66,0,44,72,44,0,0,0,0,0,Agility,4,Axe,394,732,2.60,3,True
+400,Band of the Traitor King,47476,Finger,0,85,0,116,0,0,0,0,0,0,45,37,45,Stamina,6,Non-Wep,0,0,0,3,True
+401,Leggings of the Lurking Threat,47480,Legs,1267,0,129,80,94,0,172,0,80,0,0,0,0,Agility,8,Non-Wep,0,0,0,3,True
+402,Might of the Nerub,47481,Back,173,89,0,97,53,50,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,True
+403,Hellion Glaive,47491,Two-Hand,0,0,137,153,102,0,188,0,94,0,0,0,0,Attack Power,12,Polearm,788,"1,183",3.50,3,True
+404,Gauntlets of Bitter Reprisal,47492,Hands,1617,114,0,130,76,0,0,0,60,0,0,0,0,Strength,6,Non-Wep,0,0,0,3,True
+405,Silverwing Defender,47506,One-Hand,0,66,0,87,0,0,0,0,0,0,27,35,35,Stamina,6,Sword,242,451,1.60,3,True
+406,Orgrim's Deflector,47513,One-Hand,0,66,0,87,0,0,0,0,0,0,27,35,35,Stamina,6,Sword,242,451,1.60,3,True
+407,Decimation,47515,Two-Hand,0,0,137,170,102,94,188,0,0,0,0,0,0,Attack Power,12,Sword,766,"1,149",3.40,3,True
+408,Fleshrender,47516,Two-Hand,0,0,137,170,102,94,188,0,0,0,0,0,0,Attack Power,12,Sword,766,"1,149",3.40,3,True
+409,Catastrophe,47519,Two-Hand,0,158,0,174,96,0,0,0,0,92,0,0,0,Strength,6,Mace,811,"1,217",3.60,3,True
+410,Grievance,47520,Two-Hand,0,158,0,174,96,0,0,0,0,92,0,0,0,Strength,6,Mace,811,"1,217",3.60,3,True
+411,Remorseless,47526,One-Hand,0,0,58,66,44,0,88,36,0,0,0,0,0,Attack Power,8,Mace,394,732,2.60,3,True
+412,Cudgel of the Damned,47528,One-Hand,0,0,58,66,44,0,88,36,0,0,0,0,0,Attack Power,8,Mace,394,732,2.60,3,True
+413,Vereesa's Dexterity,47545,Back,182,0,97,97,65,0,114,0,57,0,0,0,0,Attack Power,8,Non-Wep,0,0,0,3,True
+414,Sylvanas' Cunning,47546,Back,182,0,97,97,65,0,114,0,57,0,0,0,0,Attack Power,8,Non-Wep,0,0,0,3,True
+415,Varian's Furor,47547,Back,182,103,0,111,65,57,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,True
+416,Garrosh's Rage,47548,Back,182,103,0,111,65,57,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,True
+417,Magni's Resolution,47549,Back,182,97,0,134,0,0,0,0,0,0,51,43,51,Stamina,6,Non-Wep,0,0,0,3,True
+418,Cairne's Endurance,47550,Back,182,97,0,134,0,0,0,0,0,0,51,43,51,Stamina,6,Non-Wep,0,0,0,3,True
+419,Saronite Swordbreakers,47570,Wrist,1082,58,0,102,0,38,0,0,0,0,50,42,0,Stamina,6,Non-Wep,0,0,0,3,False
+420,Saronite Swordbreakers,47571,Wrist,1082,58,0,102,0,38,0,0,0,0,50,42,0,Stamina,6,Non-Wep,0,0,0,3,False
+421,Titanium Spikeguards,47572,Wrist,1082,78,0,86,42,0,0,0,50,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,False
+422,Titanium Spikeguards,47573,Wrist,1082,78,0,86,42,0,0,0,50,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,False
+423,Crusader's Dragonscale Bracers,47576,Wrist,605,0,68,40,50,32,101,0,0,0,0,0,0,Attack Power,8,Non-Wep,0,0,0,3,False
+424,Crusader's Dragonscale Bracers,47577,Wrist,605,0,68,40,50,32,101,0,0,0,0,0,0,Attack Power,8,Non-Wep,0,0,0,3,False
+425,Carnivorous Band,47578,Finger,0,68,0,76,0,0,0,34,45,0,0,0,0,Haste Rating,4,Non-Wep,0,0,0,3,False
+426,Bracers of Swift Death,47581,Wrist,272,0,68,76,0,0,101,50,42,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,False
+427,Bracers of Swift Death,47582,Wrist,272,0,68,76,0,0,101,50,42,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,False
+428,Titanium Razorplate,47589,Chest,2473,131,0,155,82,0,0,0,74,0,0,0,0,Strength,8,Non-Wep,0,0,0,3,False
+429,Titanium Razorplate,47590,Chest,2473,131,0,155,82,0,0,0,74,0,0,0,0,Strength,8,Non-Wep,0,0,0,3,False
+430,Breastplate of the White Knight,47591,Chest,2473,103,0,168,0,0,0,0,0,0,71,55,63,Stamina,12,Non-Wep,0,0,0,3,False
+431,Breastplate of the White Knight,47592,Chest,2473,103,0,168,0,0,0,0,0,0,71,55,63,Stamina,12,Non-Wep,0,0,0,3,False
+432,Crusader's Dragonscale Breastplate,47595,Chest,1384,0,120,107,0,0,149,63,82,0,0,0,0,Agility,8,Non-Wep,0,0,0,3,False
+433,Crusader's Dragonscale Breastplate,47596,Chest,1384,0,120,107,0,0,149,63,82,0,0,0,0,Agility,8,Non-Wep,0,0,0,3,False
+434,Knightbane Carapace,47599,Chest,623,0,112,136,0,82,181,0,74,0,0,0,0,Attack Power,16,Non-Wep,0,0,0,3,False
+435,Knightbane Carapace,47600,Chest,623,0,112,136,0,82,181,0,74,0,0,0,0,Attack Power,16,Non-Wep,0,0,0,3,False
+436,Collar of Ceaseless Torment,47607,Neck,0,0,67,57,46,0,97,0,42,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+437,Acidmaw Boots,47608,Feet,410,0,85,78,0,63,118,0,0,48,0,0,0,Critical Strike Rating,4,Non-Wep,0,0,0,3,False
+438,Gauntlets of Rising Anger,47609,Hands,1480,94,0,102,63,46,0,0,0,0,0,0,0,Hit Rating,4,Non-Wep,0,0,0,3,False
+439,Armbands of the Northern Stalker,47610,Wrist,580,0,67,35,0,45,89,35,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+440,Dreadscale Armguards,47611,Wrist,1036,48,0,100,0,39,0,0,0,0,34,0,51,Stamina,0,Non-Wep,0,0,0,3,False
+441,Girdle of the Impaler,47614,Waist,1332,94,0,102,0,0,0,52,58,0,0,0,0,Armor Penetration Rating,4,Non-Wep,0,0,0,3,False
+442,Sigil of Insolence,47672,Relic,0,0,0,0,0,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+443,Sigil of Virulence,47673,Relic,0,0,0,0,0,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+444,Helm of Thunderous Rampage,47674,Head,2009,131,0,155,74,0,0,0,82,0,0,0,0,Strength,8,Non-Wep,0,0,0,3,False
+445,Faceplate of Thunderous Rampage,47675,Head,2009,131,0,155,74,0,0,0,82,0,0,0,0,Strength,8,Non-Wep,0,0,0,3,False
+446,Faceplate of the Honorbound,47677,Head,2009,103,0,168,0,0,0,0,0,69,82,74,0,Stamina,12,Non-Wep,0,0,0,3,False
+447,Headplate of the Honorbound,47678,Head,2009,103,0,168,0,0,0,0,0,69,82,74,0,Stamina,12,Non-Wep,0,0,0,3,False
+448,Endurance of the Infernal,47679,Neck,0,39,0,100,0,0,0,0,0,48,45,45,0,Stamina,0,Non-Wep,0,0,0,3,False
+449,Armguards of the Nether Lord,47680,Wrist,1036,76,0,76,39,0,0,0,48,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+450,Sentinel Scouting Greaves,47683,Feet,911,0,89,71,52,0,119,39,0,0,0,0,0,Attack Power,8,Non-Wep,0,0,0,3,False
+451,Coif of the Brooding Dragon,47684,Head,1124,0,120,107,0,0,149,55,90,0,0,0,0,Attack Power,16,Non-Wep,0,0,0,3,False
+452,Helm of the Brooding Dragon,47685,Head,1124,0,120,107,0,0,149,55,90,0,0,0,0,Attack Power,16,Non-Wep,0,0,0,3,False
+453,Mask of Lethal Intent,47688,Head,506,0,120,136,0,82,165,0,74,0,0,0,0,Agility,8,Non-Wep,0,0,0,3,False
+454,Hood of Lethal Intent,47689,Head,506,0,120,136,0,82,165,0,74,0,0,0,0,Agility,8,Non-Wep,0,0,0,3,False
+455,Shoulderplates of Trembling Rage,47696,Shoulder,1854,107,0,115,67,59,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,False
+456,Pauldrons of Trembling Rage,47697,Shoulder,1854,107,0,115,67,59,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,False
+457,Shoulderplates of Enduring Order,47698,Shoulder,1854,101,0,139,0,0,0,0,0,0,53,45,53,Stamina,6,Non-Wep,0,0,0,3,False
+458,Shoulderguards of Enduring Order,47699,Shoulder,1854,101,0,139,0,0,0,0,0,0,53,45,53,Stamina,6,Non-Wep,0,0,0,3,False
+459,Loop of the Twin Val'kyr,47700,Finger,490,67,0,100,0,0,0,0,0,0,31,38,0,Stamina,0,Non-Wep,0,0,0,3,False
+460,Planestalker Signet,47703,Finger,0,0,61,68,0,38,102,0,39,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,False
+461,Epaulets of the Devourer,47704,Shoulder,1038,0,93,80,67,0,119,0,53,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,False
+462,Pauldrons of the Devourer,47705,Shoulder,1038,0,93,80,67,0,119,0,53,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,False
+463,Duskstalker Shoulderpads,47708,Shoulder,467,0,93,101,67,0,135,0,59,0,0,0,0,Attack Power,8,Non-Wep,0,0,0,3,False
+464,Duskstalker Pauldrons,47709,Shoulder,467,0,93,101,67,0,135,0,59,0,0,0,0,Attack Power,8,Non-Wep,0,0,0,3,False
+465,Girdle of the Nether Champion,47711,Waist,1332,89,0,134,0,0,0,0,0,0,47,57,30,Stamina,0,Non-Wep,0,0,0,3,False
+466,Faceplate of the Silver Champion,47717,Head,1925,121,0,125,59,0,0,76,0,0,0,0,0,Critical Strike Rating,8,Non-Wep,0,0,0,3,False
+467,Helm of the Silver Ranger,47718,Head,1077,0,108,78,76,41,161,0,0,0,0,0,0,Agility,8,Non-Wep,0,0,0,3,False
+468,Gloves of the Silver Assassin,47719,Hands,373,0,85,64,54,0,139,0,54,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,False
+469,Pauldrons of the Silver Defender,47720,Shoulder,1777,81,0,134,0,0,0,0,0,0,39,0,41,Parry Rating,4,Non-Wep,0,0,0,3,False
+470,Victor's Call,47725,Trinket,0,0,0,0,0,0,0,0,0,83,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+471,Talisman of Volatile Power,47726,Trinket,0,0,0,0,114,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+472,Fervor of the Frostborn,47727,Trinket,0,0,0,0,0,0,0,0,0,0,0,114,0,Stamina,0,Non-Wep,0,0,0,3,False
+473,Bloodshed Band,47729,Finger,0,86,0,86,54,44,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+474,Dexterous Brightstone Ring,47730,Finger,0,0,76,76,0,0,101,50,50,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+475,Clutch of Fortification,47731,Finger,560,76,0,114,0,0,0,0,0,0,40,40,0,Stamina,0,Non-Wep,0,0,0,3,False
+476,Mark of Supremacy,47734,Trinket,0,0,0,0,0,128,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+477,Glyph of Indomitability,47735,Trinket,1792,0,0,0,0,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+478,Reckoning,47737,Two-Hand,0,0,112,92,0,0,183,62,86,0,0,0,0,Armor Penetration Rating,4,Sword,651,977,3.50,3,False
+479,Sabatons of the Lingering Vortex,47738,Feet,1629,60,0,134,0,40,0,0,0,0,45,68,0,Dodge Rating,4,Non-Wep,0,0,0,3,False
+480,Armor of Shifting Shadows,47739,Chest,596,0,118,106,81,0,140,0,59,0,0,0,0,Agility,6,Non-Wep,0,0,0,3,False
+481,The Lion's Maw,47808,One-Hand,0,0,52,39,38,0,78,29,0,0,0,0,0,Stamina,0,Axe,325,605,2.60,3,False
+482,Crusader's Glory,47810,One-Hand,448,52,0,77,0,0,0,0,0,0,27,19,0,Stamina,0,Sword,187,349,1.50,3,False
+483,Chestguard of the Warden,47811,Chest,2369,120,0,169,0,0,0,0,0,0,63,60,56,Stamina,6,Non-Wep,0,0,0,3,False
+484,Westfall Saber,47814,One-Hand,0,0,52,45,29,0,74,0,38,0,0,0,0,Stamina,0,Sword,187,349,1.50,3,False
+485,The Grinder,47816,One-Hand,0,0,48,39,35,0,61,30,0,0,0,0,0,Agility,4,Mace,325,605,2.60,3,False
+486,Pauldrons of the Timeless Hunter,47829,Shoulder,994,0,89,78,47,0,120,42,0,0,0,0,0,Critical Strike Rating,4,Non-Wep,0,0,0,3,False
+487,Legplates of the Silver Hand,47830,Legs,2073,121,0,125,57,0,0,0,89,0,0,0,0,Critical Strike Rating,6,Non-Wep,0,0,0,3,False
+488,Spaulders of the Snow Bandit,47832,Shoulder,447,0,84,70,51,0,124,61,0,0,0,0,0,Haste Rating,4,Non-Wep,0,0,0,3,False
+489,Fordragon Blades,47834,Two-Hand,0,0,104,137,0,0,123,62,86,0,0,0,0,Armor Penetration Rating,4,Polearm,651,977,3.50,3,False
+490,Collar of Unending Torment,47849,Neck,0,0,67,57,46,0,97,0,42,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+491,Bracers of the Northern Stalker,47850,Wrist,580,0,67,35,0,45,89,35,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+492,Gauntlets of Mounting Anger,47851,Hands,1480,94,0,102,63,46,0,0,0,0,0,0,0,Hit Rating,4,Non-Wep,0,0,0,3,False
+493,Dreadscale Bracers,47852,Wrist,1036,48,0,100,0,39,0,0,0,0,34,0,51,Stamina,0,Non-Wep,0,0,0,3,False
+494,Acidmaw Treads,47853,Feet,410,0,85,78,0,63,118,0,0,48,0,0,0,Critical Strike Rating,4,Non-Wep,0,0,0,3,False
+495,Gormok's Band,47854,Finger,0,68,0,76,0,0,0,34,45,0,0,0,0,Haste Rating,4,Non-Wep,0,0,0,3,False
+496,Belt of the Impaler,47859,Waist,1332,94,0,102,0,0,0,52,58,0,0,0,0,Armor Penetration Rating,4,Non-Wep,0,0,0,3,False
+497,Warsong Poacher's Greaves,47867,Feet,911,0,89,71,52,0,119,39,0,0,0,0,0,Attack Power,8,Non-Wep,0,0,0,3,False
+498,Planestalker Band,47868,Finger,0,0,61,68,0,38,102,0,39,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,False
+499,Armplates of the Nether Lord,47869,Wrist,1036,76,0,76,39,0,0,0,48,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+500,Belt of the Nether Champion,47870,Waist,1332,89,0,134,0,0,0,0,0,0,47,57,30,Stamina,0,Non-Wep,0,0,0,3,False
+501,Fortitude of the Infernal,47872,Neck,0,39,0,100,0,0,0,0,0,48,45,45,0,Stamina,0,Non-Wep,0,0,0,3,False
+502,Sunreaver Ranger's Helm,47875,Head,1077,0,108,78,76,41,161,0,0,0,0,0,0,Agility,8,Non-Wep,0,0,0,3,False
+503,Sunreaver Champion's Faceplate,47876,Head,1925,121,0,125,59,0,0,76,0,0,0,0,0,Critical Strike Rating,8,Non-Wep,0,0,0,3,False
+504,Sunreaver Defender's Pauldrons,47877,Shoulder,1777,81,0,134,0,0,0,0,0,0,39,0,41,Parry Rating,4,Non-Wep,0,0,0,3,False
+505,Sunreaver Assassin's Gloves,47878,Hands,373,0,85,64,54,0,139,0,54,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,False
+506,Vengeance of the Forsaken,47881,Trinket,0,0,0,0,0,0,0,0,0,83,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+507,Eitrigg's Oath,47882,Trinket,0,0,0,0,0,0,0,0,0,0,0,114,0,Stamina,0,Non-Wep,0,0,0,3,False
+508,Edge of Agony,47884,Two-Hand,0,0,112,92,0,0,183,62,86,0,0,0,0,Armor Penetration Rating,4,Sword,651,977,3.50,3,False
+509,Greaves of the Lingering Vortex,47885,Feet,1629,60,0,134,0,40,0,0,0,0,45,68,0,Dodge Rating,4,Non-Wep,0,0,0,3,False
+510,Vest of Shifting Shadows,47887,Chest,596,0,118,106,81,0,140,0,59,0,0,0,0,Agility,6,Non-Wep,0,0,0,3,False
+511,Band of the Twin Val'kyr,47888,Finger,490,67,0,100,0,0,0,0,0,0,31,38,0,Stamina,0,Non-Wep,0,0,0,3,False
+512,Stoneskin Chestplate,47896,Chest,2369,120,0,169,0,0,0,0,0,0,63,60,56,Stamina,6,Non-Wep,0,0,0,3,False
+513,Frostblade Hatchet,47898,One-Hand,0,0,52,39,38,0,78,29,0,0,0,0,0,Stamina,0,Axe,325,605,2.60,3,False
+514,Ardent Guard,47899,One-Hand,448,52,0,77,0,0,0,0,0,0,27,19,0,Stamina,0,Sword,187,349,1.50,3,False
+515,Pauldrons of the Shadow Hunter,47901,Shoulder,994,0,89,78,47,0,120,42,0,0,0,0,0,Critical Strike Rating,4,Non-Wep,0,0,0,3,False
+516,Legplates of Redeemed Blood,47902,Legs,2073,121,0,125,57,0,0,0,89,0,0,0,0,Critical Strike Rating,6,Non-Wep,0,0,0,3,False
+517,Forsaken Bonecarver,47903,One-Hand,0,0,52,45,29,0,74,0,38,0,0,0,0,Stamina,0,Sword,187,349,1.50,3,False
+518,Shoulderpads of the Snow Bandit,47904,Shoulder,447,0,84,70,51,0,124,61,0,0,0,0,0,Haste Rating,4,Non-Wep,0,0,0,3,False
+519,Blackhorn Bludgeon,47905,One-Hand,0,0,48,39,35,0,61,30,0,0,0,0,0,Agility,4,Mace,325,605,2.60,3,False
+520,Anguish,47911,Two-Hand,0,0,104,137,0,0,123,62,86,0,0,0,0,Armor Penetration Rating,4,Polearm,651,977,3.50,3,False
+521,Collar of Ceaseless Torment,47915,Neck,0,0,70,65,52,0,106,0,40,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,True
+522,Armbands of the Northern Stalker,47916,Wrist,605,0,70,40,0,50,89,36,0,0,0,0,0,Haste Rating,4,Non-Wep,0,0,0,3,True
+523,Gauntlets of Rising Anger,47917,Hands,1545,99,0,115,71,45,0,0,0,0,0,0,0,Hit Rating,6,Non-Wep,0,0,0,3,True
+524,Dreadscale Armguards,47918,Wrist,1082,50,0,102,0,44,0,0,0,0,34,0,58,Stamina,6,Non-Wep,0,0,0,3,True
+525,Acidmaw Boots,47919,Feet,428,0,93,85,0,69,127,0,0,51,0,0,0,Critical Strike Rating,6,Non-Wep,0,0,0,3,True
+526,Carnivorous Band,47920,Finger,0,70,0,86,0,0,0,42,41,0,0,0,0,Haste Rating,6,Non-Wep,0,0,0,3,True
+527,Girdle of the Impaler,47925,Waist,1391,99,0,115,0,0,0,54,63,0,0,0,0,Armor Penetration Rating,6,Non-Wep,0,0,0,3,True
+528,Sentinel Scouting Greaves,47933,Feet,951,0,101,80,53,0,135,39,0,0,0,0,0,Attack Power,12,Non-Wep,0,0,0,3,True
+529,Planestalker Signet,47934,Finger,0,0,70,77,0,44,115,0,44,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,True
+530,Armguards of the Nether Lord,47935,Wrist,1082,78,0,86,36,0,0,0,54,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,True
+531,Girdle of the Nether Champion,47937,Waist,1391,97,0,139,0,0,0,0,0,0,49,64,34,Stamina,6,Non-Wep,0,0,0,3,True
+532,Endurance of the Infernal,47939,Neck,0,40,0,114,0,0,0,0,0,46,46,50,0,Dodge Rating,4,Non-Wep,0,0,0,3,True
+533,Helm of the Silver Ranger,47942,Head,1124,0,124,90,86,50,181,0,0,0,0,0,0,Agility,8,Non-Wep,0,0,0,3,True
+534,Faceplate of the Silver Champion,47943,Head,2009,139,0,143,69,0,0,86,0,0,0,0,0,Critical Strike Rating,8,Non-Wep,0,0,0,3,True
+535,Pauldrons of the Silver Defender,47944,Shoulder,1854,91,0,139,0,0,0,0,0,0,43,0,45,Parry Rating,6,Non-Wep,0,0,0,3,True
+536,Gloves of the Silver Assassin,47945,Hands,389,0,97,57,61,0,145,0,61,0,0,0,0,Agility,6,Non-Wep,0,0,0,3,True
+537,Victor's Call,47948,Trinket,0,0,0,0,0,0,0,0,0,83,0,0,0,Stamina,0,Non-Wep,0,0,0,3,True
+538,Fervor of the Frostborn,47949,Trinket,0,0,0,0,0,0,0,0,0,0,0,126,0,Stamina,0,Non-Wep,0,0,0,3,True
+539,Reckoning,47951,Two-Hand,0,0,120,103,0,0,206,63,97,0,0,0,0,Armor Penetration Rating,6,Sword,715,"1,074",3.50,3,True
+540,Sabatons of the Lingering Vortex,47952,Feet,1700,64,0,151,0,47,0,0,0,0,39,77,0,Dodge Rating,6,Non-Wep,0,0,0,3,True
+541,Armor of Shifting Shadows,47954,Chest,623,0,126,107,93,0,162,0,67,0,0,0,0,Agility,8,Non-Wep,0,0,0,3,True
+542,Loop of the Twin Val'kyr,47955,Finger,532,64,0,114,0,0,0,0,0,0,35,39,0,Stamina,6,Non-Wep,0,0,0,3,True
+543,Chestguard of the Warden,47964,Chest,2473,136,0,180,0,0,0,0,0,0,71,61,63,Stamina,9,Non-Wep,0,0,0,3,True
+544,The Lion's Maw,47966,One-Hand,0,0,50,44,43,0,89,24,0,0,0,0,0,Agility,4,Axe,357,665,2.60,3,True
+545,Crusader's Glory,47967,One-Hand,522,58,0,76,0,0,0,0,0,0,31,14,0,Dodge Rating,4,Sword,206,384,1.50,3,True
+546,Pauldrons of the Timeless Hunter,47969,Shoulder,1038,0,101,89,53,0,128,41,0,0,0,0,0,Critical Strike Rating,6,Non-Wep,0,0,0,3,True
+547,Legplates of the Silver Hand,47970,Legs,2164,139,0,143,65,0,0,0,101,0,0,0,0,Critical Strike Rating,6,Non-Wep,0,0,0,3,True
+548,Westfall Saber,47971,One-Hand,0,0,58,51,24,0,67,0,43,0,0,0,0,Attack Power,8,Sword,206,384,1.50,3,True
+549,Spaulders of the Snow Bandit,47972,Shoulder,467,0,91,79,52,0,132,69,0,0,0,0,0,Haste Rating,6,Non-Wep,0,0,0,3,True
+550,The Grinder,47973,One-Hand,0,0,54,44,40,0,70,35,0,0,0,0,0,Agility,4,Mace,357,665,2.60,3,True
+551,Fordragon Blades,47979,Two-Hand,0,0,118,155,0,0,125,63,97,0,0,0,0,Armor Penetration Rating,6,Polearm,715,"1,074",3.50,3,True
+552,Collar of Unending Torment,47988,Neck,0,0,70,65,52,0,106,0,40,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,True
+553,Bracers of the Northern Stalker,47989,Wrist,605,0,70,40,0,50,89,36,0,0,0,0,0,Haste Rating,4,Non-Wep,0,0,0,3,True
+554,Gauntlets of Mounting Anger,47990,Hands,1545,99,0,115,71,45,0,0,0,0,0,0,0,Hit Rating,6,Non-Wep,0,0,0,3,True
+555,Dreadscale Bracers,47991,Wrist,1082,50,0,102,0,44,0,0,0,0,34,0,58,Stamina,6,Non-Wep,0,0,0,3,True
+556,Acidmaw Treads,47992,Feet,428,0,93,85,0,69,127,0,0,51,0,0,0,Critical Strike Rating,6,Non-Wep,0,0,0,3,True
+557,Gormok's Band,47993,Finger,0,70,0,86,0,0,0,42,41,0,0,0,0,Haste Rating,6,Non-Wep,0,0,0,3,True
+558,Belt of the Impaler,47998,Waist,1391,99,0,115,0,0,0,54,63,0,0,0,0,Armor Penetration Rating,6,Non-Wep,0,0,0,3,True
+559,Warsong Poacher's Greaves,48006,Feet,951,0,101,80,53,0,135,39,0,0,0,0,0,Attack Power,12,Non-Wep,0,0,0,3,True
+560,Planestalker Band,48007,Finger,0,0,70,77,0,44,115,0,44,0,0,0,0,Agility,4,Non-Wep,0,0,0,3,True
+561,Armplates of the Nether Lord,48008,Wrist,1082,78,0,86,36,0,0,0,54,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,True
+562,Belt of the Nether Champion,48009,Waist,1391,97,0,139,0,0,0,0,0,0,49,64,34,Stamina,6,Non-Wep,0,0,0,3,True
+563,Fortitude of the Infernal,48011,Neck,0,40,0,114,0,0,0,0,0,46,46,50,0,Dodge Rating,4,Non-Wep,0,0,0,3,True
+564,Sunreaver Ranger's Helm,48014,Head,1124,0,124,90,86,50,181,0,0,0,0,0,0,Agility,8,Non-Wep,0,0,0,3,True
+565,Sunreaver Champion's Faceplate,48015,Head,2009,139,0,143,69,0,0,86,0,0,0,0,0,Critical Strike Rating,8,Non-Wep,0,0,0,3,True
+566,Sunreaver Defender's Pauldrons,48016,Shoulder,1854,91,0,139,0,0,0,0,0,0,43,0,45,Parry Rating,6,Non-Wep,0,0,0,3,True
+567,Sunreaver Assassin's Gloves,48017,Hands,389,0,97,57,61,0,145,0,61,0,0,0,0,Agility,6,Non-Wep,0,0,0,3,True
+568,Vengeance of the Forsaken,48020,Trinket,0,0,0,0,0,0,0,0,0,83,0,0,0,Stamina,0,Non-Wep,0,0,0,3,True
+569,Eitrigg's Oath,48021,Trinket,0,0,0,0,0,0,0,0,0,0,0,126,0,Stamina,0,Non-Wep,0,0,0,3,True
+570,Edge of Agony,48023,Two-Hand,0,0,120,103,0,0,206,63,97,0,0,0,0,Armor Penetration Rating,6,Sword,715,"1,074",3.50,3,True
+571,Greaves of the Lingering Vortex,48024,Feet,1700,64,0,151,0,47,0,0,0,0,39,77,0,Dodge Rating,6,Non-Wep,0,0,0,3,True
+572,Vest of Shifting Shadows,48026,Chest,623,0,126,107,93,0,162,0,67,0,0,0,0,Agility,8,Non-Wep,0,0,0,3,True
+573,Band of the Twin Val'kyr,48027,Finger,532,64,0,114,0,0,0,0,0,0,35,39,0,Stamina,6,Non-Wep,0,0,0,3,True
+574,Stoneskin Chestplate,48041,Chest,2473,136,0,180,0,0,0,0,0,0,71,61,63,Stamina,9,Non-Wep,0,0,0,3,True
+575,Frostblade Hatchet,48043,One-Hand,0,0,50,44,43,0,89,24,0,0,0,0,0,Agility,4,Axe,357,665,2.60,3,True
+576,Ardent Guard,48044,One-Hand,522,58,0,76,0,0,0,0,0,0,31,14,0,Dodge Rating,4,Sword,206,384,1.50,3,True
+577,Pauldrons of the Shadow Hunter,48046,Shoulder,1038,0,101,89,53,0,128,41,0,0,0,0,0,Critical Strike Rating,6,Non-Wep,0,0,0,3,True
+578,Legplates of the Redeemed Blood Knight,48047,Legs,2164,139,0,143,65,0,0,0,101,0,0,0,0,Critical Strike Rating,6,Non-Wep,0,0,0,3,True
+579,Forsaken Bonecarver,48048,One-Hand,0,0,58,51,24,0,67,0,43,0,0,0,0,Attack Power,8,Sword,206,384,1.50,3,True
+580,Shoulderpads of the Snow Bandit,48049,Shoulder,467,0,91,79,52,0,132,69,0,0,0,0,0,Haste Rating,6,Non-Wep,0,0,0,3,True
+581,Blackhorn Bludgeon,48050,One-Hand,0,0,54,44,40,0,70,35,0,0,0,0,0,Agility,4,Mace,357,665,2.60,3,True
+582,Anguish,48056,Two-Hand,0,0,118,155,0,0,125,63,97,0,0,0,0,Armor Penetration Rating,6,Polearm,715,"1,074",3.50,3,True
+583,Thassarian's Helmet of Conquest,48472,Head,1925,113,0,137,72,0,0,0,0,64,0,0,0,Strength,8,Non-Wep,0,0,0,3,False
+584,Thassarian's Battleplate of Conquest,48474,Chest,2369,121,0,137,72,0,0,72,0,0,0,0,0,Strength,6,Non-Wep,0,0,0,3,False
+585,Thassarian's Legplates of Conquest,48476,Legs,2073,121,0,137,72,0,0,0,72,0,0,0,0,Strength,6,Non-Wep,0,0,0,3,False
+586,Thassarian's Shoulderplates of Conquest,48478,Shoulder,1777,94,0,102,60,52,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,False
+587,Thassarian's Gauntlets of Conquest,48480,Hands,1480,94,0,102,60,52,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,False
+588,Thassarian's Battleplate of Triumph,48481,Chest,2473,139,0,155,82,0,0,82,0,0,0,0,0,Strength,6,Non-Wep,0,0,0,3,False
+589,Thassarian's Gauntlets of Triumph,48482,Hands,1545,107,0,115,67,59,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,False
+590,Thassarian's Helmet of Triumph,48483,Head,2009,131,0,155,82,0,0,0,0,74,0,0,0,Strength,8,Non-Wep,0,0,0,3,False
+591,Thassarian's Legplates of Triumph,48484,Legs,2164,139,0,155,82,0,0,0,82,0,0,0,0,Strength,6,Non-Wep,0,0,0,3,False
+592,Thassarian's Shoulderplates of Triumph,48485,Shoulder,1854,107,0,115,67,59,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,False
+593,Thassarian's Shoulderplates of Triumph,48486,Shoulder,1941,122,0,130,76,68,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,True
+594,Thassarian's Legplates of Triumph,48487,Legs,2264,158,0,174,94,0,0,0,94,0,0,0,0,Strength,6,Non-Wep,0,0,0,3,True
+595,Thassarian's Helmet of Triumph,48488,Head,2102,150,0,174,94,0,0,0,0,86,0,0,0,Strength,8,Non-Wep,0,0,0,3,True
+596,Thassarian's Gauntlets of Triumph,48489,Hands,1617,122,0,130,76,68,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,True
+597,Thassarian's Battleplate of Triumph,48490,Chest,2588,158,0,174,94,0,0,94,0,0,0,0,0,Strength,6,Non-Wep,0,0,0,3,True
+598,Koltira's Battleplate of Triumph,48491,Chest,2588,158,0,174,94,0,0,94,0,0,0,0,0,Strength,6,Non-Wep,0,0,0,3,True
+599,Koltira's Gauntlets of Triumph,48492,Hands,1617,122,0,130,76,68,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,True
+600,Koltira's Helmet of Triumph,48493,Head,2102,150,0,174,94,0,0,0,0,86,0,0,0,Strength,8,Non-Wep,0,0,0,3,True
+601,Koltira's Legplates of Triumph,48494,Legs,2264,158,0,174,94,0,0,0,94,0,0,0,0,Strength,6,Non-Wep,0,0,0,3,True
+602,Koltira's Shoulderplates of Triumph,48495,Shoulder,1941,122,0,130,76,68,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,True
+603,Koltira's Shoulderplates of Triumph,48496,Shoulder,1854,107,0,115,67,59,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,False
+604,Koltira's Legplates of Triumph,48497,Legs,2164,139,0,155,82,0,0,0,82,0,0,0,0,Strength,6,Non-Wep,0,0,0,3,False
+605,Koltira's Helmet of Triumph,48498,Head,2009,131,0,155,82,0,0,0,0,74,0,0,0,Strength,8,Non-Wep,0,0,0,3,False
+606,Koltira's Gauntlets of Triumph,48499,Hands,1545,107,0,115,67,59,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,False
+607,Koltira's Battleplate of Triumph,48500,Chest,2473,139,0,155,82,0,0,82,0,0,0,0,0,Strength,6,Non-Wep,0,0,0,3,False
+608,Koltira's Battleplate of Conquest,48501,Chest,2369,121,0,137,72,0,0,72,0,0,0,0,0,Strength,6,Non-Wep,0,0,0,3,False
+609,Koltira's Gauntlets of Conquest,48502,Hands,1480,94,0,102,60,52,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,False
+610,Koltira's Helmet of Conquest,48503,Head,1925,113,0,137,72,0,0,0,0,64,0,0,0,Strength,8,Non-Wep,0,0,0,3,False
+611,Koltira's Legplates of Conquest,48504,Legs,2073,121,0,137,72,0,0,0,72,0,0,0,0,Strength,6,Non-Wep,0,0,0,3,False
+612,Koltira's Shoulderplates of Conquest,48505,Shoulder,1777,94,0,102,60,52,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,False
+613,Thassarian's Faceguard of Conquest,48529,Head,1925,92,0,145,0,45,0,0,0,0,72,80,0,Stamina,12,Non-Wep,0,0,0,3,False
+614,Thassarian's Chestguard of Conquest,48531,Chest,2369,92,0,157,0,0,0,0,0,0,63,53,57,Stamina,9,Non-Wep,0,0,0,3,False
+615,Thassarian's Legguards of Conquest,48533,Legs,2073,92,0,157,0,0,0,0,0,0,57,63,53,Stamina,9,Non-Wep,0,0,0,3,False
+616,Thassarian's Pauldrons of Conquest,48535,Shoulder,1777,68,0,122,0,37,0,0,0,0,60,0,60,Stamina,6,Non-Wep,0,0,0,3,False
+617,Thassarian's Handguards of Conquest,48537,Hands,1480,89,0,122,0,0,0,0,0,0,47,47,39,Stamina,6,Non-Wep,0,0,0,3,False
+618,Thassarian's Chestguard of Triumph,48538,Chest,2473,103,0,180,0,0,0,0,0,0,71,61,65,Stamina,9,Non-Wep,0,0,0,3,False
+619,Thassarian's Handguards of Triumph,48539,Hands,1545,101,0,139,0,0,0,0,0,0,53,53,45,Stamina,6,Non-Wep,0,0,0,3,False
+620,Thassarian's Faceguard of Triumph,48540,Head,2009,103,0,168,0,53,0,0,0,0,82,90,0,Stamina,12,Non-Wep,0,0,0,3,False
+621,Thassarian's Legguards of Triumph,48541,Legs,2164,103,0,180,0,0,0,0,0,0,65,71,61,Stamina,9,Non-Wep,0,0,0,3,False
+622,Thassarian's Pauldrons of Triumph,48542,Shoulder,1854,77,0,139,0,43,0,0,0,0,67,0,67,Stamina,6,Non-Wep,0,0,0,3,False
+623,Thassarian's Pauldrons of Triumph,48543,Shoulder,1941,86,0,158,0,50,0,0,0,0,76,0,76,Stamina,6,Non-Wep,0,0,0,3,True
+624,Thassarian's Legguards of Triumph,48544,Legs,2264,116,0,206,0,0,0,0,0,0,74,80,70,Stamina,9,Non-Wep,0,0,0,3,True
+625,Thassarian's Faceguard of Triumph,48545,Head,2102,116,0,194,0,62,0,0,0,0,94,102,0,Stamina,12,Non-Wep,0,0,0,3,True
+626,Thassarian's Handguards of Triumph,48546,Hands,1617,114,0,158,0,0,0,0,0,0,60,60,52,Stamina,6,Non-Wep,0,0,0,3,True
+627,Thassarian's Chestguard of Triumph,48547,Chest,2588,116,0,206,0,0,0,0,0,0,80,70,74,Stamina,9,Non-Wep,0,0,0,3,True
+628,Koltira's Chestguard of Triumph,48548,Chest,2588,116,0,206,0,0,0,0,0,0,80,70,74,Stamina,9,Non-Wep,0,0,0,3,True
+629,Koltira's Handguards of Triumph,48549,Hands,1617,114,0,158,0,0,0,0,0,0,60,60,52,Stamina,6,Non-Wep,0,0,0,3,True
+630,Koltira's Faceguard of Triumph,48550,Head,2102,116,0,194,0,62,0,0,0,0,94,102,0,Stamina,12,Non-Wep,0,0,0,3,True
+631,Koltira's Legguards of Triumph,48551,Legs,2264,116,0,206,0,0,0,0,0,0,74,80,70,Stamina,9,Non-Wep,0,0,0,3,True
+632,Koltira's Pauldrons of Triumph,48552,Shoulder,1941,86,0,158,0,50,0,0,0,0,76,0,76,Stamina,6,Non-Wep,0,0,0,3,True
+633,Koltira's Pauldrons of Triumph,48553,Shoulder,1854,77,0,139,0,43,0,0,0,0,67,0,67,Stamina,6,Non-Wep,0,0,0,3,False
+634,Koltira's Legguards of Triumph,48554,Legs,2164,103,0,180,0,0,0,0,0,0,65,71,61,Stamina,9,Non-Wep,0,0,0,3,False
+635,Koltira's Faceguard of Triumph,48555,Head,2009,103,0,168,0,53,0,0,0,0,82,90,0,Stamina,12,Non-Wep,0,0,0,3,False
+636,Koltira's Handguards of Triumph,48556,Hands,1545,101,0,139,0,0,0,0,0,0,53,53,45,Stamina,6,Non-Wep,0,0,0,3,False
+637,Koltira's Chestguard of Triumph,48557,Chest,2473,103,0,180,0,0,0,0,0,0,71,61,65,Stamina,9,Non-Wep,0,0,0,3,False
+638,Koltira's Chestguard of Conquest,48558,Chest,2369,92,0,157,0,0,0,0,0,0,63,53,57,Stamina,9,Non-Wep,0,0,0,3,False
+639,Koltira's Handguards of Conquest,48559,Hands,1480,89,0,122,0,0,0,0,0,0,47,47,39,Stamina,6,Non-Wep,0,0,0,3,False
+640,Koltira's Faceguard of Conquest,48560,Head,1925,92,0,145,0,45,0,0,0,0,72,80,0,Stamina,12,Non-Wep,0,0,0,3,False
+641,Koltira's Legguards of Conquest,48561,Legs,2073,92,0,157,0,0,0,0,0,0,57,63,53,Stamina,9,Non-Wep,0,0,0,3,False
+642,Koltira's Pauldrons of Conquest,48562,Shoulder,1777,68,0,122,0,37,0,0,0,0,60,0,60,Stamina,6,Non-Wep,0,0,0,3,False
+643,Cloak of Serrated Blades,48668,Back,173,0,85,85,57,0,98,0,49,0,0,0,0,Attack Power,8,Non-Wep,0,0,0,3,True
+644,Cloak of the Triumphant Combatant,48669,Back,173,89,0,97,57,49,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,True
+645,Cloak of the Unflinching Guardian,48670,Back,173,85,0,116,0,0,0,0,0,0,45,37,45,Stamina,6,Non-Wep,0,0,0,3,True
+646,Cloak of the Silver Covenant,48673,Back,173,0,85,85,57,0,98,0,49,0,0,0,0,Attack Power,8,Non-Wep,0,0,0,3,True
+647,Cloak of the Victorious Combatant,48674,Back,173,89,0,97,57,49,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,3,True
+648,Cloak of the Unmoving Guardian,48675,Back,173,85,0,116,0,0,0,0,0,0,45,37,45,Stamina,6,Non-Wep,0,0,0,3,True
+649,Heartsmasher,48693,Main Hand,0,0,0,38,36,0,0,54,0,0,0,0,0,Spell Power,5,Mace,81,259,1.50,3,True
+650,"Mor'kosh, the Bloodreaver",48695,Two-Hand,0,147,0,155,85,70,0,0,0,0,0,0,0,Strength,6,Axe,736,"1,105",3.60,3,True
+651,Blood and Glory,48699,One-Hand,0,58,0,76,0,0,0,0,0,0,32,29,23,Dodge Rating,4,Mace,220,409,1.60,3,True
+652,The Facebreaker,48703,Main Hand,0,0,58,44,39,0,73,0,31,0,0,0,0,Agility,4,Fist Weapon,409,614,2.60,3,True
+653,The Spinebreaker,48712,Main Hand,0,0,58,44,39,0,73,0,31,0,0,0,0,Agility,4,Fist Weapon,409,614,2.60,3,True
+654,Lothar's Edge,48713,Two-Hand,0,147,0,155,85,70,0,0,0,0,0,0,0,Strength,6,Axe,736,"1,105",3.60,3,True
+655,Honor of the Fallen,48714,One-Hand,0,58,0,76,0,0,0,0,0,0,32,29,23,Dodge Rating,4,Mace,220,409,1.60,3,True
+656,Shard of the Crystal Heart,48722,Trinket,0,0,0,0,0,128,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+657,Singed Vis'kag the Bloodletter,49296,One-Hand,0,0,0,0,0,0,0,0,0,0,0,0,0,Stamina,0,Sword,325,605,2.60,3,False
+658,Empowered Deathbringer,49297,One-Hand,0,0,0,0,0,0,0,0,0,0,0,0,0,Stamina,0,Axe,338,628,2.70,3,False
+659,Keen Obsidian Edged Blade,49299,Two-Hand,0,129,0,159,61,0,0,0,0,92,0,0,0,Stamina,0,Sword,651,977,3.50,3,False
+660,Reclaimed Thunderstrike,49301,Two-Hand,0,0,78,157,0,0,167,55,0,62,0,0,0,Stamina,0,Polearm,577,866,3.10,5,False
+661,Reclaimed Shadowstrike,49302,Two-Hand,0,0,104,112,64,0,136,0,78,0,0,0,0,Stamina,0,Polearm,577,866,3.10,3,False
+662,Gleaming Quel'Serrar,49303,One-Hand,0,0,0,65,0,0,0,0,0,0,0,0,0,Stamina,0,Sword,250,465,2.00,3,False
+663,Eskhandar's Choker,49306,Neck,0,51,0,100,0,0,0,0,0,34,45,45,0,Stamina,0,Non-Wep,0,0,0,3,False
+664,Runed Ring of Binding,49309,Finger,700,0,0,100,0,0,0,0,0,0,50,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+665,Frostforged Ringhelm,49332,Head,1925,83,0,154,0,59,0,0,0,0,70,0,77,Stamina,12,Non-Wep,0,0,0,3,False
+666,Frostforged Helmet,49333,Head,1925,127,0,107,0,73,0,0,62,0,0,0,0,Strength,8,Non-Wep,0,0,0,3,False
+667,Purified Shard of the Flame,49463,Trinket,0,0,0,0,0,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+668,Shiny Shard of the Flame,49464,Trinket,0,0,0,0,0,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+669,Frostforged Helm,49466,Head,2009,143,0,125,0,82,0,0,76,0,0,0,0,Strength,8,Non-Wep,0,0,0,3,False
+670,Frostforged Greathelm,49467,Head,2009,95,0,177,0,67,0,0,0,0,80,0,87,Stamina,12,Non-Wep,0,0,0,3,False
+671,Sparkling Onyxia Tooth Pendant,49485,Neck,0,0,76,58,52,48,96,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+672,Purified Onyxia Blood Talisman,49487,Trinket,0,0,0,0,0,0,0,0,0,0,69,0,108,Stamina,0,Non-Wep,0,0,0,3,False
+673,Signified Ring of Binding,49489,Finger,800,0,0,115,0,0,0,0,0,0,55,0,0,Stamina,0,Non-Wep,0,0,0,3,False
+674,Eskhandar's Links,49492,Neck,0,58,0,114,0,0,0,0,0,38,50,50,0,Stamina,0,Non-Wep,0,0,0,3,False
+675,Burnished Quel'Serrar,49495,One-Hand,0,0,0,74,0,0,0,0,0,0,0,0,0,Stamina,0,Sword,275,511,2.00,3,False
+676,Reinforced Shadowstrike,49496,Two-Hand,0,0,120,126,73,0,157,0,89,0,0,0,0,Stamina,0,Polearm,634,951,3.10,3,False
+677,Reinforced Thunderstrike,49497,Two-Hand,0,0,89,180,0,0,190,63,0,71,0,0,0,Stamina,0,Polearm,634,951,3.10,3,False
+678,Sharpened Obsidian Edged Blade,49498,Two-Hand,0,146,0,179,69,0,0,0,0,103,0,0,0,Stamina,0,Sword,715,"1,074",3.50,3,False
+679,Raging Deathbringer,49500,One-Hand,0,0,0,0,0,0,0,0,0,0,0,0,0,Stamina,0,Axe,371,690,2.70,3,False
+680,Tempered Vis'kag the Bloodletter,49501,One-Hand,0,0,0,0,0,0,0,0,0,0,0,0,0,Stamina,0,Sword,357,665,2.60,3,False
+681,Shadowmourne,49623,Two-Hand,0,223,0,198,114,0,0,0,114,0,0,0,0,Strength,8,Axe,954,"1,592",3.70,4,False
+682,Shadow's Edge,49888,Two-Hand,0,185,0,185,92,0,0,0,92,0,0,0,0,Strength,6,Axe,872,"1,309",3.70,4,False
+683,Footpads of Impending Death,49895,Feet,457,0,120,120,80,0,129,0,0,64,0,0,0,Agility,6,Non-Wep,0,0,0,4,False
+684,Rock-Steady Treads,49897,Feet,1016,0,120,95,80,0,129,0,47,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,False
+685,Bladeborn Leggings,49899,Legs,582,0,162,162,92,0,168,0,100,0,0,0,0,Agility,8,Non-Wep,0,0,0,4,False
+686,Draconic Bonesplinter Legguards,49901,Legs,1293,0,138,128,92,0,216,0,77,0,0,0,0,Agility,8,Non-Wep,0,0,0,4,False
+687,Legplates of Painful Death,49903,Legs,2310,161,0,185,100,0,0,0,92,0,0,0,0,Strength,8,Non-Wep,0,0,0,4,False
+688,Pillars of Might,49904,Legs,3500,162,0,207,0,0,0,0,0,0,0,69,77,Stamina,12,Non-Wep,0,0,0,4,False
+689,Hellfrozen Bonegrinders,49906,Feet,1815,121,0,137,64,0,0,0,80,0,0,0,0,Strength,6,Non-Wep,0,0,0,4,False
+690,Boots of Kingly Upheaval,49907,Feet,1815,92,0,157,0,53,0,0,0,0,0,72,72,Stamina,9,Non-Wep,0,0,0,4,False
+691,Cryptmaker,49919,Two-Hand,0,169,0,185,0,95,0,0,100,0,0,0,0,Strength,6,Mace,848,"1,273",3.60,4,False
+692,Band of the Bone Colossus,49949,Finger,0,0,90,90,0,54,105,57,0,0,0,0,0,Agility,4,Non-Wep,0,0,0,4,False
+693,Frostbitten Fur Boots,49950,Feet,457,0,104,120,80,0,161,0,64,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,False
+694,Gendarme's Cuirass,49951,Chest,2641,161,0,185,100,92,0,0,0,0,0,0,0,Strength,8,Non-Wep,0,0,0,4,False
+695,Snowserpent Mail Helm,49952,Head,1200,0,146,128,100,69,200,0,0,0,0,0,0,Agility,8,Non-Wep,0,0,0,4,False
+696,Bracers of Dark Reckoning,49960,Wrist,1155,90,0,124,0,0,0,0,0,0,48,48,40,Stamina,6,Non-Wep,0,0,0,4,False
+697,Legguards of Lost Hope,49964,Legs,2310,123,0,207,0,74,0,0,0,0,92,108,0,Stamina,12,Non-Wep,0,0,0,4,False
+698,Blood-Soaked Saronite Stompers,49983,Feet,1815,129,0,137,80,0,0,0,72,0,0,0,0,Strength,6,Non-Wep,0,0,0,4,False
+699,Juggernaut Band,49985,Finger,0,90,0,124,0,0,0,0,0,0,42,43,48,Stamina,6,Non-Wep,0,0,0,4,False
+700,Broken Ram Skull Helm,49986,Head,2145,123,0,207,0,74,0,0,0,0,108,92,0,Stamina,12,Non-Wep,0,0,0,4,False
+701,Cultist's Bloodsoaked Spaulders,49987,Shoulder,499,0,112,120,80,0,145,64,0,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,False
+702,Leggings of Northern Lights,49988,Legs,1293,0,146,128,92,0,200,0,77,0,0,0,0,Agility,8,Non-Wep,0,0,0,4,False
+703,Ahn'kahar Onyx Neckguard,49989,Neck,0,95,0,103,60,52,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,4,False
+704,"Mithrios, Bronzebeard's Legacy",49997,One-Hand,0,56,0,111,0,0,0,0,0,38,49,0,49,Stamina,0,Mace,267,498,1.60,4,False
+705,Shadowvault Slayer's Cloak,49998,Back,177,0,90,90,52,0,105,60,0,0,0,0,0,Agility,4,Non-Wep,0,0,0,4,False
+706,Skeleton Lord's Circle,49999,Finger,0,95,0,103,60,0,0,0,0,52,0,0,0,Strength,4,Non-Wep,0,0,0,4,False
+707,Scourge Hunter's Vambraces,50000,Wrist,646,0,90,71,60,0,105,0,40,0,0,0,0,Agility,4,Non-Wep,0,0,0,4,False
+708,Ikfirus's Sack of Wonder,50001,Chest,665,0,146,162,0,100,200,0,0,92,0,0,0,Agility,8,Non-Wep,0,0,0,4,False
+709,Polar Bear Claw Bracers,50002,Wrist,1155,95,0,103,60,52,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,4,False
+710,Boneguard Commander's Pauldrons,50003,Shoulder,1980,120,0,157,0,0,0,0,0,0,63,55,55,Stamina,9,Non-Wep,0,0,0,4,False
+711,"Havoc's Call, Blade of Lordaeron Kings",50012,One-Hand,0,0,74,74,49,0,99,49,0,0,0,0,0,Stamina,0,Axe,435,809,2.60,4,False
+712,Winding Sheet,50019,Back,177,95,0,103,60,0,0,52,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,4,False
+713,Raging Behemoth's Shoulderplates,50020,Shoulder,1980,121,0,137,80,64,0,0,0,0,0,0,0,Strength,6,Non-Wep,0,0,0,4,False
+714,Aldriana's Gloves of Secrecy,50021,Hands,416,0,112,120,0,0,145,64,80,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,False
+715,Dual-Bladed Pauldrons,50022,Shoulder,1108,0,112,95,80,0,145,47,0,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,False
+716,Bile-Encrusted Medallion,50023,Neck,672,90,0,124,0,0,0,0,0,0,48,40,0,Stamina,6,Non-Wep,0,0,0,4,False
+717,Blightborne Warplate,50024,Chest,2641,123,0,207,0,58,0,0,0,0,108,108,0,Stamina,12,Non-Wep,0,0,0,4,False
+718,Seal of Many Mouths,50025,Finger,0,0,90,90,60,0,105,0,0,52,0,0,0,Agility,4,Non-Wep,0,0,0,4,False
+719,Black Bruise,50035,Main Hand,0,0,0,69,0,0,93,0,0,0,0,0,0,Stamina,0,Fist Weapon,471,707,2.60,4,False
+720,Belt of Broken Bones,50036,Waist,1485,120,0,157,0,0,0,0,0,0,55,55,63,Stamina,9,Non-Wep,0,0,0,4,False
+721,Fleshrending Gauntlets,50037,Hands,1650,121,0,137,80,0,0,64,0,0,0,0,0,Strength,6,Non-Wep,0,0,0,4,False
+722,Carapace of Forgotten Kings,50038,Chest,1477,0,154,128,100,69,184,0,0,0,0,0,0,Agility,8,Non-Wep,0,0,0,4,False
+723,Gangrenous Leggings,50042,Legs,582,0,146,162,108,84,200,0,0,0,0,0,0,Agility,8,Non-Wep,0,0,0,4,False
+724,Astrylian's Sutured Cinch,50067,Waist,374,0,104,120,80,0,161,0,64,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,False
+725,"Glorenzelg, High-Blade of the Silver Hand",50070,Two-Hand,0,181,0,197,115,0,0,0,0,99,0,0,0,Strength,6,Sword,895,"1,344",3.60,4,False
+726,Treads of the Wasteland,50071,Feet,1016,0,112,95,80,47,145,0,0,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,False
+727,Landsoul's Horned Greathelm,50072,Head,2145,161,0,185,100,92,0,0,0,0,0,0,0,Strength,8,Non-Wep,0,0,0,4,False
+728,Geistlord's Punishment Sack,50073,Head,540,0,138,162,108,84,216,0,0,0,0,0,0,Agility,8,Non-Wep,0,0,0,4,False
+729,Royal Crimson Cloak,50074,Back,177,69,0,124,0,38,0,0,0,0,60,60,0,Stamina,6,Non-Wep,0,0,0,4,False
+730,Taldaram's Plated Fists,50075,Hands,1650,120,0,157,0,0,0,0,0,0,63,47,63,Stamina,9,Non-Wep,0,0,0,4,False
+731,Scourgelord Battleplate,50094,Chest,2526,148,0,164,96,0,0,0,80,0,0,0,0,Strength,6,Non-Wep,0,0,0,4,False
+732,Scourgelord Gauntlets,50095,Hands,1579,114,0,122,71,63,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,4,False
+733,Scourgelord Helmet,50096,Head,2052,140,0,164,88,0,0,0,80,0,0,0,0,Strength,8,Non-Wep,0,0,0,4,False
+734,Scourgelord Legplates,50097,Legs,2210,148,0,164,96,0,0,0,0,80,0,0,0,Strength,6,Non-Wep,0,0,0,4,False
+735,Scourgelord Shoulderplates,50098,Shoulder,1894,114,0,122,71,0,0,0,63,0,0,0,0,Strength,4,Non-Wep,0,0,0,4,False
+736,Bloodfall,50178,Two-Hand,0,0,162,162,108,0,184,92,0,0,0,0,0,Attack Power,12,Polearm,801,"1,203",3.40,4,False
+737,Last Word,50179,One-Hand,0,0,0,104,0,0,0,0,0,0,0,0,0,Stamina,0,Mace,285,531,1.80,4,False
+738,Lana'thel\'s Chain of Flagellation,50180,Neck,0,95,0,103,0,0,0,0,65,45,0,0,0,Strength,4,Non-Wep,0,0,0,4,False
+739,Keleseth's Seducer,50184,Off Hand,0,0,69,69,0,46,93,46,0,0,0,0,0,Stamina,0,Fist Weapon,412,766,2.60,4,False
+740,Devium's Eternally Cold Ring,50185,Finger,672,90,0,124,0,0,0,0,0,0,48,40,0,Stamina,6,Non-Wep,0,0,0,4,False
+741,Frostbrood Sapphire Ring,50186,Finger,0,0,90,90,52,0,105,0,60,0,0,0,0,Agility,4,Non-Wep,0,0,0,4,False
+742,Coldwraith Links,50187,Waist,1485,121,0,137,75,0,0,0,68,0,0,0,0,Strength,6,Non-Wep,0,0,0,4,False
+743,Anub'ar Stalker\'s Gloves,50188,Hands,923,0,112,95,80,0,129,55,0,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,False
+744,Grinning Skull Greatboots,50190,Feet,1815,92,0,157,0,0,0,0,0,53,80,72,0,Stamina,9,Non-Wep,0,0,0,4,False
+745,Scourge Reaver's Legplates,50192,Legs,2310,161,0,185,108,0,0,84,0,0,0,0,0,Strength,8,Non-Wep,0,0,0,4,False
+746,Noose of Malachite,50195,Neck,0,69,0,124,0,46,0,0,0,0,60,52,0,Stamina,6,Non-Wep,0,0,0,4,False
+747,Toskk's Maximized Wristguards,50333,Wrist,291,0,90,90,52,0,105,0,60,0,0,0,0,Agility,4,Non-Wep,0,0,0,4,False
+748,Unidentifiable Organ,50341,Trinket,1890,0,0,0,0,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,4,False
+749,Whispering Fanged Skull,50342,Trinket,0,0,0,0,131,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,4,False
+750,Whispering Fanged Skull,50343,Trinket,0,0,0,0,148,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,4,True
+751,Unidentifiable Organ,50344,Trinket,2128,0,0,0,0,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,4,True
+752,Corpse Tongue Coin,50349,Trinket,0,0,0,0,0,0,0,0,0,0,0,172,0,Stamina,0,Non-Wep,0,0,0,4,True
+753,Tiny Abomination in a Jar,50351,Trinket,0,0,0,0,0,85,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,4,False
+754,Corpse Tongue Coin,50352,Trinket,0,0,0,0,0,0,0,0,0,0,0,152,0,Stamina,0,Non-Wep,0,0,0,4,False
+755,Herkuml War Token,50355,Trinket,0,0,0,0,0,0,0,153,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,4,False
+756,Corroded Skeleton Key,50356,Trinket,0,0,0,228,0,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,4,False
+757,Sindragosa's Flawless Fang,50361,Trinket,0,0,0,228,0,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,4,False
+758,Deathbringer's Will,50362,Trinket,0,0,0,0,0,0,0,0,155,0,0,0,0,Stamina,0,Non-Wep,0,0,0,4,False
+759,Deathbringer's Will,50363,Trinket,0,0,0,0,0,0,0,0,167,0,0,0,0,Stamina,0,Non-Wep,0,0,0,4,True
+760,Sindragosa's Flawless Fang,50364,Trinket,0,0,0,258,0,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,4,True
+761,Scourgeborne Waraxe,50411,One-Hand,0,0,69,69,46,0,93,0,46,0,0,0,0,Stamina,0,Axe,238,442,1.50,4,False
+762,Bloodvenom Blade,50412,One-Hand,0,0,69,69,0,46,93,0,46,0,0,0,0,Stamina,0,Sword,412,766,2.60,4,False
+763,Nerub'ar Stalker\'s Cord,50413,Waist,831,0,104,95,64,0,161,0,63,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,False
+764,Might of Blight,50414,Finger,0,95,0,103,60,0,0,0,52,0,0,0,0,Strength,4,Non-Wep,0,0,0,4,False
+765,"Bryntroll, the Bone Arbiter",50415,Two-Hand,0,169,0,161,0,0,0,0,0,0,0,0,0,Strength,6,Axe,801,"1,203",3.40,4,False
+766,Sindragosa's Cruel Claw,50421,Neck,0,0,90,90,0,0,105,52,60,0,0,0,0,Agility,4,Non-Wep,0,0,0,4,False
+767,"Oathbinder, Charge of the Ranger-General",50425,Two-Hand,0,0,157,173,99,0,231,0,115,0,0,0,0,Agility,6,Polearm,895,"1,344",3.60,4,False
+768,Harbinger's Bone Band,50447,Finger,0,69,0,124,0,38,0,0,0,0,60,60,0,Stamina,6,Non-Wep,0,0,0,4,False
+769,Wodin's Lucky Necklace,50452,Neck,0,0,90,90,69,38,105,0,0,0,0,0,0,Agility,4,Non-Wep,0,0,0,4,False
+770,Ring of Rotting Sinew,50453,Finger,0,95,0,103,69,38,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,4,False
+771,Sigil of the Hanged Man,50459,Relic,0,0,0,0,0,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,4,False
+772,Sigil of the Bone Gryphon,50462,Relic,0,0,0,0,0,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,4,False
+773,Sentinel's Winter Cloak,50466,Back,737,90,0,124,0,0,0,0,0,0,48,48,0,Stamina,6,Non-Wep,0,0,0,4,False
+774,Might of the Ocean Serpent,50467,Back,177,95,0,103,0,0,0,0,65,45,0,0,0,Strength,4,Non-Wep,0,0,0,4,False
+775,Recovered Scarlet Onslaught Cape,50470,Back,177,0,90,90,60,0,105,0,52,0,0,0,0,Agility,4,Non-Wep,0,0,0,4,False
+776,Cryptmaker,50603,Two-Hand,0,185,0,209,0,99,0,0,115,0,0,0,0,Strength,8,Mace,938,"1,407",3.60,4,True
+777,Band of the Bone Colossus,50604,Finger,0,0,102,102,0,62,120,65,0,0,0,0,0,Agility,4,Non-Wep,0,0,0,4,True
+778,Snowserpent Mail Helm,50605,Head,1253,0,167,144,114,80,228,0,0,0,0,0,0,Agility,8,Non-Wep,0,0,0,4,True
+779,Gendarme's Cuirass,50606,Chest,2756,185,0,209,114,106,0,0,0,0,0,0,0,Strength,8,Non-Wep,0,0,0,4,True
+780,Frostbitten Fur Boots,50607,Feet,477,0,120,136,90,0,181,0,74,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,True
+781,Bracers of Dark Reckoning,50611,Wrist,1206,102,0,141,0,0,0,0,0,0,54,54,46,Stamina,6,Non-Wep,0,0,0,4,True
+782,Legguards of Lost Hope,50612,Legs,2412,139,0,239,0,85,0,0,0,0,106,122,0,Stamina,12,Non-Wep,0,0,0,4,True
+783,Frostbrood Sapphire Ring,50618,Finger,0,0,102,102,60,0,120,0,68,0,0,0,0,Critical Strike Rating,4,Non-Wep,0,0,0,4,True
+784,Anub'ar Stalker\'s Gloves,50619,Hands,964,0,128,107,90,0,149,63,0,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,True
+785,Coldwraith Links,50620,Waist,1550,139,0,155,85,0,0,0,78,0,0,0,0,Strength,6,Non-Wep,0,0,0,4,True
+786,Devium's Eternally Cold Ring,50622,Finger,756,102,0,141,0,0,0,0,0,0,54,46,0,Stamina,6,Non-Wep,0,0,0,4,True
+787,Scourge Reaver's Legplates,50624,Legs,2412,185,0,209,122,0,0,98,0,0,0,0,0,Strength,8,Non-Wep,0,0,0,4,True
+788,Grinning Skull Greatboots,50625,Feet,1895,103,0,180,0,0,0,0,0,61,90,82,0,Stamina,9,Non-Wep,0,0,0,4,True
+789,Noose of Malachite,50627,Neck,0,78,0,141,0,52,0,0,0,0,68,60,0,Stamina,6,Non-Wep,0,0,0,4,True
+790,Sindragosa's Cruel Claw,50633,Neck,0,0,102,102,0,0,120,60,68,0,0,0,0,Agility,4,Non-Wep,0,0,0,4,True
+791,Blood-Soaked Saronite Stompers,50639,Feet,1895,139,0,155,90,0,0,0,74,0,0,0,0,Strength,6,Non-Wep,0,0,0,4,True
+792,Broken Ram Skull Helm,50640,Head,2239,139,0,239,0,85,0,0,0,0,122,106,0,Stamina,12,Non-Wep,0,0,0,4,True
+793,Juggernaut Band,50642,Finger,0,102,0,141,0,0,0,0,0,0,47,50,54,Stamina,6,Non-Wep,0,0,0,4,True
+794,Leggings of Northern Lights,50645,Legs,1349,0,167,144,106,0,228,0,88,0,0,0,0,Agility,8,Non-Wep,0,0,0,4,True
+795,Cultist's Bloodsoaked Spaulders,50646,Shoulder,521,0,128,136,90,0,165,74,0,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,True
+796,Ahn'kahar Onyx Neckguard,50647,Neck,0,108,0,116,68,60,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,4,True
+797,Shadowvault Slayer's Cloak,50653,Back,185,0,102,102,60,0,120,68,0,0,0,0,0,Agility,4,Non-Wep,0,0,0,4,True
+798,Scourgeborne Waraxe,50654,One-Hand,0,0,78,78,52,0,88,0,44,0,0,0,0,Agility,4,Axe,263,489,1.50,4,True
+799,Scourge Hunter's Vambraces,50655,Wrist,675,0,102,80,68,0,120,0,46,0,0,0,0,Agility,4,Non-Wep,0,0,0,4,True
+800,Ikfirus's Sack of Wonder,50656,Chest,694,0,167,183,0,114,228,0,0,106,0,0,0,Agility,8,Non-Wep,0,0,0,4,True
+801,Skeleton Lord's Circle,50657,Finger,0,108,0,116,68,0,0,0,0,60,0,0,0,Strength,4,Non-Wep,0,0,0,4,True
+802,Polar Bear Claw Bracers,50659,Wrist,1206,108,0,116,68,60,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,4,True
+803,Boneguard Commander's Pauldrons,50660,Shoulder,2067,136,0,180,0,0,0,0,0,0,71,63,63,Stamina,9,Non-Wep,0,0,0,4,True
+804,Toskk's Maximized Wristguards,50670,Wrist,304,0,102,102,60,0,120,0,68,0,0,0,0,Agility,4,Non-Wep,0,0,0,4,True
+805,Bloodvenom Blade,50672,One-Hand,0,0,70,78,0,52,104,0,44,0,0,0,0,Agility,4,Sword,456,847,2.60,4,True
+806,Dual-Bladed Pauldrons,50673,Shoulder,1157,0,128,107,90,0,165,55,0,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,True
+807,Raging Behemoth's Shoulderplates,50674,Shoulder,2067,139,0,155,90,74,0,0,0,0,0,0,0,Strength,6,Non-Wep,0,0,0,4,True
+808,Aldriana's Gloves of Secrecy,50675,Hands,434,0,128,136,0,0,165,74,90,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,True
+809,Winding Sheet,50677,Back,185,108,0,116,68,0,0,60,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,4,True
+810,Seal of Many Mouths,50678,Finger,0,0,102,102,68,0,120,0,0,60,0,0,0,Agility,4,Non-Wep,0,0,0,4,True
+811,Blightborne Warplate,50681,Chest,2756,139,0,239,0,69,0,0,0,0,122,122,0,Stamina,12,Non-Wep,0,0,0,4,True
+812,Bile-Encrusted Medallion,50682,Neck,756,102,0,141,0,0,0,0,0,0,54,46,0,Stamina,6,Non-Wep,0,0,0,4,True
+813,Nerub'ar Stalker\'s Cord,50688,Waist,867,0,120,107,74,0,181,0,71,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,True
+814,Carapace of Forgotten Kings,50689,Chest,1542,0,175,144,114,80,212,0,0,0,0,0,0,Agility,8,Non-Wep,0,0,0,4,True
+815,Fleshrending Gauntlets,50690,Hands,1723,139,0,155,90,0,0,74,0,0,0,0,0,Strength,6,Non-Wep,0,0,0,4,True
+816,Belt of Broken Bones,50691,Waist,1550,136,0,180,0,0,0,0,0,0,63,63,71,Stamina,9,Non-Wep,0,0,0,4,True
+817,Black Bruise,50692,Main Hand,0,0,0,78,0,0,72,0,0,0,0,0,0,Attack Power,8,Fist Weapon,521,782,2.60,4,True
+818,Might of Blight,50693,Finger,0,108,0,116,68,0,0,0,60,0,0,0,0,Strength,4,Non-Wep,0,0,0,4,True
+819,Gangrenous Leggings,50697,Legs,608,0,167,183,122,98,228,0,0,0,0,0,0,Agility,8,Non-Wep,0,0,0,4,True
+820,Tiny Abomination in a Jar,50706,Trinket,0,0,0,0,0,85,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,4,True
+821,Astrylian's Sutured Cinch,50707,Waist,391,0,120,136,90,0,181,0,74,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,True
+822,Last Word,50708,One-Hand,0,0,0,94,0,0,0,0,0,0,0,0,0,Stamina,6,Mace,315,586,1.80,4,True
+823,"Bryntroll, the Bone Arbiter",50709,Two-Hand,0,185,0,173,0,0,0,0,0,0,0,0,0,Strength,8,Axe,886,"1,329",3.40,4,True
+824,Keleseth's Seducer,50710,Off Hand,0,0,78,78,0,44,88,52,0,0,0,0,0,Agility,4,Fist Weapon,456,847,2.60,4,True
+825,Treads of the Wasteland,50711,Feet,1060,0,128,107,90,55,165,0,0,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,True
+826,Landsoul's Horned Greathelm,50712,Head,2239,185,0,209,114,106,0,0,0,0,0,0,0,Strength,8,Non-Wep,0,0,0,4,True
+827,Geistlord's Punishment Sack,50713,Head,564,0,159,183,122,98,244,0,0,0,0,0,0,Agility,8,Non-Wep,0,0,0,4,True
+828,Taldaram's Plated Fists,50716,Hands,1723,136,0,180,0,0,0,0,0,0,71,55,71,Stamina,9,Non-Wep,0,0,0,4,True
+829,Royal Crimson Cloak,50718,Back,185,78,0,141,0,44,0,0,0,0,68,68,0,Stamina,6,Non-Wep,0,0,0,4,True
+830,Bloodfall,50727,Two-Hand,0,0,175,183,122,0,212,98,0,0,0,0,0,Attack Power,16,Polearm,886,"1,329",3.40,4,True
+831,Lana'thel\'s Chain of Flagellation,50728,Neck,0,108,0,116,0,0,0,0,73,52,0,0,0,Strength,4,Non-Wep,0,0,0,4,True
+832,"Glorenzelg, High-Blade of the Silver Hand",50730,Two-Hand,0,198,0,222,122,0,0,0,0,114,0,0,0,Strength,8,Sword,991,"1,487",3.60,4,True
+833,"Oathbinder, Charge of the Ranger-General",50735,Two-Hand,0,0,179,195,114,0,228,0,122,0,0,0,0,Agility,8,Polearm,991,"1,487",3.60,4,True
+834,"Havoc's Call, Blade of Lordaeron Kings",50737,One-Hand,0,0,84,84,56,0,95,48,0,0,0,0,0,Agility,4,Axe,481,895,2.60,4,True
+835,"Mithrios, Bronzebeard's Legacy",50738,One-Hand,0,64,0,113,0,0,0,0,0,42,56,0,48,Stamina,6,Mace,296,551,1.60,4,True
+836,Bone Warden's Splitter,50759,One-Hand,0,0,62,62,0,0,82,41,41,0,0,0,0,Stamina,0,Axe,215,401,1.50,4,False
+837,Bonebreaker Scepter,50760,One-Hand,0,42,0,92,0,39,0,0,0,0,36,44,0,Stamina,0,Mace,244,454,1.70,4,False
+838,Citadel Enforcer's Claymore,50761,Two-Hand,0,156,0,164,76,103,0,0,0,0,0,0,0,Strength,4,Sword,727,"1,091",3.40,4,False
+839,Linked Scourge Vertebrae,50762,Waist,795,0,91,84,71,40,142,0,0,0,0,0,0,Attack Power,12,Non-Wep,0,0,0,4,False
+840,Marrowgar's Scratching Choker,50763,Neck,0,79,0,108,0,0,0,0,0,0,30,45,42,Stamina,6,Non-Wep,0,0,0,4,False
+841,Shawl of Nerubian Silk,50764,Back,169,0,72,61,0,41,122,0,0,56,0,0,0,Agility,4,Non-Wep,0,0,0,4,False
+842,Handgrips of Frost and Sleet,50777,Hands,883,0,91,84,0,55,142,0,49,0,0,0,0,Hit Rating,6,Non-Wep,0,0,0,4,False
+843,Soulthief's Braided Belt,50778,Waist,358,0,91,81,76,46,162,0,0,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,False
+844,Deathspeaker Zealot's Helm,50779,Head,2052,140,0,164,95,0,0,68,0,0,0,0,0,Critical Strike Rating,8,Non-Wep,0,0,0,4,False
+845,Chestguard of the Frigid Noose,50780,Chest,636,0,132,93,0,0,200,99,79,0,0,0,0,Agility,8,Non-Wep,0,0,0,4,False
+846,Ghoul Commander's Cuirass,50786,Chest,2526,144,0,179,0,0,0,0,0,0,81,42,76,Dodge Rating,8,Non-Wep,0,0,0,4,False
+847,Frost Giant's Cleaver,50787,One-Hand,0,0,62,47,45,0,94,0,35,0,0,0,0,Stamina,0,Axe,374,695,2.60,4,False
+848,Bone Drake's Enameled Boots,50788,Feet,1736,106,0,122,0,0,0,0,73,52,0,0,0,Strength,6,Non-Wep,0,0,0,4,False
+849,Icecrown Rampart Bracers,50789,Wrist,618,0,72,42,39,42,114,0,0,0,0,0,0,Agility,4,Non-Wep,0,0,0,4,False
+850,Abomination's Bloody Ring,50790,Finger,0,49,0,108,0,47,0,0,0,0,49,56,0,Stamina,6,Non-Wep,0,0,0,4,False
+851,Saronite Gargoyle Cloak,50791,Back,169,83,0,91,32,0,0,61,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,4,False
+852,Pauldrons of Lost Hope,50792,Shoulder,1060,0,107,84,0,0,112,44,62,0,0,0,0,Haste Rating,6,Non-Wep,0,0,0,4,False
+853,Ramaladni's Blade of Culling,50798,Two-Hand,0,148,0,164,0,0,0,0,83,91,0,0,0,Strength,6,Axe,748,"1,123",3.50,4,False
+854,Scourge Stranglers,50799,Hands,398,0,107,76,63,0,134,0,63,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,False
+855,Hauberk of a Thousand Cuts,50800,Chest,1413,0,72,113,96,64,255,0,0,0,0,0,0,Agility,8,Non-Wep,0,0,0,4,False
+856,Blade-Scored Carapace,50801,Chest,2526,152,0,164,72,0,0,84,0,0,0,0,0,Strength,8,Non-Wep,0,0,0,4,False
+857,Gargoyle Spit Bracers,50802,Wrist,1735,72,0,108,0,0,0,0,0,0,42,37,0,Stamina,6,Non-Wep,0,0,0,4,False
+858,Saurfang's Cold-Forged Band,50803,Finger,0,0,72,70,0,0,114,45,53,0,0,0,0,Attack Power,8,Non-Wep,0,0,0,4,False
+859,Deathforged Legplates,50808,Legs,2210,109,0,179,0,0,0,0,0,49,96,96,0,Stamina,12,Non-Wep,0,0,0,4,False
+860,Gutbuster,50810,One-Hand,0,0,47,47,42,39,123,0,0,0,0,0,0,Stamina,0,Mace,374,695,2.60,4,False
+861,Festering Fingerguards,50811,Hands,1579,106,0,122,0,71,0,0,0,55,0,0,0,Strength,6,Non-Wep,0,0,0,4,False
+862,Taldron's Long Neglected Boots,50812,Feet,972,0,91,84,33,0,153,0,62,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,False
+863,Precious's Putrid Collar,50852,Neck,0,0,72,64,0,55,119,43,0,0,0,0,0,Agility,4,Non-Wep,0,0,0,4,False
+864,Scourgelord Pauldrons,50853,Shoulder,1894,107,0,148,0,0,0,0,0,0,56,48,56,Stamina,6,Non-Wep,0,0,0,4,False
+865,Scourgelord Legguards,50854,Legs,2210,109,0,191,0,0,0,0,0,73,96,80,0,Stamina,9,Non-Wep,0,0,0,4,False
+866,Scourgelord Faceguard,50855,Head,2052,144,0,179,0,0,0,0,0,0,76,60,68,Stamina,12,Non-Wep,0,0,0,4,False
+867,Scourgelord Handguards,50856,Hands,2461,81,0,148,0,54,0,0,0,0,71,0,0,Stamina,6,Non-Wep,0,0,0,4,False
+868,Scourgelord Chestguard,50857,Chest,3590,144,0,191,0,0,0,0,0,0,0,60,76,Stamina,9,Non-Wep,0,0,0,4,False
+869,Plague-Soaked Leather Leggings,50858,Legs,557,0,144,144,72,0,143,96,0,0,0,0,0,Haste Rating,8,Non-Wep,0,0,0,4,False
+870,Cloak of Many Skins,50859,Back,169,72,0,108,0,0,0,0,0,0,45,37,42,Dodge Rating,4,Non-Wep,0,0,0,4,False
+871,Castle Breaker's Battleplate,50965,Chest,2641,161,0,185,84,0,0,0,108,0,0,0,0,Strength,8,Non-Wep,0,0,0,4,False
+872,Cataclysmic Chestguard,50968,Chest,3817,123,0,207,0,0,0,0,0,82,108,0,0,Stamina,12,Non-Wep,0,0,0,4,False
+873,Shadow Seeker's Tunic,50972,Chest,665,0,162,162,92,0,184,0,0,92,0,0,0,Agility,8,Non-Wep,0,0,0,4,False
+874,Gatecrasher's Gauntlets,50977,Hands,1650,121,0,137,80,0,0,0,64,0,0,0,0,Strength,6,Non-Wep,0,0,0,4,False
+875,Gauntlets of the Kraken,50978,Hands,2658,120,0,157,0,0,0,0,0,0,63,0,48,Stamina,9,Non-Wep,0,0,0,4,False
+876,Cat Burglar's Grips,50982,Hands,416,0,120,120,80,0,129,0,64,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,False
+877,Malevolent Girdle,50987,Waist,1485,121,0,137,83,60,0,0,0,0,0,0,0,Strength,6,Non-Wep,0,0,0,4,False
+878,Verdigris Chain Belt,50991,Waist,2143,120,0,157,0,0,0,0,0,0,63,0,63,Stamina,9,Non-Wep,0,0,0,4,False
+879,Vengeful Noose,50995,Waist,374,0,120,120,0,0,129,64,80,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,False
+880,Flesh-Shaper's Gurney Strap,51000,Waist,1421,106,0,122,0,55,0,0,71,0,0,0,0,Strength,6,Non-Wep,0,0,0,4,False
+881,Rotface's Rupturing Ring,51001,Finger,0,82,0,91,0,0,0,0,47,51,0,0,0,Armor Penetration Rating,4,Non-Wep,0,0,0,4,False
+882,Taldron's Short-Sighted Helm,51002,Head,1148,0,87,113,76,0,255,0,68,0,0,0,0,Agility,8,Non-Wep,0,0,0,4,False
+883,Abomination Knuckles,51003,Main Hand,0,0,62,47,0,0,94,44,36,0,0,0,0,Stamina,0,Fist Weapon,427,642,2.60,4,False
+884,The Facelifter,51010,One-Hand,0,44,0,92,0,0,0,0,0,36,41,0,41,Stamina,0,Sword,230,428,1.60,4,False
+885,Infected Choker,51012,Neck,0,83,0,91,55,0,0,0,0,43,0,0,0,Strength,4,Non-Wep,0,0,0,4,False
+886,Discarded Bag of Entrails,51013,Head,517,0,136,97,0,0,202,80,88,0,0,0,0,Armor Penetration Rating,8,Non-Wep,0,0,0,4,False
+887,Scalpel-Sharpening Shoulderguards,51014,Shoulder,1894,106,0,122,0,52,0,0,73,0,0,0,0,Strength,6,Non-Wep,0,0,0,4,False
+888,Shoulderpads of the Morbid Ritual,51015,Shoulder,1060,0,107,84,71,40,110,0,0,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,False
+889,Soulbreaker,51021,One-Hand,0,0,62,47,43,0,94,38,0,0,0,0,0,Stamina,0,Sword,374,695,2.60,4,False
+890,Hersir's Greatspear,51022,Two-Hand,0,0,97,109,0,53,287,0,109,0,0,0,0,Agility,6,Polearm,748,"1,123",3.50,4,False
+891,Taldaram's Soft Slippers,51023,Feet,437,0,91,94,55,0,153,0,71,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,False
+892,Thrice Fanged Signet,51024,Finger,0,83,0,91,45,0,0,53,0,0,0,0,0,Armor Penetration Rating,4,Non-Wep,0,0,0,4,False
+893,Battle-Maiden's Legguards,51025,Legs,2210,140,0,164,0,0,0,96,0,72,0,0,0,Strength,8,Non-Wep,0,0,0,4,False
+894,Sanctified Scourgelord Shoulderplates,51125,Shoulder,1980,129,0,137,80,0,0,0,72,0,0,0,0,Strength,4,Non-Wep,0,0,0,4,False
+895,Sanctified Scourgelord Legplates,51126,Legs,2310,169,0,185,108,0,0,0,0,92,0,0,0,Strength,6,Non-Wep,0,0,0,4,False
+896,Sanctified Scourgelord Helmet,51127,Head,2145,161,0,185,100,0,0,0,92,0,0,0,0,Strength,8,Non-Wep,0,0,0,4,False
+897,Sanctified Scourgelord Gauntlets,51128,Hands,1650,129,0,137,80,72,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,4,False
+898,Sanctified Scourgelord Battleplate,51129,Chest,2641,169,0,185,108,0,0,0,92,0,0,0,0,Strength,6,Non-Wep,0,0,0,4,False
+899,Sanctified Scourgelord Pauldrons,51130,Shoulder,1980,120,0,169,0,0,0,0,0,0,63,55,63,Stamina,6,Non-Wep,0,0,0,4,False
+900,Sanctified Scourgelord Legguards,51131,Legs,2310,123,0,219,0,0,0,0,0,82,108,92,0,Stamina,9,Non-Wep,0,0,0,4,False
+901,Sanctified Scourgelord Handguards,51132,Hands,2658,92,0,169,0,61,0,0,0,0,80,0,0,Stamina,6,Non-Wep,0,0,0,4,False
+902,Sanctified Scourgelord Faceguard,51133,Head,2145,162,0,207,0,0,0,0,0,0,85,69,77,Stamina,12,Non-Wep,0,0,0,4,False
+903,Sanctified Scourgelord Chestguard,51134,Chest,3831,162,0,219,0,0,0,0,0,0,0,69,85,Stamina,9,Non-Wep,0,0,0,4,False
+904,Sanctified Scourgelord Chestguard,51305,Chest,4100,183,0,251,0,0,0,0,0,0,0,80,96,Stamina,9,Non-Wep,0,0,0,4,True
+905,Sanctified Scourgelord Faceguard,51306,Head,2239,183,0,239,0,0,0,0,0,0,96,80,88,Stamina,12,Non-Wep,0,0,0,4,True
+906,Sanctified Scourgelord Handguards,51307,Hands,2871,103,0,192,0,69,0,0,0,0,90,0,0,Stamina,6,Non-Wep,0,0,0,4,True
+907,Sanctified Scourgelord Legguards,51308,Legs,2412,139,0,251,0,0,0,0,0,93,122,106,0,Stamina,9,Non-Wep,0,0,0,4,True
+908,Sanctified Scourgelord Pauldrons,51309,Shoulder,2067,136,0,192,0,0,0,0,0,0,71,63,71,Stamina,6,Non-Wep,0,0,0,4,True
+909,Sanctified Scourgelord Battleplate,51310,Chest,2756,193,0,209,122,0,0,0,106,0,0,0,0,Strength,6,Non-Wep,0,0,0,4,True
+910,Sanctified Scourgelord Gauntlets,51311,Hands,1723,147,0,155,90,82,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,4,True
+911,Sanctified Scourgelord Helmet,51312,Head,2239,185,0,209,114,0,0,0,106,0,0,0,0,Strength,8,Non-Wep,0,0,0,4,True
+912,Sanctified Scourgelord Legplates,51313,Legs,2412,193,0,209,122,0,0,0,0,106,0,0,0,Strength,6,Non-Wep,0,0,0,4,True
+913,Sanctified Scourgelord Shoulderplates,51314,Shoulder,2067,147,0,155,90,0,0,0,82,0,0,0,0,Strength,4,Non-Wep,0,0,0,4,True
+914,Blood-Drinker's Girdle,51325,Waist,795,0,91,84,0,0,142,44,71,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,False
+915,Wrathful Gladiator's Pendant of Sundering,51353,Neck,0,0,0,136,0,0,181,0,60,0,0,0,0,Stamina,0,Non-Wep,0,0,0,4,False
+916,Wrathful Gladiator's Cloak of Triumph,51354,Back,177,0,0,136,60,0,181,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,4,False
+917,Wrathful Gladiator's Pendant of Triumph,51355,Neck,0,0,0,136,60,0,181,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,4,False
+918,Wrathful Gladiator's Cloak of Victory,51356,Back,177,0,0,136,0,60,181,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,4,False
+919,Wrathful Gladiator's Pendant of Victory,51357,Neck,0,0,0,136,0,60,181,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,4,False
+920,Wrathful Gladiator's Band of Triumph,51358,Finger,0,0,0,136,60,0,181,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,4,False
+921,Wrathful Gladiator's Girdle of Triumph,51362,Waist,1485,112,0,181,72,0,0,0,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,4,False
+922,Wrathful Gladiator's Greaves of Triumph,51363,Feet,1815,112,0,181,72,0,0,0,0,0,0,0,0,Resilience Rating,4,Non-Wep,0,0,0,4,False
+923,Wrathful Gladiator's Bracers of Triumph,51364,Wrist,1155,90,0,136,60,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,4,False
+924,Spaulders of the Blood Princes,51383,Shoulder,1894,74,0,136,0,66,0,0,0,0,77,0,45,Parry Rating,6,Non-Wep,0,0,0,4,False
+925,Throatrender Handguards,51386,Hands,1579,106,0,122,0,71,0,55,0,0,0,0,0,Strength,6,Non-Wep,0,0,0,4,False
+926,Seal of the Twilight Queen,51387,Finger,0,0,72,70,45,0,114,53,0,0,0,0,0,Attack Power,8,Non-Wep,0,0,0,4,False
+927,Wrathful Gladiator's Dreadplate Gauntlets,51414,Hands,1684,119,0,191,77,0,50,0,0,0,0,0,0,Critical Strike Rating,4,Non-Wep,0,0,0,4,False
+928,Wrathful Gladiator's Dreadplate Legguards,51416,Legs,2357,155,0,257,98,0,50,0,0,0,0,0,0,Strength,6,Non-Wep,0,0,0,4,False
+929,Collar of Haughty Disdain,51548,Neck,0,83,0,91,55,0,0,43,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,4,False
+930,Ivory-Inlaid Leggings,51550,Legs,557,0,120,126,103,0,206,0,60,0,0,0,0,Agility,8,Non-Wep,0,0,0,4,False
+931,Veincrusher Gauntlets,51556,Hands,1579,76,0,136,0,0,0,0,0,62,71,55,0,Stamina,9,Non-Wep,0,0,0,4,False
+932,Oxheart,51562,Two-Hand,0,148,0,164,95,0,0,0,0,76,0,0,0,Strength,6,Mace,748,"1,123",3.50,4,False
+933,Taiga Bindings,51563,Wrist,1105,83,0,91,45,0,0,53,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,4,False
+934,Ironrope Belt of Ymirjar,51564,Waist,1421,81,0,136,0,54,0,0,0,0,76,0,46,Stamina,9,Non-Wep,0,0,0,4,False
+935,Skinned Whelp Shoulders,51565,Shoulder,477,0,91,81,55,0,162,0,71,0,0,0,0,Armor Penetration Rating,6,Non-Wep,0,0,0,4,False
+936,Legguards of the Twisted Dream,51566,Legs,1237,0,120,113,84,81,167,0,0,0,0,0,0,Attack Power,16,Non-Wep,0,0,0,4,False
+937,Rimetooth Pendant,51779,Neck,0,0,80,70,45,0,98,0,53,0,0,0,0,Agility,4,Non-Wep,0,0,0,4,False
+938,Etched Dragonbone Girdle,51782,Waist,1421,106,0,122,76,0,0,0,0,46,0,0,0,Strength,6,Non-Wep,0,0,0,4,False
+939,Vambraces of the Frost Wyrm Queen,51783,Wrist,278,0,80,70,53,0,98,45,0,0,0,0,0,Agility,4,Non-Wep,0,0,0,4,False
+940,Splintershard,51784,Off Hand,0,0,62,62,0,0,82,41,41,0,0,0,0,Stamina,0,Fist Weapon,215,401,1.50,4,False
+941,Wyrmwing Treads,51785,Feet,972,0,91,84,54,44,162,0,0,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,False
+942,Legplates of Aetheric Strife,51786,Legs,2210,140,0,164,72,0,0,0,96,0,0,0,0,Armor Penetration Rating,8,Non-Wep,0,0,0,4,False
+943,Scourge Fanged Stompers,51787,Feet,1736,81,0,136,0,38,0,0,0,0,62,76,0,Stamina,9,Non-Wep,0,0,0,4,False
+944,"Troggbane, Axe of the Frostborne King",51795,One-Hand,0,66,0,99,0,0,0,0,0,0,35,30,37,Stamina,0,Axe,242,451,1.60,4,False
+945,Warmace of Menethil,51796,Two-Hand,0,158,0,174,94,0,0,0,94,0,0,0,0,Strength,6,Mace,811,"1,217",3.60,4,False
+946,"Pugius, Fist of Defiance",51801,Main Hand,0,0,66,50,45,0,100,42,0,0,0,0,0,Stamina,0,Fist Weapon,450,676,2.60,4,False
+947,Scourge Fanged Stompers,51816,Feet,1815,92,0,157,0,45,0,0,0,0,70,86,0,Stamina,9,Non-Wep,0,0,0,4,True
+948,Legplates of Aetheric Strife,51817,Legs,2310,161,0,185,84,0,0,0,108,0,0,0,0,Armor Penetration Rating,8,Non-Wep,0,0,0,4,True
+949,Wyrmwing Treads,51818,Feet,1016,0,104,95,61,52,183,0,0,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,True
+950,Splintershard,51819,Off Hand,0,0,61,69,0,0,93,38,46,0,0,0,0,Agility,4,Fist Weapon,238,442,1.50,4,True
+951,Vambraces of the Frost Wyrm Queen,51820,Wrist,291,0,90,79,60,0,113,52,0,0,0,0,0,Agility,4,Non-Wep,0,0,0,4,True
+952,Etched Dragonbone Girdle,51821,Waist,1485,121,0,137,86,0,0,0,0,54,0,0,0,Strength,6,Non-Wep,0,0,0,4,True
+953,Rimetooth Pendant,51822,Neck,0,0,90,79,52,0,113,0,60,0,0,0,0,Agility,4,Non-Wep,0,0,0,4,True
+954,Legguards of the Twisted Dream,51829,Legs,1293,0,138,128,96,91,192,0,0,0,0,0,0,Attack Power,16,Non-Wep,0,0,0,4,True
+955,Skinned Whelp Shoulders,51830,Shoulder,499,0,104,92,64,0,183,0,80,0,0,0,0,Armor Penetration Rating,6,Non-Wep,0,0,0,4,True
+956,Ironrope Belt of Ymirjar,51831,Waist,1485,92,0,157,0,61,0,0,0,0,86,0,54,Stamina,9,Non-Wep,0,0,0,4,True
+957,Taiga Bindings,51832,Wrist,1155,95,0,103,52,0,0,60,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,4,True
+958,Oxheart,51833,Two-Hand,0,161,0,185,104,0,0,0,0,83,0,0,0,Strength,8,Mace,825,"1,238",3.50,4,True
+959,Veincrusher Gauntlets,51835,Hands,1650,86,0,157,0,0,0,0,0,70,80,64,0,Stamina,9,Non-Wep,0,0,0,4,True
+960,Ivory-Inlaid Leggings,51841,Legs,582,0,138,142,116,0,232,0,71,0,0,0,0,Agility,8,Non-Wep,0,0,0,4,True
+961,Collar of Haughty Disdain,51842,Neck,0,95,0,103,62,0,0,49,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,4,True
+962,Seal of the Twilight Queen,51843,Finger,0,0,82,79,52,0,129,60,0,0,0,0,0,Attack Power,8,Non-Wep,0,0,0,4,True
+963,Throatrender Handguards,51844,Hands,1650,121,0,137,0,80,0,64,0,0,0,0,0,Strength,6,Non-Wep,0,0,0,4,True
+964,Spaulders of the Blood Princes,51847,Shoulder,1980,84,0,157,0,74,0,0,0,0,87,0,53,Parry Rating,6,Non-Wep,0,0,0,4,True
+965,Blood-Drinker's Girdle,51853,Waist,831,0,104,95,0,0,161,52,80,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,True
+966,Battle-Maiden's Legguards,51854,Legs,2310,161,0,185,0,0,0,108,0,84,0,0,0,Strength,8,Non-Wep,0,0,0,4,True
+967,Thrice Fanged Signet,51855,Finger,0,95,0,103,52,0,0,60,0,0,0,0,0,Armor Penetration Rating,4,Non-Wep,0,0,0,4,True
+968,Taldaram's Soft Slippers,51856,Feet,457,0,104,106,64,0,172,0,80,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,True
+969,Hersir's Greatspear,51857,Two-Hand,0,0,105,123,0,52,324,0,123,0,0,0,0,Agility,8,Polearm,825,"1,238",3.50,4,True
+970,Soulbreaker,51858,One-Hand,0,0,61,53,40,0,106,43,0,0,0,0,0,Attack Power,8,Sword,412,766,2.60,4,True
+971,Shoulderpads of the Morbid Ritual,51864,Shoulder,1108,0,120,95,80,47,129,0,0,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,True
+972,Scalpel-Sharpening Shoulderguards,51865,Shoulder,1980,121,0,137,0,60,0,0,83,0,0,0,0,Strength,6,Non-Wep,0,0,0,4,True
+973,Discarded Bag of Entrails,51866,Head,540,0,154,111,0,0,230,92,100,0,0,0,0,Armor Penetration Rating,8,Non-Wep,0,0,0,4,True
+974,Infected Choker,51867,Neck,0,95,0,103,62,0,0,0,0,49,0,0,0,Strength,4,Non-Wep,0,0,0,4,True
+975,The Facelifter,51869,One-Hand,0,42,0,92,0,0,0,0,0,41,46,0,46,Dodge Rating,4,Sword,253,472,1.60,4,True
+976,Abomination Knuckles,51876,Main Hand,0,0,61,53,0,0,106,50,33,0,0,0,0,Agility,4,Fist Weapon,471,707,2.60,4,True
+977,Taldron's Short-Sighted Helm,51877,Head,1200,0,100,128,85,0,292,0,79,0,0,0,0,Agility,8,Non-Wep,0,0,0,4,True
+978,Rotface's Rupturing Ring,51878,Finger,0,95,0,103,0,0,0,0,54,57,0,0,0,Armor Penetration Rating,4,Non-Wep,0,0,0,4,True
+979,Flesh-Shaper's Gurney Strap,51879,Waist,1485,121,0,137,0,64,0,0,80,0,0,0,0,Strength,6,Non-Wep,0,0,0,4,True
+980,Cloak of Many Skins,51888,Back,177,82,0,124,0,0,0,0,0,0,51,42,48,Dodge Rating,4,Non-Wep,0,0,0,4,True
+981,Plague-Soaked Leather Leggings,51889,Legs,582,0,162,162,84,0,168,108,0,0,0,0,0,Haste Rating,8,Non-Wep,0,0,0,4,True
+982,Precious's Putrid Collar,51890,Neck,0,0,82,73,0,62,134,49,0,0,0,0,0,Agility,4,Non-Wep,0,0,0,4,True
+983,Taldron's Long Neglected Boots,51891,Feet,1016,0,104,95,40,0,172,0,70,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,True
+984,Festering Fingerguards,51892,Hands,1650,121,0,137,0,80,0,0,0,64,0,0,0,Strength,6,Non-Wep,0,0,0,4,True
+985,Gutbuster,51893,One-Hand,0,0,45,53,48,36,139,0,0,0,0,0,0,Critical Strike Rating,4,Mace,412,766,2.60,4,True
+986,Deathforged Legplates,51895,Legs,2310,123,0,207,0,0,0,0,0,58,108,108,0,Stamina,12,Non-Wep,0,0,0,4,True
+987,Saurfang's Cold-Forged Band,51900,Finger,0,0,82,79,0,0,129,52,60,0,0,0,0,Attack Power,8,Non-Wep,0,0,0,4,True
+988,Gargoyle Spit Bracers,51901,Wrist,1869,82,0,124,0,0,0,0,0,0,48,42,0,Stamina,6,Non-Wep,0,0,0,4,True
+989,Blade-Scored Carapace,51902,Chest,2641,173,0,185,84,0,0,96,0,0,0,0,0,Strength,8,Non-Wep,0,0,0,4,True
+990,Hauberk of a Thousand Cuts,51903,Chest,1477,0,84,128,108,73,292,0,0,0,0,0,0,Agility,8,Non-Wep,0,0,0,4,True
+991,Scourge Stranglers,51904,Hands,416,0,120,86,72,0,155,0,72,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,True
+992,Ramaladni's Blade of Culling,51905,Two-Hand,0,161,0,185,0,0,0,0,91,99,0,0,0,Strength,8,Axe,825,"1,238",3.50,4,True
+993,Pauldrons of Lost Hope,51911,Shoulder,1108,0,120,95,0,0,130,52,70,0,0,0,0,Haste Rating,6,Non-Wep,0,0,0,4,True
+994,Saronite Gargoyle Cloak,51912,Back,177,95,0,103,38,0,0,69,0,0,0,0,0,Strength,4,Non-Wep,0,0,0,4,True
+995,Abomination's Bloody Ring,51913,Finger,0,57,0,124,0,53,0,0,0,0,56,63,0,Stamina,6,Non-Wep,0,0,0,4,True
+996,Icecrown Rampart Bracers,51914,Wrist,646,0,82,71,45,48,129,0,0,0,0,0,0,Agility,4,Non-Wep,0,0,0,4,True
+997,Bone Drake's Enameled Boots,51915,Feet,1815,121,0,137,0,0,0,0,83,60,0,0,0,Strength,6,Non-Wep,0,0,0,4,True
+998,Frost Giant's Cleaver,51916,One-Hand,0,0,61,53,50,0,106,0,31,0,0,0,0,Attack Power,8,Axe,412,766,2.60,4,True
+999,Ghoul Commander's Cuirass,51917,Chest,2641,162,0,207,0,0,0,0,0,0,91,51,85,Dodge Rating,8,Non-Wep,0,0,0,4,True
+1000,Chestguard of the Frigid Noose,51923,Chest,665,0,150,107,0,0,228,111,91,0,0,0,0,Agility,8,Non-Wep,0,0,0,4,True
+1001,Deathspeaker Zealot's Helm,51924,Head,2145,161,0,185,108,0,0,79,0,0,0,0,0,Critical Strike Rating,8,Non-Wep,0,0,0,4,True
+1002,Soulthief's Braided Belt,51925,Waist,374,0,104,92,86,54,183,0,0,0,0,0,0,Agility,6,Non-Wep,0,0,0,4,True
+1003,Handgrips of Frost and Sleet,51926,Hands,923,0,104,95,0,64,161,0,56,0,0,0,0,Hit Rating,6,Non-Wep,0,0,0,4,True
+1004,Shawl of Nerubian Silk,51933,Back,177,0,82,69,0,48,137,0,0,63,0,0,0,Agility,4,Non-Wep,0,0,0,4,True
+1005,Marrowgar's Scratching Choker,51934,Neck,0,89,0,124,0,0,0,0,0,0,35,51,48,Stamina,6,Non-Wep,0,0,0,4,True
+1006,Linked Scourge Vertebrae,51935,Waist,831,0,104,95,80,47,161,0,0,0,0,0,0,Attack Power,12,Non-Wep,0,0,0,4,True
+1007,Citadel Enforcer's Claymore,51936,Two-Hand,0,169,0,185,79,116,0,0,0,0,0,0,0,Strength,6,Sword,801,"1,203",3.40,4,True
+1008,Bonebreaker Scepter,51937,One-Hand,0,48,0,92,0,44,0,0,0,0,41,42,0,Defense Rating,4,Mace,269,501,1.70,4,True
+1009,Bone Warden's Splitter,51938,One-Hand,0,0,61,69,0,0,93,46,38,0,0,0,0,Attack Power,8,Axe,238,442,1.50,4,True
+1010,"Pugius, Fist of Defiance",51941,Main Hand,0,0,66,56,51,0,113,39,0,0,0,0,0,Attack Power,8,Fist Weapon,497,746,2.60,4,True
+1011,Warmace of Menethil,51946,Two-Hand,0,173,0,197,103,0,0,0,103,0,0,0,0,Strength,8,Mace,895,"1,344",3.60,4,True
+1012,"Troggbane, Axe of the Frostborne King",51947,One-Hand,0,66,0,111,0,0,0,0,0,0,36,32,39,Stamina,6,Axe,267,498,1.60,4,True
+1013,Baltharus' Gift,53103,Neck,0,0,85,75,57,0,122,0,0,41,0,0,0,Agility,4,Non-Wep,0,0,0,5,False
+1014,Zarithrian's Offering,53110,Finger,0,89,0,97,57,0,0,0,49,0,0,0,0,Strength,4,Non-Wep,0,0,0,5,False
+1015,Scion's Treads,53111,Feet,1779,114,0,158,0,0,0,0,0,0,44,60,52,Stamina,9,Non-Wep,0,0,0,5,False
+1016,Bracers of the Heir,53112,Wrist,1132,89,0,97,57,0,0,0,49,0,0,0,0,Strength,4,Non-Wep,0,0,0,5,False
+1017,Twilight Scale Shoulders,53113,Shoulder,1086,0,98,90,0,0,153,48,66,0,0,0,0,Attack Power,12,Non-Wep,0,0,0,5,False
+1018,Gloaming Sark,53114,Chest,652,0,153,104,94,0,201,0,0,86,0,0,0,Agility,8,Non-Wep,0,0,0,5,False
+1019,Apocalypse's Advance,53125,Feet,1858,146,0,146,86,70,0,0,0,0,0,0,0,Strength,6,Non-Wep,0,0,0,5,False
+1020,Umbrage Armbands,53126,Wrist,298,0,96,96,64,0,96,64,0,0,0,0,0,Agility,4,Non-Wep,0,0,0,5,False
+1021,Returning Footfalls,53127,Feet,1040,0,128,101,86,0,139,0,51,0,0,0,0,Agility,6,Non-Wep,0,0,0,5,False
+1022,Treads of Impending Resurrection,53129,Feet,1858,128,0,180,0,0,0,0,0,0,59,59,59,Stamina,9,Non-Wep,0,0,0,5,False
+1023,Penumbra Pendant,53132,Neck,0,102,0,110,64,0,0,0,56,0,0,0,0,Strength,4,Non-Wep,0,0,0,5,False
+1024,Signet of Twilight,53133,Finger,0,0,96,96,64,48,128,0,0,0,0,0,0,Agility,4,Non-Wep,0,0,0,5,False
+1025,Baltharus' Gift,54557,Neck,0,0,96,84,64,0,138,0,0,48,0,0,0,Agility,4,Non-Wep,0,0,0,5,True
+1026,Bracers of the Heir,54559,Wrist,1182,102,0,110,64,0,0,0,56,0,0,0,0,Strength,4,Non-Wep,0,0,0,5,True
+1027,Gloaming Sark,54561,Chest,681,0,173,120,107,0,231,0,0,99,0,0,0,Agility,8,Non-Wep,0,0,0,5,True
+1028,Scion's Treads,54564,Feet,1858,128,0,180,0,0,0,0,0,0,51,67,59,Stamina,9,Non-Wep,0,0,0,5,True
+1029,Twilight Scale Shoulders,54566,Shoulder,1134,0,112,101,0,0,173,56,75,0,0,0,0,Attack Power,12,Non-Wep,0,0,0,5,True
+1030,Zarithrian's Offering,54567,Finger,0,102,0,110,64,0,0,0,56,0,0,0,0,Strength,4,Non-Wep,0,0,0,5,True
+1031,Sharpened Twilight Scale,54569,Trinket,0,0,0,0,0,0,0,0,163,0,0,0,0,Stamina,0,Non-Wep,0,0,0,5,False
+1032,Petrified Twilight Scale,54571,Trinket,2282,0,0,0,0,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,5,False
+1033,Signet of Twilight,54576,Finger,0,0,109,109,73,57,145,0,0,0,0,0,0,Agility,4,Non-Wep,0,0,0,5,True
+1034,Returning Footfalls,54577,Feet,1085,0,145,115,97,0,162,0,60,0,0,0,0,Agility,6,Non-Wep,0,0,0,5,True
+1035,Apocalypse's Advance,54578,Feet,1939,165,0,165,97,81,0,0,0,0,0,0,0,Strength,6,Non-Wep,0,0,0,5,True
+1036,Treads of Impending Resurrection,54579,Feet,1939,145,0,206,0,0,0,0,0,0,68,68,68,Stamina,9,Non-Wep,0,0,0,5,True
+1037,Umbrage Armbands,54580,Wrist,311,0,109,109,73,0,113,73,0,0,0,0,0,Agility,4,Non-Wep,0,0,0,5,True
+1038,Penumbra Pendant,54581,Neck,0,116,0,124,73,0,0,0,65,0,0,0,0,Strength,4,Non-Wep,0,0,0,5,True
+1039,Sharpened Twilight Scale,54590,Trinket,0,0,0,0,0,0,0,0,184,0,0,0,0,Stamina,0,Non-Wep,0,0,0,5,True
+1040,Petrified Twilight Scale,54591,Trinket,2576,0,0,0,0,0,0,0,0,0,0,0,0,Stamina,0,Non-Wep,0,0,0,5,True
