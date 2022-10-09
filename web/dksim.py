@@ -94,7 +94,7 @@ def mode_page():
 
 #TEST 
 @app.route("/test")
-def mode_page():
+def mode_page_test():
     return render_template('dk_website_tnew.html')
 
 @app.route("/loadgear", methods=["GET", "POST"])
