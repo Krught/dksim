@@ -884,4 +884,4 @@ Wrist,5,TRUE,Umbrage Armbands,Umbrage Armbands-H,54580,0,109,109,0,0,113,0,73,73
 Neck,5,TRUE,Penumbra Pendant,Penumbra Pendant-H,54581,116,0,124,0,0,0,0,73,0,65,0,0,0,0,0,,,,,4,Strength,FALSE,,,,,,,,,
 Trinket,5,TRUE,Sharpened Twilight Scale,Sharpened Twilight Scale-H,54590,0,0,0,0,0,0,0,0,0,184,0,0,0,0,0,,,,,0,Stamina,TRUE,Proc,Hit,35.00,1472,Attack Power,15,45,,
 Trinket,5,TRUE,Petrified Twilight Scale,Petrified Twilight Scale-H,54591,0,0,0,0,0,0,0,0,0,0,0,2576,0,0,0,,,,,0,Stamina,FALSE,,,,,,,,,
-Ring,1,FALSE,Ring of Ghoulish Glee,Ring of Ghoulish Glee,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Ring,1,FALSE,Ring of Ghoulish Glee,Ring of Ghoulish Glee,49121,0,33,50,0,0,100,29,36,0,0,0,0,0,0,0,0,0,0,0,0,,FALSE,,,,,,,,,
