@@ -8,12 +8,13 @@ Created on Fri Oct  7 16:35:13 2022
 def full_warrior_call(item_head = "", item_neck = "", item_shoulders = "", item_back = "", item_chest = "", item_wrist = "",item_gloves = "", item_waist = "", item_legs = "", item_boots = "", item_ring1 = "", item_ring2 = "", item_trinket1 = "", item_trinket2 = "", item_ranged = "", item_mh = "", item_oh = "", length_of_fight = 30, fight_length_variance = 1, amount_of_sims = 1, amount_of_targets = 1, target_level = 83, target_armor = 10000, fight_sub_20percent = 20, warrior_stance = 0, warrior_spec = 0, race_selection = 0, talent_url="https://www.wowhead.com/wotlk/talent-calc/warrior/01-324531100023012053122501051-230230005003", the_input_potion = "None", the_input_potion_timer = 5, the_input_flask = "None", the_input_food_selection = "None", dranei_in_party = False, raid_buff_horn_of_winter = False, raid_buff_improved_icy_talons = False, raid_buff_abomination_rage = False, raid_buff_ferocius_inspiration = False, raid_buff_imp_moonkin_form = False, raid_buff_blood_frenzy = False, raid_buff_expose_armor = False, raid_buff_curse_of_weakness = False, raid_buff_leader_of_the_pack = False, raid_buff_bloodlust = False, bloodlust_start_time = 10, personal_buff_hysteria = False, hysteria_start_time = 10, personal_buff_tricks_of_the_trade = False, tricks_start_time = 10, raid_buff_gift_of_the_wild = False, raid_buff_imp_gift_of_the_wild = 0, raid_buff_greater_blessing_of_kings = False, raid_buff_greater_blessing_of_might = False, raid_buff_imp_greater_blessing_of_might = False, raid_buff_heart_of_the_crusader = False, raid_buff_improved_scorch = False, raid_buff_imp_faerie_fire = False, raid_buff_curse_of_the_elements = False, raid_buff_moonkin_aura = False, personal_buff_orc_blood_fury = False, bloodfury_start_time = 10, personal_buff_troll_berserking_buff = False, berserking_start_time = 10, input_gem1 = "None", input_gem2 = "None", input_gem3 = "None", input_gem4 = "None", input_gem5 = "None", input_gem6 = "None", input_gem7 = "None", input_gem8 = "None", input_gem9 = "None", input_gem10 = "None", input_gem11 = "None", input_gem12 = "None", input_gem13 = "None", input_gem14 = "None", input_gem15 = "None", input_gem16 = "None", input_gem17 = "None", input_gem18 = "None", input_gem19 = "None", input_gem20 = "None", input_gem21 = "None", input_gem22 = "None", input_gem23 = "None", input_gem24 = "None", input_gem25 = "None", input_gem26 = "None", input_gem27 = "None", input_gem28 = "None", input_gem29 = "None", input_gem30 = "None", input_gem31 = "None", input_gem32 = "None", input_gem33 = "None", input_gem34 = "None", input_gem35 = "None", input_gem36 = "None", input_gem37 = "None", input_gem38 = "None", input_gem39 = "None", input_gem40 = "None", input_gem41 = "None", input_gem42 = "None", input_gem43 = "None", input_gem44 = "None", input_gem45 = "None", input_gem46 = "None", input_gem47 = "None", input_gem48 = "None", input_gem49 = "None", input_gem50 = "None", input_gem51 = "None", input_gem52 = "None", input_gem53 = "None", input_gem54 = "None", input_gem55 = "None", input_gem56 = "None", input_gem57 = "None", input_gem58 = "None", input_gem59 = "None", input_gem60 = "None", input_gem61 = "None", input_gem62 = "None", input_gem63 = "None", input_gem64 = "None", input_meta_gem1 = "None", input_socketbonus1 = False, input_socketbonus2 = False, input_socketbonus3 = False, input_socketbonus4 = False, input_socketbonus5 = False, input_socketbonus6 = False, input_socketbonus7 = False, input_socketbonus8 = False, input_socketbonus9 = False, input_socketbonus10 = False, input_socketbonus11 = False, input_socketbonus12 = False, input_socketbonus13 = False, input_socketbonus14 = False, input_socketbonus15 = False, input_socketbonus16 = False, input_mh_enchant = "None", input_oh_enchant = "None", input_head_enchant = "None", input_shoulder_enchant = "None", input_back_enchant = "None", input_chest_enchant = "None", input_wrist_enchant = "None", input_gloves_enchant = "None", input_legs_enchant = "None", input_boots_enchant = "None", input_ring1_enchant = "None", input_ring2_enchant = "None", raid_buff_crypt_fever = False, pre_pot_potion = False, tanking = False):
     import random
     import pandas as pd
+    #from war_attacks import bloodthirst, whirlwind, heroicstrike, cleave, execute, slam, rend, mortalstrike, overpower, shatteringthrow, sunderarmor, bladestorm, sweepingstrikes, thunderclap, bleeds, deepwounds
+    
     #Warrior Stance: 0 - Battle, 1 - Prot, 2 - Berserker
     #Warrior Specs: 0 - Arms, 1 - Fury, 2 - Prot
     #race selection: 0 = Human, 1 = Dwarf,  2 = Nightelf,  3 = Gnome  4 = Dranei
     #race selection: 5 = Orc,   6 = Undead, 7 = Tauren,    8 = Troll, 9 = Bloodelf #CAN'T BE BLOOD ELF AS WAR
 
-    #TODO: Check HP values, prob incorrect esp. w/ tauren
     base_race_stats = {"HP":(9621, 9651, 9611, 9581, 9611, 9641, 9541, 10047, 9631), "Strength":(184, 186, 181, 175, 185, 187, 173, 179, 185), "Agility":(113, 109, 118, 116, 110, 110, 111, 108, 115), "Stamina":(168, 171, 167, 164, 167, 170, 160, 170, 169), "Intel":(36, 35, 36, 42, 37, 33, 34, 31, 32), "Spirit":(63, 58, 59, 59, 61, 62, 64, 61, 60), "Armor":(226, 218, 236, 232, 220, 220, 222, 216, 230)}
     base_strength = base_race_stats["Strength"][race_selection]
     base_agility = base_race_stats["Agility"][race_selection]
@@ -50,42 +51,41 @@ def full_warrior_call(item_head = "", item_neck = "", item_shoulders = "", item_
     blood_talents = list(blood_talents)
     frost_talents = list(frost_talents)
     unholy_talents = list(unholy_talents)
-    if blood_talents_len < 28:
-        blood_talents_to_add = 28 - blood_talents_len
+    if blood_talents_len < 31:
+        blood_talents_to_add = 31 - blood_talents_len
         blood_talents_added = 0
         while blood_talents_added < blood_talents_to_add:
             blood_talents.append(0)
             blood_talents_added += 1
-    if frost_talents_len < 29:
-        frost_talents_to_add = 29 - frost_talents_len
+    if frost_talents_len < 27:
+        frost_talents_to_add = 27 - frost_talents_len
         frost_talents_added = 0
         while frost_talents_added < frost_talents_to_add:
             frost_talents.append(0)
             frost_talents_added += 1
-    if unholy_talents_len < 31:
-        unholy_talents_to_add = 31 - unholy_talents_len
+    if unholy_talents_len < 27:
+        unholy_talents_to_add = 27 - unholy_talents_len
         unholy_talents_added = 0
         while unholy_talents_added < unholy_talents_to_add:
             unholy_talents.append(0)
             unholy_talents_added += 1
-    total_gylph_check = ["1s9r", "1xv2", "1xv5", "1s85", "1sy8", "1xv6", "1s8q", "1xv7", "1s87", "1s9f", "1s91", "1s9d", "1s8j", "1s9y", "1xv4", "1s9h"]
+    total_gylph_check = ["1xtw", "1rzy", "1s0m", "1rzz", "1rzn", "1s00", "1s0j", "1s0h", "1rzm", "1rzw", "1xtx", "1s0g", "1s02", "1rqf", "22j4"]
     using_glyphs = []
-    glyph_horn_of_winter = False
-    glyph_dancing_rune_weapon = False
-    glyph_death_coil = False
-    glyph_death_and_decay = False
-    glyph_death_strike = False
-    glyph_pestilence_reset_diseases = False
-    glyph_frost_strike = False
-    glyph_howling_blast = False
-    glyph_frost_fever = False
-    glyph_obliterate = False
-    glyph_plague_strike = False
-    glyph_rune_strike = False
-    glyph_scourge_strike = False
-    glyph_ghoul = False
-    glyph_unholy_blight = False
-    glyph_of_bone_shield = 0
+    glyph_of_bladestorm = False
+    glyph_of_cleave = False
+    glyph_of_devastate = False
+    glyph_of_execute = False
+    glyph_of_heroic_strike = False
+    glyph_of_mortal_strike = False
+    glyph_overpower = False
+    glyph_of_rending = False
+    glyph_of_resonating_power = False
+    glyph_of_revenge = False
+    glyph_of_shockwave = False
+    glyph_of_sweeping_strikes = False
+    glyph_of_whirlwind = False
+    glyph_of_battle = False
+    glyph_of_command = False
     for possibly_glyphs in total_gylph_check:
         if glyphs.find(possibly_glyphs) > 0:
             using_glyphs.append(possibly_glyphs)
@@ -93,118 +93,129 @@ def full_warrior_call(item_head = "", item_neck = "", item_shoulders = "", item_
         amount_of_used_glyphs = len(using_glyphs)
         for possible_glyphs in using_glyphs:
             if possible_glyphs == total_gylph_check[0]:
-                glyph_horn_of_winter = True
+                glyph_of_bladestorm = True
             if possible_glyphs == total_gylph_check[1]:
-                glyph_dancing_rune_weapon = True
+                glyph_of_cleave = True
             if possible_glyphs == total_gylph_check[2]:
-                glyph_death_coil = True
+                glyph_of_devastate = True
             if possible_glyphs == total_gylph_check[3]:
-                glyph_death_and_decay = True
+                glyph_of_execute = True
             if possible_glyphs == total_gylph_check[4]:
-                glyph_death_strike = True
+                glyph_of_heroic_strike = True
             if possible_glyphs == total_gylph_check[5]:
-                glyph_pestilence_reset_diseases = True
+                glyph_of_mortal_strike = True
             if possible_glyphs == total_gylph_check[6]:
-                glyph_frost_strike = True
+                glyph_overpower = True
             if possible_glyphs == total_gylph_check[7]:
-                glyph_howling_blast = True
+                glyph_of_rending = True
             if possible_glyphs == total_gylph_check[8]:
-                glyph_frost_fever = True
+                glyph_of_resonating_power = True
             if possible_glyphs == total_gylph_check[9]:
-                glyph_obliterate = True
+                glyph_of_revenge = True
             if possible_glyphs == total_gylph_check[10]:
-                glyph_plague_strike = True
+                glyph_of_shockwave = True
             if possible_glyphs == total_gylph_check[11]:
-                glyph_rune_strike = True
+                glyph_of_sweeping_strikes = True
             if possible_glyphs == total_gylph_check[12]:
-                glyph_scourge_strike = True
+                glyph_of_whirlwind = True
             if possible_glyphs == total_gylph_check[13]:
-                glyph_ghoul = True
+                glyph_of_battle = True
             if possible_glyphs == total_gylph_check[14]:
-                glyph_unholy_blight = True
-            if possible_glyphs == total_gylph_check[15]:
-                glyph_of_bone_shield = 1
+                glyph_of_command = True
     
-    #Glyphs Here
-    pestilence_allow_reset = False
-    if glyph_pestilence_reset_diseases == True:
-        pestilence_allow_reset = True
-    if glyph_horn_of_winter == False:
-        horn_timer = 120
-    elif glyph_horn_of_winter == True:
-        horn_timer = 180
-    extra_obli_damage = False
-    if glyph_obliterate == True:
-        extra_obli_damage = True
-
 
     ##Talents
-    #Blood
-    subversion_points = float(blood_talents[1])
-    bladed_armor_points = float(blood_talents[3])
-    two_handed_weapon_blood_points = float(blood_talents[5])
-    dark_conviction_points = float(blood_talents[7])
-    death_rune_mastery_points = float(blood_talents[8])
-    blood_strikes_points = float(blood_talents[12])
-    veteran_of_the_third_war_points = float(blood_talents[13])
-    bloody_vengeance_points = float(blood_talents[15])
-    abominations_might_points = float(blood_talents[16])
-    bloodworms_points = float(blood_talents[17])
-    improved_death_strikes_points = float(blood_talents[20])
-    sudden_doom_points = float(blood_talents[21])
-    heart_strike_points = float(blood_talents[24])
-    might_of_mograine_points = float(blood_talents[25])
-    blood_gorged_points = float(blood_talents[26])
-    dancing_rune_weapon_points = float(blood_talents[27])
-    #Frost
-    improved_icy_touch_points = float(frost_talents[0])
-    runic_power_mastery_points = float(frost_talents[1])
-    toughness_points = float(frost_talents[2])
-    black_ice_points = float(frost_talents[4])
-    nerves_of_cold_steel = float(frost_talents[5] )
-    icy_talons_points = float(frost_talents[6])
-    annihilation_talent_points = float(frost_talents[8])
-    killing_machine_points = float(frost_talents[9])
-    chill_of_the_grave_points = float(frost_talents[10])
-    endless_winter_points = float(frost_talents[11])
-    glacier_rot_points = float(frost_talents[13])
-    deathchill_points = float(frost_talents[14])
-    improved_icy_talons_points = float(frost_talents[15])
-    merciless_combat_points = float(frost_talents[16] )
-    rime_points = float(frost_talents[17])
-    threat_of_thassarian_points = float(frost_talents[21]) 
-    blood_of_the_north_points = float(frost_talents[22]) 
-    unbreakable_armor_points = float(frost_talents[23])
-    frost_strike_points = float(frost_talents[25])
-    guile_of_gorefiend_points = float(frost_talents[26])
-    tundra_stalker_points = float(frost_talents[27]) 
-    howling_blast_points = float(frost_talents[28]) 
-    #Unholy
-    vicious_strikes_points = float(unholy_talents[0])
-    virtulence_points = float(unholy_talents[1])
-    epidemic_points = float(unholy_talents[3])
-    morbitity_points = float(unholy_talents[4])
-    ravenous_dead_points = float(unholy_talents[6])
-    outbreak_points = float(unholy_talents[7])
-    necrosis_points = float(unholy_talents[8])
-    corspe_explosion_points = float(unholy_talents[9])
-    bloodcaked_blades_points = float(unholy_talents[11])
-    night_of_the_dead_points = float(unholy_talents[12])
-    unholy_blight_points = float(unholy_talents[13])
-    impurity_points = float(unholy_talents[14])
-    dirge_points = float(unholy_talents[15])
-    reaping_points = float(unholy_talents[18])
-    master_of_ghouls_points = float(unholy_talents[19])
-    desolation_points = float(unholy_talents[20])
-    improved_unholy_presence_points = float(unholy_talents[22])
-    ghoul_frenzy_points = float(unholy_talents[23])
-    crypt_fever_points = float(unholy_talents[24])
-    bone_shield_points = float(unholy_talents[25])
-    wandering_plague_points = float(unholy_talents[26])
-    ebon_plaguebringer_points = float(unholy_talents[27])
-    scourge_strike_points = float(unholy_talents[28])
-    rage_of_rivendale_points = float(unholy_talents[29])
-    summon_gargoyle_points = float(unholy_talents[30])
+    #Arms (Blood)
+    imp_heroic_strike_points = 0 # float(blood_talents[0])
+    deflection_points = 0 # float(blood_talents[0])
+    imp_rend_points = 0 # float(blood_talents[0])
+    imp_charge_points = 0 # float(blood_talents[0])
+    iron_will_points = 0 # float(blood_talents[0])
+    tact_mastery_points = 0 # float(blood_talents[0])
+    imp_overpower_points = 0 # float(blood_talents[0])
+    anger_management_points = 0 # float(blood_talents[0])
+    impale_points = 0 # float(blood_talents[0])
+    deep_wounds_points = 0 # float(blood_talents[0])
+    two_handed_wep_spec_points = 0 # float(blood_talents[0])
+    taste_for_blood_points = 0 # float(blood_talents[0])
+    polearm_spec_points = 0 # float(blood_talents[0])
+    sweeping_strikes_points = 0 # float(blood_talents[0])
+    mace_spec_points = 0 # float(blood_talents[0])
+    sword_spec_points = 0 # float(blood_talents[0])
+    weapon_mastery_points = 0 # float(blood_talents[0])
+    imp_hamstring_points = 0 # float(blood_talents[0])
+    trauma_points = 0 # float(blood_talents[0])
+    second_wind_points = 0 # float(blood_talents[0])
+    mortal_strike_points = 0 # float(blood_talents[0])
+    strength_of_arms_points = 0 # float(blood_talents[0])
+    imp_slam_points = 0 # float(blood_talents[0])
+    juggernaut_points = 0 # float(blood_talents[0])
+    imp_mortal_strike_points = 0 # float(blood_talents[0])
+    unrelenting_assault_points = 0 # float(blood_talents[0])
+    sudden_death_points = 0 # float(blood_talents[0])
+    endless_rage_points = 0 # float(blood_talents[0])
+    blood_frenzy_points = 0 # float(blood_talents[0])
+    wrecking_crew_points = 0 # float(blood_talents[0])
+    bladestorm_points = 0 # float(blood_talents[0])
+
+    #Fury (Frost)
+    armored_to_the_teeth_points = 0 # float(frost_talents[0])
+    booming_voice_points = 0 # float(frost_talents[0])
+    cruelty_points = 0 # float(frost_talents[0])
+    imp_demo_shout_points = 0 # float(frost_talents[0])
+    unbridled_wrath_points = 0 # float(frost_talents[0])
+    imp_cleave_points = 0 # float(frost_talents[0])
+    piercing_howl_points = 0 # float(frost_talents[0])
+    blood_craze_points = 0 # float(frost_talents[0])
+    comanding_presence_points = 0 # float(frost_talents[0])
+    dual_wield_spec_points = 0 # float(frost_talents[0])
+    imp_execute_points = 0 # float(frost_talents[0])
+    enrage_points = 0 # float(frost_talents[0])
+    precision_points = 0 # float(frost_talents[0])
+    death_wish_points = 0 # float(frost_talents[0])
+    imp_intercept_points = 0 # float(frost_talents[0])
+    imp_berserker_rage_points = 0 # float(frost_talents[0])
+    flurry_points = 0 # float(frost_talents[0])
+    intensify_rage_points = 0 # float(frost_talents[0])
+    bloodthirst_points = 0 # float(frost_talents[0])
+    imp_whirlwind_points = 0 # float(frost_talents[0])
+    furious_attacks_points = 0 # float(frost_talents[0])
+    imp_berserker_stance_points = 0 # float(frost_talents[0])
+    heroic_fury_points = 0 # float(frost_talents[0])
+    rampage_points = 0 # float(frost_talents[0])
+    bloodsurge_points = 0 # float(frost_talents[0])
+    unending_fury_points = 0 # float(frost_talents[0])
+    titans_grip_points = 0 # float(frost_talents[0])
+
+    #Prot (Unholy)
+    imp_bloodrage_points = 0 # float(unholy_talents[0])
+    shield_spec_points = 0 # float(unholy_talents[0])
+    imp_thunderclap_points = 0 # float(unholy_talents[0])
+    incite_points = 0 # float(unholy_talents[0])
+    anticipation_points = 0 # float(unholy_talents[0])
+    last_stand_points = 0 # float(unholy_talents[0])
+    imp_revenge_points = 0 # float(unholy_talents[0])
+    shield_mastery_points = 0 # float(unholy_talents[0])
+    toughness_points = 0 # float(unholy_talents[0])
+    imp_shield_reflect_points = 0 # float(unholy_talents[0])
+    imp_disarm_points = 0 # float(unholy_talents[0])
+    puncture_points = 0 # float(unholy_talents[0])
+    imp_disciplines_points = 0 # float(unholy_talents[0])
+    concussion_blow_points = 0 # float(unholy_talents[0])
+    gag_order_points = 0 # float(unholy_talents[0])
+    one_handed_wep_spec_points = 0 # float(unholy_talents[0])
+    imp_defensive_stance_points = 0 # float(unholy_talents[0])
+    vigilance_points = 0 # float(unholy_talents[0])
+    focused_rage_points = 0 # float(unholy_talents[0])
+    vitality_points = 0 # float(unholy_talents[0])
+    safeguard_points = 0 # float(unholy_talents[0])
+    warbringer_points = 0 # float(unholy_talents[0])
+    devastate_points = 0 # float(unholy_talents[0])
+    critical_block_points = 0 # float(unholy_talents[0])
+    sword_and_board_points = 0 # float(unholy_talents[0])
+    damage_shield_points = 0 # float(unholy_talents[0])
+    shockwave_points = 0 # float(unholy_talents[0])
+
     
    
 
@@ -565,9 +576,10 @@ def full_warrior_call(item_head = "", item_neck = "", item_shoulders = "", item_
                 weapons_max_damage.append(current_i[weapons_max_damage_index])
                 weapons_speed.append(current_i[weapons_speed_index])
                 if weapons_item_slot[0] == "2handed":
-                    #I guess if titans grip is selected, then -1 to weapon_list?
                     weapon_list += 2
                     item_two_hand = True
+                    if titans_grip_points == 1:
+                        weapon_list -= 1
                 else:
                     item_two_hand = False
                     weapon_list += 1
@@ -766,7 +778,7 @@ def full_warrior_call(item_head = "", item_neck = "", item_shoulders = "", item_
 
 
 
-    #TODO: Redo the way stats are organized from here on out.
+
     top_str = sum(float(sub) for sub in gears_strength) + base_strength + gem_strength
     top_agi = sum(float(sub) for sub in gears_agility) + base_agility + gem_agility
     top_stam = sum(float(sub) for sub in gears_stamina) + base_stamina + gem_stamina
@@ -812,8 +824,12 @@ def full_warrior_call(item_head = "", item_neck = "", item_shoulders = "", item_
         trinket1_max_damage = current_i[trinket_max_damage_index]
         if len(trinket1_min_damage) > 1:
             trinket1_min_damage = int(float(trinket1_min_damage))
-        if len(trinket1_max_damage) > 1:
+        else:
+            trinket1_min_damage = int(float(0))
+        if len(trinket1_max_damage) > 2:
             trinket1_max_damage = int(float(trinket1_max_damage))
+        else:
+            trinket1_max_damage = int(float(0))
         trinket_1_use = True
     #Trinket 2 lookup here
     current_i = (((items_equipment_data[items_equipment_data['Name'] == gear[13]])))
@@ -831,8 +847,12 @@ def full_warrior_call(item_head = "", item_neck = "", item_shoulders = "", item_
         trinket2_max_damage = current_i[trinket_max_damage_index]
         if len(trinket2_min_damage) > 1:
             trinket2_min_damage = int(float(trinket2_min_damage))
-        if len(trinket2_max_damage) > 1:
+        else:
+            trinket2_min_damage = int(float(0))
+        if len(trinket2_max_damage) > 2:
             trinket2_max_damage = int(float(trinket2_max_damage))
+        else:
+            trinket2_max_damage = int(float(0))
         trinket_2_use = True
     ###END Trinket Lookup
     #Offcase Trinket Maker
@@ -844,11 +864,14 @@ def full_warrior_call(item_head = "", item_neck = "", item_shoulders = "", item_
 
     
 
-    #TODO: This might have to also be modified depending upon titan's grip and attack damage normalization
+
     if item_two_hand == True:
         attack_damage_normalization = 3.3
     elif item_two_hand == False:
         attack_damage_normalization = 2.4
+        
+    if titans_grip_points == 1:
+        item_two_hand = False
         
     #Dranei Race Bonuses
     if race_selection == 4:
@@ -1016,6 +1039,9 @@ def full_warrior_call(item_head = "", item_neck = "", item_shoulders = "", item_
     if raid_buff_imp_greater_blessing_of_might == True:
         top_ap += (550 * .25)
         
+    if titans_grip_points == 1:
+        start_increased_all_damage -= .1
+        
     ####
     var_crit_amount = 2.0
     ##
@@ -1026,50 +1052,7 @@ def full_warrior_call(item_head = "", item_neck = "", item_shoulders = "", item_
     input_gcd = 1.5
 
 
-    armor_penetration = (items_armor_pen_rating / 7) * 0.5
-    expertise_rating = items_expertise_rating # + depending upon if have a class/spec w/ extra expertise
     
-    
-    #Race Selection extra expertise bonuses
-    if race_selection == 0:
-        if weapons_type[0] == 'sword':
-            expertise_rating = expertise_rating + (3 * 7.9)
-        elif weapons_type[0] == 'mace':
-            expertise_rating = expertise_rating + (3 * 7.9)
-    if race_selection == 1:
-        if weapons_type[0] == 'mace':
-            expertise_rating = expertise_rating + (5 * 7.9)
-    if race_selection == 5:
-        if weapons_type[0] == 'axe':
-            expertise_rating = expertise_rating + (5 * 7.9)
-
-
-
-    #Expertise Math
-    total_expertise_rating = expertise_rating
-    total_expertise = total_expertise_rating / 7.9 ## Est number,this is the wrong number according to eighty upgrades?
-    if round(total_expertise) > total_expertise:
-        total_expertise = round(total_expertise) - 1
-    elif round(total_expertise) <= total_expertise:
-        total_expertise = round(total_expertise)
-    all_expertise = total_expertise
-    if all_expertise * .25 > 6.5:
-        all_expertise_dodge = 6.5
-    elif all_expertise * .25 <= 6.5:
-        all_expertise_dodge = all_expertise
-    all_expertise_parry = all_expertise
-    if all_expertise * .25 > 14.0:
-        all_expertise_parry = 14.0
-    elif all_expertise * .25 <= 14.0:
-        all_expertise_parry = all_expertise
-    
-    
-    total_crit_strike = items_crit_rating
-    total_agi = items_agility + base_agility
-    total_crit = (((total_agi / 62.5) + 3.188 + (total_crit_strike / 45.8)) / 100) + increased_crit
-    hit_from_gear = items_hit_rating
-    hit_from_other = 0
-    total_hp = (items_stamina * 10) + base_hp
 
     mh_input_lowend_weapon_damage = items_mh_lowend
     mh_input_topend_weapon_damage = items_mh_topend
@@ -1091,30 +1074,30 @@ def full_warrior_call(item_head = "", item_neck = "", item_shoulders = "", item_
     current_armor = target_current_armor
     
 
-    my_own_current_armor = items_armor + base_armor
+    my_own_current_armor = top_armor + base_armor
 
 
 
 
     #TODO: Possibly move this under the sim area, as a like 'last call' after all sims run, just reset sim and then add buffs and then record the data
-    export_hit = items_hit_rating #Correct
-    export_hit_perc = round((((export_hit +hit_from_other) * 30.5)/1000), 2) #Correct
-    export_crit = round((total_crit * 100), 2) 
-    export_crit_rating = total_crit_strike #Correct
-    export_strength = items_strength 
-    export_stamina = items_stamina  #Correct
-    export_hp = (export_stamina * 10) + base_hp #Correct
-    export_armor = my_own_current_armor #Possibly a 5% increase or something if matching all plate?
-    export_agi = total_agi
-    export_ap = current_ap
-    export_armor_pen = items_armor_pen_rating #Correct
-    export_armor_pen_perc =  armor_penetration #Correct
-    export_expertise = all_expertise #correct
-    export_expertise_rating = items_expertise_rating #Correct
-    export_haste = round((items_haste_rating / 25.21), 2) #Assuming Correct
-    export_haste_rating = items_haste_rating #Assuming Correct
-    raw_stat_string_sep = "*^*"
-    raw_stat_string = str(export_hit) + str(raw_stat_string_sep) + str(export_hit_perc) + str(raw_stat_string_sep) + str(export_crit) + str(raw_stat_string_sep) + str(export_crit_rating) + str(raw_stat_string_sep) + str(export_strength) + str(raw_stat_string_sep) + str(export_stamina) + str(raw_stat_string_sep) + str(export_hp) + str(raw_stat_string_sep) + str(export_armor) + str(raw_stat_string_sep) + str(export_agi) + str(raw_stat_string_sep) + str(export_ap) + str(raw_stat_string_sep) + str(export_armor_pen) + str(raw_stat_string_sep) + str(export_armor_pen_perc) + str(raw_stat_string_sep) + str(export_expertise) + str(raw_stat_string_sep) + str(export_expertise_rating) + str(raw_stat_string_sep) + str(export_haste) + str(raw_stat_string_sep) + str(export_haste_rating) + str(raw_stat_string_sep) + str(H2)
+    # export_hit = items_hit_rating #Correct
+    # export_hit_perc = round((((export_hit +hit_from_other) * 30.5)/1000), 2) #Correct
+    # export_crit = round((total_crit * 100), 2) 
+    # export_crit_rating = total_crit_strike #Correct
+    # export_strength = items_strength 
+    # export_stamina = items_stamina  #Correct
+    # export_hp = (export_stamina * 10) + base_hp #Correct
+    # export_armor = my_own_current_armor #Possibly a 5% increase or something if matching all plate?
+    # export_agi = total_agi
+    # export_ap = current_ap
+    # export_armor_pen = items_armor_pen_rating #Correct
+    # export_armor_pen_perc =  armor_penetration #Correct
+    # export_expertise = all_expertise #correct
+    # export_expertise_rating = items_expertise_rating #Correct
+    # export_haste = round((items_haste_rating / 25.21), 2) #Assuming Correct
+    # export_haste_rating = items_haste_rating #Assuming Correct
+    # raw_stat_string_sep = "*^*"
+    # raw_stat_string = str(export_hit) + str(raw_stat_string_sep) + str(export_hit_perc) + str(raw_stat_string_sep) + str(export_crit) + str(raw_stat_string_sep) + str(export_crit_rating) + str(raw_stat_string_sep) + str(export_strength) + str(raw_stat_string_sep) + str(export_stamina) + str(raw_stat_string_sep) + str(export_hp) + str(raw_stat_string_sep) + str(export_armor) + str(raw_stat_string_sep) + str(export_agi) + str(raw_stat_string_sep) + str(export_ap) + str(raw_stat_string_sep) + str(export_armor_pen) + str(raw_stat_string_sep) + str(export_armor_pen_perc) + str(raw_stat_string_sep) + str(export_expertise) + str(raw_stat_string_sep) + str(export_expertise_rating) + str(raw_stat_string_sep) + str(export_haste) + str(raw_stat_string_sep) + str(export_haste_rating) + str(raw_stat_string_sep) + str(H2)
 
 
     #Math Function Area
@@ -1435,15 +1418,15 @@ def full_warrior_call(item_head = "", item_neck = "", item_shoulders = "", item_
     # 7 = normal
 
     #Damage Reduction
-    def dam_reduc(curr_armor):
+    def dam_reduc(curr_armor, arp_pe):
         pen_cap = 400+85*target_level+4.5*85*(target_level-59)
         new_pen_cap = (curr_armor + pen_cap) / 3
         if new_pen_cap >= curr_armor:
-            curr_armor = curr_armor - (curr_armor * (armor_penetration/100))
+            curr_armor = curr_armor - (curr_armor * (arp_pe/100))
             if curr_armor < 0:
                 curr_armor = 0
         elif new_pen_cap < curr_armor:
-            curr_armor = curr_armor - (new_pen_cap * (armor_penetration/100))
+            curr_armor = curr_armor - (new_pen_cap * (arp_pe/100))
             if curr_armor < 0:
                 curr_armor = 0
         damage_reduction = (curr_armor / (curr_armor + 15232.5))
@@ -1451,12 +1434,13 @@ def full_warrior_call(item_head = "", item_neck = "", item_shoulders = "", item_
 
 
     #Calling Functions Area
-    mh_white_wep_roll = weapon_roll(mh_input_lowend_weapon_damage,mh_input_topend_weapon_damage)
-    mh_white_attack = white_attack(mh_white_wep_roll, mh_input_weapon_speed, current_ap)
-    oh_white_wep_roll = weapon_roll(oh_input_lowend_weapon_damage,oh_input_topend_weapon_damage)
-    oh_white_attack = white_attack(oh_white_wep_roll, oh_input_weapon_speed, current_ap)
+    # mh_white_wep_roll = weapon_roll(mh_input_lowend_weapon_damage,mh_input_topend_weapon_damage)
+    # mh_white_attack = white_attack(mh_white_wep_roll, mh_input_weapon_speed, current_ap)
+    # oh_white_wep_roll = weapon_roll(oh_input_lowend_weapon_damage,oh_input_topend_weapon_damage)
+    # oh_white_attack = white_attack(oh_white_wep_roll, oh_input_weapon_speed, current_ap)
 
     #Resetting Sim Lists Functions To 0
+    current_sim_number = 0
     sum_mh_white_attacks_list = []
     sum_oh_white_attacks_list = []
     sum_damage_list = []
@@ -1536,16 +1520,26 @@ def full_warrior_call(item_head = "", item_neck = "", item_shoulders = "", item_
         increased_physical_damage = start_increased_physical_damage
         used_gcd = False
         gcd = input_gcd
+        bonus_loop_expertise_rating = 0
+        bonus_loop_armor_pen_rating = 0
+        bonus_loop_crit_rating = 0
+        bonus_loop_agility = 0
+        bonus_loop_hit = 0
+        bonus_loop_hp = 0
+        bonus_loop_ap = 0
+        bonus_loop_haste_rating = 0
+        bonus_loop_str = 0
+        hit_from_other = 0
         if pre_pot_potion == True:
             if pot_of_speed == True:
-                if pot_of_speed_start_time < 120:
-                    pot_of_speed_start_time += 120
-                items_haste_rating = items_haste_rating + 500
+                if pot_of_speed_start_time < 60:
+                    pot_of_speed_start_time += 60
+                bonus_loop_haste_rating += 500
                 pre_pot_potion_used = True
             elif pot_of_wild_magic == True:
-                if pot_of_wild_magic_start_time < 120:
-                    pot_of_wild_magic_start_time += 120
-                total_crit = total_crit + ((200 / 45.8) / 100)
+                if pot_of_wild_magic_start_time < 60:
+                    pot_of_wild_magic_start_time += 60
+                bonus_loop_crit_rating += 200
                 pre_pot_potion_used = True
         #Actual Start of Sim
         while current_time < fight_length:
@@ -1566,6 +1560,1331 @@ def full_warrior_call(item_head = "", item_neck = "", item_shoulders = "", item_
             current_ap = (strtoap * 2) + top_ap + bonus_loop_ap
             if raid_buff_abomination_rage == True:
                 current_ap += current_ap * .1
+                
+                
+            #Straight Copied from above
+            armor_penetration = (top_armor_pen_rating + bonus_loop_armor_pen_rating / 7) * 0.5
+            expertise_rating = top_expertise_rating + bonus_loop_expertise_rating
+            
+            #Race Selection extra expertise bonuses
+            if race_selection == 0:
+                if weapons_type[0] == 'sword':
+                    expertise_rating = expertise_rating + (3 * 7.9)
+                elif weapons_type[0] == 'mace':
+                    expertise_rating = expertise_rating + (3 * 7.9)
+            if race_selection == 1:
+                if weapons_type[0] == 'mace':
+                    expertise_rating = expertise_rating + (5 * 7.9)
+            if race_selection == 5:
+                if weapons_type[0] == 'axe':
+                    expertise_rating = expertise_rating + (5 * 7.9)
+            #Expertise Math
+            total_expertise_rating = expertise_rating
+            total_expertise = total_expertise_rating / 7.9
+            if round(total_expertise) > total_expertise:
+                total_expertise = round(total_expertise) - 1
+            elif round(total_expertise) <= total_expertise:
+                total_expertise = round(total_expertise)
+            all_expertise = total_expertise
+            if all_expertise * .25 > 6.5:
+                all_expertise_dodge = 6.5
+            elif all_expertise * .25 <= 6.5:
+                all_expertise_dodge = all_expertise
+            all_expertise_parry = all_expertise
+            if all_expertise * .25 > 14.0:
+                all_expertise_parry = 14.0
+            elif all_expertise * .25 <= 14.0:
+                all_expertise_parry = all_expertise
+            total_crit_strike = top_crit_rating + bonus_loop_crit_rating
+            total_agi = top_agi + base_agility + bonus_loop_agility
+            total_crit = (((total_agi / 62.5) + 3.188 + (total_crit_strike / 45.8)) / 100) + increased_crit
+            hit_from_gear = top_hit_rating + bonus_loop_hit
+            total_hp = (top_stam * 10) + base_hp + bonus_loop_hp
+            total_haste_rating = top_haste_rating + bonus_loop_haste_rating
+            
+            #Use Bloodlust / Other Specials
+            if meta_as_bonus == True:
+                if meta_as_bonus_active == False:
+                    if meta_as_bonus_cd < current_time:
+                        meta_as_bonus_active = True
+                        meta_as_bonus_cd = current_time + 46
+                        meta_as_bonus_active_time = current_time + 6
+                        bonus_loop_haste_rating += 480
+                if meta_as_bonus_active == True:
+                    if meta_as_bonus_active_time < current_time:
+                        meta_as_bonus_active = False
+                        bonus_loop_haste_rating -= 480
+            if pre_pot_potion == True:
+                if current_time > 15:
+                    if pre_pot_potion_used == True:
+                        if pot_of_speed == True:
+                            bonus_loop_haste_rating -= 500
+                            pre_pot_potion_used = False
+                        elif pot_of_wild_magic == True:
+                            bonus_loop_crit_rating -= 200
+                            pre_pot_potion_used = False
+            if bloodlust_used == False:
+                if bloodlust_start_time <= current_time:
+                    bloodlust_used = True
+                    melee_haste_bonus3 = .3
+            if bloodlust_end == False:
+                if bloodlust_used == True:
+                    if bloodlust_start_time + 30 < current_time:
+                        melee_haste_bonus3 = 0
+                        bloodlust_end = True
+            if berserking_used == False:
+                if berserking_start_time_cd <= current_time:
+                    berserking_used = True
+                    melee_haste_bonus4 = .2
+            if berserking_used == True:
+                if berserking_start_time_cd + 10 < current_time:
+                    melee_haste_bonus4 = 0
+                    berserking_start_time_cd = berserking_start_time_cd + 170
+                    berserking_used = False
+            if bloodfury_used == False:
+                if bloodfury_start_time_cd <= current_time:
+                    bloodfury_used = True
+                    bonus_loop_ap += 322
+            if bloodfury_used == True:
+                if bloodfury_start_time_cd + 15 < current_time:
+                    bonus_loop_ap -= 322
+                    bloodfury_start_time_cd = bloodfury_start_time_cd + 105
+                    bloodfury_used = False
+            if hysteria_used == False:
+                if hysteria_start_time <= current_time:
+                    hysteria_used = True
+                    hysteria_active = True
+            if hysteria_end == False:
+                if hysteria_used == True:
+                    if hysteria_start_time + 30 < current_time:
+                        hysteria_end = True
+                        hysteria_active = False
+            if tricksoftt_used == False:
+                if tricks_start_time <= current_time:
+                    tricksoftt_used = True
+                    tricksoftt_active = True
+            if tricksoftt_end == False:
+                if tricksoftt_used == True:
+                    if tricks_start_time + 30 < current_time:
+                        tricksoftt_end = True
+                        tricksoftt_active = False
+            if pot_of_speed_used == False:
+                if pot_of_speed_start_time <= current_time:
+                    pot_of_speed_used = True
+                    pot_of_speed_active = True
+                    bonus_loop_haste_rating += 500
+            if pot_of_speed_end == False:
+                if pot_of_speed_used == True:
+                    if pot_of_speed_start_time + 15 < current_time:
+                        pot_of_speed_end = True
+                        pot_of_speed_active = False
+                        bonus_loop_haste_rating -= 500
+            if pot_of_wild_magic_used == False:
+                if pot_of_wild_magic_start_time <= current_time:
+                    pot_of_wild_magic_used = True
+                    pot_of_wild_magic_active = True
+                    bonus_loop_crit_rating += 200
+            if pot_of_wild_magic_end == False:
+                if pot_of_wild_magic_used == True:
+                    if pot_of_wild_magic_start_time + 15 < current_time:
+                        pot_of_wild_magic_end = True
+                        pot_of_wild_magic_active = False
+                        bonus_loop_crit_rating -= 200     
+            if engi_gloves_enchant == True:
+                if engi_gloves_enchant_cd < current_time:
+                    if engi_gloves_buff_active == False:
+                        rotation.append("Hyperspeed Acceleration")
+                        rotation_time.append(current_time)
+                        rotation_damage.append(0)
+                        rotation_status.append("Active")
+                        engi_gloves_enchant_cd += 60
+                        engi_gloves_enchant_active_timer += 12
+                        engi_gloves_buff_active = True
+                        bonus_loop_haste_rating += 340
+            if engi_gloves_enchant == True:
+                if engi_gloves_buff_active == True:
+                    if engi_gloves_enchant_active_timer < current_time:
+                        engi_gloves_buff_active = False
+                        bonus_loop_haste_rating -= 340
+            if swordguard_enchant == True:
+                if swordguard_enchant_cd < current_time:
+                    if trinket_hit_crit_tracker != 0:
+                        if random.randint(0, 100) < 25:
+                            if swordguard_buff_active == False:
+                                swordguard_buff_active = True
+                                rotation.append("Swordguard Embroidery")
+                                rotation_time.append(current_time)
+                                rotation_damage.append(0)
+                                rotation_status.append("Proc")
+                                swordguard_enchant_cd = current_time + 45
+                                swordguard_enchant_active_timer = current_time + 15
+                                bonus_loop_ap += 400      
+            if sword_berserking_enchant == True:
+                if sword_berserking_enchant_hand == "mh":
+                    if trinket_hit_crit_tracker != 0:
+                        if random.randint(0, 10000)/100 < ((mh_speed * 1.2 / 60)*100):
+                            berskering_buff_active = True
+                            rotation.append("Berskering Enchant")
+                            rotation_time.append(current_time)
+                            rotation_damage.append(0)
+                            rotation_status.append("Proc")
+                            berskering_enchant_active_timer = current_time + 15
+                            bonus_loop_ap += 400      
+            if fury_of_five_flights_using == True:
+                if trinket_hit_crit_tracker == 2 or trinket_hit_crit_tracker == 1:
+                    if fury_of_five_flights_stacks < 20:
+                        fury_of_five_flights_stacks += 1
+                        fury_of_five_flights_timer = current_time + 10
+                        bonus_loop_ap += 16
+                        rotation.append("Fury of the Five Flights")
+                        rotation_time.append(current_time)
+                        rotation_damage.append(0)
+                        rotation_status.append("Active")
+                    else:
+                        fury_of_five_flights_timer = current_time + 10
+                        rotation.append("Fury of the Five Flights")
+                        rotation_time.append(current_time)
+                        rotation_damage.append(0)
+                        rotation_status.append("Refresh")
+                        
+            
+                                    
+
+            #Remove Buffs
+            if swordguard_enchant == True:
+                if swordguard_buff_active == True:
+                    if swordguard_enchant_active_timer < current_time:
+                        swordguard_buff_active = False
+                        bonus_loop_ap -= 400
+            if sword_berserking_enchant == True:
+                if berskering_buff_active == True:
+                    if berskering_enchant_active_timer < current_time:
+                        berskering_buff_active = False
+                        bonus_loop_ap -= 400
+            if fury_of_five_flights_using == True:
+               if fury_of_five_flights_timer < current_time:
+                   if fury_of_five_flights_stacks > 0:
+                       bonus_loop_ap -= 16 * fury_of_five_flights_stacks
+                       fury_of_five_flights_stacks = 0
+                       rotation.append("Fury of the Five Flights")
+                       rotation_time.append(current_time)
+                       rotation_damage.append(0)
+                       rotation_status.append("Removed")
+                    
+            
+                        
+            #Remove Trinket Buffs Here
+            if trinket1_used == True: #Removing Trinket 1 Buff
+                if trinket1_buff_time < current_time:
+                    trinket1_used = False
+                    if trinket1_bonus_type == "Strength":
+                        bonus_loop_str -= float(trinket1_bonus_amount)
+                    elif trinket1_bonus_type == "Agility":
+                        bonus_loop_agility -= float(trinket1_bonus_amount)
+                    elif trinket1_bonus_type == "Stamina":
+                        bonus_loop_hp -= (float(trinket1_bonus_amount) * 10)
+                    elif trinket1_bonus_type == "Intelligence":
+                        print("Increased Intel") #Not even adding this
+                    elif trinket1_bonus_type == "Spirit":
+                        print("Increased Spirit") #Not even adding this
+                    elif trinket1_bonus_type == "Attack Power":
+                        bonus_loop_ap -= float(trinket1_bonus_amount)
+                    elif trinket1_bonus_type == "Hit Rating":
+                        bonus_loop_hit -= float(trinket1_bonus_amount)
+                    elif trinket1_bonus_type == "Crit Rating":
+                        bonus_loop_crit_rating -= float(trinket1_bonus_amount)
+                    elif trinket1_bonus_type == "Haste Rating":
+                        bonus_loop_haste_rating -= float(trinket1_bonus_amount)
+                    elif trinket1_bonus_type == "Armor Pen":
+                        bonus_loop_armor_pen_rating -= float(trinket1_bonus_amount)
+                    elif trinket1_bonus_type == "Expertise Rating":
+                        bonus_loop_expertise_rating -= float(trinket1_bonus_amount)
+                    elif trinket1_bonus_type == "Armor":
+                        print("Increased Armor") #To be added Later
+                    elif trinket1_bonus_type == "Defense Rating":
+                        print("Increase Defense Rating") #To be added Later
+                    elif trinket1_bonus_type == "Dodge Rating":
+                        print("Increased Dodge Rating") #To be added Later
+                    elif trinket1_bonus_type == "Parry Rating":
+                        print("Increased Parry Rating") #To be added Later
+            if trinket2_used == True: #Removing Trinket 2 Buff
+                if trinket2_buff_time < current_time:
+                    trinket2_used = False
+                    if trinket2_bonus_type == "Strength":
+                        bonus_loop_str -= float(trinket2_bonus_amount)
+                    elif trinket2_bonus_type == "Agility":
+                        bonus_loop_agility -= float(trinket2_bonus_amount)
+                    elif trinket2_bonus_type == "Stamina":
+                        bonus_loop_hp -= (float(trinket2_bonus_amount) * 10)
+                    elif trinket2_bonus_type == "Intelligence":
+                        print("Increased Intel") #Not even adding this
+                    elif trinket2_bonus_type == "Spirit":
+                        print("Increased Spirit") #Not even adding this
+                    elif trinket2_bonus_type == "Attack Power":
+                        bonus_loop_ap -= float(trinket2_bonus_amount)
+                    elif trinket2_bonus_type == "Hit Rating":
+                        bonus_loop_hit -= float(trinket2_bonus_amount)
+                    elif trinket2_bonus_type == "Crit Rating":
+                        bonus_loop_crit_rating -= float(trinket2_bonus_amount)
+                    elif trinket2_bonus_type == "Haste Rating":
+                        bonus_loop_haste_rating -= float(trinket2_bonus_amount)
+                    elif trinket2_bonus_type == "Armor Pen":
+                        bonus_loop_armor_pen_rating -= float(trinket2_bonus_amount)
+                    elif trinket2_bonus_type == "Expertise Rating":
+                        bonus_loop_expertise_rating -= float(trinket2_bonus_amount)
+                    elif trinket2_bonus_type == "Armor":
+                        print("Increased Armor") #To be added Later
+                    elif trinket2_bonus_type == "Defense Rating":
+                        print("Increase Defense Rating") #To be added Later
+                    elif trinket2_bonus_type == "Dodge Rating":
+                        print("Increased Dodge Rating") #To be added Later
+                    elif trinket2_bonus_type == "Parry Rating":
+                        print("Increased Parry Rating") #To be added Later
+            #Trinket Buff Check After Special Attacks
+            if trinket_1_use == True:
+                if trinket1_type == "Active":
+                    if trinket1_use_icd < current_time:
+                        trinket1_buff_time = current_time + float(trinket1_length)
+                        trinket1_use_icd = current_time + float(trinket1_icd)
+                        trinket1_used = True
+                        rotation.append(gear[12])
+                        rotation_status.append("Active")
+                        rotation_time.append(current_time)
+                        if trinket1_bonus_type == "Strength":
+                            bonus_loop_str += float(trinket1_bonus_amount)
+                        elif trinket1_bonus_type == "Agility":
+                            bonus_loop_agility += float(trinket1_bonus_amount)
+                        elif trinket1_bonus_type == "Stamina":
+                            bonus_loop_hp += (float(trinket1_bonus_amount) * 10)
+                        elif trinket1_bonus_type == "Intelligence":
+                            print("Increased Intel") #Not even adding this
+                        elif trinket1_bonus_type == "Spirit":
+                            print("Increased Spirit") #Not even adding this
+                        elif trinket1_bonus_type == "Attack Power":
+                            bonus_loop_ap += float(trinket1_bonus_amount)
+                        elif trinket1_bonus_type == "Hit Rating":
+                            bonus_loop_hit += float(trinket1_bonus_amount)
+                        elif trinket1_bonus_type == "Crit Rating":
+                            bonus_loop_crit_rating += float(trinket1_bonus_amount)
+                        elif trinket1_bonus_type == "Haste Rating":
+                            bonus_loop_hit += float(trinket1_bonus_amount)
+                        elif trinket1_bonus_type == "Armor Pen":
+                            bonus_loop_armor_pen_rating += float(trinket1_bonus_amount)
+                        elif trinket1_bonus_type == "Expertise Rating":
+                            bonus_loop_expertise_rating += float(trinket1_bonus_amount)
+                        elif trinket1_bonus_type == "Armor":
+                            print("Increased Armor") #To be added Later
+                        elif trinket1_bonus_type == "Defense Rating":
+                            print("Increase Defense Rating") #To be added Later
+                        elif trinket1_bonus_type == "Dodge Rating":
+                            print("Increased Dodge Rating") #To be added Later
+                        elif trinket1_bonus_type == "Parry Rating":
+                            print("Increased Parry Rating") #To be added Later
+                        elif trinket1_bonus_type == "Damage":
+                            trinket_bonus_damage = random.randint(trinket1_min_damage, trinket1_max_damage)
+                            rotation_damage.append(trinket_bonus_damage)
+                            trinket1_damage += trinket_bonus_damage
+                        if trinket1_bonus_type != "Damage":
+                            rotation_damage.append(0)
+                elif trinket1_type == "Proc":
+                    if trinket1_chanceon == "Hit":
+                        if trinket_hit_crit_tracker == 1 or trinket_hit_crit_tracker == 2: #trinket_hit_crit_tracker = 0 Null, 1 Hit, 2 Crit
+                            if trinket1_use_icd < current_time:
+                                atta_num = (random.randint(1, 100) / 100)
+                                if float(trinket1_chanceperc) > atta_num:
+                                    trinket1_use_icd = current_time + float(trinket1_icd)
+                                    trinket1_buff_time = current_time + float(trinket1_length)
+                                    trinket1_used = True
+                                    rotation.append(gear[12])
+                                    rotation_time.append(current_time)
+                                    rotation_status.append("Proc")
+                                    if trinket1_bonus_type == "Strength":
+                                        bonus_loop_str += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Agility":
+                                        bonus_loop_agility += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Stamina":
+                                        bonus_loop_hp += (float(trinket1_bonus_amount) * 10)
+                                    elif trinket1_bonus_type == "Intelligence":
+                                        print("Increased Intel") #Not even adding this
+                                    elif trinket1_bonus_type == "Spirit":
+                                        print("Increased Spirit") #Not even adding this
+                                    elif trinket1_bonus_type == "Attack Power":
+                                        bonus_loop_ap += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Hit Rating":
+                                        bonus_loop_hit += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Crit Rating":
+                                        bonus_loop_crit_rating += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Haste Rating":
+                                        bonus_loop_hit += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Armor Pen":
+                                        bonus_loop_armor_pen_rating += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Expertise Rating":
+                                        bonus_loop_expertise_rating += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Armor":
+                                        print("Increased Armor") #To be added Later
+                                    elif trinket1_bonus_type == "Defense Rating":
+                                        print("Increase Defense Rating") #To be added Later
+                                    elif trinket1_bonus_type == "Dodge Rating":
+                                        print("Increased Dodge Rating") #To be added Later
+                                    elif trinket1_bonus_type == "Parry Rating":
+                                        print("Increased Parry Rating") #To be added Later
+                                    elif trinket1_bonus_type == "Damage":
+                                        trinket_bonus_damage = random.randint(trinket1_min_damage, trinket1_max_damage)
+                                        rotation_damage.append(trinket_bonus_damage)
+                                        trinket1_damage += trinket_bonus_damage
+                                    if trinket1_bonus_type != "Damage":
+                                        rotation_damage.append(0)
+                    elif trinket1_chanceon == "Crit":
+                        if trinket_hit_crit_tracker == 2:
+                            if trinket1_use_icd < current_time:
+                                atta_num = (random.randint(1, 100) / 100)
+                                if float(trinket1_chanceperc) > atta_num:
+                                    trinket1_use_icd = current_time + float(trinket1_icd)
+                                    trinket1_buff_time = current_time + float(trinket1_length)
+                                    trinket1_used = True
+                                    rotation.append(gear[12])
+                                    rotation_time.append(current_time)
+                                    rotation_status.append("Proc")
+                                    if trinket1_bonus_type == "Strength":
+                                        bonus_loop_str += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Agility":
+                                        bonus_loop_agility += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Stamina":
+                                        bonus_loop_hp += (float(trinket1_bonus_amount) * 10)
+                                    elif trinket1_bonus_type == "Intelligence":
+                                        print("Increased Intel") #Not even adding this
+                                    elif trinket1_bonus_type == "Spirit":
+                                        print("Increased Spirit") #Not even adding this
+                                    elif trinket1_bonus_type == "Attack Power":
+                                        bonus_loop_ap += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Hit Rating":
+                                        bonus_loop_hit += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Crit Rating":
+                                        bonus_loop_crit_rating += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Haste Rating":
+                                        bonus_loop_hit += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Armor Pen":
+                                        bonus_loop_armor_pen_rating += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Expertise Rating":
+                                        bonus_loop_expertise_rating += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Armor":
+                                        print("Increased Armor") #To be added Later
+                                    elif trinket1_bonus_type == "Defense Rating":
+                                        print("Increase Defense Rating") #To be added Later
+                                    elif trinket1_bonus_type == "Dodge Rating":
+                                        print("Increased Dodge Rating") #To be added Later
+                                    elif trinket1_bonus_type == "Parry Rating":
+                                        print("Increased Parry Rating") #To be added Later
+                                    elif trinket1_bonus_type == "Damage":
+                                        trinket_bonus_damage = random.randint(trinket1_min_damage, trinket1_max_damage)
+                                        rotation_damage.append(trinket_bonus_damage)
+                                        trinket1_damage += trinket_bonus_damage
+                                    if trinket1_bonus_type != "Damage":
+                                        rotation_damage.append(0)
+            if trinket_2_use == True:
+                if trinket2_type == "Active":
+                    if trinket2_use_icd < current_time:
+                        trinket2_buff_time = current_time + float(trinket2_length)
+                        trinket2_use_icd = current_time + float(trinket2_icd)
+                        trinket2_used = True
+                        rotation.append(gear[13])
+                        rotation_time.append(current_time)
+                        rotation_status.append("Active")
+                        if trinket2_bonus_type == "Strength":
+                            bonus_loop_str += float(trinket2_bonus_amount)
+                        elif trinket2_bonus_type == "Agility":
+                            bonus_loop_agility += float(trinket2_bonus_amount)
+                        elif trinket2_bonus_type == "Stamina":
+                            bonus_loop_hp += (float(trinket2_bonus_amount) * 10)
+                        elif trinket2_bonus_type == "Intelligence":
+                            print("Increased Intel") #Not even adding this
+                        elif trinket2_bonus_type == "Spirit":
+                            print("Increased Spirit") #Not even adding this
+                        elif trinket2_bonus_type == "Attack Power":
+                            bonus_loop_ap += float(trinket2_bonus_amount)
+                        elif trinket2_bonus_type == "Hit Rating":
+                            bonus_loop_hit += float(trinket2_bonus_amount)
+                        elif trinket2_bonus_type == "Crit Rating":
+                            bonus_loop_crit_rating += float(trinket2_bonus_amount)
+                        elif trinket2_bonus_type == "Haste Rating":
+                            bonus_loop_hit += float(trinket2_bonus_amount)
+                        elif trinket2_bonus_type == "Armor Pen":
+                            bonus_loop_armor_pen_rating += float(trinket2_bonus_amount)
+                        elif trinket2_bonus_type == "Expertise Rating":
+                            bonus_loop_expertise_rating += float(trinket2_bonus_amount)
+                        elif trinket2_bonus_type == "Armor":
+                            print("Increased Armor") #To be added Later
+                        elif trinket2_bonus_type == "Defense Rating":
+                            print("Increase Defense Rating") #To be added Later
+                        elif trinket2_bonus_type == "Dodge Rating":
+                            print("Increased Dodge Rating") #To be added Later
+                        elif trinket2_bonus_type == "Parry Rating":
+                            print("Increased Parry Rating") #To be added Later
+                        elif trinket2_bonus_type == "Damage":
+                            trinket_bonus_damage = random.randint(trinket2_min_damage, trinket2_max_damage)
+                            rotation_damage.append(trinket_bonus_damage)
+                            trinket2_damage += trinket_bonus_damage
+                        if trinket2_bonus_type != "Damage":
+                            rotation_damage.append(0)
+                elif trinket2_type == "Proc":
+                    if trinket2_chanceon == "Hit":
+                        if trinket_hit_crit_tracker == 1 or trinket_hit_crit_tracker == 2: #trinket_hit_crit_tracker = 0 Null, 1 Hit, 2 Crit
+                            if trinket2_use_icd < current_time:
+                                atta_num = (random.randint(1, 100) / 100)
+                                if float(trinket2_chanceperc) > atta_num:
+                                    trinket2_use_icd = current_time + float(trinket2_icd)
+                                    trinket2_buff_time = current_time + float(trinket2_length)
+                                    trinket2_used = True
+                                    rotation.append(gear[13])
+                                    rotation_time.append(current_time)
+                                    rotation_status.append("Proc")
+                                    if trinket2_bonus_type == "Strength":
+                                        bonus_loop_str += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Agility":
+                                        bonus_loop_agility += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Stamina":
+                                        bonus_loop_hp += (float(trinket2_bonus_amount) * 10)
+                                    elif trinket2_bonus_type == "Intelligence":
+                                        print("Increased Intel") #Not even adding this
+                                    elif trinket2_bonus_type == "Spirit":
+                                        print("Increased Spirit") #Not even adding this
+                                    elif trinket2_bonus_type == "Attack Power":
+                                        bonus_loop_ap += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Hit Rating":
+                                        bonus_loop_hit += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Crit Rating":
+                                        bonus_loop_crit_rating += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Haste Rating":
+                                        bonus_loop_hit += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Armor Pen":
+                                        bonus_loop_armor_pen_rating += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Expertise Rating":
+                                        bonus_loop_expertise_rating += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Armor":
+                                        print("Increased Armor") #To be added Later
+                                    elif trinket2_bonus_type == "Defense Rating":
+                                        print("Increase Defense Rating") #To be added Later
+                                    elif trinket2_bonus_type == "Dodge Rating":
+                                        print("Increased Dodge Rating") #To be added Later
+                                    elif trinket2_bonus_type == "Parry Rating":
+                                        print("Increased Parry Rating") #To be added Later
+                                    elif trinket2_bonus_type == "Damage":
+                                        trinket_bonus_damage = random.randint(trinket2_min_damage, trinket2_max_damage)
+                                        rotation_damage.append(trinket_bonus_damage)
+                                        trinket2_damage += trinket_bonus_damage
+                                    if trinket2_bonus_type != "Damage":
+                                        rotation_damage.append(0)
+                    elif trinket2_chanceon == "Crit":
+                        if trinket_hit_crit_tracker == 2:
+                            if trinket2_use_icd < current_time:
+                                atta_num = (random.randint(1, 100) / 100)
+                                if float(trinket2_chanceperc) > atta_num:
+                                    trinket2_use_icd = current_time + float(trinket2_icd)
+                                    trinket2_buff_time = current_time + float(trinket2_length)
+                                    trinket2_used = True
+                                    rotation.append(gear[13])
+                                    rotation_time.append(current_time)
+                                    rotation_status.append("Proc")
+                                    if trinket2_bonus_type == "Strength":
+                                        bonus_loop_str += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Agility":
+                                        bonus_loop_agility += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Stamina":
+                                        bonus_loop_hp += (float(trinket2_bonus_amount) * 10)
+                                    elif trinket2_bonus_type == "Intelligence":
+                                        print("Increased Intel") #Not even adding this
+                                    elif trinket2_bonus_type == "Spirit":
+                                        print("Increased Spirit") #Not even adding this
+                                    elif trinket2_bonus_type == "Attack Power":
+                                        bonus_loop_ap += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Hit Rating":
+                                        bonus_loop_hit += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Crit Rating":
+                                        bonus_loop_crit_rating += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Haste Rating":
+                                        bonus_loop_hit += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Armor Pen":
+                                        bonus_loop_armor_pen_rating += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Expertise Rating":
+                                        bonus_loop_expertise_rating += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Armor":
+                                        print("Increased Armor") #To be added Later
+                                    elif trinket2_bonus_type == "Defense Rating":
+                                        print("Increase Defense Rating") #To be added Later
+                                    elif trinket2_bonus_type == "Dodge Rating":
+                                        print("Increased Dodge Rating") #To be added Later
+                                    elif trinket2_bonus_type == "Parry Rating":
+                                        print("Increased Parry Rating") #To be added Later
+                                    elif trinket2_bonus_type == "Damage":
+                                        trinket_bonus_damage = random.randint(trinket2_min_damage, trinket2_max_damage)
+                                        rotation_damage.append(trinket_bonus_damage)
+                                        trinket2_damage += trinket_bonus_damage
+                                    if trinket2_bonus_type != "Damage":
+                                        rotation_damage.append(0)
+            trinket_hit_crit_tracker = 0 #Resetting hit/crit tracker after both trinkets 
+            
+            #Auto attacks here
+            if last_mh_attack_time <= current_time:
+                mh_white_wep_roll = weapon_roll(mh_input_lowend_weapon_damage,mh_input_topend_weapon_damage)
+                haste_percentage = (total_haste_rating / 25.21) / 100 #Returns a result of 0 - 1 for 0% - 100%
+                mh_speed = mh_input_weapon_speed / (1 + haste_percentage) / (1 + melee_haste_bonus) / (1 + melee_haste_bonus2) / (1 + melee_haste_bonus3) / (1 + melee_haste_bonus4)
+                mh_white_attack = white_attack(mh_white_wep_roll, mh_input_weapon_speed, current_ap)
+                attack_table_results = attack_table(0, tanking, H2, True, False, increased_phy_crit)
+                armor_red_amount = dam_reduc(current_armor, armor_penetration)
+                if attack_table_results == 0:
+                    mh_white_attack = 0 #No Damage
+                    rotation.append("Main hand")
+                    rotation_time.append(last_mh_attack_time)
+                    rotation_status.append("Miss")
+                elif attack_table_results == 1: 
+                    mh_white_attack = 0 #No Damage
+                    rotation.append("Main hand")
+                    rotation_time.append(last_mh_attack_time)
+                    rotation_status.append("Dodge")
+                elif attack_table_results == 2: 
+                    mh_white_attack = 0 #No Damage
+                    rotation.append("Main hand")
+                    rotation_time.append(last_mh_attack_time)
+                    rotation_status.append("Parry")
+                elif attack_table_results == 3: 
+                    if target_level - 80 == 3:
+                        mh_white_attack = mh_white_attack - (mh_white_attack * .35) - ((mh_white_attack - (mh_white_attack * .35)) * armor_red_amount)
+                        trinket_hit_crit_tracker = 1
+                    elif target_level - 80 == 2:
+                        mh_white_attack = mh_white_attack - (mh_white_attack * .15) - ((mh_white_attack - (mh_white_attack * .15)) * armor_red_amount)
+                        trinket_hit_crit_tracker = 1
+                    else:
+                        mh_white_attack = mh_white_attack - (mh_white_attack * .05) - ((mh_white_attack - (mh_white_attack * .05)) * armor_red_amount)
+                        trinket_hit_crit_tracker = 1
+                    rotation.append("Main hand")
+                    rotation_time.append(last_mh_attack_time)
+                    rotation_status.append("Glance")
+                elif attack_table_results == 4:
+                    if target_level - 80 == 3:
+                        mh_white_attack = mh_white_attack - 119 - ((mh_white_attack - 119) * armor_red_amount)
+                        trinket_hit_crit_tracker = 1
+                    else:
+                        mh_white_attack = mh_white_attack - 72 - ((mh_white_attack - 72) * armor_red_amount)
+                        trinket_hit_crit_tracker = 1
+                    rotation.append("Main hand")
+                    rotation_time.append(last_mh_attack_time)
+                    rotation_status.append("Block")
+                elif attack_table_results == 5: 
+                    mh_white_attack = ((mh_white_attack) - (mh_white_attack * armor_red_amount)) * var_crit_amount
+                    trinket_hit_crit_tracker = 2
+                    rotation.append("Main hand")
+                    rotation_time.append(last_mh_attack_time)
+                    rotation_status.append("Crit")
+                elif attack_table_results == 7: 
+                    mh_white_attack = (mh_white_attack) - (mh_white_attack * armor_red_amount)
+                    trinket_hit_crit_tracker = 1
+                    rotation.append("Main hand")
+                    rotation_time.append(last_mh_attack_time)
+                    rotation_status.append("Hit")
+                if mh_white_attack < 0:
+                    mh_white_attack = 0
+                if hysteria_active == True:
+                    mh_white_attack = mh_white_attack + (mh_white_attack * .2)
+                if tricksoftt_active == True:
+                    mh_white_attack = mh_white_attack + (mh_white_attack * .15)
+                mh_white_attack = mh_white_attack + (mh_white_attack * increased_physical_damage) + (mh_white_attack * increased_all_damage)
+                sum_mh_white_attacks += mh_white_attack
+                rotation_damage.append(mh_white_attack)
+                last_mh_attack_time = last_mh_attack_time + (mh_speed) 
+            if swordguard_enchant == True:
+                if swordguard_enchant_cd < current_time:
+                    if trinket_hit_crit_tracker != 0:
+                        if random.randint(0, 100) < 25:
+                            if swordguard_buff_active == False:
+                                swordguard_buff_active = True
+                                rotation.append("Swordguard Embroidery")
+                                rotation_time.append(current_time)
+                                rotation_damage.append(0)
+                                rotation_status.append("Proc")
+                                swordguard_enchant_cd = current_time + 45
+                                swordguard_enchant_active_timer = current_time + 15
+                                bonus_loop_ap += 400    
+            if sword_berserking_enchant == True:
+                if sword_berserking_enchant_hand == "mh":
+                    if trinket_hit_crit_tracker != 0:
+                        if random.randint(0, 10000)/100 < ((mh_speed * 1.2 / 60)*100):
+                            berskering_buff_active = True
+                            rotation.append("Berskering Enchant")
+                            rotation_time.append(current_time)
+                            rotation_damage.append(0)
+                            rotation_status.append("Proc")
+                            berskering_enchant_active_timer = current_time + 15
+                            bonus_loop_ap += 400    
+            #Trinket Buff Check Between MH & OH Swing
+            if trinket_1_use == True:
+                if trinket1_type == "Active":
+                    if trinket1_use_icd < current_time:
+                        trinket1_buff_time = current_time + float(trinket1_length)
+                        trinket1_use_icd = current_time + float(trinket1_icd)
+                        trinket1_used = True
+                        rotation.append(gear[12])
+                        rotation_time.append(current_time)
+                        rotation_status.append("Active")
+                        if trinket1_bonus_type == "Strength":
+                            bonus_loop_str += float(trinket1_bonus_amount)
+                        elif trinket1_bonus_type == "Agility":
+                            bonus_loop_agility += float(trinket1_bonus_amount)
+                        elif trinket1_bonus_type == "Stamina":
+                            bonus_loop_hp += (float(trinket1_bonus_amount) * 10)
+                        elif trinket1_bonus_type == "Intelligence":
+                            print("Increased Intel") #Not even adding this
+                        elif trinket1_bonus_type == "Spirit":
+                            print("Increased Spirit") #Not even adding this
+                        elif trinket1_bonus_type == "Attack Power":
+                            bonus_loop_ap += float(trinket1_bonus_amount)
+                        elif trinket1_bonus_type == "Hit Rating":
+                            bonus_loop_hit += float(trinket1_bonus_amount)
+                        elif trinket1_bonus_type == "Crit Rating":
+                            bonus_loop_crit_rating += float(trinket1_bonus_amount)
+                        elif trinket1_bonus_type == "Haste Rating":
+                            bonus_loop_hit += float(trinket1_bonus_amount)
+                        elif trinket1_bonus_type == "Armor Pen":
+                            bonus_loop_armor_pen_rating += float(trinket1_bonus_amount)
+                        elif trinket1_bonus_type == "Expertise Rating":
+                            bonus_loop_expertise_rating += float(trinket1_bonus_amount)
+                        elif trinket1_bonus_type == "Armor":
+                            print("Increased Armor") #To be added Later
+                        elif trinket1_bonus_type == "Defense Rating":
+                            print("Increase Defense Rating") #To be added Later
+                        elif trinket1_bonus_type == "Dodge Rating":
+                            print("Increased Dodge Rating") #To be added Later
+                        elif trinket1_bonus_type == "Parry Rating":
+                            print("Increased Parry Rating") #To be added Later
+                        elif trinket1_bonus_type == "Damage":
+                            trinket_bonus_damage = random.randint(trinket1_min_damage, trinket1_max_damage)
+                            rotation_damage.append(trinket_bonus_damage)
+                            trinket1_damage += trinket_bonus_damage
+                        if trinket1_bonus_type != "Damage":
+                            rotation_damage.append(0)
+                elif trinket1_type == "Proc":
+                    if trinket1_chanceon == "Hit":
+                        if trinket_hit_crit_tracker == 1 or trinket_hit_crit_tracker == 2: #trinket_hit_crit_tracker = 0 Null, 1 Hit, 2 Crit
+                            if trinket1_use_icd < current_time:
+                                atta_num = (random.randint(1, 100) / 100)
+                                if float(trinket1_chanceperc) > atta_num:
+                                    trinket1_use_icd = current_time + float(trinket1_icd)
+                                    trinket1_buff_time = current_time + float(trinket1_length)
+                                    trinket1_used = True
+                                    rotation.append(gear[12])
+                                    rotation_time.append(current_time)
+                                    rotation_status.append("Proc")
+                                    if trinket1_bonus_type == "Strength":
+                                        bonus_loop_str += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Agility":
+                                        bonus_loop_agility += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Stamina":
+                                        bonus_loop_hp += (float(trinket1_bonus_amount) * 10)
+                                    elif trinket1_bonus_type == "Intelligence":
+                                        print("Increased Intel") #Not even adding this
+                                    elif trinket1_bonus_type == "Spirit":
+                                        print("Increased Spirit") #Not even adding this
+                                    elif trinket1_bonus_type == "Attack Power":
+                                        bonus_loop_ap += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Hit Rating":
+                                        bonus_loop_hit += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Crit Rating":
+                                        bonus_loop_crit_rating += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Haste Rating":
+                                        bonus_loop_hit += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Armor Pen":
+                                        bonus_loop_armor_pen_rating += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Expertise Rating":
+                                        bonus_loop_expertise_rating += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Armor":
+                                        print("Increased Armor") #To be added Later
+                                    elif trinket1_bonus_type == "Defense Rating":
+                                        print("Increase Defense Rating") #To be added Later
+                                    elif trinket1_bonus_type == "Dodge Rating":
+                                        print("Increased Dodge Rating") #To be added Later
+                                    elif trinket1_bonus_type == "Parry Rating":
+                                        print("Increased Parry Rating") #To be added Later
+                                    elif trinket1_bonus_type == "Damage":
+                                        trinket_bonus_damage = random.randint(trinket1_min_damage, trinket1_max_damage)
+                                        rotation_damage.append(trinket_bonus_damage)
+                                        trinket1_damage += trinket_bonus_damage
+                                    if trinket1_bonus_type != "Damage":
+                                        rotation_damage.append(0)
+                    elif trinket1_chanceon == "Crit":
+                        if trinket_hit_crit_tracker == 2:
+                            if trinket1_use_icd < current_time:
+                                atta_num = (random.randint(1, 100) / 100)
+                                if float(trinket1_chanceperc) > atta_num:
+                                    trinket1_use_icd = current_time + float(trinket1_icd)
+                                    trinket1_buff_time = current_time + float(trinket1_length)
+                                    trinket1_used = True
+                                    rotation.append(gear[12])
+                                    rotation_time.append(current_time)
+                                    rotation_status.append("Proc")
+                                    if trinket1_bonus_type == "Strength":
+                                        bonus_loop_str += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Agility":
+                                        bonus_loop_agility += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Stamina":
+                                        bonus_loop_hp += (float(trinket1_bonus_amount) * 10)
+                                    elif trinket1_bonus_type == "Intelligence":
+                                        print("Increased Intel") #Not even adding this
+                                    elif trinket1_bonus_type == "Spirit":
+                                        print("Increased Spirit") #Not even adding this
+                                    elif trinket1_bonus_type == "Attack Power":
+                                        bonus_loop_ap += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Hit Rating":
+                                        bonus_loop_hit += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Crit Rating":
+                                        bonus_loop_crit_rating += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Haste Rating":
+                                        bonus_loop_hit += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Armor Pen":
+                                        bonus_loop_armor_pen_rating += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Expertise Rating":
+                                        bonus_loop_expertise_rating += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Armor":
+                                        print("Increased Armor") #To be added Later
+                                    elif trinket1_bonus_type == "Defense Rating":
+                                        print("Increase Defense Rating") #To be added Later
+                                    elif trinket1_bonus_type == "Dodge Rating":
+                                        print("Increased Dodge Rating") #To be added Later
+                                    elif trinket1_bonus_type == "Parry Rating":
+                                        print("Increased Parry Rating") #To be added Later
+                                    elif trinket1_bonus_type == "Damage":
+                                        trinket_bonus_damage = random.randint(trinket1_min_damage, trinket1_max_damage)
+                                        rotation_damage.append(trinket_bonus_damage)
+                                        trinket1_damage += trinket_bonus_damage
+                                    if trinket1_bonus_type != "Damage":
+                                        rotation_damage.append(0)
+            if trinket_2_use == True:
+                if trinket2_type == "Active":
+                    if trinket2_use_icd < current_time:
+                        trinket2_buff_time = current_time + float(trinket2_length)
+                        trinket2_use_icd = current_time + float(trinket2_icd)
+                        trinket2_used = True
+                        rotation.append(gear[13])
+                        rotation_time.append(current_time)
+                        rotation_status.append("Active")
+                        if trinket2_bonus_type == "Strength":
+                            bonus_loop_str += float(trinket2_bonus_amount)
+                        elif trinket2_bonus_type == "Agility":
+                            bonus_loop_agility += float(trinket2_bonus_amount)
+                        elif trinket2_bonus_type == "Stamina":
+                            bonus_loop_hp += (float(trinket2_bonus_amount) * 10)
+                        elif trinket2_bonus_type == "Intelligence":
+                            print("Increased Intel") #Not even adding this
+                        elif trinket2_bonus_type == "Spirit":
+                            print("Increased Spirit") #Not even adding this
+                        elif trinket2_bonus_type == "Attack Power":
+                            bonus_loop_ap += float(trinket2_bonus_amount)
+                        elif trinket2_bonus_type == "Hit Rating":
+                            bonus_loop_hit += float(trinket2_bonus_amount)
+                        elif trinket2_bonus_type == "Crit Rating":
+                            bonus_loop_crit_rating += float(trinket2_bonus_amount)
+                        elif trinket2_bonus_type == "Haste Rating":
+                            bonus_loop_hit += float(trinket2_bonus_amount)
+                        elif trinket2_bonus_type == "Armor Pen":
+                            bonus_loop_armor_pen_rating += float(trinket2_bonus_amount)
+                        elif trinket2_bonus_type == "Expertise Rating":
+                            bonus_loop_expertise_rating += float(trinket2_bonus_amount)
+                        elif trinket2_bonus_type == "Armor":
+                            print("Increased Armor") #To be added Later
+                        elif trinket2_bonus_type == "Defense Rating":
+                            print("Increase Defense Rating") #To be added Later
+                        elif trinket2_bonus_type == "Dodge Rating":
+                            print("Increased Dodge Rating") #To be added Later
+                        elif trinket2_bonus_type == "Parry Rating":
+                            print("Increased Parry Rating") #To be added Later
+                        elif trinket2_bonus_type == "Damage":
+                            trinket_bonus_damage = random.randint(trinket2_min_damage, trinket2_max_damage)
+                            rotation_damage.append(trinket_bonus_damage)
+                            trinket2_damage += trinket_bonus_damage
+                        if trinket2_bonus_type != "Damage":
+                            rotation_damage.append(0)
+                elif trinket2_type == "Proc":
+                    if trinket2_chanceon == "Hit":
+                        if trinket_hit_crit_tracker == 1 or trinket_hit_crit_tracker == 2: #trinket_hit_crit_tracker = 0 Null, 1 Hit, 2 Crit
+                            if trinket2_use_icd < current_time:
+                                atta_num = (random.randint(1, 100) / 100)
+                                if float(trinket2_chanceperc) > atta_num:
+                                    trinket2_use_icd = current_time + float(trinket2_icd)
+                                    trinket2_buff_time = current_time + float(trinket2_length)
+                                    trinket2_used = True
+                                    rotation.append(gear[13])
+                                    rotation_time.append(current_time)
+                                    rotation_status.append("Proc")
+                                    if trinket2_bonus_type == "Strength":
+                                        bonus_loop_str += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Agility":
+                                        bonus_loop_agility += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Stamina":
+                                        bonus_loop_hp += (float(trinket2_bonus_amount) * 10)
+                                    elif trinket2_bonus_type == "Intelligence":
+                                        print("Increased Intel") #Not even adding this
+                                    elif trinket2_bonus_type == "Spirit":
+                                        print("Increased Spirit") #Not even adding this
+                                    elif trinket2_bonus_type == "Attack Power":
+                                        bonus_loop_ap += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Hit Rating":
+                                        bonus_loop_hit += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Crit Rating":
+                                        bonus_loop_crit_rating += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Haste Rating":
+                                        bonus_loop_hit += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Armor Pen":
+                                        bonus_loop_armor_pen_rating += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Expertise Rating":
+                                        bonus_loop_expertise_rating += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Armor":
+                                        print("Increased Armor") #To be added Later
+                                    elif trinket2_bonus_type == "Defense Rating":
+                                        print("Increase Defense Rating") #To be added Later
+                                    elif trinket2_bonus_type == "Dodge Rating":
+                                        print("Increased Dodge Rating") #To be added Later
+                                    elif trinket2_bonus_type == "Parry Rating":
+                                        print("Increased Parry Rating") #To be added Later
+                                    elif trinket2_bonus_type == "Damage":
+                                        trinket_bonus_damage = random.randint(trinket2_min_damage, trinket2_max_damage)
+                                        rotation_damage.append(trinket_bonus_damage)
+                                        trinket2_damage += trinket_bonus_damage
+                                    if trinket2_bonus_type != "Damage":
+                                        rotation_damage.append(0)
+                    elif trinket2_chanceon == "Crit":
+                        if trinket_hit_crit_tracker == 2:
+                            if trinket2_use_icd < current_time:
+                                atta_num = (random.randint(1, 100) / 100)
+                                if float(trinket2_chanceperc) > atta_num:
+                                    trinket2_use_icd = current_time + float(trinket2_icd)
+                                    trinket2_buff_time = current_time + float(trinket2_length)
+                                    trinket2_used = True
+                                    rotation.append(gear[13])
+                                    rotation_time.append(current_time)
+                                    rotation_status.append("Proc")
+                                    if trinket2_bonus_type == "Strength":
+                                        bonus_loop_str += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Agility":
+                                        bonus_loop_agility += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Stamina":
+                                        bonus_loop_hp += (float(trinket2_bonus_amount) * 10)
+                                    elif trinket2_bonus_type == "Intelligence":
+                                        print("Increased Intel") #Not even adding this
+                                    elif trinket2_bonus_type == "Spirit":
+                                        print("Increased Spirit") #Not even adding this
+                                    elif trinket2_bonus_type == "Attack Power":
+                                        bonus_loop_ap += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Hit Rating":
+                                        bonus_loop_hit += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Crit Rating":
+                                        bonus_loop_crit_rating += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Haste Rating":
+                                        bonus_loop_hit += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Armor Pen":
+                                        bonus_loop_armor_pen_rating += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Expertise Rating":
+                                        bonus_loop_expertise_rating += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Armor":
+                                        print("Increased Armor") #To be added Later
+                                    elif trinket2_bonus_type == "Defense Rating":
+                                        print("Increase Defense Rating") #To be added Later
+                                    elif trinket2_bonus_type == "Dodge Rating":
+                                        print("Increased Dodge Rating") #To be added Later
+                                    elif trinket2_bonus_type == "Parry Rating":
+                                        print("Increased Parry Rating") #To be added Later
+                                    elif trinket2_bonus_type == "Damage":
+                                        trinket_bonus_damage = random.randint(trinket2_min_damage, trinket2_max_damage)
+                                        rotation_damage.append(trinket_bonus_damage)
+                                        trinket2_damage += trinket_bonus_damage
+                                    if trinket2_bonus_type != "Damage":
+                                        rotation_damage.append(0)
+            trinket_hit_crit_tracker = 0 #Resetting hit/crit tracker after both trinkets
+            if H2 == False:
+                if last_oh_attack_time <= current_time:
+                    oh_white_wep_roll = weapon_roll(oh_input_lowend_weapon_damage,oh_input_topend_weapon_damage)
+                    haste_percentage = (total_haste_rating / 25.21) / 100 #Returns a result of 0 - 1 for 0% - 100%
+                    oh_speed = oh_input_weapon_speed / (1 + haste_percentage) / (1 + melee_haste_bonus) / (1 + melee_haste_bonus2) / (1 + melee_haste_bonus3) / (1 + melee_haste_bonus4)
+                    oh_white_attack = white_attack(oh_white_wep_roll, oh_input_weapon_speed, current_ap)
+                    attack_table_results = attack_table(0, tanking, H2, False, True, increased_phy_crit)
+                    armor_red_amount = dam_reduc(current_armor, armor_penetration)
+                    if attack_table_results == 0:
+                        oh_white_attack = 0 #No Damage
+                        rotation.append("Off hand")
+                        rotation_time.append(last_oh_attack_time)
+                        rotation_status.append("Miss")
+                    elif attack_table_results == 1: 
+                        oh_white_attack = 0 #No Damage
+                        rotation.append("Off hand")
+                        rotation_time.append(last_oh_attack_time)
+                        rotation_status.append("Dodge")
+                    elif attack_table_results == 2: 
+                        oh_white_attack = 0 #No Damage
+                        rotation.append("Off hand")
+                        rotation_time.append(last_oh_attack_time)
+                        rotation_status.append("Parry")
+                    elif attack_table_results == 3: 
+                        if target_level - 80 == 3:
+                            oh_white_attack = oh_white_attack - (oh_white_attack * .35) - ((oh_white_attack - (oh_white_attack * .35)) * armor_red_amount)
+                            trinket_hit_crit_tracker = 1
+                        elif target_level - 80 == 2:
+                            oh_white_attack = oh_white_attack - (oh_white_attack * .15) - ((oh_white_attack - (oh_white_attack * .15)) * armor_red_amount)
+                            trinket_hit_crit_tracker = 1
+                        else:
+                            oh_white_attack = oh_white_attack - (oh_white_attack * .05) - ((oh_white_attack - (oh_white_attack * .05)) * armor_red_amount)
+                            trinket_hit_crit_tracker = 1
+                        rotation.append("Off hand")
+                        rotation_time.append(last_oh_attack_time)
+                        rotation_status.append("Glance")
+                    elif attack_table_results == 4:
+                        if target_level - 80 == 3:
+                            oh_white_attack = oh_white_attack - 119 - ((oh_white_attack - 119) * armor_red_amount)
+                            trinket_hit_crit_tracker = 1
+                        else:
+                            oh_white_attack = oh_white_attack - 72 - ((oh_white_attack - 72) * armor_red_amount)
+                            trinket_hit_crit_tracker = 1
+                        rotation.append("Off hand")
+                        rotation_time.append(last_oh_attack_time)
+                        rotation_status.append("Block")
+                    elif attack_table_results == 5: 
+                        oh_white_attack = ((oh_white_attack) - (oh_white_attack * armor_red_amount)) * var_crit_amount
+                        trinket_hit_crit_tracker = 2
+                        rotation.append("Off hand")
+                        rotation_time.append(last_oh_attack_time)
+                        rotation_status.append("Crit")
+                    elif attack_table_results == 7: 
+                        oh_white_attack = (oh_white_attack) - (oh_white_attack * armor_red_amount)
+                        trinket_hit_crit_tracker = 1
+                        rotation.append("Off hand")
+                        rotation_time.append(last_oh_attack_time)
+                        rotation_status.append("Hit")
+                    if oh_white_attack < 0:
+                        oh_white_attack = 0
+                    if hysteria_active == True:
+                        oh_white_attack = oh_white_attack + (oh_white_attack * .2)
+                    if tricksoftt_active == True:
+                        oh_white_attack = oh_white_attack + (oh_white_attack * .15)
+                    oh_white_attack = oh_white_attack + (oh_white_attack * increased_physical_damage) + (oh_white_attack * increased_all_damage)
+                    sum_oh_white_attacks += oh_white_attack
+                    rotation_damage.append(oh_white_attack)
+                    last_oh_attack_time = last_oh_attack_time + (oh_speed)
+            if swordguard_enchant == True:
+                if swordguard_enchant_cd < current_time:
+                    if trinket_hit_crit_tracker != 0:
+                        if random.randint(0, 100) < 25:
+                            if swordguard_buff_active == False:
+                                swordguard_buff_active = True
+                                rotation.append("Swordguard Embroidery")
+                                rotation_time.append(current_time)
+                                rotation_damage.append(0)
+                                rotation_status.append("Proc")
+                                swordguard_enchant_cd = current_time + 45
+                                swordguard_enchant_active_timer = current_time + 15
+                                bonus_loop_ap += 400    
+            if sword_berserking_enchant == True:
+                if sword_berserking_enchant_hand_o == "oh":
+                    if trinket_hit_crit_tracker != 0:
+                        if random.randint(0, 10000)/100 < ((oh_speed * 1.2 / 60)*100):
+                            berskering_buff_active = True
+                            rotation.append("Berskering Enchant")
+                            rotation_time.append(current_time)
+                            rotation_damage.append(0)
+                            rotation_status.append("Proc")
+                            berskering_enchant_active_timer = current_time + 15
+                            bonus_loop_ap += 400    
+            #Use Trinket After OH Swing
+            if trinket_1_use == True:
+                if trinket1_type == "Active":
+                    if trinket1_use_icd < current_time:
+                        trinket1_buff_time = current_time + float(trinket1_length)
+                        trinket1_use_icd = current_time + float(trinket1_icd)
+                        trinket1_used = True
+                        rotation.append(gear[12])
+                        rotation_time.append(current_time)
+                        rotation_status.append("Active")
+                        if trinket1_bonus_type == "Strength":
+                            bonus_loop_str += float(trinket1_bonus_amount)
+                        elif trinket1_bonus_type == "Agility":
+                            bonus_loop_agility += float(trinket1_bonus_amount)
+                        elif trinket1_bonus_type == "Stamina":
+                            bonus_loop_hp += (float(trinket1_bonus_amount) * 10)
+                        elif trinket1_bonus_type == "Intelligence":
+                            print("Increased Intel") #Not even adding this
+                        elif trinket1_bonus_type == "Spirit":
+                            print("Increased Spirit") #Not even adding this
+                        elif trinket1_bonus_type == "Attack Power":
+                            bonus_loop_ap += float(trinket1_bonus_amount)
+                        elif trinket1_bonus_type == "Hit Rating":
+                            bonus_loop_hit += float(trinket1_bonus_amount)
+                        elif trinket1_bonus_type == "Crit Rating":
+                            bonus_loop_crit_rating += float(trinket1_bonus_amount)
+                        elif trinket1_bonus_type == "Haste Rating":
+                            bonus_loop_hit += float(trinket1_bonus_amount)
+                        elif trinket1_bonus_type == "Armor Pen":
+                            bonus_loop_armor_pen_rating += float(trinket1_bonus_amount)
+                        elif trinket1_bonus_type == "Expertise Rating":
+                            bonus_loop_expertise_rating += float(trinket1_bonus_amount)
+                        elif trinket1_bonus_type == "Armor":
+                            print("Increased Armor") #To be added Later
+                        elif trinket1_bonus_type == "Defense Rating":
+                            print("Increase Defense Rating") #To be added Later
+                        elif trinket1_bonus_type == "Dodge Rating":
+                            print("Increased Dodge Rating") #To be added Later
+                        elif trinket1_bonus_type == "Parry Rating":
+                            print("Increased Parry Rating") #To be added Later
+                        elif trinket1_bonus_type == "Damage":
+                            trinket_bonus_damage = random.randint(trinket1_min_damage, trinket1_max_damage)
+                            rotation_damage.append(trinket_bonus_damage)
+                            trinket1_damage += trinket_bonus_damage
+                        if trinket1_bonus_type != "Damage":
+                            rotation_damage.append(0)
+                elif trinket1_type == "Proc":
+                    if trinket1_chanceon == "Hit":
+                        if trinket_hit_crit_tracker == 1 or trinket_hit_crit_tracker == 2: #trinket_hit_crit_tracker = 0 Null, 1 Hit, 2 Crit
+                            if trinket1_use_icd < current_time:
+                                atta_num = (random.randint(1, 100) / 100)
+                                if float(trinket1_chanceperc) > atta_num:
+                                    trinket1_use_icd = current_time + float(trinket1_icd)
+                                    trinket1_buff_time = current_time + float(trinket1_length)
+                                    trinket1_used = True
+                                    rotation.append(gear[12])
+                                    rotation_time.append(current_time)
+                                    rotation_status.append("Proc")
+                                    if trinket1_bonus_type == "Strength":
+                                        bonus_loop_str += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Agility":
+                                        bonus_loop_agility += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Stamina":
+                                        bonus_loop_hp += (float(trinket1_bonus_amount) * 10)
+                                    elif trinket1_bonus_type == "Intelligence":
+                                        print("Increased Intel") #Not even adding this
+                                    elif trinket1_bonus_type == "Spirit":
+                                        print("Increased Spirit") #Not even adding this
+                                    elif trinket1_bonus_type == "Attack Power":
+                                        bonus_loop_ap += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Hit Rating":
+                                        bonus_loop_hit += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Crit Rating":
+                                        bonus_loop_crit_rating += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Haste Rating":
+                                        bonus_loop_hit += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Armor Pen":
+                                        bonus_loop_armor_pen_rating += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Expertise Rating":
+                                        bonus_loop_expertise_rating += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Armor":
+                                        print("Increased Armor") #To be added Later
+                                    elif trinket1_bonus_type == "Defense Rating":
+                                        print("Increase Defense Rating") #To be added Later
+                                    elif trinket1_bonus_type == "Dodge Rating":
+                                        print("Increased Dodge Rating") #To be added Later
+                                    elif trinket1_bonus_type == "Parry Rating":
+                                        print("Increased Parry Rating") #To be added Later
+                                    elif trinket1_bonus_type == "Damage":
+                                        trinket_bonus_damage = random.randint(trinket1_min_damage, trinket1_max_damage)
+                                        rotation_damage.append(trinket_bonus_damage)
+                                        trinket1_damage += trinket_bonus_damage
+                                    if trinket1_bonus_type != "Damage":
+                                        rotation_damage.append(0)
+                    elif trinket1_chanceon == "Crit":
+                        if trinket_hit_crit_tracker == 2:
+                            if trinket1_use_icd < current_time:
+                                atta_num = (random.randint(1, 100) / 100)
+                                if float(trinket1_chanceperc) > atta_num:
+                                    trinket1_use_icd = current_time + float(trinket1_icd)
+                                    trinket1_buff_time = current_time + float(trinket1_length)
+                                    trinket1_used = True
+                                    rotation.append(gear[12])
+                                    rotation_time.append(current_time)
+                                    rotation_status.append("Proc")
+                                    if trinket1_bonus_type == "Strength":
+                                        bonus_loop_str += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Agility":
+                                        bonus_loop_agility += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Stamina":
+                                        bonus_loop_hp += (float(trinket1_bonus_amount) * 10)
+                                    elif trinket1_bonus_type == "Intelligence":
+                                        print("Increased Intel") #Not even adding this
+                                    elif trinket1_bonus_type == "Spirit":
+                                        print("Increased Spirit") #Not even adding this
+                                    elif trinket1_bonus_type == "Attack Power":
+                                        bonus_loop_ap += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Hit Rating":
+                                        bonus_loop_hit += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Crit Rating":
+                                        bonus_loop_crit_rating += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Haste Rating":
+                                        bonus_loop_hit += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Armor Pen":
+                                        bonus_loop_armor_pen_rating += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Expertise Rating":
+                                        bonus_loop_expertise_rating += float(trinket1_bonus_amount)
+                                    elif trinket1_bonus_type == "Armor":
+                                        print("Increased Armor") #To be added Later
+                                    elif trinket1_bonus_type == "Defense Rating":
+                                        print("Increase Defense Rating") #To be added Later
+                                    elif trinket1_bonus_type == "Dodge Rating":
+                                        print("Increased Dodge Rating") #To be added Later
+                                    elif trinket1_bonus_type == "Parry Rating":
+                                        print("Increased Parry Rating") #To be added Later
+                                    elif trinket1_bonus_type == "Damage":
+                                        trinket_bonus_damage = random.randint(trinket1_min_damage, trinket1_max_damage)
+                                        rotation_damage.append(trinket_bonus_damage)
+                                        trinket1_damage += trinket_bonus_damage
+                                    if trinket1_bonus_type != "Damage":
+                                        rotation_damage.append(0)
+            if trinket_2_use == True:
+                if trinket2_type == "Active":
+                    if trinket2_use_icd < current_time:
+                        trinket2_buff_time = current_time + float(trinket2_length)
+                        trinket2_use_icd = current_time + float(trinket2_icd)
+                        trinket2_used = True
+                        rotation.append(gear[13])
+                        rotation_time.append(current_time)
+                        rotation_status.append("Active")
+                        if trinket2_bonus_type == "Strength":
+                            bonus_loop_str += float(trinket2_bonus_amount)
+                        elif trinket2_bonus_type == "Agility":
+                            bonus_loop_agility += float(trinket2_bonus_amount)
+                        elif trinket2_bonus_type == "Stamina":
+                            bonus_loop_hp += (float(trinket2_bonus_amount) * 10)
+                        elif trinket2_bonus_type == "Intelligence":
+                            print("Increased Intel") #Not even adding this
+                        elif trinket2_bonus_type == "Spirit":
+                            print("Increased Spirit") #Not even adding this
+                        elif trinket2_bonus_type == "Attack Power":
+                            bonus_loop_ap += float(trinket2_bonus_amount)
+                        elif trinket2_bonus_type == "Hit Rating":
+                            bonus_loop_hit += float(trinket2_bonus_amount)
+                        elif trinket2_bonus_type == "Crit Rating":
+                            bonus_loop_crit_rating += float(trinket2_bonus_amount)
+                        elif trinket2_bonus_type == "Haste Rating":
+                            bonus_loop_hit += float(trinket2_bonus_amount)
+                        elif trinket2_bonus_type == "Armor Pen":
+                            bonus_loop_armor_pen_rating += float(trinket2_bonus_amount)
+                        elif trinket2_bonus_type == "Expertise Rating":
+                            bonus_loop_expertise_rating += float(trinket2_bonus_amount)
+                        elif trinket2_bonus_type == "Armor":
+                            print("Increased Armor") #To be added Later
+                        elif trinket2_bonus_type == "Defense Rating":
+                            print("Increase Defense Rating") #To be added Later
+                        elif trinket2_bonus_type == "Dodge Rating":
+                            print("Increased Dodge Rating") #To be added Later
+                        elif trinket2_bonus_type == "Parry Rating":
+                            print("Increased Parry Rating") #To be added Later
+                        elif trinket2_bonus_type == "Damage":
+                            trinket_bonus_damage = random.randint(trinket2_min_damage, trinket2_max_damage)
+                            rotation_damage.append(trinket_bonus_damage)
+                            trinket2_damage += trinket_bonus_damage
+                        if trinket2_bonus_type != "Damage":
+                            rotation_damage.append(0)
+                elif trinket2_type == "Proc":
+                    if trinket2_chanceon == "Hit":
+                        if trinket_hit_crit_tracker == 1 or trinket_hit_crit_tracker == 2: #trinket_hit_crit_tracker = 0 Null, 1 Hit, 2 Crit
+                            if trinket2_use_icd < current_time:
+                                atta_num = (random.randint(1, 100) / 100)
+                                if float(trinket2_chanceperc) > atta_num:
+                                    trinket2_use_icd = current_time + float(trinket2_icd)
+                                    trinket2_buff_time = current_time + float(trinket2_length)
+                                    trinket2_used = True
+                                    rotation.append(gear[13])
+                                    rotation_time.append(current_time)
+                                    rotation_status.append("Proc")
+                                    if trinket2_bonus_type == "Strength":
+                                        bonus_loop_str += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Agility":
+                                        bonus_loop_agility += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Stamina":
+                                        bonus_loop_hp += (float(trinket2_bonus_amount) * 10)
+                                    elif trinket2_bonus_type == "Intelligence":
+                                        print("Increased Intel") #Not even adding this
+                                    elif trinket2_bonus_type == "Spirit":
+                                        print("Increased Spirit") #Not even adding this
+                                    elif trinket2_bonus_type == "Attack Power":
+                                        bonus_loop_ap += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Hit Rating":
+                                        bonus_loop_hit += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Crit Rating":
+                                        bonus_loop_crit_rating += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Haste Rating":
+                                        bonus_loop_hit += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Armor Pen":
+                                        bonus_loop_armor_pen_rating += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Expertise Rating":
+                                        bonus_loop_expertise_rating += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Armor":
+                                        print("Increased Armor") #To be added Later
+                                    elif trinket2_bonus_type == "Defense Rating":
+                                        print("Increase Defense Rating") #To be added Later
+                                    elif trinket2_bonus_type == "Dodge Rating":
+                                        print("Increased Dodge Rating") #To be added Later
+                                    elif trinket2_bonus_type == "Parry Rating":
+                                        print("Increased Parry Rating") #To be added Later
+                                    elif trinket2_bonus_type == "Damage":
+                                        trinket_bonus_damage = random.randint(trinket2_min_damage, trinket2_max_damage)
+                                        rotation_damage.append(trinket_bonus_damage)
+                                        trinket2_damage += trinket_bonus_damage
+                                    if trinket2_bonus_type != "Damage":
+                                        rotation_damage.append(0)
+                    elif trinket2_chanceon == "Crit":
+                        if trinket_hit_crit_tracker == 2:
+                            if trinket2_use_icd < current_time:
+                                atta_num = (random.randint(1, 100) / 100)
+                                if float(trinket2_chanceperc) > atta_num:
+                                    trinket2_use_icd = current_time + float(trinket2_icd)
+                                    trinket2_buff_time = current_time + float(trinket2_length)
+                                    trinket2_used = True
+                                    rotation.append(gear[13])
+                                    rotation_time.append(current_time)
+                                    rotation_status.append("Proc")
+                                    if trinket2_bonus_type == "Strength":
+                                        bonus_loop_str += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Agility":
+                                        bonus_loop_agility += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Stamina":
+                                        bonus_loop_hp += (float(trinket2_bonus_amount) * 10)
+                                    elif trinket2_bonus_type == "Intelligence":
+                                        print("Increased Intel") #Not even adding this
+                                    elif trinket2_bonus_type == "Spirit":
+                                        print("Increased Spirit") #Not even adding this
+                                    elif trinket2_bonus_type == "Attack Power":
+                                        bonus_loop_ap += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Hit Rating":
+                                        bonus_loop_hit += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Crit Rating":
+                                        bonus_loop_crit_rating += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Haste Rating":
+                                        bonus_loop_hit += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Armor Pen":
+                                        bonus_loop_armor_pen_rating += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Expertise Rating":
+                                        bonus_loop_expertise_rating += float(trinket2_bonus_amount)
+                                    elif trinket2_bonus_type == "Armor":
+                                        print("Increased Armor") #To be added Later
+                                    elif trinket2_bonus_type == "Defense Rating":
+                                        print("Increase Defense Rating") #To be added Later
+                                    elif trinket2_bonus_type == "Dodge Rating":
+                                        print("Increased Dodge Rating") #To be added Later
+                                    elif trinket2_bonus_type == "Parry Rating":
+                                        print("Increased Parry Rating") #To be added Later
+                                    elif trinket2_bonus_type == "Damage":
+                                        trinket_bonus_damage = random.randint(trinket2_min_damage, trinket2_max_damage)
+                                        rotation_damage.append(trinket_bonus_damage)
+                                        trinket2_damage += trinket_bonus_damage
+                                    if trinket2_bonus_type != "Damage":
+                                        rotation_damage.append(0)
+            trinket_hit_crit_tracker = 0 #Resetting hit/crit tracker after both trinkets 
+            
+            
+            
+            #Fury Rotation First
+            if warrior_spec == 1: # Fury Spec
+                if amount_of_targets == 1:
+                    continue
+                
+                
+        
+                
+                
+                
+                    
             current_time += unable_to_do_anything
         ##stuff after this is resettings and appending stuff to lists so can go to next iteration
         #####
@@ -1600,11 +2919,11 @@ def full_warrior_call(item_head = "", item_neck = "", item_shoulders = "", item_
     #                   for sub in [lst1, lst2]]
       
     # print(countList(rotation, rotation_damage))
-    exported_results = str(avg_sum_dps) + "*&*" + str(t_damage) + "*&*" + str(fight_length) + "*&*" + str(rotation) + "*&*" + str(rotation_time) + "*&*" + str(rotation_damage) + "*&*" + str(rotation_status) + "*&*" + str(rune_0_tracker) + "*&*" + str(rune_1_tracker) + "*&*" + str(rune_2_tracker) + "*&*" + str(rune_3_tracker) + "*&*" + str(rune_4_tracker) + "*&*" + str(rune_5_tracker) + "*&*" + str(rune_6_tracker) + "*&*" + str(rune_7_tracker) + "*&*" + str(rune_8_tracker) + "*&*" + str(rune_9_tracker) + "*&*" + str(rune_10_tracker) + "*&*" + str(rune_11_tracker) + "*&*" + str(rune_time_tracker) + "*&*" + str(runic_power_tracker) + "*&*" + str(raw_stat_string)
+    exported_results = str(avg_sum_dps) + "*&*" + str(t_damage) + "*&*" + str(fight_length) + "*&*" + str(rotation) + "*&*" + str(rotation_time) + "*&*" + str(rotation_damage) + "*&*" + str(rotation_status)
     return str(exported_results)
     
 #TODO: God please remember to hide this line below this
-full_warrior_call(item_head="Spiked Titansteel Helm", item_neck = "Gold Amulet of Kings", item_shoulders = "Spaulders of the Giant Lords", item_back = "Cloak of Bloodied Waters", item_chest = "Engraved Chestplate of Eck", item_wrist = "Vengeance Bindings",item_gloves = "Gauntlets of Dragon Wrath", item_waist = "Flame-Bathed Steel Girdle", item_legs = "Staggering Legplates", item_boots = "Death-Inured Sabatons", item_ring1 = "Ring of the Kirin Tor", item_ring2 = "Band of Frosted Thorns", item_trinket1 = "Mirror of Truth", item_trinket2 = "Meteorite Whetstone", item_mh = "Titansteel Bonecrusher", item_oh = "Krol Cleaver")
+print(full_warrior_call(item_head="Spiked Titansteel Helm", item_neck = "Gold Amulet of Kings", item_shoulders = "Spaulders of the Giant Lords", item_back = "Cloak of Bloodied Waters", item_chest = "Engraved Chestplate of Eck", item_wrist = "Vengeance Bindings",item_gloves = "Gauntlets of Dragon Wrath", item_waist = "Flame-Bathed Steel Girdle", item_legs = "Staggering Legplates", item_boots = "Death-Inured Sabatons", item_ring1 = "Ring of the Kirin Tor", item_ring2 = "Band of Frosted Thorns", item_trinket1 = "Mirror of Truth", item_trinket2 = "Meteorite Whetstone", item_mh = "Titansteel Bonecrusher", item_oh = "Krol Cleaver"))
 
 
 

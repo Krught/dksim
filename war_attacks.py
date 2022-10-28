@@ -1,9 +1,8 @@
 # These functions should only return the damage&stuff for rotation such as damage/status(hit/miss/crit)/abilityname
 #main function can do rage gen/weird on used / and rotation time
+
 def bloodthirst():
 
-#from war_attacks import *
-#copy that code to main file
 
 def whirlwind():
 
