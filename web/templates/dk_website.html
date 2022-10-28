@@ -45098,11 +45098,10 @@ document.querySelector(".Trinkt2_Whispering_Fanged_Skull-H").addEventListener('c
 			  	function phaseselcookie_selector(){
                     var phas = document.getElementById('phasesel').value;
                     Cookies.set('phaseselection', phas, { expires: 7 })
-                    phasesel_selector();
                 }
                 var phas_open_select = Cookies.get('phaseselection')
                 if (phas_open_select === undefined || phas_open_select === null) {
-                   phas_open_select = "1";
+                   phas_open_select = 1;
                 }
                 const $select1500 = document.querySelector('#phasesel');
                 $select1500.value = phas_open_select
