@@ -564,8 +564,6 @@
 	  <br>
 	  <br>
 	  <br>
-	  <br>
-	  <br>
 	  	  <form>
 	 <a href="javascript:void(0);" data-wowhead="spell=20572&domain=wrath" id="bloodfury"></a>
 	  <input type="checkbox" id="bloodfurybuff" name="bloodfurybuff" value="bloodfurybuff"onchange="bloodff_selector()">
@@ -38443,6 +38441,16 @@ document.querySelector(".Trinkt2_Whispering_Fanged_Skull-H").addEventListener('c
                     box.checked = true;
                   }
                 berseff_selector();
+            }  
+			document.querySelector("#shattering").addEventListener('click', toggle_shattering, false);   
+            function toggle_shattering(){
+                var box = document.getElementById("shatteringbuff");
+                  if (box.checked) {
+                    box.checked = false;
+                  } else {
+                    box.checked = true;
+                  }
+                shattering_selector();
             }  
 //            function split(str, index) {
 //              const result = [str.slice(0, index), str.slice(index)];
