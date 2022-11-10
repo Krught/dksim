@@ -127,7 +127,7 @@ def dps_load():
     talents = request.form["talentlink"]
     glyph1 = request.form["mainglyph1"]
     glyph2 = request.form["mainglyph2"]
-    glpyh3 = request.form["mainglyph3"]
+    glyph3 = request.form["mainglyph3"]
     glyph4 = request.form["minorglyph1"]
     talents = str(talents) + str(glyph1) + str(glyph2) + str(glyph3) + str(glyph4)
     #new text forms here
@@ -598,7 +598,7 @@ def dps_load_batch():
     talents = request.form["talentlink"]
     glyph1 = request.form["mainglyph1"]
     glyph2 = request.form["mainglyph2"]
-    glpyh3 = request.form["mainglyph3"]
+    glyph3 = request.form["mainglyph3"]
     glyph4 = request.form["minorglyph1"]
     talents = str(talents) + str(glyph1) + str(glyph2) + str(glyph3) + str(glyph4)
     fight_length = request.form["fightlen"]
