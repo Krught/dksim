@@ -65,8 +65,8 @@
         <br>
         <br>
         <!-- have a button POST a click via AJAX -->
-        <button id="simdpsbutton"hx-post="/calculatedps"hx-trigger="click"hx-target="#sim-import-area"hx-indicator="#spinner"hx-include="#head, #neck, #weapon1, #weapon2, #shoulders, #back, #chest, #wrist, #gloves, #waist, #legs, #boots, #sigil, #ring1, #ring2, #trinket1, #trinket2, #fightlen, #fightlenvar, #simamounts, #targetamounts, #targetlevel, #targetarmor, #fightsub35, #pestilencereset, #hornofwinterprecastamount, #dkpresence, #dkspec, #raceselection, #potion, #potionpop, #flask, #foodselection, #draeneiinparty, #hornofwinterbuff, #impicytalonsbuff, #abommightbuff, #sancretribuff, #impmoonkinbuff, #bloodfrenzybuff, #exposearmordebuff, #curseofweaknessdebuff, #leaderofthepackbuff, #heroismbuff, #heroismtimer, #unholyfrenzybuff, #unholyfrenzytimer, #tricksofthettbuff, #tricksofthetradetimer, #giftofthewildbuff, #greaterblessingofkingsbuff, #greaterblessingofmightbuff, #impblessingofmightbuff, #heartoftherusaderbuff, #impscorchbuff, #impfaeriefiredebuff, #curseoftheelementsdebuff, #moonkinaurabuff, #bloodfurybuff, #bloodfurytimer, #berserkingbuff, #berserkingtimer, #talentlink, #boneshieldconsum, #gargusetime, #gargstancedance, #useghoul, #usearmyofd, #prioobliterate, #priobloodstrike, #nodeathanddecay, #forcedeathanddecay, #cryptfeverdebuff, #metagemselection, #mhweapenchant, #ohweapenchant, #headenchant, #shouldersenchant, #backenchant, #chestenchant, #wristenchant, #glovesenchant, #legsenchant, #bootsenchant, #ring1enchant, #ring2enchant, #socketbonus1, #socketbonus2, #socketbonus3, #socketbonus4, #socketbonus5, #socketbonus6, #socketbonus7, #socketbonus8, #socketbonus9, #socketbonus10, #socketbonus11, #socketbonus12, #socketbonus13, #socketbonus14, #socketbonus15, #socketbonus16, #gemselection1, #gemselection2, #gemselection3, #gemselection4, #gemselection5, #gemselection6, #gemselection7, #gemselection8, #gemselection9, #gemselection10, #gemselection11, #gemselection12, #gemselection13, #gemselection14, #gemselection15, #gemselection16, #gemselection17, #gemselection18, #gemselection19, #gemselection20, #gemselection21, #gemselection22, #gemselection23, #gemselection24, #gemselection25, #gemselection26, #gemselection27, #gemselection28, #gemselection29, #gemselection30, #gemselection31, #gemselection32, #gemselection33, #gemselection34, #gemselection35, #gemselection36, #gemselection37, #gemselection38, #gemselection39, #gemselection40, #gemselection41, #gemselection42, #gemselection43, #gemselection44, #gemselection45, #gemselection46, #gemselection47, #gemselection48, #gemselection49, #gemselection50, #gemselection51, #gemselection52, #gemselection53, #gemselection54, #gemselection55, #gemselection56, #gemselection57, #gemselection58, #gemselection59, #gemselection60, #gemselection61, #gemselection62, #gemselection63, #gemselection64, #bloodgorg, #usernameassign, #prepoppotion, #greatergiftofthewild, #prearmorpotion, #shatteringbuff, #shatteringtimer">Calculate DPS</button>
-        <button hidden id="simdpsbutton2"hx-post="/calculatedpsbatch"hx-trigger="click"hx-target="#sim-import-area"hx-indicator="#spinner"hx-include="#head, #neck, #weapon1, #weapon2, #shoulders, #back, #chest, #wrist, #gloves, #waist, #legs, #boots, #sigil, #ring1, #ring2, #trinket1, #trinket2, #fightlen, #fightlenvar, #simamounts, #targetamounts, #targetlevel, #targetarmor, #fightsub35, #pestilencereset, #hornofwinterprecastamount, #dkpresence, #dkspec, #raceselection, #potion, #potionpop, #flask, #foodselection, #draeneiinparty, #hornofwinterbuff, #impicytalonsbuff, #abommightbuff, #sancretribuff, #impmoonkinbuff, #bloodfrenzybuff, #exposearmordebuff, #curseofweaknessdebuff, #leaderofthepackbuff, #heroismbuff, #heroismtimer, #unholyfrenzybuff, #unholyfrenzytimer, #tricksofthettbuff, #tricksofthetradetimer, #giftofthewildbuff, #greaterblessingofkingsbuff, #greaterblessingofmightbuff, #impblessingofmightbuff, #heartoftherusaderbuff, #impscorchbuff, #impfaeriefiredebuff, #curseoftheelementsdebuff, #moonkinaurabuff, #bloodfurybuff, #bloodfurytimer, #berserkingbuff, #berserkingtimer, #talentlink, #boneshieldconsum, #gargusetime, #gargstancedance, #useghoul, #usearmyofd, #prioobliterate, #priobloodstrike, #nodeathanddecay, #forcedeathanddecay, #cryptfeverdebuff, #metagemselection, #mhweapenchant, #ohweapenchant, #headenchant, #shouldersenchant, #backenchant, #chestenchant, #wristenchant, #glovesenchant, #legsenchant, #bootsenchant, #ring1enchant, #ring2enchant, #socketbonus1, #socketbonus2, #socketbonus3, #socketbonus4, #socketbonus5, #socketbonus6, #socketbonus7, #socketbonus8, #socketbonus9, #socketbonus10, #socketbonus11, #socketbonus12, #socketbonus13, #socketbonus14, #socketbonus15, #socketbonus16, #gemselection1, #gemselection2, #gemselection3, #gemselection4, #gemselection5, #gemselection6, #gemselection7, #gemselection8, #gemselection9, #gemselection10, #gemselection11, #gemselection12, #gemselection13, #gemselection14, #gemselection15, #gemselection16, #gemselection17, #gemselection18, #gemselection19, #gemselection20, #gemselection21, #gemselection22, #gemselection23, #gemselection24, #gemselection25, #gemselection26, #gemselection27, #gemselection28, #gemselection29, #gemselection30, #gemselection31, #gemselection32, #gemselection33, #gemselection34, #gemselection35, #gemselection36, #gemselection37, #gemselection38, #gemselection39, #gemselection40, #gemselection41, #gemselection42, #gemselection43, #gemselection44, #gemselection45, #gemselection46, #gemselection47, #gemselection48, #gemselection49, #gemselection50, #gemselection51, #gemselection52, #gemselection53, #gemselection54, #gemselection55, #gemselection56, #gemselection57, #gemselection58, #gemselection59, #gemselection60, #gemselection61, #gemselection62, #gemselection63, #gemselection64, #bloodgorg, #usernameassign, #prepoppotion, #greatergiftofthewild, #prearmorpotion, #shatteringbuff, #shatteringtimer">Calculate DPS</button>
+        <button id="simdpsbutton"hx-post="/calculatedps"hx-trigger="click"hx-target="#sim-import-area"hx-indicator="#spinner"hx-include="#head, #neck, #weapon1, #weapon2, #shoulders, #back, #chest, #wrist, #gloves, #waist, #legs, #boots, #sigil, #ring1, #ring2, #trinket1, #trinket2, #fightlen, #fightlenvar, #simamounts, #targetamounts, #targetlevel, #targetarmor, #fightsub35, #pestilencereset, #hornofwinterprecastamount, #dkpresence, #dkspec, #raceselection, #potion, #potionpop, #flask, #foodselection, #draeneiinparty, #hornofwinterbuff, #impicytalonsbuff, #abommightbuff, #sancretribuff, #impmoonkinbuff, #bloodfrenzybuff, #exposearmordebuff, #curseofweaknessdebuff, #leaderofthepackbuff, #heroismbuff, #heroismtimer, #unholyfrenzybuff, #unholyfrenzytimer, #tricksofthettbuff, #tricksofthetradetimer, #giftofthewildbuff, #greaterblessingofkingsbuff, #greaterblessingofmightbuff, #impblessingofmightbuff, #heartoftherusaderbuff, #impscorchbuff, #impfaeriefiredebuff, #curseoftheelementsdebuff, #moonkinaurabuff, #bloodfurybuff, #bloodfurytimer, #berserkingbuff, #berserkingtimer, #talentlink, #boneshieldconsum, #gargusetime, #gargstancedance, #useghoul, #usearmyofd, #prioobliterate, #priobloodstrike, #nodeathanddecay, #forcedeathanddecay, #cryptfeverdebuff, #metagemselection, #mhweapenchant, #ohweapenchant, #headenchant, #shouldersenchant, #backenchant, #chestenchant, #wristenchant, #glovesenchant, #legsenchant, #bootsenchant, #ring1enchant, #ring2enchant, #socketbonus1, #socketbonus2, #socketbonus3, #socketbonus4, #socketbonus5, #socketbonus6, #socketbonus7, #socketbonus8, #socketbonus9, #socketbonus10, #socketbonus11, #socketbonus12, #socketbonus13, #socketbonus14, #socketbonus15, #socketbonus16, #gemselection1, #gemselection2, #gemselection3, #gemselection4, #gemselection5, #gemselection6, #gemselection7, #gemselection8, #gemselection9, #gemselection10, #gemselection11, #gemselection12, #gemselection13, #gemselection14, #gemselection15, #gemselection16, #gemselection17, #gemselection18, #gemselection19, #gemselection20, #gemselection21, #gemselection22, #gemselection23, #gemselection24, #gemselection25, #gemselection26, #gemselection27, #gemselection28, #gemselection29, #gemselection30, #gemselection31, #gemselection32, #gemselection33, #gemselection34, #gemselection35, #gemselection36, #gemselection37, #gemselection38, #gemselection39, #gemselection40, #gemselection41, #gemselection42, #gemselection43, #gemselection44, #gemselection45, #gemselection46, #gemselection47, #gemselection48, #gemselection49, #gemselection50, #gemselection51, #gemselection52, #gemselection53, #gemselection54, #gemselection55, #gemselection56, #gemselection57, #gemselection58, #gemselection59, #gemselection60, #gemselection61, #gemselection62, #gemselection63, #gemselection64, #bloodgorg, #usernameassign, #prepoppotion, #greatergiftofthewild, #prearmorpotion, #shatteringbuff, #shatteringtimer, #mainglyph1, #mainglyph2, #mainglyph3, #minorglyph1">Calculate DPS</button>
+        <button hidden id="simdpsbutton2"hx-post="/calculatedpsbatch"hx-trigger="click"hx-target="#sim-import-area"hx-indicator="#spinner"hx-include="#head, #neck, #weapon1, #weapon2, #shoulders, #back, #chest, #wrist, #gloves, #waist, #legs, #boots, #sigil, #ring1, #ring2, #trinket1, #trinket2, #fightlen, #fightlenvar, #simamounts, #targetamounts, #targetlevel, #targetarmor, #fightsub35, #pestilencereset, #hornofwinterprecastamount, #dkpresence, #dkspec, #raceselection, #potion, #potionpop, #flask, #foodselection, #draeneiinparty, #hornofwinterbuff, #impicytalonsbuff, #abommightbuff, #sancretribuff, #impmoonkinbuff, #bloodfrenzybuff, #exposearmordebuff, #curseofweaknessdebuff, #leaderofthepackbuff, #heroismbuff, #heroismtimer, #unholyfrenzybuff, #unholyfrenzytimer, #tricksofthettbuff, #tricksofthetradetimer, #giftofthewildbuff, #greaterblessingofkingsbuff, #greaterblessingofmightbuff, #impblessingofmightbuff, #heartoftherusaderbuff, #impscorchbuff, #impfaeriefiredebuff, #curseoftheelementsdebuff, #moonkinaurabuff, #bloodfurybuff, #bloodfurytimer, #berserkingbuff, #berserkingtimer, #talentlink, #boneshieldconsum, #gargusetime, #gargstancedance, #useghoul, #usearmyofd, #prioobliterate, #priobloodstrike, #nodeathanddecay, #forcedeathanddecay, #cryptfeverdebuff, #metagemselection, #mhweapenchant, #ohweapenchant, #headenchant, #shouldersenchant, #backenchant, #chestenchant, #wristenchant, #glovesenchant, #legsenchant, #bootsenchant, #ring1enchant, #ring2enchant, #socketbonus1, #socketbonus2, #socketbonus3, #socketbonus4, #socketbonus5, #socketbonus6, #socketbonus7, #socketbonus8, #socketbonus9, #socketbonus10, #socketbonus11, #socketbonus12, #socketbonus13, #socketbonus14, #socketbonus15, #socketbonus16, #gemselection1, #gemselection2, #gemselection3, #gemselection4, #gemselection5, #gemselection6, #gemselection7, #gemselection8, #gemselection9, #gemselection10, #gemselection11, #gemselection12, #gemselection13, #gemselection14, #gemselection15, #gemselection16, #gemselection17, #gemselection18, #gemselection19, #gemselection20, #gemselection21, #gemselection22, #gemselection23, #gemselection24, #gemselection25, #gemselection26, #gemselection27, #gemselection28, #gemselection29, #gemselection30, #gemselection31, #gemselection32, #gemselection33, #gemselection34, #gemselection35, #gemselection36, #gemselection37, #gemselection38, #gemselection39, #gemselection40, #gemselection41, #gemselection42, #gemselection43, #gemselection44, #gemselection45, #gemselection46, #gemselection47, #gemselection48, #gemselection49, #gemselection50, #gemselection51, #gemselection52, #gemselection53, #gemselection54, #gemselection55, #gemselection56, #gemselection57, #gemselection58, #gemselection59, #gemselection60, #gemselection61, #gemselection62, #gemselection63, #gemselection64, #bloodgorg, #usernameassign, #prepoppotion, #greatergiftofthewild, #prearmorpotion, #shatteringbuff, #shatteringtimer, #mainglyph1, #mainglyph2, #mainglyph3, #minorglyph1">Calculate DPS</button>
         <br>
         <br>
         <input type=button onClick="simcurrentsheet()" value='Sim Current Selection' >
@@ -150,20 +150,13 @@
 	Target Armor: <input name="targetarmor" id="targetarmor" value="10643" type="number"style="width: 60px;"onchange="targer_selector()"></inputname></input>
 	</form>
 <br>
+<!--
 <form>
 	Talents and Glyph's: <input name="talentlink" id="talentlink" value="https://www.wowhead.com/wotlk/talent-calc/death-knight/01-32003350350203012300033101351-230230005003_001s9f11s8q21xv631sxd41ts851s9r" style="width: 160px;"onchange="talenk_selector()"></inputname></input>
 	</form>
 	*Import From Wowhead*
 <br>
-<br>
-<form>
-	Import Gear From Eighty Upgrades: <input name="eighty" id="eighty" style="width: 160px;"></inputname></input>
-	</form>
-	*Use Eighty Upgrades Export Function*
-<br>
-<button name="changeSelected" id="changeSelected" class="changeSelected"hx-post="/loadgear"hx-trigger="click"hx-target="#total_gear_from_eighty"hx-indicator="#spinner"hx-include="#eighty">Load Gear</button>
-<br>
-<br>
+<br> -->
 <form>
 	Bone Shield Consumption Rate: <input name="boneshieldconsum" id="boneshieldconsum" value="50" type="number" style="width: 50px;"onchange="bonesm_selector()"></inputname></input>
 	</form>
@@ -182,6 +175,14 @@
 <form>
 	Blood Gorged Pro Rate: <input name="bloodgorg" id="bloodgorg" value="100" type="number" style="width: 50px;"onchange="bloodg_selector()"></inputname></input>
 	</form>
+<br>
+<form>
+	Import Gear From Eighty Upgrades: <input name="eighty" id="eighty" style="width: 160px;"></inputname></input>
+	</form>
+	*Use Eighty Upgrades Export Function*
+<br>
+<button name="changeSelected" id="changeSelected" class="changeSelected"hx-post="/loadgear"hx-trigger="click"hx-target="#total_gear_from_eighty"hx-indicator="#spinner"hx-include="#eighty">Load Gear</button>
+<br>
 <br>
   </div>
   <div class="column"style="text-align: center; font-size: 20px">
@@ -687,6 +688,777 @@
 
 </div>
   </div>
+	<style>
+* {
+  box-sizing: border-box;
+}
+.column200 {
+  float: left;
+  width: 33%;
+  padding: 10px;
+}
+.row20:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.column250 {
+  float: left;
+  width: 11%;
+  padding: 10px;
+}
+.row25:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#redtalent {
+    background-image: url('/static/images/talents/0-bg.png');
+	background-color: #000000;
+	background-repeat: no-repeat;  
+	background-size:100% 100%;
+}
+#bluetalent {
+    background-image: url('/static/images/talents/1-bg.png');
+	background-color: #000000;
+	background-repeat: no-repeat; 
+	background-size:100% 100%;
+}
+#greentalent {
+    background-image: url('/static/images/talents/2-bg.png');
+	background-color: #000000;
+	background-repeat: no-repeat;  
+	background-size:100% 100%;
+}
+</style>
+<h2 style="text-align: center; font-size: 40px;">Talents</h2>
+<div class="row20">
+  <div class="column200"style="text-align: center; font-size: 20px"id="redtalent">
+	  
+	<div> <!-- Row 1 -->
+	<div id="talent0-0" style="display: inline">
+	<img src="/static/images/talents/0-0-0.png" alt="" />
+	</div>
+	  
+	<div id="talent0-1" style="display: inline">
+	<img src="/static/images/talents/0-1-0.png" alt="" />
+	</div>
+	  
+	<div id="talent0-2" style="display: inline">
+	<img src="/static/images/talents/0-2-0.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	</div>  
+	  
+	<div> <!-- Row 2 -->
+	<div id="talent0-3"  style="display: inline">
+	<img src="/static/images/talents/0-3-0.png" alt="" />
+	</div>
+	  
+	<div id="talent0-4" style="display: inline">
+	<img src="/static/images/talents/0-4-0.png" alt="" />
+	</div>
+	  
+	<div id="talent0-5" style="display: inline">
+	<img src="/static/images/talents/0-5-0.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	</div>
+	  
+	<div> <!-- Row 3 -->
+	<div id="talent0-6"  style="display: inline">
+	<img src="/static/images/talents/0-6-0.png" alt="" />
+	</div>
+	  
+	<div id="talent0-7" style="display: inline">
+	<img src="/static/images/talents/0-7-0.png" alt="" />
+	</div>
+	  
+	<div id="talent0-8" style="display: inline">
+	<img src="/static/images/talents/0-8-0.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	</div>
+	  
+	<div> <!-- Row 4 -->
+	<div id="talent0-9"  style="display: inline">
+	<img src="/static/images/talents/0-9-0.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	  
+	<div id="talent0-10" style="display: inline">
+	<img src="/static/images/talents/0-10-0.png" alt="" />
+	</div>
+	  
+	<div id="talent0-11" style="display: inline">
+	<img src="/static/images/talents/0-11-0.png" alt="" />
+	</div>
+	</div>
+	  
+	<div> <!-- Row 5 -->
+	<div id="talent0-12"  style="display: inline">
+	<img src="/static/images/talents/0-12-0.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	  
+	<div id="talent0-13" style="display: inline">
+	<img src="/static/images/talents/0-13-0.png" alt="" />
+	</div>
+	  
+	<div id="talent0-14" style="display: inline">
+	<img src="/static/images/talents/0-14-0.png" alt="" />
+	</div>
+	</div>
+	  
+	<div> <!-- Row 6 -->
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	  
+	<div id="talent0-15" style="display: inline">
+	<img src="/static/images/talents/0-15-0.png" alt="" />
+	</div>
+	  
+	<div id="talent0-16" style="display: inline">
+	<img src="/static/images/talents/0-16-0.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	</div>
+	  
+	<div> <!-- Row 7 -->
+	<div id="talent0-17"  style="display: inline">
+	<img src="/static/images/talents/0-17-0.png" alt="" />
+	</div>
+	  
+	<div id="talent0-18" style="display: inline">
+	<img src="/static/images/talents/0-18-0.png" alt="" />
+	</div>
+	  
+	<div id="talent0-19" style="display: inline">
+	<img src="/static/images/talents/0-19-0.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	</div>
+	  
+	<div> <!-- Row 8 -->
+	<div id="talent0-20"  style="display: inline">
+	<img src="/static/images/talents/0-20-0.png" alt="" />
+	</div>
+	  
+	<div id="talent0-21" style="display: inline">
+	<img src="/static/images/talents/0-21-0.png" alt="" />
+	</div>
+	  
+	<div id="talent0-22" style="display: inline">
+	<img src="/static/images/talents/0-22-0.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	</div>
+	  
+	<div> <!-- Row 9 -->
+	<div id="talent0-23"  style="display: inline">
+	<img src="/static/images/talents/0-23-0.png" alt="" />
+	</div>
+	  
+	<div id="talent0-24" style="display: inline">
+	<img src="/static/images/talents/0-24-0.png" alt="" />
+	</div>
+	  
+	<div id="talent0-25" style="display: inline">
+	<img src="/static/images/talents/0-25-0.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	</div>
+	  
+	<div> <!-- Row 10 -->
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	  
+	<div id="talent0-26" style="display: inline">
+	<img src="/static/images/talents/0-26-0.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	</div>
+	  
+	<div> <!-- Row 11 -->
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	  
+	<div id="talent0-27" style="display: inline">
+	<img src="/static/images/talents/0-27-0.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	</div>
+	  
+	  
+	  
+	  
+	</div>
+  <div class="column200"style="text-align: center; font-size: 20px"id="bluetalent">
+
+	  
+	<div> <!-- Row 1 -->
+	<div id="talent1-0" style="display: inline">
+	<img src="/static/images/talents/1-0-0.png" alt="" />
+	</div>
+	  
+	<div id="talent1-1" style="display: inline">
+	<img src="/static/images/talents/1-1-0.png" alt="" />
+	</div>
+	  
+	<div id="talent1-2" style="display: inline">
+	<img src="/static/images/talents/1-2-0.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	</div>  
+	  
+	<div> <!-- Row 2 -->
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	  
+	<div id="talent1-3" style="display: inline">
+	<img src="/static/images/talents/1-3-0.png" alt="" />
+	</div>
+	  
+	<div id="talent1-4" style="display: inline">
+	<img src="/static/images/talents/1-4-0.png" alt="" />
+	</div>
+	  
+	<div id="talent1-5" style="display: inline">
+	<img src="/static/images/talents/1-5-0.png" alt="" />
+	</div>
+	</div>
+	  
+	<div> <!-- Row 3 -->
+	<div id="talent1-6" style="display: inline">
+	<img src="/static/images/talents/1-6-0.png" alt="" />
+	</div>
+	  
+	<div id="talent1-7" style="display: inline">
+	<img src="/static/images/talents/1-7-0.png" alt="" />
+	</div>
+	  
+	<div id="talent1-8" style="display: inline">
+	<img src="/static/images/talents/1-8-0.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	</div>
+	  
+	<div> <!-- Row 4 -->
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	  
+	<div id="talent1-9" style="display: inline">
+	<img src="/static/images/talents/1-9-0.png" alt="" />
+	</div>
+	  
+	<div id="talent1-10" style="display: inline">
+	<img src="/static/images/talents/1-10-0.png" alt="" />
+	</div>
+	  
+	<div id="talent1-11" style="display: inline">
+	<img src="/static/images/talents/1-11-0.png" alt="" />
+	</div>
+	</div>
+	  
+	<div> <!-- Row 5 -->
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	  
+	<div id="talent1-12" style="display: inline">
+	<img src="/static/images/talents/1-12-0.png" alt="" />
+	</div>
+	  
+	<div id="talent1-13" style="display: inline">
+	<img src="/static/images/talents/1-13-0.png" alt="" />
+	</div>
+	  
+	<div id="talent1-14" style="display: inline">
+	<img src="/static/images/talents/1-14-0.png" alt="" />
+	</div>
+	</div>
+	  
+	<div> <!-- Row 6 -->
+	<div id="talent1-15" style="display: inline">
+	<img src="/static/images/talents/1-15-0.png" alt="" />
+	</div>
+	  
+	<div id="talent1-16" style="display: inline">
+	<img src="/static/images/talents/1-16-0.png" alt="" />
+	</div>
+	  
+	<div id="talent1-17" style="display: inline">
+	<img src="/static/images/talents/1-17-0.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	</div>
+	  
+	<div> <!-- Row 7 -->
+	<div id="talent1-18" style="display: inline">
+	<img src="/static/images/talents/1-18-0.png" alt="" />
+	</div>
+	  
+	<div id="talent1-19" style="display: inline">
+	<img src="/static/images/talents/1-19-0.png" alt="" />
+	</div>
+	  
+	<div id="talent1-20" style="display: inline">
+	<img src="/static/images/talents/1-20-0.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	</div>
+	  
+	<div> <!-- Row 8 -->
+	<div id="talent1-21" style="display: inline">
+	<img src="/static/images/talents/1-21-0.png" alt="" />
+	</div>
+	  
+	<div id="talent1-22" style="display: inline">
+	<img src="/static/images/talents/1-22-0.png" alt="" />
+	</div>
+	  
+	<div id="talent1-23" style="display: inline">
+	<img src="/static/images/talents/1-23-0.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	</div>
+	  
+	<div> <!-- Row 9 -->
+	<div id="talent1-24" style="display: inline">
+	<img src="/static/images/talents/1-24-0.png" alt="" />
+	</div>
+	  
+	<div id="talent1-25" style="display: inline">
+	<img src="/static/images/talents/1-25-0.png" alt="" />
+	</div>
+	  
+	<div id="talent1-26" style="display: inline">
+	<img src="/static/images/talents/1-26-0.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	</div>
+	  
+	<div> <!-- Row 10 -->
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	  
+	<div id="talent1-27" style="display: inline">
+	<img src="/static/images/talents/1-27-0.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	</div>
+	  
+	<div> <!-- Row 11 -->
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	  
+	<div id="talent1-28" style="display: inline">
+	<img src="/static/images/talents/1-28-0.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	</div>
+	  
+	  
+	  
+	  
+	</div>
+  <div class="column200"style="text-align: center; font-size: 20px"id="greentalent">
+
+	<div> <!-- Row 1 -->
+	<div id="talent2-0" style="display: inline">
+	<img src="/static/images/talents/2-0-0.png" alt="" />
+	</div>
+	  
+	<div id="talent2-1" style="display: inline">
+	<img src="/static/images/talents/2-1-0.png" alt="" />
+	</div>
+	  
+	<div id="talent2-2" style="display: inline">
+	<img src="/static/images/talents/2-2-0.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	</div>  
+	  
+	<div> <!-- Row 2 -->
+	<div id="talent2-3" style="display: inline">
+	<img src="/static/images/talents/2-3-0.png" alt="" />
+	</div>
+	  
+	<div id="talent2-4" style="display: inline">
+	<img src="/static/images/talents/2-4-0.png" alt="" />
+	</div>
+	  
+	<div id="talent2-5" style="display: inline">
+	<img src="/static/images/talents/2-5-0.png" alt="" />
+	</div>
+	  
+	<div id="talent2-6" style="display: inline">
+	<img src="/static/images/talents/2-6-0.png" alt="" />
+	</div>
+	</div>
+	  
+	<div> <!-- Row 3 -->
+	<div id="talent2-7" style="display: inline">
+	<img src="/static/images/talents/2-7-0.png" alt="" />
+	</div>
+	  
+	<div id="talent2-8" style="display: inline">
+	<img src="/static/images/talents/2-8-0.png" alt="" />
+	</div>
+	  
+	<div id="talent2-9" style="display: inline">
+	<img src="/static/images/talents/2-9-0.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	</div>
+	  
+	<div> <!-- Row 4 -->
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	  
+	<div id="talent2-10" style="display: inline">
+	<img src="/static/images/talents/2-10-0.png" alt="" />
+	</div>
+	  
+	<div id="talent2-11" style="display: inline">
+	<img src="/static/images/talents/2-11-0.png" alt="" />
+	</div>
+	  
+	<div id="talent2-12" style="display: inline">
+	<img src="/static/images/talents/2-12-0.png" alt="" />
+	</div>
+	</div>
+	  
+	<div> <!-- Row 5 -->
+	<div id="talent2-13" style="display: inline">
+	<img src="/static/images/talents/2-13-0.png" alt="" />
+	</div>
+	  
+	<div id="talent2-14" style="display: inline">
+	<img src="/static/images/talents/2-14-0.png" alt="" />
+	</div>
+	  
+	<div id="talent2-15" style="display: inline">
+	<img src="/static/images/talents/2-15-0.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	</div>
+	  
+	<div> <!-- Row 6 -->
+	<div id="talent2-16" style="display: inline">
+	<img src="/static/images/talents/2-16-0.png" alt="" />
+	</div>
+	  
+	<div id="talent2-17" style="display: inline">
+	<img src="/static/images/talents/2-17-0.png" alt="" />
+	</div>
+	  
+	<div id="talent2-18" style="display: inline">
+	<img src="/static/images/talents/2-18-0.png" alt="" />
+	</div>
+	  
+	<div id="talent2-19" style="display: inline">
+	<img src="/static/images/talents/2-19-0.png" alt="" />
+	</div>
+	</div>
+	  
+	<div> <!-- Row 7 -->
+	<div id="talent2-20" style="display: inline">
+	<img src="/static/images/talents/2-20-0.png" alt="" />
+	</div>
+	  
+	<div id="talent2-21" style="display: inline">
+	<img src="/static/images/talents/2-21-0.png" alt="" />
+	</div>
+	  
+	<div id="talent2-22" style="display: inline">
+	<img src="/static/images/talents/2-22-0.png" alt="" />
+	</div>
+	  
+	<div id="talent2-23" style="display: inline">
+	<img src="/static/images/talents/2-23-0.png" alt="" />
+	</div>
+	</div>
+	  
+	<div> <!-- Row 8 -->
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	  
+	<div id="talent2-24" style="display: inline">
+	<img src="/static/images/talents/2-24-0.png" alt="" />
+	</div>
+	  
+	<div id="talent2-25" style="display: inline">
+	<img src="/static/images/talents/2-25-0.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	</div>
+	  
+	<div> <!-- Row 9 -->
+	<div id="talent2-26" style="display: inline">
+	<img src="/static/images/talents/2-26-0.png" alt="" />
+	</div>
+	  
+	<div id="talent2-27" style="display: inline">
+	<img src="/static/images/talents/2-27-0.png" alt="" />
+	</div>
+	  
+	<div id="talent2-28" style="display: inline">
+	<img src="/static/images/talents/2-28-0.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	</div>
+	  
+	<div> <!-- Row 10 -->
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	  
+	<div id="talent2-29" style="display: inline">
+	<img src="/static/images/talents/2-29-0.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	</div>
+	  
+	<div> <!-- Row 11 -->
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	  
+	<div id="talent2-30" style="display: inline">
+	<img src="/static/images/talents/2-30-0.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	  
+	<div style="display: inline">
+	<img src="/static/images/null.png" alt="" />
+	</div>
+	</div>
+	</div>
+	
+	
+	<div id="talentsnumbers" hidden></div> 
+	<div hidden>
+	<form>
+	<input name="talentlink" id="talentlink" value="0000000000000000000000000000-00000000000000000000000000000-0000000000000000000000000000000_"></inputname></input>
+	</form>
+</div>
+<div style="text-align: right; font-size: 30px; margin-right:15vh">
+	<div id="talentsleft">
+		Talents Left: 72
+		</div>
+</div>
+<div style="text-align: center; font-size: 60px">
+<input type=button onClick="resettalents()" value='Reset Talents' >
+<br>
+</div>
+<div id="talentssnumbers"></div> 
+	
+	</div>	
+
+<style>
+* {
+  box-sizing: border-box;
+}
+.column2000 {
+  float: left;
+  width: 33%;
+  padding: 10px;
+}
+.row2000:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+<div class="row2000">
+  <div class="column2000"style="text-align: center; font-size: 20px">
+	  Major Glyph
+	<br>
+<select name="mainglyph1" id="mainglyph1" onchange="majglyph1()">
+    <option value=""selected="selected">None</option>
+    <option value="1xv2">Glyph of Dancing Rune Weapon</option>
+    <option value="1xv5">Glyph of Dark Death</option>
+    <option value="1s85">Glyph of Death and Decay</option>
+    <option value="1sy8">Glyph of Death Strike</option>
+	<option value="1xv6">Glyph of Disease</option>
+	<option value="1s8q">Glyph of Frost Strike</option>
+	<option value="1xv7">Glyph of Howling Blast</option>
+	<option value="1s87">Glyph of Icy Touch</option>
+	<option value="1s9f">Glyph of Obliterate</option>
+	<option value="1s91">Glyph of Plague Strike</option>
+	<option value="1s9d">Glyph of Rune Strike</option>
+	<option value="1s8j">Glyph of Scourge Strike</option>
+	<option value="1s9y">Glyph of the Ghoul</option>
+	<option value="1xv4">Glyph of Unholy Blight</option>
+	<option value="1s9h">Glyph of Bone Shield</option>
+</select>
+	</div>
+	<div class="column2000"style="text-align: center; font-size: 20px">
+		Major Glyph
+	<br>
+<select name="mainglyph2" id="mainglyph2" onchange="majglyph2()">
+    <option value=""selected="selected">None</option>
+    <option value="1xv2">Glyph of Dancing Rune Weapon</option>
+    <option value="1xv5">Glyph of Dark Death</option>
+    <option value="1s85">Glyph of Death and Decay</option>
+    <option value="1sy8">Glyph of Death Strike</option>
+	<option value="1xv6">Glyph of Disease</option>
+	<option value="1s8q">Glyph of Frost Strike</option>
+	<option value="1xv7">Glyph of Howling Blast</option>
+	<option value="1s87">Glyph of Icy Touch</option>
+	<option value="1s9f">Glyph of Obliterate</option>
+	<option value="1s91">Glyph of Plague Strike</option>
+	<option value="1s9d">Glyph of Rune Strike</option>
+	<option value="1s8j">Glyph of Scourge Strike</option>
+	<option value="1s9y">Glyph of the Ghoul</option>
+	<option value="1xv4">Glyph of Unholy Blight</option>
+	<option value="1s9h">Glyph of Bone Shield</option>
+</select>
+	</div>
+	<div class="column2000"style="text-align: center; font-size: 20px">
+			Major Glyph
+	<br>
+<select name="mainglyph3" id="mainglyph3" onchange="majglyph3()">
+    <option value=""selected="selected">None</option>
+    <option value="1xv2">Glyph of Dancing Rune Weapon</option>
+    <option value="1xv5">Glyph of Dark Death</option>
+    <option value="1s85">Glyph of Death and Decay</option>
+    <option value="1sy8">Glyph of Death Strike</option>
+	<option value="1xv6">Glyph of Disease</option>
+	<option value="1s8q">Glyph of Frost Strike</option>
+	<option value="1xv7">Glyph of Howling Blast</option>
+	<option value="1s87">Glyph of Icy Touch</option>
+	<option value="1s9f">Glyph of Obliterate</option>
+	<option value="1s91">Glyph of Plague Strike</option>
+	<option value="1s9d">Glyph of Rune Strike</option>
+	<option value="1s8j">Glyph of Scourge Strike</option>
+	<option value="1s9y">Glyph of the Ghoul</option>
+	<option value="1xv4">Glyph of Unholy Blight</option>
+	<option value="1s9h">Glyph of Bone Shield</option>
+</select>
+	</div>
+</div>
+
+<div style="text-align: center;">
+	Minor Glyph
+	<br>
+<select name="minorglyph1" id="minorglyph1" onchange="majglyph4()">
+    <option value=""selected="selected">None</option>
+    <option value="1s9r">Glyph of Horn of Winter</option>
+</select>
+</div>
+	
+	
+	
+	<div id="talenthover"></div>
 <!--
 <div class="button-center">
 <h3>This is just a display, please import talents.</h3>
@@ -35259,7 +36031,7 @@ document.querySelector(".Trinkt2_Whispering_Fanged_Skull-H").addEventListener('c
 
               
               
-              
+              var globaltalentvar = "0000000000000000000000000000-00000000000000000000000000000-0000000000000000000000000000000_"
 
 //			document.querySelector('.changeSelected').addEventListener('mouseout', splitEqu);
 //			var equClicked = false;
@@ -37620,16 +38392,20 @@ document.querySelector(".Trinkt2_Whispering_Fanged_Skull-H").addEventListener('c
             $select2640.value = shatimser_open_select
 
             function talenk_selector(){
-                var talenk = document.getElementById('talentlink').value;
+                //var talenk = document.getElementById('talentlink').value;
+				var talenk = globaltalentvar;
                 Cookies.set('talentlinkselection', talenk, { expires: 7 })
+				const $select2655 = document.querySelector('#talentlink');
+            	$select2655.value = talenk;
                 //talentchanger();
             }
             var talenk_open_select = Cookies.get('talentlinkselection')
             if (talenk_open_select === undefined || talenk_open_select === null) {
-               talenk_open_select = "https://www.wowhead.com/wotlk/talent-calc/death-knight/01-32003350350203012300033101351-230230005003_001s9f11s8q21xv631sxd41ts851s9r";
+               talenk_open_select = "0000000000000000000000000000-00000000000000000000000000000-0000000000000000000000000000000_";
             }
             const $select265 = document.querySelector('#talentlink');
-            $select265.value = talenk_open_select
+            $select265.value = talenk_open_select;
+            globaltalentvar = talenk_open_select;
 
             function bonesm_selector(){
                 var bonesm = document.getElementById('boneshieldconsum').value;
@@ -37860,6 +38636,12 @@ document.querySelector(".Trinkt2_Whispering_Fanged_Skull-H").addEventListener('c
 					Cookies.remove('phaseselection')
 					Cookies.remove('shatteringbuffbuffselection')
 					Cookies.remove('shatteringtimerselection')
+					Cookies.remove('glyph1selection')
+					Cookies.remove('glyph2selection')
+					Cookies.remove('glyph3selection')
+					Cookies.remove('glyph4selection')
+					resettalents();
+					document.body.scrollTop = document.documentElement.scrollTop = 0;
                     location.reload();
                 }
               
@@ -39091,9 +39873,9 @@ document.querySelector(".Trinkt2_Whispering_Fanged_Skull-H").addEventListener('c
               
             
             function presetselector(){
-                var talent_text = document.querySelector('#talentlink');
-                talent_text.value = changetalentsto;
-                talenk_selector();
+//                var talent_text = document.querySelector('#talentlink');
+//                talent_text.value = changetalentsto;
+//                talenk_selector();
                 var gear_text = document.querySelector('#eighty');
                 gear_text.value = changepresetgearto;
                 document.getElementById("changeSelected").click();
@@ -41881,8 +42663,674 @@ document.querySelector(".Trinkt2_Whispering_Fanged_Skull-H").addEventListener('c
         }
               phasesel_selector();
               
-        
+	document.querySelector("#talent0-0").addEventListener('click', function(){talentsclick("0-0")}, false);
+	document.querySelector("#talent0-0").addEventListener('mouseover', function(){talentsmouseover("0-0")}, false);
+	document.querySelector("#talent0-0").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent0-1").addEventListener('click', function(){talentsclick("0-1")}, false);
+	document.querySelector("#talent0-1").addEventListener('mouseover', function(){talentsmouseover("0-1")}, false);
+	document.querySelector("#talent0-1").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent0-2").addEventListener('click', function(){talentsclick("0-2")}, false);
+	document.querySelector("#talent0-2").addEventListener('mouseover', function(){talentsmouseover("0-2")}, false);
+	document.querySelector("#talent0-2").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent0-3").addEventListener('click', function(){talentsclick("0-3")}, false);
+	document.querySelector("#talent0-3").addEventListener('mouseover', function(){talentsmouseover("0-3")}, false);
+	document.querySelector("#talent0-3").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent0-4").addEventListener('click', function(){talentsclick("0-4")}, false);
+	document.querySelector("#talent0-4").addEventListener('mouseover', function(){talentsmouseover("0-4")}, false);
+	document.querySelector("#talent0-4").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent0-5").addEventListener('click', function(){talentsclick("0-5")}, false);
+	document.querySelector("#talent0-5").addEventListener('mouseover', function(){talentsmouseover("0-5")}, false);
+	document.querySelector("#talent0-5").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent0-6").addEventListener('click', function(){talentsclick("0-6")}, false);
+	document.querySelector("#talent0-6").addEventListener('mouseover', function(){talentsmouseover("0-6")}, false);
+	document.querySelector("#talent0-6").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent0-7").addEventListener('click', function(){talentsclick("0-7")}, false);
+	document.querySelector("#talent0-7").addEventListener('mouseover', function(){talentsmouseover("0-7")}, false);
+	document.querySelector("#talent0-7").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent0-8").addEventListener('click', function(){talentsclick("0-8")}, false);
+	document.querySelector("#talent0-8").addEventListener('mouseover', function(){talentsmouseover("0-8")}, false);
+	document.querySelector("#talent0-8").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent0-9").addEventListener('click', function(){talentsclick("0-9")}, false);
+	document.querySelector("#talent0-9").addEventListener('mouseover', function(){talentsmouseover("0-9")}, false);
+	document.querySelector("#talent0-9").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent0-10").addEventListener('click', function(){talentsclick("0-10")}, false);
+	document.querySelector("#talent0-10").addEventListener('mouseover', function(){talentsmouseover("0-10")}, false);
+	document.querySelector("#talent0-10").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent0-11").addEventListener('click', function(){talentsclick("0-11")}, false);
+	document.querySelector("#talent0-11").addEventListener('mouseover', function(){talentsmouseover("0-11")}, false);
+	document.querySelector("#talent0-11").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent0-12").addEventListener('click', function(){talentsclick("0-12")}, false);
+	document.querySelector("#talent0-12").addEventListener('mouseover', function(){talentsmouseover("0-12")}, false);
+	document.querySelector("#talent0-12").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent0-13").addEventListener('click', function(){talentsclick("0-13")}, false);
+	document.querySelector("#talent0-13").addEventListener('mouseover', function(){talentsmouseover("0-13")}, false);
+	document.querySelector("#talent0-13").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent0-14").addEventListener('click', function(){talentsclick("0-14")}, false);
+	document.querySelector("#talent0-14").addEventListener('mouseover', function(){talentsmouseover("0-14")}, false);
+	document.querySelector("#talent0-14").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent0-15").addEventListener('click', function(){talentsclick("0-15")}, false);
+	document.querySelector("#talent0-15").addEventListener('mouseover', function(){talentsmouseover("0-15")}, false);
+	document.querySelector("#talent0-15").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent0-16").addEventListener('click', function(){talentsclick("0-16")}, false);
+	document.querySelector("#talent0-16").addEventListener('mouseover', function(){talentsmouseover("0-16")}, false);
+	document.querySelector("#talent0-16").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent0-17").addEventListener('click', function(){talentsclick("0-17")}, false);
+	document.querySelector("#talent0-17").addEventListener('mouseover', function(){talentsmouseover("0-17")}, false);
+	document.querySelector("#talent0-17").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent0-18").addEventListener('click', function(){talentsclick("0-18")}, false);
+	document.querySelector("#talent0-18").addEventListener('mouseover', function(){talentsmouseover("0-18")}, false);
+	document.querySelector("#talent0-18").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent0-19").addEventListener('click', function(){talentsclick("0-19")}, false);
+	document.querySelector("#talent0-19").addEventListener('mouseover', function(){talentsmouseover("0-19")}, false);
+	document.querySelector("#talent0-19").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent0-20").addEventListener('click', function(){talentsclick("0-20")}, false);
+	document.querySelector("#talent0-20").addEventListener('mouseover', function(){talentsmouseover("0-20")}, false);
+	document.querySelector("#talent0-20").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent0-21").addEventListener('click', function(){talentsclick("0-21")}, false);
+	document.querySelector("#talent0-21").addEventListener('mouseover', function(){talentsmouseover("0-21")}, false);
+	document.querySelector("#talent0-21").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent0-22").addEventListener('click', function(){talentsclick("0-22")}, false);
+	document.querySelector("#talent0-22").addEventListener('mouseover', function(){talentsmouseover("0-22")}, false);
+	document.querySelector("#talent0-22").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent0-23").addEventListener('click', function(){talentsclick("0-23")}, false);
+	document.querySelector("#talent0-23").addEventListener('mouseover', function(){talentsmouseover("0-23")}, false);
+	document.querySelector("#talent0-23").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent0-24").addEventListener('click', function(){talentsclick("0-24")}, false);
+	document.querySelector("#talent0-24").addEventListener('mouseover', function(){talentsmouseover("0-24")}, false);
+	document.querySelector("#talent0-24").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent0-25").addEventListener('click', function(){talentsclick("0-25")}, false);
+	document.querySelector("#talent0-25").addEventListener('mouseover', function(){talentsmouseover("0-25")}, false);
+	document.querySelector("#talent0-25").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent0-26").addEventListener('click', function(){talentsclick("0-26")}, false);
+	document.querySelector("#talent0-26").addEventListener('mouseover', function(){talentsmouseover("0-26")}, false);
+	document.querySelector("#talent0-26").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent0-27").addEventListener('click', function(){talentsclick("0-27")}, false);
+	document.querySelector("#talent0-27").addEventListener('mouseover', function(){talentsmouseover("0-27")}, false);
+	document.querySelector("#talent0-27").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-0").addEventListener('click', function(){talentsclick("1-0")}, false);
+	document.querySelector("#talent1-0").addEventListener('mouseover', function(){talentsmouseover("1-0")}, false);
+	document.querySelector("#talent1-0").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-1").addEventListener('click', function(){talentsclick("1-1")}, false);
+	document.querySelector("#talent1-1").addEventListener('mouseover', function(){talentsmouseover("1-1")}, false);
+	document.querySelector("#talent1-1").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-2").addEventListener('click', function(){talentsclick("1-2")}, false);
+	document.querySelector("#talent1-2").addEventListener('mouseover', function(){talentsmouseover("1-2")}, false);
+	document.querySelector("#talent1-2").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-3").addEventListener('click', function(){talentsclick("1-3")}, false);
+	document.querySelector("#talent1-3").addEventListener('mouseover', function(){talentsmouseover("1-3")}, false);
+	document.querySelector("#talent1-3").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-4").addEventListener('click', function(){talentsclick("1-4")}, false);
+	document.querySelector("#talent1-4").addEventListener('mouseover', function(){talentsmouseover("1-4")}, false);
+	document.querySelector("#talent1-4").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-5").addEventListener('click', function(){talentsclick("1-5")}, false);
+	document.querySelector("#talent1-5").addEventListener('mouseover', function(){talentsmouseover("1-5")}, false);
+	document.querySelector("#talent1-5").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-6").addEventListener('click', function(){talentsclick("1-6")}, false);
+	document.querySelector("#talent1-6").addEventListener('mouseover', function(){talentsmouseover("1-6")}, false);
+	document.querySelector("#talent1-6").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-7").addEventListener('click', function(){talentsclick("1-7")}, false);
+	document.querySelector("#talent1-7").addEventListener('mouseover', function(){talentsmouseover("1-7")}, false);
+	document.querySelector("#talent1-7").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-8").addEventListener('click', function(){talentsclick("1-8")}, false);
+	document.querySelector("#talent1-8").addEventListener('mouseover', function(){talentsmouseover("1-8")}, false);
+	document.querySelector("#talent1-8").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-9").addEventListener('click', function(){talentsclick("1-9")}, false);
+	document.querySelector("#talent1-9").addEventListener('mouseover', function(){talentsmouseover("1-9")}, false);
+	document.querySelector("#talent1-9").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-10").addEventListener('click', function(){talentsclick("1-10")}, false);
+	document.querySelector("#talent1-10").addEventListener('mouseover', function(){talentsmouseover("1-10")}, false);
+	document.querySelector("#talent1-10").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-11").addEventListener('click', function(){talentsclick("1-11")}, false);
+	document.querySelector("#talent1-11").addEventListener('mouseover', function(){talentsmouseover("1-11")}, false);
+	document.querySelector("#talent1-11").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-12").addEventListener('click', function(){talentsclick("1-12")}, false);
+	document.querySelector("#talent1-12").addEventListener('mouseover', function(){talentsmouseover("1-12")}, false);
+	document.querySelector("#talent1-12").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-13").addEventListener('click', function(){talentsclick("1-13")}, false);
+	document.querySelector("#talent1-13").addEventListener('mouseover', function(){talentsmouseover("1-13")}, false);
+	document.querySelector("#talent1-13").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-14").addEventListener('click', function(){talentsclick("1-14")}, false);
+	document.querySelector("#talent1-14").addEventListener('mouseover', function(){talentsmouseover("1-14")}, false);
+	document.querySelector("#talent1-14").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-15").addEventListener('click', function(){talentsclick("1-15")}, false);
+	document.querySelector("#talent1-15").addEventListener('mouseover', function(){talentsmouseover("1-15")}, false);
+	document.querySelector("#talent1-15").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-16").addEventListener('click', function(){talentsclick("1-16")}, false);
+	document.querySelector("#talent1-16").addEventListener('mouseover', function(){talentsmouseover("1-16")}, false);
+	document.querySelector("#talent1-16").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-17").addEventListener('click', function(){talentsclick("1-17")}, false);
+	document.querySelector("#talent1-17").addEventListener('mouseover', function(){talentsmouseover("1-17")}, false);
+	document.querySelector("#talent1-17").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-18").addEventListener('click', function(){talentsclick("1-18")}, false);
+	document.querySelector("#talent1-18").addEventListener('mouseover', function(){talentsmouseover("1-18")}, false);
+	document.querySelector("#talent1-18").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-19").addEventListener('click', function(){talentsclick("1-19")}, false);
+	document.querySelector("#talent1-19").addEventListener('mouseover', function(){talentsmouseover("1-19")}, false);
+	document.querySelector("#talent1-19").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-20").addEventListener('click', function(){talentsclick("1-20")}, false);
+	document.querySelector("#talent1-20").addEventListener('mouseover', function(){talentsmouseover("1-20")}, false);
+	document.querySelector("#talent1-20").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-21").addEventListener('click', function(){talentsclick("1-21")}, false);
+	document.querySelector("#talent1-21").addEventListener('mouseover', function(){talentsmouseover("1-21")}, false);
+	document.querySelector("#talent1-21").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-22").addEventListener('click', function(){talentsclick("1-22")}, false);
+	document.querySelector("#talent1-22").addEventListener('mouseover', function(){talentsmouseover("1-22")}, false);
+	document.querySelector("#talent1-22").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-23").addEventListener('click', function(){talentsclick("1-23")}, false);
+	document.querySelector("#talent1-23").addEventListener('mouseover', function(){talentsmouseover("1-23")}, false);
+	document.querySelector("#talent1-23").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-24").addEventListener('click', function(){talentsclick("1-24")}, false);
+	document.querySelector("#talent1-24").addEventListener('mouseover', function(){talentsmouseover("1-24")}, false);
+	document.querySelector("#talent1-24").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-25").addEventListener('click', function(){talentsclick("1-25")}, false);
+	document.querySelector("#talent1-25").addEventListener('mouseover', function(){talentsmouseover("1-25")}, false);
+	document.querySelector("#talent1-25").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-26").addEventListener('click', function(){talentsclick("1-26")}, false);
+	document.querySelector("#talent1-26").addEventListener('mouseover', function(){talentsmouseover("1-26")}, false);
+	document.querySelector("#talent1-26").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-27").addEventListener('click', function(){talentsclick("1-27")}, false);
+	document.querySelector("#talent1-27").addEventListener('mouseover', function(){talentsmouseover("1-27")}, false);
+	document.querySelector("#talent1-27").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent1-28").addEventListener('click', function(){talentsclick("1-28")}, false);
+	document.querySelector("#talent1-28").addEventListener('mouseover', function(){talentsmouseover("1-28")}, false);
+	document.querySelector("#talent1-28").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-0").addEventListener('click', function(){talentsclick("2-0")}, false);
+	document.querySelector("#talent2-0").addEventListener('mouseover', function(){talentsmouseover("2-0")}, false);
+	document.querySelector("#talent2-0").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-1").addEventListener('click', function(){talentsclick("2-1")}, false);
+	document.querySelector("#talent2-1").addEventListener('mouseover', function(){talentsmouseover("2-1")}, false);
+	document.querySelector("#talent2-1").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-2").addEventListener('click', function(){talentsclick("2-2")}, false);
+	document.querySelector("#talent2-2").addEventListener('mouseover', function(){talentsmouseover("2-2")}, false);
+	document.querySelector("#talent2-2").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-3").addEventListener('click', function(){talentsclick("2-3")}, false);
+	document.querySelector("#talent2-3").addEventListener('mouseover', function(){talentsmouseover("2-3")}, false);
+	document.querySelector("#talent2-3").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-4").addEventListener('click', function(){talentsclick("2-4")}, false);
+	document.querySelector("#talent2-4").addEventListener('mouseover', function(){talentsmouseover("2-4")}, false);
+	document.querySelector("#talent2-4").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-5").addEventListener('click', function(){talentsclick("2-5")}, false);
+	document.querySelector("#talent2-5").addEventListener('mouseover', function(){talentsmouseover("2-5")}, false);
+	document.querySelector("#talent2-5").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-6").addEventListener('click', function(){talentsclick("2-6")}, false);
+	document.querySelector("#talent2-6").addEventListener('mouseover', function(){talentsmouseover("2-6")}, false);
+	document.querySelector("#talent2-6").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-7").addEventListener('click', function(){talentsclick("2-7")}, false);
+	document.querySelector("#talent2-7").addEventListener('mouseover', function(){talentsmouseover("2-7")}, false);
+	document.querySelector("#talent2-7").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-8").addEventListener('click', function(){talentsclick("2-8")}, false);
+	document.querySelector("#talent2-8").addEventListener('mouseover', function(){talentsmouseover("2-8")}, false);
+	document.querySelector("#talent2-8").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-9").addEventListener('click', function(){talentsclick("2-9")}, false);
+	document.querySelector("#talent2-9").addEventListener('mouseover', function(){talentsmouseover("2-9")}, false);
+	document.querySelector("#talent2-9").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-10").addEventListener('click', function(){talentsclick("2-10")}, false);
+	document.querySelector("#talent2-10").addEventListener('mouseover', function(){talentsmouseover("2-10")}, false);
+	document.querySelector("#talent2-10").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-11").addEventListener('click', function(){talentsclick("2-11")}, false);
+	document.querySelector("#talent2-11").addEventListener('mouseover', function(){talentsmouseover("2-11")}, false);
+	document.querySelector("#talent2-11").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-12").addEventListener('click', function(){talentsclick("2-12")}, false);
+	document.querySelector("#talent2-12").addEventListener('mouseover', function(){talentsmouseover("2-12")}, false);
+	document.querySelector("#talent2-12").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-13").addEventListener('click', function(){talentsclick("2-13")}, false);
+	document.querySelector("#talent2-13").addEventListener('mouseover', function(){talentsmouseover("2-13")}, false);
+	document.querySelector("#talent2-13").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-14").addEventListener('click', function(){talentsclick("2-14")}, false);
+	document.querySelector("#talent2-14").addEventListener('mouseover', function(){talentsmouseover("2-14")}, false);
+	document.querySelector("#talent2-14").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-15").addEventListener('click', function(){talentsclick("2-15")}, false);
+	document.querySelector("#talent2-15").addEventListener('mouseover', function(){talentsmouseover("2-15")}, false);
+	document.querySelector("#talent2-15").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-16").addEventListener('click', function(){talentsclick("2-16")}, false);
+	document.querySelector("#talent2-16").addEventListener('mouseover', function(){talentsmouseover("2-16")}, false);
+	document.querySelector("#talent2-16").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-17").addEventListener('click', function(){talentsclick("2-17")}, false);
+	document.querySelector("#talent2-17").addEventListener('mouseover', function(){talentsmouseover("2-17")}, false);
+	document.querySelector("#talent2-17").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-18").addEventListener('click', function(){talentsclick("2-18")}, false);
+	document.querySelector("#talent2-18").addEventListener('mouseover', function(){talentsmouseover("2-18")}, false);
+	document.querySelector("#talent2-18").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-19").addEventListener('click', function(){talentsclick("2-19")}, false);
+	document.querySelector("#talent2-19").addEventListener('mouseover', function(){talentsmouseover("2-19")}, false);
+	document.querySelector("#talent2-19").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-20").addEventListener('click', function(){talentsclick("2-20")}, false);
+	document.querySelector("#talent2-20").addEventListener('mouseover', function(){talentsmouseover("2-20")}, false);
+	document.querySelector("#talent2-20").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-21").addEventListener('click', function(){talentsclick("2-21")}, false);
+	document.querySelector("#talent2-21").addEventListener('mouseover', function(){talentsmouseover("2-21")}, false);
+	document.querySelector("#talent2-21").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-22").addEventListener('click', function(){talentsclick("2-22")}, false);
+	document.querySelector("#talent2-22").addEventListener('mouseover', function(){talentsmouseover("2-22")}, false);
+	document.querySelector("#talent2-22").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-23").addEventListener('click', function(){talentsclick("2-23")}, false);
+	document.querySelector("#talent2-23").addEventListener('mouseover', function(){talentsmouseover("2-23")}, false);
+	document.querySelector("#talent2-23").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-24").addEventListener('click', function(){talentsclick("2-24")}, false);
+	document.querySelector("#talent2-24").addEventListener('mouseover', function(){talentsmouseover("2-24")}, false);
+	document.querySelector("#talent2-24").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-25").addEventListener('click', function(){talentsclick("2-25")}, false);
+	document.querySelector("#talent2-25").addEventListener('mouseover', function(){talentsmouseover("2-25")}, false);
+	document.querySelector("#talent2-25").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-26").addEventListener('click', function(){talentsclick("2-26")}, false);
+	document.querySelector("#talent2-26").addEventListener('mouseover', function(){talentsmouseover("2-26")}, false);
+	document.querySelector("#talent2-26").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-27").addEventListener('click', function(){talentsclick("2-27")}, false);
+	document.querySelector("#talent2-27").addEventListener('mouseover', function(){talentsmouseover("2-27")}, false);
+	document.querySelector("#talent2-27").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-28").addEventListener('click', function(){talentsclick("2-28")}, false);
+	document.querySelector("#talent2-28").addEventListener('mouseover', function(){talentsmouseover("2-28")}, false);
+	document.querySelector("#talent2-28").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-29").addEventListener('click', function(){talentsclick("2-29")}, false);
+	document.querySelector("#talent2-29").addEventListener('mouseover', function(){talentsmouseover("2-29")}, false);
+	document.querySelector("#talent2-29").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	document.querySelector("#talent2-30").addEventListener('click', function(){talentsclick("2-30")}, false);
+	document.querySelector("#talent2-30").addEventListener('mouseover', function(){talentsmouseover("2-30")}, false);
+	document.querySelector("#talent2-30").addEventListener('mouseout', function(){talentsmouseout()}, false);
+	
+		
+
+	function talentsclick(tales){
+		var talpos = tales;
+		var talsect = tales;
+		talpos = talpos.split("-");
+        talpos = talpos[1];
+		talsect = talsect.split("-");
+        talsect = parseInt(talsect[0]);
+		var split_globaltalentvar = globaltalentvar;
+		split_globaltalentvar = split_globaltalentvar.split("-");
+		split_globaltalentvar = split_globaltalentvar[talsect];
+		if (talsect == 0) {
+		var talsectiontotal = split_globaltalentvar.split("");
+		talsectiontotal = parseInt(talsectiontotal[0]) + parseInt(talsectiontotal[1]) + parseInt(talsectiontotal[2]) + parseInt(talsectiontotal[3]) + parseInt(talsectiontotal[4]) + parseInt(talsectiontotal[5]) + parseInt(talsectiontotal[6]) + parseInt(talsectiontotal[7]) + parseInt(talsectiontotal[8]) + parseInt(talsectiontotal[9]) + parseInt(talsectiontotal[10]) + parseInt(talsectiontotal[11]) + parseInt(talsectiontotal[12]) + parseInt(talsectiontotal[13]) + parseInt(talsectiontotal[14]) + parseInt(talsectiontotal[15]) + parseInt(talsectiontotal[16]) + parseInt(talsectiontotal[17]) + parseInt(talsectiontotal[18]) + parseInt(talsectiontotal[19]) + parseInt(talsectiontotal[20]) + parseInt(talsectiontotal[21]) + parseInt(talsectiontotal[22]) + parseInt(talsectiontotal[23]) + parseInt(talsectiontotal[24]) + parseInt(talsectiontotal[25]) + parseInt(talsectiontotal[26]) + parseInt(talsectiontotal[27]);
+		if (talsectiontotal < 5 && talpos > 2) {
+			end;
+		}
+		if (talsectiontotal < 10 && talpos > 5) {
+			end;
+		}
+		if (talsectiontotal < 15 && talpos > 8) {
+			end;
+		}
+		if (talsectiontotal < 20 && talpos > 11) {
+			end;
+		}
+		if (talsectiontotal < 25 && talpos > 14) {
+			end;
+		}
+		if (talsectiontotal < 30 && talpos > 16) {
+			end;
+		}
+		if (talsectiontotal < 35 && talpos > 19) {
+			end;
+		}
+		if (talsectiontotal < 40 && talpos > 22) {
+			end;
+		}
+		if (talsectiontotal < 45 && talpos > 25) {
+			end;
+		}
+		if (talsectiontotal < 50 && talpos > 26) {
+			end;
+		}
+		if (talsectiontotal < 55 && talpos > 27) {
+			end;
+		}
+		}
+		if (talsect == 1) {
+		var talsectiontotal = split_globaltalentvar.split("");
+		talsectiontotal = parseInt(talsectiontotal[0]) + parseInt(talsectiontotal[1]) + parseInt(talsectiontotal[2]) + parseInt(talsectiontotal[3]) + parseInt(talsectiontotal[4]) + parseInt(talsectiontotal[5]) + parseInt(talsectiontotal[6]) + parseInt(talsectiontotal[7]) + parseInt(talsectiontotal[8]) + parseInt(talsectiontotal[9]) + parseInt(talsectiontotal[10]) + parseInt(talsectiontotal[11]) + parseInt(talsectiontotal[12]) + parseInt(talsectiontotal[13]) + parseInt(talsectiontotal[14]) + parseInt(talsectiontotal[15]) + parseInt(talsectiontotal[16]) + parseInt(talsectiontotal[17]) + parseInt(talsectiontotal[18]) + parseInt(talsectiontotal[19]) + parseInt(talsectiontotal[20]) + parseInt(talsectiontotal[21]) + parseInt(talsectiontotal[22]) + parseInt(talsectiontotal[23]) + parseInt(talsectiontotal[24]) + parseInt(talsectiontotal[25]) + parseInt(talsectiontotal[26]) + parseInt(talsectiontotal[27]) + parseInt(talsectiontotal[28]);
+		if (talsectiontotal < 5 && talpos > 2) {
+			end;
+		}
+		if (talsectiontotal < 10 && talpos > 5) {
+			end;
+		}
+		if (talsectiontotal < 15 && talpos > 8) {
+			end;
+		}
+		if (talsectiontotal < 20 && talpos > 11) {
+			end;
+		}
+		if (talsectiontotal < 25 && talpos > 14) {
+			end;
+		}
+		if (talsectiontotal < 30 && talpos > 17) {
+			end;
+		}
+		if (talsectiontotal < 35 && talpos > 20) {
+			end;
+		}
+		if (talsectiontotal < 40 && talpos > 23) {
+			end;
+		}
+		if (talsectiontotal < 45 && talpos > 26) {
+			end;
+		}
+		if (talsectiontotal < 50 && talpos > 27) {
+			end;
+		}
+		if (talsectiontotal < 55 && talpos > 28) {
+			end;
+		}
+		}
+		if (talsect == 2) {
+		var talsectiontotal = split_globaltalentvar.split("");
+		talsectiontotal = parseInt(talsectiontotal[0]) + parseInt(talsectiontotal[1]) + parseInt(talsectiontotal[2]) + parseInt(talsectiontotal[3]) + parseInt(talsectiontotal[4]) + parseInt(talsectiontotal[5]) + parseInt(talsectiontotal[6]) + parseInt(talsectiontotal[7]) + parseInt(talsectiontotal[8]) + parseInt(talsectiontotal[9]) + parseInt(talsectiontotal[10]) + parseInt(talsectiontotal[11]) + parseInt(talsectiontotal[12]) + parseInt(talsectiontotal[13]) + parseInt(talsectiontotal[14]) + parseInt(talsectiontotal[15]) + parseInt(talsectiontotal[16]) + parseInt(talsectiontotal[17]) + parseInt(talsectiontotal[18]) + parseInt(talsectiontotal[19]) + parseInt(talsectiontotal[20]) + parseInt(talsectiontotal[21]) + parseInt(talsectiontotal[22]) + parseInt(talsectiontotal[23]) + parseInt(talsectiontotal[24]) + parseInt(talsectiontotal[25]) + parseInt(talsectiontotal[26]) + parseInt(talsectiontotal[27]) + parseInt(talsectiontotal[28]) + parseInt(talsectiontotal[29]) + parseInt(talsectiontotal[30]);
+		if (talsectiontotal < 5 && talpos > 2) {
+			end;
+		}
+		if (talsectiontotal < 10 && talpos > 6) {
+			end;
+		}
+		if (talsectiontotal < 15 && talpos > 9) {
+			end;
+		}
+		if (talsectiontotal < 20 && talpos > 12) {
+			end;
+		}
+		if (talsectiontotal < 25 && talpos > 15) {
+			end;
+		}
+		if (talsectiontotal < 30 && talpos > 19) {
+			end;
+		}
+		if (talsectiontotal < 35 && talpos > 23) {
+			end;
+		}
+		if (talsectiontotal < 40 && talpos > 25) {
+			end;
+		}
+		if (talsectiontotal < 45 && talpos > 28) {
+			end;
+		}
+		if (talsectiontotal < 50 && talpos > 29) {
+			end;
+		}
+		if (talsectiontotal < 55 && talpos > 30) {
+			end;
+		}
+		}
+
+		var totalamountototalpoints1 = globaltalentvar.split("-")
+		var totalamountototalpoints2 = totalamountototalpoints1[1];
+		var totalamountototalpoints3 = totalamountototalpoints1[2];
+		totalamountototalpoints1 = totalamountototalpoints1[0];
+		totalamountototalpoints1 = totalamountototalpoints1.split("");
+			totalamountototalpoints1 = parseInt(totalamountototalpoints1[0]) + parseInt(totalamountototalpoints1[1]) + parseInt(totalamountototalpoints1[2]) + parseInt(totalamountototalpoints1[3]) + parseInt(totalamountototalpoints1[4]) + parseInt(totalamountototalpoints1[5]) + parseInt(totalamountototalpoints1[6]) + parseInt(totalamountototalpoints1[7]) + parseInt(totalamountototalpoints1[8]) + parseInt(totalamountototalpoints1[9]) + parseInt(totalamountototalpoints1[10]) + parseInt(totalamountototalpoints1[11]) + parseInt(totalamountototalpoints1[12]) + parseInt(totalamountototalpoints1[13]) + parseInt(totalamountototalpoints1[14]) + parseInt(totalamountototalpoints1[15]) + parseInt(totalamountototalpoints1[16]) + parseInt(totalamountototalpoints1[17]) + parseInt(totalamountototalpoints1[18]) + parseInt(totalamountototalpoints1[19]) + parseInt(totalamountototalpoints1[20]) + parseInt(totalamountototalpoints1[21]) + parseInt(totalamountototalpoints1[22]) + parseInt(totalamountototalpoints1[23]) + parseInt(totalamountototalpoints1[24]) + parseInt(totalamountototalpoints1[25]) + parseInt(totalamountototalpoints1[26]) + parseInt(totalamountototalpoints1[27]);
+		totalamountototalpoints2 = totalamountototalpoints2.split("");
+			totalamountototalpoints2 = parseInt(totalamountototalpoints2[0]) + parseInt(totalamountototalpoints2[1]) + parseInt(totalamountototalpoints2[2]) + parseInt(totalamountototalpoints2[3]) + parseInt(totalamountototalpoints2[4]) + parseInt(totalamountototalpoints2[5]) + parseInt(totalamountototalpoints2[6]) + parseInt(totalamountototalpoints2[7]) + parseInt(totalamountototalpoints2[8]) + parseInt(totalamountototalpoints2[9]) + parseInt(totalamountototalpoints2[10]) + parseInt(totalamountototalpoints2[11]) + parseInt(totalamountototalpoints2[12]) + parseInt(totalamountototalpoints2[13]) + parseInt(totalamountototalpoints2[14]) + parseInt(totalamountototalpoints2[15]) + parseInt(totalamountototalpoints2[16]) + parseInt(totalamountototalpoints2[17]) + parseInt(totalamountototalpoints2[18]) + parseInt(totalamountototalpoints2[19]) + parseInt(totalamountototalpoints2[20]) + parseInt(totalamountototalpoints2[21]) + parseInt(totalamountototalpoints2[22]) + parseInt(totalamountototalpoints2[23]) + parseInt(totalamountototalpoints2[24]) + parseInt(totalamountototalpoints2[25]) + parseInt(totalamountototalpoints2[26]) + parseInt(totalamountototalpoints2[27]) + parseInt(totalamountototalpoints2[28]);
+		totalamountototalpoints3 = totalamountototalpoints3.split("");
+			totalamountototalpoints3 = parseInt(totalamountototalpoints3[0]) + parseInt(totalamountototalpoints3[1]) + parseInt(totalamountototalpoints3[2]) + parseInt(totalamountototalpoints3[3]) + parseInt(totalamountototalpoints3[4]) + parseInt(totalamountototalpoints3[5]) + parseInt(totalamountototalpoints3[6]) + parseInt(totalamountototalpoints3[7]) + parseInt(totalamountototalpoints3[8]) + parseInt(totalamountototalpoints3[9]) + parseInt(totalamountototalpoints3[10]) + parseInt(totalamountototalpoints3[11]) + parseInt(totalamountototalpoints3[12]) + parseInt(totalamountototalpoints3[13]) + parseInt(totalamountototalpoints3[14]) + parseInt(totalamountototalpoints3[15]) + parseInt(totalamountototalpoints3[16]) + parseInt(totalamountototalpoints3[17]) + parseInt(totalamountototalpoints3[18]) + parseInt(totalamountototalpoints3[19]) + parseInt(totalamountototalpoints3[20]) + parseInt(totalamountototalpoints3[21]) + parseInt(totalamountototalpoints3[22]) + parseInt(totalamountototalpoints3[23]) + parseInt(totalamountototalpoints3[24]) + parseInt(totalamountototalpoints3[25]) + parseInt(totalamountototalpoints3[26]) + parseInt(totalamountototalpoints3[27]) + parseInt(totalamountototalpoints3[28]) + parseInt(totalamountototalpoints3[29]) + parseInt(totalamountototalpoints3[30]);
+		
+		var totalamountofpoints = totalamountototalpoints1 + totalamountototalpoints2 + totalamountototalpoints3;
+		if (totalamountofpoints > 71) {
+			end;
+		}
+		
+		var textpoints = 71 - totalamountofpoints;
+		textpoints = "Talents Left: " + textpoints;
+		var textpointsdiv = document.querySelector("#talentsleft");
+		textpointsdiv.innerHTML = textpoints;
+		
+		
+		
+		var talentsmaxpointslist = "2355321533333313231223131351-32525351352233112331233131351-2352323351232152233151213133151";
+		var current_maxpointsallowed = talentsmaxpointslist.split("-");
+		current_maxpointsallowed = current_maxpointsallowed[talsect];
+		current_maxpointsallowed = current_maxpointsallowed.split("");
+		current_maxpointsallowed = current_maxpointsallowed[talpos];
+		split_globaltalentvar = split_globaltalentvar.split("");
+		split_globaltalentvar = split_globaltalentvar[talpos];
+		split_globaltalentvar = parseInt(split_globaltalentvar) + 1;
+		if (split_globaltalentvar > current_maxpointsallowed) {
+			split_globaltalentvar = split_globaltalentvar - 1;
+		}
+		if (talsect == 0) {
+			talpos = parseInt(talpos) + 0;
+		} else if (talsect == 1) {
+			talpos = parseInt(talpos) + 29;
+		} else {
+			talpos = parseInt(talpos) + 59;
+		}
+		var globaltalentvar_s = globaltalentvar.slice(0, talpos);
+		var globaltalentvar_e = globaltalentvar.slice(talpos+1);
+		globaltalentvar = globaltalentvar_s + split_globaltalentvar + globaltalentvar_e;
+		var talenttextarea = document.querySelector("#talentsnumbers");
+		talenttextarea.innerHTML = globaltalentvar;
+		var talentidtext = "#talent" + tales;
+		var talenttextareapoint = document.querySelector(talentidtext);
+		var talentidimage = tales + "-" + split_globaltalentvar + ".png";
+		var talimgloc = "/static/images/talents/" + talentidimage;
+		talenttextareapoint.innerHTML = '<img src=' + talimgloc + ' />';
+		talenk_selector();
+	}
+	
+	
+	
+	
+	
+	
+	
+	function talentsmouseover(tales){
+		var talpos = tales;
+		var talsect = tales;
+		talpos = talpos.split("-");
+        talpos = talpos[1];
+		talsect = talsect.split("-");
+        talsect = parseInt(talsect[0]);
+		var split_globaltalentvar = globaltalentvar;
+		split_globaltalentvar = split_globaltalentvar.split("-");
+		split_globaltalentvar = split_globaltalentvar[talsect];
+		split_globaltalentvar = split_globaltalentvar.split("");
+		split_globaltalentvar = split_globaltalentvar[talpos];
+		var hoverimag = tales + "-" + split_globaltalentvar + "-h.png";
+		hoverimag = "/static/images/talents/" + hoverimag;
+		var hoverimageloc = document.querySelector("#talenthover")
+		hoverimageloc.innerHTML = '<img src=' + hoverimag + ' />';
+		const followMouse = (elmt, event) => {
+				var xloc = event.x + 15;
+				var yloc = event.y + 25;
+					
+					
+			  elmt.style.left = xloc + "px";
+			  elmt.style.top = yloc + "px";
+		}
+		const image = document.querySelector("#talenthover")
+		image.style.display = "block";
+		image.style.position = "fixed";
+		image.style.pointerEvents = "none";
+		document.addEventListener("pointermove", function(event) {
+		  followMouse(image, event)
+		});
+	}
+	function talentsmouseout(){
+		var hoverimageloc = document.querySelector("#talenthover");
+		hoverimageloc.removeChild(hoverimageloc.firstChild);
+	}
+
+	
+	function talentsheetupdater(){
+		var importedtalents = globaltalentvar;
+		importedtalents = importedtalents.split("-");
+		var importedbloodtalents = importedtalents[0];
+		var importedfrosttalents = importedtalents[1];
+		var importedunholytalents = importedtalents[2];
+		var defaultbloodpre = "0-"; //0-27
+		var defaultfrostpre = "1-";  //0-28
+		var defaultunholypre = "2-"; //0-30
+		var talpointblood0 = defaultbloodpre + "0-" + importedbloodtalents[0];
+		var talpointblood1 = defaultbloodpre + "1-" + importedbloodtalents[1];
+		var talpointblood2 = defaultbloodpre + "2-" + importedbloodtalents[2];
+		var talpointblood3 = defaultbloodpre + "3-" + importedbloodtalents[3];
+		var talpointblood4 = defaultbloodpre + "4-" + importedbloodtalents[4];
+		var talpointblood5 = defaultbloodpre + "5-" + importedbloodtalents[5];
+		var talpointblood6 = defaultbloodpre + "6-" + importedbloodtalents[6];
+		var talpointblood7 = defaultbloodpre + "7-" + importedbloodtalents[7];
+		var talpointblood8 = defaultbloodpre + "8-" + importedbloodtalents[8];
+		var talpointblood9 = defaultbloodpre + "9-" + importedbloodtalents[9];
+		var talpointblood10 = defaultbloodpre + "10-" + importedbloodtalents[10];
+		var talpointblood11 = defaultbloodpre + "11-" + importedbloodtalents[11];
+		var talpointblood12 = defaultbloodpre + "12-" + importedbloodtalents[12];
+		var talpointblood13 = defaultbloodpre + "13-" + importedbloodtalents[13];
+		var talpointblood14 = defaultbloodpre + "14-" + importedbloodtalents[14];
+		var talpointblood15 = defaultbloodpre + "15-" + importedbloodtalents[15];
+		var talpointblood16 = defaultbloodpre + "16-" + importedbloodtalents[16];
+		var talpointblood17 = defaultbloodpre + "17-" + importedbloodtalents[17];
+		var talpointblood18 = defaultbloodpre + "18-" + importedbloodtalents[18];
+		var talpointblood19 = defaultbloodpre + "19-" + importedbloodtalents[19];
+		var talpointblood20 = defaultbloodpre + "20-" + importedbloodtalents[20];
+		var talpointblood21 = defaultbloodpre + "21-" + importedbloodtalents[21];
+		var talpointblood22 = defaultbloodpre + "22-" + importedbloodtalents[22];
+		var talpointblood23 = defaultbloodpre + "23-" + importedbloodtalents[23];
+		var talpointblood24 = defaultbloodpre + "24-" + importedbloodtalents[24];
+		var talpointblood25 = defaultbloodpre + "25-" + importedbloodtalents[25];
+		var talpointblood26 = defaultbloodpre + "26-" + importedbloodtalents[26];
+		var talpointblood27 = defaultbloodpre + "27-" + importedbloodtalents[27];
+		var talpointfrost0 = defaultfrostpre + "0-" + importedfrosttalents[0];
+		var talpointfrost1 = defaultfrostpre + "1-" + importedfrosttalents[1];
+		var talpointfrost2 = defaultfrostpre + "2-" + importedfrosttalents[2];
+		var talpointfrost3 = defaultfrostpre + "3-" + importedfrosttalents[3];
+		var talpointfrost4 = defaultfrostpre + "4-" + importedfrosttalents[4];
+		var talpointfrost5 = defaultfrostpre + "5-" + importedfrosttalents[5];
+		var talpointfrost6 = defaultfrostpre + "6-" + importedfrosttalents[6];
+		var talpointfrost7 = defaultfrostpre + "7-" + importedfrosttalents[7];
+		var talpointfrost8 = defaultfrostpre + "8-" + importedfrosttalents[8];
+		var talpointfrost9 = defaultfrostpre + "9-" + importedfrosttalents[9];
+		var talpointfrost10 = defaultfrostpre + "10-" + importedfrosttalents[10];
+		var talpointfrost11 = defaultfrostpre + "11-" + importedfrosttalents[11];
+		var talpointfrost12 = defaultfrostpre + "12-" + importedfrosttalents[12];
+		var talpointfrost13 = defaultfrostpre + "13-" + importedfrosttalents[13];
+		var talpointfrost14 = defaultfrostpre + "14-" + importedfrosttalents[14];
+		var talpointfrost15 = defaultfrostpre + "15-" + importedfrosttalents[15];
+		var talpointfrost16 = defaultfrostpre + "16-" + importedfrosttalents[16];
+		var talpointfrost17 = defaultfrostpre + "17-" + importedfrosttalents[17];
+		var talpointfrost18 = defaultfrostpre + "18-" + importedfrosttalents[18];
+		var talpointfrost19 = defaultfrostpre + "19-" + importedfrosttalents[19];
+		var talpointfrost20 = defaultfrostpre + "20-" + importedfrosttalents[20];
+		var talpointfrost21 = defaultfrostpre + "21-" + importedfrosttalents[21];
+		var talpointfrost22 = defaultfrostpre + "22-" + importedfrosttalents[22];
+		var talpointfrost23 = defaultfrostpre + "23-" + importedfrosttalents[23];
+		var talpointfrost24 = defaultfrostpre + "24-" + importedfrosttalents[24];
+		var talpointfrost25 = defaultfrostpre + "25-" + importedfrosttalents[25];
+		var talpointfrost26 = defaultfrostpre + "26-" + importedfrosttalents[26];
+		var talpointfrost27 = defaultfrostpre + "27-" + importedfrosttalents[27];
+		var talpointfrost28 = defaultfrostpre + "28-" + importedfrosttalents[28];
+		var talpointunholy0 = defaultunholypre + "0-" + importedunholytalents[0];
+		var talpointunholy1 = defaultunholypre + "1-" + importedunholytalents[1];
+		var talpointunholy2 = defaultunholypre + "2-" + importedunholytalents[2];
+		var talpointunholy3 = defaultunholypre + "3-" + importedunholytalents[3];
+		var talpointunholy4 = defaultunholypre + "4-" + importedunholytalents[4];
+		var talpointunholy5 = defaultunholypre + "5-" + importedunholytalents[5];
+		var talpointunholy6 = defaultunholypre + "6-" + importedunholytalents[6];
+		var talpointunholy7 = defaultunholypre + "7-" + importedunholytalents[7];
+		var talpointunholy8 = defaultunholypre + "8-" + importedunholytalents[8];
+		var talpointunholy9 = defaultunholypre + "9-" + importedunholytalents[9];
+		var talpointunholy10 = defaultunholypre + "10-" + importedunholytalents[10];
+		var talpointunholy11 = defaultunholypre + "11-" + importedunholytalents[11];
+		var talpointunholy12 = defaultunholypre + "12-" + importedunholytalents[12];
+		var talpointunholy13 = defaultunholypre + "13-" + importedunholytalents[13];
+		var talpointunholy14 = defaultunholypre + "14-" + importedunholytalents[14];
+		var talpointunholy15 = defaultunholypre + "15-" + importedunholytalents[15];
+		var talpointunholy16 = defaultunholypre + "16-" + importedunholytalents[16];
+		var talpointunholy17 = defaultunholypre + "17-" + importedunholytalents[17];
+		var talpointunholy18 = defaultunholypre + "18-" + importedunholytalents[18];
+		var talpointunholy19 = defaultunholypre + "19-" + importedunholytalents[19];
+		var talpointunholy20 = defaultunholypre + "20-" + importedunholytalents[20];
+		var talpointunholy21 = defaultunholypre + "21-" + importedunholytalents[21];
+		var talpointunholy22 = defaultunholypre + "22-" + importedunholytalents[22];
+		var talpointunholy23 = defaultunholypre + "23-" + importedunholytalents[23];
+		var talpointunholy24 = defaultunholypre + "24-" + importedunholytalents[24];
+		var talpointunholy25 = defaultunholypre + "25-" + importedunholytalents[25];
+		var talpointunholy26 = defaultunholypre + "26-" + importedunholytalents[26];
+		var talpointunholy27 = defaultunholypre + "27-" + importedunholytalents[27];
+		var talpointunholy28 = defaultunholypre + "28-" + importedunholytalents[28];
+		var talpointunholy29 = defaultunholypre + "29-" + importedunholytalents[29];
+		var talpointunholy30 = defaultunholypre + "30-" + importedunholytalents[30];
+		
+		function talentimagereplace(talrepoinner){
+			var talentidtext = "#talent" + talrepoinner;
+			talentidtext = talentidtext.split("-");
+			talentidtext = talentidtext[0] + "-" + talentidtext[1];
+			var talenttextareapoint = document.querySelector(talentidtext);
+			var talimgloc = "/static/images/talents/" + talrepoinner + ".png";
+			talenttextareapoint.innerHTML = '<img src=' + talimgloc + ' />';
+		}
+		var talentlooplist = [talpointblood0, talpointblood1, talpointblood2, talpointblood3, talpointblood4, talpointblood5, talpointblood6, talpointblood7, talpointblood8, talpointblood9, talpointblood10, talpointblood11, talpointblood12, talpointblood13, talpointblood14, talpointblood15, talpointblood16, talpointblood17, talpointblood18, talpointblood19, talpointblood20, talpointblood21, talpointblood22, talpointblood23, talpointblood24, talpointblood25, talpointblood26, talpointblood27, talpointfrost0, talpointfrost1, talpointfrost2, talpointfrost3, talpointfrost4, talpointfrost5, talpointfrost6, talpointfrost7, talpointfrost8, talpointfrost9, talpointfrost10, talpointfrost11, talpointfrost12, talpointfrost13, talpointfrost14, talpointfrost15, talpointfrost16, talpointfrost17, talpointfrost18, talpointfrost19, talpointfrost20, talpointfrost21, talpointfrost22, talpointfrost23, talpointfrost24, talpointfrost25, talpointfrost26, talpointfrost27, talpointfrost28, talpointunholy0, talpointunholy1, talpointunholy2, talpointunholy3, talpointunholy4, talpointunholy5, talpointunholy6, talpointunholy7, talpointunholy8, talpointunholy9, talpointunholy10, talpointunholy11, talpointunholy12, talpointunholy13, talpointunholy14, talpointunholy15, talpointunholy16, talpointunholy17, talpointunholy18, talpointunholy19, talpointunholy20, talpointunholy21, talpointunholy22, talpointunholy23, talpointunholy24, talpointunholy25, talpointunholy26, talpointunholy27, talpointunholy28, talpointunholy29, talpointunholy30]
+		var talentimageloopnum = 0;
+		while ( talentimageloopnum < 88) {
+			var talentlooplistspot = talentlooplist[talentimageloopnum];
+			talentimagereplace(talentlooplistspot);
+			talentimageloopnum ++;
+		}
+	}
+	
+	
+	
+	function resettalents(){
+		globaltalentvar = "0000000000000000000000000000-00000000000000000000000000000-0000000000000000000000000000000_";
+		var talenttextarea = document.querySelector("#talentsnumbers");
+		talenttextarea.innerHTML = globaltalentvar;
+		talentsheetupdater();
+		var textpoints = "Talents Left: 72";
+		var textpointsdiv = document.querySelector("#talentsleft");
+		textpointsdiv.innerHTML = textpoints;
+		talenk_selector();
+	}
+			  talentsheetupdater();
+	
+		  function majglyph1(){
+			var bonesm = document.getElementById('mainglyph1').value;
+			Cookies.set('glyph1selection', bonesm, { expires: 7 })
+
+		  }
+			var bonesm_open_select = Cookies.get('glyph1selection')
+            if (bonesm_open_select === undefined || bonesm_open_select === null) {
+               bonesm_open_select = "";
+            }
+            const $select2666 = document.querySelector('#mainglyph1');
+            $select2666.value = bonesm_open_select
+			  
+		function majglyph2(){
+			var bonesm = document.getElementById('mainglyph2').value;
+			Cookies.set('glyph2selection', bonesm, { expires: 7 })
+
+		  }
+			var bonesm_open_select = Cookies.get('glyph2selection')
+            if (bonesm_open_select === undefined || bonesm_open_select === null) {
+               bonesm_open_select = "";
+            }
+            const $select2667 = document.querySelector('#mainglyph2');
+            $select2667.value = bonesm_open_select
+			  
+		function majglyph3(){
+			var bonesm = document.getElementById('mainglyph3').value;
+			Cookies.set('glyph3selection', bonesm, { expires: 7 })
+
+		  }
+			var bonesm_open_select = Cookies.get('glyph3selection')
+            if (bonesm_open_select === undefined || bonesm_open_select === null) {
+               bonesm_open_select = "";
+            }
+            const $select2668 = document.querySelector('#mainglyph3');
+            $select2668.value = bonesm_open_select
+			  
+		function majglyph4(){
+			var bonesm = document.getElementById('minorglyph1').value;
+			Cookies.set('glyph4selection', bonesm, { expires: 7 })
+
+		  }
+			var bonesm_open_select = Cookies.get('glyph4selection')
+            if (bonesm_open_select === undefined || bonesm_open_select === null) {
+               bonesm_open_select = "";
+            }
+            const $select2669 = document.querySelector('#minorglyph1');
+            $select2669.value = bonesm_open_select
                 
+		majglyph1();
+		majglyph2();
+		majglyph3();
+		majglyph4();
               
           </script>
         <noscript>Your browser does not support JavaScript!</noscript>
