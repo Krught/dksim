@@ -129,7 +129,7 @@ def dps_load():
     glyph2 = request.form["mainglyph2"]
     glyph3 = request.form["mainglyph3"]
     glyph4 = request.form["minorglyph1"]
-    talents = str(talents) + str(glyph1) + str(glyph2) + str(glyph3) + str(glyph4)
+    talents = str(talents) + "00" + str(glyph1) + str(glyph2) + str(glyph3) + str(glyph4)
     #new text forms here
 
     fight_length = request.form["fightlen"]
@@ -600,7 +600,7 @@ def dps_load_batch():
     glyph2 = request.form["mainglyph2"]
     glyph3 = request.form["mainglyph3"]
     glyph4 = request.form["minorglyph1"]
-    talents = str(talents) + str(glyph1) + str(glyph2) + str(glyph3) + str(glyph4)
+    talents = str(talents) + "00" + str(glyph1) + str(glyph2) + str(glyph3) + str(glyph4)
     fight_length = request.form["fightlen"]
     fight_length = int(fight_length)
     fight_length_variance = request.form["fightlenvar"]
