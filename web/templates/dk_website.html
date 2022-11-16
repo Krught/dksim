@@ -65,8 +65,8 @@
         <br>
         <br>
         <!-- have a button POST a click via AJAX -->
-        <button id="simdpsbutton"hx-post="/calculatedps"hx-trigger="click"hx-target="#sim-import-area"hx-indicator="#spinner"hx-include="#head, #neck, #weapon1, #weapon2, #shoulders, #back, #chest, #wrist, #gloves, #waist, #legs, #boots, #sigil, #ring1, #ring2, #trinket1, #trinket2, #fightlen, #fightlenvar, #simamounts, #targetamounts, #targetlevel, #targetarmor, #fightsub35, #pestilencereset, #hornofwinterprecastamount, #dkpresence, #dkspec, #raceselection, #potion, #potionpop, #flask, #foodselection, #draeneiinparty, #hornofwinterbuff, #impicytalonsbuff, #abommightbuff, #sancretribuff, #impmoonkinbuff, #bloodfrenzybuff, #exposearmordebuff, #curseofweaknessdebuff, #leaderofthepackbuff, #heroismbuff, #heroismtimer, #unholyfrenzybuff, #unholyfrenzytimer, #tricksofthettbuff, #tricksofthetradetimer, #giftofthewildbuff, #greaterblessingofkingsbuff, #greaterblessingofmightbuff, #impblessingofmightbuff, #heartoftherusaderbuff, #impscorchbuff, #impfaeriefiredebuff, #curseoftheelementsdebuff, #moonkinaurabuff, #bloodfurybuff, #bloodfurytimer, #berserkingbuff, #berserkingtimer, #talentlink, #boneshieldconsum, #gargusetime, #gargstancedance, #useghoul, #usearmyofd, #prioobliterate, #priobloodstrike, #nodeathanddecay, #forcedeathanddecay, #cryptfeverdebuff, #metagemselection, #mhweapenchant, #ohweapenchant, #headenchant, #shouldersenchant, #backenchant, #chestenchant, #wristenchant, #glovesenchant, #legsenchant, #bootsenchant, #ring1enchant, #ring2enchant, #socketbonus1, #socketbonus2, #socketbonus3, #socketbonus4, #socketbonus5, #socketbonus6, #socketbonus7, #socketbonus8, #socketbonus9, #socketbonus10, #socketbonus11, #socketbonus12, #socketbonus13, #socketbonus14, #socketbonus15, #socketbonus16, #gemselection1, #gemselection2, #gemselection3, #gemselection4, #gemselection5, #gemselection6, #gemselection7, #gemselection8, #gemselection9, #gemselection10, #gemselection11, #gemselection12, #gemselection13, #gemselection14, #gemselection15, #gemselection16, #gemselection17, #gemselection18, #gemselection19, #gemselection20, #gemselection21, #gemselection22, #gemselection23, #gemselection24, #gemselection25, #gemselection26, #gemselection27, #gemselection28, #gemselection29, #gemselection30, #gemselection31, #gemselection32, #gemselection33, #gemselection34, #gemselection35, #gemselection36, #gemselection37, #gemselection38, #gemselection39, #gemselection40, #gemselection41, #gemselection42, #gemselection43, #gemselection44, #gemselection45, #gemselection46, #gemselection47, #gemselection48, #gemselection49, #gemselection50, #gemselection51, #gemselection52, #gemselection53, #gemselection54, #gemselection55, #gemselection56, #gemselection57, #gemselection58, #gemselection59, #gemselection60, #gemselection61, #gemselection62, #gemselection63, #gemselection64, #bloodgorg, #usernameassign, #prepoppotion, #greatergiftofthewild, #prearmorpotion, #shatteringbuff, #shatteringtimer, #mainglyph1, #mainglyph2, #mainglyph3, #minorglyph1">Calculate DPS</button>
-        <button hidden id="simdpsbutton2"hx-post="/calculatedpsbatch"hx-trigger="click"hx-target="#sim-import-area"hx-indicator="#spinner"hx-include="#head, #neck, #weapon1, #weapon2, #shoulders, #back, #chest, #wrist, #gloves, #waist, #legs, #boots, #sigil, #ring1, #ring2, #trinket1, #trinket2, #fightlen, #fightlenvar, #simamounts, #targetamounts, #targetlevel, #targetarmor, #fightsub35, #pestilencereset, #hornofwinterprecastamount, #dkpresence, #dkspec, #raceselection, #potion, #potionpop, #flask, #foodselection, #draeneiinparty, #hornofwinterbuff, #impicytalonsbuff, #abommightbuff, #sancretribuff, #impmoonkinbuff, #bloodfrenzybuff, #exposearmordebuff, #curseofweaknessdebuff, #leaderofthepackbuff, #heroismbuff, #heroismtimer, #unholyfrenzybuff, #unholyfrenzytimer, #tricksofthettbuff, #tricksofthetradetimer, #giftofthewildbuff, #greaterblessingofkingsbuff, #greaterblessingofmightbuff, #impblessingofmightbuff, #heartoftherusaderbuff, #impscorchbuff, #impfaeriefiredebuff, #curseoftheelementsdebuff, #moonkinaurabuff, #bloodfurybuff, #bloodfurytimer, #berserkingbuff, #berserkingtimer, #talentlink, #boneshieldconsum, #gargusetime, #gargstancedance, #useghoul, #usearmyofd, #prioobliterate, #priobloodstrike, #nodeathanddecay, #forcedeathanddecay, #cryptfeverdebuff, #metagemselection, #mhweapenchant, #ohweapenchant, #headenchant, #shouldersenchant, #backenchant, #chestenchant, #wristenchant, #glovesenchant, #legsenchant, #bootsenchant, #ring1enchant, #ring2enchant, #socketbonus1, #socketbonus2, #socketbonus3, #socketbonus4, #socketbonus5, #socketbonus6, #socketbonus7, #socketbonus8, #socketbonus9, #socketbonus10, #socketbonus11, #socketbonus12, #socketbonus13, #socketbonus14, #socketbonus15, #socketbonus16, #gemselection1, #gemselection2, #gemselection3, #gemselection4, #gemselection5, #gemselection6, #gemselection7, #gemselection8, #gemselection9, #gemselection10, #gemselection11, #gemselection12, #gemselection13, #gemselection14, #gemselection15, #gemselection16, #gemselection17, #gemselection18, #gemselection19, #gemselection20, #gemselection21, #gemselection22, #gemselection23, #gemselection24, #gemselection25, #gemselection26, #gemselection27, #gemselection28, #gemselection29, #gemselection30, #gemselection31, #gemselection32, #gemselection33, #gemselection34, #gemselection35, #gemselection36, #gemselection37, #gemselection38, #gemselection39, #gemselection40, #gemselection41, #gemselection42, #gemselection43, #gemselection44, #gemselection45, #gemselection46, #gemselection47, #gemselection48, #gemselection49, #gemselection50, #gemselection51, #gemselection52, #gemselection53, #gemselection54, #gemselection55, #gemselection56, #gemselection57, #gemselection58, #gemselection59, #gemselection60, #gemselection61, #gemselection62, #gemselection63, #gemselection64, #bloodgorg, #usernameassign, #prepoppotion, #greatergiftofthewild, #prearmorpotion, #shatteringbuff, #shatteringtimer, #mainglyph1, #mainglyph2, #mainglyph3, #minorglyph1">Calculate DPS</button>
+        <button id="simdpsbutton"hx-post="/calculatedps"hx-trigger="click"hx-target="#sim-import-area"hx-indicator="#spinner"hx-include="#head, #neck, #weapon1, #weapon2, #shoulders, #back, #chest, #wrist, #gloves, #waist, #legs, #boots, #sigil, #ring1, #ring2, #trinket1, #trinket2, #fightlen, #fightlenvar, #simamounts, #targetamounts, #targetlevel, #targetarmor, #fightsub35, #pestilencereset, #hornofwinterprecastamount, #dkpresence, #dkspec, #raceselection, #potion, #potionpop, #flask, #foodselection, #draeneiinparty, #hornofwinterbuff, #impicytalonsbuff, #abommightbuff, #sancretribuff, #impmoonkinbuff, #bloodfrenzybuff, #exposearmordebuff, #curseofweaknessdebuff, #leaderofthepackbuff, #heroismbuff, #heroismtimer, #unholyfrenzybuff, #unholyfrenzytimer, #tricksofthettbuff, #tricksofthetradetimer, #giftofthewildbuff, #greaterblessingofkingsbuff, #greaterblessingofmightbuff, #impblessingofmightbuff, #heartoftherusaderbuff, #impscorchbuff, #impfaeriefiredebuff, #curseoftheelementsdebuff, #moonkinaurabuff, #bloodfurybuff, #bloodfurytimer, #berserkingbuff, #berserkingtimer, #talentlink, #boneshieldconsum, #gargusetime, #gargstancedance, #useghoul, #usearmyofd, #prioobliterate, #priobloodstrike, #nodeathanddecay, #forcedeathanddecay, #cryptfeverdebuff, #metagemselection, #mhweapenchant, #ohweapenchant, #headenchant, #shouldersenchant, #backenchant, #chestenchant, #wristenchant, #glovesenchant, #legsenchant, #bootsenchant, #ring1enchant, #ring2enchant, #socketbonus1, #socketbonus2, #socketbonus3, #socketbonus4, #socketbonus5, #socketbonus6, #socketbonus7, #socketbonus8, #socketbonus9, #socketbonus10, #socketbonus11, #socketbonus12, #socketbonus13, #socketbonus14, #socketbonus15, #socketbonus16, #gemselection1, #gemselection2, #gemselection3, #gemselection4, #gemselection5, #gemselection6, #gemselection7, #gemselection8, #gemselection9, #gemselection10, #gemselection11, #gemselection12, #gemselection13, #gemselection14, #gemselection15, #gemselection16, #gemselection17, #gemselection18, #gemselection19, #gemselection20, #gemselection21, #gemselection22, #gemselection23, #gemselection24, #gemselection25, #gemselection26, #gemselection27, #gemselection28, #gemselection29, #gemselection30, #gemselection31, #gemselection32, #gemselection33, #gemselection34, #gemselection35, #gemselection36, #gemselection37, #gemselection38, #gemselection39, #gemselection40, #gemselection41, #gemselection42, #gemselection43, #gemselection44, #gemselection45, #gemselection46, #gemselection47, #gemselection48, #gemselection49, #gemselection50, #gemselection51, #gemselection52, #gemselection53, #gemselection54, #gemselection55, #gemselection56, #gemselection57, #gemselection58, #gemselection59, #gemselection60, #gemselection61, #gemselection62, #gemselection63, #gemselection64, #bloodgorg, #usernameassign, #prepoppotion, #greatergiftofthewild, #prearmorpotion, #shatteringbuff, #shatteringtimer, #mainglyph1, #mainglyph2, #mainglyph3, #minorglyph1, #skipdisease, #skipempoweredruneweap">Calculate DPS</button>
+        <button hidden id="simdpsbutton2"hx-post="/calculatedpsbatch"hx-trigger="click"hx-target="#sim-import-area"hx-indicator="#spinner"hx-include="#head, #neck, #weapon1, #weapon2, #shoulders, #back, #chest, #wrist, #gloves, #waist, #legs, #boots, #sigil, #ring1, #ring2, #trinket1, #trinket2, #fightlen, #fightlenvar, #simamounts, #targetamounts, #targetlevel, #targetarmor, #fightsub35, #pestilencereset, #hornofwinterprecastamount, #dkpresence, #dkspec, #raceselection, #potion, #potionpop, #flask, #foodselection, #draeneiinparty, #hornofwinterbuff, #impicytalonsbuff, #abommightbuff, #sancretribuff, #impmoonkinbuff, #bloodfrenzybuff, #exposearmordebuff, #curseofweaknessdebuff, #leaderofthepackbuff, #heroismbuff, #heroismtimer, #unholyfrenzybuff, #unholyfrenzytimer, #tricksofthettbuff, #tricksofthetradetimer, #giftofthewildbuff, #greaterblessingofkingsbuff, #greaterblessingofmightbuff, #impblessingofmightbuff, #heartoftherusaderbuff, #impscorchbuff, #impfaeriefiredebuff, #curseoftheelementsdebuff, #moonkinaurabuff, #bloodfurybuff, #bloodfurytimer, #berserkingbuff, #berserkingtimer, #talentlink, #boneshieldconsum, #gargusetime, #gargstancedance, #useghoul, #usearmyofd, #prioobliterate, #priobloodstrike, #nodeathanddecay, #forcedeathanddecay, #cryptfeverdebuff, #metagemselection, #mhweapenchant, #ohweapenchant, #headenchant, #shouldersenchant, #backenchant, #chestenchant, #wristenchant, #glovesenchant, #legsenchant, #bootsenchant, #ring1enchant, #ring2enchant, #socketbonus1, #socketbonus2, #socketbonus3, #socketbonus4, #socketbonus5, #socketbonus6, #socketbonus7, #socketbonus8, #socketbonus9, #socketbonus10, #socketbonus11, #socketbonus12, #socketbonus13, #socketbonus14, #socketbonus15, #socketbonus16, #gemselection1, #gemselection2, #gemselection3, #gemselection4, #gemselection5, #gemselection6, #gemselection7, #gemselection8, #gemselection9, #gemselection10, #gemselection11, #gemselection12, #gemselection13, #gemselection14, #gemselection15, #gemselection16, #gemselection17, #gemselection18, #gemselection19, #gemselection20, #gemselection21, #gemselection22, #gemselection23, #gemselection24, #gemselection25, #gemselection26, #gemselection27, #gemselection28, #gemselection29, #gemselection30, #gemselection31, #gemselection32, #gemselection33, #gemselection34, #gemselection35, #gemselection36, #gemselection37, #gemselection38, #gemselection39, #gemselection40, #gemselection41, #gemselection42, #gemselection43, #gemselection44, #gemselection45, #gemselection46, #gemselection47, #gemselection48, #gemselection49, #gemselection50, #gemselection51, #gemselection52, #gemselection53, #gemselection54, #gemselection55, #gemselection56, #gemselection57, #gemselection58, #gemselection59, #gemselection60, #gemselection61, #gemselection62, #gemselection63, #gemselection64, #bloodgorg, #usernameassign, #prepoppotion, #greatergiftofthewild, #prearmorpotion, #shatteringbuff, #shatteringtimer, #mainglyph1, #mainglyph2, #mainglyph3, #minorglyph1, #skipdisease, #skipempoweredruneweap">Calculate DPS</button>
         <br>
         <br>
         <input type=button onClick="simcurrentsheet()" value='Sim Current Selection' >
@@ -183,6 +183,15 @@
 <br>
 <button name="changeSelected" id="changeSelected" class="changeSelected"hx-post="/loadgear"hx-trigger="click"hx-target="#total_gear_from_eighty"hx-indicator="#spinner"hx-include="#eighty">Load Gear</button>
 <br>
+<form>
+	Override All Gems With:
+	<select name="overgem" id="overgem" onchange="overridegemselection()">
+    <option value="0"selected="selected">None</option>
+    <option value="1">Unholy</option>
+    <option value="2">Blood</option>
+</select>
+	</form>
+<br>
 <br>
   </div>
   <div class="column"style="text-align: center; font-size: 20px">
@@ -276,6 +285,22 @@
 	</div>
 	</form>
 </div>
+</div>
+<br>
+	<div style="text-align:center;float:center;font-size:21px;">
+	<form>
+	Don't Use Diseases:
+	<input type="checkbox" id="skipdisease" name="skipdisease"value="skipdisease" onchange="nodiesase_selector()">
+	</div>
+	</form>
+</div>
+<br>
+	<div style="text-align:center;float:center;font-size:21px;">
+	<form>
+	Don't Use Empower Rune Weapon:
+	<input type="checkbox" id="skipempoweredruneweap" name="skipempoweredruneweap"value="skipempoweredruneweap" onchange="empwep_selector()">
+	</div>
+	</form>
 </div>
 <br>
 <style>
@@ -38191,7 +38216,41 @@ document.querySelector(".Trinkt2_Whispering_Fanged_Skull-H").addEventListener('c
             if (forceay_open_select === "True") {
                document.getElementById("forcedeathanddecay").checked = true;
             }
-
+			function nodiesase_selector(){
+            if (skipdisease.checked)
+            {
+               var skipdisa = "True";
+            }
+            else {
+               var skipdisa = "False";
+            }
+                Cookies.set('skipdiseaseselection', skipdisa, { expires: 399 })
+            }
+            var skipdisa_open_select = Cookies.get('skipdiseaseselection')
+            if (skipdisa_open_select === undefined || skipdisa_open_select === null) {
+               skipdisa_open_select = "False";
+            }
+            if (skipdisa_open_select === "True") {
+               document.getElementById("skipdisease").checked = true;
+            }
+			  
+			function empwep_selector(){
+            if (skipempoweredruneweap.checked)
+            {
+               var skipemprweap = "True";
+            }
+            else {
+               var skipemprweap = "False";
+            }
+                Cookies.set('skipempoweredruneweapselection', skipemprweap, { expires: 399 })
+            }
+            var skipemprweap_open_select = Cookies.get('skipempoweredruneweapselection')
+            if (skipemprweap_open_select === undefined || skipemprweap_open_select === null) {
+               skipemprweap_open_select = "False";
+            }
+            if (skipemprweap_open_select === "True") {
+               document.getElementById("skipempoweredruneweap").checked = true;
+            }
             function cryptff_selector(){
             if (cryptfeverdebuff.checked)
             {
@@ -43326,6 +43385,20 @@ document.querySelector(".Trinkt2_Whispering_Fanged_Skull-H").addEventListener('c
 		majglyph2();
 		majglyph3();
 		majglyph4();
+			  
+			  
+		function overridegemselection(){
+			var overridegemsel = document.getElementById('overgem').value;
+			var countgems = 1;
+			while (countgems > 65) {
+				var gemselectionname = 'gemselection' + countgems + 'section';
+				var gemselectionloc = '#gemselection' + countgems;
+				Cookies.set(gemselectionname, overridegemsel, { expires: 399 })
+				var $select1700 = document.querySelector(gemselectionloc);
+				$select1700.value = ;overridegemsel
+				countgems ++;
+			}
+		}
               
           </script>
         <noscript>Your browser does not support JavaScript!</noscript>
