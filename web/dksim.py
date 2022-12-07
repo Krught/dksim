@@ -1167,7 +1167,8 @@ def all_dash_stuff(dash_all_data):
     extra_future_stats_info = extra_future_stats_info[2:-2]
     extra_all_dps_results = []
     for i in extra_future_stats_info:
-        extra_all_dps_results.append(round(i, -1))
+        i = round(i, -1)
+        extra_all_dps_results.append(i)
     extra_all_dps_results_min = min(extra_all_dps_results)
     extra_all_dps_results_max = max(extra_all_dps_results)
     counts1, bins1 = np.histogram(extra_all_dps_result, bins=range(extra_all_dps_results_min, extra_all_dps_results_max, 50))
