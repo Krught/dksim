@@ -573,7 +573,7 @@ def dps_load():
     extra_info_amount_of_targets = amount_of_targets #database 1 (version 2)
     extra_info_current_gear = helm_slot + str("*&*") + neck_slot + str("*&*") + shoulders_slot + str("*&*") + back_slot + str("*&*") + chest_slot + str("*&*") + wrist_slot + str("*&*") + gloves_slot + str("*&*") + waist_slot + str("*&*") + legs_slot + str("*&*") + boots_slot + str("*&*") + ring1_slot + str("*&*") + ring2_slot + str("*&*") + trinket1_slot + str("*&*") + trinket2_slot + str("*&*") + sigil_slot + str("*&*") + weapon1_slot + str("*&*") + weapon2_slot #database 1 (version 2)
     extra_stats_info = dps_split[21]
-    extra_future_stats_area = "0" #database 1 (version 2)
+    extra_future_stats_area = dps_split[22] #"0" #database 1 (version 2)
 
 
     Comment.query.filter_by(username=user).delete()
