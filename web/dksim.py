@@ -1179,7 +1179,7 @@ def all_dash_stuff(dash_all_data):
     bins1 = 0.5 * (bins1[:-1] + bins1[1:])
     fig_250_title = str("DPS Breakdown for All ") + str(total_amount_of_simss) + str(" Simulations")
     fig250 = px.bar(x=bins1, y=counts1, labels={'x':'DPS', 'y':'Occurrence'}, title=fig_250_title, template="plotly_dark", color=counts1, color_continuous_scale="sunset")
-    fig250.add_box = px.box(x=bins1, y=counts1)
+    fig251  = px.box(x=bins1, y=counts1, template="plotly_dark")
     fig250.update_layout(coloraxis_showscale=False)
     #fig250 = px.histogram(x=bins1, y=counts1, labels={'x':'DPS', 'y':'Occurrence'}, title=fig_250_title, template="plotly_dark", marginal="box")
     #extra_stats_split_list = extra_sim_stats_info.replace("*^*",", ")
@@ -1664,6 +1664,12 @@ def all_dash_stuff(dash_all_data):
             dcc.Graph(
                 id='graph3',
                 figure=fig3
+            ),
+        ]),
+        html.Div([
+            dcc.Graph(
+                id='graph251',
+                figure=fig251
             ),
         ]),
          html.Div([
