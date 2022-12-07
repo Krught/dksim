@@ -1171,7 +1171,7 @@ def all_dash_stuff(dash_all_data):
     extra_future_stats_info = ast.literal_eval(extra_future_stats_info)
     extra_all_dps_results = []
     for i in extra_future_stats_info:
-        i = round(i, -2)
+        i = round(i)
         extra_all_dps_results.append(i)
     extra_all_dps_results_min = int(min(extra_all_dps_results))
     extra_all_dps_results_max = int(max(extra_all_dps_results))
