@@ -1688,8 +1688,8 @@ def all_dash_stuff(dash_all_data):
             ),
         ]),
         html.Div(children=[
-            dcc.Graph(id="graph2",figure=fig2, style={'display': 'inline-block', 'width': '100vh'}),
-            dcc.Graph(id="graph4",figure=fig4, style={'display': 'inline-block', 'width': '100vh'})
+            dcc.Graph(id="graph2",figure=fig2, style={'display': 'inline-block', 'width': '90vh'}),
+            dcc.Graph(id="graph4",figure=fig4, style={'display': 'inline-block', 'width': '90vh'})
         ]),
         html.Div([
             dash_table.DataTable(id='table',
