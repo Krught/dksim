@@ -1677,14 +1677,14 @@ def all_dash_stuff(dash_all_data):
         ]),
         html.Div([
             dcc.Graph(
-                id='graph251',
-                figure=fig251
+                id='graph250',
+                figure=fig250
             ),
         ]),
          html.Div([
             dcc.Graph(
-                id='graph250',
-                figure=fig250
+                id='graph251',
+                figure=fig251
             ),
         ]),
         html.Div(children=[
