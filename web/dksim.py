@@ -1182,7 +1182,7 @@ def all_dash_stuff(dash_all_data):
     fig250.update_layout(coloraxis_showscale=False)
     
     data_251 = pd.DataFrame(dict(DPSValue=extra_all_dps_results))
-    fig251  = px.box(data_251, x="DPSValue", template="plotly_dark")
+    fig251  = px.box(data_251, x="DPSValue", template="plotly_dark", marker_color="white")
     fig251.update_layout(xaxis=dict(
                           title=None,
                           showgrid=False, ),
@@ -1688,8 +1688,8 @@ def all_dash_stuff(dash_all_data):
             ),
         ]),
         html.Div(children=[
-            dcc.Graph(id="graph2",figure=fig2, style={'display': 'inline-block', 'width': '90vh'}),
-            dcc.Graph(id="graph4",figure=fig4, style={'display': 'inline-block', 'width': '90vh'})
+            dcc.Graph(id="graph2",figure=fig2, style={'display': 'inline-block'}),
+            dcc.Graph(id="graph4",figure=fig4, style={'display': 'inline-block'})
         ]),
         html.Div([
             dash_table.DataTable(id='table',
