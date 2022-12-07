@@ -1182,7 +1182,7 @@ def all_dash_stuff(dash_all_data):
     fig250.update_layout(coloraxis_showscale=False)
     
     data_251 = pd.DataFrame(dict(DPSValue=extra_all_dps_results))
-    fig251  = px.box(data_251, y="DPSValue", template="plotly_dark")
+    fig251  = px.box(data_251, x="DPSValue", template="plotly_dark")
     #fig251.update_traces(orientation='h') 
     #fig250 = px.histogram(x=bins1, y=counts1, labels={'x':'DPS', 'y':'Occurrence'}, title=fig_250_title, template="plotly_dark", marginal="box")
     #extra_stats_split_list = extra_sim_stats_info.replace("*^*",", ")
