@@ -1169,10 +1169,11 @@ def all_dash_stuff(dash_all_data):
     total_amount_of_simss = extra_future_stats_info[:extra_future_stats_info_loc-1]
     extra_future_stats_info = extra_future_stats_info[extra_future_stats_info_loc:]
     extra_future_stats_info = ast.literal_eval(extra_future_stats_info)
-    extra_all_dps_results = []
-    for i in extra_future_stats_info:
-        i = round(i)
-        extra_all_dps_results.append(i)
+    extra_all_dps_results = extra_future_stats_info
+    #extra_all_dps_results = []
+    #for i in extra_future_stats_info:
+        #i = round(i)
+        #extra_all_dps_results.append(i)
     extra_all_dps_results_min = int(min(extra_all_dps_results))
     extra_all_dps_results_max = int(max(extra_all_dps_results))
     counts1, bins1 = np.histogram(extra_all_dps_results, bins=range(extra_all_dps_results_min, extra_all_dps_results_max, 50))
