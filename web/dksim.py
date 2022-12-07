@@ -1182,9 +1182,7 @@ def all_dash_stuff(dash_all_data):
     fig250.update_layout(coloraxis_showscale=False)
     
     data_251 = pd.DataFrame(dict(DPSValue=extra_all_dps_results))
-    fig251 = go.Figure()
-    #fig251  = px.box(data_251, x="DPSValue", template="plotly_dark", marker_color="white")
-    fig251.add_trace(go.box(x=data_251, marker_color="white"))
+    fig251  = px.box(data_251, x="DPSValue", template="plotly_dark")
     fig251.update_layout(xaxis=dict(
                           title=None,
                           showgrid=False, ),
