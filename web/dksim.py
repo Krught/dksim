@@ -1165,8 +1165,10 @@ def all_dash_stuff(dash_all_data):
     extra_future_stats_info = extra_future_stats_info.to_list() #database 1 (version 2)
     extra_future_stats_info = str(extra_future_stats_info)
     extra_future_stats_info = extra_future_stats_info[2:-2]
+    extra_future_stats_info = ast.literal_eval(extra_future_stats_info)
     extra_all_dps_results = []
     for i in extra_future_stats_info:
+        print(i)
         i = round(i, -1)
         extra_all_dps_results.append(i)
     extra_all_dps_results_min = min(extra_all_dps_results)
