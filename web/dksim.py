@@ -1184,7 +1184,7 @@ def all_dash_stuff(dash_all_data):
     data_251 = pd.DataFrame(dict(DPSValue=extra_all_dps_results))
     fig251 = go.Figure()
     #fig251  = px.box(data_251, x="DPSValue", template="plotly_dark", marker_color="white")
-    fig251.add_trace(px.box(data_251, x="DPSValue", template="plotly_dark", marker_color="white"))
+    fig251.add_trace(go.box(data_251, x="DPSValue", template="plotly_dark", marker_color="white"))
     fig251.update_layout(xaxis=dict(
                           title=None,
                           showgrid=False, ),
