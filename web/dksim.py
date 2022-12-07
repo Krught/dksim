@@ -1178,8 +1178,8 @@ def all_dash_stuff(dash_all_data):
     counts1, bins1 = np.histogram(extra_all_dps_results, bins=range(extra_all_dps_results_min, extra_all_dps_results_max, 50))
     bins1 = 0.5 * (bins1[:-1] + bins1[1:])
     fig_250_title = str("DPS Breakdown for All ") + str(total_amount_of_simss) + str(" Aimulations")
-    #fig250 = px.bar(x=bins1, y=counts1, labels={'x':'DPS', 'y':'Occurrence'}, title=fig_250_title, template="plotly_dark", marginal="box")
-    fig250 = px.histogram(x=bins1, y=counts1, labels={'x':'DPS', 'y':'Occurrence'}, title=fig_250_title, template="plotly_dark", marginal="box")
+    fig250 = px.bar(x=bins1, y=counts1, labels={'x':'DPS', 'y':'Occurrence'}, title=fig_250_title, template="plotly_dark", color=counts1)
+    #fig250 = px.histogram(x=bins1, y=counts1, labels={'x':'DPS', 'y':'Occurrence'}, title=fig_250_title, template="plotly_dark", marginal="box")
     #extra_stats_split_list = extra_sim_stats_info.replace("*^*",", ")
     #extra_stats_split_list = extra_stats_split_list.split(", ")
 
