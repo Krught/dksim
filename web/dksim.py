@@ -1161,6 +1161,22 @@ def all_dash_stuff(dash_all_data):
     extra_stats_split_list = extra_stats_split_list.split(", ")
 
 
+    extra_future_stats_info = dash_all_data["content_extra_future_stats_area"] #database 1 (version 2)
+    extra_future_stats_info = extra_future_stats_info.to_list() #database 1 (version 2)
+    extra_future_stats_info = str(extra_future_stats_info)
+    extra_future_stats_info = extra_future_stats_info[2:-2]
+    extra_all_dps_results = []
+    for i in extra_future_stats_info:
+        extra_all_dps_results.append(round(i, -1))
+    extra_all_dps_results_min = min(extra_all_dps_results)
+    extra_all_dps_results_max = max(extra_all_dps_results)
+    counts1, bins1 = np.histogram(extra_all_dps_result, bins=range(extra_all_dps_results_min, extra_all_dps_results_max, 50))
+    bins1 = 0.5 * (bins1[:-1] + bins1[1:])
+    fig250 = px.bar(x=bins1, y=counts1, labels={'x':'Total_Damage', 'y':'Count'})
+    #extra_stats_split_list = extra_sim_stats_info.replace("*^*",", ")
+    #extra_stats_split_list = extra_stats_split_list.split(", ")
+
+
     # extra_stats_split_list = extra_sim_stats_info.split("*^*")
     # current_gear_split_list = gear_currently_worn.split("*&*")
 
@@ -1639,6 +1655,12 @@ def all_dash_stuff(dash_all_data):
             dcc.Graph(
                 id='graph3',
                 figure=fig3
+            ),
+        ]),
+         html.Div([
+            dcc.Graph(
+                id='graph250',
+                figure=fig250
             ),
         ]),
         html.Div(children=[
