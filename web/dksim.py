@@ -1686,7 +1686,8 @@ def all_dash_stuff(dash_all_data):
                 id='graph251',
                 figure=fig251
             ),
-        ]),
+        ], style={'height': '50%'}
+        ),
         html.Div(children=[
             dcc.Graph(id="graph2",figure=fig2, style={'display': 'inline-block'}),
             dcc.Graph(id="graph4",figure=fig4, style={'display': 'inline-block'})
