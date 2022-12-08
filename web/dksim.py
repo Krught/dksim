@@ -1661,10 +1661,13 @@ def all_dash_stuff(dash_all_data):
               )
 
 
+    last_sim_title = str(dash_username) + "'s Last Simulation"
+
+
 
     return html.Div(children=[
         html.Div([
-            html.H1(children='Last Simulation', style={'color': '#ffffff'}),
+            html.H1(children=last_sim_title, style={'color': '#ffffff'}),
             dcc.Graph(
                 id='graph1',
                 figure=fig
