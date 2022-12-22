@@ -1,3 +1,5 @@
+import os
+print(os.getcwd())
 import pandas as pd
 gems_data =  pd.read_csv (r'sims/dk/EquipmentList - Gems.csv')
 all_selectable_gear = pd.read_csv (r'EquipmentList - Gear.csv')
