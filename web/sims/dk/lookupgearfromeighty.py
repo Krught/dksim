@@ -3,7 +3,7 @@ import os
 #gems_data =  pd.read_csv (r'/home/remour/remourtech/web/sims/dk/EquipmentList - Gems.csv')
 gems_data =  pd.read_csv (os.path.join(os.path.dirname(__file__), "web/sims/dk/EquipmentList - Gems.csv"))
 all_selectable_gear = pd.read_csv (r'/home/remour/remourtech/web/sims/dk/EquipmentList - Gear.csv')
-all_selectable_weps = pd.read_csv (r'/home/remour/remourtech/web/sims/dk/EquipmentList - Weapons.csv')
+all_selectable_weps = pd.read_csv (r'/web/sims/dk/EquipmentList - Weapons.csv')
 
 
 
