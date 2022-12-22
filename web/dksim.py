@@ -1,6 +1,6 @@
 from flask import Flask, request, session, render_template
-from dk_sim import all_function
-from lookupgearfromeighty import gear_lookup
+from sims.dk.dk_sim import all_function
+from sims.dk.lookupgearfromeighty import gear_lookup
 import dash
 import flask
 import pandas as pd
