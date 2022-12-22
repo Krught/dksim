@@ -26,6 +26,8 @@ lookup_list = phase_1_list
 lookup_list = np.unique(np.array(lookup_list))
 
 
+only_gem_list = [40809, 40811, 40848, 40851, 40879, 40880, 40881, 40882, 40883, 40884, 40888, 40889, 40890, 42027, 42028, 42034, 42035, 42041, 42042, 42067, 42068, 42074, 42075, 42081, 42082, 42115, 42117, 42119, 45106, 45108, 45109, 45111, 45112, 45134, 45138, 45139, 45141, 45143, 45144, 45157, 45161, 45162, 45166, 45193, 45224, 45225, 45227, 45228, 45232, 45241, 45244, 45245, 45247, 45248, 45249, 45250, 45251, 45254, 45262, 45264, 45265, 45267, 45283, 45285, 45295, 45300, 45301, 45302, 45303, 45304, 45310, 45312, 45318, 45319, 45320, 45322, 45324, 45325, 45326, 45330, 45334, 45335, 45337, 45338, 45339, 45340, 45341, 45343, 45344, 45444, 45453, 45454, 45456, 45459, 45461, 45467, 45469, 45471, 45473, 45480, 45481, 45485, 45487, 45491, 45496, 45501, 45503, 45504, 45517, 45524, 45525, 45534, 45536, 45538, 45540, 45542, 45543, 45547, 45550, 45551, 45553, 45555, 45559, 45560, 45562, 45564, 45588, 45594, 45599, 45608, 45611, 45663, 45675, 45676, 45677, 45679, 45696, 45697, 45704, 45708, 45709, 45711, 45712, 45819, 45820, 45821, 45824, 45825, 45827, 45829, 45834, 45836, 45838, 45841, 45842, 45844, 45846, 45869, 45871, 45873, 45874, 45888, 45895, 45940, 45941, 45945, 45973, 45982, 45988, 45989, 45997, 46008, 46010, 46014, 46019, 46022, 46032, 46037, 46039, 46040, 46041, 46043, 46048, 46095, 46111, 46113, 46116, 46117, 46118, 46119, 46121, 46122, 46320, 46322, 46340, 46343, 46346, 46373, 46374, 46959, 46960, 46961, 46962, 46965, 46966, 46967, 46968, 46970, 46971, 46974, 46975, 46997, 46999, 47000, 47002, 47003, 47004, 47042, 47043, 47052, 47060, 47061, 47063, 47070, 47071, 47072, 47073, 47074, 47075, 47076, 47077, 47082, 47086, 47105, 47106, 47107, 47108, 47109, 47110, 47111, 47112, 47116, 47121, 47132, 47133, 47149, 47150, 47151, 47152, 47153, 47154, 47155, 47157, 47183, 47184, 47191, 47192, 47234, 47240, 47251, 47252, 47253, 47254, 47257, 47259, 47268, 47269, 47270, 47272, 47273, 47275, 47281, 47282, 47283, 47284, 47288, 47296, 47297, 47298, 47299, 47304, 47305, 47311, 47312, 47313, 47315, 47319, 47320, 47330, 47412, 47413, 47414, 47415, 47418, 47420, 47429, 47430, 47431, 47433, 47434, 47436, 47442, 47443, 47444, 47445, 47449, 47457, 47458, 47459, 47460, 47465, 47466, 47472, 47473, 47474, 47476, 47480, 47481, 47492, 47545, 47546, 47547, 47548, 47549, 47550, 47570, 47571, 47572, 47573, 47576, 47577, 47578, 47581, 47582, 47589, 47590, 47591, 47592, 47595, 47596, 47599, 47600, 47607, 47608, 47609, 47610, 47611, 47614, 47672, 47673, 47679, 47680, 47683, 47696, 47697, 47698, 47699, 47700, 47703, 47704, 47705, 47708, 47709, 47711, 47719, 47720, 47729, 47730, 47731, 47738, 47739, 47811, 47829, 47830, 47832, 47849, 47850, 47851, 47852, 47853, 47854, 47859, 47867, 47868, 47869, 47870, 47872, 47877, 47878, 47885, 47887, 47888, 47896, 47901, 47902, 47904, 47915, 47916, 47917, 47918, 47919, 47920, 47925, 47933, 47934, 47935, 47937, 47939, 47944, 47945, 47952, 47954, 47955, 47964, 47969, 47970, 47972, 47988, 47989, 47990, 47991, 47992, 47993, 47998, 48006, 48007, 48008, 48009, 48011, 48016, 48017, 48024, 48026, 48027, 48041, 48046, 48047, 48049, 48474, 48476, 48478, 48480, 48481, 48482, 48484, 48485, 48486, 48487, 48489, 48490, 48491, 48492, 48494, 48495, 48496, 48497, 48499, 48500, 48501, 48502, 48504, 48505, 48531, 48533, 48535, 48537, 48538, 48539, 48541, 48542, 48543, 48544, 48546, 48547, 48548, 48549, 48551, 48552, 48553, 48554, 48556, 48557, 48558, 48559, 48561, 48562, 48668, 48669, 48670, 48673, 48674, 48675, 49306, 49309, 49485, 49489, 49492, 49895, 49897, 49899, 49901, 49903, 49904, 49906, 49907, 49949, 49950, 49951, 49960, 49964, 49983, 49985, 49987, 49988, 49989, 49998, 49999, 50000, 50001, 50002, 50003, 50019, 50020, 50021, 50022, 50023, 50024, 50025, 50036, 50037, 50038, 50042, 50067, 50071, 50074, 50075, 50094, 50095, 50097, 50098, 50180, 50185, 50186, 50187, 50188, 50190, 50192, 50195, 50333, 50413, 50414, 50421, 50447, 50452, 50453, 50459, 50462, 50466, 50467, 50470, 50604, 50606, 50607, 50611, 50612, 50618, 50619, 50620, 50622, 50624, 50625, 50627, 50633, 50639, 50642, 50645, 50646, 50647, 50653, 50655, 50656, 50657, 50659, 50660, 50670, 50673, 50674, 50675, 50677, 50678, 50681, 50682, 50688, 50689, 50690, 50691, 50693, 50697, 50707, 50711, 50716, 50718, 50728, 50762, 50763, 50764, 50777, 50778, 50780, 50786, 50788, 50789, 50790, 50791, 50792, 50799, 50800, 50801, 50802, 50803, 50808, 50811, 50812, 50852, 50853, 50854, 50856, 50857, 50858, 50859, 50965, 50968, 50972, 50977, 50978, 50982, 50987, 50991, 50995, 51000, 51001, 51012, 51014, 51015, 51023, 51024, 51025, 51125, 51126, 51128, 51129, 51130, 51131, 51132, 51134, 51305, 51307, 51308, 51309, 51310, 51311, 51313, 51314, 51325, 51353, 51354, 51355, 51356, 51357, 51358, 51362, 51363, 51364, 51383, 51386, 51387, 51414, 51416, 51548, 51550, 51556, 51563, 51564, 51565, 51566, 51779, 51782, 51783, 51785, 51786, 51787, 51816, 51817, 51818, 51820, 51821, 51822, 51829, 51830, 51831, 51832, 51835, 51841, 51842, 51843, 51844, 51847, 51853, 51854, 51855, 51856, 51864, 51865, 51867, 51878, 51879, 51888, 51889, 51890, 51891, 51892, 51895, 51900, 51901, 51902, 51903, 51904, 51911, 51912, 51913, 51914, 51915, 51917, 51923, 51925, 51926, 51933, 51934, 51935, 53103, 53110, 53111, 53112, 53113, 53114, 53125, 53126, 53127, 53129, 53132, 53133, 54557, 54559, 54561, 54564, 54566, 54567, 54576, 54577, 54578, 54579, 54580, 54581]
+only_gem_num = True
 
 all_item_num = []
 all_item_name = []
@@ -52,259 +54,275 @@ all_wep_speed_amount = []
 all_phase_list = []
 all_heroic_list = []
     
-    
-for items in lookup_list:
-    full_lookup_link = lookup_route1 + str(items) + lookup_route2
-    full_item_info = urlopen(full_lookup_link)
-    full_item_info = str(full_item_info.read())
-    item_name_loc = full_item_info.find('<name><!')+15
-    item_name_end = full_item_info.find(']]></')
-    item_name = full_item_info[item_name_loc:item_name_end]
-    is_it_a_wep = full_item_info.find('[Weapons]')
-    find_name = full_item_info.find(item_name)+len(item_name)
-    full_item_info = full_item_info[find_name:]
-    item_slot_loc = full_item_info.find('inventorySlot id="')+18
-    full_item_info = full_item_info[item_slot_loc:]
-    item_slot_loc = full_item_info.find('">')+2
-    item_slot_loc_end = full_item_info.find('</')
-    item_slot = full_item_info[item_slot_loc:item_slot_loc_end]
-    strength_amount = 0
-    armor_amount = 0
-    stamina_amount = 0
-    agility_amount = 0
-    hit_amount = 0
-    crit_amount = 0
-    attack_power_amount = 0
-    haste_amount = 0
-    armor_pen_amount = 0
-    expertise_amount = 0
-    defense_amount = 0
-    parry_amount = 0
-    dodge_amount = 0
-    socket_bonus_amount_amount = 0
-    socket_bonus_type_amount = "Stamina"
-    wep_type = 0
-    min_damage_amount = 0
-    max_damage_amount = 0
-    wep_speed_amount = 0
-    phase_num = 0
-    heroic = "False"
-    phase_finder = full_item_info.find('''Phase ''')
-    phase_num = full_item_info[phase_finder+6:phase_finder+7]
-    heroic_finder = full_item_info.find('''Heroic''')
-    if heroic_finder > 0:
-        heroic = "True"
-    
-    find_str_loc = full_item_info.find(''' Strength</s''')
-    if find_str_loc > 5:
-        strength_string = full_item_info[:find_str_loc]
-        strength_string_end = strength_string.find('!--stat4-->+')+12
-        strength_amount = full_item_info[strength_string_end:find_str_loc]
-        if isinstance(strength_amount, int) == False:
-            amount_for_inc = strength_amount.find(" for")+4
-            if amount_for_inc > 5:
-                strength_amount = 0
-    find_armor_loc = full_item_info.find(''' Armor<''')
-    if find_armor_loc > 5:
-        armor_string = full_item_info[:find_armor_loc]
-        armor_string_end = armor_string.find('!--amr-->')+9
-        armor_amount = full_item_info[armor_string_end:find_armor_loc]
-        if isinstance(armor_amount, int) == False:
-            amount_for_inc = armor_amount.find(" for")+4
-            if amount_for_inc > 5:
-                armor_amount = 0
-    find_stamina_loc = full_item_info.find(''' Stamina<''') 
-    if find_stamina_loc > 5:
-        stamina_string = full_item_info[:find_stamina_loc]
-        stamina_string_end = stamina_string.find('!--stat7-->+')+12
-        if stamina_string_end > 13:
-            stamina_amount = full_item_info[stamina_string_end:find_stamina_loc]
-            if isinstance(stamina_amount, int) == False:
-                amount_for_inc = stamina_amount.find(" for")+4
+if only_gem_num == False:
+    for items in lookup_list:
+        full_lookup_link = lookup_route1 + str(items) + lookup_route2
+        full_item_info = urlopen(full_lookup_link)
+        full_item_info = str(full_item_info.read())
+        item_name_loc = full_item_info.find('<name><!')+15
+        item_name_end = full_item_info.find(']]></')
+        item_name = full_item_info[item_name_loc:item_name_end]
+        is_it_a_wep = full_item_info.find('[Weapons]')
+        find_name = full_item_info.find(item_name)+len(item_name)
+        full_item_info = full_item_info[find_name:]
+        item_slot_loc = full_item_info.find('inventorySlot id="')+18
+        full_item_info = full_item_info[item_slot_loc:]
+        item_slot_loc = full_item_info.find('">')+2
+        item_slot_loc_end = full_item_info.find('</')
+        item_slot = full_item_info[item_slot_loc:item_slot_loc_end]
+        strength_amount = 0
+        armor_amount = 0
+        stamina_amount = 0
+        agility_amount = 0
+        hit_amount = 0
+        crit_amount = 0
+        attack_power_amount = 0
+        haste_amount = 0
+        armor_pen_amount = 0
+        expertise_amount = 0
+        defense_amount = 0
+        parry_amount = 0
+        dodge_amount = 0
+        socket_bonus_amount_amount = 0
+        socket_bonus_type_amount = "Stamina"
+        wep_type = 0
+        min_damage_amount = 0
+        max_damage_amount = 0
+        wep_speed_amount = 0
+        phase_num = 0
+        heroic = "False"
+        phase_finder = full_item_info.find('''Phase ''')
+        phase_num = full_item_info[phase_finder+6:phase_finder+7]
+        heroic_finder = full_item_info.find('''Heroic''')
+        if heroic_finder > 0:
+            heroic = "True"
+        
+        find_str_loc = full_item_info.find(''' Strength</s''')
+        if find_str_loc > 5:
+            strength_string = full_item_info[:find_str_loc]
+            strength_string_end = strength_string.find('!--stat4-->+')+12
+            strength_amount = full_item_info[strength_string_end:find_str_loc]
+            if isinstance(strength_amount, int) == False:
+                amount_for_inc = strength_amount.find(" for")+4
                 if amount_for_inc > 5:
-                    stamina_amount = 0
-    find_agility_loc = full_item_info.find(''' Agility<''') 
-    if find_agility_loc > 5:
-        agility_string = full_item_info[:find_agility_loc]
-        agility_string_end = agility_string.find('!--stat3-->+')+12
-        agility_amount = full_item_info[agility_string_end:find_agility_loc]
-        if isinstance(agility_amount, int) == False:
-            amount_for_inc = agility_amount.find(" for")+4
-            if amount_for_inc > 5:
-                agility_amount = 0
-    find_crit_loc = full_item_info.find('''Improves critical strike rating by <!--rtg32-->''')+47
-    if find_crit_loc > 48:
-        crit_string = full_item_info[find_crit_loc:]
-        crit_string_end = crit_string.find('.</')
-        crit_amount = crit_string[:crit_string_end]
-        if isinstance(crit_amount, int) == False:
-            amount_for_inc = crit_amount.find(" for")+4
-            if amount_for_inc > 5:
-                crit_amount = 0
-    find_hit_loc = full_item_info.find('''Improves hit rating by <!--rtg31-->''')+35
-    if find_hit_loc > 36:
-        hit_string = full_item_info[find_hit_loc:]
-        hit_string_end = hit_string.find('.</')
-        hit_amount = hit_string[:hit_string_end]
-        if isinstance(hit_amount, int) == False:
-            amount_for_inc = hit_amount.find(" for")+4
-            if amount_for_inc > 5:
-                hit_amount = 0
-    find_attack_power_loc = full_item_info.find('''Increases attack power by ''')+26
-    if find_attack_power_loc > 27:
-        attack_power_string = full_item_info[find_attack_power_loc:]
-        attack_power_string_end = attack_power_string.find('.</')
-        attack_power_amount = attack_power_string[:attack_power_string_end]
-        ap_helper = attack_power_amount.find('<!--rtg38-->')+12
-        if ap_helper >= 12:
-            attack_power_amount = attack_power_string[12:attack_power_string_end]
-        cat_ap = full_item_info.find(' in Cat, Bear, Dire Bear, and Moonkin forms only')+48
-        if cat_ap > 49:
-            attack_power_amount = 0
-            cat_full_item_info = full_item_info[cat_ap:]
-            find_attack_power_loc = cat_full_item_info.find('''Increases attack power by ''')+26
-            if find_attack_power_loc > 27:
-                attack_power_string = cat_full_item_info[find_attack_power_loc:]
-                attack_power_string_end = attack_power_string.find('.</')
-                attack_power_amount = attack_power_string[:attack_power_string_end]
-                ap_helper = attack_power_amount.find('<!--rtg38-->')+12
-                if ap_helper >= 12:
-                    attack_power_amount = attack_power_string[12:attack_power_string_end]
-        if isinstance(attack_power_amount, int) == False:
-            amount_for_inc = attack_power_amount.find(" for")+4
-            if amount_for_inc > 5:
+                    strength_amount = 0
+        find_armor_loc = full_item_info.find(''' Armor<''')
+        if find_armor_loc > 5:
+            armor_string = full_item_info[:find_armor_loc]
+            armor_string_end = armor_string.find('!--amr-->')+9
+            armor_amount = full_item_info[armor_string_end:find_armor_loc]
+            if isinstance(armor_amount, int) == False:
+                amount_for_inc = armor_amount.find(" for")+4
+                if amount_for_inc > 5:
+                    armor_amount = 0
+        find_stamina_loc = full_item_info.find(''' Stamina<''') 
+        if find_stamina_loc > 5:
+            stamina_string = full_item_info[:find_stamina_loc]
+            stamina_string_end = stamina_string.find('!--stat7-->+')+12
+            if stamina_string_end > 13:
+                stamina_amount = full_item_info[stamina_string_end:find_stamina_loc]
+                if isinstance(stamina_amount, int) == False:
+                    amount_for_inc = stamina_amount.find(" for")+4
+                    if amount_for_inc > 5:
+                        stamina_amount = 0
+        find_agility_loc = full_item_info.find(''' Agility<''') 
+        if find_agility_loc > 5:
+            agility_string = full_item_info[:find_agility_loc]
+            agility_string_end = agility_string.find('!--stat3-->+')+12
+            agility_amount = full_item_info[agility_string_end:find_agility_loc]
+            if isinstance(agility_amount, int) == False:
+                amount_for_inc = agility_amount.find(" for")+4
+                if amount_for_inc > 5:
+                    agility_amount = 0
+        find_crit_loc = full_item_info.find('''Improves critical strike rating by <!--rtg32-->''')+47
+        if find_crit_loc > 48:
+            crit_string = full_item_info[find_crit_loc:]
+            crit_string_end = crit_string.find('.</')
+            crit_amount = crit_string[:crit_string_end]
+            if isinstance(crit_amount, int) == False:
+                amount_for_inc = crit_amount.find(" for")+4
+                if amount_for_inc > 5:
+                    crit_amount = 0
+        find_hit_loc = full_item_info.find('''Improves hit rating by <!--rtg31-->''')+35
+        if find_hit_loc > 36:
+            hit_string = full_item_info[find_hit_loc:]
+            hit_string_end = hit_string.find('.</')
+            hit_amount = hit_string[:hit_string_end]
+            if isinstance(hit_amount, int) == False:
+                amount_for_inc = hit_amount.find(" for")+4
+                if amount_for_inc > 5:
+                    hit_amount = 0
+        find_attack_power_loc = full_item_info.find('''Increases attack power by ''')+26
+        if find_attack_power_loc > 27:
+            attack_power_string = full_item_info[find_attack_power_loc:]
+            attack_power_string_end = attack_power_string.find('.</')
+            attack_power_amount = attack_power_string[:attack_power_string_end]
+            ap_helper = attack_power_amount.find('<!--rtg38-->')+12
+            if ap_helper >= 12:
+                attack_power_amount = attack_power_string[12:attack_power_string_end]
+            cat_ap = full_item_info.find(' in Cat, Bear, Dire Bear, and Moonkin forms only')+48
+            if cat_ap > 49:
                 attack_power_amount = 0
-    find_haste_loc = full_item_info.find('''Improves haste rating by <!--rtg36-->''')+37
-    if find_haste_loc > 38:
-        haste_string = full_item_info[find_haste_loc:]
-        haste_string_end = haste_string.find('.</')
-        haste_amount = haste_string[:haste_string_end]
-        if isinstance(haste_amount, int) == False:
-            amount_for_inc = haste_amount.find(" for")+4
-            if amount_for_inc > 5:
-                haste_amount = 0
-    find_armor_pen_loc = full_item_info.find('''Increases your armor penetration by <!--rtg44-->''')+48
-    if find_armor_pen_loc > 49:
-        armor_pen_string = full_item_info[find_armor_pen_loc:]
-        armor_pen_string_end = armor_pen_string.find('.</')
-        armor_pen_amount = armor_pen_string[:armor_pen_string_end]
-        if isinstance(armor_pen_amount, int) == False:
-            amount_for_inc = armor_pen_amount.find(" for")+4
-            if amount_for_inc > 5:
-                armor_pen_amount = 0
-    find_expertise_loc = full_item_info.find('''Increases your expertise rating by <!--rtg37-->''')+47
-    if find_expertise_loc > 48:
-        expertise_string = full_item_info[find_expertise_loc:]
-        expertise_string_end = expertise_string.find('.</')
-        expertise_amount = expertise_string[:expertise_string_end]
-        if isinstance(expertise_amount, int) == False:
-            amount_for_inc = expertise_amount.find(" for")+4
-            if amount_for_inc > 5:
-                expertise_amount = 0
-    find_socket_bonus_loc = full_item_info.find('''>Socket Bonus: +''')+16
-    if find_socket_bonus_loc > 17:
-        socket_bonus_string = full_item_info[find_socket_bonus_loc:]
-        socket_bonus_string_end = socket_bonus_string.find('</')
-        socket_bonus_string = socket_bonus_string[:socket_bonus_string_end]
-        socket_bonus_first_space = socket_bonus_string.find(' ')
-        socket_bonus_amount_amount = socket_bonus_string[:socket_bonus_first_space]
-        socket_bonus_type_amount = socket_bonus_string[socket_bonus_first_space+1:]
-    find_defense_loc = full_item_info.find('''Increases defense rating by <!--rtg12-->''')+40
-    if find_defense_loc > 41:
-        defense_string = full_item_info[find_defense_loc:]
-        defense_string_end = defense_string.find('.</')
-        defense_amount = defense_string[:defense_string_end]
-        if isinstance(defense_amount, int) == False:
-            amount_for_inc = defense_amount.find(" for")+4
-            if amount_for_inc > 5:
-                defense_amount = 0
-    find_dodge_loc = full_item_info.find('''Increases your dodge rating by <!--rtg13-->''')+43
-    if find_dodge_loc > 44:
-        dodge_string = full_item_info[find_dodge_loc:]
-        dodge_string_end = dodge_string.find('.</')
-        dodge_amount = dodge_string[:dodge_string_end]
-        if isinstance(dodge_amount, int) == False:
-            amount_for_inc = dodge_amount.find(" for")+4
-            if amount_for_inc > 5:
-                dodge_amount = 0
-    find_parry_loc = full_item_info.find('''Increases your parry rating by <!--rtg14-->''')+43
-    if find_parry_loc > 44:
-        parry_string = full_item_info[find_parry_loc:]
-        parry_string_end = parry_string.find('.</')
-        parry_amount = parry_string[:parry_string_end]
-        if isinstance(parry_amount, int) == False:
-            amount_for_inc = parry_amount.find(" for")+4
-            if amount_for_inc > 5:
-                parry_amount = 0
-    
-    
-    
-    #print(full_item_info)
-    if is_it_a_wep > 2:
-        find_wep_type_loc = full_item_info.find('''span class="q1">''')+16
-        if find_wep_type_loc > 17:
-            wep_type_string = full_item_info[find_wep_type_loc:]
-            wep_type_string_end = wep_type_string.find('</')
-            wep_type = wep_type_string[:wep_type_string_end]
-            
-        find_min_damage_loc = full_item_info.find('''!--dmg-->''')+9
-        if find_min_damage_loc > 10:
-            min_damage_string = full_item_info[find_min_damage_loc:]
-            min_damage_string_end = min_damage_string.find(' Damage</')
-            min_damage_string_dash = min_damage_string.find(' - ')
-            min_damage_amount = min_damage_string[:min_damage_string_dash]
-            max_damage_amount = min_damage_string[min_damage_string_dash+3:min_damage_string_end] 
-        find_wep_speed_loc = full_item_info.find('''<th>Speed <!--spd-->''')+20
-        if find_wep_speed_loc > 21:
-            wep_speed_string = full_item_info[find_wep_speed_loc:]
-            wep_speed_string_end = wep_speed_string.find('</')
-            wep_speed_amount = wep_speed_string[:wep_speed_string_end]
-    else:
-        wep_type = "Non-Wep"
-    if wep_type == "Staff":
-        continue
-    
-    slash_in_name_loc = item_name.find("\\")
-    if slash_in_name_loc > 1:
-        item_name = item_name[0:slash_in_name_loc] + item_name[slash_in_name_loc+1:]
-    
-    
-    
+                cat_full_item_info = full_item_info[cat_ap:]
+                find_attack_power_loc = cat_full_item_info.find('''Increases attack power by ''')+26
+                if find_attack_power_loc > 27:
+                    attack_power_string = cat_full_item_info[find_attack_power_loc:]
+                    attack_power_string_end = attack_power_string.find('.</')
+                    attack_power_amount = attack_power_string[:attack_power_string_end]
+                    ap_helper = attack_power_amount.find('<!--rtg38-->')+12
+                    if ap_helper >= 12:
+                        attack_power_amount = attack_power_string[12:attack_power_string_end]
+            if isinstance(attack_power_amount, int) == False:
+                amount_for_inc = attack_power_amount.find(" for")+4
+                if amount_for_inc > 5:
+                    attack_power_amount = 0
+        find_haste_loc = full_item_info.find('''Improves haste rating by <!--rtg36-->''')+37
+        if find_haste_loc > 38:
+            haste_string = full_item_info[find_haste_loc:]
+            haste_string_end = haste_string.find('.</')
+            haste_amount = haste_string[:haste_string_end]
+            if isinstance(haste_amount, int) == False:
+                amount_for_inc = haste_amount.find(" for")+4
+                if amount_for_inc > 5:
+                    haste_amount = 0
+        find_armor_pen_loc = full_item_info.find('''Increases your armor penetration by <!--rtg44-->''')+48
+        if find_armor_pen_loc > 49:
+            armor_pen_string = full_item_info[find_armor_pen_loc:]
+            armor_pen_string_end = armor_pen_string.find('.</')
+            armor_pen_amount = armor_pen_string[:armor_pen_string_end]
+            if isinstance(armor_pen_amount, int) == False:
+                amount_for_inc = armor_pen_amount.find(" for")+4
+                if amount_for_inc > 5:
+                    armor_pen_amount = 0
+        find_expertise_loc = full_item_info.find('''Increases your expertise rating by <!--rtg37-->''')+47
+        if find_expertise_loc > 48:
+            expertise_string = full_item_info[find_expertise_loc:]
+            expertise_string_end = expertise_string.find('.</')
+            expertise_amount = expertise_string[:expertise_string_end]
+            if isinstance(expertise_amount, int) == False:
+                amount_for_inc = expertise_amount.find(" for")+4
+                if amount_for_inc > 5:
+                    expertise_amount = 0
+        find_socket_bonus_loc = full_item_info.find('''>Socket Bonus: +''')+16
+        if find_socket_bonus_loc > 17:
+            socket_bonus_string = full_item_info[find_socket_bonus_loc:]
+            socket_bonus_string_end = socket_bonus_string.find('</')
+            socket_bonus_string = socket_bonus_string[:socket_bonus_string_end]
+            socket_bonus_first_space = socket_bonus_string.find(' ')
+            socket_bonus_amount_amount = socket_bonus_string[:socket_bonus_first_space]
+            socket_bonus_type_amount = socket_bonus_string[socket_bonus_first_space+1:]
+        find_defense_loc = full_item_info.find('''Increases defense rating by <!--rtg12-->''')+40
+        if find_defense_loc > 41:
+            defense_string = full_item_info[find_defense_loc:]
+            defense_string_end = defense_string.find('.</')
+            defense_amount = defense_string[:defense_string_end]
+            if isinstance(defense_amount, int) == False:
+                amount_for_inc = defense_amount.find(" for")+4
+                if amount_for_inc > 5:
+                    defense_amount = 0
+        find_dodge_loc = full_item_info.find('''Increases your dodge rating by <!--rtg13-->''')+43
+        if find_dodge_loc > 44:
+            dodge_string = full_item_info[find_dodge_loc:]
+            dodge_string_end = dodge_string.find('.</')
+            dodge_amount = dodge_string[:dodge_string_end]
+            if isinstance(dodge_amount, int) == False:
+                amount_for_inc = dodge_amount.find(" for")+4
+                if amount_for_inc > 5:
+                    dodge_amount = 0
+        find_parry_loc = full_item_info.find('''Increases your parry rating by <!--rtg14-->''')+43
+        if find_parry_loc > 44:
+            parry_string = full_item_info[find_parry_loc:]
+            parry_string_end = parry_string.find('.</')
+            parry_amount = parry_string[:parry_string_end]
+            if isinstance(parry_amount, int) == False:
+                amount_for_inc = parry_amount.find(" for")+4
+                if amount_for_inc > 5:
+                    parry_amount = 0
+        
+        
+        
+        #print(full_item_info)
+        if is_it_a_wep > 2:
+            find_wep_type_loc = full_item_info.find('''span class="q1">''')+16
+            if find_wep_type_loc > 17:
+                wep_type_string = full_item_info[find_wep_type_loc:]
+                wep_type_string_end = wep_type_string.find('</')
+                wep_type = wep_type_string[:wep_type_string_end]
+                
+            find_min_damage_loc = full_item_info.find('''!--dmg-->''')+9
+            if find_min_damage_loc > 10:
+                min_damage_string = full_item_info[find_min_damage_loc:]
+                min_damage_string_end = min_damage_string.find(' Damage</')
+                min_damage_string_dash = min_damage_string.find(' - ')
+                min_damage_amount = min_damage_string[:min_damage_string_dash]
+                max_damage_amount = min_damage_string[min_damage_string_dash+3:min_damage_string_end] 
+            find_wep_speed_loc = full_item_info.find('''<th>Speed <!--spd-->''')+20
+            if find_wep_speed_loc > 21:
+                wep_speed_string = full_item_info[find_wep_speed_loc:]
+                wep_speed_string_end = wep_speed_string.find('</')
+                wep_speed_amount = wep_speed_string[:wep_speed_string_end]
+        else:
+            wep_type = "Non-Wep"
+        if wep_type == "Staff":
+            continue
+        
+        slash_in_name_loc = item_name.find("\\")
+        if slash_in_name_loc > 1:
+            item_name = item_name[0:slash_in_name_loc] + item_name[slash_in_name_loc+1:]
+        
+        
+        
 
-    
-    
-    all_item_name.append(item_name)
-    all_item_num.append(items)
-    all_item_slot.append(item_slot)
-    all_armor_amount.append(armor_amount)
-    all_strength_amount.append(strength_amount)
-    all_agility_amount.append(agility_amount)
-    all_stamina_amount.append(stamina_amount)
-    all_crit_amount.append(crit_amount)
-    all_hit_amount.append(hit_amount)
-    all_attack_power_amount.append(attack_power_amount)
-    all_haste_amount.append(haste_amount)
-    all_armor_pen_amount.append(armor_pen_amount)
-    all_expertise_amount.append(expertise_amount)
-    all_defense_amount.append(defense_amount)
-    all_dodge_amount.append(dodge_amount)
-    all_parry_amount.append(parry_amount)
-    all_socket_bonus_type_amount.append(socket_bonus_type_amount)
-    all_socket_bonus_amount_amount.append(socket_bonus_amount_amount)
-    all_wep_type.append(wep_type)
-    all_min_damage_amount.append(min_damage_amount)
-    all_max_damage_amount.append(max_damage_amount)
-    all_wep_speed_amount.append(wep_speed_amount)
-    all_phase_list.append(phase_num)
-    all_heroic_list.append(heroic)
-    
-item_chart = pd.DataFrame(list(zip(all_item_name, all_item_num, all_item_slot, all_armor_amount, all_strength_amount, all_agility_amount, all_stamina_amount, all_crit_amount, all_hit_amount, all_attack_power_amount, all_haste_amount, all_armor_pen_amount, all_expertise_amount, all_defense_amount, all_dodge_amount, all_parry_amount, all_socket_bonus_type_amount, all_socket_bonus_amount_amount, all_wep_type, all_min_damage_amount, all_max_damage_amount, all_wep_speed_amount, all_phase_list, all_heroic_list)), columns = ['Name', 'ID Num', 'Item Slot', 'Armor', 'Strength', 'Agility', 'Stamina', 'Crit', 'Hit', 'Attack Power', 'Haste', 'Armor Pen', 'Expertise', 'Defense', 'Dodge', 'Parry', 'Socket Bonus Type', 'Socket Bonus Amount', 'Wep Type', 'Wep Min Damage', 'Wep Max Damage', 'Wep Speed', 'Phase', 'Heroic'])
-print(item_chart)
-    
-filepath = Path('export_gearlookup_all_phase.csv')  
-filepath.parent.mkdir(parents=True, exist_ok=True)  
-item_chart.to_csv(filepath)  
+        
+        
+        all_item_name.append(item_name)
+        all_item_num.append(items)
+        all_item_slot.append(item_slot)
+        all_armor_amount.append(armor_amount)
+        all_strength_amount.append(strength_amount)
+        all_agility_amount.append(agility_amount)
+        all_stamina_amount.append(stamina_amount)
+        all_crit_amount.append(crit_amount)
+        all_hit_amount.append(hit_amount)
+        all_attack_power_amount.append(attack_power_amount)
+        all_haste_amount.append(haste_amount)
+        all_armor_pen_amount.append(armor_pen_amount)
+        all_expertise_amount.append(expertise_amount)
+        all_defense_amount.append(defense_amount)
+        all_dodge_amount.append(dodge_amount)
+        all_parry_amount.append(parry_amount)
+        all_socket_bonus_type_amount.append(socket_bonus_type_amount)
+        all_socket_bonus_amount_amount.append(socket_bonus_amount_amount)
+        all_wep_type.append(wep_type)
+        all_min_damage_amount.append(min_damage_amount)
+        all_max_damage_amount.append(max_damage_amount)
+        all_wep_speed_amount.append(wep_speed_amount)
+        all_phase_list.append(phase_num)
+        all_heroic_list.append(heroic)
+        
+    item_chart = pd.DataFrame(list(zip(all_item_name, all_item_num, all_item_slot, all_armor_amount, all_strength_amount, all_agility_amount, all_stamina_amount, all_crit_amount, all_hit_amount, all_attack_power_amount, all_haste_amount, all_armor_pen_amount, all_expertise_amount, all_defense_amount, all_dodge_amount, all_parry_amount, all_socket_bonus_type_amount, all_socket_bonus_amount_amount, all_wep_type, all_min_damage_amount, all_max_damage_amount, all_wep_speed_amount, all_phase_list, all_heroic_list)), columns = ['Name', 'ID Num', 'Item Slot', 'Armor', 'Strength', 'Agility', 'Stamina', 'Crit', 'Hit', 'Attack Power', 'Haste', 'Armor Pen', 'Expertise', 'Defense', 'Dodge', 'Parry', 'Socket Bonus Type', 'Socket Bonus Amount', 'Wep Type', 'Wep Min Damage', 'Wep Max Damage', 'Wep Speed', 'Phase', 'Heroic'])
+    print(item_chart)
+        
+    filepath = Path('export_gearlookup_all_phase.csv')  
+    filepath.parent.mkdir(parents=True, exist_ok=True)  
+    item_chart.to_csv(filepath)  
 
 
 #1099? 1100 items to export?
 
+else:
+    list2 = []
+    for items in only_gem_list:
+        full_lookup_link = lookup_route1 + str(items) + lookup_route2
+        full_item_info = urlopen(full_lookup_link)
+        full_item_info = str(full_item_info.read())
+        find_gem_num_loc = full_item_info.find('''nsockets":''')+10
+        if find_gem_num_loc > 10:
+            gem_num_string = full_item_info[find_gem_num_loc:find_gem_num_loc+2]
+        else:
+            gem_num_string = 0 
+        list2.append(gem_num_string)
+    
+
+
+    print(list2)
