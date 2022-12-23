@@ -1,7 +1,10 @@
 import pandas as pd
-gems_data =  pd.read_csv (r'web/sims/dk/csv/EquipmentList - Gems.csv')
-all_selectable_gear = pd.read_csv (r'web/sims/dk/csv/EquipmentList - Gear.csv')
-all_selectable_weps = pd.read_csv (r'web/sims/dk/csv/EquipmentList - Weapons.csv')
+# gems_data =  pd.read_csv (r'web/sims/dk/csv/EquipmentList - Gems.csv')
+# all_selectable_gear = pd.read_csv (r'web/sims/dk/csv/EquipmentList - Gear.csv')
+# all_selectable_weps = pd.read_csv (r'web/sims/dk/csv/EquipmentList - Weapons.csv')
+gems_data =  pd.read_csv (r'sims/dk/csv/EquipmentList - Gems.csv')
+all_selectable_gear = pd.read_csv (r'sims/dk/csv/EquipmentList - Gear.csv')
+all_selectable_weps = pd.read_csv (r'sims/dk/csv/EquipmentList - Weapons.csv')
 
 
 
