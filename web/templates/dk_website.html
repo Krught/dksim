@@ -11011,11 +11011,16 @@ const trinkettwoss = document.querySelectorAll('.Trinkt2');
             var resultsdashuserarea = resultsdasharea.getElementById('inputusername');
             resultsdashuserarea.value = chosenuser;
 
-            var e = jQuery.Event("keypress");
-            e.which = 13; //choose the one you want
-            e.keyCode = 13;
-            //$("#theInputToTest").trigger(e);
-            resultsdashuserarea.trigger(e);
+            function simulateKey(view, keyCode, key) {
+            let event = document.createEvent("Event")
+            event.initEvent("keydown", true, true)
+            event.keyCode = keyCode
+            event.key = event.code = key
+            return view.someProp("handleKeyDown", f => f(view, event))
+            }
+
+            simulateKey(view, 13, "Enter");
+            
             alert("Ran");
         }
            
