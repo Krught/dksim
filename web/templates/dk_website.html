@@ -11014,7 +11014,7 @@ const trinkettwoss = document.querySelectorAll('.Trinkt2');
             var resultsdashuserarea = resultsdasharea.getElementById('inputusername');
             resultsdashuserarea.text = chosenuser;
             resultsdashuserarea.value = chosenuser;
-            resultsdashuserarea.submit();
+            resultsdashuserarea.dispatchEvent(new Event('input'));
             alert("Ran");
         }
            
