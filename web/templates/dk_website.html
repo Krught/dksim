@@ -11013,6 +11013,19 @@ const trinkettwoss = document.querySelectorAll('.Trinkt2');
             resultsdashuserarea.click();
             var resultsdashuserareah = resultsdasharea.getElementById('react-entry-point');
             resultsdashuserareah.click();
+
+            var event = new MouseEvent('mouseover', {
+               'view': window,
+               'bubbles': true,
+               'cancelable': true
+             });
+             var myTarget = resultsdashuserarea; 
+             var canceled = !myTarget.dispatchEvent(event);
+             if (canceled) {
+             } else {
+             }
+
+
             alert("Ran");
         }
            
