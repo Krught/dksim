@@ -11007,10 +11007,9 @@ const trinkettwoss = document.querySelectorAll('.Trinkt2');
         function showresultsinside(){
             var chosenuser = document.querySelector('#usernameassign').value;
             var resultsdash = document.getElementById('resultsdash');
-            var elmnt = resultsdash.contentWindow.document.getElementsById('inputusername');
-            //var resultsdasharea = resultsdash.contentDocument || resultsdash.contentWindow.document;
-            //var resultsdashuserarea = resultsdasharea.getElementById('inputusername');
-            //resultsdashuserarea = chosenuser;
+            var resultsdasharea = resultsdash.contentDocument || resultsdash.contentWindow.document;
+            var resultsdashuserarea = resultsdasharea.getElementById('inputusername');
+            resultsdashuserarea.innerText = chosenuser;
             alert(chosenuser);
             //alert(resultsdash);
         //inputusername = chosenuser
