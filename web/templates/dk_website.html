@@ -11016,6 +11016,16 @@ const trinkettwoss = document.querySelectorAll('.Trinkt2');
             resultsdashuserarea.value = chosenuser;
             resultsdashuserarea.dispatchEvent(new Event('input'));
             resultsdashuserarea.click();
+
+            var event = new MouseEvent('click', {
+               'view': window,
+               'bubbles': true,
+               'cancelable': true
+             });
+             var myTarget = resultsdashuserarea; 
+             var canceled = !myTarget.dispatchEvent(event);
+             canceled;
+
             alert("Ran");
         }
            
