@@ -115,7 +115,7 @@
         </div>
 <!-- Settings Content -->
 <div id="results_slot" class="tabcontent">
-<iframe src="https://www.remourtech.com/dash/" style="border: 0pt none ; width: 80vw; height: 80vw;" scrolling="yes" id="resultsdash"></iframe>
+<iframe src="https://krught.pythonanywhere.com/dash/" style="border: 0pt none ; width: 80vw; height: 80vw;" scrolling="yes" id="resultsdash"></iframe>
 </div>
 <div id="settings" class="tabcontent" style="text-align: left; font-size: 20px">
 <style>
@@ -11007,9 +11007,10 @@ const trinkettwoss = document.querySelectorAll('.Trinkt2');
         function showresultsinside(){
             var chosenuser = document.querySelector('#usernameassign').value;
             var resultsdash = document.getElementById('resultsdash');
-            var resultsdasharea = resultsdash.contentDocument || resultsdash.contentWindow.document;
-            var resultsdashuserarea = resultsdasharea.getElementById('inputusername');
-            resultsdashuserarea = chosenuser;
+            var elmnt = resultsdash.contentWindow.document.getElementsById('inputusername');
+            //var resultsdasharea = resultsdash.contentDocument || resultsdash.contentWindow.document;
+            //var resultsdashuserarea = resultsdasharea.getElementById('inputusername');
+            //resultsdashuserarea = chosenuser;
             alert(chosenuser);
             //alert(resultsdash);
         //inputusername = chosenuser
