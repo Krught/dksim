@@ -78,6 +78,14 @@
         <input type=button onClick="simcurrentsheet()" value='Sim Current Selection' >
         <br>
         <br>
+
+
+
+        <input type=button onClick="showresultsinside()" value="TEST BUTTON DELETE">
+
+
+
+
         <br>
         <br>
         <input type=button onClick="parent.open('/dash')" value='Load Simulation Data' >
@@ -107,7 +115,7 @@
         </div>
 <!-- Settings Content -->
 <div id="results_slot" class="tabcontent">
-<iframe src="https://www.remourtech.com/dash/" style="border: 0pt none ; width: 80vw; height: 80vw;" scrolling="yes"></iframe>
+<iframe src="https://www.remourtech.com/dash/" style="border: 0pt none ; width: 80vw; height: 80vw;" scrolling="yes" id="resultsdash"></iframe>
 </div>
 <div id="settings" class="tabcontent" style="text-align: left; font-size: 20px">
 <style>
@@ -3618,7 +3626,6 @@ const trinkettwoss = document.querySelectorAll('.Trinkt2');
                 twohands = twohands[16];
                 dpshtmlarea(dps_text, twohands);
                 ifsheetlooping();
-                // showresultsinside();
             }
 
         
@@ -10998,9 +11005,16 @@ const trinkettwoss = document.querySelectorAll('.Trinkt2');
 		}
 
         function showresultsinside(){
-            alert("I ran 1 time.");
+            var chosenuser = document.querySelector('#usernameassign').value;
+            var resultsdash = document.getElementById('resultsdash');
+            var resultsdasharea = resultsdash.contentDocument || resultsdash.contentWindow.document;
+            var resultsdashuserarea = resultsdasharea.getElementById('inputusername');
+            resultsdashuserarea = chosenuser;
+            alert(chosenuser);
+            //alert(resultsdash);
+        //inputusername = chosenuser
         }
-              
+           
           </script>
         <noscript>Your browser does not support JavaScript!</noscript>
 		<body>
