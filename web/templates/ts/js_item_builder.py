@@ -262,6 +262,14 @@ gem_names = ["None"]
 for index, row in gem_data.iterrows():
     gem_names.append((row["Name"]).title())
 
+#Meta Gem Data
+meta_gem_names = ["None"]
+for index, row in gem_data.iterrows():
+    meta = row["Meta Name"]
+    if isinstance(meta, str) == True:
+        meta = meta.title()
+        meta_gem_names.append(meta)
+
 #Writing Gear to JS File Here
 mh_name = "mh_name = " + str(mh_name)
 mh_num = "mh_lookupnumber = " + str(mh_num)
@@ -297,6 +305,8 @@ gear_crit = "gear_crit = " + str(gear_crit)
 gear_haste = "gear_haste = " + str(gear_haste)
 gear_armorpen = "gear_armorpen = " + str(gear_armorpen)
 gear_expertise = "gear_expertise = " + str(gear_expertise)
+
+meta_gem_names = "meta_gem = " + str(meta_gem_names)
 
 with open('equ.js', 'w') as outfile:
     outfile.write(mh_name)
@@ -364,4 +374,6 @@ with open('equ.js', 'w') as outfile:
     outfile.write(gear_armorpen)
     outfile.write("\n")
     outfile.write(gear_expertise)
+    outfile.write("\n")
+    outfile.write(meta_gem_names)
 print("Finished Writing JavaScript File")

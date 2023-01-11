@@ -189,14 +189,14 @@ function items_builder(){
     var build_loc = document.getElementById(build_loc_str);
     var child = document.createElement("div");
     if (rundouble === true){
-      child.id = build_initials + "1_" + build_name_no_dash  + " " + build_initials + "1";
+      child.id = build_initials + "1_" + build_name_no_dash;
       child.className = build_initials + "1_" + build_name_no_dash  + " " + build_initials + "1";
       var child_2 = document.createElement("div");
-      child_2.id = build_initials + "2_" + build_name_no_dash  + " " + build_initials + "2";
+      child_2.id = build_initials + "2_" + build_name_no_dash;
       child_2.className = build_initials + "2_" + build_name_no_dash  + " " + build_initials + "2";
       var mainchild_2 = document.createElement("div");
     } else {
-      child.id = build_initials + "_" + build_name_no_dash  + " " + build_initials;
+      child.id = build_initials + "_" + build_name_no_dash;
       child.className = build_initials + "_" + build_name_no_dash  + " " + build_initials;
     }
     var idchild = document.createElement("a");
@@ -331,6 +331,20 @@ function items_builder(){
         mainchild_2?.appendChild(child_2);
         mainchild_2?.appendChild(seperatortwo_2);
         build_loc_2?.appendChild(mainchild_2);
+        var build_s_selection_target = build_type.toLowerCase();
+        build_s_selection_target = build_s_selection_target + "1";
+        var build_selection_target = document.getElementById(build_s_selection_target);
+        var build_namechild = document.createElement("option");
+        build_namechild.innerHTML = build_name;
+        build_namechild.value = build_name;
+        build_selection_target?.appendChild(build_namechild)
+        var build_s_selection_target2 = build_type.toLowerCase();
+        build_s_selection_target2 = build_s_selection_target2 + "2";
+        var build_selection_target2 = document.getElementById(build_s_selection_target2);
+        var build_namechild2 = document.createElement("option");
+        build_namechild2.innerHTML = build_name;
+        build_namechild2.value = build_name;
+        build_selection_target2?.appendChild(build_namechild2)
     } else {
     mainchild.className = "all_" + build_type.toLowerCase() + "_items";
     seperatortwo.width = "90%";
@@ -352,7 +366,6 @@ function items_builder(){
 
     }
 
-  }
 }
 
 function mh_selection_builder(varis){
