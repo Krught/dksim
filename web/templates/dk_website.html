@@ -11013,11 +11013,11 @@ const trinkettwoss = document.querySelectorAll('.Trinkt2');
             var resultsdasharea = resultsdash.contentDocument || resultsdash.contentWindow.document;
             var resultsdashuserarea = resultsdasharea.getElementById('inputusername');
             resultsdashuserarea.value = chosenuser;
-
-            const ke = new KeyboardEvent('keydown', {
-                bubbles: true, cancelable: true, keyCode: 13
-            });
-            resultsdashuserarea.dispatchEvent(ke);
+            resultsdashuserarea.submit();
+            // const ke = new KeyboardEvent('keydown', {
+            //     bubbles: true, cancelable: true, keyCode: 13
+            // });
+            // resultsdashuserarea.dispatchEvent(ke);
             // var event = new MouseEvent('click', {
             // 'view': window,
             // 'bubbles': true,
