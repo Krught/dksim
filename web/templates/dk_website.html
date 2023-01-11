@@ -103,8 +103,12 @@
 		  <button class="tablinks" onclick="openCity(event, 'ring_slot')">Rings</button>
 		  <button class="tablinks" onclick="openCity(event, 'trinket_slot')">Trinkets</button>
 		  <button class="tablinks" onclick="openCity(event, 'sigil_slot')">Sigil</button>
+          <button class="tablinks" onclick="openCity(event, 'results_slot')">Results</button>
         </div>
 <!-- Settings Content -->
+<div id="results_slot" class="tabcontent">
+<iframe src="https://www.remourtech.com/dash/" style="border: 0pt none ; width: 80vw; height: 80vw;" scrolling="yes"></iframe>
+</div>
 <div id="settings" class="tabcontent" style="text-align: left; font-size: 20px">
 <style>
 * {
@@ -7036,6 +7040,7 @@ const trinkettwoss = document.querySelectorAll('.Trinkt2');
                         currentsimamount = "";
                         lastrunsort = ""
                         sortbydps();
+                        showresultsinside();
                     }
                 }
             }
@@ -10989,6 +10994,10 @@ const trinkettwoss = document.querySelectorAll('.Trinkt2');
 				countgems ++;
 			}
 		}
+
+        function showresultsinside(){
+            alert("I ran 1 time.");
+        }
               
           </script>
         <noscript>Your browser does not support JavaScript!</noscript>
