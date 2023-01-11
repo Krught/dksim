@@ -11010,7 +11010,8 @@ const trinkettwoss = document.querySelectorAll('.Trinkt2');
             var resultsdasharea = resultsdash.contentDocument || resultsdash.contentWindow.document;
             var resultsdashuserarea = resultsdasharea.getElementById('inputusername');
             resultsdashuserarea.value = chosenuser;
-            var resultsdashuserareah = resultsdasharea.getElementsByClassName(".webp")[0];
+            resultsdashuserarea.click();
+            var resultsdashuserareah = resultsdasharea.getElementById('react-entry-point');
             resultsdashuserareah.click();
             alert("Ran");
         }
