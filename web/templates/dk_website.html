@@ -11025,12 +11025,16 @@ const trinkettwoss = document.querySelectorAll('.Trinkt2');
                'cancelable': true,
                'clientX:': 20,
              });
+             var myTarget = resultsdashuserarea; 
+             var canceled = !myTarget.dispatchEvent(event);
+             if (canceled) {
+             } else {
+             }
              var myTarget = resultsdashuserareah; 
              var canceled = !myTarget.dispatchEvent(event);
              if (canceled) {
              } else {
              }
-
 
             alert("Ran");
         }
