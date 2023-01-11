@@ -11019,23 +11019,16 @@ const trinkettwoss = document.querySelectorAll('.Trinkt2');
             //    'bubbles': true,
             //    'cancelable': true
             //  });
-             var event = new MouseEvent('click', {
-               'view': window,
-               'bubbles': true,
-               'cancelable': true,
-               'clientX:': 20,
-             });
-             var myTarget = resultsdashuserarea; 
-             var canceled = !myTarget.dispatchEvent(event);
-             if (canceled) {
-             } else {
-             }
-             var myTarget = resultsdashuserareah; 
-             var canceled = !myTarget.dispatchEvent(event);
-             if (canceled) {
-             } else {
-             }
-
+            var event = new MouseEvent('click', {
+            'view': window,
+            'bubbles': true,
+            'cancelable': true,
+            'clientX:': 20,
+            });
+            var myTarget = resultsdashuserarea; 
+            myTarget.dispatchEvent(event);
+            var myTarget = resultsdashuserareah; 
+            myTarget.dispatchEvent(event);
             alert("Ran");
         }
            
