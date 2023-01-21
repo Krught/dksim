@@ -10,7 +10,8 @@ def icy_touch(spell_hit_total, increased_spell_hit, target_level, km_procd, deat
               sigil_of_the_frozen_conscience, current_ap, impurity_points, var_crit_amount, improved_icy_touch_points, black_ice_points, glacier_rot_points,
               dots, tundra_stalker_points, merciless_combat_points, rage_of_rivendale_points, hysteria_active, tricksoftt_active,
               fight_length, fight_sub_35percent, increased_spell_damage, increased_all_damage, sum_it_attacks, current_power, max_runic,
-              chill_of_the_grave_points, dot_length, crypt_fever_points, rune_of_cinderglacier_active, rune_of_cinderglacier_active_count):
+              chill_of_the_grave_points, dot_length, crypt_fever_points, rune_of_cinderglacier_active,
+              rune_of_cinderglacier_active_count, rune_of_cinderglacier_damage):
 
     rotation = []
     rotation_time = []
@@ -102,12 +103,12 @@ def icy_touch(spell_hit_total, increased_spell_hit, target_level, km_procd, deat
             if crypt_fever_points != 0:
                 dots[2] = dot_timer(current_time, dot_length)
             if rune_of_cinderglacier_active == True:
-                 rune_of_cinderglacier_damage = atta_num * .2
+                 rune_of_cinderglacier_damage += atta_num * .2
                  rune_of_cinderglacier_active_count += 1
                  rotation.append("Rune of Cinderglacier")
                  rotation_time.append(current_time)
                  rotation_status.append("Active")
-                 rotation_damage.append(rune_of_cinderglacier_damage)
+                 rotation_damage.append(atta_num * .2)
                  if rune_of_cinderglacier_active_count == 2:
                      rune_of_cinderglacier_active = False
             last_dot0_damage = current_time - 3
@@ -179,12 +180,12 @@ def icy_touch(spell_hit_total, increased_spell_hit, target_level, km_procd, deat
             if crypt_fever_points != 0:
                 dots[2] = dot_timer(current_time, dot_length)
             if rune_of_cinderglacier_active == True:
-                 rune_of_cinderglacier_damage = atta_num * .2
+                 rune_of_cinderglacier_damage += atta_num * .2
                  rune_of_cinderglacier_active_count += 1
                  rotation.append("Rune of Cinderglacier")
                  rotation_time.append(current_time)
                  rotation_status.append("Active")
-                 rotation_damage.append(rune_of_cinderglacier_damage)
+                 rotation_damage.append(atta_num * .2)
                  if rune_of_cinderglacier_active_count == 2:
                      rune_of_cinderglacier_active = False
 
@@ -209,4 +210,4 @@ def icy_touch(spell_hit_total, increased_spell_hit, target_level, km_procd, deat
 
     return rotation, rotation_time, rotation_status, rotation_damage, current_time, used_gcd, rune_cd_tracker, last_dot0_damage, \
         current_power, rune_of_cinderglacier_active, rune_of_cinderglacier_active_count, dots, sum_it_attacks, km_procd, \
-        deathchill_active, gcd,
+        deathchill_active, gcd, rune_of_cinderglacier_damage
