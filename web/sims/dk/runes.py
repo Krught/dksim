@@ -91,7 +91,7 @@ def all_rune_check(rune, current_time, rune_cd_tracker):
 
 
 
-def use_runes(rune_cd_tracker, current_time, dots, haste_rune_cd, improved_unholy_presence_points, dk_presence, total_haste_rating, last_rune_change, n_blood=0, n_frost=0, n_unholy=0):
+def use_runes(rune_cd_tracker, current_time, dots, improved_unholy_presence_points, dk_presence, total_haste_rating, last_rune_change, n_blood=0, n_frost=0, n_unholy=0):
     blood = 0
     frost = 2
     unholy = 4
@@ -808,8 +808,7 @@ def use_runes(rune_cd_tracker, current_time, dots, haste_rune_cd, improved_unhol
                         if castable2 == 2:
                             castable2 = 0
                         if use_death_rune == False:
-                            haste_percentage = (
-                                                           total_haste_rating / 25.21) / 100  # Returns a result of 0 - 1 for 0% - 100%
+                            #haste_percentage = (total_haste_rating / 25.21) / 100  # Returns a result of 0 - 1 for 0% - 100%
                             haste_rune_cd = rune_grade_timer(current_time, last_rune_change[castable],
                                                              last_rune_change[castable + 6])
                             if improved_unholy_presence_points != 0:
