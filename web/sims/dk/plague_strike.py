@@ -41,7 +41,7 @@ def plague_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_
         if dk_presence == 2:
             haste_rune_cd = haste_rune_cd - (haste_rune_cd * ((improved_unholy_presence_points * 5) / 100))
     if dk_presence != 2:
-        gcd = input_gcd / (1 + haste_percentage)
+        gcd = input_gcd * (1 + haste_percentage)
         if gcd < 1:
             gcd = 1
     ##Rune Miss

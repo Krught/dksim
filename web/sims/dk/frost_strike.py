@@ -13,8 +13,6 @@ def frost_strike(km_procd, tanking, H2, hit_from_gear, hit_from_other, target_le
                  merciless_combat_points, blood_of_the_north_points, rage_of_rivendale_points, hysteria_active, tricksoftt_active, sum_oh_fs_attacks,
                  increased_physical_damage, increased_all_damage, fight_length, fight_sub_35percent, oh_wep_damage_mod, rune_of_cinderglacier_active,
                  rune_of_cinderglacier_damage, rune_of_cinderglacier_active_count, frost_strike_cost, current_power, max_runic, sum_fs_attacks, trinket_hit_crit_tracker):
-
-
     rotation = []
     rotation_time = []
     rotation_status = []
@@ -51,7 +49,7 @@ def frost_strike(km_procd, tanking, H2, hit_from_gear, hit_from_other, target_le
             haste_rune_cd = haste_rune_cd - (
                     haste_rune_cd * ((improved_unholy_presence_points * 5) / 100))
     if dk_presence != 2:
-        gcd = input_gcd / (1 + haste_percentage)
+        gcd = input_gcd * (1 + haste_percentage)
         if gcd < 1:
             gcd = 1
     ##Rune Miss
@@ -372,7 +370,6 @@ def frost_strike(km_procd, tanking, H2, hit_from_gear, hit_from_other, target_le
         rotation_damage.append(atta_num)
         current_time += gcd
         used_gcd = True
-
     return rotation, rotation_time, rotation_status, rotation_damage, current_time, used_gcd, \
         current_power, dots, gcd, trinket_hit_crit_tracker, km_procd, deathchill_active, sum_oh_fs_attacks, rune_of_cinderglacier_active, \
         rune_of_cinderglacier_damage, rune_of_cinderglacier_active_count, sum_fs_attacks, sum_oh_fs_attacks
