@@ -10,7 +10,8 @@ def howling_blast(spell_hit_total, increased_spell_hit, target_level, km_procd, 
                   current_ap, impurity_points, var_crit_amount, guile_of_gorefiend_points, black_ice_points, dots, glacier_rot_points, tundra_stalker_points,
                   fight_sub_35percent, merciless_combat_points, rage_of_rivendale_points, hysteria_active, tricksoftt_active, increased_spell_damage,
                   increased_all_damage, rune_of_cinderglacier_active, rune_of_cinderglacier_damage, rune_of_cinderglacier_active_count,
-                  fight_length, rune_cd_tracker, sum_hb_attacks, chill_of_the_grave_points, current_power, max_runic, dot_length, glyph_howling_blast):
+                  fight_length, rune_cd_tracker, sum_hb_attacks, chill_of_the_grave_points, current_power, max_runic, dot_length, glyph_howling_blast,
+                  free_rime = False):
     rotation = []
     rotation_time = []
     rotation_status = []
@@ -35,7 +36,10 @@ def howling_blast(spell_hit_total, increased_spell_hit, target_level, km_procd, 
         gcd = input_gcd * (1 + haste_percentage)
         if gcd < 1:
             gcd = 1
-    howling_current_cd = current_time + 8
+    if free_rime == True:
+        howling_current_cd = current_time
+    else:
+        howling_current_cd = current_time + 8
     other_howling_blast_damage = 0
     howling_blast_multiple_repeate = 1
     while howling_blast_multiple_repeate < amount_of_targets:
@@ -148,8 +152,9 @@ def howling_blast(spell_hit_total, increased_spell_hit, target_level, km_procd, 
             other_howling_blast_damage += 0
         howling_blast_multiple_repeate += 1
     if hit == True:
-        rune_cd_tracker[castable] = rune_cd(haste_rune_cd, current_time)
-        rune_cd_tracker[castable1] = rune_cd(haste_rune_cd, current_time)
+        if free_rime == False:
+            rune_cd_tracker[castable] = rune_cd(haste_rune_cd, current_time)
+            rune_cd_tracker[castable1] = rune_cd(haste_rune_cd, current_time)
         if crit == True:
             atta_num = random.randint(518, 562)
             atta_num = (atta_num + ((current_ap + (current_ap * ((impurity_points * 4) / 100))) * .2)) * (
@@ -280,8 +285,9 @@ def howling_blast(spell_hit_total, increased_spell_hit, target_level, km_procd, 
     elif hit == False:
         ##Rune Miss
         haste_rune_cd_miss = 1
-        rune_cd_tracker[castable] = rune_cd(haste_rune_cd_miss, current_time)
-        rune_cd_tracker[castable1] = rune_cd(haste_rune_cd_miss, current_time)
+        if free_rime == False:
+            rune_cd_tracker[castable] = rune_cd(haste_rune_cd_miss, current_time)
+            rune_cd_tracker[castable1] = rune_cd(haste_rune_cd_miss, current_time)
         sum_hb_attacks += other_howling_blast_damage
         rotation.append("Howling Blast")
         rotation_time.append(current_time)

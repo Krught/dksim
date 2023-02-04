@@ -14,6 +14,10 @@ sim_num = 500
 ##True // False
 timing = True
 
+#Copy to Clipboard?
+##True // False
+do_copy = False
+
 if timing == True:
     import timeit
     start_t = timeit.default_timer()
@@ -21,10 +25,6 @@ if timing == True:
 
 all_results = all_function(item_head="Spiked Titansteel Helm", item_neck = "Gold Amulet of Kings", item_shoulders = "Spaulders of the Giant Lords", item_back = "Cloak of Bloodied Waters", item_chest = "Engraved Chestplate of Eck", item_wrist = "Vengeance Bindings",item_gloves = "Gauntlets of Dragon Wrath", item_waist = "Flame-Bathed Steel Girdle", item_legs = "Staggering Legplates", item_boots = "Death-Inured Sabatons", item_ring1 = "Ring of the Kirin Tor", item_ring2 = "Band of Frosted Thorns", item_trinket1 = "Mirror of Truth", item_trinket2 = "Meteorite Whetstone", item_sigil = "Sigil of the Frozen Conscience", item_mh = "Titansteel Bonecrusher", item_oh = "Krol Cleaver", length_of_the_fight = fight_len, total_number_of_targets = targets, the_input_dk_spec = spec, the_input_dk_presence = presence, talent_url = tal_url , greater_gift_of_the_wild = True, use_ghoul = ghoul, use_shattering_throw = False, skip_disease = False, skip_erw = False, total_simulation_amounts = sim_num, activity_percent = 1, local_testing = True)
 
-
-#Copy to Clipboard?
-##True // False
-do_copy = False
 
 if do_copy == True:
     import pyperclip as pc
