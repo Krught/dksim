@@ -91,7 +91,7 @@ def all_rune_check(rune, current_time, rune_cd_tracker):
 
 
 
-def use_runes(rune_cd_tracker, current_time, dots, haste_rune_cd, improved_unholy_presence_points, dk_presence, total_haste_rating, last_rune_change, n_blood=0, n_frost=0, n_unholy=0):
+def use_runes(rune_cd_tracker, current_time, dots, improved_unholy_presence_points, dk_presence, total_haste_rating, last_rune_change, n_blood=0, n_frost=0, n_unholy=0, n_skip=0, n_reset_window = 3):
     blood = 0
     frost = 2
     unholy = 4
@@ -99,6 +99,29 @@ def use_runes(rune_cd_tracker, current_time, dots, haste_rune_cd, improved_unhol
     death_f = 8
     death_u = 10
     total_runes_required = n_blood + n_frost + n_unholy
+
+
+    # if n_skip == 1:
+    #     until_dot0 = dots[0] - n_reset_window
+    #     until_dot1 = dots[1] - n_reset_window
+    #         castable = all_rune_check(blood, current_time, rune_cd_tracker)
+    #         haste_rune_cd7 = rune_grade_timer(current_time, last_rune_change[castable], last_rune_change[castable + 6])
+    #         castable = all_rune_check(frost, current_time, rune_cd_tracker)
+    #         haste_rune_cd14 = rune_grade_timer(current_time, last_rune_change[castable], last_rune_change[castable + 6])
+    #         castable = all_rune_check(unholy, current_time, rune_cd_tracker)
+    #         haste_rune_cd28 = rune_grade_timer(current_time, last_rune_change[castable], last_rune_change[castable + 6])
+    #         haste_max = min(haste_rune_cd7, haste_rune_cd14, haste_rune_cd28)
+    #         if until_dot0 <= current_time + haste_max:
+    #             if until_dot1 <= current_time + haste_max:
+    #
+    #
+    #
+    #                 total_runes_required = 0
+    #         #This might not account for death runes... need to run some tests
+    #         #TODO: Not figuring death runes into account, but also not checking the opposite rune.
+    #         # need to check the rune being used, and then figure out the opposite rune
+    #         #Possibly it'll be easier to add this stuff into the actual function so if its using a death rune and stuff, then check for n_skip
+
     if total_runes_required == 1:
         if n_blood != 0:
             rune_check1 = blood
@@ -151,6 +174,26 @@ def use_runes(rune_cd_tracker, current_time, dots, haste_rune_cd, improved_unhol
             return 0, 0, 0, 0, False, rune_cd_tracker
         castable1 = -1
         castable2 = -1
+        if n_skip == 1:
+            until_dot0 = dots[0] - n_reset_window
+            until_dot1 = dots[1] - n_reset_window
+            rune_number_being_used = castable
+            rune_number_without_checker = castable - rune_check1
+            rune_number_without_checker -= 1
+            if rune_number_without_checker == -1:
+                opp_rune_number_being_used = rune_number_being_used + 1
+            else:
+                opp_rune_number_being_used = rune_number_being_used - 1
+            opp_rune_timer = rune_cd_tracker[opp_rune_number_being_used]
+            if opp_rune_timer == 10000:
+                opp_rune_number_being_used += 6
+                opp_rune_timer = rune_cd_tracker[opp_rune_number_being_used]
+            if opp_rune_timer >= until_dot0:
+                if opp_rune_timer >= until_dot1:
+                    return 0, 0, 0, 0, False, rune_cd_tracker
+
+
+            #TODO: Will need to reproduce this checking opp rune for 2runes used and 3runes used
 
 
 
@@ -158,6 +201,7 @@ def use_runes(rune_cd_tracker, current_time, dots, haste_rune_cd, improved_unhol
 
 
     elif total_runes_required == 2:
+        castable2 = -1
         if n_blood != 0:
             rune_check1 = blood
             n_blood -= 1
@@ -175,6 +219,8 @@ def use_runes(rune_cd_tracker, current_time, dots, haste_rune_cd, improved_unhol
             rune_check2 = unholy
 
         castable = all_rune_check(rune_check1, current_time, rune_cd_tracker)
+        castable1 = all_rune_check(rune_check2, current_time, rune_cd_tracker)
+        haste_rune_cd = rune_grade_timer(current_time, last_rune_change[castable], last_rune_change[castable + 6])
         use_death_rune = False
         just_used_death_rune = False
         if castable == 3:
@@ -444,7 +490,9 @@ def use_runes(rune_cd_tracker, current_time, dots, haste_rune_cd, improved_unhol
 
             else:
                 return 0, 0, 0, 0, False, rune_cd_tracker
-        castable2 = -1
+        #castable2 = -1
+        else:
+            return 0, 0, 0, 0, False, rune_cd_tracker
     else: #Then three
         if n_blood != 0:
             rune_check1 = blood
@@ -808,8 +856,7 @@ def use_runes(rune_cd_tracker, current_time, dots, haste_rune_cd, improved_unhol
                         if castable2 == 2:
                             castable2 = 0
                         if use_death_rune == False:
-                            haste_percentage = (
-                                                           total_haste_rating / 25.21) / 100  # Returns a result of 0 - 1 for 0% - 100%
+                            #haste_percentage = (total_haste_rating / 25.21) / 100  # Returns a result of 0 - 1 for 0% - 100%
                             haste_rune_cd = rune_grade_timer(current_time, last_rune_change[castable],
                                                              last_rune_change[castable + 6])
                             if improved_unholy_presence_points != 0:
