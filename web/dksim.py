@@ -1510,6 +1510,11 @@ def all_dash_stuff(dash_all_data):
               'Death and Decay': '#912F56',
               'Death Strike': '#A0A4B8',
               'Sudden Doom': '#D5E1A3',
+              'All Obliterate': '#60B5ED',
+              'White Attack': '#4D5B6A',
+              'All Plague Strike': '#32B618',
+              'All Frost Strike': '#1A97EB',
+              'All Damage': '#F26B8A',
               }
     colors_status = {'Hit': '#39CCCC',
               'Crit': '#FFDC00',
@@ -1540,7 +1545,7 @@ def all_dash_stuff(dash_all_data):
     # total_dps = round((t_damage / t_dps), 3)
     # #t_damage = "Damage Status Map.                  Total Damage Done - " + str(t_damage) + "                  DPS - " + str(t_dps)
     # total_damage = "Total Damage Done - " + str(total_damage) + "                  DPS - " + str(total_dps) + "                  Fight Length - " + str(fight_length) + "                  Number of Targets - " + str(number_of_targets_in_fight)
-    # fig.update_layout(
+    fig.update_layout(
         hoverlabel=dict(
             font_size=12,
             font_family="Rockwell",
