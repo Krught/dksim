@@ -1534,13 +1534,13 @@ def all_dash_stuff(dash_all_data):
                             linecolor="#BCCCDC",
                             showgrid=False,
                             ))
-    t_dps = fight_length
-    #t_dps = round(max(timeline_order),0)
-    total_damage = round(sum(damage_order), 3)
-    total_dps = round((t_damage / t_dps), 3)
-    #t_damage = "Damage Status Map.                  Total Damage Done - " + str(t_damage) + "                  DPS - " + str(t_dps)
-    total_damage = "Total Damage Done - " + str(total_damage) + "                  DPS - " + str(total_dps) + "                  Fight Length - " + str(fight_length) + "                  Number of Targets - " + str(number_of_targets_in_fight)
-    fig.update_layout(
+    # t_dps = fight_length
+    # #t_dps = round(max(timeline_order),0)
+    # total_damage = round(sum(damage_order), 3)
+    # total_dps = round((t_damage / t_dps), 3)
+    # #t_damage = "Damage Status Map.                  Total Damage Done - " + str(t_damage) + "                  DPS - " + str(t_dps)
+    # total_damage = "Total Damage Done - " + str(total_damage) + "                  DPS - " + str(total_dps) + "                  Fight Length - " + str(fight_length) + "                  Number of Targets - " + str(number_of_targets_in_fight)
+    # fig.update_layout(
         hoverlabel=dict(
             font_size=12,
             font_family="Rockwell",
@@ -1549,7 +1549,145 @@ def all_dash_stuff(dash_all_data):
     all_data_no_zero = all_data.copy()
     all_data_no_zero = all_data_no_zero[all_data_no_zero.Damage != 0]
     fig2 = px.pie(all_data_no_zero, values='Damage', names='Ability', title='Damage by attack',color="Ability",color_discrete_map=colors, template="plotly_dark")
-    fig3 = px.treemap(all_data, path=[px.Constant("All Damage"),'Ability', 'Status'], values='Damage',title=total_damage ,color="Ability",color_discrete_map=colors, template="plotly_dark")
+
+    r_treemap_df_name = []
+    r_treemap_df_damage = []
+    r_treemap_df_status = []
+    for ixt in all_data.iterrows():
+        d_done_ixt = ixt[1]['Damage']
+        d_name_ixt = ixt[1]['Ability']
+        d_status_ixt = ixt[1]['Status']
+        if d_name_ixt in r_treemap_df_name:
+            d_name_ixt_index = [i for i, x in enumerate(r_treemap_df_name) if x == d_name_ixt]
+            if len(d_name_ixt_index) > 1:
+                istxt_x = 0
+                for istxt in d_name_ixt_index:
+                    if r_treemap_df_status[istxt] == d_status_ixt:
+                        r_treemap_df_damage[istxt] += d_done_ixt
+                    else:
+                        istxt_x += 1
+                if istxt_x == len(d_name_ixt_index):
+                    r_treemap_df_name.append(d_name_ixt)
+                    r_treemap_df_damage.append(d_done_ixt)
+                    r_treemap_df_status.append(d_status_ixt)
+
+            else:
+                if r_treemap_df_status[d_name_ixt_index[0]] == d_status_ixt:
+                    r_treemap_df_damage[d_name_ixt_index[0]] += d_done_ixt
+                else:
+                    r_treemap_df_name.append(d_name_ixt)
+                    r_treemap_df_damage.append(d_done_ixt)
+                    r_treemap_df_status.append(d_status_ixt)
+        else:
+            r_treemap_df_name.append(d_name_ixt)
+            r_treemap_df_damage.append(d_done_ixt)
+            r_treemap_df_status.append(d_status_ixt)
+
+    r_treemap_df_name_n = ['All Damage']
+    r_treemap_df_damage_n = [0]
+    r_treemap_df_parent = ['']
+
+    r_treemap_like_damage_dealers = ['x', 'Obliterate', 'OH - Obliterate', 'Main hand', 'Off hand', 'OH - Plague Strike', 'Plague Strike', 'OH - Frost Strike', 'Frost Strike']
+    r_treemap_like_damage_dealers_parents = ['x', 'All Obliterate', 'All Obliterate', 'White Attack', 'White Attack', 'All Plague Strike', 'All Plague Strike', 'All Frost Strike', 'All Frost Strike']
+
+    d_dealers = r_treemap_like_damage_dealers.copy()
+    d_dealers_p = r_treemap_like_damage_dealers_parents.copy()
+
+
+    for istx_x, istx in enumerate(r_treemap_df_status):
+        t_s_status = istx
+        t_s_name = r_treemap_df_name[istx_x]
+        t_s_damage = r_treemap_df_damage[istx_x]
+
+        if t_s_name in r_treemap_like_damage_dealers:
+            istx_match_p = r_treemap_like_damage_dealers.index(t_s_name)
+            new_treemap_name_p = r_treemap_like_damage_dealers_parents[istx_match_p]
+            r_treemap_like_damage_dealers.pop(istx_match_p)
+            r_treemap_like_damage_dealers_parents.pop(istx_match_p)
+
+            if new_treemap_name_p in r_treemap_df_name_n:
+                p = 1
+            else:
+                r_treemap_df_parent.append("All Damage")
+                r_treemap_df_name_n.append(new_treemap_name_p)
+                r_treemap_df_damage_n.append(-121.5)
+
+            r_treemap_df_parent.append(new_treemap_name_p)
+            r_treemap_df_name_n.append(t_s_name)
+            r_treemap_df_damage_n.append(t_s_damage)
+            r_treemap_df_parent.append(t_s_name)
+            r_treemap_df_name_n.append(t_s_status + " - " + t_s_name)
+            r_treemap_df_damage_n.append(t_s_damage)
+            continue
+
+        if t_s_name in r_treemap_df_name_n:
+            t_name_ixt_index = [i for i, x in enumerate(r_treemap_df_name_n) if x == t_s_name]
+            if len(t_name_ixt_index) >= 1:
+                for istxt in t_name_ixt_index:
+                    t_name_ixt_index = t_name_ixt_index[0]
+                    r_treemap_df_damage_n[t_name_ixt_index] += t_s_damage
+                    r_treemap_df_parent.append(t_s_name)
+                    r_treemap_df_name_n.append(t_s_status + " - " + t_s_name)
+                    r_treemap_df_damage_n.append(t_s_damage)
+            else:
+                t_name_ixt_index = t_name_ixt_index[0]
+                r_treemap_df_damage_n[t_name_ixt_index] += t_s_damage
+                r_treemap_df_parent.append(t_s_name)
+                r_treemap_df_name_n.append(t_s_status + " - " + t_s_name)
+                r_treemap_df_damage_n.append(t_s_damage)
+        else:
+            r_treemap_df_parent.append("All Damage")
+            r_treemap_df_name_n.append(t_s_name)
+            r_treemap_df_damage_n.append(t_s_damage)
+            r_treemap_df_parent.append(t_s_name)
+            r_treemap_df_name_n.append(t_s_status + " - " + t_s_name)
+            r_treemap_df_damage_n.append(t_s_damage)
+
+    # r_treemap_df_damage_n[0] = t_damage
+    for itx_x, itx in enumerate(r_treemap_df_damage_n):
+        if itx == -121.5:
+            r_treemap_df_damage_n[itx_x] = 0
+            l_itx_name = r_treemap_df_name_n[itx_x]
+            t_itx_index = [i for i, x in enumerate(d_dealers_p) if x == l_itx_name]
+            for itv in t_itx_index:
+                lookup_id = d_dealers[itv]
+                for itvx_v, itvx in enumerate(r_treemap_df_name_n):
+                    if itvx == lookup_id:
+                        r_treemap_df_damage_n[itx_x] += r_treemap_df_damage_n[itvx_v]
+    for itx_x, itx in enumerate(r_treemap_df_parent):
+        if itx == "All Damage":
+            r_treemap_df_damage_n[0] += r_treemap_df_damage_n[itx_x]
+    for ith_x, ith in enumerate(r_treemap_df_name_n):
+        if ith in colors.keys():
+            continue
+        else:
+            lookup_short = ith
+            l_pos = lookup_short.find(" - ")
+            lookup_short = lookup_short[:l_pos]
+            try:
+                color_res = colors_status[lookup_short]
+                colors.update({ith: color_res})
+            except KeyError:
+                continue
+
+
+    total_damage = r_treemap_df_damage_n[0]
+    total_dps = round((total_damage / fight_length), 3)
+    total_damage = "Total Damage Done - " + str(total_damage) + "                  DPS - " + str(total_dps) + "                  Fight Length - " + str(fight_length) + "                  Number of Targets - " + str(number_of_targets_in_fight)
+
+
+
+    # for i_xa, i_a in enumerate(r_treemap_df_name_n):
+    #     print(r_treemap_df_name_n[i_xa]) #Name
+    #     print(r_treemap_df_parent[i_xa]) #Parent
+    #     print(r_treemap_df_damage_n[i_xa]) #Damage
+    #     print("-----EOL------")
+    #fig3 = px.treemap(names=r_treemap_df_name_n, parents=r_treemap_df_parent, values=r_treemap_df_damage_n,title=total_damage ,color=r_treemap_df_name_n,color_discrete_map=colors, template="plotly_dark", branchvalues="total")
+    fig3 = px.treemap(names=r_treemap_df_name_n, parents=r_treemap_df_parent, values=r_treemap_df_damage_n,title=total_damage ,color=r_treemap_df_name_n,color_discrete_map=colors, template="plotly_dark", branchvalues="total")
+
+    #fig3 = px.treemap(all_data, path=[px.Constant("All Damage"),'Ability', 'Status'], values='Damage',title=total_damage ,color="Ability",color_discrete_map=colors, template="plotly_dark")
+
+    #fig3 = px.treemap(all_data, path=[px.Constant("All Damage"),'Ability', 'Status'], values='Damage',title=total_damage ,color="Ability",color_discrete_map=colors, template="plotly_dark")
     fig4 = px.pie(all_data, names='Status', title='Status Percentage',color="Status",color_discrete_map=colors_status, template="plotly_dark")
     fig5 = px.parallel_categories(all_data2, dimensions=['Ability', 'Status', 'DamageScale'],labels={'Ability':'Ability Name', 'Status':'Damage Status', 'DamageScale':'Damage Sclae'},color="Damage", color_continuous_scale=px.colors.sequential.Plotly3,range_color=(0,2000), template="plotly_dark")
     fig601 = px.line(dps_table_data, x='Time', y="DPS", template="plotly_dark")
