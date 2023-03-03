@@ -70,6 +70,7 @@ function mh_wep_build(mhoroh) {
       seperatortwo.color = "grey";
       seperatortwo.align = "right";
       child?.appendChild(seperator);
+      checkbox(mainchild, "mh_" + rem_dash_name);
       mainchild?.appendChild(child);
       mainchild?.appendChild(seperatortwo);
       mhsubdiv?.appendChild(mainchild);
@@ -146,6 +147,7 @@ function mh_wep_build(mhoroh) {
             seperatortwo.color = "grey";
             seperatortwo.align = "right";
             child?.appendChild(seperator);
+            checkbox(mainchild, "oh_" + rem_dash_name);
             mainchild?.appendChild(child);
             mainchild?.appendChild(seperatortwo);
             ohsubdiv?.appendChild(mainchild);
@@ -263,6 +265,7 @@ function items_builder(){
         seperatortwo.color = "grey";
         seperatortwo.align = "right";  
         child?.appendChild(seperator);
+        checkbox(mainchild, build_type.toLowerCase() +"1_"+build_name_no_dash);
         mainchild?.appendChild(child);
         mainchild?.appendChild(seperatortwo);
         build_loc?.appendChild(mainchild);
@@ -328,6 +331,7 @@ function items_builder(){
         seperatortwo_2.align = "right"; 
         mainchild_2.className = "all_" + build_type.toLowerCase() + "2_items";
         child_2?.appendChild(seperator_2);
+        checkbox(mainchild_2, build_type.toLowerCase() + "2_"+ build_name_no_dash);
         mainchild_2?.appendChild(child_2);
         mainchild_2?.appendChild(seperatortwo_2);
         build_loc_2?.appendChild(mainchild_2);
@@ -352,6 +356,7 @@ function items_builder(){
     seperatortwo.color = "grey";
     seperatortwo.align = "right";
     child?.appendChild(seperator);
+    checkbox(mainchild, build_type.toLowerCase() + "_" + build_name_no_dash);
     mainchild?.appendChild(child);
     mainchild?.appendChild(seperatortwo);
     build_loc?.appendChild(mainchild);
@@ -416,4 +421,15 @@ while (gem_builder < 66){
   }
   gem_selection_builder(gem_sel);
   gem_builder ++;
+}
+
+function checkbox(attachtome, boxname){
+    var divname = document.createElement("div");
+    divname.className = "CheckComp";
+    var checkboxname = document.createElement("input");
+    checkboxname.type = "checkbox";
+    checkboxname.id = boxname;
+    checkboxname.className = "CheckCompTwo";
+    divname?.appendChild(checkboxname);
+    attachtome?.appendChild(divname);
 }

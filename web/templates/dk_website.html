@@ -12,7 +12,7 @@
             }
             </script> 
     		<title>Remours DK Simulator</title>
-            <link rel="stylesheet" href="/static/css/style3.css">
+            <link rel="stylesheet" href="/static/css/style4.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <link rel="icon" href="/static/images/icon.ico">
 			<script src="https://unpkg.com/htmx.org@1.8.0"></script>
@@ -50,10 +50,10 @@
               <meta name="twitter:image" content="https://www.remourtech.com/static/images/ogdksimimage.jpg">
 
 			
-			<!--  Delete ME After Building-->
-			<link rel="stylesheet" href="../../assets/css/style3.css">
-			<script src="../../assets/js/tooltip.js"></script> 
-            <script src="../../assets/js/jquery-3.6.1.min.js"></script>
+			  <!-- Delete ME After Building-->
+<!--			<link rel="stylesheet" href="../assets/css/style4.css">-->
+<!--			<script src="../assets/js/tooltip.js"></script>-->
+<!--            <script src="../assets/js/jquery-3.6.1.min.js"></script>-->
 
         </head>
   <!-- Tab links -->
@@ -78,7 +78,7 @@
         <input type=button onClick="simcurrentsheet()" value='Sim Current Selection' >
         <br>
         <br>
-        <br>
+		<br>
         <br>
         <!-- <input type=button onClick="parent.open('/dash')" value='Load Simulation Data' > -->
         <br>
@@ -204,6 +204,11 @@
 	<select name="overgem" id="overgem" onchange="overridegemselection()">
 </select>
 	</form>
+<br>
+<br>
+<input type=button onClick="simbestgear()" value='Sim Gear Checked' >
+	  <br>
+	  *Checkmarked Gear*
 <br>
 <br>
   </div>
@@ -2781,9 +2786,12 @@ Gems:
 
 <!--         DO NOT DELETE BELOW THIS IDIOT       -->  
 </div>
-
+<!--<script src="../assets/js/equ.js"></script>-->
+<!--<script src="../assets/js/gear.js"></script>-->
+<!--<script src="../assets/js/bestgear.js"></script>-->
 <script src="/static/js/equ.js"></script>
 <script src="/static/js/gear.js"></script>
+<script src="/static/js/bestgear.js"></script>
 
 
 <script>
@@ -3623,6 +3631,7 @@ const trinkettwoss = document.querySelectorAll('.Trinkt2');
                 twohands = twohands[16];
                 dpshtmlarea(dps_text, twohands);
                 ifsheetlooping();
+                ifgearlooping();
             }
 
         
@@ -6293,6 +6302,7 @@ const trinkettwoss = document.querySelectorAll('.Trinkt2');
 					Cookies.remove('skipuaselection')
 					Cookies.remove('skipempoweredruneweapselection')
 					Cookies.remove('skipdiseaseselection')
+					Cookies.remove('checkmarkedgear')
 					resettalents();
 					document.body.scrollTop = document.documentElement.scrollTop = 0;
                     location.reload();
@@ -11013,7 +11023,41 @@ const trinkettwoss = document.querySelectorAll('.Trinkt2');
             resultsdashuserarea.dispatchEvent(new Event('input'));
             resultsdashuserarea.click();
         }
-           
+
+        const gearcheckboxcookie = document.querySelectorAll('.CheckCompTwo');
+        gearcheckboxcookie.forEach(glovess => {
+			glovess.addEventListener('click', function handleClick(event) {
+				var item_sel = glovess.id;
+				var checkgearcookie = Cookies.get('checkmarkedgear');
+				if (checkgearcookie === undefined || checkgearcookie === null) {
+				   checkgearcookie = "";
+				}
+				checkgearcookie = checkgearcookie.split(',');
+				if (checkgearcookie.includes(item_sel) === true) {
+					checkgearcookie = checkgearcookie.filter(function(e) { return e !== item_sel })
+				} else {
+					checkgearcookie.push(item_sel);
+				}
+				checkgearcookie = checkgearcookie.toString();
+				Cookies.set('checkmarkedgear', checkgearcookie, { expires: 399 });
+			});
+		});
+
+		function gearcheckedgear(){
+			var gearcookieschecked = Cookies.get('checkmarkedgear');
+			if (gearcookieschecked !== undefined || gearcookieschecked !== null || gearcookieschecked !== "") {
+				gearcookieschecked = gearcookieschecked.split(',');
+				var gearcookiescheckedLength = gearcookieschecked.length;
+    			for (var isz = 1; isz < gearcookiescheckedLength; isz++) {
+    				var c_gearcookieschecked = gearcookieschecked[isz];
+    				var box = document.getElementById(c_gearcookieschecked);
+            		box.checked = true;
+    			}
+			}
+		}
+		gearcheckedgear();
+
+
           </script>
         <noscript>Your browser does not support JavaScript!</noscript>
 		<body>
