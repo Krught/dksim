@@ -202,6 +202,7 @@ function simmultigearsets(all_combos, num_of_combin) {
             var selecteditemcat = "selected" + phasehidelist[z];
             var selecteditem = document.getElementsByClassName(selecteditemcat);
             selecteditem = selecteditem[0];
+            console.log("Putting Item: " + c_item_of_gearset + " In Slot: " + selecteditemcat);
             funlist[z](c_item_of_gearset);
             gearloop = "True";
             document.getElementById("simdpsbutton2").click();
