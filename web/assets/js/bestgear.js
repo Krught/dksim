@@ -34,6 +34,8 @@ var bestgear_score = 0;
 var c_iter = 0;
 var clicked_num = 0;
 var gearloop = "False";
+var allcombos = [];
+var num_of_combo = 0;
 function getallselgear() {
     var phasehidelist = ["wepmh", "wepoh", "head", "neck", "shoulders", "back", "chest", "wrist", "gloves", "waist", "legs", "boots", "sigil", "ring1", "ring2", "trinket1", "trinket2"];
     var phasehidelistLength = phasehidelist.length;
@@ -156,8 +158,6 @@ function getallselgear() {
     sellist_trinket1 = [...new Set(sellist_trinket1)];
     sellist_trinket2 = [...new Set(sellist_trinket2)];
 }
-var allcombos = getCombn(master_combi);
-var num_of_combo = 0;
 function allposcombi() {
     var master_combi = [sellist_mh, sellist_oh, sellist_head, sellist_neck, sellist_shoulders, sellist_back, sellist_chest, sellist_wrist, sellist_gloves, sellist_waist, sellist_legs, sellist_boots, sellist_sigil, sellist_ring1, sellist_ring2, sellist_trinket1, sellist_trinket2];
     num_of_combo = 0;

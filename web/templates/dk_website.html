@@ -11045,7 +11045,8 @@ const trinkettwoss = document.querySelectorAll('.Trinkt2');
 
 		function gearcheckedgear(){
 			var gearcookieschecked = Cookies.get('checkmarkedgear');
-			if (gearcookieschecked !== undefined || gearcookieschecked !== null || gearcookieschecked !== "") {
+			if (gearcookieschecked === undefined || gearcookieschecked === null || gearcookieschecked === "") {
+			} else {
 				gearcookieschecked = gearcookieschecked.split(',');
 				var gearcookiescheckedLength = gearcookieschecked.length;
     			for (var isz = 1; isz < gearcookiescheckedLength; isz++) {
