@@ -3,8 +3,8 @@ function simbestgear() {
     if (clicked_num === 0) {
         getallselgear();
         allposcombi();
-        alert(num_of_combo);
-        alert(allcombos);
+        //         alert(num_of_combo);
+        //         alert(allcombos);
         simmultigearsets(allcombos, num_of_combo);
     }
     else {
@@ -207,7 +207,6 @@ function simmultigearsets(all_combos, num_of_combin) {
             document.getElementById("simdpsbutton2").click();
         }
         c_iter++;
-        simmultigearsets(allcombos, num_of_combo);
     }
     else {
         //Do this at the end to reset everything..prob also to select the best set items. and sim it 1 more time to update numbers.
