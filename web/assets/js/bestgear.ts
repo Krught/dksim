@@ -4,6 +4,7 @@ function simbestgear(){
         allposcombi();
 //         alert(num_of_combo);
 //         alert(allcombos);
+        console.log("Master Num of combinations - " + num_of_combo);
         simmultigearsets(allcombos, num_of_combo);
     } else{
         c_iter = 1000000000;
@@ -28,7 +29,7 @@ var sellist_ring1 = [];
 var sellist_ring2 = [];
 var sellist_trinket1 = [];
 var sellist_trinket2 = [];
-var bestgear = [];
+var bestgear = "";
 var bestgear_score = 0;
 var c_iter = 0;
 var clicked_num = 0;
@@ -213,6 +214,7 @@ function ifgearlooping(){
         newdpsvalue = Number(newdpsvalue);
         if (newdpsvalue > bestgear_score){
             bestgear = allcombos[c_iter];
+            bestgear = bestgear.split(',');
             bestgear_score = newdpsvalue;
         }
         simmultigearsets(allcombos, num_of_combo);
@@ -221,6 +223,7 @@ function ifgearlooping(){
 function simmultigearsets(all_combos, num_of_combin){
     console.log("c_iter: " + c_iter);
     console.log("num_of_combin: " + num_of_combin);
+    console.log("bestgear: " + bestgear);
     if (c_iter < num_of_combin){
         var current_gearset = all_combos[c_iter];
         current_gearset = current_gearset.split(',');
