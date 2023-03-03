@@ -206,6 +206,8 @@ function ifgearlooping() {
     }
 }
 function simmultigearsets(all_combos, num_of_combin) {
+    console.log("c_iter: " + c_iter);
+    console.log("num_of_combin: " + num_of_combin);
     if (c_iter > num_of_combin) {
         var current_gearset = all_combos[c_iter];
         current_gearset = current_gearset.split(',');
