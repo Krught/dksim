@@ -237,13 +237,15 @@ function ifgearlooping() {
             bestgear = bestgear.split(',');
             bestgear_score = newdpsvalue;
         }
+        console.log("c_iter: " + c_iter);
+        console.log("num_of_combin: " + num_of_combin);
+        console.log("bestgear: " + bestgear);
+        console.log("bestgear-score: " + bestgear_score);
+        console.log("new dps value: " + newdpsvalue);
         simmultigearsets(allcombos, num_of_combo);
     }
 }
 function simmultigearsets(all_combos, num_of_combin) {
-    console.log("c_iter: " + c_iter);
-    console.log("num_of_combin: " + num_of_combin);
-    console.log("bestgear: " + bestgear);
     if (c_iter < num_of_combin) {
         var current_gearset = all_combos[c_iter];
         current_gearset = current_gearset.split(',');
