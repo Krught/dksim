@@ -47,20 +47,38 @@ function getallselgear(){
         var selecteditemcat = "selected" + phasehidelist[i];
         var selecteditem = document.getElementsByClassName(selecteditemcat);
         selecteditem = selecteditem[0].id
-        var n = selecteditem.indexOf('_');
-        selecteditem = selecteditem.substring(n + 1);
-        allsellist.push(selecteditem);
+        var selcheckedbox = "#" + selecteditem
+        var parentsel = document.querySelector(selcheckedbox);
+        var childsel = testContainer.querySelector('.nam');
+        childsel = childsel.innerHTML;
+
+//         var n = selecteditem.indexOf('_');
+//         selecteditem = selecteditem.substring(n + 1);
+//         allsellist.push(selecteditem);
+        allsellist.push(childsel);
     }
     var checkedBoxes = document.querySelectorAll('input[class=CheckCompTwo]:checked');
     var checkedBoxesLength = checkedBoxes.length;
     for (var i = 0; i < checkedBoxesLength; i++) {
         var selcheckedbox = checkedBoxes[i];
         selcheckedbox = selcheckedbox.id;
+
+
+        selcheckedbox = "#" + selcheckedbox
+        var parentsel = document.querySelector(selcheckedbox);
+        var childsel = testContainer.querySelector('.nam');
+        childsel = childsel.innerHTML;
+
         var n = selcheckedbox.indexOf('_');
         var selcheckedbox_item = selcheckedbox.substring(0, n);
         selcheckedbox = selcheckedbox.substring(n + 1);
+
+
+
+
+
         allsellist_item.push(selcheckedbox_item);
-        allsellist.push(selcheckedbox);
+        allsellist.push(childsel);
     }
     sellist_mh = [];
     sellist_oh = [];
