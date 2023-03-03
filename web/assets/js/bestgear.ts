@@ -199,7 +199,7 @@ function simmultigearsets(all_combos, num_of_combin){
             for (var z = 0; z < current_gearset.length; z++) {
             var c_item_of_gearset = current_gearset[z]
 
-            c_item_of_gearset = c_item_of_gearset.replace("_", " ");
+            c_item_of_gearset = c_item_of_gearset.replaceAll("_", " ");
 
             var selecteditemcat = "selected" + phasehidelist[z];
             var selecteditem = document.getElementsByClassName(selecteditemcat);
@@ -221,7 +221,7 @@ function simmultigearsets(all_combos, num_of_combin){
         for (var z = 0; z < bestgear.length; z++) {
             var c_item_of_gearset = bestgear[z]
 
-            c_item_of_gearset = c_item_of_gearset.replace("_", " ");
+            c_item_of_gearset = c_item_of_gearset.replaceAll("_", " ");
 
             var selecteditemcat = "selected" + phasehidelist[z];
             var selecteditem = document.getElementsByClassName(selecteditemcat);
