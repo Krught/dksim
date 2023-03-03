@@ -1,17 +1,3 @@
-function simbestgear(){
-    if (clicked_num === 0){
-        getallselgear();
-        allposcombi();
-//         alert(num_of_combo);
-//         alert(allcombos);
-        console.log("Master Num of combinations - " + num_of_combo);
-        simmultigearsets(allcombos, num_of_combo);
-    } else{
-        c_iter = 1000000000;
-        clicked_num = 0;
-    }
-}
-
 var sellist_mh = [];
 var sellist_oh = [];
 var sellist_head = [];
@@ -36,6 +22,21 @@ var clicked_num = 0;
 var gearloop = "False";
 var allcombos = [];
 var num_of_combo = 0
+
+function simbestgear(){
+    if (clicked_num === 0){
+        getallselgear();
+        allposcombi();
+//         alert(num_of_combo);
+//         alert(allcombos);
+        console.log("Master Num of combinations - " + num_of_combo);
+        console.log("All Combos - " + allcombos);
+        simmultigearsets(allcombos, num_of_combo);
+    } else{
+        c_iter = 1000000000;
+        clicked_num = 0;
+    }
+}
 
 function getallselgear(){
     var phasehidelist = ["wepmh", "wepoh", "head", "neck", "shoulders", "back", "chest", "wrist", "gloves", "waist", "legs", "boots", "sigil", "ring1", "ring2", "trinket1", "trinket2"];
