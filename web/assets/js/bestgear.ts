@@ -209,7 +209,7 @@ function allposcombi(){
 }
 function ifgearlooping(){
     if (gearloop === "True") {
-        var newdpsvalue = dpstextvalue;
+        var newdpsvalue = document.querySelector("#dps_area").innerText;
         newdpsvalue = parseNumber(newdpsvalue);
         if (newdpsvalue > bestgear_score){
             bestgear = allcombos[c_iter];
