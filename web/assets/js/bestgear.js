@@ -50,6 +50,8 @@ function getallselgear() {
         var selcheckedbox = "#" + selecteditem;
         var parentsel = document.querySelector(selcheckedbox);
         var childsel = parentsel.querySelector('.nam');
+        console.log("Childsel: " + childsel);
+        console.log("Childsel-innerhtml: " + childsel.innerHTML);
         childsel = childsel.innerHTML;
         //         var n = selecteditem.indexOf('_');
         //         selecteditem = selecteditem.substring(n + 1);
@@ -61,9 +63,10 @@ function getallselgear() {
     for (var i = 0; i < checkedBoxesLength; i++) {
         var selcheckedbox = checkedBoxes[i];
         selcheckedbox = selcheckedbox.id;
-        //selcheckedbox = "#" + selcheckedbox
-        var parentsel = document.querySelector(selcheckedbox);
+        var parentsel = document.querySelector("#" + selcheckedbox);
         var childsel = parentsel.querySelector('.nam');
+        console.log("Childsel: " + childsel);
+        console.log("Childsel-innerhtml: " + childsel.innerHTML);
         childsel = childsel.innerHTML;
         var n = selcheckedbox.indexOf('_');
         var selcheckedbox_item = selcheckedbox.substring(0, n);
