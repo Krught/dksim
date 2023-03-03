@@ -50,8 +50,8 @@ function getallselgear() {
         var selcheckedbox = "#" + selecteditem;
         var parentsel = document.querySelector(selcheckedbox);
         var childsel = parentsel.querySelector('.nam');
-        console.log("Childsel: " + childsel);
-        console.log("Childsel-innerhtml: " + childsel.innerHTML);
+        //         console.log("Childsel: " + childsel);
+        //         console.log("Childsel-innerhtml: " + childsel.innerHTML);
         childsel = childsel.innerHTML;
         //         var n = selecteditem.indexOf('_');
         //         selecteditem = selecteditem.substring(n + 1);
@@ -63,10 +63,12 @@ function getallselgear() {
     for (var i = 0; i < checkedBoxesLength; i++) {
         var selcheckedbox = checkedBoxes[i];
         selcheckedbox = selcheckedbox.id;
+        selcheckedbox = selcheckedbox.replaceAll("mh_", "w1_");
+        selcheckedbox = selcheckedbox.replaceAll("oh_", "w2_");
         var parentsel = document.querySelector("#" + selcheckedbox);
         var childsel = parentsel.querySelector('.nam');
-        console.log("Childsel: " + childsel);
-        console.log("Childsel-innerhtml: " + childsel.innerHTML);
+        //         console.log("Childsel: " + childsel);
+        //         console.log("Childsel-innerhtml: " + childsel.innerHTML);
         childsel = childsel.innerHTML;
         var n = selcheckedbox.indexOf('_');
         var selcheckedbox_item = selcheckedbox.substring(0, n);
@@ -215,7 +217,7 @@ function simmultigearsets(all_combos, num_of_combin) {
             var selecteditemcat = "selected" + phasehidelist[z];
             var selecteditem = document.getElementsByClassName(selecteditemcat);
             selecteditem = selecteditem[0];
-            console.log("Putting Item: " + c_item_of_gearset + " In Slot: " + selecteditemcat);
+            //             console.log("Putting Item: " + c_item_of_gearset + " In Slot: " + selecteditemcat);
             funlist[z](c_item_of_gearset);
             gearloop = "True";
             document.getElementById("simdpsbutton2").click();
