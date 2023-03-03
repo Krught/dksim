@@ -238,7 +238,7 @@ function ifgearlooping() {
             bestgear_score = newdpsvalue;
         }
         console.log("c_iter: " + c_iter);
-        console.log("num_of_combin: " + num_of_combin);
+        console.log("num_of_combin: " + num_of_combo);
         console.log("bestgear: " + bestgear);
         console.log("bestgear-score: " + bestgear_score);
         console.log("new dps value: " + newdpsvalue);
