@@ -49,7 +49,7 @@ function getallselgear(){
         selecteditem = selecteditem[0].id
         var selcheckedbox = "#" + selecteditem
         var parentsel = document.querySelector(selcheckedbox);
-        var childsel = testContainer.querySelector('.nam');
+        var childsel = parentsel.querySelector('.nam');
         childsel = childsel.innerHTML;
 
 //         var n = selecteditem.indexOf('_');
@@ -66,7 +66,7 @@ function getallselgear(){
 
         selcheckedbox = "#" + selcheckedbox
         var parentsel = document.querySelector(selcheckedbox);
-        var childsel = testContainer.querySelector('.nam');
+        var childsel = parentsel.querySelector('.nam');
         childsel = childsel.innerHTML;
 
         var n = selcheckedbox.indexOf('_');

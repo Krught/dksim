@@ -49,7 +49,7 @@ function getallselgear() {
         selecteditem = selecteditem[0].id;
         var selcheckedbox = "#" + selecteditem;
         var parentsel = document.querySelector(selcheckedbox);
-        var childsel = testContainer.querySelector('.nam');
+        var childsel = parentsel.querySelector('.nam');
         childsel = childsel.innerHTML;
         //         var n = selecteditem.indexOf('_');
         //         selecteditem = selecteditem.substring(n + 1);
@@ -63,7 +63,7 @@ function getallselgear() {
         selcheckedbox = selcheckedbox.id;
         selcheckedbox = "#" + selcheckedbox;
         var parentsel = document.querySelector(selcheckedbox);
-        var childsel = testContainer.querySelector('.nam');
+        var childsel = parentsel.querySelector('.nam');
         childsel = childsel.innerHTML;
         var n = selcheckedbox.indexOf('_');
         var selcheckedbox_item = selcheckedbox.substring(0, n);
