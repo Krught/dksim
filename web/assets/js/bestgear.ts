@@ -64,7 +64,7 @@ function getallselgear(){
         selcheckedbox = selcheckedbox.id;
 
 
-        selcheckedbox = "#" + selcheckedbox
+        //selcheckedbox = "#" + selcheckedbox
         var parentsel = document.querySelector(selcheckedbox);
         var childsel = parentsel.querySelector('.nam');
         childsel = childsel.innerHTML;
