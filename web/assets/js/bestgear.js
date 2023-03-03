@@ -50,6 +50,7 @@ function getallselgear() {
         var selecteditem = document.getElementsByClassName(selecteditemcat);
         selecteditem = selecteditem[0].id;
         var selcheckedbox = "#" + selecteditem;
+        selcheckedbox = selcheckedbox.replace(":", "\\:");
         var parentsel = document.querySelector(selcheckedbox);
         var childsel = parentsel.querySelector('.nam');
         //         console.log("Childsel: " + childsel);
@@ -65,6 +66,7 @@ function getallselgear() {
     for (var i = 0; i < checkedBoxesLength; i++) {
         var selcheckedbox = checkedBoxes[i];
         selcheckedbox = selcheckedbox.id;
+        selcheckedbox = selcheckedbox.replace(":", "\\:");
         selcheckedbox = selcheckedbox.replace("mh_", "w1_");
         selcheckedbox = selcheckedbox.replace("oh_", "w2_");
         selcheckedbox = selcheckedbox.replace("head_", "Headd_");
