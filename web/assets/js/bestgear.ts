@@ -255,11 +255,12 @@ function ifgearlooping(){
             bestgear_score = newdpsvalue;
         }
 
-        console.log("c_iter: " + c_iter);
-        console.log("num_of_combin: " + num_of_combo);
-        console.log("bestgear: " + bestgear);
-        console.log("bestgear-score: " + bestgear_score);
-        console.log("new dps value: " + newdpsvalue);
+        console.log("Current Iteration: " + c_iter);
+        console.log("Number of Combinations: " + num_of_combo);
+        console.log("Current Best Gear Setup: " + bestgear);
+        console.log("Current Best Gear DPS: " + bestgear_score);
+        console.log("This Version Gear Setup: " + allcombos[c_iter]);
+        console.log("This Version Gear DPS: " + newdpsvalue);
 
 
         simmultigearsets(allcombos, num_of_combo);
