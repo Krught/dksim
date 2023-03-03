@@ -224,18 +224,17 @@ function simmultigearsets(all_combos, num_of_combin){
         current_gearset = current_gearset.split(',');
         var funlist = [select_wep, select_wep2, select_head, select_neck, select_shoulders, select_back, select_chest, select_wrist, select_gloves, select_waist, select_legs, select_boots, select_sigil, select_ring1, select_ring2, select_trinket1, select_trinket2]
         var phasehidelist = ["wepmh", "wepoh", "head", "neck", "shoulders", "back", "chest", "wrist", "gloves", "waist", "legs", "boots", "sigil", "ring1", "ring2", "trinket1", "trinket2"];
-            for (var z = 0; z < current_gearset.length; z++) {
-            var c_item_of_gearset = current_gearset[z]
+            for (var z = 0; z < 17; z++) {
+                var c_item_of_gearset = current_gearset[z]
+                c_item_of_gearset = c_item_of_gearset.replaceAll("_", " ");
 
-            c_item_of_gearset = c_item_of_gearset.replaceAll("_", " ");
-
-            var selecteditemcat = "selected" + phasehidelist[z];
-            var selecteditem = document.getElementsByClassName(selecteditemcat);
-            selecteditem = selecteditem[0];
-//             console.log("Putting Item: " + c_item_of_gearset + " In Slot: " + selecteditemcat);
-            funlist[z](c_item_of_gearset);
-            gearloop = "True";
-            document.getElementById("simdpsbutton2").click();
+                var selecteditemcat = "selected" + phasehidelist[z];
+                var selecteditem = document.getElementsByClassName(selecteditemcat);
+                selecteditem = selecteditem[0];
+                console.log("Putting Item: " + c_item_of_gearset + " In Slot: " + selecteditemcat);
+                funlist[z](c_item_of_gearset);
+                gearloop = "True";
+                document.getElementById("simdpsbutton2").click();
             }
         c_iter++;
     } else {
@@ -246,7 +245,7 @@ function simmultigearsets(all_combos, num_of_combin){
 
         var funlist = [select_wep, select_wep2, select_head, select_neck, select_shoulders, select_back, select_chest, select_wrist, select_gloves, select_waist, select_legs, select_boots, select_sigil, select_ring1, select_ring2, select_trinket1, select_trinket2]
         var phasehidelist = ["wepmh", "wepoh", "head", "neck", "shoulders", "back", "chest", "wrist", "gloves", "waist", "legs", "boots", "sigil", "ring1", "ring2", "trinket1", "trinket2"];
-        for (var z = 0; z < bestgear.length; z++) {
+        for (var z = 0; z < 17; z++) {
             var c_item_of_gearset = bestgear[z]
 
             c_item_of_gearset = c_item_of_gearset.replaceAll("_", " ");
