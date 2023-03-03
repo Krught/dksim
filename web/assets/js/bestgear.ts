@@ -219,7 +219,7 @@ function ifgearlooping(){
     }
 }
 function simmultigearsets(all_combos, num_of_combin){
-    if (c_iter < num_of_combin){
+    if (c_iter > num_of_combin){
         var current_gearset = all_combos[c_iter];
         current_gearset = current_gearset.split(',');
         var funlist = [select_wep, select_wep2, select_head, select_neck, select_shoulders, select_back, select_chest, select_wrist, select_gloves, select_waist, select_legs, select_boots, select_sigil, select_ring1, select_ring2, select_trinket1, select_trinket2]
@@ -231,7 +231,7 @@ function simmultigearsets(all_combos, num_of_combin){
                 var selecteditemcat = "selected" + phasehidelist[z];
                 var selecteditem = document.getElementsByClassName(selecteditemcat);
                 selecteditem = selecteditem[0];
-                console.log("Putting Item: " + c_item_of_gearset + " In Slot: " + selecteditemcat);
+                //console.log("Putting Item: " + c_item_of_gearset + " In Slot: " + selecteditemcat);
                 funlist[z](c_item_of_gearset);
                 gearloop = "True";
                 document.getElementById("simdpsbutton2").click();
