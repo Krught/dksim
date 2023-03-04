@@ -235,15 +235,15 @@ function ifgearlooping() {
         var newdpsvalue = document.querySelector("#dps_area").innerText;
         newdpsvalue = Number(newdpsvalue);
         if (newdpsvalue > bestgear_score) {
-            bestgear = allcombos[c_iter];
+            bestgear = allcombos[(c_iter - 1)];
             bestgear = bestgear.split(',');
             bestgear_score = newdpsvalue;
         }
-        console.log("Current Iteration: " + c_iter);
+        console.log("Current Iteration: " + (c_iter - 1));
         console.log("Number of Combinations: " + num_of_combo);
         console.log("Current Best Gear Setup: " + bestgear);
         console.log("Current Best Gear DPS: " + bestgear_score);
-        console.log("This Version Gear Setup: " + allcombos[c_iter]);
+        console.log("This Version Gear Setup: " + allcombos[(c_iter - 1)]);
         console.log("This Version Gear DPS: " + newdpsvalue);
         simmultigearsets(allcombos, num_of_combo);
     }
