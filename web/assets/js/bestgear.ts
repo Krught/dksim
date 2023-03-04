@@ -28,14 +28,13 @@ function simbestgear(){
         clicked_num = 1;
         getallselgear();
         allposcombi();
-//         alert(num_of_combo);
-//         alert(allcombos);
         console.log("Master Num of combinations - " + num_of_combo);
         console.log("All Combos - " + allcombos);
         simmultigearsets(allcombos, num_of_combo);
-    } else{
-        c_iter = 1000000000;
+    } else {
+        c_iter = 10000000000000;
         clicked_num = 0;
+        simmultigearsets(allcombos, num_of_combo);
     }
 }
 
