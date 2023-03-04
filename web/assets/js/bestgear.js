@@ -24,14 +24,14 @@ var gearloop = "False";
 var allcombos = [];
 var num_of_combo = 0;
 function simbestgear() {
-    if (clicked_num === 0) {
+    if (clicked_num < 1) {
+        clicked_num = 1;
         getallselgear();
         allposcombi();
         //         alert(num_of_combo);
         //         alert(allcombos);
         console.log("Master Num of combinations - " + num_of_combo);
         console.log("All Combos - " + allcombos);
-        clicked_num = 1;
         simmultigearsets(allcombos, num_of_combo);
     }
     else {
