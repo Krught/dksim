@@ -31,6 +31,7 @@ function simbestgear() {
         //         alert(allcombos);
         console.log("Master Num of combinations - " + num_of_combo);
         console.log("All Combos - " + allcombos);
+        clicked_num++;
         simmultigearsets(allcombos, num_of_combo);
     }
     else {
@@ -229,6 +230,7 @@ function allposcombi() {
         }
     }
     allcombos = getCombn(master_combi);
+    allcombos = [...new Set(allcombos)];
 }
 function ifgearlooping() {
     if (gearloop === "True") {
