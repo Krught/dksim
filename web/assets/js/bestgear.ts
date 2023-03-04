@@ -31,7 +31,7 @@ function simbestgear(){
 //         alert(allcombos);
         console.log("Master Num of combinations - " + num_of_combo);
         console.log("All Combos - " + allcombos);
-        clicked_num++;
+        clicked_num = 1;
         simmultigearsets(allcombos, num_of_combo);
     } else{
         c_iter = 1000000000;
