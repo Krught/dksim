@@ -3,7 +3,7 @@ from sims.dk_sim_main import all_function
 
 #FULL_talent_url = "2355321533333313231223131351-32525351352233112331233131351-2352323351232152233151213133151_001s9f11s8q21xv631sxd41ts851s9r",
 fight_len = 125
-targets = 1
+targets = 6
 spec = 0
 presence = 0
 tal_url = "0-32525351352233112331233131351-230200000000_001s9f11s8q21xv631sxd41ts851s9r"
@@ -16,7 +16,7 @@ timing = True
 
 #Copy to Clipboard?
 ##True // False
-do_copy = False
+do_copy = True
 
 if timing == True:
     import timeit
