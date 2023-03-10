@@ -611,6 +611,8 @@ def use_runes(rune_cd_tracker, current_time, dots, improved_unholy_presence_poin
                         castable = 1
                         castable1 = 1
                         castable2 = 1
+                    else:
+                        return 0, 0, 0, 0, False, rune_cd_tracker
                 elif castable_death_f < 3:
                     if castable_death_f < 2 and castable1 != 3 and castable2 != 3:
                         if castable_death_f == 2:
@@ -759,6 +761,8 @@ def use_runes(rune_cd_tracker, current_time, dots, improved_unholy_presence_poin
                         castable = 1
                         castable1 = 1
                         castable2 = 1
+                    else:
+                        return 0, 0, 0, 0, False, rune_cd_tracker
                 elif castable_death == 2:
                     if castable_death_f != 3:
                         castable_death = 0
@@ -846,31 +850,36 @@ def use_runes(rune_cd_tracker, current_time, dots, improved_unholy_presence_poin
                         castable = 1
                         castable1 = 1
                         castable2 = 1
-            if castable != 3:
-                if castable1 != 3:
-                    if castable2 != 3:
-                        if castable == 2:
-                            castable = 0
-                        if castable1 == 2:
-                            castable1 = 0
-                        if castable2 == 2:
-                            castable2 = 0
-                        if use_death_rune == False:
-                            #haste_percentage = (total_haste_rating / 25.21) / 100  # Returns a result of 0 - 1 for 0% - 100%
-                            haste_rune_cd = rune_grade_timer(current_time, last_rune_change[castable],
-                                                             last_rune_change[castable + 6])
-                            if improved_unholy_presence_points != 0:
-                                if dk_presence == 2:
-                                    haste_rune_cd = haste_rune_cd - (
-                                                haste_rune_cd * ((improved_unholy_presence_points * 5) / 100))
-                            castable += rune_check1
-                            castable1 += rune_check2
-                            castable2 += rune_check3
-                            rune_cd_tracker[castable] = rune_cd(haste_rune_cd, current_time)
-                            rune_cd_tracker[castable1] = rune_cd(haste_rune_cd, current_time)
-                            rune_cd_tracker[castable2] = rune_cd(haste_rune_cd, current_time)
-                        else:
-                            use_death_rune = False
+                else:
+                    return 0, 0, 0, 0, False, rune_cd_tracker
+            else:
+                return 0, 0, 0, 0, False, rune_cd_tracker
+        if castable != 3:
+            if castable1 != 3:
+                if castable2 != 3:
+                    if castable == 2:
+                        castable = 0
+                    if castable1 == 2:
+                        castable1 = 0
+                    if castable2 == 2:
+                        castable2 = 0
+                    if use_death_rune == False:
+                        #haste_percentage = (total_haste_rating / 25.21) / 100  # Returns a result of 0 - 1 for 0% - 100%
+                        haste_rune_cd = rune_grade_timer(current_time, last_rune_change[castable],
+                                                         last_rune_change[castable + 6])
+                        if improved_unholy_presence_points != 0:
+                            if dk_presence == 2:
+                                haste_rune_cd = haste_rune_cd - (
+                                            haste_rune_cd * ((improved_unholy_presence_points * 5) / 100))
+                        castable += rune_check1
+                        castable1 += rune_check2
+                        castable2 += rune_check3
+                        rune_cd_tracker[castable] = rune_cd(haste_rune_cd, current_time)
+                        rune_cd_tracker[castable1] = rune_cd(haste_rune_cd, current_time)
+                        rune_cd_tracker[castable2] = rune_cd(haste_rune_cd, current_time)
+                    else:
+                        use_death_rune = False
+
 
 
     return 1, castable, castable1, castable2, just_used_death_rune, rune_cd_tracker
