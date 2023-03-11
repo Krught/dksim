@@ -6,7 +6,7 @@ from sims.shared.attack_tables import spell_hit, spell_crit
 
 def gargoyle(spell_hit_total, increased_spell_hit, target_level, total_crit, increased_spell_crit, current_time, melee_haste_bonus2, melee_haste_bonus3, melee_haste_bonus4,
                dk_presence, input_gcd, current_ap, gcd, used_gcd, var_crit_amount, black_ice_points, max_runic, castable, melee_haste_bonus, gargoyle_cd, garg_damage,
-               current_power, garg_ap, garg_summon_time, garg_last_damage_cast, total_haste_rating, last_rune_change, improved_unholy_presence_points, personal_buff_orc_pet_damage,
+               current_power, garg_ap, garg_summon_time, garg_last_damage_cast, total_haste_rating, last_rune_change, improved_unholy_presence_points, personal_buff_orc_pet_damage, cast_army, cast_army_timer,
                initial_cast = False):
 
 
@@ -40,7 +40,7 @@ def gargoyle(spell_hit_total, increased_spell_hit, target_level, total_crit, inc
     garg_damage_at = garg_last_damage_cast + garg_attack_speed
     if garg_summon_time != current_time:
         if garg_damage_at > current_time:
-            return rotation, rotation_time, rotation_status, rotation_damage, current_time, used_gcd, current_power, gcd, gargoyle_cd, garg_last_damage_cast, garg_damage, gary_active, garg_summon_time, garg_ap
+            return rotation, rotation_time, rotation_status, rotation_damage, current_time, used_gcd, current_power, gcd, gargoyle_cd, garg_last_damage_cast, garg_damage, gary_active, garg_summon_time, garg_ap, cast_army, cast_army_timer
     else:
         #TODO: Call to use engi gloves & potion here, also to 'possibly' use ERW if needed to cast army within say 5s
         gargoyle_cd = current_time + 180
@@ -49,16 +49,18 @@ def gargoyle(spell_hit_total, increased_spell_hit, target_level, total_crit, inc
         rotation_status.append("Summon")
         rotation_damage.append(0)
         current_power = runic_power(-60, current_power, max_runic)
+        cast_army = True
+        cast_army_timer = current_time + 5
         current_time += gcd
         used_gcd = True
-        return rotation, rotation_time, rotation_status, rotation_damage, current_time, used_gcd, current_power, gcd, gargoyle_cd, garg_last_damage_cast, garg_damage, gary_active, garg_summon_time, garg_ap
+        return rotation, rotation_time, rotation_status, rotation_damage, current_time, used_gcd, current_power, gcd, gargoyle_cd, garg_last_damage_cast, garg_damage, gary_active, garg_summon_time, garg_ap, cast_army, cast_army_timer
     if garg_damage_at > (garg_summon_time + 30):
         gary_active = False
         rotation.append("Gargoyle")
         rotation_time.append(garg_summon_time+30)
         rotation_status.append("Despawn")
         rotation_damage.append(0)
-        return rotation, rotation_time, rotation_status, rotation_damage, current_time, used_gcd, current_power, gcd, gargoyle_cd, garg_last_damage_cast, garg_damage, gary_active, garg_summon_time, garg_ap
+        return rotation, rotation_time, rotation_status, rotation_damage, current_time, used_gcd, current_power, gcd, gargoyle_cd, garg_last_damage_cast, garg_damage, gary_active, garg_summon_time, garg_ap, cast_army, cast_army_timer
 
     hit = spell_hit(spell_hit_total, increased_spell_hit, target_level)
     crit = spell_crit((total_crit), spell_hit_total, increased_spell_hit, target_level, increased_spell_crit)
@@ -112,5 +114,5 @@ def gargoyle(spell_hit_total, increased_spell_hit, target_level, total_crit, inc
     garg_last_damage_cast = garg_damage_at
 
 
-    return rotation, rotation_time, rotation_status, rotation_damage, current_time, used_gcd, current_power, gcd, gargoyle_cd, garg_last_damage_cast, garg_damage, gary_active, garg_summon_time, garg_ap
+    return rotation, rotation_time, rotation_status, rotation_damage, current_time, used_gcd, current_power, gcd, gargoyle_cd, garg_last_damage_cast, garg_damage, gary_active, garg_summon_time, garg_ap, cast_army, cast_army_timer
 

@@ -91,7 +91,7 @@ def all_rune_check(rune, current_time, rune_cd_tracker):
 
 
 
-def use_runes(rune_cd_tracker, current_time, dots, improved_unholy_presence_points, dk_presence, total_haste_rating, last_rune_change, n_blood=0, n_frost=0, n_unholy=0, n_skip=0, n_reset_window = 3):
+def use_runes(rune_cd_tracker, current_time, dots, improved_unholy_presence_points, dk_presence, total_haste_rating, last_rune_change, n_blood=0, n_frost=0, n_unholy=0, n_skip=0, n_reset_window = 3, dk_spec = 0):
     blood = 0
     frost = 2
     unholy = 4
@@ -175,22 +175,38 @@ def use_runes(rune_cd_tracker, current_time, dots, improved_unholy_presence_poin
         castable1 = -1
         castable2 = -1
         if n_skip == 1:
-            until_dot0 = dots[0] - n_reset_window
-            until_dot1 = dots[1] - n_reset_window
-            rune_number_being_used = castable
-            rune_number_without_checker = castable - rune_check1
-            rune_number_without_checker -= 1
-            if rune_number_without_checker == -1:
-                opp_rune_number_being_used = rune_number_being_used + 1
-            else:
-                opp_rune_number_being_used = rune_number_being_used - 1
-            opp_rune_timer = rune_cd_tracker[opp_rune_number_being_used]
-            if opp_rune_timer == 10000:
-                opp_rune_number_being_used += 6
+            if dk_spec == 1:
+                until_dot0 = n_reset_window
+                rune_number_being_used = castable
+                rune_number_without_checker = castable - rune_check1
+                rune_number_without_checker -= 1
+                if rune_number_without_checker == -1:
+                    opp_rune_number_being_used = rune_number_being_used + 1
+                else:
+                    opp_rune_number_being_used = rune_number_being_used - 1
                 opp_rune_timer = rune_cd_tracker[opp_rune_number_being_used]
-            if opp_rune_timer >= until_dot0:
-                if opp_rune_timer >= until_dot1:
+                if opp_rune_timer == 10000:
+                    opp_rune_number_being_used += 6
+                    opp_rune_timer = rune_cd_tracker[opp_rune_number_being_used]
+                if opp_rune_timer >= until_dot0:
                     return 0, 0, 0, 0, False, rune_cd_tracker
+            else:
+                until_dot0 = dots[0] - n_reset_window
+                until_dot1 = dots[1] - n_reset_window
+                rune_number_being_used = castable
+                rune_number_without_checker = castable - rune_check1
+                rune_number_without_checker -= 1
+                if rune_number_without_checker == -1:
+                    opp_rune_number_being_used = rune_number_being_used + 1
+                else:
+                    opp_rune_number_being_used = rune_number_being_used - 1
+                opp_rune_timer = rune_cd_tracker[opp_rune_number_being_used]
+                if opp_rune_timer == 10000:
+                    opp_rune_number_being_used += 6
+                    opp_rune_timer = rune_cd_tracker[opp_rune_number_being_used]
+                if opp_rune_timer >= until_dot0:
+                    if opp_rune_timer >= until_dot1:
+                        return 0, 0, 0, 0, False, rune_cd_tracker
 
 
             #TODO: Will need to reproduce this checking opp rune for 2runes used and 3runes used

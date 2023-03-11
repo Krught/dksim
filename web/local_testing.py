@@ -8,7 +8,7 @@ targets = 1
 spec = 1
 presence = 0
 tal_url = "0-320023500002-2300303350032150000150013133151_001s8511s8721s9y31s8g41sxd51ts8"
-gargoyle_use_time = 50
+gargoyle_use_time = 15
 #Frost
 # spec = 0
 # presence = 0
