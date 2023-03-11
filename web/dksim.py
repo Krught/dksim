@@ -1592,8 +1592,8 @@ def all_dash_stuff(dash_all_data):
     r_treemap_df_damage_n = [0]
     r_treemap_df_parent = ['']
 
-    r_treemap_like_damage_dealers = ['x', 'Obliterate', 'OH - Obliterate', 'Main hand', 'Off hand', 'OH - Plague Strike', 'Plague Strike', 'OH - Frost Strike', 'Frost Strike']
-    r_treemap_like_damage_dealers_parents = ['x', 'All Obliterate', 'All Obliterate', 'White Attack', 'White Attack', 'All Plague Strike', 'All Plague Strike', 'All Frost Strike', 'All Frost Strike']
+    r_treemap_like_damage_dealers = ['x', 'Obliterate', 'OH - Obliterate', 'Main hand', 'Off hand', 'OH - Plague Strike', 'Plague Strike', 'OH - Frost Strike', 'Frost Strike', 'Ghoul - Claw', 'Ghoul - Main hand', 'Army Ghoul - Claw', 'Army Ghoul - Main hand']
+    r_treemap_like_damage_dealers_parents = ['x', 'All Obliterate', 'All Obliterate', 'White Attack', 'White Attack', 'All Plague Strike', 'All Plague Strike', 'All Frost Strike', 'All Frost Strike', 'Ghoul', 'Ghoul', 'Army', 'Army']
 
     d_dealers = r_treemap_like_damage_dealers.copy()
     d_dealers_p = r_treemap_like_damage_dealers_parents.copy()
