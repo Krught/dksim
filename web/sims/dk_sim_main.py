@@ -1755,8 +1755,14 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
         garg_summon_time = 0
         garg_last_damage_cast = 0
         gary_active = False
+        used_army = False
+        casted_army_time = 0
+        cast_army = False
+        cast_army_timer = 0
+        only_one_army = 0
         if bone_shield_points == 1:
             bone_shield_active = True
+            bone_shield_length = random.randint(200, 290)
         if pre_pot_potion == True:
             if pot_of_speed == True:
                 if pot_of_speed_start_time < 60:
@@ -1993,7 +1999,7 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
             #Ghoul Attacks
             #Army
             if army_active == True:
-                if current_time == 0:
+                if current_time == 0 and dk_spec != 1:
                     g_army_attack_speed = 10
                     g_army_attack_speed_haste = (ghoul_haste_outside / 25.21) / 100 #Returns a result of 0 - 1 for 0% - 100%
                     g_army_attack_speed = g_army_attack_speed * (.1 * (1 - g_army_attack_speed_haste))
@@ -2082,7 +2088,96 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
                             rotation_damage.append(g_army_attack_damage_amount)
                             army_current_time += g_army_attack_speed
                             army_attack_tracker += 1
-
+                elif used_army == True and dk_spec == 1:
+                    used_army = False
+                    g_army_attack_speed = 10
+                    g_army_attack_speed_haste = (ghoul_haste_outside / 25.21) / 100 #Returns a result of 0 - 1 for 0% - 100%
+                    g_army_attack_speed = g_army_attack_speed * (.1 * (1 - g_army_attack_speed_haste))
+                    g_army_to_do_attacks_amount = int((40/g_army_attack_speed))
+                    for army_ghoul_num in range(0, 8):
+                        army_time_vari = (random.randint(0, 999))/1000
+                        army_current_time = casted_army_time + 4 + ((army_ghoul_num + 1) * .5)
+                        army_current_time += army_time_vari
+                        for army_ghoul in range(0, g_army_to_do_attacks_amount):
+                            g_army_attack_damage_amount = random.randint(60, 102)
+                            g_army_attack_damage_amount = g_army_attack_damage_amount + (2 * army_ap / 14) - (army_strength / 45)
+                            g_army_attack_damage_amount = g_army_attack_damage_amount * .5
+                            armor_red_amount = dam_reduc(current_armor, armor_penetration, target_level)
+                            if army_attack_tracker == 4:
+                                ghoul_army_attack_table_results = ghoul_attack_table(target_level, ghoul_hit, ghoul_expertise, True, army_crit)
+                                g_army_attack_damage_amount = g_army_attack_damage_amount * 1.5
+                                if ghoul_army_attack_table_results == 0:
+                                    rotation.append("Army Ghoul - Claw")
+                                    rotation_time.append(army_current_time)
+                                    rotation_status.append("Miss")
+                                    g_army_attack_damage_amount = 0
+                                elif ghoul_army_attack_table_results == 1: 
+                                    rotation.append("Army Ghoul - Claw")
+                                    rotation_time.append(army_current_time)
+                                    rotation_status.append("Dodge")
+                                    g_army_attack_damage_amount = 0
+                                elif ghoul_army_attack_table_results == 3: 
+                                    if target_level - 80 == 3:
+                                        g_army_attack_damage_amount = g_army_attack_damage_amount - (g_army_attack_damage_amount * .35) - ((g_army_attack_damage_amount - (g_army_attack_damage_amount * .35)) * armor_red_amount)
+                                    elif target_level - 80 == 2:
+                                        g_army_attack_damage_amount = g_army_attack_damage_amount - (g_army_attack_damage_amount * .15) - ((g_army_attack_damage_amount - (g_army_attack_damage_amount * .15)) * armor_red_amount)
+                                    else:
+                                        g_army_attack_damage_amount = g_army_attack_damage_amount - (g_army_attack_damage_amount * .05) - ((g_army_attack_damage_amount - (g_army_attack_damage_amount * .05)) * armor_red_amount)
+                                    rotation.append("Army Ghoul - Claw")
+                                    rotation_time.append(army_current_time)
+                                    rotation_status.append("Glance")
+                                elif ghoul_army_attack_table_results == 5: 
+                                    g_army_attack_damage_amount = ((g_army_attack_damage_amount) - (g_army_attack_damage_amount * armor_red_amount)) * 2
+                                    rotation.append("Army Ghoul - Claw")
+                                    rotation_time.append(army_current_time)
+                                    rotation_status.append("Crit")
+                                elif ghoul_army_attack_table_results == 7: 
+                                    g_army_attack_damage_amount = (g_army_attack_damage_amount) - (g_army_attack_damage_amount * armor_red_amount)
+                                    rotation.append("Army Ghoul - Claw")
+                                    rotation_time.append(army_current_time)
+                                    rotation_status.append("Hit")
+                                if personal_buff_orc_pet_damage == True:
+                                    g_army_attack_damage_amount += g_army_attack_damage_amount * .05
+                                army_damage_claw += g_army_attack_damage_amount
+                                rotation_damage.append(g_army_attack_damage_amount)
+                                army_attack_tracker = 0
+                            ghoul_army_attack_table_results = ghoul_attack_table(target_level, ghoul_hit, ghoul_expertise, False, army_crit)
+                            if ghoul_army_attack_table_results == 0:
+                                rotation.append("Army Ghoul - Main hand")
+                                rotation_time.append(army_current_time)
+                                rotation_status.append("Miss")
+                                g_army_attack_damage_amount = 0
+                            elif ghoul_army_attack_table_results == 1: 
+                                rotation.append("Army Ghoul - Main hand")
+                                rotation_time.append(army_current_time)
+                                rotation_status.append("Dodge")
+                                g_army_attack_damage_amount = 0
+                            elif ghoul_army_attack_table_results == 3: 
+                                if target_level - 80 == 3:
+                                    g_army_attack_damage_amount = g_army_attack_damage_amount - (g_army_attack_damage_amount * .35) - ((g_army_attack_damage_amount - (g_army_attack_damage_amount * .35)) * armor_red_amount)
+                                elif target_level - 80 == 2:
+                                    g_army_attack_damage_amount = g_army_attack_damage_amount - (g_army_attack_damage_amount * .15) - ((g_army_attack_damage_amount - (g_army_attack_damage_amount * .15)) * armor_red_amount)
+                                else:
+                                    g_army_attack_damage_amount = g_army_attack_damage_amount - (g_army_attack_damage_amount * .05) - ((g_army_attack_damage_amount - (g_army_attack_damage_amount * .05)) * armor_red_amount)
+                                rotation.append("Army Ghoul - Main hand")
+                                rotation_time.append(army_current_time)
+                                rotation_status.append("Glance")
+                            elif ghoul_army_attack_table_results == 5: 
+                                g_army_attack_damage_amount = ((g_army_attack_damage_amount) - (g_army_attack_damage_amount * armor_red_amount)) * 2
+                                rotation.append("Army Ghoul - Main hand")
+                                rotation_time.append(army_current_time)
+                                rotation_status.append("Crit")
+                            elif ghoul_army_attack_table_results == 7: 
+                                g_army_attack_damage_amount = (g_army_attack_damage_amount) - (g_army_attack_damage_amount * armor_red_amount)
+                                rotation.append("Army Ghoul - Main hand")
+                                rotation_time.append(army_current_time)
+                                rotation_status.append("Hit")
+                            if personal_buff_orc_pet_damage == True:
+                                g_army_attack_damage_amount += g_army_attack_damage_amount * .05
+                            army_damage += g_army_attack_damage_amount
+                            rotation_damage.append(g_army_attack_damage_amount)
+                            army_current_time += g_army_attack_speed
+                            army_attack_tracker += 1
             
                 
             
@@ -4193,7 +4288,7 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
             if gary_active == True:
                 for gary_multi in range(6):
                     rotation_a, rotation_time_a, rotation_status_a, rotation_damage_a, current_time, used_gcd, current_power, gcd, gargoyle_cd, garg_last_damage_cast, garg_damage, \
-                        gary_active, garg_summon_time, garg_ap = gargoyle_cast(spell_hit_total, increased_spell_hit, target_level, total_crit,
+                        gary_active, garg_summon_time, garg_ap, cast_army, cast_army_timer = gargoyle_cast(spell_hit_total, increased_spell_hit, target_level, total_crit,
                                                     increased_spell_crit, current_time, melee_haste_bonus2,
                                                     melee_haste_bonus3, melee_haste_bonus4,
                                                     dk_presence, input_gcd, current_ap, gcd, used_gcd,
@@ -4201,7 +4296,7 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
                                                     melee_haste_bonus, gargoyle_cd, garg_damage,
                                                     current_power, garg_ap, garg_summon_time, garg_last_damage_cast,
                                                     total_haste_rating, last_rune_change,
-                                                    improved_unholy_presence_points, personal_buff_orc_pet_damage,
+                                                    improved_unholy_presence_points, personal_buff_orc_pet_damage, cast_army, cast_army_timer, 
                                                     initial_cast=False)
                     rotation.extend(rotation_a)
                     rotation_time.extend(rotation_time_a)
@@ -4278,7 +4373,6 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
                                                     rune_cd_tracker[rune_reset_5] = 0
                                                     rune_cd_tracker[rune_reset_6] = 0
                                                     erw_cd_timer = current_time + 300
-                                                    continue
                     if current_time >= horn: #Horn       #Prob set all of these below after like if amount_of_targets >= 1, else run a sim w/ howling blast and stuff
                         if dk_presence != 2:
                             gcd = input_gcd / (1 + haste_percentage)
@@ -4901,7 +4995,6 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
                                                     rune_cd_tracker[rune_reset_5] = 0
                                                     rune_cd_tracker[rune_reset_6] = 0
                                                     erw_cd_timer = current_time + 300
-                                                    continue
                     if current_time >= horn: #Horn       #Prob set all of these below after like if amount_of_targets >= 1, else run a sim w/ howling blast and stuff
                         if dk_presence != 2:
                             gcd = input_gcd / (1 + haste_percentage)
@@ -5881,9 +5974,6 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
                                 continue
 
             if dk_spec == 1: # Unholy Spec
-                time_to_dnd = death_and_decay_cd - current_time
-                if time_to_dnd < 0:
-                    time_to_dnd = 0
                 if amount_of_targets != 0: #Unholy Fight Logic Is Only 1 thing, but with changed inside
                     if deathchill_points == 1:
                         if deathchill_active == True:
@@ -5914,7 +6004,7 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
                                     if all_rune_check(death, current_time, rune_cd_tracker) == 3:
                                         if all_rune_check(death_f, current_time, rune_cd_tracker) == 3:
                                             if all_rune_check(death_u, current_time, rune_cd_tracker) == 3:
-                                                if erw_cd_timer < current_time:
+                                                if erw_cd_timer < current_time and gargoyle_use_timer < current_time:
                                                     if rune_cd_tracker[0] != 10000:
                                                         rune_reset_1 = 0
                                                     else:
@@ -5952,8 +6042,7 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
                                                     rune_cd_tracker[rune_reset_5] = 0
                                                     rune_cd_tracker[rune_reset_6] = 0
                                                     erw_cd_timer = current_time + 300
-                                                    continue
-                    if current_time >= horn: #Horn       #Prob set all of these below after like if amount_of_targets >= 1, else run a sim w/ howling blast and stuff
+                    if current_time >= horn: #Horn
                         if dk_presence != 2:
                             gcd = input_gcd / (1 + haste_percentage)
                             if gcd < 1:
@@ -6023,7 +6112,7 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
                                 able_to_cast, castable, castable1, castable2, just_used_death_rune, rune_cd_tracker = use_runes(
                                     rune_cd_tracker, current_time, dots, improved_unholy_presence_points, dk_presence,
                                     total_haste_rating, last_rune_change,
-                                    n_blood=0, n_frost=0, n_unholy=1, n_skip=1, n_reset_window=time_to_dnd)
+                                    n_blood=0, n_frost=0, n_unholy=1, n_skip=1, n_reset_window=death_and_decay_cd, dk_spec = 1)
                                 if able_to_cast == 1:
                                     bone_shield_cd = current_time + unbreak_armor_bone_shield_vamp_blood_cd_time
                                     bone_shield_length = current_time + 300
@@ -6047,7 +6136,7 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
                                         rune_cd_tracker, current_time, dots, improved_unholy_presence_points,
                                         dk_presence,
                                         total_haste_rating, last_rune_change,
-                                        n_blood=1, n_frost=0, n_unholy=0, n_skip=1, n_reset_window=time_to_dnd)
+                                        n_blood=1, n_frost=0, n_unholy=0, n_skip=1, n_reset_window=death_and_decay_cd, dk_spec = 1)
                                     if able_to_cast == 1:
                                         dk_presence = 0
                                         rotation.append("Blood Presence")
@@ -6059,7 +6148,7 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
                                         rune_cd_tracker, current_time, dots, improved_unholy_presence_points,
                                         dk_presence,
                                         total_haste_rating, last_rune_change,
-                                        n_blood=0, n_frost=1, n_unholy=0, n_skip=1, n_reset_window=time_to_dnd)
+                                        n_blood=0, n_frost=1, n_unholy=0, n_skip=1, n_reset_window=death_and_decay_cd, dk_spec = 1)
                                     if able_to_cast == 1:
                                         dk_presence = 1
                                         rotation.append("Frost Presence")
@@ -6099,49 +6188,97 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
                                             rotation_damage.append(0)
                                 if gargoyle_stance_dance == False or dk_presence == 2:
                                     rotation_a, rotation_time_a, rotation_status_a, rotation_damage_a, current_time, used_gcd, current_power, gcd, gargoyle_cd, garg_last_damage_cast, garg_damage, \
-                                        gary_active, garg_summon_time, garg_ap = gargoyle_cast(spell_hit_total, increased_spell_hit, target_level, total_crit, increased_spell_crit, current_time, melee_haste_bonus2, melee_haste_bonus3, melee_haste_bonus4,
+                                        gary_active, garg_summon_time, garg_ap, cast_army, cast_army_timer = gargoyle_cast(spell_hit_total, increased_spell_hit, target_level, total_crit, increased_spell_crit, current_time, melee_haste_bonus2, melee_haste_bonus3, melee_haste_bonus4,
                dk_presence, input_gcd, current_ap, gcd, used_gcd, var_crit_amount, black_ice_points, max_runic, castable, melee_haste_bonus, gargoyle_cd, garg_damage,
-               current_power, garg_ap, garg_summon_time, garg_last_damage_cast, total_haste_rating, last_rune_change, improved_unholy_presence_points, personal_buff_orc_pet_damage,
+               current_power, garg_ap, garg_summon_time, garg_last_damage_cast, total_haste_rating, last_rune_change, improved_unholy_presence_points, personal_buff_orc_pet_damage, cast_army, cast_army_timer,
                initial_cast = True)
                                     rotation.extend(rotation_a)
                                     rotation_time.extend(rotation_time_a)
                                     rotation_status.extend(rotation_status_a)
                                     rotation_damage.extend(rotation_damage_a)
                                     continue
+                    if cast_army == True and only_one_army == 0:
+                        able_to_cast, castable, castable1, castable2, just_used_death_rune, rune_cd_tracker = use_runes(
+                            rune_cd_tracker, current_time, dots, improved_unholy_presence_points,
+                            dk_presence,
+                            total_haste_rating, last_rune_change,
+                            n_blood=1, n_frost=1, n_unholy=1)
+                        if able_to_cast != 1 and erw_cd_timer < current_time and cast_army_timer < current_time:
+                            if rune_cd_tracker[0] != 10000:
+                                rune_reset_1 = 0
+                            else:
+                                rune_reset_1 = 6
+                            if rune_cd_tracker[1] != 10000:
+                                rune_reset_2 = 1
+                            else:
+                                rune_reset_2 = 7
+                            if rune_cd_tracker[2] != 10000:
+                                rune_reset_3 = 2
+                            else:
+                                rune_reset_3 = 8
+                            if rune_cd_tracker[3] != 10000:
+                                rune_reset_4 = 3
+                            else:
+                                rune_reset_4 = 9
+                            if rune_cd_tracker[4] != 10000:
+                                rune_reset_5 = 4
+                            else:
+                                rune_reset_5 = 10
+                            if rune_cd_tracker[5] != 10000:
+                                rune_reset_6 = 5
+                            else:
+                                rune_reset_6 = 11
+                            rotation.append("Empowered Rune Weapon")
+                            rotation_time.append(current_time)
+                            rotation_status.append("Active")
+                            rotation_damage.append(0)
+                            current_power = runic_power(25, current_power, max_runic)
+                            # rune_cd_tracker = [0, 0, 0, 0, 0, 0, 10000, 10000, 10000, 10000, 10000, 10000]
+                            rune_cd_tracker[rune_reset_1] = 0
+                            rune_cd_tracker[rune_reset_2] = 0
+                            rune_cd_tracker[rune_reset_3] = 0
+                            rune_cd_tracker[rune_reset_4] = 0
+                            rune_cd_tracker[rune_reset_5] = 0
+                            rune_cd_tracker[rune_reset_6] = 0
+                            erw_cd_timer = current_time + 300
+                        elif able_to_cast == 1:
+                            used_army = True
+                            casted_army_time = current_time
+                            cast_army = False
+                            only_one_army += 1
+                            rotation.append("Army of the Dead")
+                            rotation_time.append(current_time)
+                            rotation_status.append("Cast")
+                            rotation_damage.append(0)
+                            gcd = 4
+                            current_time += gcd
+                            used_gcd = True
+                            continue
+
+
                     #Should also make this dynamic, aka if procs active then cast garg, else wait for timer
                     #you want 3 buffs, greatness (if equipped), fallen crusader and the sigil if equipped
-                    # TODO: need to add cast army and not just pre-casted army
-                    if ghoul_frenzy_points == 1:
-                        if dots[0] > current_time:
-                            if dots[1] > current_time:
-                                if ghoul_frenzy_buff_timer < current_time:
-                                    able_to_cast, castable, castable1, castable2, just_used_death_rune, rune_cd_tracker = use_runes(
-                                        rune_cd_tracker, current_time, dots, improved_unholy_presence_points,
-                                        dk_presence,
-                                        total_haste_rating, last_rune_change,
-                                        n_blood=0, n_frost=0, n_unholy=1, n_skip=1, n_reset_window=time_to_dnd)
-                                    if able_to_cast == 1:
-                                        #Rune Hit
-                                        haste_percentage = (total_haste_rating / 25.21) / 100 #Returns a result of 0 - 1 for 0% - 100%
-                                        haste_rune_cd = rune_grade_timer(current_time, last_rune_change[castable], last_rune_change[castable+6])
-                                        if improved_unholy_presence_points != 0:
-                                            if dk_presence == 2:
-                                                haste_rune_cd = haste_rune_cd - (haste_rune_cd * ((improved_unholy_presence_points * 5) / 100))
-                                        if dk_presence != 2:
-                                            gcd = input_gcd / (1 + haste_percentage)
-                                            if gcd < 1:
-                                                gcd = 1
-                                        ghoul_frenzy_buff_timer = current_time + 30
-                                        rune_cd_tracker[castable] = rune_cd(haste_rune_cd, current_time)
-                                        current_power = runic_power(10, current_power, max_runic) 
-                                        rotation.append("Ghoul Frenzy")
-                                        rotation_time.append(current_time)
-                                        rotation_status.append("Active")
-                                        rotation_damage.append(0)
-                                        current_time += gcd
-                                        used_gcd = True
-                                        continue
-                    if current_time < 10:  # Horn
+                    # TODO: Add watcher for if about to cast gary, then dont use runic power
+                    #also if dk spec == unholy
+                    # and using pot of speed, set timer to like 150000; and then change timer to = current_time after pop
+                    # also do the same thing with engi gloves if equipped
+                    #
+                    #
+                    # count cds before dynamically popping gary
+                    # bloodlust
+                    # rune of whatever if equipped
+                    # sigil if equipped
+                    # greatness card if equipped
+                    #
+                    #
+                    # i guess actually make a thing like
+                    # if current equipped trinket in this list:
+                    # and then a list of strength proc trinkets
+                    # +=1 to whatever this counter for gary is
+                    # and if spec == unholy
+                   
+
+                    if current_time < 10:
                         if dots[0] <= current_time:  # Cast Icy Touch First Global
                             able_to_cast, castable, castable1, castable2, just_used_death_rune, rune_cd_tracker = use_runes(
                                 rune_cd_tracker, current_time, dots, improved_unholy_presence_points, dk_presence,
@@ -6272,11 +6409,24 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
                                 rotation_status.extend(rotation_status_a)
                                 rotation_damage.extend(rotation_damage_a)
                             continue
+                        elif able_to_cast != 1:
+                            if how_cd < current_time:
+                                rotation.append("Horn of Winter")
+                                rotation_time.append(current_time)
+                                rotation_status.append("Active")
+                                rotation_damage.append(0)
+                                how_cd = current_time + 20
+                                current_power = runic_power(10, current_power, max_runic)
+                                current_time += gcd
+                                used_gcd = True
+                                continue
+                            current_time += unable_to_do_anything
+                            continue
                     #Cast Icy Touch First Global
                     able_to_cast, castable, castable1, castable2, just_used_death_rune, rune_cd_tracker = use_runes(
                         rune_cd_tracker, current_time, dots, improved_unholy_presence_points, dk_presence,
                         total_haste_rating, last_rune_change,
-                        n_blood=0, n_frost=1, n_unholy=0, n_skip=1, n_reset_window=time_to_dnd)
+                        n_blood=0, n_frost=1, n_unholy=0, n_skip=1, n_reset_window=death_and_decay_cd, dk_spec = 1)
                     if able_to_cast == 1:
                         rotation_a, rotation_time_a, rotation_status_a, rotation_damage_a, current_time, used_gcd, rune_cd_tracker, last_dot0_damage, \
                             current_power, rune_of_cinderglacier_active, rune_of_cinderglacier_active_count, dots, sum_it_attacks, km_procd, \
@@ -6299,7 +6449,7 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
                         rune_cd_tracker, current_time, dots, improved_unholy_presence_points,
                         dk_presence,
                         total_haste_rating, last_rune_change,
-                        n_blood=0, n_frost=0, n_unholy=1, n_skip=1, n_reset_window=time_to_dnd)
+                        n_blood=0, n_frost=0, n_unholy=1, n_skip=1, n_reset_window=death_and_decay_cd, dk_spec = 1)
                     if able_to_cast == 1:
                         rotation_a, rotation_time_a, rotation_status_a, rotation_damage_a, current_time, used_gcd, rune_cd_tracker, last_dot1_damage, \
                             current_power, dots, gcd, trinket_hit_crit_tracker, sum_ps_attacks, sigil_of_strife_active, sigil_of_strife_timer, bonus_loop_ap, \
@@ -6395,173 +6545,203 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
                 
                                 
 
-                if (multiple_adds_timer < current_time or multiple_adds_timer_bp < current_time) and (dots[0] - pestilence_reset_window) > 0 and (dots[0] - pestilence_reset_window) < current_time and (dots[1] - pestilence_reset_window) > 0 and (dots[1] - pestilence_reset_window) < current_time and amount_of_targets > 1: #Spread Pest, if not on adds
-                    able_to_cast, castable, castable1, castable2, just_used_death_rune, rune_cd_tracker = use_runes(
-                        rune_cd_tracker, current_time, dots, improved_unholy_presence_points, dk_presence,
-                        total_haste_rating, last_rune_change,
-                        n_blood=1, n_frost=0, n_unholy=0, n_skip=1, n_reset_window=time_to_dnd)
-                    if able_to_cast == 1:
+                    if (multiple_adds_timer < current_time or multiple_adds_timer_bp < current_time) and (dots[0] - pestilence_reset_window) > 0 and (dots[0] - pestilence_reset_window) < current_time and (dots[1] - pestilence_reset_window) > 0 and (dots[1] - pestilence_reset_window) < current_time and amount_of_targets > 1: #Spread Pest, if not on adds
+                        able_to_cast, castable, castable1, castable2, just_used_death_rune, rune_cd_tracker = use_runes(
+                            rune_cd_tracker, current_time, dots, improved_unholy_presence_points, dk_presence,
+                            total_haste_rating, last_rune_change,
+                            n_blood=1, n_frost=0, n_unholy=0, n_skip=1, n_reset_window=death_and_decay_cd, dk_spec = 1)
+                        if able_to_cast == 1:
+                            rotation_a, rotation_time_a, rotation_status_a, rotation_damage_a, current_time, used_gcd, rune_cd_tracker, \
+                                current_power, rune_of_cinderglacier_active, rune_of_cinderglacier_active_count, dots, sum_pest_attacks, \
+                                gcd, rune_of_cinderglacier_damage, multiple_adds_timer, multiple_adds_timer_bp = pestilence_cast(
+                                spell_hit_total, increased_spell_hit, target_level, total_crit, increased_spell_crit,
+                                total_haste_rating, current_time, last_rune_change,
+                                castable, improved_unholy_presence_points, dk_presence, input_gcd, rune_cd_tracker, dots,
+                                dot_length, crypt_fever_points, multiple_adds_timer,
+                                var_crit_amount, black_ice_points, tundra_stalker_points, rage_of_rivendale_points,
+                                hysteria_active, tricksoftt_active, increased_spell_damage,
+                                increased_all_damage, sum_pest_attacks, current_power, max_runic, blood_of_the_north_points,
+                                just_used_death_rune, death, reaping_points,
+                                rune_of_cinderglacier_active, rune_of_cinderglacier_active_count,
+                                rune_of_cinderglacier_damage, pestilence_allow_reset, multiple_adds_timer_bp)
+                            rotation.extend(rotation_a)
+                            rotation_time.extend(rotation_time_a)
+                            rotation_status.extend(rotation_status_a)
+                            rotation_damage.extend(rotation_damage_a)
+                            continue
+                    if ghoul_frenzy_points == 1:
+                        if dots[0] > current_time:
+                            if dots[1] > current_time:
+                                if ghoul_frenzy_buff_timer < current_time:
+                                    able_to_cast, castable, castable1, castable2, just_used_death_rune, rune_cd_tracker = use_runes(
+                                        rune_cd_tracker, current_time, dots, improved_unholy_presence_points,
+                                        dk_presence,
+                                        total_haste_rating, last_rune_change,
+                                        n_blood=0, n_frost=0, n_unholy=1, n_skip=1, n_reset_window=death_and_decay_cd, dk_spec = 1)
+                                    if able_to_cast == 1:
+                                        #Rune Hit
+                                        haste_percentage = (total_haste_rating / 25.21) / 100 #Returns a result of 0 - 1 for 0% - 100%
+                                        haste_rune_cd = rune_grade_timer(current_time, last_rune_change[castable], last_rune_change[castable+6])
+                                        if improved_unholy_presence_points != 0:
+                                            if dk_presence == 2:
+                                                haste_rune_cd = haste_rune_cd - (haste_rune_cd * ((improved_unholy_presence_points * 5) / 100))
+                                        if dk_presence != 2:
+                                            gcd = input_gcd / (1 + haste_percentage)
+                                            if gcd < 1:
+                                                gcd = 1
+                                        ghoul_frenzy_buff_timer = current_time + 30
+                                        rune_cd_tracker[castable] = rune_cd(haste_rune_cd, current_time)
+                                        current_power = runic_power(10, current_power, max_runic)
+                                        rotation.append("Ghoul Frenzy")
+                                        rotation_time.append(current_time)
+                                        rotation_status.append("Active")
+                                        rotation_damage.append(0)
+                                        current_time += gcd
+                                        used_gcd = True
+                                        continue
+                    if use_blood_strike_over_blood_boil == True:
+                        # Blood Strike
+                        able_to_cast, castable, castable1, castable2, just_used_death_rune, rune_cd_tracker = use_runes(
+                            rune_cd_tracker, current_time, dots, improved_unholy_presence_points, dk_presence,
+                            total_haste_rating, last_rune_change,
+                            n_blood=1, n_frost=0, n_unholy=0, n_skip=1, n_reset_window=death_and_decay_cd, dk_spec = 1)
+                        if able_to_cast == 1:
+                            rotation_a, rotation_time_a, rotation_status_a, rotation_damage_a, current_time, used_gcd, rune_cd_tracker, current_power, \
+                                dots, gcd, trinket_hit_crit_tracker, dancing_rune_weapon_damage, sigil_of_haunted_dreams_buff, sigil_of_haunted_dreams_timer, \
+                                total_crit, t9_bonus, t9_cd_timer, t9_active_timer, bonus_loop_str, increased_all_damage, desolation_buff_timer, sudden_doom_damage, \
+                                unholy_blight_amount, unholy_blight_timer, rune_of_cinderglacier_damage, rune_of_cinderglacier_active_count, \
+                                rune_of_cinderglacier_active, sum_bs_attacks = blood_strike_cast(tanking, H2,
+                                                                                                 hit_from_gear,
+                                                                                                 hit_from_other,
+                                                                                                 target_level,
+                                                                                                 all_expertise_dodge,
+                                                                                                 all_expertise_parry,
+                                                                                                 total_crit,
+                                                                                                 annihilation_talent_points,
+                                                                                                 increased_phy_crit,
+                                                                                                 subversion_points,
+                                                                                                 current_armor,
+                                                                                                 armor_penetration,
+                                                                                                 mh_input_lowend_weapon_damage,
+                                                                                                 mh_input_topend_weapon_damage,
+                                                                                                 current_ap,
+                                                                                                 attack_damage_normalization,
+                                                                                                 total_haste_rating,
+                                                                                                 current_time,
+                                                                                                 last_rune_change,
+                                                                                                 castable, dk_presence,
+                                                                                                 improved_unholy_presence_points,
+                                                                                                 dots, input_gcd,
+                                                                                                 dancing_rune_weapon_points,
+                                                                                                 dancing_rune_weapon_active,
+                                                                                                 darkruned_battlegear_four_set,
+                                                                                                 var_crit_amount,
+                                                                                                 guile_of_gorefiend_points,
+                                                                                                 tundra_stalker_points,
+                                                                                                 blood_of_the_north_points,
+                                                                                                 t9_tank_two_set,
+                                                                                                 rage_of_rivendale_points,
+                                                                                                 blood_strikes_points,
+                                                                                                 might_of_mograine_points,
+                                                                                                 hysteria_active,
+                                                                                                 tricksoftt_active,
+                                                                                                 increased_physical_damage,
+                                                                                                 increased_all_damage,
+                                                                                                 dancing_rune_weapon_damage_multi,
+                                                                                                 dancing_rune_weapon_damage,
+                                                                                                 just_used_death_rune,
+                                                                                                 rune_cd_tracker,
+                                                                                                 reaping_points,
+                                                                                                 sigil_of_haunted_dreams,
+                                                                                                 sigil_of_haunted_dreams_buff,
+                                                                                                 t9_dps_two_set,
+                                                                                                 t9_bonus, t9_cd_timer,
+                                                                                                 bonus_loop_str,
+                                                                                                 desolation_points,
+                                                                                                 desolation_buff,
+                                                                                                 desolation_buff_timer,
+                                                                                                 sudden_doom_points,
+                                                                                                 sigil_of_vengeful_heart,
+                                                                                                 spell_hit_total,
+                                                                                                 increased_spell_hit,
+                                                                                                 darkruned_battlegear_two_set,
+                                                                                                 increased_spell_crit,
+                                                                                                 impurity_points,
+                                                                                                 sigil_of_the_wild_buck,
+                                                                                                 black_ice_points,
+                                                                                                 glyph_death_coil,
+                                                                                                 morbitity_points,
+                                                                                                 increased_spell_damage,
+                                                                                                 sudden_doom_damage,
+                                                                                                 unholy_blight_points,
+                                                                                                 rune_of_cinderglacier_active,
+                                                                                                 rune_of_cinderglacier_active_count,
+                                                                                                 rune_of_cinderglacier_damage,
+                                                                                                 death,
+                                                                                                 threat_of_thassarian_points,
+                                                                                                 oh_input_lowend_weapon_damage,
+                                                                                                 oh_input_topend_weapon_damage,
+                                                                                                 oh_wep_damage_mod,
+                                                                                                 sum_oh_bs_attacks,
+                                                                                                 current_power,
+                                                                                                 sum_bs_attacks,
+                                                                                                 max_runic,
+                                                                                                 trinket_hit_crit_tracker,
+                                                                                                 sigil_of_haunted_dreams_timer,
+                                                                                                 t9_active_timer,
+                                                                                                 unholy_blight_amount,
+                                                                                                 unholy_blight_timer)
+                            rotation.extend(rotation_a)
+                            rotation_time.extend(rotation_time_a)
+                            rotation_status.extend(rotation_status_a)
+                            rotation_damage.extend(rotation_damage_a)
+                            continue
+                    if use_blood_strike_over_blood_boil == False: #Use Blood Boil
+                        able_to_cast, castable, castable1, castable2, just_used_death_rune, rune_cd_tracker = use_runes(
+                            rune_cd_tracker, current_time, dots, improved_unholy_presence_points, dk_presence,
+                            total_haste_rating, last_rune_change,
+                            n_blood=1, n_frost=0, n_unholy=0, n_skip=1, n_reset_window=death_and_decay_cd, dk_spec = 1)
+                        if able_to_cast == 1:
+                            rotation_a, rotation_time_a, rotation_status_a, rotation_damage_a, current_time, used_gcd, rune_cd_tracker, \
+                                current_power, rune_of_cinderglacier_active, rune_of_cinderglacier_active_count, dots, sum_it_attacks, km_procd, \
+                                deathchill_active, gcd, rune_of_cinderglacier_damage, blood_boil_damage = blood_boil_cast(
+                                spell_hit_total, increased_spell_hit, target_level, km_procd, deathchill_active,
+                                total_crit, increased_spell_crit, total_haste_rating,
+                                current_time, last_rune_change, castable, improved_unholy_presence_points,
+                                rune_grade_timer, dk_presence, input_gcd, rune_cd_tracker,
+                                current_ap, impurity_points, var_crit_amount, black_ice_points,
+                                might_of_mograine_points, blood_strikes_points, blood_boil_damage,
+                                dots, tundra_stalker_points, rage_of_rivendale_points, hysteria_active,
+                                tricksoftt_active,
+                                increased_spell_damage, increased_all_damage, sum_it_attacks, current_power,
+                                rune_of_cinderglacier_active,
+                                rune_of_cinderglacier_active_count, rune_of_cinderglacier_damage, amount_of_targets)
+                            rotation.extend(rotation_a)
+                            rotation_time.extend(rotation_time_a)
+                            rotation_status.extend(rotation_status_a)
+                            rotation_damage.extend(rotation_damage_a)
+                            continue
+                    #if gargoyle_cd < current_time:
+                    if current_power >= death_coil_cost:  # Death Coil
                         rotation_a, rotation_time_a, rotation_status_a, rotation_damage_a, current_time, used_gcd, rune_cd_tracker, \
-                            current_power, rune_of_cinderglacier_active, rune_of_cinderglacier_active_count, dots, sum_pest_attacks, \
-                            gcd, rune_of_cinderglacier_damage, multiple_adds_timer, multiple_adds_timer_bp = pestilence_cast(
+                            current_power, rune_of_cinderglacier_active, rune_of_cinderglacier_active_count, dots, sum_pest_attacks, gcd, \
+                            rune_of_cinderglacier_damage, multiple_adds_timer, unholy_blight_amount, unholy_blight_timer, death_coil_damage = death_coil_cast(
                             spell_hit_total, increased_spell_hit, target_level, total_crit, increased_spell_crit,
-                            total_haste_rating, current_time, last_rune_change,
-                            castable, improved_unholy_presence_points, dk_presence, input_gcd, rune_cd_tracker, dots,
-                            dot_length, crypt_fever_points, multiple_adds_timer,
+                            current_time, death_coil_cost, darkruned_battlegear_two_set, unholy_blight_amount,
+                            unholy_blight_timer,
+                            dk_presence, input_gcd, rune_cd_tracker, dots, multiple_adds_timer, haste_percentage,
+                            current_ap, impurity_points, sigil_of_vengeful_heart, death_coil_damage,
                             var_crit_amount, black_ice_points, tundra_stalker_points, rage_of_rivendale_points,
                             hysteria_active, tricksoftt_active, increased_spell_damage,
-                            increased_all_damage, sum_pest_attacks, current_power, max_runic, blood_of_the_north_points,
-                            just_used_death_rune, death, reaping_points,
+                            increased_all_damage, sum_pest_attacks, current_power, max_runic,
+                            sigil_of_the_wild_buck, glyph_death_coil, morbitity_points, unholy_blight_points,
                             rune_of_cinderglacier_active, rune_of_cinderglacier_active_count,
-                            rune_of_cinderglacier_damage, pestilence_allow_reset, multiple_adds_timer_bp)
+                            rune_of_cinderglacier_damage, free_dc=False)
                         rotation.extend(rotation_a)
                         rotation_time.extend(rotation_time_a)
                         rotation_status.extend(rotation_status_a)
                         rotation_damage.extend(rotation_damage_a)
                         continue
-
-                if use_blood_strike_over_blood_boil == True:
-                    # Blood Strike
-                    able_to_cast, castable, castable1, castable2, just_used_death_rune, rune_cd_tracker = use_runes(
-                        rune_cd_tracker, current_time, dots, improved_unholy_presence_points, dk_presence,
-                        total_haste_rating, last_rune_change,
-                        n_blood=1, n_frost=0, n_unholy=0, n_skip=1, n_reset_window=time_to_dnd)
-                    if able_to_cast == 1:
-                        rotation_a, rotation_time_a, rotation_status_a, rotation_damage_a, current_time, used_gcd, rune_cd_tracker, current_power, \
-                            dots, gcd, trinket_hit_crit_tracker, dancing_rune_weapon_damage, sigil_of_haunted_dreams_buff, sigil_of_haunted_dreams_timer, \
-                            total_crit, t9_bonus, t9_cd_timer, t9_active_timer, bonus_loop_str, increased_all_damage, desolation_buff_timer, sudden_doom_damage, \
-                            unholy_blight_amount, unholy_blight_timer, rune_of_cinderglacier_damage, rune_of_cinderglacier_active_count, \
-                            rune_of_cinderglacier_active, sum_bs_attacks = blood_strike_cast(tanking, H2,
-                                                                                             hit_from_gear,
-                                                                                             hit_from_other,
-                                                                                             target_level,
-                                                                                             all_expertise_dodge,
-                                                                                             all_expertise_parry,
-                                                                                             total_crit,
-                                                                                             annihilation_talent_points,
-                                                                                             increased_phy_crit,
-                                                                                             subversion_points,
-                                                                                             current_armor,
-                                                                                             armor_penetration,
-                                                                                             mh_input_lowend_weapon_damage,
-                                                                                             mh_input_topend_weapon_damage,
-                                                                                             current_ap,
-                                                                                             attack_damage_normalization,
-                                                                                             total_haste_rating,
-                                                                                             current_time,
-                                                                                             last_rune_change,
-                                                                                             castable, dk_presence,
-                                                                                             improved_unholy_presence_points,
-                                                                                             dots, input_gcd,
-                                                                                             dancing_rune_weapon_points,
-                                                                                             dancing_rune_weapon_active,
-                                                                                             darkruned_battlegear_four_set,
-                                                                                             var_crit_amount,
-                                                                                             guile_of_gorefiend_points,
-                                                                                             tundra_stalker_points,
-                                                                                             blood_of_the_north_points,
-                                                                                             t9_tank_two_set,
-                                                                                             rage_of_rivendale_points,
-                                                                                             blood_strikes_points,
-                                                                                             might_of_mograine_points,
-                                                                                             hysteria_active,
-                                                                                             tricksoftt_active,
-                                                                                             increased_physical_damage,
-                                                                                             increased_all_damage,
-                                                                                             dancing_rune_weapon_damage_multi,
-                                                                                             dancing_rune_weapon_damage,
-                                                                                             just_used_death_rune,
-                                                                                             rune_cd_tracker,
-                                                                                             reaping_points,
-                                                                                             sigil_of_haunted_dreams,
-                                                                                             sigil_of_haunted_dreams_buff,
-                                                                                             t9_dps_two_set,
-                                                                                             t9_bonus, t9_cd_timer,
-                                                                                             bonus_loop_str,
-                                                                                             desolation_points,
-                                                                                             desolation_buff,
-                                                                                             desolation_buff_timer,
-                                                                                             sudden_doom_points,
-                                                                                             sigil_of_vengeful_heart,
-                                                                                             spell_hit_total,
-                                                                                             increased_spell_hit,
-                                                                                             darkruned_battlegear_two_set,
-                                                                                             increased_spell_crit,
-                                                                                             impurity_points,
-                                                                                             sigil_of_the_wild_buck,
-                                                                                             black_ice_points,
-                                                                                             glyph_death_coil,
-                                                                                             morbitity_points,
-                                                                                             increased_spell_damage,
-                                                                                             sudden_doom_damage,
-                                                                                             unholy_blight_points,
-                                                                                             rune_of_cinderglacier_active,
-                                                                                             rune_of_cinderglacier_active_count,
-                                                                                             rune_of_cinderglacier_damage,
-                                                                                             death,
-                                                                                             threat_of_thassarian_points,
-                                                                                             oh_input_lowend_weapon_damage,
-                                                                                             oh_input_topend_weapon_damage,
-                                                                                             oh_wep_damage_mod,
-                                                                                             sum_oh_bs_attacks,
-                                                                                             current_power,
-                                                                                             sum_bs_attacks,
-                                                                                             max_runic,
-                                                                                             trinket_hit_crit_tracker,
-                                                                                             sigil_of_haunted_dreams_timer,
-                                                                                             t9_active_timer,
-                                                                                             unholy_blight_amount,
-                                                                                             unholy_blight_timer)
-                        rotation.extend(rotation_a)
-                        rotation_time.extend(rotation_time_a)
-                        rotation_status.extend(rotation_status_a)
-                        rotation_damage.extend(rotation_damage_a)
-                        continue
-                if use_blood_strike_over_blood_boil == False: #Use Blood Boil
-                    able_to_cast, castable, castable1, castable2, just_used_death_rune, rune_cd_tracker = use_runes(
-                        rune_cd_tracker, current_time, dots, improved_unholy_presence_points, dk_presence,
-                        total_haste_rating, last_rune_change,
-                        n_blood=1, n_frost=0, n_unholy=0, n_skip=1, n_reset_window=time_to_dnd)
-                    if able_to_cast == 1:
-                        rotation_a, rotation_time_a, rotation_status_a, rotation_damage_a, current_time, used_gcd, rune_cd_tracker, \
-                            current_power, rune_of_cinderglacier_active, rune_of_cinderglacier_active_count, dots, sum_it_attacks, km_procd, \
-                            deathchill_active, gcd, rune_of_cinderglacier_damage, blood_boil_damage = blood_boil_cast(
-                            spell_hit_total, increased_spell_hit, target_level, km_procd, deathchill_active,
-                            total_crit, increased_spell_crit, total_haste_rating,
-                            current_time, last_rune_change, castable, improved_unholy_presence_points,
-                            rune_grade_timer, dk_presence, input_gcd, rune_cd_tracker,
-                            current_ap, impurity_points, var_crit_amount, black_ice_points,
-                            might_of_mograine_points, blood_strikes_points, blood_boil_damage,
-                            dots, tundra_stalker_points, rage_of_rivendale_points, hysteria_active,
-                            tricksoftt_active,
-                            increased_spell_damage, increased_all_damage, sum_it_attacks, current_power,
-                            rune_of_cinderglacier_active,
-                            rune_of_cinderglacier_active_count, rune_of_cinderglacier_damage, amount_of_targets)
-                        rotation.extend(rotation_a)
-                        rotation_time.extend(rotation_time_a)
-                        rotation_status.extend(rotation_status_a)
-                        rotation_damage.extend(rotation_damage_a)
-                        continue
-                if current_power >= death_coil_cost:  # Death Coil
-                    rotation_a, rotation_time_a, rotation_status_a, rotation_damage_a, current_time, used_gcd, rune_cd_tracker, \
-                        current_power, rune_of_cinderglacier_active, rune_of_cinderglacier_active_count, dots, sum_pest_attacks, gcd, \
-                        rune_of_cinderglacier_damage, multiple_adds_timer, unholy_blight_amount, unholy_blight_timer, death_coil_damage = death_coil_cast(
-                        spell_hit_total, increased_spell_hit, target_level, total_crit, increased_spell_crit,
-                        current_time, death_coil_cost, darkruned_battlegear_two_set, unholy_blight_amount,
-                        unholy_blight_timer,
-                        dk_presence, input_gcd, rune_cd_tracker, dots, multiple_adds_timer, haste_percentage,
-                        current_ap, impurity_points, sigil_of_vengeful_heart, death_coil_damage,
-                        var_crit_amount, black_ice_points, tundra_stalker_points, rage_of_rivendale_points,
-                        hysteria_active, tricksoftt_active, increased_spell_damage,
-                        increased_all_damage, sum_pest_attacks, current_power, max_runic,
-                        sigil_of_the_wild_buck, glyph_death_coil, morbitity_points, unholy_blight_points,
-                        rune_of_cinderglacier_active, rune_of_cinderglacier_active_count,
-                        rune_of_cinderglacier_damage, free_dc=False)
-                    rotation.extend(rotation_a)
-                    rotation_time.extend(rotation_time_a)
-                    rotation_status.extend(rotation_status_a)
-                    rotation_damage.extend(rotation_damage_a)
-                    continue
 
 
                     
@@ -6634,7 +6814,6 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
                                                     rune_cd_tracker[rune_reset_5] = 0
                                                     rune_cd_tracker[rune_reset_6] = 0
                                                     erw_cd_timer = current_time + 300
-                                                    continue
                     if current_time >= horn: #Horn       #Prob set all of these below after like if amount_of_targets >= 1, else run a sim w/ howling blast and stuff
                         if dk_presence != 2:
                             gcd = input_gcd / (1 + haste_percentage)
@@ -17092,7 +17271,6 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
                                                     rune_cd_tracker[rune_reset_5] = 0
                                                     rune_cd_tracker[rune_reset_6] = 0
                                                     erw_cd_timer = current_time + 300
-                                                    continue
                     if current_time >= horn: #Horn       #Prob set all of these below after like if amount_of_targets >= 1, else run a sim w/ howling blast and stuff
                         if dk_presence != 2:
                             gcd = input_gcd / (1 + haste_percentage)
