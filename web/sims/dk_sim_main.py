@@ -1563,10 +1563,10 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
     last_sim_run = False
     sum_dps_list, t_damage, fight_length, rotation, rotation_time, rotation_damage, rotation_status, rune_0_tracker, rune_1_tracker, rune_2_tracker, rune_3_tracker, rune_4_tracker, rune_5_tracker, \
         rune_6_tracker, rune_7_tracker, rune_8_tracker, rune_9_tracker, rune_10_tracker, rune_11_tracker, rune_time_tracker, runic_power_tracker, hit_from_other = actual_sim(H2, abominations_might_points, activity_percent, all_enchant, all_enchant_bonuses, all_socket, all_socket_bonuses, amount_of_sims,
-        amount_of_talent_rows, amount_of_targets, amount_of_used_glyphs, annihilation_talent_points, army_active, army_damage_claw_list, army_damage_list, army_time_random_value, attack_damage_normalization,
+        amount_of_talent_rows, amount_of_targets, annihilation_talent_points, army_active, army_damage_claw_list, army_damage_list, army_time_random_value, attack_damage_normalization,
               attack_type, base_agility, base_armor, base_hp, base_intel, base_m_ap, base_parry_rating, base_race_stats, base_spirit, base_stamina, base_strength, berserking_start_time, black_ice_points,
               bladed_armor_points, blood, blood_boil_damage_list, blood_boil_random_value, blood_gorged_points, blood_gorged_proc_rate, blood_of_the_north_points, blood_strike_random_value, blood_strikes_points,
-              blood_talents, blood_talents_added, blood_talents_len, blood_talents_to_add, bloodcaked_blades_damage_list, bloodcaked_blades_points, bloodfury_start_time, bloodlust_start_time, bloodworms_points,
+              blood_talents, blood_talents_len, bloodcaked_blades_damage_list, bloodcaked_blades_points, bloodfury_start_time, bloodlust_start_time, bloodworms_points,
               bloody_vengeance_points, bone_shield_bone_consumption_rate, bone_shield_points, c_gem_num, c_i_c_slot, chill_of_the_grave_points, corspe_explosion_points, crypt_fever_points,
               current_gem_check, current_i, current_sim_number, damage_result_number, dancing_rune_weapon_damage_list, dancing_rune_weapon_damage_multi, dancing_rune_weapon_points, dark_conviction_points,
               darkruned_battlegear_count, darkruned_battlegear_four_set, darkruned_battlegear_two_set, darkruned_plate_count, darkruned_plate_two_set, death, death_and_decay_cd_length, death_and_decay_damage_list,
@@ -1632,7 +1632,7 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
               trinket2_length, trinket2_max_damage, trinket2_min_damage, trinket2_type, trinket_1_use, trinket_2_use, trinket_bonus_amount_index, trinket_bonus_type_index, trinket_chanceon_index,
               trinket_chanceperc_index, trinket_icd_index, trinket_length_index, trinket_max_damage_index, trinket_min_damage_index, trinket_type_index, tundra_stalker_points,
               two_handed_weapon_blood_points, unable_to_do_anything, unbreak_armor_bone_shield_vamp_blood_cd_time, unbreakable_armor_points, unholy, unholy_blight_damage_list,
-              unholy_blight_points, unholy_talents, unholy_talents_added, unholy_talents_len, unholy_talents_to_add, use_army, use_blood_strike_over_blood_boil, use_ghoul,
+              unholy_blight_points, unholy_talents, unholy_talents_len, use_army, use_blood_strike_over_blood_boil, use_ghoul,
               use_obliterate_over_howling_blast, use_shattering_throw, use_trinket_index, using_glyphs, var_crit_amount, veteran_of_the_third_war_points, vicious_strikes_points, virtulence_points,
               wandering_plague_damage_list, wandering_plague_points, weapon_list, weapons, weapons_item_slot, weapons_item_slot_index, weapons_max_damage, weapons_max_damage_index, weapons_min_damage,
               weapons_min_damage_index, weapons_speed, weapons_speed_index, weapons_type, weapons_type_index)
