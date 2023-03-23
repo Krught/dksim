@@ -1,10 +1,10 @@
-import random
-from sims.shared.weapon_roll import weapon_roll
+#import random
+# from sims.shared.weapon_roll import weapon_roll
 from sims.shared.power_calc import power as runic_power
 from sims.dk.runes import rune_cd, check_rune, rune_grade_timer, all_rune_check, use_runes
 from sims.shared.attack_tables import melee_table as attack_table
 from sims.shared.damage_armor_reduc import dam_reduc
-
+from sims.shared.damage_array_updater import damage_array_updater
 def obliterate(deathchill_active, tanking, H2, hit_from_gear, hit_from_other, target_level, all_expertise_dodge, all_expertise_parry, total_crit,
                annihilation_talent_points, rime_points, increased_phy_crit, scourgeborne_battlegear_two_set, subversion_points, current_armor, armor_penetration,
                mh_input_lowend_weapon_damage, mh_input_topend_weapon_damage, attack_damage_normalization, current_ap, total_haste_rating, current_time,
@@ -16,7 +16,8 @@ def obliterate(deathchill_active, tanking, H2, hit_from_gear, hit_from_other, ta
                bonus_loop_str, sigil_of_hanged_man, sigil_of_hanged_man_count, death_rune_mastery_points, just_used_death_rune, castable1, sigil_of_awareness,
                rune_cd_tracker, threat_of_thassarian_points, oh_input_lowend_weapon_damage, oh_input_topend_weapon_damage, oh_wep_damage_mod,
                sum_oh_obil_attacks, current_power, max_runic, sum_obil_attacks, chill_of_the_grave_points, scourgeborne_battlegear_four_set, howling_current_cd,
-               rime_procd, rime_timer, sigil_of_virulence_timer, sigil_of_hanged_man_buff, sigil_of_hanged_man_timer, trinket_hit_crit_tracker):
+               rime_procd, rime_timer, sigil_of_virulence_timer, sigil_of_hanged_man_buff, sigil_of_hanged_man_timer, trinket_hit_crit_tracker,
+               mh_wep_random_value, oh_wep_random_value, standard_10k_random_value, damage_result_number, standard_random_value):
     rotation = []
     rotation_time = []
     rotation_status = []
@@ -24,20 +25,22 @@ def obliterate(deathchill_active, tanking, H2, hit_from_gear, hit_from_other, ta
     if deathchill_active == True:
         deathchill_active = False
         attack_table_results = attack_table(1, tanking, H2, True, False, hit_from_gear, hit_from_other, target_level,
-                                            all_expertise_dodge, all_expertise_parry, total_crit, (
+                                            all_expertise_dodge, all_expertise_parry, total_crit, standard_10k_random_value, damage_result_number, (
                                                         (annihilation_talent_points / 100) + ((
                                                                                                           rime_points * 5) / 100) + increased_phy_crit + 10000000000000 + (
                                                                     scourgeborne_battlegear_two_set / 100) + (
                                                                     (subversion_points * 3) / 100)))
     else:
         attack_table_results = attack_table(1, tanking, H2, True, False, hit_from_gear, hit_from_other, target_level,
-                                            all_expertise_dodge, all_expertise_parry, total_crit, (
+                                            all_expertise_dodge, all_expertise_parry, total_crit, standard_10k_random_value, damage_result_number, (
                                                         (annihilation_talent_points / 100) + (
                                                             (rime_points * 5) / 100) + increased_phy_crit + (
                                                                     scourgeborne_battlegear_two_set / 100) + (
                                                                     (subversion_points * 3) / 100)))
     armor_red_amount = dam_reduc(current_armor, armor_penetration, target_level)
-    wep_roll = weapon_roll(mh_input_lowend_weapon_damage, mh_input_topend_weapon_damage)
+    # wep_roll = weapon_roll(mh_input_lowend_weapon_damage, mh_input_topend_weapon_damage)
+    wep_roll = mh_wep_random_value[damage_result_number]
+    damage_result_number = damage_array_updater(damage_result_number)
     wep_roll = wep_roll + (attack_damage_normalization * current_ap / 14)
     # Rune Hit
     haste_percentage = (total_haste_rating / 25.21) / 100  # Returns a result of 0 - 1 for 0% - 100%
@@ -84,13 +87,15 @@ def obliterate(deathchill_active, tanking, H2, hit_from_gear, hit_from_other, ta
                 if sigil_of_awareness == True:
                     atta_num + 336
                 if annihilation_talent_points == 2:
-                    bye_dots = random.randint(0, 100)
+                    bye_dots = standard_random_value[damage_result_number]
+                    damage_result_number = damage_array_updater(damage_result_number)
                     if bye_dots < 34:
                         dots[0] = current_time
                         dots[1] = current_time
                         dots[2] = current_time
                 elif annihilation_talent_points == 1:
-                    bye_dots = random.randint(0, 100)
+                    bye_dots = standard_random_value[damage_result_number]
+                    damage_result_number = damage_array_updater(damage_result_number)
                     if bye_dots < 67:
                         dots[0] = current_time
                         dots[1] = current_time
@@ -130,31 +135,35 @@ def obliterate(deathchill_active, tanking, H2, hit_from_gear, hit_from_other, ta
                 rotation_damage.append(atta_num)
                 trinket_hit_crit_tracker = 2
                 if rime_points == 3:
-                    rime_num = (random.randint(1, 100) / 100)
+                    rime_num = (standard_random_value[damage_result_number] / 100)
+                    damage_result_number = damage_array_updater(damage_result_number)
                     if rime_num < .15:
                         howling_current_cd = 0
                         rime_procd = True
                         rime_timer = current_time
                 elif rime_points == 2:
-                    rime_num = (random.randint(1, 100) / 100)
+                    rime_num = (standard_random_value[damage_result_number] / 100)
+                    damage_result_number = damage_array_updater(damage_result_number)
                     if rime_num < .10:
                         howling_current_cd = 0
                         rime_procd = True
                         rime_timer = current_time
                 elif rime_points == 1:
-                    rime_num = (random.randint(1, 100) / 100)
+                    rime_num = (standard_random_value[damage_result_number] / 100)
+                    damage_result_number = damage_array_updater(damage_result_number)
                     if rime_num < .05:
                         howling_current_cd = 0
                         rime_procd = True
                         rime_timer = current_time
                 if sigil_of_virulence == True:
-                    if random.randint(0, 100) < 85:
+                    if standard_random_value[damage_result_number] < 85:
                         sigil_of_virulence_timer = current_time + 20
                         if sigil_of_virulence_buff == False:
                             sigil_of_virulence_buff = True
                             bonus_loop_str += 200
+                    damage_result_number = damage_array_updater(damage_result_number)
                 if sigil_of_hanged_man == True:
-                    if random.randint(0, 100) < 101:
+                    if standard_random_value[damage_result_number] < 101:
                         sigil_of_hanged_man_buff = True
                         sigil_of_hanged_man_timer = current_time + 15
                         sigil_of_hanged_man_count += 1
@@ -162,9 +171,11 @@ def obliterate(deathchill_active, tanking, H2, hit_from_gear, hit_from_other, ta
                             bonus_loop_str += 73
                         elif sigil_of_hanged_man_count >= 3:
                             sigil_of_hanged_man_count = 3
+                    damage_result_number = damage_array_updater(damage_result_number)
                 if death_rune_mastery_points != 0:
                     if just_used_death_rune != True:
-                        proc_num = random.randint(0, 100)
+                        proc_num = standard_random_value[damage_result_number]
+                        damage_result_number = damage_array_updater(damage_result_number)
                         if death_rune_mastery_points < 3:
                             death_proc_chance = (death_rune_mastery_points * .3) * 100
                         elif death_rune_mastery_points == 3:
@@ -186,13 +197,15 @@ def obliterate(deathchill_active, tanking, H2, hit_from_gear, hit_from_other, ta
                 if sigil_of_awareness == True:
                     atta_num + 336
                 if annihilation_talent_points == 2:
-                    bye_dots = random.randint(0, 100)
+                    bye_dots = standard_random_value[damage_result_number]
+                    damage_result_number = damage_array_updater(damage_result_number)
                     if bye_dots < 34:
                         dots[0] = current_time
                         dots[1] = current_time
                         dots[2] = current_time
                 elif annihilation_talent_points == 1:
-                    bye_dots = random.randint(0, 100)
+                    bye_dots = standard_random_value[damage_result_number]
+                    damage_result_number = damage_array_updater(damage_result_number)
                     if bye_dots < 67:
                         dots[0] = current_time
                         dots[1] = current_time
@@ -232,28 +245,32 @@ def obliterate(deathchill_active, tanking, H2, hit_from_gear, hit_from_other, ta
                 rotation_damage.append(atta_num)
                 trinket_hit_crit_tracker = 1
                 if rime_points == 3:
-                    rime_num = (random.randint(1, 100) / 100)
+                    rime_num = (standard_random_value[damage_result_number] / 100)
+                    damage_result_number = damage_array_updater(damage_result_number)
                     if rime_num < .15:
                         howling_current_cd = 0
                         rime_procd = True
                 elif rime_points == 2:
-                    rime_num = (random.randint(1, 100) / 100)
+                    rime_num = (standard_random_value[damage_result_number] / 100)
+                    damage_result_number = damage_array_updater(damage_result_number)
                     if rime_num < .10:
                         howling_current_cd = 0
                         rime_procd = True
                 elif rime_points == 1:
-                    rime_num = (random.randint(1, 100) / 100)
+                    rime_num = (standard_random_value[damage_result_number] / 100)
+                    damage_result_number = damage_array_updater(damage_result_number)
                     if rime_num < .05:
                         howling_current_cd = 0
                         rime_procd = True
                 if sigil_of_virulence == True:
-                    if random.randint(0, 100) < 85:
+                    if standard_random_value[damage_result_number] < 85:
                         sigil_of_virulence_timer = current_time + 20
                         if sigil_of_virulence_buff == False:
                             sigil_of_virulence_buff = True
                             bonus_loop_str += 200
+                    damage_result_number = damage_array_updater(damage_result_number)
                 if sigil_of_hanged_man == True:
-                    if random.randint(0, 100) < 101:
+                    if standard_random_value[damage_result_number] < 101:
                         sigil_of_hanged_man_buff = True
                         sigil_of_hanged_man_timer = current_time + 15
                         sigil_of_hanged_man_count += 1
@@ -261,9 +278,11 @@ def obliterate(deathchill_active, tanking, H2, hit_from_gear, hit_from_other, ta
                             bonus_loop_str += 73
                         elif sigil_of_hanged_man_count >= 3:
                             sigil_of_hanged_man_count = 3
+                    damage_result_number = damage_array_updater(damage_result_number)
                 if death_rune_mastery_points != 0:
                     if just_used_death_rune != True:
-                        proc_num = random.randint(0, 100)
+                        proc_num = standard_random_value[damage_result_number]
+                        damage_result_number = damage_array_updater(damage_result_number)
                         if death_rune_mastery_points < 3:
                             death_proc_chance = (death_rune_mastery_points * .3) * 100
                         elif death_rune_mastery_points == 3:
@@ -280,13 +299,15 @@ def obliterate(deathchill_active, tanking, H2, hit_from_gear, hit_from_other, ta
             threat_of_thass_roll = (threat_of_thassarian_points * 30)
             if threat_of_thassarian_points == 3:
                 threat_of_thass_roll += 10
-            threat_of_t_num = random.randint(0, 100)
+            threat_of_t_num = standard_random_value[damage_result_number]
             if threat_of_thass_roll >= threat_of_t_num:
-                oh_wep_roll = weapon_roll(oh_input_lowend_weapon_damage, oh_input_topend_weapon_damage)
+                # oh_wep_roll = weapon_roll(oh_input_lowend_weapon_damage, oh_input_topend_weapon_damage)
+                oh_wep_roll = oh_wep_random_value[damage_result_number]
+                damage_result_number = damage_array_updater(damage_result_number)
                 oh_wep_roll = oh_wep_roll + (attack_damage_normalization * current_ap / 14)
                 oh_attack_table_results = attack_table(1, tanking, H2, False, True, hit_from_gear, hit_from_other,
                                                        target_level, all_expertise_dodge, all_expertise_parry,
-                                                       total_crit, ((annihilation_talent_points / 100) + (
+                                                       total_crit, standard_10k_random_value, damage_result_number, ((annihilation_talent_points / 100) + (
                                 (rime_points * 5) / 100) + increased_phy_crit + (
                                                                                 scourgeborne_battlegear_two_set / 100) + (
                                                                                 (subversion_points * 3) / 100)))
@@ -322,13 +343,15 @@ def obliterate(deathchill_active, tanking, H2, hit_from_gear, hit_from_other, ta
                     if sigil_of_awareness == True:
                         atta_num + 336
                     if annihilation_talent_points == 2:
-                        bye_dots = random.randint(0, 100)
+                        bye_dots = standard_random_value[damage_result_number]
+                        damage_result_number = damage_array_updater(damage_result_number)
                         if bye_dots < 34:
                             dots[0] = current_time
                             dots[1] = current_time
                             dots[2] = current_time
                     elif annihilation_talent_points == 1:
-                        bye_dots = random.randint(0, 100)
+                        bye_dots = standard_random_value[damage_result_number]
+                        damage_result_number = damage_array_updater(damage_result_number)
                         if bye_dots < 67:
                             dots[0] = current_time
                             dots[1] = current_time
@@ -364,31 +387,35 @@ def obliterate(deathchill_active, tanking, H2, hit_from_gear, hit_from_other, ta
                     sum_oh_obil_attacks += atta_num
                     trinket_hit_crit_tracker = 2
                     if rime_points == 3:
-                        rime_num = (random.randint(1, 100) / 100)
+                        rime_num = (standard_random_value[damage_result_number] / 100)
+                        damage_result_number = damage_array_updater(damage_result_number)
                         if rime_num < .15:
                             howling_current_cd = 0
                             rime_procd = True
                             rime_timer = current_time
                     elif rime_points == 2:
-                        rime_num = (random.randint(1, 100) / 100)
+                        rime_num = (standard_random_value[damage_result_number] / 100)
+                        damage_result_number = damage_array_updater(damage_result_number)
                         if rime_num < .10:
                             howling_current_cd = 0
                             rime_procd = True
                             rime_timer = current_time
                     elif rime_points == 1:
-                        rime_num = (random.randint(1, 100) / 100)
+                        rime_num = (standard_random_value[damage_result_number] / 100)
+                        damage_result_number = damage_array_updater(damage_result_number)
                         if rime_num < .05:
                             howling_current_cd = 0
                             rime_procd = True
                             rime_timer = current_time
                     if sigil_of_virulence == True:
-                        if random.randint(0, 100) < 85:
+                        if standard_random_value[damage_result_number] < 85:
                             sigil_of_virulence_timer = current_time + 20
                             if sigil_of_virulence_buff == False:
                                 sigil_of_virulence_buff = True
                                 bonus_loop_str += 200
+                        damage_result_number = damage_array_updater(damage_result_number)
                     if sigil_of_hanged_man == True:
-                        if random.randint(0, 100) < 101:
+                        if standard_random_value[damage_result_number] < 101:
                             sigil_of_hanged_man_buff = True
                             sigil_of_hanged_man_timer = current_time + 15
                             sigil_of_hanged_man_count += 1
@@ -396,6 +423,7 @@ def obliterate(deathchill_active, tanking, H2, hit_from_gear, hit_from_other, ta
                                 bonus_loop_str += 73
                             elif sigil_of_hanged_man_count >= 3:
                                 sigil_of_hanged_man_count = 3
+                        damage_result_number = damage_array_updater(damage_result_number)
                     rotation.append("OH - Obliterate")
                     rotation_time.append(current_time)
                     rotation_status.append("Crit")
@@ -423,13 +451,15 @@ def obliterate(deathchill_active, tanking, H2, hit_from_gear, hit_from_other, ta
                     if sigil_of_awareness == True:
                         atta_num + 336
                     if annihilation_talent_points == 2:
-                        bye_dots = random.randint(0, 100)
+                        bye_dots = standard_random_value[damage_result_number]
+                        damage_result_number = damage_array_updater(damage_result_number)
                         if bye_dots < 34:
                             dots[0] = current_time
                             dots[1] = current_time
                             dots[2] = current_time
                     elif annihilation_talent_points == 1:
-                        bye_dots = random.randint(0, 100)
+                        bye_dots = standard_random_value[damage_result_number]
+                        damage_result_number = damage_array_updater(damage_result_number)
                         if bye_dots < 67:
                             dots[0] = current_time
                             dots[1] = current_time
@@ -465,28 +495,32 @@ def obliterate(deathchill_active, tanking, H2, hit_from_gear, hit_from_other, ta
                     sum_oh_obil_attacks += atta_num
                     trinket_hit_crit_tracker = 1
                     if rime_points == 3:
-                        rime_num = (random.randint(1, 100) / 100)
+                        rime_num = (standard_random_value[damage_result_number] / 100)
+                        damage_result_number = damage_array_updater(damage_result_number)
                         if rime_num < .15:
                             howling_current_cd = 0
                             rime_procd = True
                     elif rime_points == 2:
-                        rime_num = (random.randint(1, 100) / 100)
+                        rime_num = (standard_random_value[damage_result_number] / 100)
+                        damage_result_number = damage_array_updater(damage_result_number)
                         if rime_num < .10:
                             howling_current_cd = 0
                             rime_procd = True
                     elif rime_points == 1:
-                        rime_num = (random.randint(1, 100) / 100)
+                        rime_num = (standard_random_value[damage_result_number] / 100)
+                        damage_result_number = damage_array_updater(damage_result_number)
                         if rime_num < .05:
                             howling_current_cd = 0
                             rime_procd = True
                     if sigil_of_virulence == True:
-                        if random.randint(0, 100) < 85:
+                        if standard_random_value[damage_result_number] < 85:
                             sigil_of_virulence_timer = current_time + 20
                             if sigil_of_virulence_buff == False:
                                 sigil_of_virulence_buff = True
                                 bonus_loop_str += 200
+                        damage_result_number = damage_array_updater(damage_result_number)
                     if sigil_of_hanged_man == True:
-                        if random.randint(0, 100) < 101:
+                        if standard_random_value[damage_result_number] < 101:
                             sigil_of_hanged_man_buff = True
                             sigil_of_hanged_man_timer = current_time + 15
                             sigil_of_hanged_man_count += 1
@@ -494,6 +528,7 @@ def obliterate(deathchill_active, tanking, H2, hit_from_gear, hit_from_other, ta
                                 bonus_loop_str += 73
                             elif sigil_of_hanged_man_count >= 3:
                                 sigil_of_hanged_man_count = 3
+                        damage_result_number = damage_array_updater(damage_result_number)
                     rotation.append("OH - Obliterate")
                     rotation_time.append(current_time)
                     rotation_status.append("Hit")
@@ -539,13 +574,15 @@ def obliterate(deathchill_active, tanking, H2, hit_from_gear, hit_from_other, ta
         if sigil_of_awareness == True:
             atta_num + 336
         if annihilation_talent_points == 2:
-            bye_dots = random.randint(0, 100)
+            bye_dots = standard_random_value[damage_result_number]
+            damage_result_number = damage_array_updater(damage_result_number)
             if bye_dots < 34:
                 dots[0] = current_time
                 dots[1] = current_time
                 dots[2] = current_time
         elif annihilation_talent_points == 1:
-            bye_dots = random.randint(0, 100)
+            bye_dots = standard_random_value[damage_result_number]
+            damage_result_number = damage_array_updater(damage_result_number)
             if bye_dots < 67:
                 dots[0] = current_time
                 dots[1] = current_time
@@ -587,31 +624,35 @@ def obliterate(deathchill_active, tanking, H2, hit_from_gear, hit_from_other, ta
             current_power = runic_power(5, current_power, max_runic)
         trinket_hit_crit_tracker = 2
         if rime_points == 3:
-            rime_num = (random.randint(1, 100) / 100)
+            rime_num = (standard_random_value[damage_result_number] / 100)
+            damage_result_number = damage_array_updater(damage_result_number)
             if rime_num < .15:
                 howling_current_cd = 0
                 rime_procd = True
                 rime_timer = current_time
         elif rime_points == 2:
-            rime_num = (random.randint(1, 100) / 100)
+            rime_num = (standard_random_value[damage_result_number] / 100)
+            damage_result_number = damage_array_updater(damage_result_number)
             if rime_num < .10:
                 howling_current_cd = 0
                 rime_procd = True
                 rime_timer = current_time
         elif rime_points == 1:
-            rime_num = (random.randint(1, 100) / 100)
+            rime_num = (standard_random_value[damage_result_number] / 100)
+            damage_result_number = damage_array_updater(damage_result_number)
             if rime_num < .05:
                 howling_current_cd = 0
                 rime_procd = True
                 rime_timer = current_time
         if sigil_of_virulence == True:
-            if random.randint(0, 100) < 85:
+            if standard_random_value[damage_result_number] < 85:
                 sigil_of_virulence_timer = current_time + 20
                 if sigil_of_virulence_buff == False:
                     sigil_of_virulence_buff = True
                     bonus_loop_str += 200
+            damage_result_number = damage_array_updater(damage_result_number)
         if sigil_of_hanged_man == True:
-            if random.randint(0, 100) < 101:
+            if standard_random_value[damage_result_number] < 101:
                 sigil_of_hanged_man_buff = True
                 sigil_of_hanged_man_timer = current_time + 15
                 sigil_of_hanged_man_count += 1
@@ -619,9 +660,11 @@ def obliterate(deathchill_active, tanking, H2, hit_from_gear, hit_from_other, ta
                     bonus_loop_str += 73
                 elif sigil_of_hanged_man_count >= 3:
                     sigil_of_hanged_man_count = 3
+            damage_result_number = damage_array_updater(damage_result_number)
         if death_rune_mastery_points != 0:
             if just_used_death_rune != True:
-                proc_num = random.randint(0, 100)
+                proc_num = standard_random_value[damage_result_number]
+                damage_result_number = damage_array_updater(damage_result_number)
                 if death_rune_mastery_points < 3:
                     death_proc_chance = (death_rune_mastery_points * .3) * 100
                 elif death_rune_mastery_points == 3:
@@ -657,13 +700,15 @@ def obliterate(deathchill_active, tanking, H2, hit_from_gear, hit_from_other, ta
         if sigil_of_awareness == True:
             atta_num + 336
         if annihilation_talent_points == 2:
-            bye_dots = random.randint(0, 100)
+            bye_dots = standard_random_value[damage_result_number]
+            damage_result_number = damage_array_updater(damage_result_number)
             if bye_dots < 34:
                 dots[0] = current_time
                 dots[1] = current_time
                 dots[2] = current_time
         elif annihilation_talent_points == 1:
-            bye_dots = random.randint(0, 100)
+            bye_dots = standard_random_value[damage_result_number]
+            damage_result_number = damage_array_updater(damage_result_number)
             if bye_dots < 67:
                 dots[0] = current_time
                 dots[1] = current_time
@@ -705,28 +750,32 @@ def obliterate(deathchill_active, tanking, H2, hit_from_gear, hit_from_other, ta
             current_power = runic_power(5, current_power, max_runic)
         trinket_hit_crit_tracker = 1
         if rime_points == 3:
-            rime_num = (random.randint(1, 100) / 100)
+            rime_num = (standard_random_value[damage_result_number] / 100)
+            damage_result_number = damage_array_updater(damage_result_number)
             if rime_num < .15:
                 howling_current_cd = 0
                 rime_procd = True
         elif rime_points == 2:
-            rime_num = (random.randint(1, 100) / 100)
+            rime_num = (standard_random_value[damage_result_number] / 100)
+            damage_result_number = damage_array_updater(damage_result_number)
             if rime_num < .10:
                 howling_current_cd = 0
                 rime_procd = True
         elif rime_points == 1:
-            rime_num = (random.randint(1, 100) / 100)
+            rime_num = (standard_random_value[damage_result_number] / 100)
+            damage_result_number = damage_array_updater(damage_result_number)
             if rime_num < .05:
                 howling_current_cd = 0
                 rime_procd = True
         if sigil_of_virulence == True:
-            if random.randint(0, 100) < 85:
+            if standard_random_value[damage_result_number] < 85:
                 sigil_of_virulence_timer = current_time + 20
                 if sigil_of_virulence_buff == False:
                     sigil_of_virulence_buff = True
                     bonus_loop_str += 200
+            damage_result_number = damage_array_updater(damage_result_number)
         if sigil_of_hanged_man == True:
-            if random.randint(0, 100) < 101:
+            if standard_random_value[damage_result_number] < 101:
                 sigil_of_hanged_man_buff = True
                 sigil_of_hanged_man_timer = current_time + 15
                 sigil_of_hanged_man_count += 1
@@ -734,9 +783,11 @@ def obliterate(deathchill_active, tanking, H2, hit_from_gear, hit_from_other, ta
                     bonus_loop_str += 73
                 elif sigil_of_hanged_man_count >= 3:
                     sigil_of_hanged_man_count = 3
+            damage_result_number = damage_array_updater(damage_result_number)
         if death_rune_mastery_points != 0:
             if just_used_death_rune != True:
-                proc_num = random.randint(0, 100)
+                proc_num = standard_random_value[damage_result_number]
+                damage_result_number = damage_array_updater(damage_result_number)
                 if death_rune_mastery_points < 3:
                     death_proc_chance = (death_rune_mastery_points * .3) * 100
                 elif death_rune_mastery_points == 3:
@@ -757,4 +808,4 @@ def obliterate(deathchill_active, tanking, H2, hit_from_gear, hit_from_other, ta
     return rotation, rotation_time, rotation_status, rotation_damage, deathchill_active, gcd, dots, \
         dancing_rune_weapon_damage, trinket_hit_crit_tracker, howling_current_cd, rime_procd, rime_timer, \
         sigil_of_virulence_timer, sigil_of_virulence_buff, bonus_loop_str, sigil_of_hanged_man_buff, sigil_of_hanged_man_timer, \
-        sigil_of_hanged_man_count, rune_cd_tracker, sum_oh_obil_attacks, current_time, used_gcd, sum_obil_attacks, current_power
+        sigil_of_hanged_man_count, rune_cd_tracker, sum_oh_obil_attacks, current_time, used_gcd, sum_obil_attacks, current_power, damage_result_number

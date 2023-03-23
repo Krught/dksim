@@ -1,10 +1,10 @@
-import random
-from sims.shared.weapon_roll import weapon_roll
+# import random
+# from sims.shared.weapon_roll import weapon_roll
 from sims.shared.power_calc import power as runic_power
 from sims.dk.runes import rune_cd, check_rune, rune_grade_timer, all_rune_check, use_runes
 from sims.shared.attack_tables import melee_table as attack_table
 from sims.shared.damage_armor_reduc import dam_reduc
-
+from sims.shared.damage_array_updater import damage_array_updater
 def frost_strike(km_procd, tanking, H2, hit_from_gear, hit_from_other, target_level, all_expertise_dodge, all_expertise_parry, total_crit, annihilation_talent_points,
                  increased_phy_crit, darkruned_battlegear_two_set, deathchill_active, current_armor, armor_penetration, mh_input_lowend_weapon_damage,
                  mh_input_topend_weapon_damage, attack_damage_normalization, current_ap, total_haste_rating, current_time, last_rune_change, castable,
@@ -12,7 +12,8 @@ def frost_strike(km_procd, tanking, H2, hit_from_gear, hit_from_other, target_le
                  var_crit_amount, guile_of_gorefiend_points, sigil_of_vengeful_heart, black_ice_points, glacier_rot_points, dots, tundra_stalker_points,
                  merciless_combat_points, blood_of_the_north_points, rage_of_rivendale_points, hysteria_active, tricksoftt_active, sum_oh_fs_attacks,
                  increased_physical_damage, increased_all_damage, fight_length, fight_sub_35percent, oh_wep_damage_mod, rune_of_cinderglacier_active,
-                 rune_of_cinderglacier_damage, rune_of_cinderglacier_active_count, frost_strike_cost, current_power, max_runic, sum_fs_attacks, trinket_hit_crit_tracker):
+                 rune_of_cinderglacier_damage, rune_of_cinderglacier_active_count, frost_strike_cost, current_power, max_runic, sum_fs_attacks, trinket_hit_crit_tracker,
+                 mh_wep_random_value, oh_wep_random_value, standard_10k_random_value, damage_result_number, standard_random_value):
     rotation = []
     rotation_time = []
     rotation_status = []
@@ -21,23 +22,25 @@ def frost_strike(km_procd, tanking, H2, hit_from_gear, hit_from_other, target_le
     if km_procd == True:
         km_procd = False
         attack_table_results = attack_table(1, tanking, H2, True, False, hit_from_gear, hit_from_other, target_level,
-                                            all_expertise_dodge, all_expertise_parry, total_crit, (
+                                            all_expertise_dodge, all_expertise_parry, total_crit, standard_10k_random_value, damage_result_number, (
                                                     annihilation_talent_points / 100) + increased_phy_crit + 1000000000000000 + (
                                                     darkruned_battlegear_two_set / 100))
     else:
         if deathchill_active == True:
             deathchill_active = False
             attack_table_results = attack_table(1, tanking, H2, True, False, hit_from_gear, hit_from_other,
-                                                target_level, all_expertise_dodge, all_expertise_parry, total_crit, (
+                                                target_level, all_expertise_dodge, all_expertise_parry, total_crit, standard_10k_random_value, damage_result_number, (
                                                         annihilation_talent_points / 100) + increased_phy_crit + 1000000000000000 + (
                                                         darkruned_battlegear_two_set / 100))
         else:
             attack_table_results = attack_table(1, tanking, H2, True, False, hit_from_gear, hit_from_other,
-                                                target_level, all_expertise_dodge, all_expertise_parry, total_crit, (
+                                                target_level, all_expertise_dodge, all_expertise_parry, total_crit, standard_10k_random_value, damage_result_number, (
                                                         annihilation_talent_points / 100) + increased_phy_crit + (
                                                         darkruned_battlegear_two_set / 100))
     armor_red_amount = dam_reduc(current_armor, armor_penetration, target_level)
-    wep_roll = weapon_roll(mh_input_lowend_weapon_damage, mh_input_topend_weapon_damage)
+    # wep_roll = weapon_roll(mh_input_lowend_weapon_damage, mh_input_topend_weapon_damage)
+    wep_roll = mh_wep_random_value[damage_result_number]
+    damage_result_number = damage_array_updater(damage_result_number)
     wep_roll = wep_roll + (attack_damage_normalization * current_ap / 14)
     # Rune Hit
     haste_percentage = (
@@ -60,14 +63,17 @@ def frost_strike(km_procd, tanking, H2, hit_from_gear, hit_from_other, target_le
             threat_of_thass_roll = (threat_of_thassarian_points * 30)
             if threat_of_thassarian_points == 3:
                 threat_of_thass_roll += 10
-            threat_of_t_num = random.randint(0, 100)
+            threat_of_t_num = standard_random_value[damage_result_number]
+            damage_result_number = damage_array_updater(damage_result_number)
             if threat_of_thass_roll >= threat_of_t_num:
-                oh_wep_roll = weapon_roll(oh_input_lowend_weapon_damage,
-                                          oh_input_topend_weapon_damage)
+                # oh_wep_roll = weapon_roll(oh_input_lowend_weapon_damage,
+                #                           oh_input_topend_weapon_damage)
+                oh_wep_roll = oh_wep_random_value[damage_result_number]
+                damage_result_number = damage_array_updater(damage_result_number)
                 oh_wep_roll = oh_wep_roll + (attack_damage_normalization * current_ap / 14)
                 oh_attack_table_results = attack_table(1, tanking, H2, False, True, hit_from_gear, hit_from_other,
                                                        target_level, all_expertise_dodge, all_expertise_parry,
-                                                       total_crit, (
+                                                       total_crit, standard_10k_random_value, damage_result_number, (
                                                                annihilation_talent_points / 100) + increased_phy_crit + (
                                                                darkruned_battlegear_two_set / 100))
                 if oh_attack_table_results == 0:
@@ -372,4 +378,4 @@ def frost_strike(km_procd, tanking, H2, hit_from_gear, hit_from_other, target_le
         used_gcd = True
     return rotation, rotation_time, rotation_status, rotation_damage, current_time, used_gcd, \
         current_power, dots, gcd, trinket_hit_crit_tracker, km_procd, deathchill_active, sum_oh_fs_attacks, rune_of_cinderglacier_active, \
-        rune_of_cinderglacier_damage, rune_of_cinderglacier_active_count, sum_fs_attacks, sum_oh_fs_attacks
+        rune_of_cinderglacier_damage, rune_of_cinderglacier_active_count, sum_fs_attacks, sum_oh_fs_attacks, damage_result_number

@@ -10,12 +10,18 @@ presence = 0
 tal_url = "0-320023500002-2300303350032150000150013133151_001s8511s8721s9y31s8g41sxd51ts8"
 gargoyle_use_time = 15
 #Frost
-# spec = 0
-# presence = 0
-# tal_url = "0-32525351352233112331233131351-230200000000_001s9f11s8q21xv631sxd41ts851s9r"
-ghoul = True
-army = True
-sim_num = 500
+spec = 0
+presence = 0
+tal_url = "0-32525351352233112331233131351-230200000000_001s9f11s8q21xv631sxd41ts851s9r"
+ghoul = False
+army = False
+sim_num = 2500
+#Testing as frost
+#2500 Current Sims before using random.randint = 32.27s
+#2500 Sims without random.randint is 30.4s
+#2500 Sims on cython on allrunecheck is 33s
+#2500 sims on cython on runes and it slowed down
+#Currently around ~30s runtime(38 on last run)
 
 #Timing the Function?
 ##True // False
@@ -39,9 +45,13 @@ if do_copy == True:
 
 print(all_results)
 
-
-
-
 if timing == True:
     stop_t = timeit.default_timer()
     print('Run Time for ', sim_num, ' simulations: ', stop_t - start_t)
+
+
+# x13 = all_results
+# x14 = ""
+# for i in x13:
+#     x14 = x14 + str(i) + ", "
+# print(x14)

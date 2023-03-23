@@ -1,7 +1,9 @@
 #Roll for attack table
-import random
-def melee_table(special, tanking, h2, mh, oh, hit_from_gear, hit_from_other, target_level, all_expertise_dodge, all_expertise_parry, total_crit, extra_crit = 0, no_miss = False):
-    attack_number = (random.randint(0, 10000)/10000)
+# import random
+# from sims.shared.damage_array_updater import damage_array_updater
+def melee_table(special, tanking, h2, mh, oh, hit_from_gear, hit_from_other, target_level, all_expertise_dodge, all_expertise_parry, total_crit, standard_10k_random_value, damage_result_number, extra_crit = 0, no_miss = False):
+    # attack_number = (random.randint(0, 10000)/10000)
+    attack_number = (standard_10k_random_value[damage_result_number]/10000)
     if special == 1:
         if tanking == True:
             if h2 == True:
@@ -270,9 +272,10 @@ def melee_table(special, tanking, h2, mh, oh, hit_from_gear, hit_from_other, tar
     return attack_type
 
 #Spell Hit - Returns True if Hit.  Returns False if Miss.
-def spell_hit(total_hit, increased_spell_hit, target_level):
+def spell_hit(total_hit, increased_spell_hit, target_level, standard_10k_random_value, damage_result_number):
     total_hit = total_hit + increased_spell_hit
-    attack_number = (random.randint(0, 10000)/10000)
+    # attack_number = (random.randint(0, 10000)/10000)
+    attack_number = (standard_10k_random_value[damage_result_number] / 10000)
     hit_number = round((total_hit * 30.5)/100000, 3)
     new_hit_number = 0
     if target_level - 80 == 3:
@@ -291,9 +294,10 @@ def spell_hit(total_hit, increased_spell_hit, target_level):
 
 
 #Spell Crit - Returns True if crit.  Returns False if Normal hit
-def spell_crit(crit_rate, total_hit, increased_spell_hit, target_level, increased_spell_crit, extra_crit = 0):
+def spell_crit(crit_rate, total_hit, increased_spell_hit, target_level, standard_10k_random_value, damage_result_number, increased_spell_crit, extra_crit = 0):
     total_hit = total_hit + increased_spell_hit
-    attack_number = (random.randint(0, 10000)/10000)
+    # attack_number = (random.randint(0, 10000)/10000)
+    attack_number = (standard_10k_random_value[damage_result_number] / 10000)
     hit_number = round((total_hit * 30.5)/100000, 3)
     new_hit_number = 0
     crit_rate = crit_rate + increased_spell_crit

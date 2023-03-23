@@ -1,11 +1,11 @@
-import random
-from sims.shared.weapon_roll import weapon_roll
+#import random
+# from sims.shared.weapon_roll import weapon_roll
 from sims.shared.power_calc import power as runic_power
 from sims.shared.dot_timer import dot_timer
 from sims.dk.runes import rune_cd, check_rune, rune_grade_timer, all_rune_check, use_runes
 from sims.shared.attack_tables import melee_table as attack_table
 from sims.shared.damage_armor_reduc import dam_reduc
-
+from sims.shared.damage_array_updater import damage_array_updater
 
 def plague_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_expertise_dodge, all_expertise_parry, total_crit, annihilation_talent_points,
                   increased_phy_crit, scourgeborne_plate_two_set, vicious_strikes_points, current_armor, armor_penetration, mh_input_lowend_weapon_damage,
@@ -16,7 +16,7 @@ def plague_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_
                   crypt_fever_points, threat_of_thassarian_points, oh_input_lowend_weapon_damage, oh_input_topend_weapon_damage,
                   sum_oh_ps_attacks, oh_wep_damage_mod, rune_cd_tracker, sum_ps_attacks, current_power,
                   max_runic, dirge_points, sigil_of_strife, bonus_loop_ap, sigil_of_strife_amount, sigil_of_strife_active, sigil_of_strife_timer,
-                  trinket_hit_crit_tracker):
+                  trinket_hit_crit_tracker, mh_wep_random_value, oh_wep_random_value, standard_10k_random_value, damage_result_number, standard_random_value):
 
 
 
@@ -27,12 +27,14 @@ def plague_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_
 
 
     attack_table_results = attack_table(1, tanking, H2, True, False, hit_from_gear, hit_from_other, target_level,
-                                        all_expertise_dodge, all_expertise_parry, total_crit, (
+                                        all_expertise_dodge, all_expertise_parry, total_crit, standard_10k_random_value, damage_result_number, (
                                                     annihilation_talent_points / 100 + increased_phy_crit + (
                                                         scourgeborne_plate_two_set / 100) + (
                                                                 (vicious_strikes_points * 3) / 100)))
     armor_red_amount = dam_reduc(current_armor, armor_penetration, target_level)
-    wep_roll = weapon_roll(mh_input_lowend_weapon_damage, mh_input_topend_weapon_damage)
+    # wep_roll = weapon_roll(mh_input_lowend_weapon_damage, mh_input_topend_weapon_damage)
+    wep_roll = mh_wep_random_value[damage_result_number]
+    damage_result_number = damage_array_updater(damage_result_number)
     wep_roll = wep_roll + (attack_damage_normalization * current_ap / 14)
     # Rune Hit
     haste_percentage = (total_haste_rating / 25.21) / 100  # Returns a result of 0 - 1 for 0% - 100%
@@ -129,13 +131,16 @@ def plague_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_
             threat_of_thass_roll = (threat_of_thassarian_points * 30)
             if threat_of_thassarian_points == 3:
                 threat_of_thass_roll += 10
-            threat_of_t_num = random.randint(0, 100)
+            threat_of_t_num = standard_random_value[damage_result_number]
+            damage_result_number = damage_array_updater(damage_result_number)
             if threat_of_thass_roll >= threat_of_t_num:
-                oh_wep_roll = weapon_roll(oh_input_lowend_weapon_damage, oh_input_topend_weapon_damage)
+                # oh_wep_roll = weapon_roll(oh_input_lowend_weapon_damage, oh_input_topend_weapon_damage)
+                oh_wep_roll = oh_wep_random_value[damage_result_number]
+                damage_result_number = damage_array_updater(damage_result_number)
                 oh_wep_roll = oh_wep_roll + (attack_damage_normalization * current_ap / 14)
                 oh_attack_table_results = attack_table(1, tanking, H2, False, True, hit_from_gear, hit_from_other,
                                                        target_level, all_expertise_dodge, all_expertise_parry,
-                                                       total_crit, (
+                                                       total_crit, standard_10k_random_value, damage_result_number, (
                                                                    annihilation_talent_points / 100 + increased_phy_crit + (
                                                                        scourgeborne_plate_two_set / 100) + (
                                                                                (vicious_strikes_points * 3) / 100)))
@@ -316,4 +321,4 @@ def plague_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_
 
     return rotation, rotation_time, rotation_status, rotation_damage, current_time, used_gcd, rune_cd_tracker, last_dot1_damage, \
         current_power, dots, gcd, trinket_hit_crit_tracker, sum_ps_attacks, sigil_of_strife_active, sigil_of_strife_timer,\
-        bonus_loop_ap, sum_oh_ps_attacks, dancing_rune_weapon_damage
+        bonus_loop_ap, sum_oh_ps_attacks, dancing_rune_weapon_damage, damage_result_number

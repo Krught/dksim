@@ -9,7 +9,7 @@ import pandas as pd
 from datetime import datetime, timedelta
 import plotly.io as pio
 import plotly.express as px
-pio.renderers.default='browser'
+# pio.renderers.default='browser'
 import dash
 from dash import dcc, html, dash_table
 import numpy as np
