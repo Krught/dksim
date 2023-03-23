@@ -2,7 +2,7 @@ from sims.shared.white_attack import white_attack
 from sims.shared.fight_time_variance import time_variance_rolled
 from sims.shared.power_calc import power as runic_power
 from sims.shared.dot_timer import dot_timer
-#from sims.dk.runes import rune_cd, check_rune, rune_grade_timer, all_rune_check, use_runes
+from sims.dk.runes import rune_cd, check_rune, rune_grade_timer, all_rune_check, use_runes
 
 from sims.shared.attack_tables import spell_hit, spell_crit
 from sims.shared.attack_tables import melee_table as attack_table
@@ -22,7 +22,7 @@ from sims.dk.death_and_decay import death_and_decay as death_and_decay_cast
 from sims.dk.gargoyle import gargoyle as gargoyle_cast
 from sims.shared.damage_array_updater import damage_array_updater
 
-from sims.dk.all_rune_check import rune_cd, check_rune, rune_grade_timer, all_rune_check, use_runes
+#from sims.dk.all_rune_check import rune_cd, check_rune, rune_grade_timer, all_rune_check, use_runes
 
 
 def dkloopsim(H2, abominations_might_points, activity_percent, all_enchant, all_enchant_bonuses, all_socket, all_socket_bonuses, amount_of_sims,
