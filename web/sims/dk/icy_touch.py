@@ -1,9 +1,9 @@
-import random
+#import random
 from sims.shared.power_calc import power as runic_power
 from sims.shared.dot_timer import dot_timer
 from sims.dk.runes import rune_cd, check_rune, rune_grade_timer, all_rune_check, use_runes
 from sims.shared.attack_tables import spell_hit, spell_crit
-
+from sims.shared.damage_array_updater import damage_array_updater
 
 def icy_touch(spell_hit_total, increased_spell_hit, target_level, km_procd, deathchill_active, total_crit, rime_points, increased_spell_crit, total_haste_rating,
               current_time, last_rune_change, castable, improved_unholy_presence_points, rune_grade_timer, dk_presence, input_gcd, rune_cd_tracker,
@@ -11,7 +11,7 @@ def icy_touch(spell_hit_total, increased_spell_hit, target_level, km_procd, deat
               dots, tundra_stalker_points, merciless_combat_points, rage_of_rivendale_points, hysteria_active, tricksoftt_active,
               fight_length, fight_sub_35percent, increased_spell_damage, increased_all_damage, sum_it_attacks, current_power, max_runic,
               chill_of_the_grave_points, dot_length, crypt_fever_points, rune_of_cinderglacier_active,
-              rune_of_cinderglacier_active_count, rune_of_cinderglacier_damage):
+              rune_of_cinderglacier_active_count, rune_of_cinderglacier_damage, damage_result_number, standard_10k_random_value, icy_touch_random_value):
 
     rotation = []
     rotation_time = []
@@ -19,7 +19,8 @@ def icy_touch(spell_hit_total, increased_spell_hit, target_level, km_procd, deat
     rotation_damage = []
 
 
-    hit = spell_hit(spell_hit_total, increased_spell_hit, target_level)
+    hit = spell_hit(spell_hit_total, increased_spell_hit, target_level, standard_10k_random_value, damage_result_number)
+    damage_result_number = damage_array_updater(damage_result_number)
     if km_procd == True:
         km_procd = False
         crit = True
@@ -28,7 +29,8 @@ def icy_touch(spell_hit_total, increased_spell_hit, target_level, km_procd, deat
             deathchill_active = False
             crit = True
         else:
-            crit = spell_crit((total_crit + ((rime_points * 5) / 100)), spell_hit_total, increased_spell_hit, target_level, increased_spell_crit)
+            crit = spell_crit((total_crit + ((rime_points * 5) / 100)), spell_hit_total, increased_spell_hit, target_level, standard_10k_random_value, damage_result_number, increased_spell_crit)
+            damage_result_number = damage_array_updater(damage_result_number)
     #Rune Hit
     haste_percentage = (total_haste_rating / 25.21) / 100 #Returns a result of 0 - 1 for 0% - 100%
     haste_rune_cd = rune_grade_timer(current_time, last_rune_change[castable], last_rune_change[castable+6])
@@ -42,7 +44,9 @@ def icy_touch(spell_hit_total, increased_spell_hit, target_level, km_procd, deat
     if hit == True:
         rune_cd_tracker[castable] = rune_cd(haste_rune_cd, current_time)
         if crit == True:
-            atta_num = random.randint(227, 245)
+            #atta_num = random.randint(227, 245)
+            atta_num = icy_touch_random_value[damage_result_number]
+            damage_result_number = damage_array_updater(damage_result_number)
             if sigil_of_the_frozen_conscience == True:
                 atta_num += 111
             atta_num = (atta_num + ((current_ap + (current_ap * ((impurity_points * 4) / 100))) * .1)) * var_crit_amount
@@ -119,7 +123,9 @@ def icy_touch(spell_hit_total, increased_spell_hit, target_level, km_procd, deat
             current_time += gcd
             used_gcd = True
         else:
-            atta_num = random.randint(227, 245)
+            # atta_num = random.randint(227, 245)
+            atta_num = icy_touch_random_value[damage_result_number]
+            damage_result_number = damage_array_updater(damage_result_number)
             if sigil_of_the_frozen_conscience == True:
                 atta_num += 111
             atta_num = (atta_num + ((current_ap + (current_ap * ((impurity_points * 4) / 100))) * .1))
@@ -210,4 +216,4 @@ def icy_touch(spell_hit_total, increased_spell_hit, target_level, km_procd, deat
 
     return rotation, rotation_time, rotation_status, rotation_damage, current_time, used_gcd, rune_cd_tracker, last_dot0_damage, \
         current_power, rune_of_cinderglacier_active, rune_of_cinderglacier_active_count, dots, sum_it_attacks, km_procd, \
-        deathchill_active, gcd, rune_of_cinderglacier_damage
+        deathchill_active, gcd, rune_of_cinderglacier_damage, damage_result_number

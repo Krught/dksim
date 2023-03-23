@@ -1,13 +1,13 @@
-import random
+#import random
 from sims.shared.power_calc import power as runic_power
 from sims.shared.dot_timer import dot_timer
 from sims.dk.runes import rune_cd, check_rune, rune_grade_timer, all_rune_check, use_runes
 from sims.shared.attack_tables import spell_hit, spell_crit
-
+from sims.shared.damage_array_updater import damage_array_updater
 def gargoyle(spell_hit_total, increased_spell_hit, target_level, total_crit, increased_spell_crit, current_time, melee_haste_bonus2, melee_haste_bonus3, melee_haste_bonus4,
                dk_presence, input_gcd, current_ap, gcd, used_gcd, var_crit_amount, black_ice_points, max_runic, castable, melee_haste_bonus, gargoyle_cd, garg_damage,
                current_power, garg_ap, garg_summon_time, garg_last_damage_cast, total_haste_rating, last_rune_change, improved_unholy_presence_points, personal_buff_orc_pet_damage, cast_army, cast_army_timer,
-               initial_cast = False):
+               damage_result_number, standard_10k_random_value, gargoyle_random_value, initial_cast = False):
 
 
     rotation = []
@@ -62,11 +62,15 @@ def gargoyle(spell_hit_total, increased_spell_hit, target_level, total_crit, inc
         rotation_damage.append(0)
         return rotation, rotation_time, rotation_status, rotation_damage, current_time, used_gcd, current_power, gcd, gargoyle_cd, garg_last_damage_cast, garg_damage, gary_active, garg_summon_time, garg_ap, cast_army, cast_army_timer
 
-    hit = spell_hit(spell_hit_total, increased_spell_hit, target_level)
-    crit = spell_crit((total_crit), spell_hit_total, increased_spell_hit, target_level, increased_spell_crit)
+    hit = spell_hit(spell_hit_total, increased_spell_hit, target_level, standard_10k_random_value, damage_result_number)
+    damage_result_number = damage_array_updater(damage_result_number)
+    crit = spell_crit((total_crit), spell_hit_total, increased_spell_hit, target_level, increased_spell_crit, standard_10k_random_value, damage_result_number)
+    damage_result_number = damage_array_updater(damage_result_number)
     if hit == True:
         if crit == True:
-            atta_num = random.randint(51, 69)
+            # atta_num = random.randint(51, 69)
+            atta_num = gargoyle_random_value[damage_result_number]
+            damage_result_number = damage_array_updater(damage_result_number)
             atta_num = (atta_num + (garg_ap * .453)) * var_crit_amount
             if black_ice_points == 5:
                 atta_num = atta_num + (atta_num * .1)
@@ -86,7 +90,9 @@ def gargoyle(spell_hit_total, increased_spell_hit, target_level, total_crit, inc
             rotation_status.append("Crit")
             rotation_damage.append(atta_num)
         else:
-            atta_num = random.randint(51, 69)
+            # atta_num = random.randint(51, 69)
+            atta_num = gargoyle_random_value[damage_result_number]
+            damage_result_number = damage_array_updater(damage_result_number)
             atta_num = (atta_num + (garg_ap * .453))
             if black_ice_points == 5:
                 atta_num = atta_num + (atta_num * .1)
@@ -114,5 +120,6 @@ def gargoyle(spell_hit_total, increased_spell_hit, target_level, total_crit, inc
     garg_last_damage_cast = garg_damage_at
 
 
-    return rotation, rotation_time, rotation_status, rotation_damage, current_time, used_gcd, current_power, gcd, gargoyle_cd, garg_last_damage_cast, garg_damage, gary_active, garg_summon_time, garg_ap, cast_army, cast_army_timer
+    return rotation, rotation_time, rotation_status, rotation_damage, current_time, used_gcd, current_power, gcd, gargoyle_cd, \
+        garg_last_damage_cast, garg_damage, gary_active, garg_summon_time, garg_ap, cast_army, cast_army_timer, damage_result_number
 

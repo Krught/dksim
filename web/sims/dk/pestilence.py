@@ -1,14 +1,15 @@
-import random
+#import random
 from sims.shared.power_calc import power as runic_power
 from sims.shared.dot_timer import dot_timer
 from sims.dk.runes import rune_cd, check_rune, rune_grade_timer, all_rune_check, use_runes
 from sims.shared.attack_tables import spell_hit, spell_crit
-
+from sims.shared.damage_array_updater import damage_array_updater
 def pestilence(spell_hit_total, increased_spell_hit, target_level, total_crit, increased_spell_crit, total_haste_rating, current_time, last_rune_change,
                castable, improved_unholy_presence_points, dk_presence, input_gcd, rune_cd_tracker, dots, dot_length, crypt_fever_points, multiple_adds_timer,
                var_crit_amount, black_ice_points, tundra_stalker_points, rage_of_rivendale_points, hysteria_active, tricksoftt_active, increased_spell_damage,
                increased_all_damage, sum_pest_attacks, current_power, max_runic, blood_of_the_north_points, just_used_death_rune, death, reaping_points,
-               rune_of_cinderglacier_active, rune_of_cinderglacier_active_count, rune_of_cinderglacier_damage, pestilence_allow_reset, multiple_adds_timer_bp):
+               rune_of_cinderglacier_active, rune_of_cinderglacier_active_count, rune_of_cinderglacier_damage, pestilence_allow_reset, multiple_adds_timer_bp,
+               standard_10k_random_value, damage_result_number, pestilence_random_value, standard_random_value):
 
 
     rotation = []
@@ -16,8 +17,10 @@ def pestilence(spell_hit_total, increased_spell_hit, target_level, total_crit, i
     rotation_status = []
     rotation_damage = []
 
-    hit = spell_hit(spell_hit_total, increased_spell_hit, target_level)
-    crit = spell_crit(total_crit, spell_hit_total, increased_spell_hit, target_level, increased_spell_crit)
+    hit = spell_hit(spell_hit_total, increased_spell_hit, target_level, standard_10k_random_value, damage_result_number)
+    damage_result_number = damage_array_updater(damage_result_number)
+    crit = spell_crit(total_crit, spell_hit_total, increased_spell_hit, target_level, standard_10k_random_value, damage_result_number, increased_spell_crit)
+    damage_result_number = damage_array_updater(damage_result_number)
     # Rune Hit
     haste_percentage = (total_haste_rating / 25.21) / 100  # Returns a result of 0 - 1 for 0% - 100%
     haste_rune_cd = rune_grade_timer(current_time, last_rune_change[castable], last_rune_change[castable + 6])
@@ -43,7 +46,9 @@ def pestilence(spell_hit_total, increased_spell_hit, target_level, total_crit, i
             else:
                 multiple_adds_timer = dots[0]
                 multiple_adds_timer_bp = dots[1]
-            atta_num = random.randint(65, 79)
+            #atta_num = random.randint(65, 79)
+            atta_num = pestilence_random_value[damage_result_number]
+            damage_result_number = damage_array_updater(damage_result_number)
             atta_num = (atta_num) * var_crit_amount
             if dk_presence == 0:
                 atta_num = atta_num + (atta_num * .15)
@@ -72,7 +77,9 @@ def pestilence(spell_hit_total, increased_spell_hit, target_level, total_crit, i
             current_power = runic_power(10, current_power, max_runic)
             if blood_of_the_north_points != 0:
                 if just_used_death_rune != True:
-                    proc_num = random.randint(0, 100)
+                    # proc_num = random.randint(0, 100)
+                    proc_num = standard_random_value[damage_result_number]
+                    damage_result_number = damage_array_updater(damage_result_number)
                     if blood_of_the_north_points < 3:
                         death_proc_chance = (blood_of_the_north_points * .3) * 100
                     elif blood_of_the_north_points == 3:
@@ -83,7 +90,9 @@ def pestilence(spell_hit_total, increased_spell_hit, target_level, total_crit, i
                         rune_cd_tracker[castable] = 10000
             if reaping_points != 0:
                 if just_used_death_rune != True:
-                    proc_num = random.randint(0, 100)
+                    # proc_num = random.randint(0, 100)
+                    proc_num = standard_random_value[damage_result_number]
+                    damage_result_number = damage_array_updater(damage_result_number)
                     if reaping_points < 3:
                         death_proc_chance = (reaping_points * .3) * 100
                     elif reaping_points == 3:
@@ -117,7 +126,9 @@ def pestilence(spell_hit_total, increased_spell_hit, target_level, total_crit, i
             else:
                 multiple_adds_timer = dots[0]
                 multiple_adds_timer_bp = dots[1]
-            atta_num = random.randint(65, 79)
+            #atta_num = random.randint(65, 79)
+            atta_num = pestilence_random_value[damage_result_number]
+            damage_result_number = damage_array_updater(damage_result_number)
             atta_num = (atta_num)
             if dk_presence == 0:
                 atta_num = atta_num + (atta_num * .15)
@@ -146,7 +157,9 @@ def pestilence(spell_hit_total, increased_spell_hit, target_level, total_crit, i
             current_power = runic_power(10, current_power, max_runic)
             if blood_of_the_north_points != 0:
                 if just_used_death_rune != True:
-                    proc_num = random.randint(0, 100)
+                    # proc_num = random.randint(0, 100)
+                    proc_num = standard_random_value[damage_result_number]
+                    damage_result_number = damage_array_updater(damage_result_number)
                     if blood_of_the_north_points < 3:
                         death_proc_chance = (blood_of_the_north_points * .3) * 100
                     elif blood_of_the_north_points == 3:
@@ -157,7 +170,9 @@ def pestilence(spell_hit_total, increased_spell_hit, target_level, total_crit, i
                         rune_cd_tracker[castable] = 10000
             if reaping_points != 0:
                 if just_used_death_rune != True:
-                    proc_num = random.randint(0, 100)
+                    # proc_num = random.randint(0, 100)
+                    proc_num = standard_random_value[damage_result_number]
+                    damage_result_number = damage_array_updater(damage_result_number)
                     if reaping_points < 3:
                         death_proc_chance = (reaping_points * .3) * 100
                     elif reaping_points == 3:
@@ -191,4 +206,4 @@ def pestilence(spell_hit_total, increased_spell_hit, target_level, total_crit, i
         used_gcd = True
     return rotation, rotation_time, rotation_status, rotation_damage, current_time, used_gcd, rune_cd_tracker, \
         current_power, rune_of_cinderglacier_active, rune_of_cinderglacier_active_count, dots, sum_pest_attacks, gcd, \
-        rune_of_cinderglacier_damage, multiple_adds_timer, multiple_adds_timer_bp
+        rune_of_cinderglacier_damage, multiple_adds_timer, multiple_adds_timer_bp, damage_result_number

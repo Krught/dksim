@@ -1,14 +1,13 @@
-import random
 from sims.shared.power_calc import power as runic_power
-from sims.shared.dot_timer import dot_timer
-from sims.dk.runes import rune_cd, check_rune, rune_grade_timer, all_rune_check, use_runes
 from sims.shared.attack_tables import spell_hit, spell_crit
+from sims.shared.damage_array_updater import damage_array_updater
+
 
 def death_and_decay(spell_hit_total, increased_spell_hit, target_level, total_crit, increased_spell_crit, current_time,
                dk_presence, input_gcd, dots, haste_percentage, current_ap, impurity_points, gcd, used_gcd, death_and_decay_cd, death_and_decay_cd_length,
                var_crit_amount, black_ice_points, rage_of_rivendale_points, hysteria_active, tricksoftt_active, increased_spell_damage, max_runic, death_n_decay_apply_time,
                increased_all_damage, current_power, glyph_death_and_decay, scourgelords_plate_two_set, death_and_decay_damage, death_and_decay_last_damage_time,
-               initial_hit = False):
+            standard_10k_random_value, damage_result_number, initial_hit = False):
 
 
     rotation = []
@@ -16,8 +15,8 @@ def death_and_decay(spell_hit_total, increased_spell_hit, target_level, total_cr
     rotation_status = []
     rotation_damage = []
 
-    hit = spell_hit(spell_hit_total, increased_spell_hit, target_level)
-    crit = spell_crit(total_crit, spell_hit_total, increased_spell_hit, target_level, increased_spell_crit)
+    hit = spell_hit(spell_hit_total, increased_spell_hit, target_level, standard_10k_random_value, damage_result_number)
+    crit = spell_crit(total_crit, spell_hit_total, increased_spell_hit, target_level, standard_10k_random_value, damage_result_number, increased_spell_crit)
     if dk_presence != 2:
         gcd = input_gcd / (1 + haste_percentage)
         if gcd < 1:
@@ -132,5 +131,6 @@ def death_and_decay(spell_hit_total, increased_spell_hit, target_level, total_cr
     else:
         rotation_time.append(death_and_decay_last_damage_time)
     #     death_and_decay_last_damage_time = death_and_decay_last_damage_time + 1
+    damage_result_number = damage_array_updater(damage_result_number)
     return rotation, rotation_time, rotation_status, rotation_damage, current_time, used_gcd, current_power, gcd, \
-        death_and_decay_damage, death_and_decay_last_damage_time, death_n_decay_apply_time, death_and_decay_cd
+        death_and_decay_damage, death_and_decay_last_damage_time, death_n_decay_apply_time, death_and_decay_cd, damage_result_number

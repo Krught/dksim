@@ -1,9 +1,9 @@
-import random
+# import random
 from sims.shared.power_calc import power as runic_power
 from sims.shared.dot_timer import dot_timer
 from sims.dk.runes import rune_cd, check_rune, rune_grade_timer, all_rune_check, use_runes
 from sims.shared.attack_tables import spell_hit, spell_crit
-
+from sims.shared.damage_array_updater import damage_array_updater
 
 def blood_boil(spell_hit_total, increased_spell_hit, target_level, km_procd, deathchill_active, total_crit, increased_spell_crit, total_haste_rating,
               current_time, last_rune_change, castable, improved_unholy_presence_points, rune_grade_timer, dk_presence, input_gcd, rune_cd_tracker,
@@ -11,15 +11,16 @@ def blood_boil(spell_hit_total, increased_spell_hit, target_level, km_procd, dea
               dots, tundra_stalker_points, rage_of_rivendale_points, hysteria_active, tricksoftt_active,
               increased_spell_damage, increased_all_damage, sum_it_attacks, current_power,
               rune_of_cinderglacier_active,
-              rune_of_cinderglacier_active_count, rune_of_cinderglacier_damage, amount_of_targets):
+              rune_of_cinderglacier_active_count, rune_of_cinderglacier_damage, amount_of_targets, damage_result_number, blood_boil_random_value,
+               standard_10k_random_value):
 
     rotation = []
     rotation_time = []
     rotation_status = []
     rotation_damage = []
 
-    hit = spell_hit(spell_hit_total, increased_spell_hit, target_level)
-    crit = spell_crit((total_crit), spell_hit_total, increased_spell_hit, target_level, increased_spell_crit)
+    hit = spell_hit(spell_hit_total, increased_spell_hit, target_level, standard_10k_random_value, damage_result_number)
+    crit = spell_crit((total_crit), spell_hit_total, increased_spell_hit, target_level, standard_10k_random_value, damage_result_number, increased_spell_crit)
     # Rune Hit
     haste_percentage = (total_haste_rating / 25.21) / 100  # Returns a result of 0 - 1 for 0% - 100%
     haste_rune_cd = rune_grade_timer(current_time, last_rune_change[castable], last_rune_change[castable + 6])
@@ -33,11 +34,13 @@ def blood_boil(spell_hit_total, increased_spell_hit, target_level, km_procd, dea
     other_blood_boil_damage = 0
     blood_boil_multiple_repeate = 1
     while blood_boil_multiple_repeate < amount_of_targets:
-        hit2 = spell_hit(spell_hit_total, increased_spell_hit, target_level)
-        crit2 = spell_crit((total_crit), spell_hit_total, increased_spell_hit, target_level, increased_spell_crit)
+        hit2 = spell_hit(spell_hit_total, increased_spell_hit, target_level, standard_10k_random_value, damage_result_number)
+        crit2 = spell_crit((total_crit), spell_hit_total, increased_spell_hit, target_level, standard_10k_random_value, damage_result_number, increased_spell_crit)
         if hit2 == True:
             if crit2 == True:
-                atta_num = random.randint(180, 220)
+                # atta_num = random.randint(180, 220)
+                atta_num = blood_boil_random_value[damage_result_number]
+                damage_result_number = damage_array_updater(damage_result_number)
                 atta_num = (atta_num + (
                             (current_ap + (current_ap * ((impurity_points * 4) / 100))) * .06)) * var_crit_amount
                 if dots[0] > current_time:
@@ -86,7 +89,9 @@ def blood_boil(spell_hit_total, increased_spell_hit, target_level, km_procd, dea
                     if rune_of_cinderglacier_active_count == 2:
                         rune_of_cinderglacier_active = False
             else:
-                atta_num = random.randint(180, 220)
+                # atta_num = random.randint(180, 220)
+                atta_num = blood_boil_random_value[damage_result_number]
+                damage_result_number = damage_array_updater(damage_result_number)
                 atta_num = (atta_num + ((current_ap + (current_ap * ((impurity_points * 4) / 100))) * .06))
                 if dots[0] > current_time:
                     if dots[1] > current_time:
@@ -140,7 +145,9 @@ def blood_boil(spell_hit_total, increased_spell_hit, target_level, km_procd, dea
     rune_cd_tracker[castable] = rune_cd(haste_rune_cd, current_time)
     if hit == True:
         if crit == True:
-            atta_num = random.randint(180, 220)
+            # atta_num = random.randint(180, 220)
+            atta_num = blood_boil_random_value[damage_result_number]
+            damage_result_number = damage_array_updater(damage_result_number)
             atta_num = (atta_num + (
                         (current_ap + (current_ap * ((impurity_points * 4) / 100))) * .06)) * var_crit_amount
             if dots[0] > current_time:
@@ -195,7 +202,9 @@ def blood_boil(spell_hit_total, increased_spell_hit, target_level, km_procd, dea
             current_time += gcd
             used_gcd = True
         else:
-            atta_num = random.randint(180, 220)
+            # atta_num = random.randint(180, 220)
+            atta_num = blood_boil_random_value[damage_result_number]
+            damage_result_number = damage_array_updater(damage_result_number)
             atta_num = (atta_num + ((current_ap + (current_ap * ((impurity_points * 4) / 100))) * .06))
             if dots[0] > current_time:
                 if dots[1] > current_time:
@@ -260,4 +269,4 @@ def blood_boil(spell_hit_total, increased_spell_hit, target_level, km_procd, dea
 
     return rotation, rotation_time, rotation_status, rotation_damage, current_time, used_gcd, rune_cd_tracker,\
         current_power, rune_of_cinderglacier_active, rune_of_cinderglacier_active_count, dots, sum_it_attacks, km_procd, \
-        deathchill_active, gcd, rune_of_cinderglacier_damage, blood_boil_damage
+        deathchill_active, gcd, rune_of_cinderglacier_damage, blood_boil_damage, damage_result_number

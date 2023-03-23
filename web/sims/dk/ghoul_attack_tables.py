@@ -1,6 +1,9 @@
-import random
-def ghoul_attack_table(target_level, ghoul_hit, ghoul_expertise, use_special, g_crit, g_leader_crit=0):
-    attack_number = (random.randint(0, 10000) / 10000)
+#import random
+from sims.shared.damage_array_updater import damage_array_updater
+def ghoul_attack_table(target_level, ghoul_hit, ghoul_expertise, use_special, g_crit, standard_10k_random_value, damage_result_number, g_leader_crit=0):
+    # attack_number = (random.randint(0, 10000) / 10000)
+    attack_number = (standard_10k_random_value[damage_result_number] / 10000)
+    damage_result_number = damage_array_updater(damage_result_number)
     if use_special == True:
         miss = .06 + ((target_level * 5) - 400 - 10) * .004
         miss = miss - ghoul_hit

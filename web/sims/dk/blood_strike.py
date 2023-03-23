@@ -1,14 +1,15 @@
-import random
-from sims.shared.weapon_roll import weapon_roll
+# import random
+# from sims.shared.weapon_roll import weapon_roll
 from sims.shared.power_calc import power as runic_power
-from sims.shared.dot_timer import dot_timer
+# from sims.shared.dot_timer import dot_timer
 from sims.dk.runes import rune_cd, check_rune, rune_grade_timer, all_rune_check, use_runes
 from sims.shared.attack_tables import melee_table as attack_table
 from sims.shared.damage_armor_reduc import dam_reduc
 from sims.shared.attack_tables import spell_hit, spell_crit
+from sims.shared.damage_array_updater import damage_array_updater
 
 def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_expertise_dodge, all_expertise_parry, total_crit, annihilation_talent_points,
-                 increased_phy_crit, subversion_points, current_armor, armor_penetration, mh_input_lowend_weapon_damage, mh_input_topend_weapon_damage,
+                 increased_phy_crit, subversion_points, current_armor, armor_penetration,
                  current_ap, attack_damage_normalization, total_haste_rating, current_time, last_rune_change, castable, dk_presence, improved_unholy_presence_points,
                  dots, input_gcd, dancing_rune_weapon_points, dancing_rune_weapon_active, darkruned_battlegear_four_set, var_crit_amount,
                  guile_of_gorefiend_points, tundra_stalker_points, blood_of_the_north_points, t9_tank_two_set, rage_of_rivendale_points,
@@ -19,8 +20,9 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                  darkruned_battlegear_two_set, increased_spell_crit, impurity_points, sigil_of_the_wild_buck,
                   black_ice_points, glyph_death_coil, morbitity_points, increased_spell_damage, sudden_doom_damage, unholy_blight_points,
                  rune_of_cinderglacier_active, rune_of_cinderglacier_active_count, rune_of_cinderglacier_damage, death, threat_of_thassarian_points,
-                 oh_input_lowend_weapon_damage, oh_input_topend_weapon_damage, oh_wep_damage_mod, sum_oh_bs_attacks, current_power, sum_bs_attacks, max_runic,
-                 trinket_hit_crit_tracker, sigil_of_haunted_dreams_timer, t9_active_timer, unholy_blight_amount, unholy_blight_timer):
+                 oh_wep_damage_mod, sum_oh_bs_attacks, current_power, sum_bs_attacks, max_runic,
+                 trinket_hit_crit_tracker, sigil_of_haunted_dreams_timer, t9_active_timer, unholy_blight_amount, unholy_blight_timer,
+                 damage_result_number, blood_strike_random_value, standard_random_value, standard_10k_random_value, mh_wep_random_value, oh_wep_random_value):
 
 
     rotation = []
@@ -31,11 +33,13 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
     #TODO:  Remove the sudden doom / death coil from this function and just call the damage from death coil and add it to this if it procs
 
     attack_table_results = attack_table(1, tanking, H2, True, False, hit_from_gear, hit_from_other, target_level,
-                                        all_expertise_dodge, all_expertise_parry, total_crit,
+                                        all_expertise_dodge, all_expertise_parry, total_crit, standard_10k_random_value, damage_result_number,
                                         (annihilation_talent_points / 100) + increased_phy_crit + (
                                                     (subversion_points * 3) / 100))
     armor_red_amount = dam_reduc(current_armor, armor_penetration, target_level)
-    wep_roll = weapon_roll(mh_input_lowend_weapon_damage, mh_input_topend_weapon_damage)
+    #wep_roll = weapon_roll(mh_input_lowend_weapon_damage, mh_input_topend_weapon_damage)
+    wep_roll = mh_wep_random_value[damage_result_number]
+    damage_result_number = damage_array_updater(damage_result_number)
     wep_roll = wep_roll + (attack_damage_normalization * current_ap / 14)
     # Rune Hit
     haste_percentage = (total_haste_rating / 25.21) / 100  # Returns a result of 0 - 1 for 0% - 100%
@@ -111,7 +115,8 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                 trinket_hit_crit_tracker = 2
                 if blood_of_the_north_points != 0:
                     if just_used_death_rune != True:
-                        proc_num = random.randint(0, 100)
+                        proc_num = standard_random_value[damage_result_number]
+                        damage_result_number = damage_array_updater(damage_result_number)
                         if blood_of_the_north_points < 3:
                             death_proc_chance = (blood_of_the_north_points * .3) * 100
                         elif blood_of_the_north_points == 3:
@@ -122,7 +127,8 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                             rune_cd_tracker[castable] = 10000
                 if reaping_points != 0:
                     if just_used_death_rune != True:
-                        proc_num = random.randint(0, 100)
+                        proc_num = standard_random_value[damage_result_number]
+                        damage_result_number = damage_array_updater(damage_result_number)
                         if reaping_points < 3:
                             death_proc_chance = (reaping_points * .3) * 100
                         elif reaping_points == 3:
@@ -132,16 +138,17 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                             rune_cd_tracker[death_castable] = rune_cd(haste_rune_cd, current_time)
                             rune_cd_tracker[castable] = 10000
                 if sigil_of_haunted_dreams == True:
-                    if random.randint(0, 100) < 15:
+                    if standard_random_value[damage_result_number] < 15:
                         if sigil_of_haunted_dreams_buff == False:
                             sigil_of_haunted_dreams_buff = True
                             sigil_of_haunted_dreams_timer = current_time + 10
                             #TODO:  This must be causing some issues right now
                             total_crit = total_crit + ((173 / 45.8) / 100)
+                    damage_result_number = damage_array_updater(damage_result_number)
                 if t9_dps_two_set == True:
                     if t9_bonus == False:
                         if t9_cd_timer < current_time:
-                            if (random.randint(0, 10000) / 100) < 50:
+                            if (standard_10k_random_value[damage_result_number] / 100) < 50:
                                 t9_bonus = True
                                 t9_cd_timer = current_time + 45
                                 t9_active_timer = current_time + 15
@@ -150,6 +157,7 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                                 rotation_time.append(current_time)
                                 rotation_damage.append(0)
                                 rotation_status.append("Proc")
+                            damage_result_number = damage_array_updater(damage_result_number)
                 if desolation_points != 0:
                     if desolation_buff == False:
                         increased_all_damage += (desolation_points / 100)
@@ -166,13 +174,14 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                         rotation_damage.append(0)
                         rotation_status.append("Refresh")
                 if sudden_doom_points != 0:  # Sudden Doom aka Free Death Coil
-                    if (random.randint(0, 10000) / 100) < sudden_doom_points * 5:
-                        hit = spell_hit(spell_hit_total, increased_spell_hit, target_level)
+                    if (standard_10k_random_value[damage_result_number] / 100) < sudden_doom_points * 5:
+                        hit = spell_hit(spell_hit_total, increased_spell_hit, target_level, standard_10k_random_value, damage_result_number)
                         crit = spell_crit((total_crit + (darkruned_battlegear_two_set / 100)), spell_hit_total,
-                                          increased_spell_hit, target_level, increased_spell_crit)
+                                          increased_spell_hit, target_level, standard_10k_random_value, damage_result_number, increased_spell_crit)
                         if hit == True:
                             if crit == True:
-                                atta_num = random.randint(443, 665)
+                                atta_num = blood_strike_random_value[damage_result_number]
+                                damage_result_number = damage_array_updater(damage_result_number)
                                 atta_num = (atta_num + ((current_ap + (
                                             current_ap * ((impurity_points * 4) / 100))) * 0)) * var_crit_amount
                                 if sigil_of_vengeful_heart == True:
@@ -225,7 +234,8 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                                 rotation_status.append("Crit")
                                 rotation_damage.append(atta_num)
                             else:
-                                atta_num = random.randint(443, 665)
+                                atta_num = blood_strike_random_value[damage_result_number]
+                                damage_result_number = damage_array_updater(damage_result_number)
                                 atta_num = (atta_num + (
                                             (current_ap + (current_ap * ((impurity_points * 4) / 100))) * 0))
                                 if sigil_of_vengeful_heart == True:
@@ -282,6 +292,7 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                             rotation_time.append(current_time)
                             rotation_status.append("Miss")
                             rotation_damage.append(0)
+                    damage_result_number = damage_array_updater(damage_result_number)
             elif attack_table_results == 7:
                 atta_num = ((746 + (wep_roll * .4)) + ((746 + (wep_roll * .4)) * (.125 * how_many_dots_on_target)) + (
                             (746 + (wep_roll * .4)) * (
@@ -320,7 +331,8 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                 trinket_hit_crit_tracker = 1
                 if blood_of_the_north_points != 0:
                     if just_used_death_rune != True:
-                        proc_num = random.randint(0, 100)
+                        proc_num = standard_random_value[damage_result_number]
+                        damage_result_number = damage_array_updater(damage_result_number)
                         if blood_of_the_north_points < 3:
                             death_proc_chance = (blood_of_the_north_points * .3) * 100
                         elif blood_of_the_north_points == 3:
@@ -331,7 +343,8 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                             rune_cd_tracker[castable] = 10000
                 if reaping_points != 0:
                     if just_used_death_rune != True:
-                        proc_num = random.randint(0, 100)
+                        proc_num = standard_random_value[damage_result_number]
+                        damage_result_number = damage_array_updater(damage_result_number)
                         if reaping_points < 3:
                             death_proc_chance = (reaping_points * .3) * 100
                         elif reaping_points == 3:
@@ -341,15 +354,16 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                             rune_cd_tracker[death_castable] = rune_cd(haste_rune_cd, current_time)
                             rune_cd_tracker[castable] = 10000
                 if sigil_of_haunted_dreams == True:
-                    if random.randint(0, 100) < 15:
+                    if standard_random_value[damage_result_number] < 15:
                         if sigil_of_haunted_dreams_buff == False:
                             sigil_of_haunted_dreams_buff = True
                             sigil_of_haunted_dreams_timer = current_time + 10
                             total_crit = total_crit + ((173 / 45.8) / 100)
+                    damage_result_number = damage_array_updater(damage_result_number)
                 if t9_dps_two_set == True:
                     if t9_bonus == False:
                         if t9_cd_timer < current_time:
-                            if (random.randint(0, 10000) / 100) < 50:
+                            if (standard_10k_random_value[damage_result_number] / 100) < 50:
                                 t9_bonus = True
                                 t9_cd_timer = current_time + 45
                                 t9_active_timer = current_time + 15
@@ -358,6 +372,7 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                                 rotation_time.append(current_time)
                                 rotation_damage.append(0)
                                 rotation_status.append("Proc")
+                            damage_result_number = damage_array_updater(damage_result_number)
                 if desolation_points != 0:
                     if desolation_buff == False:
                         increased_all_damage += (desolation_points / 100)
@@ -374,13 +389,14 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                         rotation_damage.append(0)
                         rotation_status.append("Refresh")
                 if sudden_doom_points != 0:  # Sudden Doom aka Free Death Coil
-                    if (random.randint(0, 10000) / 100) < sudden_doom_points * 5:
-                        hit = spell_hit(spell_hit_total, increased_spell_hit, target_level)
+                    if (standard_10k_random_value[damage_result_number] / 100) < sudden_doom_points * 5:
+                        hit = spell_hit(spell_hit_total, increased_spell_hit, target_level, standard_10k_random_value, damage_result_number)
                         crit = spell_crit((total_crit + (darkruned_battlegear_two_set / 100)), spell_hit_total,
-                                          increased_spell_hit, target_level, increased_spell_crit)
+                                          increased_spell_hit, target_level, standard_10k_random_value, damage_result_number, increased_spell_crit)
                         if hit == True:
                             if crit == True:
-                                atta_num = random.randint(443, 665)
+                                atta_num = blood_strike_random_value[damage_result_number]
+                                damage_result_number = damage_array_updater(damage_result_number)
                                 atta_num = (atta_num + ((current_ap + (
                                             current_ap * ((impurity_points * 4) / 100))) * 0)) * var_crit_amount
                                 if sigil_of_vengeful_heart == True:
@@ -433,7 +449,8 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                                 rotation_status.append("Crit")
                                 rotation_damage.append(atta_num)
                             else:
-                                atta_num = random.randint(443, 665)
+                                atta_num = blood_strike_random_value[damage_result_number]
+                                damage_result_number = damage_array_updater(damage_result_number)
                                 atta_num = (atta_num + (
                                             (current_ap + (current_ap * ((impurity_points * 4) / 100))) * 0))
                                 if sigil_of_vengeful_heart == True:
@@ -490,18 +507,22 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                             rotation_time.append(current_time)
                             rotation_status.append("Miss")
                             rotation_damage.append(0)
+                damage_result_number = damage_array_updater(damage_result_number)
     if threat_of_thassarian_points != 0:  # Off Hand Blood Strike
         if H2 == False:
             threat_of_thass_roll = (threat_of_thassarian_points * 30)
             if threat_of_thassarian_points == 3:
                 threat_of_thass_roll += 10
-            threat_of_t_num = random.randint(0, 100)
+            threat_of_t_num = standard_random_value[damage_result_number]
+            damage_result_number = damage_array_updater(damage_result_number)
             if threat_of_thass_roll >= threat_of_t_num:
-                oh_wep_roll = weapon_roll(oh_input_lowend_weapon_damage, oh_input_topend_weapon_damage)
+                #oh_wep_roll = weapon_roll(oh_input_lowend_weapon_damage, oh_input_topend_weapon_damage)
+                oh_wep_roll = oh_wep_random_value[damage_result_number]
+                damage_result_number = damage_array_updater(damage_result_number)
                 oh_wep_roll = oh_wep_roll + (attack_damage_normalization * current_ap / 14)
                 oh_attack_table_results = attack_table(1, tanking, H2, False, True, hit_from_gear, hit_from_other,
                                                        target_level, all_expertise_dodge, all_expertise_parry,
-                                                       total_crit,
+                                                       total_crit, standard_10k_random_value, damage_result_number,
                                                        (annihilation_talent_points / 100) + increased_phy_crit + (
                                                                    (subversion_points * 3) / 100))
                 if oh_attack_table_results == 0:
@@ -562,7 +583,8 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                     trinket_hit_crit_tracker = 2
                     if blood_of_the_north_points != 0:
                         if just_used_death_rune != True:
-                            proc_num = random.randint(0, 100)
+                            proc_num = standard_random_value[damage_result_number]
+                            damage_result_number = damage_array_updater(damage_result_number)
                             if blood_of_the_north_points < 3:
                                 death_proc_chance = (blood_of_the_north_points * .3) * 100
                             elif blood_of_the_north_points == 3:
@@ -573,7 +595,8 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                                 rune_cd_tracker[castable] = 10000
                     if reaping_points != 0:
                         if just_used_death_rune != True:
-                            proc_num = random.randint(0, 100)
+                            proc_num = standard_random_value[damage_result_number]
+                            damage_result_number = damage_array_updater(damage_result_number)
                             if reaping_points < 3:
                                 death_proc_chance = (reaping_points * .3) * 100
                             elif reaping_points == 3:
@@ -583,15 +606,16 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                                 rune_cd_tracker[death_castable] = rune_cd(haste_rune_cd, current_time)
                                 rune_cd_tracker[castable] = 10000
                     if sigil_of_haunted_dreams == True:
-                        if random.randint(0, 100) < 15:
+                        if standard_random_value[damage_result_number] < 15:
                             if sigil_of_haunted_dreams_buff == False:
                                 sigil_of_haunted_dreams_buff = True
                                 sigil_of_haunted_dreams_timer = current_time + 10
                                 total_crit = total_crit + ((173 / 45.8) / 100)
+                        damage_result_number = damage_array_updater(damage_result_number)
                     if t9_dps_two_set == True:
                         if t9_bonus == False:
                             if t9_cd_timer < current_time:
-                                if (random.randint(0, 10000) / 100) < 50:
+                                if (standard_10k_random_value[damage_result_number] / 100) < 50:
                                     t9_bonus = True
                                     t9_cd_timer = current_time + 45
                                     t9_active_timer = current_time + 15
@@ -600,6 +624,7 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                                     rotation_time.append(current_time)
                                     rotation_damage.append(0)
                                     rotation_status.append("Proc")
+                                damage_result_number = damage_array_updater(damage_result_number)
                     if desolation_points != 0:
                         if desolation_buff == False:
                             increased_all_damage += (desolation_points / 100)
@@ -616,13 +641,14 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                             rotation_damage.append(0)
                             rotation_status.append("Refresh")
                     if sudden_doom_points != 0:  # Sudden Doom aka Free Death Coil
-                        if (random.randint(0, 10000) / 100) < sudden_doom_points * 5:
-                            hit = spell_hit(spell_hit_total, increased_spell_hit, target_level)
+                        if (standard_10k_random_value[damage_result_number] / 100) < sudden_doom_points * 5:
+                            hit = spell_hit(spell_hit_total, increased_spell_hit, target_level, standard_10k_random_value, damage_result_number)
                             crit = spell_crit((total_crit + (darkruned_battlegear_two_set / 100)), spell_hit_total,
-                                              increased_spell_hit, target_level, increased_spell_crit)
+                                              increased_spell_hit, target_level, standard_10k_random_value, damage_result_number, increased_spell_crit)
                             if hit == True:
                                 if crit == True:
-                                    atta_num = random.randint(443, 665)
+                                    atta_num = blood_strike_random_value[damage_result_number]
+                                    damage_result_number = damage_array_updater(damage_result_number)
                                     atta_num = (atta_num + ((current_ap + (
                                                 current_ap * ((impurity_points * 4) / 100))) * 0)) * var_crit_amount
                                     if sigil_of_vengeful_heart == True:
@@ -673,7 +699,8 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                                     rotation_status.append("Crit")
                                     rotation_damage.append(atta_num)
                                 else:
-                                    atta_num = random.randint(443, 665)
+                                    atta_num = blood_strike_random_value[damage_result_number]
+                                    damage_result_number = damage_array_updater(damage_result_number)
                                     atta_num = (atta_num + (
                                                 (current_ap + (current_ap * ((impurity_points * 4) / 100))) * 0))
                                     if sigil_of_vengeful_heart == True:
@@ -728,6 +755,7 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                                 rotation_time.append(current_time)
                                 rotation_status.append("Miss")
                                 rotation_damage.append(0)
+                        damage_result_number = damage_array_updater(damage_result_number)
                     rotation.append("OH - Blood Strike")
                     rotation_time.append(current_time)
                     rotation_status.append("Crit")
@@ -768,7 +796,8 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                     trinket_hit_crit_tracker = 1
                     if blood_of_the_north_points != 0:
                         if just_used_death_rune != True:
-                            proc_num = random.randint(0, 100)
+                            proc_num = standard_random_value[damage_result_number]
+                            damage_result_number = damage_array_updater(damage_result_number)
                             if blood_of_the_north_points < 3:
                                 death_proc_chance = (blood_of_the_north_points * .3) * 100
                             elif blood_of_the_north_points == 3:
@@ -779,7 +808,8 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                                 rune_cd_tracker[castable] = 10000
                     if reaping_points != 0:
                         if just_used_death_rune != True:
-                            proc_num = random.randint(0, 100)
+                            proc_num = standard_random_value[damage_result_number]
+                            damage_result_number = damage_array_updater(damage_result_number)
                             if reaping_points < 3:
                                 death_proc_chance = (reaping_points * .3) * 100
                             elif reaping_points == 3:
@@ -789,15 +819,16 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                                 rune_cd_tracker[death_castable] = rune_cd(haste_rune_cd, current_time)
                                 rune_cd_tracker[castable] = 10000
                     if sigil_of_haunted_dreams == True:
-                        if random.randint(0, 100) < 15:
+                        if standard_random_value[damage_result_number] < 15:
                             if sigil_of_haunted_dreams_buff == False:
                                 sigil_of_haunted_dreams_buff = True
                                 sigil_of_haunted_dreams_timer = current_time + 10
                                 total_crit = total_crit + ((173 / 45.8) / 100)
+                        damage_result_number = damage_array_updater(damage_result_number)
                     if t9_dps_two_set == True:
                         if t9_bonus == False:
                             if t9_cd_timer < current_time:
-                                if (random.randint(0, 10000) / 100) < 50:
+                                if (standard_10k_random_value[damage_result_number] / 100) < 50:
                                     t9_bonus = True
                                     t9_cd_timer = current_time + 45
                                     t9_active_timer = current_time + 15
@@ -806,6 +837,7 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                                     rotation_time.append(current_time)
                                     rotation_damage.append(0)
                                     rotation_status.append("Proc")
+                                damage_result_number = damage_array_updater(damage_result_number)
                     if desolation_points != 0:
                         if desolation_buff == False:
                             increased_all_damage += (desolation_points / 100)
@@ -822,13 +854,14 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                             rotation_damage.append(0)
                             rotation_status.append("Refresh")
                     if sudden_doom_points != 0:  # Sudden Doom aka Free Death Coil
-                        if (random.randint(0, 10000) / 100) < sudden_doom_points * 5:
-                            hit = spell_hit(spell_hit_total, increased_spell_hit, target_level)
+                        if (standard_10k_random_value[damage_result_number] / 100) < sudden_doom_points * 5:
+                            hit = spell_hit(spell_hit_total, increased_spell_hit, target_level, standard_10k_random_value, damage_result_number)
                             crit = spell_crit((total_crit + (darkruned_battlegear_two_set / 100)), spell_hit_total,
-                                              increased_spell_hit, target_level, increased_spell_crit)
+                                              increased_spell_hit, target_level, standard_10k_random_value, damage_result_number, increased_spell_crit)
                             if hit == True:
                                 if crit == True:
-                                    atta_num = random.randint(443, 665)
+                                    atta_num = blood_strike_random_value[damage_result_number]
+                                    damage_result_number = damage_array_updater(damage_result_number)
                                     atta_num = (atta_num + ((current_ap + (
                                                 current_ap * ((impurity_points * 4) / 100))) * 0)) * var_crit_amount
                                     if sigil_of_vengeful_heart == True:
@@ -881,7 +914,8 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                                     rotation_status.append("Crit")
                                     rotation_damage.append(atta_num)
                                 else:
-                                    atta_num = random.randint(443, 665)
+                                    atta_num = blood_strike_random_value[damage_result_number]
+                                    damage_result_number = damage_array_updater(damage_result_number)
                                     atta_num = (atta_num + (
                                                 (current_ap + (current_ap * ((impurity_points * 4) / 100))) * 0))
                                     if sigil_of_vengeful_heart == True:
@@ -938,6 +972,7 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                                 rotation_time.append(current_time)
                                 rotation_status.append("Miss")
                                 rotation_damage.append(0)
+                        damage_result_number = damage_array_updater(damage_result_number)
                     rotation.append("OH - Blood Strike")
                     rotation_time.append(current_time)
                     rotation_status.append("Hit")
@@ -1006,7 +1041,8 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
         trinket_hit_crit_tracker = 2
         if blood_of_the_north_points != 0:
             if just_used_death_rune != True:
-                proc_num = random.randint(0, 100)
+                proc_num = standard_random_value[damage_result_number]
+                damage_result_number = damage_array_updater(damage_result_number)
                 if blood_of_the_north_points < 3:
                     death_proc_chance = (blood_of_the_north_points * .3) * 100
                 elif blood_of_the_north_points == 3:
@@ -1017,7 +1053,8 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                     rune_cd_tracker[castable] = 10000
         if reaping_points != 0:
             if just_used_death_rune != True:
-                proc_num = random.randint(0, 100)
+                proc_num = standard_random_value[damage_result_number]
+                damage_result_number = damage_array_updater(damage_result_number)
                 if reaping_points < 3:
                     death_proc_chance = (reaping_points * .3) * 100
                 elif reaping_points == 3:
@@ -1027,15 +1064,16 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                     rune_cd_tracker[death_castable] = rune_cd(haste_rune_cd, current_time)
                     rune_cd_tracker[castable] = 10000
         if sigil_of_haunted_dreams == True:
-            if random.randint(0, 100) < 15:
+            if standard_random_value[damage_result_number] < 15:
                 if sigil_of_haunted_dreams_buff == False:
                     sigil_of_haunted_dreams_buff = True
                     sigil_of_haunted_dreams_timer = current_time + 10
                     total_crit = total_crit + ((173 / 45.8) / 100)
+            damage_result_number = damage_array_updater(damage_result_number)
         if t9_dps_two_set == True:
             if t9_bonus == False:
                 if t9_cd_timer < current_time:
-                    if (random.randint(0, 10000) / 100) < 50:
+                    if (standard_10k_random_value[damage_result_number] / 100) < 50:
                         t9_bonus = True
                         t9_cd_timer = current_time + 45
                         t9_active_timer = current_time + 15
@@ -1044,6 +1082,7 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                         rotation_time.append(current_time)
                         rotation_damage.append(0)
                         rotation_status.append("Proc")
+                    damage_result_number = damage_array_updater(damage_result_number)
         if desolation_points != 0:
             if desolation_buff == False:
                 increased_all_damage += (desolation_points / 100)
@@ -1060,13 +1099,14 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                 rotation_damage.append(0)
                 rotation_status.append("Refresh")
         if sudden_doom_points != 0:  # Sudden Doom aka Free Death Coil
-            if (random.randint(0, 10000) / 100) < sudden_doom_points * 5:
-                hit = spell_hit(spell_hit_total, increased_spell_hit, target_level)
+            if (standard_10k_random_value[damage_result_number] / 100) < sudden_doom_points * 5:
+                hit = spell_hit(spell_hit_total, increased_spell_hit, target_level, standard_10k_random_value, damage_result_number)
                 crit = spell_crit((total_crit + (darkruned_battlegear_two_set / 100)), spell_hit_total,
-                                  increased_spell_hit, target_level, increased_spell_crit)
+                                  increased_spell_hit, target_level, standard_10k_random_value, damage_result_number, increased_spell_crit)
                 if hit == True:
                     if crit == True:
-                        atta_num = random.randint(443, 665)
+                        atta_num = blood_strike_random_value[damage_result_number]
+                        damage_result_number = damage_array_updater(damage_result_number)
                         atta_num = (atta_num + (
                                     (current_ap + (current_ap * ((impurity_points * 4) / 100))) * 0)) * var_crit_amount
                         if sigil_of_vengeful_heart == True:
@@ -1118,7 +1158,8 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                         rotation_status.append("Crit")
                         rotation_damage.append(atta_num)
                     else:
-                        atta_num = random.randint(443, 665)
+                        atta_num = blood_strike_random_value[damage_result_number]
+                        damage_result_number = damage_array_updater(damage_result_number)
                         atta_num = (atta_num + ((current_ap + (current_ap * ((impurity_points * 4) / 100))) * 0))
                         if sigil_of_vengeful_heart == True:
                             atta_num + 380
@@ -1173,6 +1214,7 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                     rotation_time.append(current_time)
                     rotation_status.append("Miss")
                     rotation_damage.append(0)
+            damage_result_number = damage_array_updater(damage_result_number)
         rotation.append("Blood Strike")
         rotation_time.append(current_time)
         rotation_status.append("Crit")
@@ -1222,7 +1264,8 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
         trinket_hit_crit_tracker = 1
         if blood_of_the_north_points != 0:
             if just_used_death_rune != True:
-                proc_num = random.randint(0, 100)
+                proc_num = standard_random_value[damage_result_number]
+                damage_result_number = damage_array_updater(damage_result_number)
                 if blood_of_the_north_points < 3:
                     death_proc_chance = (blood_of_the_north_points * .3) * 100
                 elif blood_of_the_north_points == 3:
@@ -1233,7 +1276,8 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                     rune_cd_tracker[castable] = 10000
         if reaping_points != 0:
             if just_used_death_rune != True:
-                proc_num = random.randint(0, 100)
+                proc_num = standard_random_value[damage_result_number]
+                damage_result_number = damage_array_updater(damage_result_number)
                 if reaping_points < 3:
                     death_proc_chance = (reaping_points * .3) * 100
                 elif reaping_points == 3:
@@ -1243,15 +1287,16 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                     rune_cd_tracker[death_castable] = rune_cd(haste_rune_cd, current_time)
                     rune_cd_tracker[castable] = 10000
         if sigil_of_haunted_dreams == True:
-            if random.randint(0, 100) < 15:
+            if standard_random_value[damage_result_number] < 15:
                 if sigil_of_haunted_dreams_buff == False:
                     sigil_of_haunted_dreams_buff = True
                     sigil_of_haunted_dreams_timer = current_time + 10
                     total_crit = total_crit + ((173 / 45.8) / 100)
+            damage_result_number = damage_array_updater(damage_result_number)
         if t9_dps_two_set == True:
             if t9_bonus == False:
                 if t9_cd_timer < current_time:
-                    if (random.randint(0, 10000) / 100) < 50:
+                    if (standard_10k_random_value[damage_result_number] / 100) < 50:
                         t9_bonus = True
                         t9_cd_timer = current_time + 45
                         t9_active_timer = current_time + 15
@@ -1260,6 +1305,7 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                         rotation_time.append(current_time)
                         rotation_damage.append(0)
                         rotation_status.append("Proc")
+                    damage_result_number = damage_array_updater(damage_result_number)
         if desolation_points != 0:
             if desolation_buff == False:
                 increased_all_damage += (desolation_points / 100)
@@ -1276,13 +1322,14 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                 rotation_damage.append(0)
                 rotation_status.append("Refresh")
         if sudden_doom_points != 0:  # Sudden Doom aka Free Death Coil
-            if (random.randint(0, 10000) / 100) < sudden_doom_points * 5:
-                hit = spell_hit(spell_hit_total, increased_spell_hit, target_level)
+            if (standard_10k_random_value[damage_result_number] / 100) < sudden_doom_points * 5:
+                hit = spell_hit(spell_hit_total, increased_spell_hit, target_level, standard_10k_random_value, damage_result_number)
                 crit = spell_crit((total_crit + (darkruned_battlegear_two_set / 100)), spell_hit_total,
-                                  increased_spell_hit, target_level, increased_spell_crit)
+                                  increased_spell_hit, target_level, standard_10k_random_value, damage_result_number, increased_spell_crit)
                 if hit == True:
                     if crit == True:
-                        atta_num = random.randint(443, 665)
+                        atta_num = blood_strike_random_value[damage_result_number]
+                        damage_result_number = damage_array_updater(damage_result_number)
                         atta_num = (atta_num + (
                                     (current_ap + (current_ap * ((impurity_points * 4) / 100))) * 0)) * var_crit_amount
                         if sigil_of_vengeful_heart == True:
@@ -1334,7 +1381,8 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                         rotation_status.append("Crit")
                         rotation_damage.append(atta_num)
                     else:
-                        atta_num = random.randint(443, 665)
+                        atta_num = blood_strike_random_value[damage_result_number]
+                        damage_result_number = damage_array_updater(damage_result_number)
                         atta_num = (atta_num + ((current_ap + (current_ap * ((impurity_points * 4) / 100))) * 0))
                         if sigil_of_vengeful_heart == True:
                             atta_num + 380
@@ -1389,6 +1437,7 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
                     rotation_time.append(current_time)
                     rotation_status.append("Miss")
                     rotation_damage.append(0)
+            damage_result_number = damage_array_updater(damage_result_number)
         rotation.append("Blood Strike")
         rotation_time.append(current_time)
         rotation_status.append("Hit")
@@ -1401,4 +1450,4 @@ def blood_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_e
     dots, gcd, trinket_hit_crit_tracker, dancing_rune_weapon_damage, sigil_of_haunted_dreams_buff, sigil_of_haunted_dreams_timer,\
         total_crit, t9_bonus, t9_cd_timer, t9_active_timer, bonus_loop_str, increased_all_damage, desolation_buff_timer, sudden_doom_damage,\
         unholy_blight_amount, unholy_blight_timer, rune_of_cinderglacier_damage, rune_of_cinderglacier_active_count, \
-        rune_of_cinderglacier_active, sum_bs_attacks
+        rune_of_cinderglacier_active, sum_bs_attacks, damage_result_number

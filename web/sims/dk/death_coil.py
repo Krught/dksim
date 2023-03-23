@@ -1,14 +1,13 @@
-import random
+# import random
 from sims.shared.power_calc import power as runic_power
-from sims.shared.dot_timer import dot_timer
-from sims.dk.runes import rune_cd, check_rune, rune_grade_timer, all_rune_check, use_runes
 from sims.shared.attack_tables import spell_hit, spell_crit
+from sims.shared.damage_array_updater import damage_array_updater
 
 def death_coil(spell_hit_total, increased_spell_hit, target_level, total_crit, increased_spell_crit, current_time, death_coil_cost, darkruned_battlegear_two_set, unholy_blight_amount, unholy_blight_timer,
                dk_presence, input_gcd, rune_cd_tracker, dots, multiple_adds_timer, haste_percentage, current_ap, impurity_points, sigil_of_vengeful_heart, death_coil_damage,
                var_crit_amount, black_ice_points, tundra_stalker_points, rage_of_rivendale_points, hysteria_active, tricksoftt_active, increased_spell_damage,
                increased_all_damage, sum_pest_attacks, current_power, max_runic, sigil_of_the_wild_buck, glyph_death_coil, morbitity_points, unholy_blight_points,
-               rune_of_cinderglacier_active, rune_of_cinderglacier_active_count, rune_of_cinderglacier_damage, free_dc = False):
+               rune_of_cinderglacier_active, rune_of_cinderglacier_active_count, rune_of_cinderglacier_damage, standard_10k_random_value, damage_result_number, death_coil_random_value, free_dc = False):
 
 
     rotation = []
@@ -18,16 +17,20 @@ def death_coil(spell_hit_total, increased_spell_hit, target_level, total_crit, i
 
     if free_dc == False:
         current_power = runic_power(-death_coil_cost, current_power, max_runic)
-    hit = spell_hit(spell_hit_total, increased_spell_hit, target_level)
+    hit = spell_hit(spell_hit_total, increased_spell_hit, target_level, standard_10k_random_value, damage_result_number)
+    damage_result_number = damage_array_updater(damage_result_number)
     crit = spell_crit((total_crit + (darkruned_battlegear_two_set / 100)), spell_hit_total, increased_spell_hit,
-                      target_level, increased_spell_crit)
+                      target_level, standard_10k_random_value, damage_result_number, increased_spell_crit)
+    damage_result_number = damage_array_updater(damage_result_number)
     if dk_presence != 2:
         gcd = input_gcd / (1 + haste_percentage)
         if gcd < 1:
             gcd = 1
     if hit == True:
         if crit == True:
-            atta_num = random.randint(443, 665)
+            # atta_num = random.randint(443, 665)
+            atta_num = death_coil_random_value[damage_result_number]
+            damage_result_number = damage_array_updater(damage_result_number)
             atta_num = (atta_num + ((current_ap + (current_ap * ((impurity_points * 4) / 100))) * 0)) * var_crit_amount
             if sigil_of_vengeful_heart == True:
                 atta_num + 380
@@ -80,7 +83,9 @@ def death_coil(spell_hit_total, increased_spell_hit, target_level, total_crit, i
             current_time += gcd
             used_gcd = True
         else:
-            atta_num = random.randint(443, 665)
+            # atta_num = random.randint(443, 665)
+            atta_num = death_coil_random_value[damage_result_number]
+            damage_result_number = damage_array_updater(damage_result_number)
             atta_num = (atta_num + ((current_ap + (current_ap * ((impurity_points * 4) / 100))) * 0))
             if sigil_of_vengeful_heart == True:
                 atta_num + 380
@@ -141,4 +146,4 @@ def death_coil(spell_hit_total, increased_spell_hit, target_level, total_crit, i
         used_gcd = True
     return rotation, rotation_time, rotation_status, rotation_damage, current_time, used_gcd, rune_cd_tracker, \
         current_power, rune_of_cinderglacier_active, rune_of_cinderglacier_active_count, dots, sum_pest_attacks, gcd, \
-        rune_of_cinderglacier_damage, multiple_adds_timer, unholy_blight_amount, unholy_blight_timer, death_coil_damage
+        rune_of_cinderglacier_damage, multiple_adds_timer, unholy_blight_amount, unholy_blight_timer, death_coil_damage, damage_result_number

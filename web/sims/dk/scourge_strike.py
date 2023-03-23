@@ -1,10 +1,10 @@
-import random
-from sims.shared.weapon_roll import weapon_roll
+#import random
+# from sims.shared.weapon_roll import weapon_roll
 from sims.shared.power_calc import power as runic_power
 from sims.dk.runes import rune_cd, check_rune, rune_grade_timer, all_rune_check, use_runes
 from sims.shared.attack_tables import melee_table as attack_table
 from sims.shared.damage_armor_reduc import dam_reduc
-
+from sims.shared.damage_array_updater import damage_array_updater
 def scourge_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all_expertise_dodge, all_expertise_parry, total_crit,
                annihilation_talent_points, increased_phy_crit, scourgeborne_battlegear_two_set, subversion_points, current_armor, armor_penetration,
                mh_input_lowend_weapon_damage, mh_input_topend_weapon_damage, attack_damage_normalization, current_ap, total_haste_rating, current_time,
@@ -13,19 +13,22 @@ def scourge_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all
                scourgelords_battlegear_two_set, hysteria_active, tricksoftt_active, increased_physical_damage, glyph_scourge_strike,
                increased_all_damage, sigil_of_virulence, sigil_of_virulence_buff, scourge_strike_dot0_counter, scourge_strike_dot1_counter,
                bonus_loop_str, sigil_of_hanged_man, sigil_of_hanged_man_count, castable1, sigil_of_awareness, gcd, sigil_of_hanged_man_timer,
-               rune_cd_tracker, current_power, max_runic, scourgeborne_battlegear_four_set, sigil_of_virulence_timer, trinket_hit_crit_tracker):
+               rune_cd_tracker, current_power, max_runic, scourgeborne_battlegear_four_set, sigil_of_virulence_timer, trinket_hit_crit_tracker,
+               mh_wep_random_value, standard_10k_random_value, damage_result_number, standard_random_value):
     rotation = []
     rotation_time = []
     rotation_status = []
     rotation_damage = []
     attack_table_results = attack_table(1, tanking, H2, True, False, hit_from_gear, hit_from_other, target_level,
-                                        all_expertise_dodge, all_expertise_parry, total_crit, (
+                                        all_expertise_dodge, all_expertise_parry, total_crit, standard_10k_random_value, damage_result_number, (
                                                     (annihilation_talent_points / 100) + increased_phy_crit + (
                                                         scourgeborne_battlegear_two_set / 100) + (
                                                                 (subversion_points * 3) / 100) + (
                                                                 (vicious_strikes_points * 3) / 100)))
     armor_red_amount = dam_reduc(current_armor, armor_penetration, target_level)
-    wep_roll = weapon_roll(mh_input_lowend_weapon_damage, mh_input_topend_weapon_damage)
+    # wep_roll = weapon_roll(mh_input_lowend_weapon_damage, mh_input_topend_weapon_damage)
+    wep_roll = mh_wep_random_value[damage_result_number]
+    damage_result_number = damage_array_updater(damage_result_number)
     wep_roll = wep_roll + (attack_damage_normalization * current_ap / 14)
     # Rune Hit
     haste_percentage = (total_haste_rating / 25.21) / 100  # Returns a result of 0 - 1 for 0% - 100%
@@ -113,13 +116,14 @@ def scourge_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all
             current_power = runic_power(5, current_power, max_runic)
         trinket_hit_crit_tracker = 2
         if sigil_of_virulence == True:
-            if random.randint(0, 100) < 85:
+            if standard_random_value[damage_result_number] < 85:
                 sigil_of_virulence_timer = current_time + 20
                 if sigil_of_virulence_buff == False:
                     sigil_of_virulence_buff = True
                     bonus_loop_str += 200
+            damage_result_number = damage_array_updater(damage_result_number)
         if sigil_of_hanged_man == True:
-            if random.randint(0, 100) < 101:
+            if standard_random_value[damage_result_number] < 101:
                 sigil_of_hanged_man_buff = True
                 sigil_of_hanged_man_timer = current_time + 15
                 sigil_of_hanged_man_count += 1
@@ -127,6 +131,7 @@ def scourge_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all
                     bonus_loop_str += 73
                 elif sigil_of_hanged_man_count >= 3:
                     sigil_of_hanged_man_count = 3
+            damage_result_number = damage_array_updater(damage_result_number)
         if glyph_scourge_strike == True:
             if scourge_strike_dot0_counter > 3:
                 dots[0] += 3
@@ -185,13 +190,14 @@ def scourge_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all
             current_power = runic_power(5, current_power, max_runic)
         trinket_hit_crit_tracker = 1
         if sigil_of_virulence == True:
-            if random.randint(0, 100) < 85:
+            if standard_random_value[damage_result_number] < 85:
                 sigil_of_virulence_timer = current_time + 20
                 if sigil_of_virulence_buff == False:
                     sigil_of_virulence_buff = True
                     bonus_loop_str += 200
+            damage_result_number = damage_array_updater(damage_result_number)
         if sigil_of_hanged_man == True:
-            if random.randint(0, 100) < 101:
+            if standard_random_value[damage_result_number] < 101:
                 sigil_of_hanged_man_buff = True
                 sigil_of_hanged_man_timer = current_time + 15
                 sigil_of_hanged_man_count += 1
@@ -199,6 +205,7 @@ def scourge_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all
                     bonus_loop_str += 73
                 elif sigil_of_hanged_man_count >= 3:
                     sigil_of_hanged_man_count = 3
+            damage_result_number = damage_array_updater(damage_result_number)
         if glyph_scourge_strike == True:
             if scourge_strike_dot0_counter > 3:
                 dots[0] += 3
@@ -216,4 +223,4 @@ def scourge_strike(tanking, H2, hit_from_gear, hit_from_other, target_level, all
         trinket_hit_crit_tracker, sigil_of_virulence_timer, sigil_of_virulence_buff, bonus_loop_str, sigil_of_hanged_man_buff, \
         sigil_of_hanged_man_count, rune_cd_tracker, current_time, used_gcd, current_power, sum_scourge_strikes_attacks, \
          bonus_loop_str, sigil_of_virulence_buff, sigil_of_hanged_man_count, scourge_strike_dot0_counter, scourge_strike_dot1_counter, \
-        sigil_of_hanged_man_timer
+        sigil_of_hanged_man_timer, damage_result_number
