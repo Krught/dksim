@@ -40,7 +40,8 @@ def gargoyle(spell_hit_total, increased_spell_hit, target_level, total_crit, inc
     garg_damage_at = garg_last_damage_cast + garg_attack_speed
     if garg_summon_time != current_time:
         if garg_damage_at > current_time:
-            return rotation, rotation_time, rotation_status, rotation_damage, current_time, used_gcd, current_power, gcd, gargoyle_cd, garg_last_damage_cast, garg_damage, gary_active, garg_summon_time, garg_ap, cast_army, cast_army_timer
+            return rotation, rotation_time, rotation_status, rotation_damage, current_time, used_gcd, current_power, gcd, gargoyle_cd, \
+        garg_last_damage_cast, garg_damage, gary_active, garg_summon_time, garg_ap, cast_army, cast_army_timer, damage_result_number
     else:
         #TODO: Call to use engi gloves & potion here, also to 'possibly' use ERW if needed to cast army within say 5s
         gargoyle_cd = current_time + 180
@@ -53,14 +54,16 @@ def gargoyle(spell_hit_total, increased_spell_hit, target_level, total_crit, inc
         cast_army_timer = current_time + 5
         current_time += gcd
         used_gcd = True
-        return rotation, rotation_time, rotation_status, rotation_damage, current_time, used_gcd, current_power, gcd, gargoyle_cd, garg_last_damage_cast, garg_damage, gary_active, garg_summon_time, garg_ap, cast_army, cast_army_timer
+        return rotation, rotation_time, rotation_status, rotation_damage, current_time, used_gcd, current_power, gcd, gargoyle_cd, \
+        garg_last_damage_cast, garg_damage, gary_active, garg_summon_time, garg_ap, cast_army, cast_army_timer, damage_result_number
     if garg_damage_at > (garg_summon_time + 30):
         gary_active = False
         rotation.append("Gargoyle")
         rotation_time.append(garg_summon_time+30)
         rotation_status.append("Despawn")
         rotation_damage.append(0)
-        return rotation, rotation_time, rotation_status, rotation_damage, current_time, used_gcd, current_power, gcd, gargoyle_cd, garg_last_damage_cast, garg_damage, gary_active, garg_summon_time, garg_ap, cast_army, cast_army_timer
+        return rotation, rotation_time, rotation_status, rotation_damage, current_time, used_gcd, current_power, gcd, gargoyle_cd, \
+        garg_last_damage_cast, garg_damage, gary_active, garg_summon_time, garg_ap, cast_army, cast_army_timer, damage_result_number
 
     hit = spell_hit(spell_hit_total, increased_spell_hit, target_level, standard_10k_random_value, damage_result_number)
     damage_result_number = damage_array_updater(damage_result_number)
