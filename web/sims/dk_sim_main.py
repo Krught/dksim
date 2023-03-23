@@ -1051,6 +1051,25 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
     current_i = current_i.split("\t")
     trinket_1_use = False
     trinket_2_use = False
+
+    trinket1_type = 0
+    trinket1_chanceon = 0
+    trinket1_chanceperc = 0
+    trinket1_bonus_amount = 0
+    trinket1_bonus_type = 0
+    trinket1_length = 0
+    trinket1_icd = 0
+    trinket1_min_damage = 0
+    trinket1_max_damage = 0
+    trinket2_type = 0
+    trinket2_chanceon = 0
+    trinket2_chanceperc = 0
+    trinket2_bonus_amount = 0
+    trinket2_bonus_type = 0
+    trinket2_length = 0
+    trinket2_icd = 0
+    trinket2_min_damage = 0
+    trinket2_max_damage = 0
     if current_i[use_trinket_index] == 'True':
         trinket1_type = current_i[trinket_type_index]
         trinket1_chanceon = current_i[trinket_chanceon_index]
@@ -1103,6 +1122,8 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
     #Ghoul Stats
     if master_of_ghouls_points == 0:
         ghoul_strength = top_str
+    else:
+        ghoul_strength = 0
     ghoul_hit = int(top_hit_rating)
     ghoul_hit = (int(((ghoul_hit * 30.5)/100000)*100))/100
     ghoul_expertise = 0
@@ -1482,8 +1503,12 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
         oh_wep_random_value = [0]
     if trinket1_bonus_type == "Damage":
         trinket1_random_value = numpy.random.randint(trinket1_min_damage, high=trinket1_max_damage, size=1000)
+    else:
+        trinket1_random_value = []
     if trinket2_bonus_type == "Damage":
         trinket2_random_value = numpy.random.randint(trinket2_min_damage, high=trinket2_max_damage, size=1000)
+    else:
+        trinket2_random_value = []
     army_time_random_value = numpy.random.randint(1000, size=1000)
     ghoul_damage_random_value = numpy.random.randint(60, high=102, size=1000)
     death_coil_random_value = numpy.random.randint(443, high=665, size=1000)
@@ -1493,56 +1518,63 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
     pestilence_random_value = numpy.random.randint(65, high=79, size=1000)
     if dk_spec == 0:
         howling_blast_random_value = numpy.random.randint(518, high=562, size=1000)
+        bone_shield_start_random_value = []
+        gargoyle_random_value = []
     elif dk_spec == 1:
+        howling_blast_random_value = []
         bone_shield_start_random_value = numpy.random.randint(200, high=290, size=1000)
         gargoyle_random_value = numpy.random.randint(51, high=69, size=1000)
+    else:
+        howling_blast_random_value = []
+        bone_shield_start_random_value = []
+        gargoyle_random_value = []
     #damage_result_number = damage_array_updater(damage_result_number)
     #TODO: Still need to add a lot more of the array updaters... but too lazy so do that later
     damage_result_number = 0
     #damage_result_number, blood_strike_random_value, standard_random_value, standard_10k_random_value
 
     #Resetting Sim Lists Functions To 0
-    sum_mh_white_attacks_list = []
-    sum_oh_white_attacks_list = []
-    sum_damage_list = []
-    sum_dps_list = []
-    mh_white_attack_values = []
-    oh_white_attack_values = []
-    sum_ps_attacks_list = []
-    sum_it_attacks_list = []
-    sum_pest_attacks_list = []
-    sum_obil_attacks_list = []
-    sum_bs_attacks_list = []
-    sum_fs_attacks_list = []
-    sum_dot0_damage_list = []
-    sum_dot1_damage_list = []
-    sum_hb_attacks_list = []
-    sum_oh_obil_attacks_list = []
-    sum_oh_ps_attacks_list = []
-    sum_oh_bs_attacks_list = []
-    sum_oh_fs_attacks_list = []
-    rune_of_razorice_damage_list = []
-    rune_of_lichbane_damage_list = []
-    rune_of_cinderglacier_damage_list = []
-    trinket1_damage_list = []
-    trinket2_damage_list = []
-    bloodcaked_blades_damage_list = []
-    wandering_plague_damage_list = []
-    necrosis_damage_list = []
-    dancing_rune_weapon_damage_list = []
-    sudden_doom_damage_list = []
-    unholy_blight_damage_list = []
-    blood_boil_damage_list = []
-    death_and_decay_damage_list = []
-    death_coil_damage_list = []
-    sum_scourge_strikes_attacks_list = []
-    sum_death_strike_attacks_list = []
-    sum_heart_strike_attacks_list = []
-    garg_damage_list = []
-    ghoul_damage_list = []
-    ghoul_damage_claw_list = []
-    army_damage_list = []
-    army_damage_claw_list = []
+    # sum_mh_white_attacks_list = []
+    # sum_oh_white_attacks_list = []
+    # sum_damage_list = []
+    # sum_dps_list = []
+    # mh_white_attack_values = []
+    # oh_white_attack_values = []
+    # sum_ps_attacks_list = []
+    # sum_it_attacks_list = []
+    # sum_pest_attacks_list = []
+    # sum_obil_attacks_list = []
+    # sum_bs_attacks_list = []
+    # sum_fs_attacks_list = []
+    # sum_dot0_damage_list = []
+    # sum_dot1_damage_list = []
+    # sum_hb_attacks_list = []
+    # sum_oh_obil_attacks_list = []
+    # sum_oh_ps_attacks_list = []
+    # sum_oh_bs_attacks_list = []
+    # sum_oh_fs_attacks_list = []
+    # rune_of_razorice_damage_list = []
+    # rune_of_lichbane_damage_list = []
+    # rune_of_cinderglacier_damage_list = []
+    # trinket1_damage_list = []
+    # trinket2_damage_list = []
+    # bloodcaked_blades_damage_list = []
+    # wandering_plague_damage_list = []
+    # necrosis_damage_list = []
+    # dancing_rune_weapon_damage_list = []
+    # sudden_doom_damage_list = []
+    # unholy_blight_damage_list = []
+    # blood_boil_damage_list = []
+    # death_and_decay_damage_list = []
+    # death_coil_damage_list = []
+    # sum_scourge_strikes_attacks_list = []
+    # sum_death_strike_attacks_list = []
+    # sum_heart_strike_attacks_list = []
+    # garg_damage_list = []
+    # ghoul_damage_list = []
+    # ghoul_damage_claw_list = []
+    # army_damage_list = []
+    # army_damage_claw_list = []
 
     blood = 0
     frost = 2
@@ -1563,25 +1595,25 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
     last_sim_run = False
     sum_dps_list, t_damage, fight_length, rotation, rotation_time, rotation_damage, rotation_status, rune_0_tracker, rune_1_tracker, rune_2_tracker, rune_3_tracker, rune_4_tracker, rune_5_tracker, \
         rune_6_tracker, rune_7_tracker, rune_8_tracker, rune_9_tracker, rune_10_tracker, rune_11_tracker, rune_time_tracker, runic_power_tracker, hit_from_other = actual_sim(H2, abominations_might_points, activity_percent, all_enchant, all_enchant_bonuses, all_socket, all_socket_bonuses, amount_of_sims,
-        amount_of_talent_rows, amount_of_targets, annihilation_talent_points, army_active, army_damage_claw_list, army_damage_list, army_time_random_value, attack_damage_normalization,
+        amount_of_talent_rows, amount_of_targets, annihilation_talent_points, army_active, army_time_random_value, attack_damage_normalization,
               attack_type, base_agility, base_armor, base_hp, base_intel, base_m_ap, base_parry_rating, base_race_stats, base_spirit, base_stamina, base_strength, berserking_start_time, black_ice_points,
-              bladed_armor_points, blood, blood_boil_damage_list, blood_boil_random_value, blood_gorged_points, blood_gorged_proc_rate, blood_of_the_north_points, blood_strike_random_value, blood_strikes_points,
-              blood_talents, blood_talents_len, bloodcaked_blades_damage_list, bloodcaked_blades_points, bloodfury_start_time, bloodlust_start_time, bloodworms_points,
+              bladed_armor_points, blood, blood_boil_random_value, blood_gorged_points, blood_gorged_proc_rate, blood_of_the_north_points, blood_strike_random_value, blood_strikes_points,
+              blood_talents, blood_talents_len, bloodcaked_blades_points, bloodfury_start_time, bloodlust_start_time, bloodworms_points,
               bloody_vengeance_points, bone_shield_bone_consumption_rate, bone_shield_points, c_gem_num, c_i_c_slot, chill_of_the_grave_points, corspe_explosion_points, crypt_fever_points,
-              current_gem_check, current_i, current_sim_number, damage_result_number, dancing_rune_weapon_damage_list, dancing_rune_weapon_damage_multi, dancing_rune_weapon_points, dark_conviction_points,
-              darkruned_battlegear_count, darkruned_battlegear_four_set, darkruned_battlegear_two_set, darkruned_plate_count, darkruned_plate_two_set, death, death_and_decay_cd_length, death_and_decay_damage_list,
-              death_and_decay_force_cast, death_and_decay_skip, death_coil_cost, death_coil_damage_list, death_coil_random_value, death_f, death_rune_mastery_points, death_u, deathchill_points, desolation_points,
+              current_gem_check, current_i, current_sim_number, damage_result_number, dancing_rune_weapon_damage_multi, dancing_rune_weapon_points, dark_conviction_points,
+              darkruned_battlegear_count, darkruned_battlegear_four_set, darkruned_battlegear_two_set, darkruned_plate_count, darkruned_plate_two_set, death, death_and_decay_cd_length,
+              death_and_decay_force_cast, death_and_decay_skip, death_coil_cost, death_coil_random_value, death_f, death_rune_mastery_points, death_u, deathchill_points, desolation_points,
               dirge_points, disease_bonus_damage_amount, dk_presence, dk_spec, dot_length, dranei_in_party, ebon_plaguebringer_points, enchant_items_list, enchant_lookup_num, endless_winter_points, engi_gloves_enchant,
               epidemic_points, extra_armor_potion, extra_obli_damage, fight_length_variance,
               fight_sub_35percent, flask_of_endless_rage, food_blackened_dragonfin, food_dragonfin_filet, food_fish_feast, food_great_feast, food_hearty_rhino, food_mega_mammoth_meal, food_rhinolicious_wormsteak,
               food_snapper_extreme, food_spiced_worm_burger, food_very_burnt_worg, frost, frost_def_setup, frost_strike_cost, frost_strike_points, frost_talents, frost_talents_len, full_talent_list,
-              fury_of_five_flights_using, garg_damage_list, gargoyle_stance_dance, gargoyle_use_timer, gcd, gear, gear_list, geard_gems, gears_agility, gears_agility_index, gears_armor, gears_armor_index,
+              fury_of_five_flights_using, gargoyle_stance_dance, gargoyle_use_timer, gcd, gear, gear_list, geard_gems, gears_agility, gears_agility_index, gears_armor, gears_armor_index,
               gears_armor_pen_rating, gears_armor_pen_rating_index, gears_attack_power_bonuses, gears_attack_power_bonuses_index, gears_crit_rating, gears_crit_rating_index, gears_defense_rating,
               gears_defense_rating_index, gears_dodge_rating, gears_dodge_rating_index, gears_expertise_rating, gears_expertise_rating_index, gears_haste_rating, gears_haste_rating_index, gears_hit_rating,
               gears_hit_rating_index, gears_intelligence, gears_intelligence_index, gears_parry_rating, gears_parry_rating_index, gears_spirit, gears_spirit_index, gears_stamina, gears_stamina_index, gears_strength,
               gears_strength_index, gem_agility, gem_armor_pen, gem_attack_power, gem_crit_rating, gem_data_edit, gem_defense_rating, gem_dodge_rating, gem_expertise_rating, gem_gear_to_check, gem_haste_rating,
-              gem_hit_rating, gem_intelligence, gem_parry_rating, gem_resilience, gem_spell_pen, gem_spell_power, gem_spirit, gem_stamina, gem_strength, gem_to_check, gems_current, ghoul_active, ghoul_damage_claw_list,
-              ghoul_damage_list, ghoul_damage_random_value, ghoul_expertise, ghoul_frenzy_points, ghoul_hit, ghoul_life_length, ghoul_strength, glacier_rot_points, global_cd, glyph_dancing_rune_weapon,
+              gem_hit_rating, gem_intelligence, gem_parry_rating, gem_resilience, gem_spell_pen, gem_spell_power, gem_spirit, gem_stamina, gem_strength, gem_to_check, gems_current, ghoul_active,
+              ghoul_damage_random_value, ghoul_expertise, ghoul_frenzy_points, ghoul_hit, ghoul_life_length, ghoul_strength, glacier_rot_points, global_cd, glyph_dancing_rune_weapon,
               glyph_death_and_decay, glyph_death_coil, glyph_death_strike, glyph_frost_fever, glyph_frost_strike, glyph_ghoul, glyph_horn_of_winter, glyph_howling_blast, glyph_obliterate, glyph_of_bone_shield,
               glyph_pestilence_reset_diseases, glyph_plague_strike, glyph_rune_strike, glyph_scourge_strike, glyph_unholy_blight, glyphs, greater_gift_of_the_wild, guile_of_gorefiend_points, heart_strike_points,
               horn, horn_timer, howling_blast_points, howling_blast_random_value, hysteria_start_time, icy_talons_points, icy_touch_random_value, improved_death_strikes_points,
@@ -1598,24 +1630,22 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
               items_mh_topend, items_oh_lowend, items_oh_speed, items_oh_topend, items_setbonus_data, items_weapons_data, its, killing_machine_points, koltiras_battlegear_count, koltiras_plate_count, last_sim_run,
               length_of_fight, length_of_the_fight, length_of_the_fight_variance, local_testing, m_gem_data_loc, master_of_ghouls_points, max_runic, max_sim_num, melee_haste_bonus, melee_haste_bonus2,
               melee_haste_bonus3, merciless_combat_points, meta_as_bonus, mh_attacks_so_far, mh_input_lowend_weapon_damage, mh_input_topend_weapon_damage, mh_input_weapon_speed, mh_wep_random_value,
-              mh_white_attack_values, might_of_mograine_points, morbitity_points, my_own_current_armor, necrosis_damage_list, necrosis_points, nerves_of_cold_steel, night_of_the_dead_points, oh_attacks_so_far,
-              oh_input_lowend_weapon_damage, oh_input_topend_weapon_damage, oh_input_weapon_speed, oh_wep_damage_mod, oh_wep_random_value, oh_white_attack_values, outbreak_points, personal_buff_hysteria,
+              might_of_mograine_points, morbitity_points, my_own_current_armor, necrosis_points, nerves_of_cold_steel, night_of_the_dead_points, oh_attacks_so_far,
+              oh_input_lowend_weapon_damage, oh_input_topend_weapon_damage, oh_input_weapon_speed, oh_wep_damage_mod, oh_wep_random_value, outbreak_points, personal_buff_hysteria,
               personal_buff_orc_blood_fury, personal_buff_orc_pet_damage, personal_buff_tricks_of_the_trade, personal_buff_troll_berserking_buff, pestilence_allow_reset, pestilence_random_value, pestilence_reset_window,
               possible_glyphs, possibly_glyphs, pot_of_speed, pot_of_speed_start_time, pot_of_wild_magic, pot_of_wild_magic_start_time, pre_input_gcd, pre_pot_potion, race_selection, rage_of_rivendale_points,
               raid_buff_abomination_rage, raid_buff_blood_frenzy, raid_buff_bloodlust, raid_buff_crypt_fever, raid_buff_curse_of_the_elements, raid_buff_curse_of_weakness, raid_buff_expose_armor,
               raid_buff_ferocius_inspiration, raid_buff_gift_of_the_wild, raid_buff_greater_blessing_of_kings, raid_buff_greater_blessing_of_might, raid_buff_heart_of_the_crusader, raid_buff_horn_of_winter,
               raid_buff_imp_faerie_fire, raid_buff_imp_greater_blessing_of_might, raid_buff_imp_moonkin_form, raid_buff_improved_icy_talons, raid_buff_improved_scorch, raid_buff_leader_of_the_pack,
-              raid_buff_moonkin_aura, ravenous_dead_points, reaping_points, reg_gem_data_loc, rime_points, rune_of_cinderglacier, rune_of_cinderglacier_damage_list,
-              rune_of_cinderglacier_hand, rune_of_cinderglacier_hand_o, rune_of_lichbane, rune_of_lichbane_damage_list, rune_of_lichbane_hand, rune_of_lichbane_hand_o, rune_of_razorice,
-              rune_of_razorice_damage_list, rune_of_razorice_hand, rune_of_razorice_hand_o, rune_of_the_fallen_crusader, rune_of_the_fallen_crusader_hand, rune_of_the_fallen_crusader_hand_o,
+              raid_buff_moonkin_aura, ravenous_dead_points, reaping_points, reg_gem_data_loc, rime_points, rune_of_cinderglacier,
+              rune_of_cinderglacier_hand, rune_of_cinderglacier_hand_o, rune_of_lichbane, rune_of_lichbane_hand, rune_of_lichbane_hand_o, rune_of_razorice,
+              rune_of_razorice_hand, rune_of_razorice_hand_o, rune_of_the_fallen_crusader, rune_of_the_fallen_crusader_hand, rune_of_the_fallen_crusader_hand_o,
               runic_power_mastery_points, scourge_strike_points, scourgeborne_battlegear_count, scourgeborne_battlegear_four_set, scourgeborne_battlegear_two_set, scourgeborne_plate_count,
               scourgeborne_plate_two_set, scourgelords_battlegear_count, scourgelords_battlegear_four_set, scourgelords_battlegear_two_set, scourgelords_plate_count, scourgelords_plate_two_set,
               shattering_throw_armor_reduc_amount, shattering_throw_time, sigil_of_awareness, sigil_of_hanged_man, sigil_of_haunted_dreams, sigil_of_strife, sigil_of_strife_amount, sigil_of_the_frozen_conscience,
               sigil_of_the_wild_buck, sigil_of_vengeful_heart, sigil_of_virulence, skip_disease, skip_erw, skip_ua, socket_items_list, socket_lookup_num, split_gylphs,
-              split_talents, standard_10k_random_value, standard_random_value, start_increased_all_damage, start_increased_physical_damage, subversion_points, sudden_doom_damage_list,
-              sudden_doom_points, sum_bs_attacks_list, sum_damage_list, sum_death_strike_attacks_list, sum_dot0_damage_list, sum_dot1_damage_list, sum_fs_attacks_list, sum_hb_attacks_list,
-              sum_heart_strike_attacks_list, sum_it_attacks_list, sum_mh_white_attacks_list, sum_obil_attacks_list, sum_oh_bs_attacks_list, sum_oh_fs_attacks_list, sum_oh_obil_attacks_list,
-              sum_oh_ps_attacks_list, sum_oh_white_attacks_list, sum_pest_attacks_list, sum_ps_attacks_list, sum_scourge_strikes_attacks_list, summon_gargoyle_points, sword_berserking_enchant,
+              split_talents, standard_10k_random_value, standard_random_value, start_increased_all_damage, start_increased_physical_damage, subversion_points, sudden_doom_points,
+              summon_gargoyle_points, sword_berserking_enchant,
               sword_berserking_enchant_hand, sword_berserking_enchant_hand_o, swordguard_enchant, t9_dps_four_set, t9_dps_two_set, t9_tank_four_set, t9_tank_two_set, talent_url, tanking,
               target_armor, target_current_armor, target_level, thassarians_battlegear_count, thassarians_plate_count, the_input_abominations_might_buff, the_input_berserking_buff,
               the_input_berserking_buff_timer, the_input_blood_frenzy_buff, the_input_blood_fury_buff, the_input_blood_fury_buff_timer, the_input_curse_of_the_elements_debuff, the_input_curse_of_weakness_debuff,
@@ -1627,15 +1657,15 @@ def all_function(item_head = "", item_neck = "", item_shoulders = "", item_back 
               the_precast_horn_time, the_target_armor, the_target_level, the_total_fight_under_35, threat_of_thassarian_points, tier_bonus_item_list, top_agi, top_ap, top_armor, top_armor_pen_rating,
               top_crit_rating, top_defense_rating, top_dodge_rating, top_expertise_rating, top_haste_rating, top_hit_rating, top_intel, top_parry_rating, top_spirit, top_stam, top_str,
               total_gylph_check, total_number_of_targets, total_simulation_amounts,
-              toughness_points, tricks_start_time, trinket1_bonus_amount, trinket1_bonus_type, trinket1_chanceon, trinket1_chanceperc, trinket1_damage_list, trinket1_icd, trinket1_length,
-              trinket1_max_damage, trinket1_min_damage, trinket1_type, trinket2_bonus_amount, trinket2_bonus_type, trinket2_chanceon, trinket2_chanceperc, trinket2_damage_list, trinket2_icd,
+              toughness_points, tricks_start_time, trinket1_bonus_amount, trinket1_bonus_type, trinket1_chanceon, trinket1_chanceperc, trinket1_icd, trinket1_length,
+              trinket1_max_damage, trinket1_min_damage, trinket1_type, trinket2_bonus_amount, trinket2_bonus_type, trinket2_chanceon, trinket2_chanceperc, trinket2_icd,
               trinket2_length, trinket2_max_damage, trinket2_min_damage, trinket2_type, trinket_1_use, trinket_2_use, trinket_bonus_amount_index, trinket_bonus_type_index, trinket_chanceon_index,
               trinket_chanceperc_index, trinket_icd_index, trinket_length_index, trinket_max_damage_index, trinket_min_damage_index, trinket_type_index, tundra_stalker_points,
-              two_handed_weapon_blood_points, unable_to_do_anything, unbreak_armor_bone_shield_vamp_blood_cd_time, unbreakable_armor_points, unholy, unholy_blight_damage_list,
+              two_handed_weapon_blood_points, unable_to_do_anything, unbreak_armor_bone_shield_vamp_blood_cd_time, unbreakable_armor_points, unholy,
               unholy_blight_points, unholy_talents, unholy_talents_len, use_army, use_blood_strike_over_blood_boil, use_ghoul,
               use_obliterate_over_howling_blast, use_shattering_throw, use_trinket_index, using_glyphs, var_crit_amount, veteran_of_the_third_war_points, vicious_strikes_points, virtulence_points,
-              wandering_plague_damage_list, wandering_plague_points, weapon_list, weapons, weapons_item_slot, weapons_item_slot_index, weapons_max_damage, weapons_max_damage_index, weapons_min_damage,
-              weapons_min_damage_index, weapons_speed, weapons_speed_index, weapons_type, weapons_type_index)
+               wandering_plague_points, weapon_list, weapons, weapons_item_slot, weapons_item_slot_index, weapons_max_damage, weapons_max_damage_index, weapons_min_damage,
+              weapons_min_damage_index, weapons_speed, weapons_speed_index, weapons_type, weapons_type_index, trinket1_random_value, trinket2_random_value, bone_shield_start_random_value, gargoyle_random_value)
         
         
         
