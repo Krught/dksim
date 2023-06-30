@@ -1,6 +1,6 @@
 *.pyc
 __pycache__
-/db-passwords.properties
+db-passwords.properties
 .cache
 .ipython
 .local
